@@ -1,0 +1,16 @@
+{
+  "vocab_size": 4096,
+  "d_model": 256,
+  "n_layers": 8,
+  "n_heads": 4,
+  "n_kv_heads": 1,
+  "ffn_hidden": 768,
+  "context_length": 128,
+  "batch_size": 8,
+  "max_steps": 600,
+  "eval_interval": 100,
+  "checkpoint_interval": 200,
+  "learning_rate": 0.0003,
+  "memory_enabled": false,
+  "num_threads": 4
+}

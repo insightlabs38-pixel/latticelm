@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-tmp/
+.venv/
+artifacts/checkpoints/*.pt
+artifacts/logs/*.log
+artifacts/profiles/*.json
+artifacts/data/
+artifacts/tokenizer.json
+artifacts/tokenizers/tinyshakespeare_4k.json

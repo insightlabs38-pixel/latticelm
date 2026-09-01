@@ -1,0 +1,23 @@
+{
+  "vocab_size": 451,
+  "d_model": 64,
+  "n_layers": 2,
+  "n_heads": 4,
+  "n_kv_heads": 1,
+  "ffn_hidden": 192,
+  "context_length": 32,
+  "dropout": 0.0,
+  "memory_enabled": true,
+  "memory_slots": 1024,
+  "memory_dim": 16,
+  "batch_size": 4,
+  "max_steps": 12,
+  "eval_interval": 4,
+  "checkpoint_interval": 6,
+  "learning_rate": 0.001,
+  "weight_decay": 0.1,
+  "warmup_fraction": 0.02,
+  "grad_clip": 1.0,
+  "seed": 1337,
+  "num_threads": 1
+}

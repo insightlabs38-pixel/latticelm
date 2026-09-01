@@ -1,0 +1,12 @@
+{
+  "platform": "Windows-10-10.0.19045-SP0",
+  "python": "3.12.10",
+  "pytorch": "2.13.0+cpu",
+  "cpu_count_logical": 8,
+  "torch_cpu_capability": "AVX512",
+  "mkldnn_available": true,
+  "ram_bytes": 12614754304,
+  "triton_importable": false,
+  "omp_num_threads": null,
+  "mkl_num_threads": null
+}
