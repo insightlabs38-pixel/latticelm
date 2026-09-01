@@ -9,3 +9,5 @@ artifacts/profiles/*.json
 artifacts/data/
 artifacts/tokenizer.json
 artifacts/tokenizers/tinyshakespeare_4k.json
+.triton-cpu-src/
+.triton-cpu-venv/

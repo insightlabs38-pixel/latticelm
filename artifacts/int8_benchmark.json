@@ -1,0 +1,21 @@
+{
+  "experiment": "int8_memory_inference",
+  "threads": 4,
+  "shape": [
+    8,
+    128,
+    64
+  ],
+  "slots_per_table": 65536,
+  "fp32_gather_median_ms": 0.7253,
+  "int8_rowwise_gather_median_ms": 2.14175,
+  "fp32_projection_median_ms": 0.439,
+  "int8_dynamic_projection_median_ms": 0.7503,
+  "gather_max_abs_error": 0.000757858157157898,
+  "gather_mean_abs_error": 0.00016820119344629347,
+  "projected_max_abs_error": 0.002184223383665085,
+  "projected_mean_abs_error": 0.00037005351623520255,
+  "quantized_engine": "onednn",
+  "machine_code_vnni_verified": false,
+  "vnni_note": "Attempted PyTorch x86 dynamic-INT8 projection; no compiler/disassembler is installed, so emitted VNNI instructions cannot be verified."
+}

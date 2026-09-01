@@ -18,6 +18,9 @@ class LatticeConfig:
     memory_enabled: bool = False
     memory_slots: int = 65536
     memory_dim: int = 64
+    architecture: str = "lattice"
+    mixer_strategy: str = "attention"
+    local_attention_window: int = 32
     batch_size: int = 8
     max_steps: int = 600
     eval_interval: int = 100
@@ -34,6 +37,10 @@ class LatticeConfig:
             raise ValueError("d_model must divide n_heads and n_heads must divide n_kv_heads")
         if self.context_length < 2 or self.memory_slots < 1:
             raise ValueError("invalid context or memory size")
+        if self.mixer_strategy not in {"attention", "hybrid"}:
+            raise ValueError("mixer_strategy must be attention or hybrid")
+        if self.architecture not in {"lattice", "co4_inspired"}:
+            raise ValueError("architecture must be lattice or co4_inspired")
 
     @classmethod
     def from_json(cls, path: str | Path) -> "LatticeConfig":

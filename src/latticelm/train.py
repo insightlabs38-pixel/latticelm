@@ -16,7 +16,7 @@ import torch
 
 from .config import LatticeConfig
 from .data import batch_from_tokens, ensure_corpus, make_data
-from .model import LatticeLM
+from .model import LatticeLM, build_model
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -46,7 +46,7 @@ def _triton_importable() -> bool:
         return False
 
 
-def evaluate(model: LatticeLM, data: torch.Tensor, config: LatticeConfig, generator: torch.Generator) -> float:
+def evaluate(model: torch.nn.Module, data: torch.Tensor, config: LatticeConfig, generator: torch.Generator) -> float:
     model.eval()
     losses = []
     with torch.no_grad():
@@ -78,7 +78,7 @@ def refresh_results_json() -> None:
     (artifacts / "results.json").write_text(json.dumps(entries, indent=2), encoding="utf-8")
 
 
-def save_checkpoint(path: Path, model: LatticeLM, optimizer: torch.optim.Optimizer, step: int, config: LatticeConfig, source: str) -> None:
+def save_checkpoint(path: Path, model: torch.nn.Module, optimizer: torch.optim.Optimizer, step: int, config: LatticeConfig, source: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     torch.save({"model": model.state_dict(), "optimizer": optimizer.state_dict(), "step": step, "config": config.to_dict(), "source": source}, path)
     path.with_suffix(".json").write_text(json.dumps(config.to_dict(), indent=2), encoding="utf-8")
@@ -93,7 +93,7 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
     token_path.parent.mkdir(parents=True, exist_ok=True)
     tokenizer, train_data, val_data = make_data(text, config.vocab_size, token_path)
     config = replace(config, vocab_size=tokenizer.vocab_size)
-    model = LatticeLM(config)
+    model = build_model(config)
     breakdown = model.parameter_breakdown()
     if breakdown["total"] > 50_000_000:
         raise RuntimeError(f"parameter cap exceeded: {breakdown['total']:,}")

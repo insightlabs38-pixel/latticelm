@@ -1,0 +1,34 @@
+{
+  "experiment": "collision_aware_memory_analysis",
+  "tokens": 67342,
+  "orders": {
+    "2": {
+      "unique_ngrams": 3889,
+      "exact_entries": 1024,
+      "tail_unique_ngrams": 2865,
+      "tail_slots": 65536,
+      "tail_occupied_slots": 2817,
+      "tail_collisions": 48,
+      "exact_hit_rate": 0.8581865700454397
+    },
+    "3": {
+      "unique_ngrams": 16676,
+      "exact_entries": 1024,
+      "tail_unique_ngrams": 15652,
+      "tail_slots": 65536,
+      "tail_occupied_slots": 13889,
+      "tail_collisions": 1763,
+      "exact_hit_rate": 0.46323245522853496
+    },
+    "4": {
+      "unique_ngrams": 33739,
+      "exact_entries": 512,
+      "tail_unique_ngrams": 33227,
+      "tail_slots": 65536,
+      "tail_occupied_slots": 26057,
+      "tail_collisions": 7170,
+      "exact_hit_rate": 0.19482640848207655
+    }
+  },
+  "data_source": "Tiny Shakespeare 100K-character public subset (GitHub source)"
+}

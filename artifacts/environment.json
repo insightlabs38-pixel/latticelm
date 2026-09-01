@@ -7,6 +7,6 @@
   "mkldnn_available": true,
   "ram_bytes": 12614754304,
   "triton_importable": false,
-  "omp_num_threads": null,
-  "mkl_num_threads": null
+  "omp_num_threads": "4",
+  "mkl_num_threads": "4"
 }

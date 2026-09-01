@@ -1,0 +1,12 @@
+{
+  "experiment": "lattice_triton_cpu_setup",
+  "official_repo": "https://github.com/triton-lang/triton-cpu",
+  "commit": "b124250",
+  "source_clone": "completed with recursive submodules",
+  "runtime_dependencies": "cmake, ninja, nanobind, lit, CPU torch installed in isolated venv",
+  "initial_blocker": "Windows directory symlinks require Developer Mode or an elevated privilege",
+  "workaround_attempt": "local source-tree copy fallback allowed CMake configuration to start",
+  "final_blocker": "CMake could not find C or C++ compiler; Microsoft C++ Build Tools/clang are absent",
+  "triton_cpu_installed": false,
+  "kernel_execution": "not possible; no unsupported performance claim is made"
+}

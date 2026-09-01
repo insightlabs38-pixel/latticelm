@@ -21,14 +21,21 @@ def causal_ngram_ids(tokens: torch.Tensor, slots: int) -> tuple[torch.Tensor, to
     """Return suffix n-gram IDs for [B,T] inputs, never reading t+1 or later."""
     if tokens.ndim != 2:
         raise ValueError("tokens must be [batch, sequence]")
-    rows = tokens.detach().to("cpu", torch.int64).tolist()
-    result = [[[0] * len(row) for row in rows] for _ in range(3)]
-    seeds = (0xB1, 0xC3, 0xD4)
-    for b, row in enumerate(rows):
-        for t in range(len(row)):
-            for idx, n in enumerate((2, 3, 4)):
-                start = max(0, t - n + 1)
-                # Include explicit leading zeroes so short prefixes have stable meaning.
-                suffix = [0] * (n - (t - start + 1)) + row[start : t + 1]
-                result[idx][b][t] = stable_hash_ngram(suffix, seeds[idx]) % slots
-    return tuple(torch.tensor(x, device=tokens.device, dtype=torch.long) for x in result)
+    # Vectorized polynomial hashes avoid a Python/CPU round trip on every
+    # training batch. Each position uses only x[t], x[t-1], ... and explicit
+    # zeroes for missing prefix items, so addressing remains causal.
+    values = tokens.to(torch.long)
+    length = values.size(1)
+
+    def suffix(order: int, seed: int) -> torch.Tensor:
+        h = torch.full_like(values, seed)
+        for offset in range(order - 1, -1, -1):
+            shifted = torch.zeros_like(values)
+            if offset == 0:
+                shifted = values
+            elif offset < length:
+                shifted[:, offset:] = values[:, : length - offset]
+            h = torch.remainder(h * 1_000_003 + shifted + 0x9E37, 2_147_483_647)
+        return torch.remainder(h, slots)
+
+    return suffix(2, 0xB1), suffix(3, 0xC3), suffix(4, 0xD4)

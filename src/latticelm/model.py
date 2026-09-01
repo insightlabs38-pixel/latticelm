@@ -57,9 +57,14 @@ class SwiGLU(nn.Module):
 
 
 class Block(nn.Module):
-    def __init__(self, config: LatticeConfig) -> None:
+    def __init__(self, config: LatticeConfig, mixer_kind: str = "attention") -> None:
         super().__init__()
-        self.attn_norm, self.attn = RMSNorm(config.d_model), CausalAttention(config)
+        if mixer_kind == "attention":
+            mixer: nn.Module = CausalAttention(config)
+        else:
+            from .recurrent import LocalCausalAttention, MatrixLSTMMixer
+            mixer = MatrixLSTMMixer(config) if mixer_kind == "mlstm" else LocalCausalAttention(config)
+        self.attn_norm, self.attn = RMSNorm(config.d_model), mixer
         self.ffn_norm, self.ffn = RMSNorm(config.d_model), SwiGLU(config.d_model, config.ffn_hidden)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -72,7 +77,8 @@ class LatticeLM(nn.Module):
         super().__init__()
         self.config = config
         self.token_embedding = nn.Embedding(config.vocab_size, config.d_model)
-        self.blocks = nn.ModuleList(Block(config) for _ in range(config.n_layers))
+        pattern = ("mlstm", "mlstm", "local", "mlstm")
+        self.blocks = nn.ModuleList(Block(config, pattern[index % len(pattern)] if config.mixer_strategy == "hybrid" else "attention") for index in range(config.n_layers))
         self.norm = RMSNorm(config.d_model)
         self.lm_head = nn.Linear(config.d_model, config.vocab_size, bias=False)
         self.lm_head.weight = self.token_embedding.weight
@@ -110,3 +116,10 @@ class LatticeLM(nn.Module):
             next_token = logits[:, -1].argmax(dim=-1, keepdim=True)
             tokens = torch.cat((tokens, next_token), dim=1)
         return tokens
+
+
+def build_model(config: LatticeConfig) -> nn.Module:
+    if config.architecture == "co4_inspired":
+        from .co4 import Co4InspiredExperimental
+        return Co4InspiredExperimental(config)
+    return LatticeLM(config)
