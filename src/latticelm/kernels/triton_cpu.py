@@ -41,11 +41,19 @@ except ImportError:
 
 
 def available() -> bool:
-    return _TRITON
+    if not _TRITON:
+        return False
+    try:
+        # Importability alone is insufficient: a CUDA-only Triton wheel may be
+        # installed on a CPU host while exposing no active runtime driver.
+        triton.runtime.driver.active.get_current_device()
+    except (RuntimeError, AttributeError):
+        return False
+    return True
 
 
 def fused_residual_rmsnorm(x: torch.Tensor, residual: torch.Tensor, weight: torch.Tensor, eps: float = 1e-6) -> torch.Tensor:
-    if not _TRITON:
+    if not available():
         return residual_rmsnorm(x, residual, weight, eps)
     os.environ.setdefault("TRITON_CPU_BACKEND", "1")
     rows, cols = x.numel() // x.shape[-1], x.shape[-1]
@@ -56,7 +64,7 @@ def fused_residual_rmsnorm(x: torch.Tensor, residual: torch.Tensor, weight: torc
 
 
 def fused_memory_gather(table2: torch.Tensor, table3: torch.Tensor, table4: torch.Tensor, id2: torch.Tensor, id3: torch.Tensor, id4: torch.Tensor) -> torch.Tensor:
-    if not _TRITON:
+    if not available():
         return conditional_memory_gather(table2, table3, table4, id2, id3, id4)
     dim = table2.shape[1]
     output = torch.empty((*id2.shape, dim), dtype=table2.dtype, device=table2.device)

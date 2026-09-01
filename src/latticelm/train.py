@@ -10,6 +10,8 @@ from pathlib import Path
 import platform
 import random
 import time
+import subprocess
+import resource
 
 import psutil
 import torch
@@ -17,6 +19,7 @@ import torch
 from .config import LatticeConfig
 from .data import batch_from_tokens, ensure_corpus, make_data
 from .model import LatticeLM, build_model
+from .tokenizer import load_tokenizer
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -46,11 +49,12 @@ def _triton_importable() -> bool:
         return False
 
 
-def evaluate(model: torch.nn.Module, data: torch.Tensor, config: LatticeConfig, generator: torch.Generator) -> float:
+def evaluate(model: torch.nn.Module, data: torch.Tensor, config: LatticeConfig) -> float:
     model.eval()
     losses = []
+    generator = torch.Generator().manual_seed(424242)
     with torch.no_grad():
-        for _ in range(3):
+        for _ in range(16):
             x, y = batch_from_tokens(data, config.batch_size, config.context_length, generator)
             _, loss = model(x, y)
             losses.append(float(loss))
@@ -63,11 +67,20 @@ def append_result(record: dict) -> None:
     with (artifacts / "results.jsonl").open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(record, sort_keys=True) + "\n")
     refresh_results_json()
-    csv_path = artifacts / "results.csv"
-    write_header = not csv_path.exists()
-    with csv_path.open("a", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(record))
-        if write_header: writer.writeheader()
+    entries = [json.loads(line) for line in (artifacts / "results.jsonl").read_text(encoding="utf-8").splitlines() if line]
+    fields = list(dict.fromkeys(key for entry in entries for key in entry))
+    with (artifacts / "results.csv").open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
+        writer.writeheader(); writer.writerows(entries)
+    tournament_fields = ["experiment", "architecture_family", "params", "neural_params", "memory_params",
+                         "tokens_trained", "wall_seconds", "tokens_per_second", "train_loss", "val_loss",
+                         "val_ppl", "peak_rss_bytes", "status", "notes"]
+    tournament_path = artifacts / "architecture_tournament.csv"
+    write_header = not tournament_path.exists()
+    with tournament_path.open("a", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=tournament_fields, extrasaction="ignore", lineterminator="\n")
+        if write_header:
+            writer.writeheader()
         writer.writerow(record)
 
 
@@ -84,26 +97,49 @@ def save_checkpoint(path: Path, model: torch.nn.Module, optimizer: torch.optim.O
     path.with_suffix(".json").write_text(json.dumps(config.to_dict(), indent=2), encoding="utf-8")
 
 
-def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None, download: bool = False, resume: str | None = None, tokenizer_path: str | None = None) -> dict:
+def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None, download: bool = False, resume: str | None = None, tokenizer_path: str | None = None, validation_path: str | None = None, train_tokens_path: str | None = None, validation_tokens_path: str | None = None) -> dict:
     torch.set_num_threads(config.num_threads)
     generator = seed_everything(config.seed)
     write_environment()
-    text, source = ensure_corpus(corpus_path, download)
     token_path = ROOT / (tokenizer_path or "artifacts/tokenizers/smoke.json")
     token_path.parent.mkdir(parents=True, exist_ok=True)
-    tokenizer, train_data, val_data = make_data(text, config.vocab_size, token_path)
+    if train_tokens_path and validation_tokens_path:
+        tokenizer = load_tokenizer(token_path)
+        def load_tokens(path: str) -> torch.Tensor:
+            return (torch.load(path, map_location="cpu", weights_only=True)
+                    if Path(path).suffix == ".pt" else torch.from_file(path, dtype=torch.int32)).long()
+        train_data = load_tokens(train_tokens_path)
+        val_data = load_tokens(validation_tokens_path)
+        source = str(Path(train_tokens_path).resolve())
+    else:
+        text, source = ensure_corpus(corpus_path, download)
+        validation_text = Path(validation_path).read_text(encoding="utf-8", errors="replace") if validation_path else None
+        tokenizer, train_data, val_data = make_data(text, config.vocab_size, token_path, validation_text)
     config = replace(config, vocab_size=tokenizer.vocab_size)
     model = build_model(config)
     breakdown = model.parameter_breakdown()
     if breakdown["total"] > 50_000_000:
         raise RuntimeError(f"parameter cap exceeded: {breakdown['total']:,}")
-    optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
+    if config.architecture == "mini_engram":
+        memory_parameters = list(model.memory.parameters())
+        memory_ids = {id(parameter) for parameter in memory_parameters}
+        backbone_parameters = [parameter for parameter in model.parameters() if id(parameter) not in memory_ids]
+        optimizer = torch.optim.AdamW([
+            {"params": backbone_parameters},
+            {"params": memory_parameters, "lr": config.learning_rate * config.memory_lr_multiplier},
+        ], lr=config.learning_rate, weight_decay=config.weight_decay)
+    else:
+        optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
     start_step = 0
+    previous_wall = 0.0
     if resume:
         checkpoint = torch.load(resume, map_location="cpu", weights_only=False)
         model.load_state_dict(checkpoint["model"]); optimizer.load_state_dict(checkpoint["optimizer"])
         start_step = int(checkpoint["step"])
-    process = psutil.Process()
+        log_path = ROOT / "artifacts" / "logs" / f"{experiment}.jsonl"
+        if log_path.exists():
+            previous = [json.loads(line) for line in log_path.read_text().splitlines() if line]
+            previous_wall = max((float(row.get("elapsed_wall_seconds", 0.0)) for row in previous), default=0.0)
     start = time.perf_counter(); final_train_loss = float("nan"); val_loss = float("nan")
     for step in range(start_step + 1, config.max_steps + 1):
         x, y = batch_from_tokens(train_data, config.batch_size, config.context_length, generator)
@@ -115,25 +151,39 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
         torch.nn.utils.clip_grad_norm_(model.parameters(), config.grad_clip); optimizer.step()
         final_train_loss = float(loss.detach())
         if step % config.eval_interval == 0 or step == config.max_steps:
-            val_loss = evaluate(model, val_data, config, generator)
+            val_loss = evaluate(model, val_data, config)
         if step % config.checkpoint_interval == 0 or step == config.max_steps:
             save_checkpoint(ROOT / "artifacts" / "checkpoints" / f"{experiment}_step{step}.pt", model, optimizer, step, config, source)
         elapsed_step = time.perf_counter() - step_start
         (ROOT / "artifacts" / "logs").mkdir(parents=True, exist_ok=True)
         with (ROOT / "artifacts" / "logs" / f"{experiment}.jsonl").open("a", encoding="utf-8") as log:
-            log.write(json.dumps({"step": step, "train_loss": final_train_loss, "step_seconds": elapsed_step}) + "\n")
-    wall = time.perf_counter() - start
-    token_count = (config.max_steps - start_step) * config.batch_size * config.context_length
+            log.write(json.dumps({"step": step, "tokens": step * config.batch_size * config.context_length,
+                                  "train_loss": final_train_loss, "val_loss": val_loss if step % config.eval_interval == 0 or step == config.max_steps else None,
+                                  "elapsed_wall_seconds": previous_wall + time.perf_counter() - start,
+                                  "step_seconds": elapsed_step}) + "\n")
+    wall = previous_wall + time.perf_counter() - start
+    token_count = config.max_steps * config.batch_size * config.context_length
     record = {
-        "experiment": experiment, "params": breakdown["total"], "memory_params": breakdown["conditional_memory"],
+        "experiment": experiment,
+        "architecture_family": "dense" if config.architecture == "lattice" and not config.memory_enabled else config.architecture,
+        "params": breakdown["total"], "neural_params": breakdown["total"] - breakdown["conditional_memory"],
+        "memory_params": breakdown["conditional_memory"],
         "context": config.context_length, "tokens_trained": token_count, "wall_seconds": round(wall, 4),
         "tokens_per_second": round(token_count / wall, 3), "train_loss": round(final_train_loss, 6),
-        "val_loss": round(val_loss, 6), "val_ppl": round(math.exp(val_loss), 5), "peak_rss_bytes": process.memory_info().rss,
+        "val_loss": round(val_loss, 6), "val_ppl": round(math.exp(val_loss), 5),
+        "peak_rss_bytes": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024,
         "torch_threads": config.num_threads, "triton_enabled": False, "data_source": source,
+        "validation_source": (str(Path(validation_tokens_path).resolve()) if validation_tokens_path else
+                              str(Path(validation_path).resolve()) if validation_path else "deterministic 10% tail"),
+        "seed": config.seed, "git_commit": subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip(),
+        "config": config.to_dict(), "status": "completed",
+        "notes": f"Round {1 if token_count < 1_000_000 else 2} common-settings architecture comparison",
         "checkpoint": str(ROOT / "artifacts" / "checkpoints" / f"{experiment}_step{config.max_steps}.pt"),
     }
     append_result(record)
-    (ROOT / "artifacts" / "parameter_count.txt").write_text(json.dumps(breakdown, indent=2), encoding="utf-8")
+    parameter_dir = ROOT / "artifacts" / "parameter_counts"
+    parameter_dir.mkdir(exist_ok=True)
+    (parameter_dir / f"{experiment}.json").write_text(json.dumps(breakdown, indent=2) + "\n", encoding="utf-8")
     return record
 
 
@@ -142,11 +192,14 @@ def main() -> None:
     parser.add_argument("--config", required=True); parser.add_argument("--experiment", required=True)
     parser.add_argument("--data"); parser.add_argument("--download", action="store_true")
     parser.add_argument("--resume"); parser.add_argument("--tokenizer")
+    parser.add_argument("--validation-data")
+    parser.add_argument("--train-tokens"); parser.add_argument("--validation-tokens")
     parser.add_argument("--max-steps", type=int)
     args = parser.parse_args()
     config = LatticeConfig.from_json(args.config)
     if args.max_steps is not None: config = replace(config, max_steps=args.max_steps)
-    print(json.dumps(train(config, args.experiment, args.data, args.download, args.resume, args.tokenizer), indent=2))
+    print(json.dumps(train(config, args.experiment, args.data, args.download, args.resume, args.tokenizer,
+                           args.validation_data, args.train_tokens, args.validation_tokens), indent=2))
 
 
 if __name__ == "__main__":

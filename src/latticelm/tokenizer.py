@@ -71,3 +71,32 @@ class BytePairTokenizer:
     def load(cls, path: str | Path) -> "BytePairTokenizer":
         payload = json.loads(Path(path).read_text(encoding="utf-8"))
         return cls(payload["merges"], payload.get("vocab_size"))
+
+
+class HuggingFaceBPE:
+    """Thin adapter around a fully learned `tokenizers` BPE JSON file."""
+
+    def __init__(self, tokenizer) -> None:
+        self.tokenizer = tokenizer
+
+    @property
+    def vocab_size(self) -> int:
+        return self.tokenizer.get_vocab_size()
+
+    def encode(self, text: str) -> list[int]:
+        return self.tokenizer.encode(text).ids
+
+    def save(self, path: str | Path) -> None:
+        self.tokenizer.save(str(path))
+
+    @classmethod
+    def load(cls, path: str | Path) -> "HuggingFaceBPE":
+        from tokenizers import Tokenizer
+        return cls(Tokenizer.from_file(str(path)))
+
+
+def load_tokenizer(path: str | Path):
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    if "model" in payload and payload.get("version"):
+        return HuggingFaceBPE.load(path)
+    return BytePairTokenizer.load(path)
