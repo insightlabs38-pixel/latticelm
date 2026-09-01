@@ -1,0 +1,1 @@
+{"best_round2_total_params":7874816,"best_round2_neural_params":7874816,"best_round2_memory_params":0,"model":"cloud_r1_co4_causal_step1024.pt"}

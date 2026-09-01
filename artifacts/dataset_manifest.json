@@ -1,0 +1,66 @@
+{
+  "dataset": "BabyLM-community/BabyLM-2026-Strict-Small",
+  "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+  "official_use": "training corpus",
+  "split_policy": "last 2% of lines within each source held out; no benchmark evaluation data",
+  "train_words_whitespace": 9807491,
+  "validation_words_whitespace": 192509,
+  "train_bytes_utf8": 53356501,
+  "validation_bytes_utf8": 1043349,
+  "sources": [
+    {
+      "file": "bnc_spoken.train.txt",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/bnc_spoken.train.txt?download=true",
+      "bytes": 4064608,
+      "sha256": "8f3042f4104cf356052fda784682d8e8170fd1fd8c795a1c3e172f9eb2ebfa3c",
+      "lines": 65220,
+      "train_lines": 63915,
+      "validation_lines": 1305
+    },
+    {
+      "file": "childes.train.txt",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/childes.train.txt?download=true",
+      "bytes": 15159891,
+      "sha256": "c898c0a44f4380ce7a66766acd01e70eebbbd9410a1701ddf89452ea6f5aea45",
+      "lines": 531305,
+      "train_lines": 520678,
+      "validation_lines": 10627
+    },
+    {
+      "file": "gutenberg.train.txt",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/gutenberg.train.txt?download=true",
+      "bytes": 14031163,
+      "sha256": "4ddcf5774a7947293ceb56dc76774f553b534231e7ac636c071559229cf2cb9b",
+      "lines": 59934,
+      "train_lines": 58735,
+      "validation_lines": 1199
+    },
+    {
+      "file": "open_subtitles.train.txt",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/open_subtitles.train.txt?download=true",
+      "bytes": 12159704,
+      "sha256": "9b21adecf57dd97f611d9442a2f993d2f843278eb24fc98f4165322c1ba5670a",
+      "lines": 386046,
+      "train_lines": 378325,
+      "validation_lines": 7721
+    },
+    {
+      "file": "simple_wiki.train.txt",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/simple_wiki.train.txt?download=true",
+      "bytes": 8861946,
+      "sha256": "0ac614aa069ea3908c07c9755bf80bb500d4cee15cd972e9f93cccf89639e9a7",
+      "lines": 58709,
+      "train_lines": 57534,
+      "validation_lines": 1175
+    },
+    {
+      "file": "switchboard.train.txt",
+      "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/switchboard.train.txt?download=true",
+      "bytes": 122528,
+      "sha256": "89c99649777be2f76f5054e9f1aa364b7e1a62844e219fe810205be6d99399b5",
+      "lines": 2892,
+      "train_lines": 2834,
+      "validation_lines": 58
+    }
+  ]
+}

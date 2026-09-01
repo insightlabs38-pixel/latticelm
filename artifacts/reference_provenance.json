@@ -1,0 +1,25 @@
+{
+  "babylm": {
+    "repository": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small",
+    "revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+    "accessed_utc": "2026-09-01"
+  },
+  "engram": {
+    "repository": "https://github.com/deepseek-ai/Engram",
+    "commit": "fb7f84a21f91223715394a33a1dc24bbfb7f788e",
+    "license_observed": "Apache-2.0",
+    "files_studied": ["README.md", "Engram_paper.pdf", "engram_demo_v1.py"],
+    "accessed_utc": "2026-09-01"
+  },
+  "co4_ihms": {
+    "repository": "https://github.com/ARIA-Funded-TREND/IHMS",
+    "commit": "e25e9119173d59fdb9e4548ef640734dbd19f067",
+    "license_observed": "CC-BY-NC-4.0",
+    "files_studied": ["README.md", "Vision/object_recognition/attention.py", "Vision/object_recognition/transformer.py"],
+    "accessed_utc": "2026-09-01"
+  },
+  "co4_paper": {
+    "url": "https://arxiv.org/abs/2505.06257",
+    "note": "Used for architecture context; causal implementation deviations are documented."
+  }
+}
