@@ -128,7 +128,7 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
     breakdown = model.parameter_breakdown()
     if breakdown["total"] > 50_000_000:
         raise RuntimeError(f"parameter cap exceeded: {breakdown['total']:,}")
-    if config.architecture == "mini_engram":
+    if config.architecture in {"mini_engram", "co4_memory"}:
         memory_parameters = list(model.memory.parameters())
         memory_ids = {id(parameter) for parameter in memory_parameters}
         backbone_parameters = [parameter for parameter in model.parameters() if id(parameter) not in memory_ids]
@@ -140,10 +140,12 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
         optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
     start_step = 0
     previous_wall = 0.0
+    best_val_loss = float("inf")
     if resume:
         checkpoint = torch.load(resume, map_location="cpu", weights_only=False)
         model.load_state_dict(checkpoint["model"]); optimizer.load_state_dict(checkpoint["optimizer"])
         start_step = int(checkpoint["step"])
+        best_val_loss = float(checkpoint.get("best_val_loss", float("inf")))
         log_path = ROOT / "artifacts" / "logs" / f"{experiment}.jsonl"
         if log_path.exists():
             previous = [json.loads(line) for line in log_path.read_text().splitlines() if line]
@@ -190,16 +192,11 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
                                   token_path, token_path.with_suffix(".report.json"),
                                   ROOT / "artifacts" / "dataset_manifest.json", metrics_now)
                 upload_checkpoint(staging, os.environ["LATTICELM_HF_REPO"], remote_path, token)
-        if step % config.eval_interval == 0 or step == config.max_steps:
-            val_loss = evaluate(model, val_data, config)
-        if step % config.checkpoint_interval == 0 or step == config.max_steps:
-            save_checkpoint(ROOT / "artifacts" / "checkpoints" / f"{experiment}_step{step}.pt", model, optimizer, step, config, source)
         elapsed_step = time.perf_counter() - step_start
         (ROOT / "artifacts" / "logs").mkdir(parents=True, exist_ok=True)
         with (ROOT / "artifacts" / "logs" / f"{experiment}.jsonl").open("a", encoding="utf-8") as log:
             log.write(json.dumps({"step": step, "tokens": step * config.batch_size * config.context_length,
                                   "train_loss": final_train_loss, "val_loss": val_loss if evaluated else None,
-                                  "train_loss": final_train_loss, "val_loss": val_loss if step % config.eval_interval == 0 or step == config.max_steps else None,
                                   "elapsed_wall_seconds": previous_wall + time.perf_counter() - start,
                                   "step_seconds": elapsed_step}) + "\n")
     wall = previous_wall + time.perf_counter() - start

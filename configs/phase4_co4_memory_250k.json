@@ -1,0 +1,38 @@
+{
+  "architecture": "co4_memory",
+  "vocab_size": 4096,
+  "d_model": 256,
+  "n_layers": 8,
+  "n_heads": 4,
+  "n_kv_heads": 1,
+  "ffn_hidden": 768,
+  "context_length": 128,
+  "batch_size": 8,
+  "max_steps": 512,
+  "eval_interval": 128,
+  "checkpoint_interval": 256,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.1,
+  "memory_enabled": true,
+  "num_threads": 2,
+  "seed": 1337,
+  "hf_persistence_enabled": false,
+  "hf_upload_interval_tokens": 1048576,
+  "hf_best_upload_interval_tokens": 1048576,
+  "hf_update_best": true,
+  "hf_named_checkpoint": null,
+  "tie_embeddings": true,
+  "memory_slots": 4096,
+  "memory_dim": 16,
+  "memory_heads": 2,
+  "memory_orders": [
+    2,
+    3
+  ],
+  "memory_insert_layers": [
+    1
+  ],
+  "memory_token_map_path": "artifacts/tokenizers/babylm_2026_4k.report.json",
+  "memory_dropout": 0.1,
+  "memory_lr_multiplier": 0.3
+}
