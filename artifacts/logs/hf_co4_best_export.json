@@ -1,0 +1,155 @@
+{
+  "output": "artifacts/hf_staging/co4-best",
+  "verified": true,
+  "weights_sha256": "98122280be5e9d4a192a4e584ec733667cc9f13a0d7f576df5e68851e4b2b05a",
+  "manifest": {
+    "architecture_name": "co4_causal",
+    "architecture_version": "latticelm-0.2",
+    "source_git_commit": "ec30382ff4436ce6cfe58db24373dca9aff18cac",
+    "experiment_id": "cloud_r3_co4_seed1337",
+    "random_seed": 1337,
+    "total_trainable_parameters": 7874816,
+    "neural_parameters": 7874816,
+    "memory_parameters": 0,
+    "model_config": {
+      "vocab_size": 4096,
+      "d_model": 256,
+      "n_layers": 8,
+      "n_heads": 4,
+      "n_kv_heads": 1,
+      "ffn_hidden": 768,
+      "context_length": 128,
+      "dropout": 0.0,
+      "memory_enabled": false,
+      "memory_slots": 65536,
+      "memory_dim": 64,
+      "architecture": "co4_causal",
+      "mixer_strategy": "attention",
+      "local_attention_window": 32,
+      "batch_size": 8,
+      "max_steps": 3072,
+      "eval_interval": 128,
+      "checkpoint_interval": 512,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_fraction": 0.02,
+      "grad_clip": 1.0,
+      "seed": 1337,
+      "num_threads": 2,
+      "memory_heads": 2,
+      "memory_orders": [
+        2,
+        3
+      ],
+      "memory_conv_kernel": 4,
+      "memory_conv_enabled": true,
+      "memory_insert_layers": [
+        1
+      ],
+      "memory_token_map_path": null,
+      "memory_dropout": 0.0,
+      "memory_lr_multiplier": 0.3,
+      "hf_persistence_enabled": true,
+      "hf_upload_interval_tokens": 1048576,
+      "hf_best_upload_interval_tokens": 1048576,
+      "hf_update_best": true,
+      "hf_named_checkpoint": "co4-round3"
+    },
+    "tokenizer": {
+      "file": "tokenizer.json",
+      "sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+      "vocab_size": 4096,
+      "memory_metadata": "tokenizer.report.json"
+    },
+    "training_dataset": "BabyLM-community/BabyLM-2026-Strict-Small",
+    "dataset_revision": "c92ab16b4f08858304b0815706065b3354d8fc0a",
+    "dataset_manifest_sha256": "03bc4493b9bb275bb60ef4a01697868194b1cb4be45aa7b15c6b738269eefab5",
+    "dataset_sources": [
+      {
+        "file": "bnc_spoken.train.txt",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/bnc_spoken.train.txt?download=true",
+        "bytes": 4064608,
+        "sha256": "8f3042f4104cf356052fda784682d8e8170fd1fd8c795a1c3e172f9eb2ebfa3c",
+        "lines": 65220,
+        "train_lines": 63915,
+        "validation_lines": 1305
+      },
+      {
+        "file": "childes.train.txt",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/childes.train.txt?download=true",
+        "bytes": 15159891,
+        "sha256": "c898c0a44f4380ce7a66766acd01e70eebbbd9410a1701ddf89452ea6f5aea45",
+        "lines": 531305,
+        "train_lines": 520678,
+        "validation_lines": 10627
+      },
+      {
+        "file": "gutenberg.train.txt",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/gutenberg.train.txt?download=true",
+        "bytes": 14031163,
+        "sha256": "4ddcf5774a7947293ceb56dc76774f553b534231e7ac636c071559229cf2cb9b",
+        "lines": 59934,
+        "train_lines": 58735,
+        "validation_lines": 1199
+      },
+      {
+        "file": "open_subtitles.train.txt",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/open_subtitles.train.txt?download=true",
+        "bytes": 12159704,
+        "sha256": "9b21adecf57dd97f611d9442a2f993d2f843278eb24fc98f4165322c1ba5670a",
+        "lines": 386046,
+        "train_lines": 378325,
+        "validation_lines": 7721
+      },
+      {
+        "file": "simple_wiki.train.txt",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/simple_wiki.train.txt?download=true",
+        "bytes": 8861946,
+        "sha256": "0ac614aa069ea3908c07c9755bf80bb500d4cee15cd972e9f93cccf89639e9a7",
+        "lines": 58709,
+        "train_lines": 57534,
+        "validation_lines": 1175
+      },
+      {
+        "file": "switchboard.train.txt",
+        "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict-Small/resolve/c92ab16b4f08858304b0815706065b3354d8fc0a/switchboard.train.txt?download=true",
+        "bytes": 122528,
+        "sha256": "89c99649777be2f76f5054e9f1aa364b7e1a62844e219fe810205be6d99399b5",
+        "lines": 2892,
+        "train_lines": 2834,
+        "validation_lines": 58
+      }
+    ],
+    "training_tokens_seen": 3145728,
+    "optimizer": "AdamW",
+    "optimizer_settings": {
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "memory_lr_multiplier": 0.3
+    },
+    "wall_clock_seconds": 1512.9748,
+    "cpu": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "effective_cgroup_cpu_quota": "200000 100000",
+    "pytorch_version": "2.13.0+cu130",
+    "python_version": "3.14.4",
+    "created_at_utc": "2026-09-02T00:10:24.359411+00:00",
+    "validation_loss": 3.54564,
+    "validation_perplexity": 34.66187,
+    "checkpoint_role": "best",
+    "safetensors_roundtrip_verified": true,
+    "tokenizer_and_memory_metadata": {
+      "special_token_ids": {
+        "pad": 0,
+        "bos": 1,
+        "eos": 2,
+        "unk": 3
+      },
+      "normalization_metadata_file": "tokenizer.report.json",
+      "ngram_orders": [],
+      "hash_seed_formula": "10007 * (1 + order_index * memory_heads + head_index)",
+      "memory_heads": 0,
+      "slots_per_table": 0,
+      "embedding_dimension_per_head": 0
+    }
+  }
+}

@@ -40,3 +40,12 @@ unless a future custom backward implementation is validated.
 Use Python 3.12 and PyTorch CPU. The default seed is 1337. See
 `EXPERIMENT_LATTICELM.md` for the experiment protocol and
 `artifacts/overnight_report.md` for locally measured results and limitations.
+
+## Persistent model storage
+
+Source code, configs, tests, reports, and metrics remain in this Git repository.
+Selected safetensors weights, tokenizer/memory metadata, manifests, and private
+resume state belong in a separate private Hugging Face **model** repository.
+See `docs/HUGGINGFACE_STORAGE.md` for authenticated export, upload, download,
+integrity verification, and deterministic inference commands. Credentials are
+accepted only through the process environment and must never be committed.

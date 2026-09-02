@@ -8,3 +8,5 @@ cloud_r1_co4_causal,co4_causal,7874816,7874816,0,131072,73.8302,1775.317,4.66499
 cloud_r1_co4_causal,co4_causal,7874816,7874816,0,1048576,539.9582,1941.958,3.964097,4.034405,56.50927,5505175552,completed,Round 1 common-settings architecture comparison
 cloud_r1_dense,lattice,7082240,7082240,0,1048576,475.3267,2206.011,4.076487,4.106869,60.7562,5505384448,completed,Round 1 common-settings architecture comparison
 cloud_r1_engram_2m,mini_engram,9213696,7082240,2131456,1048576,498.6888,2102.666,4.073802,4.105738,60.68751,5521166336,completed,Round 1 common-settings architecture comparison
+cloud_r3_co4_seed1337,co4_causal,7874816,7874816,0,3145728,1512.9748,2079.167,3.590142,3.54564,34.66187,9380044800,completed,Round 2 common-settings architecture comparison
+cloud_r3_dense_seed1337,dense,7082240,7082240,0,3145728,1539.0325,2043.965,3.626573,3.609044,36.93075,9379913728,completed,Round 2 common-settings architecture comparison

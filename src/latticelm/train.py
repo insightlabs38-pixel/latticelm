@@ -91,9 +91,17 @@ def refresh_results_json() -> None:
     (artifacts / "results.json").write_text(json.dumps(entries, indent=2), encoding="utf-8")
 
 
-def save_checkpoint(path: Path, model: torch.nn.Module, optimizer: torch.optim.Optimizer, step: int, config: LatticeConfig, source: str) -> None:
+def save_checkpoint(path: Path, model: torch.nn.Module, optimizer: torch.optim.Optimizer, step: int,
+                    config: LatticeConfig, source: str, generator: torch.Generator,
+                    cumulative_wall_seconds: float, best_val_loss: float) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    torch.save({"model": model.state_dict(), "optimizer": optimizer.state_dict(), "step": step, "config": config.to_dict(), "source": source}, path)
+    torch.save({"model": model.state_dict(), "optimizer": optimizer.state_dict(), "step": step,
+                "tokens_seen": step * config.batch_size * config.context_length,
+                "config": config.to_dict(), "source": source,
+                "torch_rng_state": torch.get_rng_state(), "random_state": random.getstate(),
+                "data_generator_state": generator.get_state(),
+                "cumulative_wall_seconds": cumulative_wall_seconds,
+                "best_val_loss": best_val_loss}, path)
     path.with_suffix(".json").write_text(json.dumps(config.to_dict(), indent=2), encoding="utf-8")
 
 
@@ -150,6 +158,38 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
         optimizer.zero_grad(set_to_none=True); loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), config.grad_clip); optimizer.step()
         final_train_loss = float(loss.detach())
+        evaluated = step % config.eval_interval == 0 or step == config.max_steps
+        improved = False
+        if evaluated:
+            val_loss = evaluate(model, val_data, config)
+            improved = val_loss < best_val_loss
+            best_val_loss = min(best_val_loss, val_loss)
+        tokens_seen = step * config.batch_size * config.context_length
+        latest_due = (tokens_seen % config.hf_upload_interval_tokens == 0 or step == config.max_steps)
+        best_upload_due = (config.hf_update_best and improved and
+                           (tokens_seen % config.hf_best_upload_interval_tokens == 0 or step == config.max_steps))
+        checkpoint_due = step % config.checkpoint_interval == 0 or step == config.max_steps or (config.hf_persistence_enabled and best_upload_due)
+        checkpoint_path = ROOT / "artifacts" / "checkpoints" / f"{experiment}_step{step}.pt"
+        cumulative_wall = previous_wall + time.perf_counter() - start
+        if checkpoint_due:
+            save_checkpoint(checkpoint_path, model, optimizer, step, config, source, generator,
+                            cumulative_wall, best_val_loss)
+        if config.hf_persistence_enabled and evaluated and (latest_due or best_upload_due):
+            from .hf_storage import export_checkpoint, qualifies_as_remote_best, upload_checkpoint
+            token = os.environ.get("HF_TOKEN") or os.environ["HUGGING_FACE_HUB_TOKEN"]
+            metrics_now = {"tokens_trained": tokens_seen, "wall_seconds": cumulative_wall,
+                           "val_loss": val_loss, "val_ppl": math.exp(val_loss)}
+            roles = ([('latest', 'latest')] if latest_due else [])
+            roles += ([('best', 'best')] if best_upload_due and
+                      qualifies_as_remote_best(os.environ["LATTICELM_HF_REPO"], token, val_loss) else [])
+            if step == config.max_steps and config.hf_named_checkpoint:
+                roles.append(('named', f"experiments/{config.hf_named_checkpoint}"))
+            for role, remote_path in roles:
+                staging = ROOT / "artifacts" / "hf_staging" / remote_path
+                export_checkpoint(checkpoint_path, staging, experiment, role,
+                                  token_path, token_path.with_suffix(".report.json"),
+                                  ROOT / "artifacts" / "dataset_manifest.json", metrics_now)
+                upload_checkpoint(staging, os.environ["LATTICELM_HF_REPO"], remote_path, token)
         if step % config.eval_interval == 0 or step == config.max_steps:
             val_loss = evaluate(model, val_data, config)
         if step % config.checkpoint_interval == 0 or step == config.max_steps:
@@ -158,6 +198,7 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
         (ROOT / "artifacts" / "logs").mkdir(parents=True, exist_ok=True)
         with (ROOT / "artifacts" / "logs" / f"{experiment}.jsonl").open("a", encoding="utf-8") as log:
             log.write(json.dumps({"step": step, "tokens": step * config.batch_size * config.context_length,
+                                  "train_loss": final_train_loss, "val_loss": val_loss if evaluated else None,
                                   "train_loss": final_train_loss, "val_loss": val_loss if step % config.eval_interval == 0 or step == config.max_steps else None,
                                   "elapsed_wall_seconds": previous_wall + time.perf_counter() - start,
                                   "step_seconds": elapsed_step}) + "\n")

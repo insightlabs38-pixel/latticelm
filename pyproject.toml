@@ -7,7 +7,7 @@ name = "latticelm"
 version = "0.1.0"
 description = "CPU-first conditional-memory language model experiments"
 requires-python = ">=3.10"
-dependencies = ["torch>=2.0", "psutil>=5.9"]
+dependencies = ["torch>=2.0", "psutil>=5.9", "numpy>=1.26", "tokenizers>=0.21,<1", "safetensors>=0.5", "huggingface_hub>=0.30"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

@@ -135,6 +135,32 @@ but its equal-wall advantage over dense is only 0.003643 loss and needs another
 seed/Round 3 confirmation. Mini-Engram's equal-token gain disappears under the
 equal-wall control at this stage.
 
+### Round 3 — equal 3,145,728 training tokens
+
+Round 3 used the same data, tokenizer, seed, optimizer settings, two-thread
+allocation, and token count. Both runs enabled the same one-million-token remote
+`latest`/`best` persistence cadence and final named checkpoint upload, so upload
+overhead is included in both wall-clock totals.
+
+| family | total params | wall s | tok/s | train loss | val loss | val ppl |
+|---|---:|---:|---:|---:|---:|---:|
+| Dense | 7,082,240 | 1,539.03 | 2,044.0 | 3.6266 | 3.609044 | 36.9308 |
+| Co4 causal adaptation | 7,874,816 | **1,512.97** | **2,079.2** | **3.5901** | **3.545640** | **34.6619** |
+
+Co4 improves validation loss by 0.063404 at equal tokens and is also 26.06 s
+faster in the complete persisted-run wall measurement. It therefore remains the
+leading architecture family after successive halving. The generated tournament
+rows accidentally retained the generic text “Round 2” in their `notes` field;
+the experiment IDs, token counts, configs, and this report correctly identify
+them as Round 3, and the writer is corrected for subsequent runs.
+
+Both final checkpoints were exported with exact safetensors tensor/logit
+round-trip verification and persisted remotely as named scientific checkpoints.
+The repository-global `best/` slot was restored to Co4 after detecting and
+fixing an initial per-experiment-best policy error; `latest/` contains the final
+Dense recovery checkpoint, while `experiments/co4-round3/` and
+`experiments/dense-round3/` preserve both controls.
+
 ## 8. HPO
 
 Deferred as requested. All families used the same sensible optimizer settings;

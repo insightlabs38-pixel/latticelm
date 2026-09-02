@@ -1,0 +1,10 @@
+{
+  "loaded": true,
+  "shape": [
+    1,
+    8,
+    64
+  ],
+  "experiment": "hf-persistence-smoke",
+  "revision": "76ad80c97e33f87f317e78ce09fad9056ea09f48"
+}
