@@ -60,7 +60,11 @@ class Block(nn.Module):
     def __init__(self, config: LatticeConfig, mixer_kind: str = "attention") -> None:
         super().__init__()
         if mixer_kind == "attention":
-            mixer: nn.Module = CausalAttention(config)
+            if config.architecture == "co4_causal":
+                from .co4_reference import CausalCo4Attention
+                mixer: nn.Module = CausalCo4Attention(config)
+            else:
+                mixer = CausalAttention(config)
         else:
             from .recurrent import LocalCausalAttention, MatrixLSTMMixer
             mixer = MatrixLSTMMixer(config) if mixer_kind == "mlstm" else LocalCausalAttention(config)
@@ -85,7 +89,11 @@ class LatticeLM(nn.Module):
         self.apply(self._init_weights)
         # Construct memory only after common modules are initialized: with the
         # same seed, dense and Lattice begin from identical backbone weights.
-        self.memory = ConditionalMemory(config.memory_slots, config.memory_dim, config.d_model) if config.memory_enabled else None
+        if config.architecture == "mini_engram":
+            from .engram import MiniEngram
+            self.memory = MiniEngram(config)
+        else:
+            self.memory = ConditionalMemory(config.memory_slots, config.memory_dim, config.d_model) if config.memory_enabled else None
 
     @staticmethod
     def _init_weights(module: nn.Module) -> None:
@@ -96,9 +104,11 @@ class LatticeLM(nn.Module):
 
     def forward(self, tokens: torch.Tensor, targets: torch.Tensor | None = None) -> tuple[torch.Tensor, torch.Tensor | None]:
         x = self.token_embedding(tokens)
-        if self.memory is not None:
+        if self.memory is not None and self.config.architecture != "mini_engram":
             x = self.memory(tokens, x)
-        for block in self.blocks:
+        for layer, block in enumerate(self.blocks):
+            if self.config.architecture == "mini_engram" and layer in self.config.memory_insert_layers:
+                x = self.memory(tokens, x)
             x = block(x)
         logits = self.lm_head(self.norm(x))
         loss = F.cross_entropy(logits.reshape(-1, logits.size(-1)), targets.reshape(-1)) if targets is not None else None

@@ -1,0 +1,80 @@
+{
+  "output": "artifacts/hf_staging/tests-smoke",
+  "verified": true,
+  "weights_sha256": "320442f59401a270b4486d27cbba92164325fbcbaba001a6b2ebeea1c4e3f174",
+  "manifest": {
+    "architecture_name": "lattice",
+    "architecture_version": "latticelm-0.2",
+    "source_git_commit": "9aeee67a62303f4d2e87b24967c6163efd94f66f",
+    "experiment_id": "hf-persistence-smoke",
+    "random_seed": 1337,
+    "total_trainable_parameters": 19616,
+    "neural_parameters": 19616,
+    "memory_parameters": 0,
+    "model_config": {
+      "vocab_size": 64,
+      "d_model": 32,
+      "n_layers": 2,
+      "n_heads": 4,
+      "n_kv_heads": 1,
+      "ffn_hidden": 64,
+      "context_length": 16,
+      "dropout": 0.0,
+      "memory_enabled": false,
+      "memory_slots": 65536,
+      "memory_dim": 64,
+      "architecture": "lattice",
+      "mixer_strategy": "attention",
+      "local_attention_window": 32,
+      "batch_size": 8,
+      "max_steps": 600,
+      "eval_interval": 100,
+      "checkpoint_interval": 200,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "warmup_fraction": 0.02,
+      "grad_clip": 1.0,
+      "seed": 1337,
+      "num_threads": 2,
+      "memory_heads": 2,
+      "memory_orders": [
+        2,
+        3
+      ],
+      "memory_conv_kernel": 4,
+      "memory_conv_enabled": true,
+      "memory_insert_layers": [
+        1
+      ],
+      "memory_token_map_path": null,
+      "memory_dropout": 0.0,
+      "memory_lr_multiplier": 0.3
+    },
+    "tokenizer": {
+      "file": "tokenizer.json",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "vocab_size": 64,
+      "memory_metadata": "tokenizer.report.json"
+    },
+    "training_dataset": "synthetic persistence smoke only",
+    "dataset_revision": "local",
+    "dataset_manifest_sha256": "1fbeba2db1fb37b356e875da51340030fbabcc5c709353f721f74e4701aac258",
+    "training_tokens_seen": 16,
+    "optimizer": "AdamW",
+    "optimizer_settings": {
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "memory_lr_multiplier": 0.3
+    },
+    "wall_clock_seconds": 0.1,
+    "cpu": "x86_64",
+    "effective_cgroup_cpu_quota": "200000 100000",
+    "pytorch_version": "2.13.0+cu130",
+    "python_version": "3.14.4",
+    "created_at_utc": "2026-09-01T22:53:43.999598+00:00",
+    "validation_loss": 4.0,
+    "validation_perplexity": 54.59815,
+    "checkpoint_role": "latest",
+    "safetensors_roundtrip_verified": true
+  }
+}

@@ -30,7 +30,20 @@ class LatticeConfig:
     warmup_fraction: float = 0.02
     grad_clip: float = 1.0
     seed: int = 1337
-    num_threads: int = 4
+    num_threads: int = 2
+    memory_heads: int = 2
+    memory_orders: tuple[int, ...] = (2, 3)
+    memory_conv_kernel: int = 4
+    memory_conv_enabled: bool = True
+    memory_insert_layers: tuple[int, ...] = (1,)
+    memory_token_map_path: str | None = None
+    memory_dropout: float = 0.0
+    memory_lr_multiplier: float = 0.3
+    hf_persistence_enabled: bool = False
+    hf_upload_interval_tokens: int = 1_048_576
+    hf_best_upload_interval_tokens: int = 524_288
+    hf_update_best: bool = True
+    hf_named_checkpoint: str | None = None
 
     def __post_init__(self) -> None:
         if self.d_model % self.n_heads or self.n_heads % self.n_kv_heads:
@@ -39,8 +52,12 @@ class LatticeConfig:
             raise ValueError("invalid context or memory size")
         if self.mixer_strategy not in {"attention", "hybrid"}:
             raise ValueError("mixer_strategy must be attention or hybrid")
-        if self.architecture not in {"lattice", "co4_inspired"}:
-            raise ValueError("architecture must be lattice or co4_inspired")
+        if self.architecture not in {"lattice", "mini_engram", "co4_causal", "co4_inspired"}:
+            raise ValueError("architecture must be lattice, mini_engram, co4_causal, or co4_inspired")
+        self.memory_orders = tuple(self.memory_orders)
+        self.memory_insert_layers = tuple(self.memory_insert_layers)
+        if self.hf_upload_interval_tokens < 1 or self.hf_best_upload_interval_tokens < 1:
+            raise ValueError("HF upload intervals must be positive")
 
     @classmethod
     def from_json(cls, path: str | Path) -> "LatticeConfig":

@@ -1,0 +1,12 @@
+experiment,architecture_family,params,neural_params,memory_params,tokens_trained,wall_seconds,tokens_per_second,train_loss,val_loss,val_ppl,peak_rss_bytes,status,notes
+cloud_r1_dense,lattice,7082240,7082240,0,131072,59.617,2198.568,4.76714,5.223749,185.62888,5505495040,completed,Round 1 common-settings architecture comparison
+cloud_r1_engram_05m,mini_engram,7640832,7082240,558592,131072,62.7226,2089.709,4.767236,5.223576,185.59673,5520896000,completed,Round 1 common-settings architecture comparison
+cloud_r1_engram_1m,mini_engram,8165120,7082240,1082880,131072,63.5452,2062.659,4.767565,5.222782,185.44932,5521104896,completed,Round 1 common-settings architecture comparison
+cloud_r1_engram_2m,mini_engram,9213696,7082240,2131456,131072,62.7556,2088.611,4.769799,5.222599,185.41551,5521006592,completed,Round 1 common-settings architecture comparison
+cloud_r1_engram_4m,mini_engram,11310848,7082240,4228608,131072,66.0941,1983.112,4.767385,5.223582,185.59787,5521125376,completed,Round 1 common-settings architecture comparison
+cloud_r1_co4_causal,co4_causal,7874816,7874816,0,131072,73.8302,1775.317,4.664996,5.127342,168.56839,5504708608,completed,Round 1 common-settings architecture comparison
+cloud_r1_co4_causal,co4_causal,7874816,7874816,0,1048576,539.9582,1941.958,3.964097,4.034405,56.50927,5505175552,completed,Round 1 common-settings architecture comparison
+cloud_r1_dense,lattice,7082240,7082240,0,1048576,475.3267,2206.011,4.076487,4.106869,60.7562,5505384448,completed,Round 1 common-settings architecture comparison
+cloud_r1_engram_2m,mini_engram,9213696,7082240,2131456,1048576,498.6888,2102.666,4.073802,4.105738,60.68751,5521166336,completed,Round 1 common-settings architecture comparison
+cloud_r3_co4_seed1337,co4_causal,7874816,7874816,0,3145728,1512.9748,2079.167,3.590142,3.54564,34.66187,9380044800,completed,Round 2 common-settings architecture comparison
+cloud_r3_dense_seed1337,dense,7082240,7082240,0,3145728,1539.0325,2043.965,3.626573,3.609044,36.93075,9379913728,completed,Round 2 common-settings architecture comparison

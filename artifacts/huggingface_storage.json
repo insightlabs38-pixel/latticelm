@@ -1,0 +1,19 @@
+{
+  "repo_id": "insightlabs38-pixel/LatticeLM-research",
+  "repo_type": "model",
+  "private": true,
+  "smoke_path": "tests/api-smoke",
+  "smoke_revision": "76ad80c97e33f87f317e78ce09fad9056ea09f48",
+  "shared_tokenizer_path": "shared",
+  "shared_tokenizer_revision": "6c08c3e97c4c2959b6ec9d2cb37c205e16ed9734",
+  "round3_remote_revision": "859419343b47872c625123b656ce50497ef89b34",
+  "best_experiment": "cloud_r3_co4_seed1337",
+  "best_validation_loss": 3.54564,
+  "named_round3_checkpoints": ["experiments/co4-round3", "experiments/dense-round3"],
+  "model_safetensors_sha256": "320442f59401a270b4486d27cbba92164325fbcbaba001a6b2ebeea1c4e3f174",
+  "remote_download_verified": true,
+  "strict_model_load_verified": true,
+  "deterministic_inference_verified": true,
+  "resume_optimizer_load_verified": true,
+  "credentials_persisted": false
+}

@@ -1,0 +1,19 @@
+{
+  "architecture": "lattice",
+  "vocab_size": 4096,
+  "d_model": 256,
+  "n_layers": 8,
+  "n_heads": 4,
+  "n_kv_heads": 1,
+  "ffn_hidden": 768,
+  "context_length": 128,
+  "batch_size": 8,
+  "max_steps": 128,
+  "eval_interval": 32,
+  "checkpoint_interval": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.1,
+  "memory_enabled": false,
+  "num_threads": 2,
+  "seed": 1337
+}

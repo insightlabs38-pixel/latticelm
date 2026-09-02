@@ -4,6 +4,9 @@ __pycache__/
 .pytest-tmp/
 .venv/
 artifacts/checkpoints/*.pt
+artifacts/checkpoints/*.json
+artifacts/hf_staging/
+artifacts/hf_download*/
 artifacts/logs/*.log
 artifacts/profiles/*.json
 artifacts/data/
