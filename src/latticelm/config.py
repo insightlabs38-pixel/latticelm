@@ -39,6 +39,12 @@ class LatticeConfig:
     memory_token_map_path: str | None = None
     memory_dropout: float = 0.0
     memory_lr_multiplier: float = 0.3
+    tie_embeddings: bool = True
+    hf_persistence_enabled: bool = False
+    hf_upload_interval_tokens: int = 1_048_576
+    hf_best_upload_interval_tokens: int = 1_048_576
+    hf_update_best: bool = False
+    hf_named_checkpoint: str | None = None
 
     def __post_init__(self) -> None:
         if self.d_model % self.n_heads or self.n_heads % self.n_kv_heads:
@@ -47,8 +53,8 @@ class LatticeConfig:
             raise ValueError("invalid context or memory size")
         if self.mixer_strategy not in {"attention", "hybrid"}:
             raise ValueError("mixer_strategy must be attention or hybrid")
-        if self.architecture not in {"lattice", "mini_engram", "co4_causal", "co4_inspired"}:
-            raise ValueError("architecture must be lattice, mini_engram, co4_causal, or co4_inspired")
+        if self.architecture not in {"lattice", "mini_engram", "co4_causal", "co4_memory", "co4_inspired"}:
+            raise ValueError("unsupported architecture")
         self.memory_orders = tuple(self.memory_orders)
         self.memory_insert_layers = tuple(self.memory_insert_layers)
 

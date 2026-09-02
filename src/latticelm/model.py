@@ -60,7 +60,7 @@ class Block(nn.Module):
     def __init__(self, config: LatticeConfig, mixer_kind: str = "attention") -> None:
         super().__init__()
         if mixer_kind == "attention":
-            if config.architecture == "co4_causal":
+            if config.architecture in {"co4_causal", "co4_memory"}:
                 from .co4_reference import CausalCo4Attention
                 mixer: nn.Module = CausalCo4Attention(config)
             else:
@@ -85,11 +85,12 @@ class LatticeLM(nn.Module):
         self.blocks = nn.ModuleList(Block(config, pattern[index % len(pattern)] if config.mixer_strategy == "hybrid" else "attention") for index in range(config.n_layers))
         self.norm = RMSNorm(config.d_model)
         self.lm_head = nn.Linear(config.d_model, config.vocab_size, bias=False)
-        self.lm_head.weight = self.token_embedding.weight
+        if config.tie_embeddings:
+            self.lm_head.weight = self.token_embedding.weight
         self.apply(self._init_weights)
         # Construct memory only after common modules are initialized: with the
         # same seed, dense and Lattice begin from identical backbone weights.
-        if config.architecture == "mini_engram":
+        if config.architecture in {"mini_engram", "co4_memory"}:
             from .engram import MiniEngram
             self.memory = MiniEngram(config)
         else:
@@ -104,10 +105,10 @@ class LatticeLM(nn.Module):
 
     def forward(self, tokens: torch.Tensor, targets: torch.Tensor | None = None) -> tuple[torch.Tensor, torch.Tensor | None]:
         x = self.token_embedding(tokens)
-        if self.memory is not None and self.config.architecture != "mini_engram":
+        if self.memory is not None and self.config.architecture not in {"mini_engram", "co4_memory"}:
             x = self.memory(tokens, x)
         for layer, block in enumerate(self.blocks):
-            if self.config.architecture == "mini_engram" and layer in self.config.memory_insert_layers:
+            if self.config.architecture in {"mini_engram", "co4_memory"} and layer in self.config.memory_insert_layers:
                 x = self.memory(tokens, x)
             x = block(x)
         logits = self.lm_head(self.norm(x))
@@ -117,8 +118,9 @@ class LatticeLM(nn.Module):
     def parameter_breakdown(self) -> dict[str, int]:
         memory = self.memory.parameter_count if self.memory is not None else 0
         total = sum(p.numel() for p in self.parameters() if p.requires_grad)
-        embeddings = self.token_embedding.weight.numel()
-        return {"token_embeddings_tied_head": embeddings, "conditional_memory": memory, "backbone_and_norms": total - embeddings - memory, "total": total}
+        embeddings = self.token_embedding.weight.numel() + (0 if self.config.tie_embeddings else self.lm_head.weight.numel())
+        return {"token_embeddings_and_head": embeddings, "embeddings_tied": self.config.tie_embeddings,
+                "conditional_memory": memory, "backbone_and_norms": total - embeddings - memory, "total": total}
 
     def generate(self, tokens: torch.Tensor, max_new_tokens: int) -> torch.Tensor:
         for _ in range(max_new_tokens):
