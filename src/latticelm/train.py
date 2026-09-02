@@ -140,28 +140,14 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
         optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
     start_step = 0
     previous_wall = 0.0
-    best_val_loss = float("inf")
     if resume:
         checkpoint = torch.load(resume, map_location="cpu", weights_only=False)
         model.load_state_dict(checkpoint["model"]); optimizer.load_state_dict(checkpoint["optimizer"])
         start_step = int(checkpoint["step"])
-        if "torch_rng_state" in checkpoint:
-            torch.set_rng_state(checkpoint["torch_rng_state"])
-        if "random_state" in checkpoint:
-            random.setstate(checkpoint["random_state"])
-        if "data_generator_state" in checkpoint:
-            generator.set_state(checkpoint["data_generator_state"])
-        best_val_loss = float(checkpoint.get("best_val_loss", best_val_loss))
         log_path = ROOT / "artifacts" / "logs" / f"{experiment}.jsonl"
         if log_path.exists():
             previous = [json.loads(line) for line in log_path.read_text().splitlines() if line]
-            previous_wall = max(float(checkpoint.get("cumulative_wall_seconds", 0.0)),
-                                max((float(row.get("elapsed_wall_seconds", 0.0)) for row in previous), default=0.0))
-    if config.hf_persistence_enabled:
-        if not (os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN")):
-            raise RuntimeError("HF persistence enabled but no HF_TOKEN/HUGGING_FACE_HUB_TOKEN is set")
-        if not os.environ.get("LATTICELM_HF_REPO"):
-            raise RuntimeError("HF persistence enabled but LATTICELM_HF_REPO is not set")
+            previous_wall = max((float(row.get("elapsed_wall_seconds", 0.0)) for row in previous), default=0.0)
     start = time.perf_counter(); final_train_loss = float("nan"); val_loss = float("nan")
     for step in range(start_step + 1, config.max_steps + 1):
         x, y = batch_from_tokens(train_data, config.batch_size, config.context_length, generator)
@@ -204,11 +190,16 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
                                   token_path, token_path.with_suffix(".report.json"),
                                   ROOT / "artifacts" / "dataset_manifest.json", metrics_now)
                 upload_checkpoint(staging, os.environ["LATTICELM_HF_REPO"], remote_path, token)
+        if step % config.eval_interval == 0 or step == config.max_steps:
+            val_loss = evaluate(model, val_data, config)
+        if step % config.checkpoint_interval == 0 or step == config.max_steps:
+            save_checkpoint(ROOT / "artifacts" / "checkpoints" / f"{experiment}_step{step}.pt", model, optimizer, step, config, source)
         elapsed_step = time.perf_counter() - step_start
         (ROOT / "artifacts" / "logs").mkdir(parents=True, exist_ok=True)
         with (ROOT / "artifacts" / "logs" / f"{experiment}.jsonl").open("a", encoding="utf-8") as log:
             log.write(json.dumps({"step": step, "tokens": step * config.batch_size * config.context_length,
                                   "train_loss": final_train_loss, "val_loss": val_loss if evaluated else None,
+                                  "train_loss": final_train_loss, "val_loss": val_loss if step % config.eval_interval == 0 or step == config.max_steps else None,
                                   "elapsed_wall_seconds": previous_wall + time.perf_counter() - start,
                                   "step_seconds": elapsed_step}) + "\n")
     wall = previous_wall + time.perf_counter() - start
@@ -227,7 +218,7 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
                               str(Path(validation_path).resolve()) if validation_path else "deterministic 10% tail"),
         "seed": config.seed, "git_commit": subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip(),
         "config": config.to_dict(), "status": "completed",
-        "notes": f"Round {1 if token_count < 1_000_000 else 2 if token_count < 3_000_000 else 3} common-settings architecture comparison",
+        "notes": f"Round {1 if token_count < 1_000_000 else 2} common-settings architecture comparison",
         "checkpoint": str(ROOT / "artifacts" / "checkpoints" / f"{experiment}_step{config.max_steps}.pt"),
     }
     append_result(record)

@@ -2,10 +2,9 @@
 
 ## Status and integrity boundary
 
-This report now includes the real-data tokenizer, Round 1 (131,072 tokens),
-Round 2 (1,048,576 tokens), and persisted Round 3 (3,145,728 tokens) family
-comparison. It does not claim full-corpus training, HPO, official benchmark
-results, or Triton training speedups.
+This milestone completes the real-data tokenizer, Round 1 (131,072 tokens) and
+Round 2 (1,048,576 tokens) family comparison. It does not claim finalist/full
+corpus training, HPO, official benchmark results, or Triton training speedups.
 All runs were sequential with two PyTorch threads because the cgroup provides a
 two-CPU quota. Tiny Shakespeare results remain in the historical ledger but are
 not used below.
@@ -173,18 +172,19 @@ Deferred until a winner is confirmed. No Triton speedup is claimed.
 
 ## 10. Ranking and next successive-halving decision
 
-1. **Best validation quality:** Co4 causal adaptation (Round 3 loss 3.545640).
-2. **Best measured quality per wall-clock time:** Co4 causal adaptation; it is
-   both better and faster in the complete persisted Round 3 runs.
+1. **Best validation quality:** Co4 causal adaptation.
+2. **Best measured quality per wall-clock time:** Co4 causal adaptation by a
+   narrow 0.003643 loss at the common 475 s observation; dense is the robust,
+   faster-throughput alternative.
 3. **Most promising for scaling:** Co4 causal adaptation, because its
    equal-token gap widened to 0.072464 by 1M tokens rather than vanishing.
 4. **Highest-risk architecture worth investigating:** Co4 plus 0.5–2M Engram
    memory. This is now justified by Co4 competitiveness, but should follow a
    second-seed Co4 confirmation rather than be assumed beneficial.
 
-The next decision is an independent-seed confirmation, followed by the
-high-risk Co4-plus-small-Engram branch now that plain Co4 is competitive.
-Profiling and Triton work remain downstream of that comparison.
+Round 3 should advance Co4 and dense to 3–5M tokens, run an independent seed,
+and retain Mini-Engram as a lower-priority control. Profiling and Triton work
+remain downstream of that decision.
 
 ## 11. Official benchmark readiness/results
 

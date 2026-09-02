@@ -39,11 +39,6 @@ class LatticeConfig:
     memory_token_map_path: str | None = None
     memory_dropout: float = 0.0
     memory_lr_multiplier: float = 0.3
-    hf_persistence_enabled: bool = False
-    hf_upload_interval_tokens: int = 1_048_576
-    hf_best_upload_interval_tokens: int = 524_288
-    hf_update_best: bool = True
-    hf_named_checkpoint: str | None = None
 
     def __post_init__(self) -> None:
         if self.d_model % self.n_heads or self.n_heads % self.n_kv_heads:
@@ -56,8 +51,6 @@ class LatticeConfig:
             raise ValueError("architecture must be lattice, mini_engram, co4_causal, or co4_inspired")
         self.memory_orders = tuple(self.memory_orders)
         self.memory_insert_layers = tuple(self.memory_insert_layers)
-        if self.hf_upload_interval_tokens < 1 or self.hf_best_upload_interval_tokens < 1:
-            raise ValueError("HF upload intervals must be positive")
 
     @classmethod
     def from_json(cls, path: str | Path) -> "LatticeConfig":
