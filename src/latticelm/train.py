@@ -135,9 +135,9 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
         optimizer = torch.optim.AdamW([
             {"params": backbone_parameters},
             {"params": memory_parameters, "lr": config.learning_rate * config.memory_lr_multiplier},
-        ], lr=config.learning_rate, weight_decay=config.weight_decay)
+        ], lr=config.learning_rate, weight_decay=config.weight_decay, betas=(config.adam_beta1, config.adam_beta2))
     else:
-        optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
+        optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay, betas=(config.adam_beta1, config.adam_beta2))
     start_step = 0
     previous_wall = 0.0
     best_val_loss = float("inf")
@@ -146,12 +146,29 @@ def train(config: LatticeConfig, experiment: str, corpus_path: str | None = None
         model.load_state_dict(checkpoint["model"]); optimizer.load_state_dict(checkpoint["optimizer"])
         start_step = int(checkpoint["step"])
         best_val_loss = float(checkpoint.get("best_val_loss", float("inf")))
+        # A resumed successive-halving run must consume exactly the same data
+        # stream as an uninterrupted run.  Older code serialized these states
+        # but failed to restore them.
+        if "torch_rng_state" in checkpoint:
+            torch.set_rng_state(checkpoint["torch_rng_state"])
+        if "random_state" in checkpoint:
+            random.setstate(checkpoint["random_state"])
+        if "data_generator_state" in checkpoint:
+            generator.set_state(checkpoint["data_generator_state"])
+        previous_wall = float(checkpoint.get("cumulative_wall_seconds", 0.0))
         log_path = ROOT / "artifacts" / "logs" / f"{experiment}.jsonl"
         if log_path.exists():
             previous = [json.loads(line) for line in log_path.read_text().splitlines() if line]
-            previous_wall = max((float(row.get("elapsed_wall_seconds", 0.0)) for row in previous), default=0.0)
+            previous_wall = max(previous_wall, max((float(row.get("elapsed_wall_seconds", 0.0)) for row in previous), default=0.0))
     start = time.perf_counter(); final_train_loss = float("nan"); val_loss = float("nan")
     for step in range(start_step + 1, config.max_steps + 1):
+        if config.lr_schedule == "cosine":
+            warmup_steps = max(1, round(config.max_steps * config.warmup_fraction))
+            progress = max(0.0, (step - warmup_steps) / max(1, config.max_steps - warmup_steps))
+            scale = step / warmup_steps if step <= warmup_steps else 0.5 * (1.0 + math.cos(math.pi * progress))
+            for group in optimizer.param_groups:
+                base_lr = config.learning_rate * (config.memory_lr_multiplier if group is optimizer.param_groups[-1] and config.architecture in {"mini_engram", "co4_memory"} else 1.0)
+                group["lr"] = base_lr * scale
         x, y = batch_from_tokens(train_data, config.batch_size, config.context_length, generator)
         step_start = time.perf_counter()
         _, loss = model(x, y)

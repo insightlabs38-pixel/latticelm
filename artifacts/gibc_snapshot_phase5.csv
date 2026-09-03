@@ -1,0 +1,5 @@
+model,architecture,parameters,checkpoint_sha256,tokenizer_sha256,few_shot,batch_size,lm_eval_version,hellaswag,arc_easy,piqa,winogrande,wikitext_103_perplexity,evaluation_wall_seconds,status
+Dense,dense,7082240,available_remote_manifest,4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5,0,8,not_run,,,,,,,checkpoint_available_evaluation_deferred
+Dense parameter-matched,dense,7868672,not_available,4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5,0,8,not_run,,,,,,,blocked_checkpoint_absent_remote_and_local
+Co4 tied,co4_causal,7874816,available_remote_manifest,4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5,0,8,not_run,,,,,,,checkpoint_available_evaluation_deferred
+Co4 untied,co4_causal,8923392,not_available,4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5,0,8,not_run,,,,,,,blocked_checkpoint_absent_remote_and_local

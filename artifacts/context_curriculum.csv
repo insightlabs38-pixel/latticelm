@@ -1,0 +1,2 @@
+experiment,context_policy,seed,parameters,train_tokens,wall_seconds,tokens_per_second,validation_loss,validation_perplexity,peak_ram_bytes,status
+not_run,"blocked: final HPO checkpoint unavailable; fixed-128 remains provisional",1337,15949760,,,,,,,blocked
