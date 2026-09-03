@@ -1,12 +1,12 @@
 {
-  "platform": "Windows-10-10.0.19045-SP0",
-  "python": "3.12.10",
-  "pytorch": "2.13.0+cpu",
-  "cpu_count_logical": 8,
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "python": "3.14.4",
+  "pytorch": "2.14.0+cu130",
+  "cpu_count_logical": 3,
   "torch_cpu_capability": "AVX512",
   "mkldnn_available": true,
-  "ram_bytes": 12614754304,
-  "triton_importable": false,
-  "omp_num_threads": "4",
-  "mkl_num_threads": "4"
+  "ram_bytes": 19253735424,
+  "triton_importable": true,
+  "omp_num_threads": "2",
+  "mkl_num_threads": "2"
 }
