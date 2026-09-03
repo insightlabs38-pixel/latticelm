@@ -1,0 +1,23 @@
+{
+  "architecture": "sllama_inspired",
+  "vocab_size": 4096,
+  "d_model": 768,
+  "n_layers": 8,
+  "n_heads": 8,
+  "n_kv_heads": 2,
+  "ffn_hidden": 2304,
+  "context_length": 128,
+  "batch_size": 4,
+  "max_steps": 195,
+  "eval_interval": 195,
+  "checkpoint_interval": 195,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.1,
+  "warmup_fraction": 0.02,
+  "lr_schedule": "cosine",
+  "memory_enabled": false,
+  "num_threads": 2,
+  "seed": 1337,
+  "tie_embeddings": false,
+  "hf_persistence_enabled": false
+}

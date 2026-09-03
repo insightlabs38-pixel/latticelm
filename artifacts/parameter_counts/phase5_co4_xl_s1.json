@@ -1,0 +1,7 @@
+{
+  "token_embeddings_and_head": 3145728,
+  "embeddings_tied": false,
+  "conditional_memory": 0,
+  "backbone_and_norms": 19188864,
+  "total": 22334592
+}

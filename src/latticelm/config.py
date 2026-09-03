@@ -29,6 +29,9 @@ class LatticeConfig:
     weight_decay: float = 0.1
     warmup_fraction: float = 0.02
     grad_clip: float = 1.0
+    adam_beta1: float = 0.9
+    adam_beta2: float = 0.999
+    lr_schedule: str = "constant"
     seed: int = 1337
     num_threads: int = 2
     memory_heads: int = 2
@@ -51,9 +54,11 @@ class LatticeConfig:
             raise ValueError("d_model must divide n_heads and n_heads must divide n_kv_heads")
         if self.context_length < 2 or self.memory_slots < 1:
             raise ValueError("invalid context or memory size")
+        if self.lr_schedule not in {"constant", "cosine"}:
+            raise ValueError("lr_schedule must be constant or cosine")
         if self.mixer_strategy not in {"attention", "hybrid"}:
             raise ValueError("mixer_strategy must be attention or hybrid")
-        if self.architecture not in {"lattice", "mini_engram", "co4_causal", "co4_memory", "co4_inspired"}:
+        if self.architecture not in {"lattice", "mini_engram", "co4_causal", "co4_memory", "co4_inspired", "sllama_inspired"}:
             raise ValueError("unsupported architecture")
         self.memory_orders = tuple(self.memory_orders)
         self.memory_insert_layers = tuple(self.memory_insert_layers)

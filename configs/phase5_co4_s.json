@@ -1,0 +1,23 @@
+{
+  "architecture": "co4_causal",
+  "vocab_size": 4096,
+  "n_heads": 4,
+  "n_kv_heads": 1,
+  "context_length": 128,
+  "batch_size": 8,
+  "max_steps": 512,
+  "eval_interval": 128,
+  "checkpoint_interval": 512,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.1,
+  "warmup_fraction": 0.02,
+  "grad_clip": 1.0,
+  "memory_enabled": false,
+  "num_threads": 2,
+  "seed": 1337,
+  "tie_embeddings": false,
+  "hf_persistence_enabled": false,
+  "d_model": 256,
+  "n_layers": 8,
+  "ffn_hidden": 768
+}

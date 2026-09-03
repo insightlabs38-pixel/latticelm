@@ -131,6 +131,9 @@ class LatticeLM(nn.Module):
 
 
 def build_model(config: LatticeConfig) -> nn.Module:
+    if config.architecture == "sllama_inspired":
+        from .sllama import SLlamaInspiredExperimental
+        return SLlamaInspiredExperimental(config)
     if config.architecture == "co4_inspired":
         from .co4 import Co4InspiredExperimental
         return Co4InspiredExperimental(config)
