@@ -1,0 +1,50 @@
+{
+  "frozen": true,
+  "lineage": "random initialization; no imported weights",
+  "seed": 314159,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0003,
+  "weight_decay": 0.1,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "gradient_clipping": 1.0,
+  "scheduler": "constant LambdaLR",
+  "warmup": "none",
+  "batch_size_sequences": 8,
+  "effective_batch_tokens": 1024,
+  "pytorch_threads": 2,
+  "requested_milestones": [
+    10000000,
+    25000000,
+    50000000
+  ],
+  "realized_whole_batch_milestones": [
+    10000384,
+    25000960,
+    50000896
+  ],
+  "environment": {
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz",
+    "visible_cpus": 3,
+    "cgroup_cpu_quota": "200000 100000",
+    "ram_total_bytes": 18883088384,
+    "cgroup_ram_limit": "17179869184",
+    "python_version": "3.14.4",
+    "pytorch_version": "2.14.0+cu130",
+    "mkldnn_available": true,
+    "os_kernel": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "source_git_commit": "f74b46c89bb7bcc873affe28ddb63d3d74a5a812"
+  },
+  "hf_repository": "insightlabs38-pixel/LatticeLM-research",
+  "hf_revision_at_preflight": "1e7bd21f21a9ec0366ac56fd03f97adb1b0140a0",
+  "preflight": {
+    "dataset_hashes_verified": true,
+    "common_validation_verified": true,
+    "decontamination_outputs_verified": true,
+    "hf_accessibility_verified": true,
+    "tracked_authentication_scan_clean": true
+  }
+}

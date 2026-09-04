@@ -1,0 +1,8 @@
+checkpoint,training_tokens,task,metric,score,checkpoint_sha256,tokenizer_sha256,evaluation_package,evaluation_wall_seconds,status
+10M,10000384,HellaSwag,acc,,,,lm-eval==0.4.13,,not_reached
+10M,10000384,ARC-Easy,acc,,,,lm-eval==0.4.13,,not_reached
+10M,10000384,PIQA,acc,,,,lm-eval==0.4.13,,not_reached
+10M,10000384,WinoGrande,acc,,,,lm-eval==0.4.13,,not_reached
+10M,10000384,WikiText-103,perplexity,,,,datasets==4.8.5,,not_reached
+25M,25000960,all,unevaluated,,,,,,policy_unevaluated
+50M,50000896,all,pending,,,,,,not_reached

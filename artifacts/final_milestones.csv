@@ -1,0 +1,4 @@
+checkpoint,nominal_tokens,realized_tokens,common_val_loss,common_ppl,wikitext_ppl,hellaswag,arc_easy,piqa,winogrande,wall_seconds,tokens_per_second,status
+10M,10000000,10000384,,,,,,,,,,not_reached
+25M,25000000,25000960,,,,,,,,,,not_reached
+50M,50000000,50000896,,,,,,,,,,not_reached
