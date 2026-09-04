@@ -1,0 +1,62 @@
+{
+  "captured_utc": "2026-09-04",
+  "gcp": {
+    "instance": "instance-20260904-205935",
+    "machine_type": "c4a-standard-16",
+    "zone": "europe-west4-c",
+    "provisioning_model": "Spot",
+    "metadata_preemptible": true
+  },
+  "architecture": "aarch64",
+  "cpu": {
+    "vendor": "ARM",
+    "model": "Neoverse-V2",
+    "visible_cpus": 16,
+    "online_cpus": "0-15",
+    "sockets": 1,
+    "cores_per_socket": 16,
+    "threads_per_core": 1,
+    "numa_nodes": 1,
+    "numa_node0_cpus": "0-15",
+    "guest_interpretation": "16 independent single-threaded cores; no SMT exposed",
+    "l1d_bytes": 1048576,
+    "l1i_bytes": 1048576,
+    "l2_bytes": 33554432,
+    "l3_bytes": 83886080,
+    "isa_highlights": ["asimd", "sve", "sve2", "bf16", "i8mm", "svei8mm", "svebf16", "aes", "sha3"]
+  },
+  "memory": {"total_reported": "62 GiB", "swap_bytes": 0},
+  "storage": {
+    "device": "/dev/nvme0n1",
+    "gcp_type": "HYPERDISK-BALANCED",
+    "capacity": "100 GB",
+    "root_filesystem": "ext4",
+    "root_available_at_audit": "93 GB",
+    "persistent_mount": "/",
+    "separate_data_disk_attached": false,
+    "auto_delete_policy": "not exposed by guest metadata and not verified by local gcloud credentials"
+  },
+  "os": {
+    "distribution": "Ubuntu 24.04.4 LTS",
+    "kernel": "7.0.0-1011-gcp",
+    "uname": "Linux instance-20260904-205935 7.0.0-1011-gcp #11~24.04.1-Ubuntu SMP PREEMPT Tue Aug 11 20:10:41 UTC 2026 aarch64"
+  },
+  "cgroup_v2": {"path": "/user.slice/user-1001.slice/user@1001.service/tmux-spawn-9201c9a5-89c8-4482-b6cb-bcbdd70d6268.scope", "cpu_max": "max 100000", "memory_max": "max", "cpuset_effective": "0-15"},
+  "software": {
+    "python": "3.12.3",
+    "pytorch": "2.14.0+cpu",
+    "pytorch_cpu_capability": "SVE128",
+    "onednn": "3.12.0",
+    "openmp": "4.5 (PyTorch build)",
+    "numpy": "2.5.2",
+    "numpy_blas": "OpenBLAS 0.3.34, DYNAMIC_ARCH, neoversev2, MAX_THREADS=64",
+    "gcc": "13.3.0",
+    "gxx": "13.3.0",
+    "clang": "18.1.3",
+    "cmake": "3.28.3",
+    "ninja": "1.11.1",
+    "git": "2.43.0"
+  },
+  "cpu_frequency": "cpufreq governor/frequency files not exposed to guest",
+  "ulimits": {"open_files": 1024, "stack_kib": 8192, "locked_memory_kib": 8212548, "cpu_time": "unlimited", "virtual_memory": "unlimited"}
+}

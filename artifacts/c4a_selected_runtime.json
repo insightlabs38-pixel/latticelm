@@ -1,0 +1,26 @@
+{
+  "selected": {
+    "pytorch_intraop_threads": 12,
+    "pytorch_interop_threads": 1,
+    "omp_num_threads": 12,
+    "openblas_num_threads": 12,
+    "microbatch_sequences": 8,
+    "gradient_accumulation": 1,
+    "effective_batch_sequences": 8,
+    "effective_batch_tokens": 1024,
+    "runtime": "eager"
+  },
+  "systems_rationale": {
+    "threads": "12-thread confirmation was stable at 7688.64 median tokens/s; 16 threads had slightly faster median but materially worse IQR, standard deviation, and mean throughput",
+    "microbatch": "batch 8 preserves the frozen optimization semantics; batch 16/32 results are throughput-only and unauthorized for canonical training",
+    "compile": "0.45% apparent median gain did not exceed noise and one-step AdamW parameter tolerance failed"
+  },
+  "scientific_configuration": {
+    "status": "frozen and unchanged",
+    "model": "LatticeLM-Co4-S",
+    "data": "DATA-C 75/25 by loss-bearing training tokens",
+    "context_length": 128,
+    "optimizer": "AdamW constant 3e-4, weight_decay 0.1, betas 0.9/0.999, clipping 1.0",
+    "seed": 314159
+  }
+}

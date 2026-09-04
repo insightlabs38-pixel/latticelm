@@ -1,0 +1,5 @@
+# `torch.compile` on C4A/AArch64
+
+The exact Co4-S batch-8/context-128 optimization step was tested at 12 threads with identical initial state. Initial compilation plus correctness steps took 16.554 s. Compiled versus eager loss differed by 1.91e-6, maximum logit difference was 1.49e-6, and maximum gradient difference was 2.54e-8. However, the first AdamW update amplified sign differences near zero and produced a maximum parameter difference of 3.35e-4, which fails the conservative one-step update equivalence requirement.
+
+After three warmups and over 20 full measured steps, eager measured 0.135509 s median / 7,556.71 tok/s and compiled measured 0.134905 s / 7,590.54 tok/s. The apparent steady-state gain is only 0.45%, smaller than run-to-run system variation, while compilation consumes additional memory and introduces the update discrepancy. **Canonical selection: eager PyTorch.** The initial missing `Python.h` error was corrected reproducibly by installing the Ubuntu Python development headers before the reported test.
