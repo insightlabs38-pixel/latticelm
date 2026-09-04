@@ -1,0 +1,23 @@
+{
+  "frozen": true,
+  "architecture_name": "LatticeLM-Co4-S",
+  "implementation": "co4_causal",
+  "trainable_parameters": 8923392,
+  "parameter_breakdown": {
+    "token_embeddings_and_head": 2097152,
+    "embeddings_tied": false,
+    "conditional_memory": 0,
+    "backbone_and_norms": 6826240,
+    "total": 8923392
+  },
+  "tied_embeddings": false,
+  "context_length": 128,
+  "dimensions": {
+    "vocab_size": 4096,
+    "d_model": 256,
+    "layers": 8,
+    "query_heads": 4,
+    "kv_heads": 1,
+    "ffn_hidden": 768
+  }
+}
