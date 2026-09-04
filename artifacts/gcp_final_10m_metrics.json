@@ -1,0 +1,100 @@
+{
+  "checkpoint": "final-gcp-10m",
+  "tokens_trained": 10000000,
+  "parameters": 8923392,
+  "train_loss": 3.882315158843994,
+  "val_loss": 3.6261813789606094,
+  "val_ppl": 37.56908027416645,
+  "common_validation_loss": 3.6261813789606094,
+  "common_validation_perplexity": 37.56908027416645,
+  "babylm_validation_loss": 3.3660023659467697,
+  "finewebedu_validation_loss": 4.204996973276138,
+  "wall_seconds": 1289.8535308259961,
+  "tokens_per_second": 7752.818254950391,
+  "peak_rss_bytes": 2804047872,
+  "preemptions": 0,
+  "infrastructure_downtime_seconds": 0.0,
+  "source_tokens": {
+    "babylm": 7500000,
+    "fineweb_edu": 2500000
+  },
+  "checkpoint_sha256": "5a9f33ff95c0c0ad4f103abfe4de1db13dc52a82cdf8f4b3c8e6f1b746d16fc7",
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "gibc": {
+    "hellaswag": {
+      "name": "hellaswag",
+      "alias": "hellaswag",
+      "sample_len": 10042,
+      "acc,none": 0.25801633140808605,
+      "acc_stderr,none": 0.004366488167386302,
+      "acc_norm,none": 0.2506472814180442,
+      "acc_norm_stderr,none": 0.0043250004733285516
+    },
+    "arc_easy": {
+      "name": "arc_easy",
+      "alias": "arc_easy",
+      "sample_len": 2376,
+      "acc,none": 0.2777777777777778,
+      "acc_stderr,none": 0.009190779909650122,
+      "acc_norm,none": 0.2765151515151515,
+      "acc_norm_stderr,none": 0.00917788010146832
+    },
+    "piqa": {
+      "name": "piqa",
+      "alias": "piqa",
+      "sample_len": 1838,
+      "acc,none": 0.5244831338411317,
+      "acc_stderr,none": 0.011651830225710194,
+      "acc_norm,none": 0.5059847660500544,
+      "acc_norm_stderr,none": 0.011664988455853316
+    },
+    "winogrande": {
+      "name": "winogrande",
+      "alias": "winogrande",
+      "sample_len": 1267,
+      "acc,none": 0.500394632991318,
+      "acc_stderr,none": 0.01405248130604961
+    },
+    "lm_eval_version": "0.4.13",
+    "wall_seconds": 220.9365933119998,
+    "wikitext_103_perplexity": 145.97471490083535,
+    "wikitext_103_tokens_scored": 411412,
+    "wikitext_103_wall_seconds": 19.920637408999937
+  },
+  "learning_slopes": [
+    {
+      "from_tokens": 1000448,
+      "to_tokens": 3000320,
+      "loss_improvement_per_million_tokens": 0.29195529875844806,
+      "perplexity_improvement_per_million_tokens": 21.10970600185132
+    },
+    {
+      "from_tokens": 3000320,
+      "to_tokens": 5000192,
+      "loss_improvement_per_million_tokens": 0.08482269660693235,
+      "perplexity_improvement_per_million_tokens": 4.153601756855948
+    },
+    {
+      "from_tokens": 5000192,
+      "to_tokens": 7499776,
+      "loss_improvement_per_million_tokens": 0.05204992349549902,
+      "perplexity_improvement_per_million_tokens": 2.192963120630966
+    },
+    {
+      "from_tokens": 7499776,
+      "to_tokens": 10000000,
+      "loss_improvement_per_million_tokens": 0.019545234373220866,
+      "perplexity_improvement_per_million_tokens": 0.7525339417063858
+    }
+  ],
+  "saturation_status": "SLOWING BUT CLEARLY IMPROVING",
+  "recommended_next_token_target": "25M (not started)",
+  "persistence": {
+    "hf_repository": "insightlabs38-pixel/LatticeLM-research",
+    "public_path": "experiments/final-gcp-10m",
+    "verified_revision": "0ab7f9d033d5b1c50ac0f21d688371951879b5e0",
+    "private_recovery_path": "recovery/final-gcp-10m",
+    "best_updated": false,
+    "best_update_reason": "Existing global best has a lower recorded validation loss under its historical validation regime."
+  }
+}
