@@ -10,5 +10,6 @@ artifacts/profiles/*.json
 artifacts/data/
 artifacts/tokenizer.json
 artifacts/tokenizers/tinyshakespeare_4k.json
+artifacts/gibc_snapshot_phase7a_data_*.json
 .triton-cpu-src/
 .triton-cpu-venv/

@@ -1,0 +1,11 @@
+{
+  "dataset": "Salesforce/wikitext",
+  "config": "wikitext-103-raw-v1",
+  "split": "test",
+  "tokens_scored": 411412,
+  "negative_log_likelihood": 2290924.510032177,
+  "perplexity": 262.02595919508235,
+  "wall_seconds": 78.27007792600034,
+  "checkpoint_sha256": "1724130b72a9eb950658b61c0ea871e18ba8268a6cf7e46f5f29ad7c88e56d32",
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5"
+}

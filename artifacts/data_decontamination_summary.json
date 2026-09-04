@@ -1,0 +1,12 @@
+{
+  "documents_before_filtering": 16677,
+  "documents_removed": 9,
+  "documents_accepted_train": 13875,
+  "documents_accepted_validation": 703,
+  "threshold": "normalized exact benchmark string >=80 characters OR at least two matching normalized 13-word n-grams",
+  "task_counts_nonexclusive": {
+    "wikitext_103": 7,
+    "hellaswag": 2
+  },
+  "reference_splits": "validation and test; screening only"
+}
