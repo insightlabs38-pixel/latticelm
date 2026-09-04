@@ -1,0 +1,70 @@
+{
+  "dataset": "BabyLM-community/BabyLM-2026-Strict",
+  "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf",
+  "url": "https://huggingface.co/datasets/BabyLM-community/BabyLM-2026-Strict",
+  "download_date_utc": "2026-09-03",
+  "license": "MIT (repository dataset card)",
+  "word_budget": "Strict 100M-word track",
+  "compatibility_note": "Same BabyLM 2026 release family as the previously pinned Strict-Small corpus; no replacement occurred.",
+  "source_composition": [
+    "bnc_spoken",
+    "childes",
+    "gutenberg",
+    "open_subtitles",
+    "simple_wiki",
+    "switchboard"
+  ],
+  "files": [
+    {
+      "file": "bnc_spoken.train.txt",
+      "bytes": 39534314,
+      "sha256": "4f6cc76f656d5666941852196e35fb5f060bcbb8abebb0b70fe17c3802428a0c",
+      "lines": 803341
+    },
+    {
+      "file": "childes.train.txt",
+      "bytes": 152297628,
+      "sha256": "d6c0e39e2c283bfa5489cde80031a4fb9237ca8065a8301580df10e3b6843a98",
+      "lines": 5638783
+    },
+    {
+      "file": "gutenberg.train.txt",
+      "bytes": 141116557,
+      "sha256": "ee404a84c2f42e0cd52bdaa0366cf398328be1b038ede33d07851f69ea1c2837",
+      "lines": 661928
+    },
+    {
+      "file": "open_subtitles.train.txt",
+      "bytes": 121187495,
+      "sha256": "9aa48a9448ce6450238868537e4aab43065cca5dae94c948a189e5b802911929",
+      "lines": 3824550
+    },
+    {
+      "file": "simple_wiki.train.txt",
+      "bytes": 87947184,
+      "sha256": "b7cd8fd945d3986c673bf92fa28df44bf8e4ea655c37c2cacd97cdd8a9146cf2",
+      "lines": 642735
+    },
+    {
+      "file": "switchboard.train.txt",
+      "bytes": 1219017,
+      "sha256": "2cb1ed1b47300893b29254081830899c80ac174278b1c1abcade2887821265b1",
+      "lines": 30559
+    }
+  ],
+  "split_policy": "last 1% nonempty lines of every source held out",
+  "token_files": {
+    "babylm_train": {
+      "path": "artifacts/data/phase7a/babylm_train.int32",
+      "tokens": 187825322,
+      "bytes": 751301288,
+      "sha256": "017e0c51a0b2d549534d5d3784614553312d00c4a4a11ab1cb82b54bfa7af5b3"
+    },
+    "babylm_validation": {
+      "path": "artifacts/data/phase7a/babylm_validation.int32",
+      "tokens": 1917891,
+      "bytes": 7671564,
+      "sha256": "d6ee4bf87ceabed2a5cab47afeb33493cbf16eaa57609eeea74c091cc1f6be8a"
+    }
+  }
+}

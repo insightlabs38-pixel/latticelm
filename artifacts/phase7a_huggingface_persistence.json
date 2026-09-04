@@ -1,0 +1,13 @@
+{
+  "repo_id": "insightlabs38-pixel/LatticeLM-research",
+  "repo_type": "model",
+  "private": true,
+  "remote_integrity_verified": true,
+  "credentials_persisted": false,
+  "uploads": [
+    {"path": "experiments/data-babylm-3m", "revision": "99a652ab895707d06941e7080e6e49b09e1b15fb", "training_tokens": 3145728, "checkpoint_sha256": "1724130b72a9eb950658b61c0ea871e18ba8268a6cf7e46f5f29ad7c88e56d32"},
+    {"path": "experiments/data-finewebedu-1m", "revision": "69e91a23f746b501b107d3e4e5bf2f9fd96bcc9d", "training_tokens": 1048576, "checkpoint_sha256": "33c174eae39b4c02c7178703fa27096e2ff07fa5a4f8650b4be60cfa44c125a1"},
+    {"path": "experiments/data-mix-3m", "revision": "1e7bd21f21a9ec0366ac56fd03f97adb1b0140a0", "training_tokens": 3145728, "checkpoint_sha256": "f8eb483f19e19035a20f24b2ae00aeda0ab7a4e7bb519fdc78ee936f63b1b7a3"}
+  ],
+  "bundle_contents": "Safetensors, strict round-trip config, private resume state, tokenizer/report, dataset and validation manifests, metrics/curves, SHA256SUMS; finalist bundles also contain raw GIBC and WikiText diagnostics"
+}

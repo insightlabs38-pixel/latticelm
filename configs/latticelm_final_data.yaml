@@ -1,0 +1,42 @@
+architecture:
+  name: co4_causal
+  variant: LatticeLM-Co4-S
+  d_model: 256
+  layers: 8
+  query_heads: 4
+  kv_heads: 1
+  ffn_hidden: 768
+  tie_embeddings: false
+  conditional_memory: false
+  parameters: 8923392
+data:
+  regime: DATA-C
+  babylm_token_weight: 0.75
+  fineweb_edu_token_weight: 0.25
+  babylm_dataset: BabyLM-community/BabyLM-2026-Strict
+  babylm_revision: 9e57baaaa91ac3c638746be14d1d5fa6c789f4cf
+  fineweb_edu_dataset: HuggingFaceFW/fineweb-edu
+  fineweb_edu_configuration: sample-10BT
+  fineweb_edu_revision: 87f09149ef4734204d70ed1d046ddc9ca3f2b8f9
+  decontamination_summary: artifacts/data_decontamination_summary.json
+  loader: seeded affine without-replacement block permutation per source; six BabyLM and two FineWeb-Edu sequences per batch
+  validation_manifest: artifacts/common_validation_manifest.json
+tokenizer:
+  path: artifacts/tokenizers/babylm_2026_4k.json
+  sha256: 4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5
+  vocab_size: 4096
+training:
+  seed: SET_EXPLICITLY_BEFORE_FINAL_RUN
+  optimizer: AdamW
+  learning_rate: 0.0003
+  weight_decay: 0.1
+  betas: [0.9, 0.999]
+  grad_clip: 1.0
+  scheduler: constant
+  context_length: 128
+  batch_size: 8
+  torch_threads: 2
+  checkpoint_tokens: [10000000, 25000000, 50000000]
+  validation_interval_tokens: 1048576
+  hf_persistence_interval_tokens: 5000000
+  hf_repository: insightlabs38-pixel/LatticeLM-research

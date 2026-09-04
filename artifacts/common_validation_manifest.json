@@ -1,0 +1,27 @@
+{
+  "frozen": true,
+  "construction": "equal token prefixes from held-out source-family partitions",
+  "tokens_per_source": 250000,
+  "total_tokens": 500000,
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "sources": {
+    "BabyLM Strict": {
+      "path": "artifacts/data/phase7a/babylm_validation.int32",
+      "tokens": 1917891,
+      "bytes": 7671564,
+      "sha256": "d6ee4bf87ceabed2a5cab47afeb33493cbf16eaa57609eeea74c091cc1f6be8a"
+    },
+    "FineWeb-Edu": {
+      "path": "artifacts/data/phase7a/finewebedu_validation.int32",
+      "tokens": 1065118,
+      "bytes": 4260472,
+      "sha256": "fe94d06d35a8760e26720a9a35a2468e243e6a0e760ac4b23ddb7faa32a9db5c"
+    }
+  },
+  "common_token_file": {
+    "path": "artifacts/data/phase7a/common_validation.int32",
+    "tokens": 500000,
+    "bytes": 2000000,
+    "sha256": "712e24f0ec439404597c77a66df9e65373d5c5b56b08ee216be5453a622fe46a"
+  }
+}

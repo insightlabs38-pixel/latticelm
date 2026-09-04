@@ -1,0 +1,34 @@
+{
+  "dataset": "HuggingFaceFW/fineweb-edu",
+  "configuration": "sample-10BT",
+  "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu",
+  "download_date_utc": "2026-09-03",
+  "license": "ODC-By 1.0 (dataset card); source pages retain their own terms",
+  "seed": 1337,
+  "procedure": "datasets streaming; shuffle(seed=1337, buffer_size=1000); stop after >=20M accepted training tokens and >=250K validation tokens",
+  "filters": [
+    "at least 50 normalized words",
+    "language_score >= 0.9",
+    "benchmark decontamination",
+    "stable SHA-256 5% validation partition"
+  ],
+  "documents_scanned": 16677,
+  "documents_training": 13875,
+  "documents_validation": 703,
+  "approximate_words": 10671393,
+  "token_files": {
+    "finewebedu_train": {
+      "path": "artifacts/data/phase7a/finewebedu_train.int32",
+      "tokens": 20000582,
+      "bytes": 80002328,
+      "sha256": "bc7a43e157c53df0ec7a1bd1cf6420ed4104a88296a0a2438bfd437607525d33"
+    },
+    "finewebedu_validation": {
+      "path": "artifacts/data/phase7a/finewebedu_validation.int32",
+      "tokens": 1065118,
+      "bytes": 4260472,
+      "sha256": "fe94d06d35a8760e26720a9a35a2468e243e6a0e760ac4b23ddb7faa32a9db5c"
+    }
+  }
+}

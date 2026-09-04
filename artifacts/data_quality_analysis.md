@@ -1,0 +1,7 @@
+# Phase 7A data-quality analysis
+
+The frozen tokenizer produced zero unknown tokens on both sources, as expected from its byte fallback. FineWeb-Edu compressed slightly better (3.207 chars/token) than BabyLM (2.794), while tokens/word were close (1.874 versus 1.846); neither source is catastrophically mismatched.
+
+BabyLM is dominated by short line-level conversational and subtitle utterances (sample median six words; 0.845% below the explicit <50-word threshold because many nonempty lines are even shorter under normalized counting). Its exact-line duplicate estimate is 26.4% in the deterministic first-100K-document diagnostic sample. This is not a document-level semantic near-duplicate estimate and likely reflects repeated short conversational turns. FineWeb-Edu's 13,875 long documents had median 491 words, no exact duplicates in the selected sample, and a higher non-ASCII-character rate (0.258% versus 0.151%) while remaining English-filtered.
+
+The token repetition statistic is near one for both corpora because it measures occurrences belonging to any repeated unigram; it is reported for completeness but is not discriminative at corpus scale. The useful explanatory contrast is document length/diversity: DATA-C exposes Co4-S to long educational passages while retaining BabyLM conversational/narrative coverage. Automated topical categories were not invented because neither source supplies compatible, trustworthy category labels.
