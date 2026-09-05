@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-09-05",
+  "co4_l_data_c_50m": {
+    "training_checkpoint_sha256_recorded": "444b41c191cc42a8b7844cfc33623d857fd0602c0f1a8975dd25da50ad2b13fc",
+    "local_checkpoint_present": false,
+    "hf_checkpoint_present": false,
+    "status": "METRICS-ONLY; NOT INFERENCE-VERIFIED; NOT EXACT-RESUME-VERIFIED"
+  },
+  "co4_l_data_c_100m": {
+    "training_checkpoint_sha256": "3bf27b6097771e37b3c58074ae7514193d79c098e85007949b56cef4b7603cb4",
+    "safetensors_sha256": "b7ee53034c53a3a14c8c3152bb953f00056327dbc87f5455a4bdbd5bad78ba6c",
+    "safetensors_bytes": 63807960,
+    "resume_state_sha256": "2fd4ac33827ec8a2c0238099f690feccbcffcd1e9163c87c1bd86917db9ad9e8",
+    "resume_state_bytes": 127686949,
+    "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "strict_load": true,
+    "deterministic_logits_roundtrip_equal": true,
+    "resume_fields": [
+      "optimizer",
+      "scheduler",
+      "python_rng_state",
+      "torch_rng_state",
+      "data_stream_state",
+      "tokens_seen",
+      "cumulative_training_seconds",
+      "phase7c_manifest_sha256"
+    ],
+    "stream_draws": {"baby": 585952, "web": 195318},
+    "next_batch_sha256": "5a8b9f5a35e62156368aac3b38217234651141f22079092b8f149a3d82c8cc1e",
+    "exact_training_tokens": 100000000,
+    "hf_paths": {
+      "experiments/co4-l-data-rich-100m": "95d27f1c012893d12e34005b067a58a666fd472b",
+      "best": "071c3b9080a5356bb92e5bc456515b27821d2f65",
+      "latest": "050cc5bb916189fa8226f45a019a7414911351d8"
+    },
+    "remote_files_and_sizes_verified": true,
+    "remote_sha256_verified": true,
+    "status": "INFERENCE-VERIFIED; EXACT-RESUME-VERIFIED"
+  },
+  "hf_closeout_logs_revision": "0c76b0b401b7b37cd7cf4b80c4b46af284d0aee9",
+  "notes": "The 100M exact-resume claim is for the checkpoint together with phase7e_data_c_manifest.json and the frozen hashed local data/tokenizer artifacts. Semantic best/latest were updated because the prior common-validation best was 3.625211 versus 3.134722 at 100M."
+}

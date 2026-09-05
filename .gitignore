@@ -20,5 +20,7 @@ experiments/
 artifacts/gcp_final_10m_gibc_raw.json
 artifacts/gibc_s_25m_raw.json
 artifacts/gibc_l_25m_raw.json
+artifacts/gibc_l_50m_raw.json
+artifacts/gibc_l_100m_raw.json
 artifacts/archive/
 artifacts/phase7e_master.lock

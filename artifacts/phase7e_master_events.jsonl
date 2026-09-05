@@ -1,0 +1,28 @@
+{"event": "MASTER_STARTED", "run_id": "phase7e-20260905T051558Z", "source_commit": "ff2ac59d05d6e1b5001f2ba71fd8b0596582f4c1", "timestamp": "2026-09-05T05:15:58.126956+00:00"}
+{"event": "STAGE_STARTED", "stage": "PREFLIGHT", "timestamp": "2026-09-05T05:15:58.130365+00:00"}
+{"event": "PREFLIGHT_PASSED", "timestamp": "2026-09-05T05:15:59.530040+00:00"}
+{"event": "STAGE_COMPLETED", "stage": "PREFLIGHT", "timestamp": "2026-09-05T05:15:59.534782+00:00"}
+{"event": "STAGE_STARTED", "stage": "DATA_C_TO_50M", "timestamp": "2026-09-05T05:15:59.538243+00:00"}
+{"attempt": 0, "command": ["scripts/run_phase7d_training.py", "--model"], "event": "SUBPROCESS_STARTED", "label": "train_to_50000000", "stage": "DATA_C_TO_50M", "timestamp": "2026-09-05T05:15:59.539281+00:00"}
+{"event": "STAGE_COMPLETED", "stage": "DATA_C_TO_50M", "timestamp": "2026-09-05T06:42:43.742618+00:00"}
+{"event": "STAGE_STARTED", "stage": "EVAL_50M", "timestamp": "2026-09-05T06:42:43.746154+00:00"}
+{"attempt": 0, "command": ["scripts/evaluate_wikitext103.py", "--checkpoint"], "event": "SUBPROCESS_STARTED", "label": "wikitext_50m", "stage": "EVAL_50M", "timestamp": "2026-09-05T06:42:43.747275+00:00"}
+{"attempt": 0, "command": ["scripts/evaluate_gibc.py", "--checkpoint"], "event": "SUBPROCESS_STARTED", "label": "gibc_50m", "stage": "EVAL_50M", "timestamp": "2026-09-05T06:43:36.520231+00:00"}
+{"event": "GIBC_EVAL_COMPLETED", "output": "artifacts/gibc_l_50m_raw.json", "timestamp": "2026-09-05T06:51:52.105662+00:00", "tokens": 50000000}
+{"event": "STAGE_COMPLETED", "stage": "EVAL_50M", "timestamp": "2026-09-05T06:51:52.109281+00:00"}
+{"event": "STAGE_STARTED", "stage": "DATA_C_POOL_EXPANSION", "timestamp": "2026-09-05T06:51:52.112997+00:00"}
+{"attempt": 0, "command": ["scripts/expand_phase7e_fineweb.py", "--tokens"], "event": "SUBPROCESS_STARTED", "label": "expand_fineweb", "stage": "DATA_C_POOL_EXPANSION", "timestamp": "2026-09-05T06:51:52.114073+00:00"}
+{"event": "DATA_POOL_EXPANDED", "manifest": "artifacts/phase7e_fineweb_expansion_manifest.json", "timestamp": "2026-09-05T06:54:17.892616+00:00"}
+{"event": "STAGE_COMPLETED", "stage": "DATA_C_POOL_EXPANSION", "timestamp": "2026-09-05T06:54:17.895748+00:00"}
+{"event": "STAGE_STARTED", "stage": "DATA_C_TO_100M", "timestamp": "2026-09-05T06:54:17.899106+00:00"}
+{"attempt": 0, "command": ["scripts/run_phase7d_training.py", "--model"], "event": "SUBPROCESS_STARTED", "label": "train_to_100000000", "stage": "DATA_C_TO_100M", "timestamp": "2026-09-05T06:54:17.900339+00:00"}
+{"event": "STAGE_COMPLETED", "stage": "DATA_C_TO_100M", "timestamp": "2026-09-05T09:50:16.948521+00:00"}
+{"event": "STAGE_STARTED", "stage": "EVAL_100M", "timestamp": "2026-09-05T09:50:16.952340+00:00"}
+{"attempt": 0, "command": ["scripts/evaluate_wikitext103.py", "--checkpoint"], "event": "SUBPROCESS_STARTED", "label": "wikitext_100m", "stage": "EVAL_100M", "timestamp": "2026-09-05T09:50:16.953562+00:00"}
+{"attempt": 0, "command": ["scripts/evaluate_gibc.py", "--checkpoint"], "event": "SUBPROCESS_STARTED", "label": "gibc_100m", "stage": "EVAL_100M", "timestamp": "2026-09-05T09:51:08.688857+00:00"}
+{"event": "GIBC_EVAL_COMPLETED", "output": "artifacts/gibc_l_100m_raw.json", "timestamp": "2026-09-05T09:59:23.529612+00:00", "tokens": 100000000}
+{"event": "STAGE_COMPLETED", "stage": "EVAL_100M", "timestamp": "2026-09-05T09:59:23.533159+00:00"}
+{"event": "STAGE_STARTED", "stage": "DATA_D_PREPARATION", "timestamp": "2026-09-05T09:59:23.536448+00:00"}
+{"event": "STAGE_SKIPPED", "reason": "RuntimeError: prerequisite stage unavailable: DATA_D_PREPARATION", "stage": "DATA_D_PREPARATION", "timestamp": "2026-09-05T09:59:23.540334+00:00"}
+{"event": "FINAL_REPORT_WRITTEN", "timestamp": "2026-09-05T09:59:23.546406+00:00"}
+{"error": "RuntimeError: prerequisite stage unavailable: DATA_D_PREPARATION", "event": "MASTER_EXITED", "timestamp": "2026-09-05T09:59:23.549737+00:00"}

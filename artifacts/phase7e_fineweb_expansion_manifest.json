@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "source": "FineWeb-Edu",
+  "repo": "HuggingFaceFW/fineweb-edu",
+  "config": "sample-10BT",
+  "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "seed": 1337,
+  "tokens": 50000020,
+  "documents": 33509,
+  "scanned": 40314,
+  "sha256": "ef4e00fe85cd7136cd1c173c89ee9cc9ec38e19016fedb514e9e19b2f029482a",
+  "prior_tokens": 20000582,
+  "prior_sha256": "bc7a43e157c53df0ec7a1bd1cf6420ed4104a88296a0a2438bfd437607525d33",
+  "old_stream_exact_prefix": true,
+  "document_ids_sha256": "1626b873b81315bf5195614a94748e927a31aa9b472c01f898ac9d08d6d42dc7",
+  "created_at": "2026-09-05T06:54:17.287556+00:00"
+}

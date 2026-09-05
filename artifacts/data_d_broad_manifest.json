@@ -1,0 +1,13 @@
+{
+  "architecture_reference": "artifacts/future_data_scaling_plan.md",
+  "corpus_id": "DATA-D-BROAD-v1",
+  "mixture": {
+    "babylm_2026_strict": 0.15,
+    "fineweb_edu": 0.5,
+    "fineweb_general": 0.15,
+    "wikipedia_en": 0.2
+  },
+  "prepared": false,
+  "reason": "RuntimeError: prerequisite stage unavailable: DATA_D_PREPARATION",
+  "schema_version": 1
+}

@@ -1,0 +1,9 @@
+stage,start_timestamp,end_timestamp,duration_seconds,status,tokens_processed,output_checkpoint,notes
+PREFLIGHT,2026-09-05T05:15:58.130365+00:00,2026-09-05T05:15:59.534782+00:00,1.404417,completed,0,,Frozen input checksum and resume preflight passed
+DATA_C_TO_50M,2026-09-05T05:15:59.538243+00:00,2026-09-05T06:42:43.742618+00:00,5204.204375,completed,25000000,co4-l-data-rich-25m-50000000,Active training interval 5018.394941s
+EVAL_50M,2026-09-05T06:42:43.746154+00:00,2026-09-05T06:51:52.109281+00:00,548.363127,completed,0,,WikiText and four-task GIBC completed
+DATA_C_POOL_EXPANSION,2026-09-05T06:51:52.112997+00:00,2026-09-05T06:54:17.895748+00:00,145.782751,completed,30000020,,FineWeb pool grew from 20000582 to 50000020 tokens; old bytes exact prefix
+DATA_C_TO_100M,2026-09-05T06:54:17.899106+00:00,2026-09-05T09:50:16.948521+00:00,10559.049415,completed,50000000,co4-l-data-rich-25m-100000000,Active training interval 10215.024842s
+EVAL_100M,2026-09-05T09:50:16.952340+00:00,2026-09-05T09:59:23.533159+00:00,546.580819,completed,0,experiments/co4-l-data-rich-100m,WikiText and four-task GIBC completed
+DATA_D_PREPARATION,2026-09-05T09:59:23.536448+00:00,2026-09-05T09:59:23.540334+00:00,0.003886,skipped,0,,Implementation unavailable; DATA_D_25M and EVAL_DATA_D_25M not reached
+FINAL_REPORT,2026-09-05T09:59:23.540334+00:00,2026-09-05T09:59:23.546406+00:00,0.006072,completed,0,,Initial autonomous placeholder report written

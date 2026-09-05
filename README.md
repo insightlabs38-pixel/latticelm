@@ -41,6 +41,14 @@ Use Python 3.12 and PyTorch CPU. The default seed is 1337. See
 `EXPERIMENT_LATTICELM.md` for the experiment protocol and
 `artifacts/overnight_report.md` for locally measured results and limitations.
 
+## Research status through Phase 7E
+
+Early same-token, low-data experiments favored smaller Co4 models on efficiency; that result is preserved rather than retroactively reinterpreted. In the later DATA-C regime, controlled scaling showed that Co4-L (15.95M parameters) became clearly superior to Co4-S in common-validation and WikiText language modeling by 25M tokens. Its 25M reasoning gains were mixed despite the strong WikiText improvement.
+
+Phase 7E continued the valid Co4-L lineage to 50M and 100M tokens. Common-validation loss improved from 3.328604 at 25M to 3.208180 and 3.134722; WikiText-103 perplexity improved from 102.551 to 79.679 and 72.582. Reasoning improved on all four tracked tasks at 50M, then became mixed from 50M to 100M (small HellaSwag/ARC-Easy gains, PIQA/WinoGrande regressions). The FineWeb-Edu pool was expanded without repeating its old prefix, but the planned DATA-D-BROAD-v1 control was not implemented or trained. See `artifacts/phase7e_overnight_report.md` and `artifacts/phase7e_decision.md`.
+
+Future capacity decisions therefore follow the measured data-rich regime, not the old 3M comparison. A ~24M model remains deferred until broader-data and bounded continued-pretraining tests distinguish data/optimization limits from capacity limits. Negative and invalid runs remain excluded explicitly, including the archived unpaired Phase 7D Co4-L attempt.
+
 ## Persistent model storage
 
 Source code, configs, tests, reports, and metrics remain in this Git repository.

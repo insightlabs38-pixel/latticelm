@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "dataset": "DATA-C: 75% BabyLM 2026 Strict / 25% decontaminated FineWeb-Edu",
+  "revision": "babylm:9e57baaaa91ac3c638746be14d1d5fa6c789f4cf;fineweb:87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "mixture": {
+    "BabyLM 2026 Strict": 0.75,
+    "FineWeb-Edu": 0.25
+  },
+  "sources": [
+    {
+      "dataset": "BabyLM-community/BabyLM-2026-Strict",
+      "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf",
+      "license": "MIT (repository dataset card)",
+      "training_tokens_available": 187825322,
+      "sha256": "017e0c51a0b2d549534d5d3784614553312d00c4a4a11ab1cb82b54bfa7af5b3"
+    },
+    {
+      "dataset": "HuggingFaceFW/fineweb-edu",
+      "configuration": "sample-10BT",
+      "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+      "license": "ODC-By 1.0 (dataset card); source pages retain their own terms",
+      "sampling": "streaming shuffle(seed=1337, buffer_size=1000), >=50 normalized words, language_score >=0.9, benchmark screen, deterministic 5% validation exclusion",
+      "training_documents": 33509,
+      "training_tokens_available": 50000020,
+      "sha256": "ef4e00fe85cd7136cd1c173c89ee9cc9ec38e19016fedb514e9e19b2f029482a",
+      "previous_prefix_tokens": 20000582,
+      "previous_prefix_sha256": "bc7a43e157c53df0ec7a1bd1cf6420ed4104a88296a0a2438bfd437607525d33",
+      "old_stream_exact_prefix": true,
+      "document_ids_sha256": "1626b873b81315bf5195614a94748e927a31aa9b472c01f898ac9d08d6d42dc7"
+    }
+  ],
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "common_validation_sha256": "712e24f0ec439404597c77a66df9e65373d5c5b56b08ee216be5453a622fe46a",
+  "loader": "seeded affine without-replacement block permutation per source; serialized draw counts; six BabyLM plus two FineWeb sequences per full step",
+  "training_exposure_at_100m": {
+    "BabyLM tokens": 75000000,
+    "FineWeb-Edu tokens": 25000000,
+    "FineWeb-Edu repeated tokens": 0
+  }
+}
