@@ -74,6 +74,8 @@ def main() -> None:
     p.add_argument("--fresh", action="store_true"); p.add_argument("--resume", action="store_true")
     p.add_argument("--target-tokens", type=int, default=25_000_000)
     p.add_argument("--stop-tokens", type=int); p.add_argument("--no-upload", action="store_true")
+    p.add_argument("--phase7e", action="store_true",
+                   help="permit the frozen Co4-L DATA-C lineage to continue through 100M")
     args = p.parse_args()
     if args.fresh == args.resume: p.error("choose exactly one of --fresh or --resume")
     config_path = ROOT / ("configs/phase7d_co4_s_25m.json" if args.model == "s" else "configs/phase7d_co4_l.json")
@@ -122,10 +124,14 @@ def main() -> None:
         best = float(state["best_validation_loss"]); preemptions = int(state.get("preemptions", 0))
         for k, draws in state["data_stream_state"].items(): streams[k].draws = int(draws)
     target = args.stop_tokens or args.target_tokens
-    if target > 25_000_000: raise RuntimeError("Phase 7D must stop before 50M")
+    if target > 25_000_000 and not (args.phase7e and args.model == "l" and target <= 100_000_000):
+        raise RuntimeError("targets beyond 25M require --phase7e, Co4-L, and <=100M")
     if target <= tokens: raise RuntimeError("target must exceed recovered token count")
     milestones = {1_000_000, 3_000_000, 5_000_000, 7_500_000, 10_000_000,
                   15_000_000, 20_000_000, 25_000_000}
+    if args.phase7e:
+        milestones |= {30_000_000, 35_000_000, 40_000_000, 50_000_000,
+                       60_000_000, 75_000_000, 90_000_000, 100_000_000}
     evaluated = {m for m in milestones if m <= tokens}
     session_elapsed = 0.0; session_start_tokens = tokens; train_loss = float("nan")
     while tokens < target:
