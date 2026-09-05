@@ -1,0 +1,12 @@
+{
+  "tokens_trained": 25000000,
+  "parameters": 8923392,
+  "val_loss": 3.4008999168872833,
+  "val_ppl": 29.991077383901626,
+  "wall_seconds": 3275.9273013519705,
+  "tokens_per_second": 7552.589547581373,
+  "peak_rss_bytes": 2869112832,
+  "checkpoint_sha256": "ec834e8016c52cead167e75ab37be4570a0e0e316f5e3f7a4e42d12d909e8e5c",
+  "wikitext_103_perplexity": 115.52927539957068,
+  "wikitext_bits_per_byte": 2.189282075870736
+}

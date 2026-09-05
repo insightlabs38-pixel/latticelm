@@ -18,3 +18,6 @@ artifacts/gibc_snapshot_phase7a_data_*.json
 .triton-cpu-venv/
 experiments/
 artifacts/gcp_final_10m_gibc_raw.json
+artifacts/gibc_s_25m_raw.json
+artifacts/gibc_l_25m_raw.json
+artifacts/archive/

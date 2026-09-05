@@ -1,0 +1,3 @@
+model,tokens,perplexity,bits_per_byte,utf8_bytes,tokens_scored,context_length,stride,bos_policy,byte_counting_policy,checkpoint_sha256
+Co4-S,25000000,115.52927539957068,2.189282075870736,1287656,411412,128,128,prepend BOS per nonempty raw row as context only; BOS is never scored,sum len(text.encode(UTF-8)) for raw dataset rows; no inserted separators,ec834e8016c52cead167e75ab37be4570a0e0e316f5e3f7a4e42d12d909e8e5c
+Co4-L,25000000,102.55100569319396,2.1343538565928064,1287656,411412,128,128,prepend BOS per nonempty raw row as context only; BOS is never scored,sum len(text.encode(UTF-8)) for raw dataset rows; no inserted separators,35bbbe4dd1ba1ee75f191a647ede62192bc16ca792db6ce3733ec34ea18088de

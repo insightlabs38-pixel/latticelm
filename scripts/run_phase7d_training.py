@@ -130,10 +130,22 @@ def main() -> None:
     session_elapsed = 0.0; session_start_tokens = tokens; train_loss = float("nan")
     while tokens < target:
         started = time.perf_counter(); remaining = target - tokens
-        pairs = [streams["baby"].one() for _ in range(6)] + [streams["web"].one() for _ in range(2)]
-        increment = min(1024, remaining)
+        canonical_10m_boundary = args.model == "l" and tokens < 10_000_000 < tokens + 1024
+        if canonical_10m_boundary:
+            # Match the legacy canonical S lineage's exact 10M endpoint, including draws.
+            pairs = [streams["baby"].one() for _ in range(4)] + [streams["web"].one() for _ in range(2)]
+            increment = 10_000_000 - tokens
+            x = torch.stack([z[0] for z in pairs]); y = torch.stack([z[1] for z in pairs])
+            logits = model(x)[0]
+            losses = F.cross_entropy(logits.reshape(-1, logits.size(-1)), y.reshape(-1), reduction="none").view(6, 128)
+            mask = torch.zeros_like(losses); mask[:3] = 1; mask[3, :96] = 1; mask[4] = 1; mask[5, :32] = 1
+            loss = (losses * mask).sum() / increment
+        else:
+            pairs = [streams["baby"].one() for _ in range(6)] + [streams["web"].one() for _ in range(2)]
+            increment = min(1024, remaining)
         baby_inc = increment * 3 // 4; web_inc = increment - baby_inc
-        loss = model(torch.stack([z[0] for z in pairs]), torch.stack([z[1] for z in pairs]))[1] if increment == 1024 else masked_loss(model, pairs, baby_inc, web_inc)
+        if not canonical_10m_boundary:
+            loss = model(torch.stack([z[0] for z in pairs]), torch.stack([z[1] for z in pairs]))[1] if increment == 1024 else masked_loss(model, pairs, baby_inc, web_inc)
         if not torch.isfinite(loss): raise FloatingPointError(f"non-finite loss at step {step + 1}")
         optimizer.zero_grad(set_to_none=True); loss.backward()
         if not all(q.grad is None or torch.isfinite(q.grad).all() for q in model.parameters()):
