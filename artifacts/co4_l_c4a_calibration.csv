@@ -1,0 +1,3 @@
+thread_count,interop_threads,microbatch,grad_accumulation,effective_batch,median_step_time,mean_step_time,std_step_time,iqr_step_time,tokens_per_second,cpu_utilization,peak_rss_bytes,notes
+12,1,8,1,8,0.2047464304996538,0.20474690744995314,0.0033451646155162927,0.004093026996997651,5001.30819131292,99.30959928321978,2842918912,frozen effective batch; config=phase7d_co4_l.json
+16,1,8,1,8,0.19049032550083211,0.1930550858501192,0.017655136079231318,0.017259328998989076,5375.601082667723,89.95165770189563,2855194624,frozen effective batch; config=phase7d_co4_l.json

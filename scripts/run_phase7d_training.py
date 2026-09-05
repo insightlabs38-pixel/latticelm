@@ -143,7 +143,8 @@ def main() -> None:
         baby_tokens += baby_inc; web_tokens += web_inc; train_loss = float(loss.detach())
         pending = milestones - evaluated
         crossed = min(pending, key=lambda m: abs(tokens-m)) if pending else None
-        evaluation = tokens == target or (crossed is not None and abs(tokens-crossed) <= 512)
+        # The terminal milestone is evaluated only at its exact masked endpoint.
+        evaluation = tokens == target or (crossed is not None and crossed != target and abs(tokens-crossed) <= 512)
         periodic = step % config.checkpoint_interval == 0
         if not (periodic or evaluation): continue
         elapsed = prior_elapsed + session_elapsed
