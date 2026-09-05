@@ -1,0 +1,5 @@
+source,target_ratio,retained_unique_tokens,retained_documents,status
+fineweb_edu,0.50,,,not_materialized
+wikipedia,0.20,,,not_materialized
+fineweb,0.15,,,not_materialized
+babylm,0.15,0,0,blocked_all_eligible_content_already_in_data_c

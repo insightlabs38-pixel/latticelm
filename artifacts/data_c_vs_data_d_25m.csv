@@ -1,0 +1,9 @@
+metric,data_c_25m,data_d_25m,delta,relative_delta,outcome
+common_validation_loss,3.328604,,,,not_run
+common_validation_ppl,27.89938,,,,not_run
+wikitext_103_ppl,102.55101,,,,not_run
+wikitext_bpb,2.13435,,,,not_run
+hellaswag,0.260108,,,,not_run
+arc_easy,0.284512,,,,not_run
+piqa,0.520131,,,,not_run
+winogrande,0.481452,,,,not_run

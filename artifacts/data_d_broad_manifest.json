@@ -1,13 +1,21 @@
 {
-  "architecture_reference": "artifacts/future_data_scaling_plan.md",
-  "corpus_id": "DATA-D-BROAD-v1",
-  "mixture": {
-    "babylm_2026_strict": 0.15,
-    "fineweb_edu": 0.5,
-    "fineweb_general": 0.15,
-    "wikipedia_en": 0.2
-  },
+  "schema_version": "data-d-corpus-v1",
+  "corpus_identity": "DATA-D-BROAD-v1",
   "prepared": false,
-  "reason": "RuntimeError: prerequisite stage unavailable: DATA_D_PREPARATION",
-  "schema_version": 1
+  "status": "acceptance_gate_failed",
+  "mixture_definition": {"fineweb_edu": 0.5, "wikipedia": 0.2, "fineweb": 0.15, "babylm": 0.15},
+  "pinned_sources": {
+    "fineweb_edu": {"dataset": "HuggingFaceFW/fineweb-edu", "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9"},
+    "wikipedia": {"dataset": "wikimedia/wikipedia", "configuration": "20231101.en", "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa"},
+    "fineweb": {"dataset": "HuggingFaceFW/fineweb", "configuration": "CC-MAIN-2013-20", "revision": "9bb295ddab0e05d785b879661af7260fed5140fc"},
+    "babylm": {"dataset": "BabyLM-community/BabyLM-2026-Strict", "revision": "9e57baaaa91ac3c638746be14d1d5fa6c789f4cf"}
+  },
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "dedup_version": "sha256-paragraph+simhash64-v1",
+  "decontamination_version": "normalized-exact+13gram+simhash-v1",
+  "total_unique_tokens": 0,
+  "total_documents": 0,
+  "canonical_shard_ordering": [],
+  "shards": [],
+  "blocker": "The pinned BabyLM release has no eligible training document not already consumed by DATA-C. DATA-C used every nonempty line except its frozen validation tail. Global deduplication against DATA-C therefore leaves zero eligible BabyLM training tokens, making the predeclared 15% mixture impossible without duplicate reuse or training/validation leakage."
 }
