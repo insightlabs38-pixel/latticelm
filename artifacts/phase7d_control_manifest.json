@@ -1,0 +1,39 @@
+{
+  "phase": "7D",
+  "frozen_before_training": true,
+  "source_base_commit": "4dd336e6ab8c1bcf201e32af2c9efff13463525d",
+  "question": "Does Co4-L's advantage grow as both controlled lineages receive more DATA-C tokens?",
+  "controls": {
+    "data_regime": "DATA-C",
+    "mixture": {"BabyLM 2026 Strict 100M": 0.75, "decontaminated FineWeb-Edu": 0.25},
+    "context_length": 128,
+    "effective_batch_sequences": 8,
+    "effective_batch_tokens": 1024,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0003,
+    "weight_decay": 0.1,
+    "betas": [0.9, 0.999],
+    "epsilon": 1e-8,
+    "scheduler": "constant LambdaLR; no warmup",
+    "seed": 314159,
+    "runtime": "eager PyTorch"
+  },
+  "models": {
+    "Co4-S": {"parameters": 8923392, "initialization": "resume exact canonical final-gcp-10m state", "target_tokens": 25000000},
+    "Co4-L": {"parameters": 15949760, "initialization": "random", "target_tokens": 25000000, "hpo": false}
+  },
+  "provenance": {
+    "phase7c_manifest_sha256": "70968671a5d598c88d83c1ae8c9ada56b32a01a3515451e904f433f731d25ef1",
+    "phase7a_selected_manifest_sha256": "fc5c85786f19c8817e12472d06f729886c3123bfc63231e7fcc3837551e803b1",
+    "canonical_10m_checkpoint_sha256": "5a9f33ff95c0c0ad4f103abfe4de1db13dc52a82cdf8f4b3c8e6f1b746d16fc7",
+    "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "common_validation_sha256": "712e24f0ec439404597c77a66df9e65373d5c5b56b08ee216be5453a622fe46a",
+    "babylm_train_sha256": "017e0c51a0b2d549534d5d3784614553312d00c4a4a11ab1cb82b54bfa7af5b3",
+    "finewebedu_train_sha256": "bc7a43e157c53df0ec7a1bd1cf6420ed4104a88296a0a2438bfd437607525d33",
+    "next_baby_batch_sha256": "db34b8c0e76f12bdb455d75276bc0aa5ae52bbca1a208b846947277eb9285112",
+    "next_finewebedu_batch_sha256": "d7996311ff07463813b1a88852bb74613064ece8ab633ba61744f2f117ed5dd6"
+  },
+  "evaluation_tokens": [1000000, 3000000, 5000000, 7500000, 10000000, 15000000, 20000000, 25000000],
+  "hard_stop_tokens": 25000000,
+  "no_automatic_50m": true
+}

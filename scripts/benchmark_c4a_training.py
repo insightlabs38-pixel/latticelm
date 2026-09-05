@@ -34,8 +34,9 @@ def percentile(values: list[float], fraction: float) -> float:
     return ordered[round((len(ordered) - 1) * fraction)]
 
 
-def run(threads: int, microbatch: int, warmup: int, measured: int) -> dict:
-    config = LatticeConfig.from_json(ROOT / "configs/phase7c_final_10m.json")
+def run(threads: int, microbatch: int, warmup: int, measured: int,
+        config_path: Path = ROOT / "configs/phase7c_final_10m.json") -> dict:
+    config = LatticeConfig.from_json(config_path)
     torch.set_num_threads(threads)
     torch.set_num_interop_threads(1)
     torch.manual_seed(90210)
@@ -86,8 +87,10 @@ def main() -> None:
     parser.add_argument("--warmup", type=int, default=3)
     parser.add_argument("--steps", type=int, default=12)
     parser.add_argument("--output", type=Path, default=ROOT / "artifacts/c4a_training_benchmark.csv")
+    parser.add_argument("--config", type=Path, default=ROOT / "configs/phase7c_final_10m.json")
     args = parser.parse_args()
-    row = run(args.threads, args.microbatch, args.warmup, args.steps)
+    row = run(args.threads, args.microbatch, args.warmup, args.steps, args.config)
+    row["notes"] += f"; config={args.config.name}"
     exists = args.output.exists()
     with args.output.open("a", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
