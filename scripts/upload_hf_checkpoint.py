@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+from huggingface_hub import get_token
 
 from latticelm.hf_storage import upload_checkpoint
 
@@ -14,7 +15,7 @@ def main() -> None:
     parser.add_argument("--repo", default=os.environ.get("LATTICELM_HF_REPO"))
     parser.add_argument("--path", required=True)
     args = parser.parse_args()
-    token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN")
+    token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN") or get_token()
     if not args.repo:
         parser.error("--repo or LATTICELM_HF_REPO is required")
     if not token:

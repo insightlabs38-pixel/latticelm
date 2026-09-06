@@ -22,5 +22,6 @@ artifacts/gibc_s_25m_raw.json
 artifacts/gibc_l_25m_raw.json
 artifacts/gibc_l_50m_raw.json
 artifacts/gibc_l_100m_raw.json
+artifacts/gibc_data_d_v2r1_25m_raw.json
 artifacts/archive/
 artifacts/phase7e_master.lock
