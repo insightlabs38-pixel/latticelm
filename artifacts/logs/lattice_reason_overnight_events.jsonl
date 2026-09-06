@@ -1,0 +1,9 @@
+{"at": "2026-09-06T08:12:55.775692+00:00", "event": "ORCHESTRATOR_STARTED"}
+{"at": "2026-09-06T09:31:56.682917+00:00", "event": "TRAINING_VERIFIED", "sha256": "cc9801ea6b908162e611ce0b8b4dcd02ceba496e812595b3c49789e7adfea8f9", "tokens": 50000000}
+{"at": "2026-09-06T09:31:56.827658+00:00", "attempt": 0, "command": ["scripts/evaluate_wikitext103.py", "--checkpoint"], "event": "SUBPROCESS_START", "label": "wikitext"}
+{"at": "2026-09-06T09:32:48.683156+00:00", "attempt": 0, "command": ["scripts/evaluate_gibc.py", "--checkpoint"], "event": "SUBPROCESS_START", "label": "gibc"}
+{"at": "2026-09-06T09:41:14.090035+00:00", "event": "MODEL_PUBLISHED", "revision": "1cf7116faf4b2896594239c83008518bcc84c37d"}
+{"at": "2026-09-06T09:41:29.855714+00:00", "event": "CONTAMINATION_REGISTRY_READY", "ngrams": 3731125}
+{"at": "2026-09-06T09:41:30.222643+00:00", "event": "VALIDATION_COMPLETE", "examples": 1920}
+{"at": "2026-09-06T10:05:00.512717+00:00", "event": "MATERIALIZATION_COMPLETE", "status": "COMPLETE", "tokens": 1000000000}
+{"at": "2026-09-06T10:05:02.161816+00:00", "event": "FINAL_COMMIT_PUSHED"}

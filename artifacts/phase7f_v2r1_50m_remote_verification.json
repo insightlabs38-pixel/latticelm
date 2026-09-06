@@ -1,0 +1,15 @@
+{
+  "revision": "1cf7116faf4b2896594239c83008518bcc84c37d",
+  "verification": "PASS",
+  "method": "download every bundle file at immutable revision and compare SHA-256 with local export",
+  "files": {
+    "SHA256SUMS": "1b5bc0b5e26470403b807c9a692031c8e58b461fc9de342f14f1e37624ca1280",
+    "config.json": "2f4772872cecc5fba403e31f51e5b7272f0769a35d35e9c99824126b8a3d24d9",
+    "metrics.json": "001e716dc9554d2bba39798f5158c7d442892eb8a9ed9e663e9488504e251fee",
+    "model.safetensors": "360e999a1e2fa83f7dafb1100131eff0d9f9b4d550577fc7503dacdc33724ca0",
+    "resume_state.pt": "7feff786833df67c3a19796f43e3f972422b81cbd073505aaeffbf22a0ebb2b7",
+    "tokenizer.json": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "tokenizer.report.json": "d5962451981c1c9dc61eb50ff407c919d2ec18ca279411722bf7e65ea9df9bb2",
+    "training_manifest.json": "f952a971d983a4194483049c300ef81546b5bdf8e5be77bd668ddef24bd1b31f"
+  }
+}
