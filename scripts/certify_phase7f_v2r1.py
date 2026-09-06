@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import random
 import subprocess
+import sys
 
 import numpy as np
 import torch
@@ -96,11 +97,29 @@ def exact_resume_probe(base: Path, manifest: dict) -> dict:
     return {"status":"PASS","interruption_step":3,"resumed_step":4,"tokens_seen":512,"next_batch_sha256":got_batch,"policy":"bit-exact CPU eager"}
 
 
+def fresh_process_probe(base: Path, manifest: dict) -> dict:
+    train_arrays,_=arrays(base,manifest["shards"],"train")
+    mixer=ExactMixtureV2({source:SourceStream(train_arrays[source],128,700+i) for i,source in enumerate(SOURCES)})
+    expected=None
+    for _ in range(4):
+        x,y,_=mixer.batch();expected=hashlib.sha256(x.tobytes()+y.tobytes()).hexdigest()
+    code="""import hashlib,json,sys\nfrom pathlib import Path\nfrom latticelm.data_d import ExactMixtureV2,Int32Shard,SourceStream\nb=Path(sys.argv[1]);top=json.loads((b/'manifest.json').read_text());sources=('fineweb_edu','wikipedia','fineweb');a={s:[] for s in sources}\nfor child in top['shards']:\n m=json.loads((b/child['manifest_path']).read_text());a[m['source']].append(Int32Shard(b/m['path'],m).tokens)\nmix=ExactMixtureV2({s:SourceStream(a[s],128,700+i) for i,s in enumerate(sources)})\nfor _ in range(4):x,y,_=mix.batch()\nprint(hashlib.sha256(x.tobytes()+y.tobytes()).hexdigest())"""
+    got=subprocess.check_output([sys.executable,"-c",code,str(base)],cwd=ROOT,text=True).strip()
+    if got!=expected:raise ValueError("fresh-process next-batch mismatch")
+    return {"status":"PASS","batch":4,"sha256":got}
+
+
 def verify_audit(base: Path, manifest: dict, train_ids: set[str], val_ids: set[str]) -> dict:
     cache_path=base/manifest["audit_files"]["normalized_source_cache"]["path"]
     audit_path=base/manifest["audit_files"]["document_audit"]["path"]
+    old_path=base/manifest["audit_files"]["data_c_fineweb_ids"]["path"]
     if sha256_file(cache_path)!=manifest["audit_files"]["normalized_source_cache"]["sha256"]:raise ValueError("source cache hash mismatch")
     if sha256_file(audit_path)!=manifest["audit_files"]["document_audit"]["sha256"]:raise ValueError("audit hash mismatch")
+    if sha256_file(old_path)!=manifest["audit_files"]["data_c_fineweb_ids"]["sha256"]:raise ValueError("DATA-C ID registry hash mismatch")
+    old_ids=set(old_path.read_text().splitlines())
+    if len(old_ids)!=manifest["audit_files"]["data_c_fineweb_ids"]["count"]:raise ValueError("DATA-C ID registry count mismatch")
+    new_fineweb_edu={value.split(":",1)[1] for value in train_ids|val_ids if value.startswith("fineweb_edu:")}
+    if old_ids&new_fineweb_edu:raise ValueError("DATA-C FineWeb-Edu ID overlap")
     cache={row["document_id"]:row for row in map(json.loads,cache_path.open())}
     retained_exact={};retained_paragraph={};retained_simhash={};bands=[{} for _ in range(4)];counts=Counter()
     for row in map(json.loads,audit_path.open()):
@@ -128,7 +147,7 @@ def verify_audit(base: Path, manifest: dict, train_ids: set[str], val_ids: set[s
             retained_simhash[row["document_id"]]=fingerprint
             for band in range(4):bands[band].setdefault((fingerprint>>(16*band))&65535,[]).append(row["document_id"])
     if set(retained_exact.values()) != train_ids|val_ids:raise ValueError("audit does not cover every retained document")
-    return {"status":"PASS","raw_documents":len(cache),"audit_decisions":sum(counts.values()),"decision_counts":dict(counts),"recomputed_fingerprints":len(retained_exact)}
+    return {"status":"PASS","raw_documents":len(cache),"audit_decisions":sum(counts.values()),"decision_counts":dict(counts),"recomputed_fingerprints":len(retained_exact),"data_c_fineweb_ids_checked":len(old_ids)}
 
 
 def main() -> None:
@@ -141,7 +160,7 @@ def main() -> None:
     if train_ids&val_ids:raise ValueError("training/validation document overlap")
     if not manifest["common_validation_registry"]["registry_documents"] or manifest["common_validation_registry"]["tokens"]!=500_000:
         raise ValueError("common-validation registry incomplete")
-    audit=verify_audit(base,manifest,train_ids,val_ids);resume=exact_resume_probe(base,manifest)
+    audit=verify_audit(base,manifest,train_ids,val_ids);fresh=fresh_process_probe(base,manifest);resume=exact_resume_probe(base,manifest)
     source_tokens={source:sum(json.loads((base/x["manifest_path"]).read_text())["token_count"] for x in manifest["shards"] if json.loads((base/x["manifest_path"]).read_text())["source"]==source) for source in SOURCES}
     total=sum(source_tokens.values());mixture={source:source_tokens[source]/total for source in SOURCES}
     # Whole documents are immutable, so the stored pool may overshoot each target
@@ -150,7 +169,7 @@ def main() -> None:
     report={"corpus_identity":CORPUS_V2R1_ID,"manifest_sha256":sha256_file(path),"builder_git_commit":commit,
         "total_train_tokens":total,"total_train_documents":len(train_ids),"total_validation_documents":len(val_ids),"source_tokens":source_tokens,
         "realized_mixture":mixture,"train_validation_disjointness":"PASS","common_validation_registry":"PASS","shard_and_tokenizer_verification":"PASS",
-        "independent_dedup_verification":audit,"full_exact_resume_test":resume,"acceptance_gates":"PASS"}
+        "independent_dedup_verification":audit,"fresh_process_next_batch":fresh,"full_exact_resume_test":resume,"acceptance_gates":"PASS"}
     Path(args.output).write_text(json.dumps(report,indent=2,sort_keys=True)+"\n")
     print(json.dumps(report,indent=2,sort_keys=True))
 

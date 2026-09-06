@@ -181,6 +181,7 @@ def main():
   old_stats["babylm_documents_indexed"]=index.db.execute("select count(*) from exact").fetchone()[0]
  else: old_stats["babylm_documents_indexed"]=seed_babylm(index)
  old_ids,scanned=old_fineweb(index,tok,benchmark_refs);old_stats["fineweb_documents_indexed"]=len(old_ids);old_stats["fineweb_rows_scanned"]=scanned
+ old_id_path=base/"data-c-fineweb-document-ids.txt";old_id_path.write_text("\n".join(sorted(old_ids))+"\n")
  config={"corpus_identity":CORPUS_V2R1_ID,"targets":{"fineweb_edu":.5,"wikipedia":.25,"fineweb":.25},"seed":SEED,"minimum_words":50,"web_language_score":.95,"fineweb_edu_int_score":3,"validation_assignment":VALIDATION_ASSIGNMENT_VERSION}
  config_hash=sha256_bytes(canonical_json(config));targets={"fineweb_edu":a.total_tokens//2,"wikipedia":a.total_tokens//4,"fineweb":a.total_tokens-a.total_tokens//2-a.total_tokens//4}
  stats={};all_children=[];validation_children=[];decon=[];dedup=[]
@@ -218,7 +219,7 @@ def main():
   "total_documents":sum(json.loads((base/x["manifest_path"]).read_text())["document_count"] for x in all_children),"canonical_shard_ordering":[x["manifest_path"] for x in all_children],"shards":all_children,
   "source_stats":stats,"data_c_index_stats":old_stats,"transformation_config":config,"builder_git_commit":commit,"common_validation_registry":common_meta,
   "benchmark_registry_sizes":{key:len(value) for key,value in refs.items() if key!="common_validation"},"validation_shards":validation_children,
-  "audit_files":{"normalized_source_cache":{"path":"normalized-source-cache.jsonl","sha256":sha256_file(base/"normalized-source-cache.jsonl")},"document_audit":{"path":"document-audit.jsonl","sha256":sha256_file(base/"document-audit.jsonl")}},
+  "audit_files":{"normalized_source_cache":{"path":"normalized-source-cache.jsonl","sha256":sha256_file(base/"normalized-source-cache.jsonl")},"document_audit":{"path":"document-audit.jsonl","sha256":sha256_file(base/"document-audit.jsonl")},"data_c_fineweb_ids":{"path":old_id_path.name,"sha256":sha256_file(old_id_path),"count":len(old_ids)}},
   "dedup_removals":Counter(x["reason"] for x in dedup),"decontamination_removals":Counter(x["benchmark"] for x in decon)}
  (base/"manifest.json").write_bytes(canonical_json(top));(base/"dedup-decisions.jsonl").write_text("".join(json.dumps(x,sort_keys=True)+"\n" for x in dedup));(base/"decontamination-decisions.jsonl").write_text("".join(json.dumps(x,sort_keys=True)+"\n" for x in decon))
  print(json.dumps({"manifest":str(base/"manifest.json"),"sha256":sha256_file(base/"manifest.json"),"stats":stats,"old":old_stats},indent=2))
