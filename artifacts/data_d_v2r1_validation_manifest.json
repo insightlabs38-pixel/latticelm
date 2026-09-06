@@ -1,0 +1,18 @@
+{
+  "schema_version": "data-d-validation-registry-v1",
+  "corpus_identity": "DATA-D-BROAD-v2r1",
+  "assignment_method": "sha256-document-id-mod50-v1",
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "training_manifest_sha256": "f42df21984b27e77b6901a6335f751cee911efd1ff4579aba038a577255d601a",
+  "total_documents": 1169,
+  "total_tokens": 2065628,
+  "train_validation_disjointness": "PASS",
+  "stable_document_ids_and_boundaries": "Stored in each immutable child manifest listed below",
+  "shards": [
+    {"source":"fineweb_edu","manifest":"fineweb_edu-validation-000.manifest.json","manifest_sha256":"3db4435eebd46e080affea5182644b4002db6444d44e39260b6bf382ce2f236f","shard_sha256":"50e0144849627abcb923d5bb6e2a80397e3e8762efa3f8862ca9044dbb503c7e","documents":656,"tokens":996138},
+    {"source":"fineweb_edu","manifest":"fineweb_edu-validation-001.manifest.json","manifest_sha256":"89e102ca5feb734c5c27e4df74208e27e50057f9b357602f2930c32040034433","shard_sha256":"31f4ac2d9f796b6a94be4c6a449a9057ae03aa6a1c91c2fc512c0a2509e6f275","documents":7,"tokens":63458},
+    {"source":"wikipedia","manifest":"wikipedia-validation-000.manifest.json","manifest_sha256":"c481831a502084637e70560d3788fa6cc965f79b07470480b4f3b666965c34b1","shard_sha256":"1c83116e4ed6893e564c20afb852862068c516a96357094a85d2226390e51fc3","documents":133,"tokens":477359},
+    {"source":"fineweb","manifest":"fineweb-validation-000.manifest.json","manifest_sha256":"9ea1831f6be91b0552e2d7d8f034b635e5e2f7b376a56baa12e9b05fabdc6d31","shard_sha256":"caa5a1d2f9581b281cd26fd644f8e1a9c7e76f6fe68ed86fa539da1ef617e0ba","documents":349,"tokens":499856},
+    {"source":"fineweb","manifest":"fineweb-validation-001.manifest.json","manifest_sha256":"101dcb5cc41fc8ad205468421f916abf4d99d097443dd1d1182c0bc37ed53399","shard_sha256":"cb13ffc58b05f2df997e04125e3160e55c41ca0aec6d50b8289f0faf3a3423d9","documents":24,"tokens":28817}
+  ]
+}

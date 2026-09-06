@@ -1,0 +1,4 @@
+source,target_tokens,retained_training_tokens,realized_fraction,validation_documents,validation_tokens,raw_documents_examined
+fineweb_edu,50000000,50000548,0.4999480109761383,663,1059596,33338
+wikipedia,25000000,25009768,0.2500689345759705,133,477359,6948
+fineweb,25000000,25001179,0.2499830544478912,373,528673,17490
