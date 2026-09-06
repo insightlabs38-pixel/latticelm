@@ -95,9 +95,8 @@ def main():
    estimate=max(x["wall_seconds"] for x in results)+3600
    if time.time()+estimate<hard:results.append(train(f"LR-{refine}",refine,25_000_000,state,hard));winner,_,classification=choose(results[0],results[1]);winner=max((x for x in results if x["training_tokens"]==25_000_000),key=lambda x:sum(x[t]-CONTROL[t] for t in ("hellaswag","arc_easy","piqa","winogrande")))
   if winner and time.time()<soft and time.time()+winner["wall_seconds"]+3600<hard:results.append(train(winner["run_id"],int(winner["lr_fraction"]*100),50_000_000,state,hard))
-  reports(results,state,classification,winner);update(state,"FINALIZING");subprocess.run([sys.executable,"scripts/credential_scan.py"],cwd=ROOT,check=False) if (ROOT/"scripts/credential_scan.py").exists() else None
+  reports(results,state,classification,winner);update(state,"COMPLETE",final_decision=state["final_decision"]);event("MASTER_COMPLETE");subprocess.run([sys.executable,"scripts/credential_scan.py"],cwd=ROOT,check=False) if (ROOT/"scripts/credential_scan.py").exists() else None
   subprocess.run(["git","add","artifacts/lattice_reason_tournament_report.md","artifacts/lattice_reason_tournament_decision.md","artifacts/lattice_reason_mixture_results.csv","artifacts/lattice_reason_transfer_results.csv","artifacts/lattice_reason_training_curves.csv","artifacts/lattice_reason_tournament_state.json"],cwd=ROOT,check=True);subprocess.run(["git","commit","-m","Record LatticeReason mixture tournament"],cwd=ROOT,check=True);subprocess.run(["git","push","origin","main"],cwd=ROOT,check=True)
-  update(state,"COMPLETE",final_decision=state["final_decision"]);event("MASTER_COMPLETE")
  except TimeoutError as exc:reports([],state,"F — inconclusive",None);update(state,"HARD_DEADLINE_STOP",error=str(exc));event("MASTER_HARD_STOP")
  except Exception as exc:update(state,"FAILED",error=f"{type(exc).__name__}: {exc}");event("MASTER_FAILED",error=state["error"]);raise
 if __name__=="__main__":main()
