@@ -1,0 +1,14 @@
+{
+  "repo_id": "insightlabs38-pixel/LatticeLM-research",
+  "path": "experiments/co4-l-data-d-v2r1-25m",
+  "revision": "0af296eaedabc77622edb2c04d5f3a01001a42a0",
+  "verified": true,
+  "source_git_commit": "c2b2b4a08102796e3799336ea512d74b11343d13",
+  "native_checkpoint_sha256": "6760880ba5196ae9af8688eb126a65db1ef7f0fd80613549c01692ba0676a894",
+  "model_safetensors_sha256": "12906299109758ff67e407de0cc73a7f0a8a52a8ec2b50e40531302eabe25660",
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "data_manifest_sha256": "f42df21984b27e77b6901a6335f751cee911efd1ff4579aba038a577255d601a",
+  "private_exact_resume_state_preserved": true,
+  "safetensors_roundtrip_verified": true,
+  "remote_file_sizes_verified": true
+}
