@@ -1,0 +1,141 @@
+{
+  "difficulty_counts": {
+    "1": 1408920,
+    "2": 1408919,
+    "3": 1408900,
+    "4": 1408900,
+    "5": 1408900,
+    "6": 1408900
+  },
+  "disk_bytes": 4000000000,
+  "example_count": 8453439,
+  "family_counts": {
+    "arithmetic_quantity": 845344,
+    "boolean_logical": 1268016,
+    "entity_reference": 1268016,
+    "physical_closed_world": 422671,
+    "procedural_planning": 845344,
+    "spatial_relational": 1268016,
+    "state_tracking": 1268016,
+    "temporal_causal": 1268016
+  },
+  "final_tokens": 1000000000,
+  "first_100m_wall_seconds": 140.1080745490035,
+  "free_disk_bytes": 63384072192,
+  "generator_commit": "f9515f6bbc9f04862cc9d43c9507de8580e956f5",
+  "peak_rss_bytes": 2443161600,
+  "selected_target": 1000000000,
+  "status": "COMPLETE",
+  "tokens_per_second": 709090.3041786134,
+  "validation": {
+    "counts": {
+      "arithmetic_quantity:1": 40,
+      "arithmetic_quantity:2": 40,
+      "arithmetic_quantity:3": 40,
+      "arithmetic_quantity:4": 40,
+      "arithmetic_quantity:5": 40,
+      "arithmetic_quantity:6": 40,
+      "boolean_logical:1": 40,
+      "boolean_logical:2": 40,
+      "boolean_logical:3": 40,
+      "boolean_logical:4": 40,
+      "boolean_logical:5": 40,
+      "boolean_logical:6": 40,
+      "entity_reference:1": 40,
+      "entity_reference:2": 40,
+      "entity_reference:3": 40,
+      "entity_reference:4": 40,
+      "entity_reference:5": 40,
+      "entity_reference:6": 40,
+      "physical_closed_world:1": 40,
+      "physical_closed_world:2": 40,
+      "physical_closed_world:3": 40,
+      "physical_closed_world:4": 40,
+      "physical_closed_world:5": 40,
+      "physical_closed_world:6": 40,
+      "procedural_planning:1": 40,
+      "procedural_planning:2": 40,
+      "procedural_planning:3": 40,
+      "procedural_planning:4": 40,
+      "procedural_planning:5": 40,
+      "procedural_planning:6": 40,
+      "spatial_relational:1": 40,
+      "spatial_relational:2": 40,
+      "spatial_relational:3": 40,
+      "spatial_relational:4": 40,
+      "spatial_relational:5": 40,
+      "spatial_relational:6": 40,
+      "state_tracking:1": 40,
+      "state_tracking:2": 40,
+      "state_tracking:3": 40,
+      "state_tracking:4": 40,
+      "state_tracking:5": 40,
+      "state_tracking:6": 40,
+      "temporal_causal:1": 40,
+      "temporal_causal:2": 40,
+      "temporal_causal:3": 40,
+      "temporal_causal:4": 40,
+      "temporal_causal:5": 40,
+      "temporal_causal:6": 40
+    },
+    "data_path": "validation.jsonl",
+    "data_sha256": "f97fc61a163e1436258da4a9ff36e2b14da872dc24a114775133586eae1b9311",
+    "examples": 1920,
+    "generator_version": "lattice-reason-v1",
+    "held_out_templates": true,
+    "held_out_vocabulary": true,
+    "rejected": {},
+    "schema_version": "lattice-reason-validation-v1",
+    "seed": 99173,
+    "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "verification": "PASS"
+  },
+  "views": [
+    {
+      "path": "view-1000000.manifest.json",
+      "sha256": "af490e0532a7bab41414e71009424b5e381e6899628578b6b410482a56b55d8f",
+      "tokens": 1000000
+    },
+    {
+      "path": "view-5000000.manifest.json",
+      "sha256": "8c8865fce776530f155eeacb8ecc903f189aab9ec3522b71d4984f76a87b2d32",
+      "tokens": 5000000
+    },
+    {
+      "path": "view-10000000.manifest.json",
+      "sha256": "1d6f04d4f09e94037dcc038f6912c4525387aac81eef783b4f040dcce0fcccf0",
+      "tokens": 10000000
+    },
+    {
+      "path": "view-25000000.manifest.json",
+      "sha256": "b4243fcc515133b8e85616877c2e1109fc069e3abc7449ea439736b5569a4939",
+      "tokens": 25000000
+    },
+    {
+      "path": "view-50000000.manifest.json",
+      "sha256": "31755f47aab2495c365e5cb03790e20a4857b172557b094b864bddb1bc6ab857",
+      "tokens": 50000000
+    },
+    {
+      "path": "view-100000000.manifest.json",
+      "sha256": "e2c2bd9bbd69678d8340bbe083d494de65e7554a6b20954e4986b0fac5c18496",
+      "tokens": 100000000
+    },
+    {
+      "path": "view-250000000.manifest.json",
+      "sha256": "b969281819d7d2d0e75ef25eb4760c13fc030bb9c2ec6cc157f863ed064ef90b",
+      "tokens": 250000000
+    },
+    {
+      "path": "view-500000000.manifest.json",
+      "sha256": "e3c9ae91edc5b6a433f83eb575d9315786a49515a8836e1602d3ac1edae23979",
+      "tokens": 500000000
+    },
+    {
+      "path": "view-1000000000.manifest.json",
+      "sha256": "56c7634a0bdc27e21bce454da4a315ecd69c0294474a42d584860223636b4a98",
+      "tokens": 1000000000
+    }
+  ],
+  "wall_seconds": 1410.2576133210096
+}
