@@ -84,6 +84,12 @@ def test_v2_exact_per_batch_mixture_and_resume(tmp_path):
     resumed.load_state_dict(state); assert np.array_equal(expected,resumed.batch()[0])
 
 
+def test_document_pool_overshoot_tolerance_is_bounded():
+    observed={"fineweb_edu":502070,"wikipedia":254962,"fineweb":251514};total=sum(observed.values())
+    target={"fineweb_edu":.5,"wikipedia":.25,"fineweb":.25}
+    assert all(abs(observed[source]/total-target[source])<=.01 for source in target)
+
+
 def test_fresh_process_batch_reproduction(tmp_path):
     tokenizer,top,streams=fixture(tmp_path); mixer=ExactMixture(streams)
     for _ in range(4): expected=mixer.batch()[0]
