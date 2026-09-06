@@ -152,7 +152,8 @@ def export_checkpoint(
     # inference weights. Legacy checkpoints may not contain every RNG stream.
     resume = {key: value for key, value in checkpoint.items() if key != "model"}
     resume["model_safetensors_sha256"] = sha256(weights)
-    resume["exact_rng_state_available"] = all(key in checkpoint for key in ("torch_rng_state", "data_generator_state"))
+    resume["exact_rng_state_available"] = ("torch_rng_state" in checkpoint and
+        ("data_generator_state" in checkpoint or "data_source_selector_state" in checkpoint))
     torch.save(resume, output / "resume_state.pt")
     sums = []
     for path in sorted(output.iterdir()):

@@ -1,0 +1,19 @@
+{
+  "tokens_trained": 25000000,
+  "parameters": 15949760,
+  "val_loss": 4.46479931473732,
+  "val_ppl": 86.90358752034344,
+  "data_d_balanced_validation_loss": 3.6956862956285477,
+  "fineweb_edu_validation_loss": 3.694157361984253,
+  "wikipedia_validation_loss": 3.579136088490486,
+  "fineweb_validation_loss": 3.936518684029579,
+  "wall_seconds": 4992.790273161998,
+  "checkpoint_sha256": "6760880ba5196ae9af8688eb126a65db1ef7f0fd80613549c01692ba0676a894",
+  "data_manifest_sha256": "f42df21984b27e77b6901a6335f751cee911efd1ff4579aba038a577255d601a",
+  "wikitext_103_perplexity": 83.40935963639369,
+  "wikitext_bits_per_byte": 2.03912217440968,
+  "hellaswag": 0.26289583748257317,
+  "arc_easy": 0.28324915824915825,
+  "piqa": 0.5342763873775843,
+  "winogrande": 0.4980268350434096
+}
