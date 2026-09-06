@@ -64,6 +64,15 @@ class BytePairTokenizer:
             values = output
         return values
 
+    def decode(self, ids: list[int]) -> str:
+        values = list(ids)
+        for pair, new_id in reversed(list(self.merge_to_id.items())):
+            expanded: list[int] = []
+            for value in values:
+                expanded.extend(pair if value == new_id else (value,))
+            values = expanded
+        return bytes(value - self.byte_offset for value in values if value >= self.byte_offset).decode("utf-8", errors="replace")
+
     def save(self, path: str | Path) -> None:
         Path(path).write_text(json.dumps({"merges": self.merges, "vocab_size": self.vocab_size}, indent=2), encoding="utf-8")
 
@@ -85,6 +94,9 @@ class HuggingFaceBPE:
 
     def encode(self, text: str) -> list[int]:
         return self.tokenizer.encode(text).ids
+
+    def decode(self, ids: list[int]) -> str:
+        return self.tokenizer.decode(ids, skip_special_tokens=False)
 
     def save(self, path: str | Path) -> None:
         self.tokenizer.save(str(path))

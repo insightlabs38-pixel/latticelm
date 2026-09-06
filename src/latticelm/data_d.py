@@ -20,10 +20,13 @@ import numpy as np
 
 SCHEMA_VERSION = "data-d-shard-v1"
 CORPUS_ID = "DATA-D-BROAD-v1"
+CORPUS_V2_ID = "DATA-D-BROAD-v2"
+CORPUS_V2R1_ID = "DATA-D-BROAD-v2r1"
 SOURCES = ("fineweb_edu", "wikipedia", "fineweb", "babylm")
 MIXTURE_COUNTS = {"fineweb_edu": 20, "wikipedia": 8, "fineweb": 6, "babylm": 6}
 DECONTAMINATION_VERSION = "normalized-exact+13gram+simhash-v1"
 DEDUP_VERSION = "sha256-paragraph+simhash64-v1"
+VALIDATION_ASSIGNMENT_VERSION = "sha256-document-id-mod50-v1"
 
 
 def canonical_json(value: object) -> bytes:
@@ -54,6 +57,12 @@ def normalized_words(text: str) -> list[str]:
 
 def document_hash(text: str) -> str:
     return sha256_bytes(normalize_text(text).encode())
+
+
+def validation_assignment(document_id: str, modulus: int = 50) -> str:
+    """Frozen document-level split: about 2%, independent of processing order."""
+    value = int.from_bytes(hashlib.sha256(document_id.encode()).digest()[:8], "big")
+    return "validation" if value % modulus == 0 else "train"
 
 
 def paragraph_hashes(text: str) -> tuple[str, ...]:
@@ -141,15 +150,20 @@ class GlobalDeduplicator:
 class ContaminationRegistry:
     def __init__(self, examples: Mapping[str, Sequence[str]], ngram: int = 13):
         self.ngram = ngram; self.exact: dict[str, set[str]] = {}; self.grams: dict[str, set[int]] = {}
-        self.simhashes: dict[str, list[int]] = {}
+        self.simhashes: dict[str, list[int]] = {}; self.simhash_bands: dict[str, list[dict[int, list[int]]]] = {}
         for benchmark, rows in examples.items():
             self.exact[benchmark] = {" ".join(normalized_words(row)) for row in rows if len(normalized_words(row)) >= 8}
             self.grams[benchmark] = set()
             self.simhashes[benchmark] = []
+            self.simhash_bands[benchmark] = [dict() for _ in range(4)]
             for row in rows:
                 words = normalized_words(row)
                 self.grams[benchmark].update(self._grams(words))
-                if len(words) >= 20: self.simhashes[benchmark].append(simhash64(row))
+                if len(words) >= 20:
+                    fingerprint=simhash64(row); self.simhashes[benchmark].append(fingerprint)
+                    for band in range(4):
+                        key=(fingerprint>>(band*16))&0xFFFF
+                        self.simhash_bands[benchmark][band].setdefault(key,[]).append(fingerprint)
 
     def _grams(self, words: Sequence[str]) -> set[int]:
         return {int.from_bytes(hashlib.blake2b(" ".join(words[i:i+self.ngram]).encode(), digest_size=8).digest(), "big")
@@ -159,9 +173,14 @@ class ContaminationRegistry:
         words = normalized_words(document.text); phrase = " ".join(words); grams = self._grams(words)
         output = []
         for benchmark in sorted(self.exact):
-            exact = next((item for item in self.exact[benchmark] if item and item in phrase), None)
             overlap = sorted(grams & self.grams[benchmark])
-            near = min((hamming(simhash64(document.text), value) for value in self.simhashes[benchmark]), default=65)
+            # Exact containment cannot occur for a sufficiently long registry
+            # row without sharing at least one registry n-gram.  This guard is
+            # essential for large references such as WikiText-103.
+            exact = next((item for item in self.exact[benchmark] if item and item in phrase), None) if overlap else None
+            fingerprint=simhash64(document.text); candidates=[]
+            for band in range(4): candidates.extend(self.simhash_bands[benchmark][band].get((fingerprint>>(band*16))&0xFFFF,()))
+            near = min((hamming(fingerprint, value) for value in candidates), default=65)
             rule = "normalized_exact" if exact else ("long_ngram" if len(overlap) >= 2 else ("near_duplicate" if near <= 3 else None))
             if rule:
                 fingerprint = sha256_bytes((exact or str(overlap[:2]) or str(near)).encode())
@@ -229,14 +248,49 @@ class ExactMixture:
         for key, stream in self.streams.items(): stream.draws = int(draws[key])
 
 
+class ExactMixtureV2:
+    """Per-batch exact 50/25/25 DATA-D-BROAD-v2/v2r1 composition."""
+    LABELS = ("fineweb_edu",) * 4 + ("wikipedia",) * 2 + ("fineweb",) * 2
+
+    def __init__(self, streams: Mapping[str, SourceStream]):
+        self.streams = dict(streams); self.counter = 0
+        if set(self.streams) != {"fineweb_edu", "wikipedia", "fineweb"}:
+            raise ValueError("DATA-D-BROAD-v2r1 requires exactly three frozen sources")
+
+    def batch(self) -> tuple[np.ndarray, np.ndarray, tuple[str, ...]]:
+        self.counter += 1; pairs = [self.streams[source].one() for source in self.LABELS]
+        return np.stack([x for x, _ in pairs]), np.stack([y for _, y in pairs]), self.LABELS
+
+    def state_dict(self) -> dict[str, object]:
+        return {"source_selector_counter": self.counter,
+                "source_draw_counts": {key: stream.draws for key, stream in self.streams.items()}}
+
+    def load_state_dict(self, value: Mapping[str, object]) -> None:
+        self.counter = int(value["source_selector_counter"]); draws = value["source_draw_counts"]
+        for key, stream in self.streams.items(): stream.draws = int(draws[key])
+
+
 def verify_top_manifest(path: str | Path, tokenizer_path: str | Path) -> dict[str, object]:
     path = Path(path); payload = json.loads(path.read_text())
-    if payload.get("schema_version") != "data-d-corpus-v1" or payload.get("corpus_identity") != CORPUS_ID:
+    if payload.get("schema_version") != "data-d-corpus-v1" or payload.get("corpus_identity") not in {CORPUS_ID, CORPUS_V2_ID, CORPUS_V2R1_ID}:
         raise ValueError("invalid DATA-D top-level manifest")
     if payload.get("tokenizer_sha256") != sha256_file(tokenizer_path): raise ValueError("wrong tokenizer")
+    observed_ids: set[str] = set()
+    observed_tokens = 0
     for child in payload.get("shards", []):
         manifest_path = path.parent / child["manifest_path"]
         if sha256_file(manifest_path) != child["manifest_sha256"]: raise ValueError("child manifest hash mismatch")
         manifest = json.loads(manifest_path.read_text())
+        if manifest.get("tokenizer_sha256") != payload["tokenizer_sha256"]: raise ValueError("child tokenizer mismatch")
+        ids = manifest.get("stable_document_ids", [])
+        bounds = manifest.get("document_boundary_offsets", [])
+        if len(ids) != int(manifest.get("document_count", -1)) or len(bounds) != len(ids) + 1:
+            raise ValueError("invalid document boundaries")
+        if not bounds or bounds[0] != 0 or bounds[-1] != int(manifest["token_count"]) or any(a > b for a, b in zip(bounds, bounds[1:])):
+            raise ValueError("invalid document boundaries")
+        if observed_ids.intersection(ids): raise ValueError("duplicate stable document ID")
+        observed_ids.update(ids); observed_tokens += int(manifest["token_count"])
         Int32Shard(path.parent / manifest["path"], manifest)
+    if observed_tokens != int(payload.get("total_unique_tokens", observed_tokens)): raise ValueError("top-level token count mismatch")
+    if len(observed_ids) != int(payload.get("total_documents", len(observed_ids))): raise ValueError("top-level document count mismatch")
     return payload

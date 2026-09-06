@@ -11,8 +11,12 @@ import numpy as np
 import pytest
 
 from latticelm.data_d import (CORPUS_ID, SCHEMA_VERSION, ContaminationRegistry, Document,
-    ExactMixture, GlobalDeduplicator, Int32Shard, SourceStream, canonical_json,
-    sha256_file, verify_top_manifest)
+    ExactMixture, ExactMixtureV2, GlobalDeduplicator, Int32Shard, SourceStream, canonical_json,
+    sha256_file, validation_assignment, verify_top_manifest)
+from latticelm.config import LatticeConfig
+from latticelm.model import build_model
+import random
+import torch
 
 
 def write_shard(base: Path, source: str, values: np.ndarray, tokenizer_hash: str) -> dict:
@@ -71,6 +75,15 @@ def test_exact_mixture_and_next_batch_resume(tmp_path):
     assert np.array_equal(expected,resumed.batch()[0])
 
 
+def test_v2_exact_per_batch_mixture_and_resume(tmp_path):
+    _,_,streams=fixture(tmp_path); selected={k:v for k,v in streams.items() if k!="babylm"}
+    mixer=ExactMixtureV2(selected); _,_,labels=mixer.batch()
+    assert Counter(labels)==Counter({"fineweb_edu":4,"wikipedia":2,"fineweb":2})
+    state=mixer.state_dict(); expected=mixer.batch()[0]
+    _,_,fresh=fixture(tmp_path); resumed=ExactMixtureV2({k:v for k,v in fresh.items() if k!="babylm"})
+    resumed.load_state_dict(state); assert np.array_equal(expected,resumed.batch()[0])
+
+
 def test_fresh_process_batch_reproduction(tmp_path):
     tokenizer,top,streams=fixture(tmp_path); mixer=ExactMixture(streams)
     for _ in range(4): expected=mixer.batch()[0]
@@ -124,7 +137,7 @@ def test_paragraph_near_dedup_and_decontamination():
 
 def test_stable_validation_partition_excludes_training():
     ids=[f"doc-{i}" for i in range(1000)]
-    validation={x for x in ids if int(hashlib.sha256(x.encode()).hexdigest()[:8],16)%20==0}
+    validation={x for x in ids if validation_assignment(x)=="validation"}
     training=set(ids)-validation
     assert training.isdisjoint(validation) and validation
 
@@ -132,3 +145,34 @@ def test_stable_validation_partition_excludes_training():
 def test_old_data_c_fineweb_ids_are_rejected():
     old={"id-a","id-b"}; candidates=["id-b","id-c"]
     assert [x for x in candidates if x not in old]==["id-c"]
+
+
+def test_full_trainer_state_exact_resume(tmp_path):
+    def setup():
+        random.seed(7);torch.manual_seed(7)
+        streams={source:SourceStream([np.arange(4097,dtype=np.int32)%128],16,30+i) for i,source in enumerate(("fineweb_edu","wikipedia","fineweb"))}
+        mixer=ExactMixtureV2(streams)
+        config=LatticeConfig(vocab_size=128,d_model=16,n_layers=1,n_heads=4,n_kv_heads=1,ffn_hidden=32,
+            context_length=16,batch_size=8,architecture="co4_causal",tie_embeddings=False,dropout=0)
+        model=build_model(config);optimizer=torch.optim.AdamW(model.parameters(),lr=3e-4)
+        scheduler=torch.optim.lr_scheduler.LambdaLR(optimizer,lambda _:1.0)
+        return model,optimizer,scheduler,mixer
+    def step(parts):
+        model,optimizer,scheduler,mixer=parts;x,y,_=mixer.batch();random.random()
+        _,loss=model(torch.from_numpy(x.astype(np.int64)),torch.from_numpy(y.astype(np.int64)))
+        optimizer.zero_grad();loss.backward();optimizer.step();scheduler.step()
+        return hashlib.sha256(x.tobytes()+y.tobytes()).hexdigest(),loss.detach().clone()
+    original=setup()
+    for _ in range(3):step(original)
+    model,optimizer,scheduler,mixer=original
+    checkpoint={"model":model.state_dict(),"optimizer":optimizer.state_dict(),"scheduler":scheduler.state_dict(),
+        "python_rng":random.getstate(),"torch_rng":torch.get_rng_state(),"selector":mixer.state_dict(),"step":3,"tokens":384,"manifest":"fixture"}
+    path=tmp_path/"resume.pt";torch.save(checkpoint,path);expected_batch,expected_loss=step(original)
+    expected={key:value.clone() for key,value in model.state_dict().items()};expected_python=random.getstate();expected_torch=torch.get_rng_state()
+    resumed=setup();state=torch.load(path,weights_only=False);m2,o2,s2,x2=resumed
+    m2.load_state_dict(state["model"]);o2.load_state_dict(state["optimizer"]);s2.load_state_dict(state["scheduler"])
+    random.setstate(state["python_rng"]);torch.set_rng_state(state["torch_rng"]);x2.load_state_dict(state["selector"])
+    got_batch,got_loss=step(resumed)
+    assert got_batch==expected_batch and torch.equal(got_loss,expected_loss)
+    assert all(torch.equal(value,m2.state_dict()[key]) for key,value in expected.items())
+    assert random.getstate()==expected_python and torch.equal(torch.get_rng_state(),expected_torch)
