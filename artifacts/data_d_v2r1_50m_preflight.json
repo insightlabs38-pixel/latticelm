@@ -1,0 +1,22 @@
+{
+  "checkpoint_sha256": "6760880ba5196ae9af8688eb126a65db1ef7f0fd80613549c01692ba0676a894",
+  "checkpoint_sidecar_match": true,
+  "source": "DATA-D-BROAD-v2r1",
+  "lineage": "co4-l-data-d-v2r1-25m",
+  "parameters": 15949760,
+  "config_match": true,
+  "tokens_seen": 25000000,
+  "step": 24415,
+  "source_tokens": {"fineweb_edu": 12500000, "wikipedia": 6250000, "fineweb": 6250000},
+  "data_manifest_sha256": "f42df21984b27e77b6901a6335f751cee911efd1ff4579aba038a577255d601a",
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "optimizer": {"class": "AdamW", "lr": 0.0003, "betas": [0.9, 0.999], "eps": 1e-8, "weight_decay": 0.1},
+  "scheduler": {"class": "LambdaLR", "schedule": "constant", "last_epoch": 24415},
+  "python_rng_present": true,
+  "torch_rng_bytes": 5056,
+  "data_selector_counter": 24415,
+  "source_draw_counts": {"fineweb_edu": 97660, "wikipedia": 48830, "fineweb": 48830},
+  "next_batch_sha256": "4e566df09e2f2945e1382dcd8bc734812746fcbf2628858f77d4c20057e09f85",
+  "next_batch_repeat_equal": true,
+  "status": "PASS"
+}
