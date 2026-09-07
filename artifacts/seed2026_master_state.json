@@ -1,0 +1,68 @@
+{
+  "child_pid": null,
+  "completed_stages": [
+    "STAGE1",
+    "STAGE2"
+  ],
+  "current_stage": "COMPLETE",
+  "current_tokens": 0,
+  "final_decisions": {
+    "is_data_d_superiority_replicated": "YES",
+    "is_lr10_worth_further_research": "INCONCLUSIVE",
+    "recommended_next_experiments": [
+      "A third predeclared DATA-D seed at 100M if variance is not stable",
+      "Replicate LR-10 at one additional predeclared seed if matched transfer is positive",
+      "Only after variance settles, revisit capacity or token scaling"
+    ],
+    "scale_data_d_beyond_100m_next": "LOWER PRIORITY",
+    "seed_noise_requires_more_replication": "NO",
+    "test_24m_next": "NOT YET"
+  },
+  "hard_deadline": "2026-09-08T06:57:18.203987+00:00",
+  "latest_checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-l-data-d-seed2026-100m/latest.pt",
+  "lr10": null,
+  "observed_throughput": 4895.662445460489,
+  "replication": {
+    "arc_easy": 0.2937710437710438,
+    "checkpoint_sha256": "0bd3bd6b1aed9afb388a38f9e9543339acf19b63d136c40a3900d468b8b65423",
+    "data_d_validation_loss": 3.4700144231319427,
+    "fineweb_edu_validation_loss": 3.4685002118349075,
+    "fineweb_validation_loss": 3.719732105731964,
+    "hellaswag": 0.261202947619996,
+    "hf_path": "experiments/seed2026/data-d-100m",
+    "hf_revision": "8d5318596c71eda6b141835763311c1d4ba5e0b3",
+    "parameters": 15949760,
+    "piqa": 0.5457018498367792,
+    "raw_gibc": "artifacts/seed2026_data_d_100m/gibc.json",
+    "remote_file_sha256": {
+      "config.json": "0d0b694b3f17c189e04fade83b7a1a46c3612c2a96e1b697c081bf83b49e1026",
+      "metrics.json": "74974889ee4b6283ab7fe9da20c92ab1a1a09b654c8c7b0033d9ab73d7f13df6",
+      "model.safetensors": "c7c59c009609221106b7d63cabc63a1264feed7d0f408830efc07bb30364e28f",
+      "resume_state.pt": "73f991bb37ea72d7be5b2cadeb2fd810ab90f9f54b3fe84d9d7f7f6eba59326a",
+      "tokenizer.json": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+      "tokenizer.report.json": "d5962451981c1c9dc61eb50ff407c919d2ec18ca279411722bf7e65ea9df9bb2",
+      "training_manifest.json": "48ac66fe2d80e3585758bfc63e1895332b9b97d6602eb6d89af13908d521a4bd"
+    },
+    "remote_sha256_verified": true,
+    "run_id": "co4-l-data-d-seed2026-100m",
+    "seed": 2026,
+    "tokens_per_second": 4895.662445460489,
+    "training_tokens": 100000000,
+    "wall_seconds": 20426.24488800799,
+    "wikipedia_validation_loss": 3.3020965307950974,
+    "wikitext_bpb": 1.9284918293989646,
+    "wikitext_ppl": 65.61171328380885,
+    "winogrande": 0.5130228887134964
+  },
+  "replication_classification": "STABLE",
+  "replication_usable": true,
+  "retry_counts": {},
+  "run_id": "seed2026-replication-20260907T165718Z",
+  "seed": 2026,
+  "soft_deadline": "2026-09-08T05:27:18.203987+00:00",
+  "source_git_commit": "f2d09384f9ed13e13d01f81aa9dba7912da65d7a",
+  "spot_interruptions": 0,
+  "started_at": "2026-09-07T16:57:18.203987+00:00",
+  "stop_requested": false,
+  "updated_at": "2026-09-07T22:46:59.899494+00:00"
+}
