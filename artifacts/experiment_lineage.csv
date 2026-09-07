@@ -1,0 +1,9 @@
+experiment,model,parameters,data mixture,LR fraction,seed,start tokens,end tokens,wall seconds,tok/s,completion,checkpoint,evaluation,HF revision,notes
+original-tournament-dry-run,Co4-L,15949760,DATA-D+LR planned,,314159,0,0,0.493,,VALID_COMPLETE,N/A,N/A,,preflight only at ab79b88
+original-tournament-LR-10,Co4-L,15949760,90% DATA-D / 10% LR,0.10,314159,0,0,20.813,,FAILED,NONE,NONE,,three dtype-failure attempts; no training step completed; source 07b3356
+successor-LR-10-25M,Co4-L,15949760,90% DATA-D / 10% LR,0.10,314159,0,25000000,5039.131,4961.173,VALID_COMPLETE,local native + HF strict verified,WikiText + GIBC + LR held-out,837ca620994d1b332deaf94b81b7dd7d3f8e7082,trained 02:28:23-03:52:45 UTC; evaluation/publish ended 04:01:52
+successor-LR-25-25M,Co4-L,15949760,75% DATA-D / 25% LR,0.25,314159,0,25000000,5076.754,4924.406,VALID_COMPLETE,local native + HF strict verified,WikiText + GIBC + LR held-out,530ef189103d8959d02188c9487fe376462f8820,trained 04:01:52-05:26:52 UTC; evaluation/publish ended 05:35:59
+successor-LR-winner-100M,Co4-L,15949760,selected LR mixture,,314159,25000000,100000000,,,NOT_RUN,NONE,NONE,,classification E blocked winner scaling
+successor-LR-winner-200M,Co4-L,15949760,selected LR mixture,,314159,100000000,200000000,,,NOT_RUN,NONE,NONE,,100M gate not reached
+successor-capacity-24M,Co4-24M,24402816,selected LR mixture,,314159,0,50000000,,,NOT_RUN,NONE,NONE,,healthy LR 100M prerequisite not reached
+successor-DATA-D-fallback-100M,Co4-L,15949760,50% FineWeb-Edu / 25% Wikipedia / 25% FineWeb,0,314159,50000000,100000000,9993.184,5003.410,VALID_COMPLETE,local native + HF strict verified,WikiText + GIBC,5ae234a6a9c127ede46768baaf7f0d40892e2df7,resumed certified DATA-D lineage; controller subprocess 05:35:59-08:22:38 UTC

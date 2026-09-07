@@ -82,7 +82,10 @@ def main():
  if a.target<=tokens:raise RuntimeError("target must exceed current tokens")
  milestones={5_000_000,10_000_000,15_000_000,20_000_000,25_000_000,50_000_000,75_000_000,100_000_000,125_000_000,150_000_000,175_000_000,200_000_000};seen={m for m in milestones if m<=tokens};started=time.perf_counter();session_tokens=tokens;loss_value=float("nan")
  while tokens<a.target:
-  x,y,labels,families=mixer.batch();increment=min(1024,a.target-tokens);x=torch.from_numpy(x.astype(np.int64));y=torch.from_numpy(y.astype(np.int64))
+  x,y,labels,families=mixer.batch();increment=min(1024,a.target-tokens)
+  # np.stack may preserve int32 when every selected DATA-D row is int32.
+  # Cross entropy requires int64 targets regardless of mixture composition.
+  x=torch.as_tensor(x,dtype=torch.long);y=torch.as_tensor(y,dtype=torch.long)
   loss=model(x,y)[1] if increment==1024 else masked_loss(model,x,y,increment)
   if not torch.isfinite(loss):raise FloatingPointError("non-finite loss")
   opt.zero_grad(set_to_none=True);loss.backward();torch.nn.utils.clip_grad_norm_(model.parameters(),config.grad_clip);opt.step();sched.step()

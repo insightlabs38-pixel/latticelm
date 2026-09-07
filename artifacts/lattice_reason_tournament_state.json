@@ -2,8 +2,8 @@
   "benchmark_metrics": {},
   "checkpoint_hash": null,
   "completed_stages": [],
-  "current_model": null,
-  "current_stage": "PENDING_CANONICAL_LAUNCH",
+  "current_model": "LR-10",
+  "current_stage": "FAILED",
   "data_d_tokens": 0,
   "decision_rule": {
     "acceptable_wikitext_ppl_cost_fraction": 0.05,
@@ -12,19 +12,23 @@
     "refinement": "predeclared cases A-D from experiment request; default LR-15 for a 10/25 tradeoff",
     "winner": "external transfer first; LatticeReason validation cannot select a winner alone"
   },
+  "error": "RuntimeError: train-LR-10-25000000 exhausted retries",
   "final_decision": null,
-  "hard_deadline": "2026-09-06T17:01:40.876128+00:00",
+  "hard_deadline": "2026-09-07T03:02:06.538803+00:00",
   "latest_checkpoint": null,
   "lattice_reason_tokens": 0,
-  "mixture": null,
+  "mixture": {
+    "data_d": 0.9,
+    "lattice_reason": 0.1
+  },
   "retry_counts": {},
   "run_id": "lattice-reason-tournament-2026-09-06",
   "seed": 314159,
-  "soft_deadline": "2026-09-06T17:01:04.876128+00:00",
-  "source_commit": "ab79b88de7860d81a8cc162ed86f8e559aa9955c",
+  "soft_deadline": "2026-09-07T02:02:06.538803+00:00",
+  "source_commit": "07b3356f9534e0c2e21256871e4c53d53ee0badb",
   "spot_interruptions": 0,
-  "started_at": "2026-09-06T17:00:28.876152+00:00",
-  "total_tokens": 0,
-  "updated_at": "2026-09-06T17:00:29.368740+00:00",
+  "started_at": "2026-09-06T17:02:06.538828+00:00",
+  "total_tokens": 25000000,
+  "updated_at": "2026-09-06T17:02:27.351701+00:00",
   "validation_metrics": {}
 }

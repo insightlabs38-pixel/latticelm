@@ -48,7 +48,7 @@
   "source_git_commit": "185488c67b539c4da598bebfc458efa2ea3c5b33",
   "spot_interruptions": 0,
   "start_time": "2026-09-07T02:28:23.230688+00:00",
-  "stop_requested": false,
+  "stop_requested": true,
   "tournament_result": {
     "classification": "",
     "rows": [
@@ -170,5 +170,5 @@
     ],
     "verified": true
   },
-  "updated_at": "2026-09-07T08:31:58.088615+00:00"
+  "updated_at": "2026-09-07T08:32:11.174937+00:00"
 }

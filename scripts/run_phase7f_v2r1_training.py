@@ -1,7 +1,7 @@
 """Train or exactly resume the controlled Co4-L DATA-D-BROAD-v2r1 lineage."""
 from __future__ import annotations
 
-import argparse, csv, json, math, random, resource, signal, time
+import argparse, csv, hashlib, json, math, random, resource, signal, time
 from pathlib import Path
 
 import numpy as np
@@ -43,12 +43,16 @@ def masked_loss(model,x,y,increment):
  return (losses*mask).sum()/increment
 
 
-def state_payload(model,optimizer,scheduler,config,mixer,step,tokens,source_tokens,elapsed,last_eval,best,manifest_hash,preemptions):
+def next_digest(mixer):
+ state=mixer.state_dict();x,y,_=mixer.batch();value=hashlib.sha256(x.tobytes()+y.tobytes()).hexdigest();mixer.load_state_dict(state);return value
+
+
+def state_payload(model,optimizer,scheduler,config,mixer,run_id,step,tokens,source_tokens,elapsed,last_eval,best,manifest_hash,preemptions):
  return {"model":model.state_dict(),"optimizer":optimizer.state_dict(),"scheduler":scheduler.state_dict(),"config":config.to_dict(),
-  "source":"DATA-D-BROAD-v2r1","lineage":"co4-l-data-d-v2r1-25m","step":step,"tokens_seen":tokens,"source_tokens":source_tokens,
+  "source":"DATA-D-BROAD-v2r1","lineage":run_id,"run_id":run_id,"step":step,"tokens_seen":tokens,"source_tokens":source_tokens,
   "data_source_selector_state":mixer.state_dict(),"python_rng_state":random.getstate(),"torch_rng_state":torch.get_rng_state(),
   "cumulative_training_seconds":elapsed,"last_evaluation_seconds":last_eval,"best_validation_loss":best,"preemptions":preemptions,
-  "data_manifest_sha256":manifest_hash}
+  "data_manifest_sha256":manifest_hash,"next_batch_sha256":next_digest(mixer)}
 
 
 def main():
@@ -56,14 +60,14 @@ def main():
  def request_stop(*_):
   global STOP_REQUESTED;STOP_REQUESTED=True
  signal.signal(signal.SIGTERM,request_stop);signal.signal(signal.SIGINT,request_stop)
- p=argparse.ArgumentParser();p.add_argument("--manifest",required=True);p.add_argument("--fresh",action="store_true");p.add_argument("--resume",action="store_true");p.add_argument("--stop-tokens",type=int);p.add_argument("--hard-deadline-epoch",type=float);a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument("--manifest",required=True);p.add_argument("--fresh",action="store_true");p.add_argument("--resume",action="store_true");p.add_argument("--stop-tokens",type=int);p.add_argument("--hard-deadline-epoch",type=float);p.add_argument("--config",default=str(CONFIG));p.add_argument("--run-id",default="co4-l-data-d-v2r1-25m");p.add_argument("--curve",default=str(ROOT/"artifacts/data_d_v2r1_training_curve.csv"));a=p.parse_args()
  if a.fresh==a.resume:p.error("choose exactly one of --fresh or --resume")
  target=a.stop_tokens or TARGET
  if target>100_000_000:raise RuntimeError("controlled DATA-D-v2r1 lineage must not continue past its unique 100M corpus")
  manifest_path=Path(a.manifest).resolve();manifest=verify_top_manifest(manifest_path,TOKENIZER);base=manifest_path.parent
  certification=json.loads((base/"certification.json").read_text())
  if certification["acceptance_gates"]!="PASS" or certification["manifest_sha256"]!=sha256_file(manifest_path):raise RuntimeError("uncertified DATA-D corpus")
- config=LatticeConfig.from_json(CONFIG);torch.set_num_threads(config.num_threads);torch.set_num_interop_threads(1);random.seed(config.seed);torch.manual_seed(config.seed)
+ config=LatticeConfig.from_json(a.config);torch.set_num_threads(config.num_threads);torch.set_num_interop_threads(1);random.seed(config.seed);torch.manual_seed(config.seed)
  train=load_arrays(base,manifest["shards"]);valid=load_arrays(base,manifest["validation_shards"])
  streams={source:SourceStream(train[source],128,config.seed+offset) for source,offset in zip(SOURCES,(11,23,37))};mixer=ExactMixtureV2(streams)
  vals={source:validation_tensor(valid[source]) for source in SOURCES};balanced=torch.cat([vals[source][:250_000] for source in SOURCES]);common=validation_tensor([np.memmap(COMMON,mode="r",dtype="<i4")])
@@ -71,15 +75,16 @@ def main():
  if model.parameter_breakdown()["total"]!=15_949_760:raise RuntimeError("Co4-L parameter identity mismatch")
  optimizer=torch.optim.AdamW(model.parameters(),lr=config.learning_rate,weight_decay=config.weight_decay,betas=(config.adam_beta1,config.adam_beta2),eps=1e-8)
  scheduler=torch.optim.lr_scheduler.LambdaLR(optimizer,lambda _:1.0)
- recovery=ROOT/"artifacts/checkpoints/co4-l-data-d-v2r1-25m";latest=recovery/"latest.pt";curve=ROOT/"artifacts/data_d_v2r1_training_curve.csv"
+ recovery=ROOT/"artifacts/checkpoints"/a.run_id;latest=recovery/"latest.pt";curve=Path(a.curve)
  step=tokens=0;source_tokens={source:0 for source in SOURCES};prior=last_eval=0.;best=float("inf");preemptions=0
  if a.fresh and latest.exists():raise RuntimeError("refusing to overwrite existing DATA-D lineage")
  if a.resume:
   if not latest.exists() or sha256_file(latest)!=latest.with_suffix(".sha256").read_text().strip():raise RuntimeError("invalid recovery checkpoint")
   state=torch.load(latest,map_location="cpu",weights_only=False)
-  if state["source"]!="DATA-D-BROAD-v2r1" or state["data_manifest_sha256"]!=sha256_file(manifest_path):raise RuntimeError("wrong resume lineage/manifest")
+  if state["source"]!="DATA-D-BROAD-v2r1" or state.get("lineage")!=a.run_id or state["data_manifest_sha256"]!=sha256_file(manifest_path):raise RuntimeError("wrong resume lineage/manifest")
   model.load_state_dict(state["model"]);optimizer.load_state_dict(state["optimizer"]);scheduler.load_state_dict(state["scheduler"])
   random.setstate(state["python_rng_state"]);torch.set_rng_state(state["torch_rng_state"]);mixer.load_state_dict(state["data_source_selector_state"])
+  if state.get("next_batch_sha256") and next_digest(mixer)!=state["next_batch_sha256"]:raise RuntimeError("next-batch resume identity failure")
   step=int(state["step"]);tokens=int(state["tokens_seen"]);source_tokens={k:int(v) for k,v in state["source_tokens"].items()};prior=float(state["cumulative_training_seconds"]);last_eval=float(state["last_evaluation_seconds"]);best=float(state["best_validation_loss"]);preemptions=int(state.get("preemptions",0))+1
  if target<=tokens:raise RuntimeError("target must exceed recovered tokens")
  milestones={1_000_000,3_000_000,5_000_000,7_500_000,10_000_000,15_000_000,20_000_000,25_000_000,35_000_000,50_000_000,75_000_000,100_000_000};evaluated={x for x in milestones if x<=tokens}
@@ -92,12 +97,12 @@ def main():
   step+=1;tokens+=increment;per=increment//8;source_tokens["fineweb_edu"]+=per*4;source_tokens["wikipedia"]+=per*2;source_tokens["fineweb"]+=per*2;train_loss=float(loss.detach())
   crossed=[m for m in milestones-evaluated if abs(tokens-m)<=512];deadline_stop=bool(a.hard_deadline_epoch and time.time()>=a.hard_deadline_epoch);evaluation=tokens==target or bool(crossed) or STOP_REQUESTED or deadline_stop;periodic=step%config.checkpoint_interval==0 or evaluation
   if not(periodic or evaluation):continue
-  elapsed=prior+time.perf_counter()-session_start;payload=state_payload(model,optimizer,scheduler,config,mixer,step,tokens,source_tokens,elapsed,last_eval,best,sha256_file(manifest_path),preemptions)
+  elapsed=prior+time.perf_counter()-session_start;payload=state_payload(model,optimizer,scheduler,config,mixer,a.run_id,step,tokens,source_tokens,elapsed,last_eval,best,sha256_file(manifest_path),preemptions)
   path,checksum=roll_checkpoint(recovery,payload,evaluation)
   if not evaluation:continue
   if STOP_REQUESTED or deadline_stop:print(json.dumps({"safe_stop":True,"tokens":tokens}),flush=True);return 75
   losses={source:evaluate(model,vals[source],8,128) for source in SOURCES};balanced_loss=evaluate(model,balanced,8,128);common_loss=evaluate(model,common,8,128);best=min(best,common_loss)
-  elapsed=prior+time.perf_counter()-session_start;payload=state_payload(model,optimizer,scheduler,config,mixer,step,tokens,source_tokens,elapsed,elapsed,best,sha256_file(manifest_path),preemptions);path,checksum=roll_checkpoint(recovery,payload,True)
+  elapsed=prior+time.perf_counter()-session_start;payload=state_payload(model,optimizer,scheduler,config,mixer,a.run_id,step,tokens,source_tokens,elapsed,elapsed,best,sha256_file(manifest_path),preemptions);path,checksum=roll_checkpoint(recovery,payload,True)
   nominal=target if tokens==target else min(crossed,key=lambda m:abs(tokens-m));evaluated.add(nominal)
   row={"checkpoint":f"co4-l-data-d-v2r1-{nominal}","nominal_tokens":nominal,"training_tokens":tokens,"step":step,"train_loss":train_loss,
    "common_validation_loss":common_loss,"common_validation_perplexity":math.exp(common_loss),"data_d_balanced_validation_loss":balanced_loss,
