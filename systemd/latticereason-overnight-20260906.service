@@ -1,0 +1,20 @@
+[Unit]
+Description=LatticeReason post-tournament 14-hour successor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=insightlabs38
+WorkingDirectory=/home/insightlabs38/latticelm
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_post_tournament_overnight.py --soft-hours 13 --hard-hours 14
+ExecStop=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_post_tournament_overnight.py --stop
+Restart=no
+TimeoutStopSec=1200
+KillMode=mixed
+StandardOutput=append:/home/insightlabs38/latticelm/artifacts/logs/post_tournament_overnight.log
+StandardError=append:/home/insightlabs38/latticelm/artifacts/logs/post_tournament_overnight.log
+
+[Install]
+WantedBy=multi-user.target
