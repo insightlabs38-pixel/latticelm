@@ -1,0 +1,20 @@
+[Unit]
+Description=LatticeLM seed-2026 replication and conditional LR-10 master
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=insightlabs38
+WorkingDirectory=/home/insightlabs38/latticelm
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_seed_replication_master.py --soft-hours 12.5 --hard-hours 14
+ExecStop=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_seed_replication_master.py --stop
+Restart=no
+TimeoutStopSec=1200
+KillMode=mixed
+StandardOutput=append:/home/insightlabs38/latticelm/artifacts/logs/seed2026_master.log
+StandardError=append:/home/insightlabs38/latticelm/artifacts/logs/seed2026_master.log
+
+[Install]
+WantedBy=multi-user.target

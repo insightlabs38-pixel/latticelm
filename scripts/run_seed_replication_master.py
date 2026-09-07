@@ -212,8 +212,12 @@ def dry_run():
  assert replication_class({**CONTROL,"wikitext_ppl":61,"wikitext_bpb":1.9,"data_d_validation_loss":3.5})=="STABLE"
  print(json.dumps({"dry_run":"PASS","manifest":"canonical verified","seed":2026,"parameters":15_949_760,"stages":["DATA-D replication","gate","conditional LR-10","analysis"]}));return 0
 def main():
- p=argparse.ArgumentParser();p.add_argument("--soft-hours",type=float,default=12.5);p.add_argument("--hard-hours",type=float,default=14);p.add_argument("--dry-run",action="store_true");p.add_argument("--status",action="store_true");a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument("--soft-hours",type=float,default=12.5);p.add_argument("--hard-hours",type=float,default=14);p.add_argument("--dry-run",action="store_true");p.add_argument("--status",action="store_true");p.add_argument("--stop",action="store_true");a=p.parse_args()
  if a.status:print(json.dumps(load(),indent=2));return 0
+ if a.stop:
+  state=load()
+  if state:save(state,stop_requested=True);event("STOP_REQUESTED_EXTERNAL")
+  print("graceful stop requested");return 0
  if a.dry_run:return dry_run()
  lock=Lock()
  if not lock.acquire():print("seed replication master already running");return 0
