@@ -20,7 +20,10 @@ from latticelm.data_d import (CORPUS_V2R1_ID, DEDUP_VERSION, DECONTAMINATION_VER
     hamming, normalize_text, normalized_words, paragraph_hashes, sha256_bytes,
     sha256_file, simhash64, validation_assignment, VALIDATION_ASSIGNMENT_VERSION)
 from latticelm.tokenizer import load_tokenizer
-from prepare_phase7a_data import fingerprints, reference_documents, screen
+try:
+ from scripts.prepare_phase7a_data import fingerprints, reference_documents, screen
+except ModuleNotFoundError:  # Direct ``python scripts/...`` execution.
+ from prepare_phase7a_data import fingerprints, reference_documents, screen
 
 ROOT=Path(__file__).resolve().parents[1]; ART=ROOT/"artifacts"; OLD=ART/"data/phase7a"
 TOKENIZER=ART/"tokenizers/babylm_2026_4k.json"; SEED=314159

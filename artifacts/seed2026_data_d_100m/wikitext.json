@@ -1,0 +1,21 @@
+{
+  "dataset": "Salesforce/wikitext",
+  "config": "wikitext-103-raw-v1",
+  "split": "test",
+  "tokens_scored": 411412,
+  "negative_log_likelihood": 1721246.6978096962,
+  "negative_log_likelihood_nats": 1721246.6978096962,
+  "perplexity": 65.61171328380885,
+  "utf8_bytes": 1287656,
+  "negative_log_likelihood_bits": 2483234.075076553,
+  "bits_per_byte": 1.9284918293989646,
+  "byte_counting_policy": "sum len(text.encode(UTF-8)) for raw dataset rows; no inserted separators",
+  "bos_policy": "prepend BOS per nonempty raw row as context only; BOS is never scored",
+  "windowing_policy": "non-overlapping target windows; stride 128; maximum context 128",
+  "stride": 128,
+  "context_length": 128,
+  "wall_seconds": 48.74597438797355,
+  "checkpoint_sha256": "0bd3bd6b1aed9afb388a38f9e9543339acf19b63d136c40a3900d468b8b65423",
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "pytorch_threads": 4
+}

@@ -39,5 +39,6 @@ artifacts/lattice_reason/**/*.pt
 artifacts/lattice_reason/**/*.sha256
 artifacts/seed2026_data_d_100m/*.pt
 artifacts/seed2026_data_d_100m/*.sha256
+artifacts/seed2026_data_d_100m/gibc.json
 artifacts/seed2026_lr10_100m/*.pt
 artifacts/seed2026_lr10_100m/*.sha256
