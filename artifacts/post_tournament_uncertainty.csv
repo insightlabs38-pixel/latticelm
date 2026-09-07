@@ -1,0 +1,9 @@
+run_id,tokens,task,delta,ci95_low,ci95_high,method,classification
+LR-10,25000000,hellaswag,-0.00019932603067118748,-0.01237419639163797,0.011975544330295596,independent-binomial approximation; raw paired vectors unavailable,WITHIN NOISE / AMBIGUOUS
+LR-10,25000000,arc_easy,0.0029462861952861963,-0.02271589395303256,0.028608466343604953,independent-binomial approximation; raw paired vectors unavailable,WITHIN NOISE / AMBIGUOUS
+LR-10,25000000,piqa,0.00435294450489665,-0.027887939361104203,0.0365938283708975,independent-binomial approximation; raw paired vectors unavailable,WITHIN NOISE / AMBIGUOUS
+LR-10,25000000,winogrande,0.009471026835043417,-0.02946276098176153,0.048404814651848364,independent-binomial approximation; raw paired vectors unavailable,WITHIN NOISE / AMBIGUOUS
+LR-25,25000000,hellaswag,-0.003585105755825546,-0.01573452355465646,0.00856431204300537,independent-binomial approximation; raw paired vectors unavailable,WITHIN NOISE / AMBIGUOUS
+LR-25,25000000,arc_easy,0.009680292929292955,-0.01607101554361962,0.035431601402205526,independent-binomial approximation; raw paired vectors unavailable,WITHIN NOISE / AMBIGUOUS
+LR-25,25000000,piqa,0.002176665941240552,-0.030069513853063785,0.03442284573554489,independent-binomial approximation; raw paired vectors unavailable,WITHIN NOISE / AMBIGUOUS
+LR-25,25000000,winogrande,0.010260292817679595,-0.028673009868885997,0.04919359550424519,independent-binomial approximation; raw paired vectors unavailable,WITHIN NOISE / AMBIGUOUS

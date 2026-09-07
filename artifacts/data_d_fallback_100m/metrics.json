@@ -1,0 +1,29 @@
+{
+  "arc_easy": 0.2925084175084175,
+  "checkpoint_sha256": "50d8cdf06adec7693a3d07cda574c4e00a93b1fd0c2d2381c0a4ad00fc3efe5e",
+  "common_validation_loss": 4.017913281917572,
+  "data_d_validation_loss": 3.465799629688263,
+  "fineweb_edu_validation_loss": 3.4668063521385193,
+  "fineweb_validation_loss": 3.7189749032258987,
+  "hellaswag": 0.26757618004381595,
+  "hf_path": "experiments/post-tournament/data-d-only-100m",
+  "hf_revision": "5ae234a6a9c127ede46768baaf7f0d40892e2df7",
+  "lr_fraction": 0.0,
+  "parameters": 15949760,
+  "piqa": 0.5413492927094669,
+  "remote_file_sha256": {
+    "config.json": "2f4772872cecc5fba403e31f51e5b7272f0769a35d35e9c99824126b8a3d24d9",
+    "metrics.json": "2b1f394487bca967ca2d2497613793fb27c4712a692f060d290dc4daa379e204",
+    "model.safetensors": "f4810274d3106d1622f9aa63adb1358dbf8a625538eeb3720d63ae9c97ceacb4",
+    "resume_state.pt": "d17d959057a8a0646d1f76dd94db0c74e3929a068ada3ee6c62e358d485c3ccb",
+    "tokenizer.json": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "tokenizer.report.json": "d5962451981c1c9dc61eb50ff407c919d2ec18ca279411722bf7e65ea9df9bb2",
+    "training_manifest.json": "e60c366b39b238c4acd17b4023eda096bb6bc6ebe21d23038576701a31e2ca6a"
+  },
+  "run_id": "DATA-D-ONLY",
+  "training_tokens": 100000000,
+  "wikipedia_validation_loss": 3.2836159020662308,
+  "wikitext_bpb": 1.88821387326511,
+  "wikitext_ppl": 60.1218587924344,
+  "winogrande": 0.505130228887135
+}
