@@ -1,0 +1,32 @@
+{
+  "acceptance": "PASS",
+  "clean_unique_train_tokens": 1009592508,
+  "train_documents": 668449,
+  "validation_documents": 15395,
+  "source_tokens": {
+    "fineweb_edu": 507147817,
+    "wikipedia": 251052813,
+    "fineweb": 251391878
+  },
+  "source_shares": {
+    "fineweb_edu": 0.5023292199391004,
+    "wikipedia": 0.24866746832079303,
+    "fineweb": 0.24900331174010654
+  },
+  "manifest_sha256": "e8ad8989c9e000515a755dda45dcfdd11d6c3da7921da366aaaca4d10c099ff0",
+  "builder_commit": "3be81fb316707acf760460c8f90fe932cb96120e",
+  "builder_source_sha256": "b2c7bd73502c3ce65e188d6c2e4b3f0ac0df280d9bd6e96c773f0ebb9396f69d",
+  "train_validation_disjointness": "PASS",
+  "all_shards_mmap_and_hash": "PASS",
+  "deterministic_first_batch_sha256": "27426f6e27969be260b434ae1ce328a3b9efb614bea4d61cfc7a533e52913f1c",
+  "exact_resume": "PASS",
+  "stable_unique_ids": "PASS",
+  "overlap_handling": {
+    "base_manifest_sha256": "f42df21984b27e77b6901a6335f751cee911efd1ff4579aba038a577255d601a",
+    "scope": [
+      "DATA-C",
+      "DATA-D-BROAD-v2r1"
+    ]
+  },
+  "decontamination": "normalized-exact+13gram+simhash-v1"
+}

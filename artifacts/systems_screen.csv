@@ -1,0 +1,5 @@
+backend,tokens_per_second,relative_speedup_percent,peak_rss_bytes,warmup_seconds,compile_wrapper_seconds,finite_gradients,loss_sanity,status,classification,dtype_policy
+fp32_eager,5210.754238317574,0.0,1188433920,1.0055547410156578,0.0,True,True,PASS,DROP,FP32
+fp32_compile,5901.057536059961,13.24766561942614,1201586176,20.68086822499754,0.7292487010126933,True,True,PASS,CANONICAL BACKEND CANDIDATE,FP32
+bf16_eager,3177.6705630681795,-39.017070893480245,1078042624,1.5788352059898898,0.0,True,True,PASS,DROP,CPU autocast BF16; parameters and AdamW state FP32
+bf16_compile,3361.82715984704,-35.482906963340255,1084387328,23.89413708995562,0.7190151539980434,True,True,PASS,DROP,CPU autocast BF16; parameters and AdamW state FP32
