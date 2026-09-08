@@ -32,9 +32,11 @@ artifacts/logs/lattice_reason_tournament_events.jsonl
 artifacts/logs/post_tournament_overnight_events.jsonl
 artifacts/logs/seed2026_master_events.jsonl
 artifacts/logs/systems_data_master_events.jsonl
+artifacts/logs/capacity24_master_events.jsonl
 artifacts/post_tournament_overnight.lock
 artifacts/seed2026_master.lock
 artifacts/systems_data_master.lock
+artifacts/capacity24_master.lock
 artifacts/data_d_fallback_100m/*.pt
 artifacts/data_d_fallback_100m/*.sha256
 artifacts/lattice_reason/**/*.pt
@@ -44,3 +46,4 @@ artifacts/seed2026_data_d_100m/*.sha256
 artifacts/seed2026_data_d_100m/gibc.json
 artifacts/seed2026_lr10_100m/*.pt
 artifacts/seed2026_lr10_100m/*.sha256
+artifacts/capacity24_150m_gibc.json

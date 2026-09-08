@@ -1,0 +1,22 @@
+[Unit]
+Description=LatticeLM dependency-waiting 24M capacity master
+After=network-online.target latticelm-systems-data-20260907.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=insightlabs38
+WorkingDirectory=/home/insightlabs38/latticelm
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/insightlabs38/latticelm/src
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_capacity24_master.py
+ExecStop=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_capacity24_master.py --stop
+Restart=on-failure
+RestartSec=30
+TimeoutStopSec=1200
+KillMode=mixed
+StandardOutput=append:/home/insightlabs38/latticelm/artifacts/logs/capacity24_master.log
+StandardError=append:/home/insightlabs38/latticelm/artifacts/logs/capacity24_master.log
+
+[Install]
+WantedBy=multi-user.target
