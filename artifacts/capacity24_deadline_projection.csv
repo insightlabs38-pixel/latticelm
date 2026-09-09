@@ -1,0 +1,5 @@
+hours,projected_tokens_24m,basis,measured
+22,367662881,terminal observed throughput extrapolation,False
+44,735325762,terminal observed throughput extrapolation,False
+66,1102988643,terminal observed throughput extrapolation,False
+88,1470651524,terminal observed throughput extrapolation,False

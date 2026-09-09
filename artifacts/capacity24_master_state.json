@@ -1,0 +1,77 @@
+{
+  "calibration": {
+    "backend": "fp32_compile",
+    "finite": true,
+    "losses": [
+      8.417272567749023,
+      8.391403198242188,
+      8.423479080200195,
+      8.42205810546875,
+      8.391067504882812,
+      8.396785736083984,
+      8.416360855102539,
+      8.405317306518555,
+      8.4000883102417,
+      8.40256118774414,
+      8.400976181030273,
+      8.419859886169434,
+      8.401683807373047
+    ],
+    "microbatch": 8,
+    "peak_rss_bytes": 1709363200,
+    "threads": 16,
+    "tokens_per_second": 4696.915270523626,
+    "warmup_compile_seconds": 0.6624784640735015
+  },
+  "capacity_result": "STRONG POSITIVE",
+  "child_pid": null,
+  "completed_stages": [
+    "LIVE_CERTIFICATION",
+    "50M",
+    "100M",
+    "150M",
+    "CAPACITY_ANALYSIS",
+    "FINAL_HYGIENE"
+  ],
+  "current_stage": "COMPLETE",
+  "decision": {
+    "capacity_result": "STRONG POSITIVE",
+    "matched_advantage": true,
+    "recommend_32m": true,
+    "scaling_slope": "FAVORABLE"
+  },
+  "experiment_budget_start_time": "2026-09-08T15:53:36.521670+00:00",
+  "hard_deadline": "2026-09-09T13:53:36.521670+00:00",
+  "matched_advantage": true,
+  "predecessor": {
+    "events": "/home/insightlabs38/latticelm/artifacts/logs/systems_data_master_events.jsonl",
+    "manifest": "/home/insightlabs38/latticelm/artifacts/data/data_d_v3/canonical-1b/manifest.json",
+    "reports": [
+      "artifacts/systems_screen_report.md",
+      "artifacts/systems_screen.csv",
+      "artifacts/data_d_v3_report.md",
+      "artifacts/data_d_v3_quality_report.md",
+      "artifacts/data_d_v3_dedup_report.md",
+      "artifacts/data_d_v3_decontamination_report.md"
+    ],
+    "state": "/home/insightlabs38/latticelm/artifacts/systems_data_master_state.json",
+    "unit": "latticelm-systems-data-20260907.service"
+  },
+  "predecessor_gate": {
+    "acceptance": "PASS",
+    "backend": "fp32_compile",
+    "certified_tokens": 1009592508,
+    "compile_speedup_percent": 13.24766561942614,
+    "manifest_sha256": "e8ad8989c9e000515a755dda45dcfdd11d6c3da7921da366aaaca4d10c099ff0",
+    "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "unique_graphs": 1
+  },
+  "recommend_32m": true,
+  "run_id": "capacity24-20260908T015529Z",
+  "scaling_slope": "FAVORABLE",
+  "service_launch_time": "2026-09-08T01:55:29.772054+00:00",
+  "soft_deadline": "2026-09-09T12:53:36.521670+00:00",
+  "source_git_commit": "b33ed34e1378107e21eff7cee8e75d04ea6c48b1",
+  "stop_requested": false,
+  "updated_at": "2026-09-09T01:19:14.524210+00:00"
+}

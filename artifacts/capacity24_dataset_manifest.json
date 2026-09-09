@@ -1,0 +1,10 @@
+{
+  "dataset": "DATA-D-BROAD-v3",
+  "revision": "e8ad8989c9e000515a755dda45dcfdd11d6c3da7921da366aaaca4d10c099ff0",
+  "sources": [
+    "FineWeb-Edu",
+    "English Wikipedia",
+    "FineWeb"
+  ],
+  "canonical_manifest": "artifacts/data/data_d_v3/canonical-1b/manifest.json"
+}

@@ -1,0 +1,36 @@
+{
+  "tokens": 50000000,
+  "native_checkpoint_sha256": "6cc5762ed89974e53096029886205d0988754e3dd9e0591e6a0a03ac1980eb11",
+  "hf_revision": "6dcd61d6c7260f8938828f360f17e5392592c06f",
+  "remote_hashes": {
+    "config.json": "ee8949edfcb8d21c97ba942f4f1d00caf4f859966f3ebdacb19bc0769fc53887",
+    "metrics.json": "651720b5a4bb6c75c28928eadfc646a2ce2dcf7d1d2faeadfcc2296874d5b538",
+    "model.safetensors": "fd0b3abbfc81186b30692da8f2aa9205783d841fa0c9ca0cdb279e9de564cfa0",
+    "resume_state.pt": "ac1a2009c9c86732018a8ee2a06397a0c9f0841bfcb5a8c6efb9bf238df95db6",
+    "tokenizer.json": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "tokenizer.report.json": "d5962451981c1c9dc61eb50ff407c919d2ec18ca279411722bf7e65ea9df9bb2",
+    "training_manifest.json": "f997ae5d8c658e70a12f5e3e5674566c4c72d53b89050330ecd81d93791d0c0d"
+  },
+  "wikitext": {
+    "dataset": "Salesforce/wikitext",
+    "config": "wikitext-103-raw-v1",
+    "split": "test",
+    "tokens_scored": 411412,
+    "negative_log_likelihood": 1726258.4002511501,
+    "negative_log_likelihood_nats": 1726258.4002511501,
+    "perplexity": 66.4158642936462,
+    "utf8_bytes": 1287656,
+    "negative_log_likelihood_bits": 2490464.43333525,
+    "bits_per_byte": 1.9341069612810018,
+    "byte_counting_policy": "sum len(text.encode(UTF-8)) for raw dataset rows; no inserted separators",
+    "bos_policy": "prepend BOS per nonempty raw row as context only; BOS is never scored",
+    "windowing_policy": "non-overlapping target windows; stride 128; maximum context 128",
+    "stride": 128,
+    "context_length": 128,
+    "wall_seconds": 57.791453931014985,
+    "checkpoint_sha256": "6cc5762ed89974e53096029886205d0988754e3dd9e0591e6a0a03ac1980eb11",
+    "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "pytorch_threads": 4
+  },
+  "gibc": null
+}
