@@ -21,7 +21,7 @@ def tensor(values,limit=None):
 def next_hash(mix):
  state=mix.state_dict();x,y,_=mix.batch();mix.load_state_dict(state);return hashlib.sha256(x.tobytes()+y.tobytes()).hexdigest()
 def payload(model,opt,sched,cfg,mix,run_id,step,tokens,elapsed,manifest,backend,microbatch,preemptions):
- return {"model":model.state_dict(),"optimizer":opt.state_dict(),"scheduler":sched.state_dict(),"config":cfg.to_dict(),"source":"DATA-D-BROAD-v3","lineage":run_id,"run_id":run_id,"step":step,"tokens_seen":tokens,"data_source_selector_state":mix.state_dict(),"python_rng_state":random.getstate(),"torch_rng_state":torch.get_rng_state(),"cumulative_training_seconds":elapsed,"data_manifest_sha256":manifest,"next_batch_sha256":next_hash(mix),"backend":backend,"microbatch":microbatch,"preemptions":preemptions}
+ return {"model":model.state_dict(),"optimizer":opt.state_dict(),"scheduler":sched.state_dict(),"config":cfg.to_dict(),"source":"DATA-D-BROAD-v3","lineage":run_id,"run_id":run_id,"step":step,"tokens_seen":tokens,"data_source_selector_state":mix.state_dict(),"python_rng_state":random.getstate(),"numpy_rng_state":np.random.get_state(),"torch_rng_state":torch.get_rng_state(),"cumulative_training_seconds":elapsed,"data_manifest_sha256":manifest,"next_batch_sha256":next_hash(mix),"backend":backend,"microbatch":microbatch,"preemptions":preemptions}
 def main():
  global STOP
  signal.signal(signal.SIGTERM,lambda *_:globals().__setitem__("STOP",True));signal.signal(signal.SIGINT,lambda *_:globals().__setitem__("STOP",True))
@@ -42,7 +42,8 @@ def main():
   if not found:raise RuntimeError("no valid checkpoint fallback")
   state=torch.load(found,map_location="cpu",weights_only=False)
   if state["lineage"]!=a.run_id or state["data_manifest_sha256"]!=mh or state["backend"]!=a.backend:raise RuntimeError("resume lineage mismatch")
-  model.load_state_dict(state["model"]);opt.load_state_dict(state["optimizer"]);sched.load_state_dict(state["scheduler"]);random.setstate(state["python_rng_state"]);torch.set_rng_state(state["torch_rng_state"]);mix.load_state_dict(state["data_source_selector_state"])
+  if state["config"]!=cfg.to_dict():raise RuntimeError("resume architecture/config mismatch")
+  model.load_state_dict(state["model"],strict=True);opt.load_state_dict(state["optimizer"]);sched.load_state_dict(state["scheduler"]);random.setstate(state["python_rng_state"]);np.random.set_state(state.get("numpy_rng_state",np.random.get_state()));torch.set_rng_state(state["torch_rng_state"]);mix.load_state_dict(state["data_source_selector_state"])
   if next_hash(mix)!=state["next_batch_sha256"]:raise RuntimeError("next-batch mismatch")
   step=int(state["step"]);tokens=int(state["tokens_seen"]);prior=float(state["cumulative_training_seconds"]);preemptions=int(state.get("preemptions",0))+1
  if a.target<=tokens:raise RuntimeError("target already reached")
