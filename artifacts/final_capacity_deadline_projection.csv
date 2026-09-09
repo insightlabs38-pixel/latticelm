@@ -1,0 +1,9 @@
+model,hours,projected_tokens,tok_per_second,basis,measured
+Co4-24,22,367662881,4642.208096561597,observed terminal throughput extrapolation,False
+Co4-24,44,735325762,4642.208096561597,observed terminal throughput extrapolation,False
+Co4-24,66,1102988643,4642.208096561597,observed terminal throughput extrapolation,False
+Co4-24,88,1470651524,4642.208096561597,observed terminal throughput extrapolation,False
+Co4-32,22,265888297,3357.17547435075,observed terminal throughput extrapolation,False
+Co4-32,44,531776595,3357.17547435075,observed terminal throughput extrapolation,False
+Co4-32,66,797664892,3357.17547435075,observed terminal throughput extrapolation,False
+Co4-32,88,1063553190,3357.17547435075,observed terminal throughput extrapolation,False

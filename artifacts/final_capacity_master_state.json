@@ -1,0 +1,115 @@
+{
+  "audit_24m": {
+    "backend": "fp32_compile",
+    "deterministic_inference": "PASS",
+    "exact_resume_payload": "PASS",
+    "hf_revisions": [
+      "6dcd61d6c7260f8938828f360f17e5392592c06f",
+      "a0a6f3463fb18bde472572e493605efeef95b3db",
+      "57f9f89415d6bff0fec3e6020a161d7de6745c68"
+    ],
+    "parameters": 24097200,
+    "strict_load": "PASS",
+    "tokens_per_second": 4642.208096561597,
+    "trajectory_validation": [
+      3.4899538457393646,
+      3.3746188133955,
+      3.3373186141252518
+    ],
+    "weights_sha": "PASS",
+    "wikitext_bpb": [
+      1.9341069612810018,
+      1.8619222651914302,
+      1.8365145612332932
+    ],
+    "wikitext_ppl": [
+      66.4158642936462,
+      56.78858412763232,
+      53.743070694724786
+    ]
+  },
+  "calibration": {
+    "backend": "fp32_compile",
+    "finite": true,
+    "losses": [
+      8.405336380004883,
+      8.395035743713379,
+      8.40544605255127,
+      8.411142349243164,
+      8.392982482910156,
+      8.418695449829102,
+      8.396601676940918,
+      8.415580749511719,
+      8.428289413452148,
+      8.407563209533691,
+      8.400834083557129,
+      8.430488586425781,
+      8.409507751464844
+    ],
+    "microbatch": 8,
+    "peak_rss_bytes": 2072256512,
+    "threads": 16,
+    "tokens_per_second": 3321.4790943504768,
+    "warmup_compile_seconds": 0.9550152628798969
+  },
+  "capacity_search_closed": true,
+  "child_pid": null,
+  "completed_stages": [
+    "LIVE_CERTIFICATION",
+    "50M",
+    "100M",
+    "150M",
+    "205M",
+    "CAPACITY_ANALYSIS",
+    "FINAL_HYGIENE"
+  ],
+  "confidence": "HIGH",
+  "current_stage": "COMPLETE",
+  "decision": {
+    "capacity_search_closed": true,
+    "confidence": "HIGH",
+    "final_capacity": "~32M",
+    "tokens_per_second": 3357.17547435075
+  },
+  "experiment_budget_start_time": "2026-09-09T04:05:59.696864+00:00",
+  "final_capacity": "~32M",
+  "final_lineage": {
+    "checkpoint_sha256": "551778a5c994b2825f837c6456c28c8f31c6d587a402daf088cc17e7c6519bda",
+    "end_tokens": 205000000,
+    "next_milestone": 255000000,
+    "start_tokens": 205000000,
+    "started_or_continued": false
+  },
+  "hard_deadline": "2026-09-10T02:05:59.696864+00:00",
+  "predecessor": {
+    "events": "/home/insightlabs38/latticelm/artifacts/logs/systems_data_master_events.jsonl",
+    "manifest": "/home/insightlabs38/latticelm/artifacts/data/data_d_v3/canonical-1b/manifest.json",
+    "reports": [
+      "artifacts/systems_screen_report.md",
+      "artifacts/systems_screen.csv",
+      "artifacts/data_d_v3_report.md",
+      "artifacts/data_d_v3_quality_report.md",
+      "artifacts/data_d_v3_dedup_report.md",
+      "artifacts/data_d_v3_decontamination_report.md"
+    ],
+    "state": "/home/insightlabs38/latticelm/artifacts/systems_data_master_state.json",
+    "unit": "latticelm-systems-data-20260907.service"
+  },
+  "predecessor_gate": {
+    "acceptance": "PASS",
+    "backend": "fp32_compile",
+    "certified_tokens": 1009592508,
+    "compile_speedup_percent": 13.24766561942614,
+    "manifest_sha256": "e8ad8989c9e000515a755dda45dcfdd11d6c3da7921da366aaaca4d10c099ff0",
+    "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+    "unique_graphs": 1
+  },
+  "run_id": "final_capacity-20260909T040555Z",
+  "service_launch_time": "2026-09-09T04:05:55.302752+00:00",
+  "soft_deadline": "2026-09-10T01:05:59.696864+00:00",
+  "source_git_commit": "2033788f79017f0554781184e479f2c6e88a8d49",
+  "stop_requested": false,
+  "test_32m_justified": true,
+  "tokens_per_second": 3357.17547435075,
+  "updated_at": "2026-09-09T21:21:05.509207+00:00"
+}
