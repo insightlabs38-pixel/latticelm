@@ -1,0 +1,29 @@
+{
+  "parameters": 24097200,
+  "backend": "fp32_compile",
+  "tokens_per_second": 4642.208096561597,
+  "weights_sha": "PASS",
+  "strict_load": "PASS",
+  "deterministic_inference": "PASS",
+  "exact_resume_payload": "PASS",
+  "trajectory_validation": [
+    3.4899538457393646,
+    3.3746188133955,
+    3.3373186141252518
+  ],
+  "wikitext_ppl": [
+    66.4158642936462,
+    56.78858412763232,
+    53.743070694724786
+  ],
+  "wikitext_bpb": [
+    1.9341069612810018,
+    1.8619222651914302,
+    1.8365145612332932
+  ],
+  "hf_revisions": [
+    "6dcd61d6c7260f8938828f360f17e5392592c06f",
+    "a0a6f3463fb18bde472572e493605efeef95b3db",
+    "57f9f89415d6bff0fec3e6020a161d7de6745c68"
+  ]
+}
