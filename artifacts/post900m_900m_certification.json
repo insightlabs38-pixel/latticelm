@@ -1,0 +1,27 @@
+{
+  "certified_at": "2026-09-12T07:52:53.671767+00:00",
+  "checkpoint": "artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-900000000.pt",
+  "checkpoint_sha256": "68fe5a3609919e7201557dfaf54320bd1adda10181904ceb09012735fd8afa99",
+  "checks": {
+    "backend": true,
+    "config": true,
+    "dataset_certification": true,
+    "exact_resume_fields": true,
+    "final_training_row": true,
+    "lineage": true,
+    "manifest_hash": true,
+    "no_catastrophic_degradation": true,
+    "numerical_health": true,
+    "parameters": true,
+    "rng_states": true,
+    "strict_state_dict": true,
+    "tokenizer_hash": true,
+    "tokens_seen": true
+  },
+  "manifest_sha256": "e8ad8989c9e000515a755dda45dcfdd11d6c3da7921da366aaaca4d10c099ff0",
+  "parameters": 32678640,
+  "schema": "post900m-certification-v1",
+  "status": "PASS",
+  "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+  "tokens": 900000000
+}

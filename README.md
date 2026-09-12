@@ -66,3 +66,6 @@ namespace, waits efficiently for the 900M service, independently certifies and
 evaluates that milestone, and records an explicit DATA-D-v3 to DATA-D-v4
 transition before any authorized continuation. DATA-D-v4 targets 2.25B newly
 certified tokens for expansion headroom.
+If scaling is `SATURATING_OR_LOW_VALUE`, an isolated WSD, systems, and
+verifier-only post-training tournament runs instead. An `INCONCLUSIVE` result
+stops for review without spending more training compute.

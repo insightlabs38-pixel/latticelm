@@ -1,0 +1,48 @@
+{
+  "base_checkpoint": {
+    "sha256": "68fe5a3609919e7201557dfaf54320bd1adda10181904ceb09012735fd8afa99",
+    "tokens": 900000000
+  },
+  "data": {
+    "certification": "PASS",
+    "manifest_sha256": "e8ad8989c9e000515a755dda45dcfdd11d6c3da7921da366aaaca4d10c099ff0",
+    "version": "DATA-D-v3"
+  },
+  "decision_required": "resolve_900m_scaling_ambiguity",
+  "evidence_files": [
+    "artifacts/post900m_900m_certification.json",
+    "artifacts/post900m_scaling_analysis.json",
+    "artifacts/post900m_decision.json",
+    "artifacts/post900m_report.md"
+  ],
+  "generated_at": "2026-09-12T08:06:09.630517+00:00",
+  "master": "post900m",
+  "metrics": {
+    "arc_easy": 0.30892255892255893,
+    "hellaswag": 0.26379207329217286,
+    "piqa": 0.5310119695321001,
+    "validation_loss": 3.18121500313282,
+    "wikitext_bpb": 1.7780736876410455,
+    "wikitext_ppl": 47.343548679771416,
+    "winogrande": 0.4846093133385951
+  },
+  "next_allowed_actions": [
+    "EVALUATE_2B_CONTINUATION",
+    "RUN_WSD_TOURNAMENT",
+    "RUN_POSTTRAINING_TOURNAMENT",
+    "RUN_SYSTEMS_OPTIMIZATION"
+  ],
+  "predecessor_900m": {
+    "sha256": "68fe5a3609919e7201557dfaf54320bd1adda10181904ceb09012735fd8afa99"
+  },
+  "reason": null,
+  "scaling": {
+    "classification": "INCONCLUSIVE",
+    "projected_2b_gain": [
+      0.016445861207293522,
+      0.008935929056889336
+    ]
+  },
+  "status": "COMPLETE",
+  "terminal_stage": "INCONCLUSIVE"
+}

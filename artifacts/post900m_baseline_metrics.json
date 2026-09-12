@@ -1,0 +1,14 @@
+{
+  "arc_easy": 0.30892255892255893,
+  "candidate_id": "BASE_900M",
+  "checkpoint": "artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-900000000.pt",
+  "checkpoint_sha256": "68fe5a3609919e7201557dfaf54320bd1adda10181904ceb09012735fd8afa99",
+  "hellaswag": 0.26379207329217286,
+  "piqa": 0.5310119695321001,
+  "reasoning_accuracy": 0.0,
+  "schema": "post900m-baseline-metrics-v1",
+  "validation_loss": 3.18121500313282,
+  "wikitext_bpb": 1.7780736876410455,
+  "wikitext_ppl": 47.343548679771416,
+  "winogrande": 0.4846093133385951
+}

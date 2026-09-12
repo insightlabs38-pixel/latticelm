@@ -38,3 +38,32 @@ An integrity failure produces `post900m_handoff.json` and exits 2 without automa
 restart. SIGTERM requests a safe child stop and exits 75 without automatic restart.
 No secret is stored in the unit or repository; production publication must use
 systemd credentials or the existing Hugging Face credential store.
+
+## Scaling and saturation response
+
+The scaling classification is immutable and deterministic. `CONTINUE_TO_1_5B`
+builds and certifies DATA-D-v4 before continuing the constant-LR trunk.
+`INCONCLUSIVE` stops for a strategic decision and never claims 1.5B was run.
+
+`SATURATING_OR_LOW_VALUE` enters the separate restart-safe
+`scripts/run_saturation_response.py` controller. It preserves `BASE_512M`,
+`BASE_750M`, and `BASE_900M`, and runs bounded cosine-to-zero WSD branches from
+all three. Each branch is first compared with its own parent; promoted winners
+are then compared globally. This captures the best measured WikiText checkpoint,
+an intermediate point, and the most DATA-D-trained point. The controller also
+benchmarks B8/B16/B32 and a larger compiled
+loss graph on the actual 32.68M model, and conditionally tests conservative SFT
+using only deterministic, verifier-backed LatticeReason examples. Every promoted
+candidate must pass the complete WikiText/GIBC surface and explicit retention
+gates. No SFT run is mislabeled as RLVR; an uncertified RL policy worker is
+skipped explicitly. DPO stays optional and requires stored verifier evidence.
+
+Tournament state is isolated under `artifacts/saturation_response_*`. Run a
+non-training drill with an isolated state:
+
+```bash
+.venv/bin/python scripts/run_saturation_response.py --dry-run \
+  --state /tmp/latticelm-saturation-drill/state.json
+```
+
+Neither master invokes Codex, an external LLM judge, or a pretrained model.

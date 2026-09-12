@@ -3,6 +3,7 @@ from pathlib import Path
 import pytest
 import scripts.post900m_scaling as scaling
 import scripts.run_post900m_master as master
+import scripts.post900m_tournament as tournament
 def curve(path,losses):
  fields=["nominal_tokens","train_loss","data_d_validation_loss","fineweb_edu_validation_loss","wikipedia_validation_loss","fineweb_validation_loss"]
  with path.open("w",newline="") as f:
@@ -42,3 +43,38 @@ def test_continuation_trainer_contract():
  m=Path("scripts/run_post900m_master.py").read_text()
  for target in ("1_000_000_000","1_100_000_000","1_200_000_000","1_250_000_000","1_350_000_000","1_500_000_000","2250000000","canonical-2250m"):
   assert target in m
+
+def official(**updates):
+ value={"candidate_id":"x","checkpoint":"x.pt","validation_loss":3.18,"wikitext_ppl":47.,"wikitext_bpb":1.77,"reasoning_accuracy":.1,"hellaswag":.26,"arc_easy":.31,"piqa":.53,"winogrande":.49,"tokens_per_second":3000.,"finite":True,"restart_verified":True,"matched_loss_delta":0.}
+ value.update(updates);return value
+
+def test_saturation_promotion_gates_are_deterministic():
+ base=official(candidate_id="base",validation_loss=3.19,wikitext_bpb=1.78,reasoning_accuracy=.05)
+ good=official(candidate_id="cool",validation_loss=3.18,wikitext_bpb=1.77)
+ assert tournament.promote_cooldown(base,[good])[0]==good
+ noisy=official(candidate_id="bad",validation_loss=3.18,wikitext_bpb=1.77,hellaswag=.20)
+ assert tournament.promote_cooldown(base,[noisy])[0] is None
+ sft=official(candidate_id="sft",reasoning_accuracy=.10)
+ assert tournament.promote_sft(base,[sft])[0]==sft
+ forgetting=official(candidate_id="forget",reasoning_accuracy=.5,wikitext_ppl=55.)
+ assert tournament.promote_sft(base,[forgetting])[0] is None
+
+def test_system_promotion_requires_speed_parity_and_restart():
+ base=official(candidate_id="b8",tokens_per_second=3000)
+ good=official(candidate_id="b16",tokens_per_second=3300)
+ assert tournament.promote_system(base,[good])[0]==good
+ good["restart_verified"]=False
+ assert tournament.promote_system(base,[good])[0] is None
+
+def test_saturation_controller_contract():
+ text=Path("scripts/run_saturation_response.py").read_text()
+ for item in ("WSD_COOLDOWN","SYSTEMS_BENCHMARK","SFT","RLVR_GRPO","FINAL_SELECTION","STOPPED_SAFE","saturation_response_results.json","BASE_512M","BASE_750M","BASE_900M","promote versus own parent"):
+  assert item in text
+ worker=Path("scripts/train_post900m_experiment.py").read_text()
+ for item in ("parent_checkpoint_sha256","cosine-to-zero","LatticeReason","SKIPPED_SAFELY","reasoning_accuracy"):
+  assert item in worker
+
+def test_handoff_semantics_are_not_false_1_5b_claims():
+ text=Path("scripts/run_post900m_master.py").read_text()
+ assert '"INCONCLUSIVE":"resolve_900m_scaling_ambiguity"' in text
+ assert '"SATURATION_RESPONSE_COMPLETE":"strategic_review"' in text

@@ -1,0 +1,203 @@
+{
+  "classification": "INCONCLUSIVE",
+  "fits": {
+    "data_d_validation_loss": {
+      "all": {
+        "a": 68704.40656839446,
+        "b": -0.6908124737103015,
+        "floor": 3.1393998191863317,
+        "form": "loss=floor+a*tokens^b",
+        "points": 14,
+        "predicted_1_5b": 3.1708792079533836,
+        "predicted_2_05b": 3.1647691419255266,
+        "rmse": 0.005233229955315542,
+        "start_tokens": 50000000
+      },
+      "late": {
+        "a": 79574055.5932799,
+        "b": -1.0658032043706853,
+        "floor": 3.1628107221963653,
+        "form": "loss=floor+a*tokens^b",
+        "points": 9,
+        "predicted_1_5b": 3.176019542303476,
+        "predicted_2_05b": 3.172279074075931,
+        "rmse": 0.003808282627135039,
+        "start_tokens": 300000000
+      }
+    },
+    "fineweb_edu_validation_loss": {
+      "all": {
+        "a": 237608.5229302674,
+        "b": -0.7633310973379923,
+        "floor": 3.137271139801051,
+        "form": "loss=floor+a*tokens^b",
+        "points": 14,
+        "predicted_1_5b": 3.160792704287055,
+        "predicted_2_05b": 3.1558026461042523,
+        "rmse": 0.005410212524916083,
+        "start_tokens": 50000000
+      },
+      "late": {
+        "a": 125168292.32300709,
+        "b": -1.092935836149186,
+        "floor": 3.1523210060217868,
+        "form": "loss=floor+a*tokens^b",
+        "points": 9,
+        "predicted_1_5b": 3.1640325823819104,
+        "predicted_2_05b": 3.1606452506594795,
+        "rmse": 0.004992243826672274,
+        "start_tokens": 300000000
+      }
+    },
+    "fineweb_validation_loss": {
+      "all": {
+        "a": 179171.81802731278,
+        "b": -0.750963664101527,
+        "floor": 3.336025686924912,
+        "form": "loss=floor+a*tokens^b",
+        "points": 14,
+        "predicted_1_5b": 3.359059115391774,
+        "predicted_2_05b": 3.354242856530544,
+        "rmse": 0.004556767096251905,
+        "start_tokens": 50000000
+      },
+      "late": {
+        "a": 704017851.6075428,
+        "b": -1.1876370300732186,
+        "floor": 3.3544199678613666,
+        "form": "loss=floor+a*tokens^b",
+        "points": 9,
+        "predicted_1_5b": 3.3633266899399543,
+        "predicted_2_05b": 3.3605660728018782,
+        "rmse": 0.004094433881208843,
+        "start_tokens": 300000000
+      }
+    },
+    "wikipedia_validation_loss": {
+      "all": {
+        "a": 103047.84658140708,
+        "b": -0.7089784822234174,
+        "floor": 3.006833294556787,
+        "form": "loss=floor+a*tokens^b",
+        "points": 14,
+        "predicted_1_5b": 3.0389985990531914,
+        "predicted_2_05b": 3.032608717567415,
+        "rmse": 0.0053509914463570184,
+        "start_tokens": 50000000
+      },
+      "late": {
+        "a": 34154083316.67612,
+        "b": -1.37293200615476,
+        "floor": 3.036933026998258,
+        "form": "loss=floor+a*tokens^b",
+        "points": 9,
+        "predicted_1_5b": 3.0455487802488554,
+        "predicted_2_05b": 3.0425439941243932,
+        "rmse": 0.003465161165699064,
+        "start_tokens": 300000000
+      }
+    }
+  },
+  "parameters": 32678640,
+  "projected_900m_to_1_5b_gain": {
+    "estimates": [
+      0.010335795179436502,
+      0.0051954608293440785
+    ],
+    "max": 0.010335795179436502,
+    "min": 0.0051954608293440785
+  },
+  "projected_900m_to_2_05b_gain": [
+    0.016445861207293522,
+    0.008935929056889336
+  ],
+  "schema": "post900m-scaling-v1",
+  "source_specific_max_recent_regression": 0.003494963049888611,
+  "tokens_per_parameter": 27.540925815762222,
+  "trajectory_points": 14,
+  "wikitext": [
+    {
+      "bits_per_byte": 1.7794643080504575,
+      "perplexity": 47.48659379731152,
+      "tokens": 205000000
+    },
+    {
+      "bits_per_byte": 1.7579127486117276,
+      "perplexity": 45.31746698808732,
+      "tokens": 512000000
+    },
+    {
+      "bits_per_byte": 1.7780736876410455,
+      "perplexity": 47.343548679771416,
+      "tokens": 900000000
+    }
+  ],
+  "windows": {
+    "2": {
+      "data_d_validation_loss": {
+        "absolute_improvement": 0.011835277080535889,
+        "per_100m": 0.011835277080535889,
+        "relative_improvement": 0.003706573978454567
+      },
+      "fineweb_edu_validation_loss": {
+        "absolute_improvement": 0.0004882961511611938,
+        "per_100m": 0.0004882961511611938,
+        "relative_improvement": 0.00015372721000796646
+      },
+      "fineweb_validation_loss": {
+        "absolute_improvement": -0.002267971634864807,
+        "per_100m": -0.002267971634864807,
+        "relative_improvement": -0.0006734267173896715
+      },
+      "wikipedia_validation_loss": {
+        "absolute_improvement": 0.013767585158348083,
+        "per_100m": 0.013767585158348083,
+        "relative_improvement": 0.004490756944467836
+      }
+    },
+    "3": {
+      "data_d_validation_loss": {
+        "absolute_improvement": 0.009115427732467651,
+        "per_100m": 0.006076951821645101,
+        "relative_improvement": 0.0028572048977369867
+      },
+      "fineweb_edu_validation_loss": {
+        "absolute_improvement": -0.003494963049888611,
+        "per_100m": -0.0023299753665924072,
+        "relative_improvement": -0.0011016787953434088
+      },
+      "fineweb_validation_loss": {
+        "absolute_improvement": 0.011977463960647583,
+        "per_100m": 0.007984975973765055,
+        "relative_improvement": 0.0035414772447219444
+      },
+      "wikipedia_validation_loss": {
+        "absolute_improvement": 0.0071229636669158936,
+        "per_100m": 0.004748642444610596,
+        "relative_improvement": 0.0023284386731814927
+      }
+    },
+    "5": {
+      "data_d_validation_loss": {
+        "absolute_improvement": 0.01636500656604767,
+        "per_100m": 0.005455002188682556,
+        "relative_improvement": 0.005117934974702585
+      },
+      "fineweb_edu_validation_loss": {
+        "absolute_improvement": 0.00859116017818451,
+        "per_100m": 0.0028637200593948364,
+        "relative_improvement": 0.0026978189276445023
+      },
+      "fineweb_validation_loss": {
+        "absolute_improvement": 0.008965790271759033,
+        "per_100m": 0.002988596757253011,
+        "relative_improvement": 0.002653353197130215
+      },
+      "wikipedia_validation_loss": {
+        "absolute_improvement": 0.012497484683990479,
+        "per_100m": 0.004165828227996826,
+        "relative_improvement": 0.004078160849877572
+      }
+    }
+  }
+}
