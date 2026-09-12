@@ -1,0 +1,22 @@
+[Unit]
+Description=LatticeLM three-base 100M-token WSD cooldown tournament
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=insightlabs38
+WorkingDirectory=/home/insightlabs38/latticelm
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/insightlabs38/latticelm/src
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_saturation_response.py --wsd-only
+Restart=on-failure
+RestartPreventExitStatus=2 75
+RestartSec=300
+TimeoutStopSec=1200
+KillMode=mixed
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

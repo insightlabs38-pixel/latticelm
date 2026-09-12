@@ -47,8 +47,8 @@ builds and certifies DATA-D-v4 before continuing the constant-LR trunk.
 
 `SATURATING_OR_LOW_VALUE` enters the separate restart-safe
 `scripts/run_saturation_response.py` controller. It preserves `BASE_512M`,
-`BASE_750M`, and `BASE_900M`, and runs bounded cosine-to-zero WSD branches from
-all three. Each branch is first compared with its own parent; promoted winners
+`BASE_750M`, and `BASE_900M`, and runs an additional 100M tokens with cosine
+decay from `3e-4` to zero from all three. Each branch is first compared with its own parent; promoted winners
 are then compared globally. This captures the best measured WikiText checkpoint,
 an intermediate point, and the most DATA-D-trained point. The controller also
 benchmarks B8/B16/B32 and a larger compiled

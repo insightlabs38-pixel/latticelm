@@ -74,7 +74,7 @@ def test_saturation_controller_contract():
  for item in ("WSD_COOLDOWN","SYSTEMS_BENCHMARK","SFT","RLVR_GRPO","FINAL_SELECTION","STOPPED_SAFE","saturation_response_results.json","BASE_512M","BASE_750M","BASE_900M","promote versus own parent"):
   assert item in text
  worker=Path("scripts/train_post900m_experiment.py").read_text()
- for item in ("parent_checkpoint_sha256","cosine-to-zero","LatticeReason","SKIPPED_SAFELY","reasoning_accuracy"):
+ for item in ("parent_checkpoint_sha256","cosine-to-zero","100_000_000","branch_token_budget","step%384","LatticeReason","SKIPPED_SAFELY","reasoning_accuracy"):
   assert item in worker
 
 def test_handoff_semantics_are_not_false_1_5b_claims():

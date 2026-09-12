@@ -44,7 +44,7 @@ def run(s,label,cmd):
     if code==75 and STOP:raise InterruptedError(label)
     if code:raise RuntimeError(f"{label} exited {code}")
 def read(path):return json.loads(path.read_text())
-def execute(s,dry=False):
+def execute(s,dry=False,wsd_only=False):
     if dry:save(s,"DRY_RUN_COMPLETE",planned_phases=list(PHASES));return
     base=read(ART/"post900m_baseline_metrics.json")
     if "WSD_COOLDOWN" not in s["completed"]:
@@ -55,6 +55,8 @@ def execute(s,dry=False):
             raw=read(out);winner,evidence=promote_cooldown(raw["base"],raw["candidates"]);per_base[base_id]={"checkpoint":str(checkpoint),"base_metrics":raw["base"],"winner":winner,"evidence":evidence};promoted.extend([winner] if winner else [])
         winner=min(promoted,key=lambda x:(x["wikitext_bpb"],x["validation_loss"],-sum(x[t] for t in ("hellaswag","arc_easy","piqa","winogrande")))) if promoted else None
         s["wsd"]={"bases":[x[0] for x in WSD_BASES],"per_base":per_base,"winner":winner,"selection_policy":"promote versus own parent, then lowest BPB/validation loss with official-score tie-break"};s["completed"].append("WSD_COOLDOWN");save(s)
+    if wsd_only:
+        atomic(RESULT,{"schema":"wsd-tournament-result-v1","status":"COMPLETE","wsd":s["wsd"]});save(s,"COMPLETE",result=str(RESULT));return
     if "SYSTEMS_BENCHMARK" not in s["completed"]:
         save(s,"SYSTEMS_BENCHMARK");out=ART/"saturation/systems/results.json"
         if not out.exists():run(s,"systems",[sys.executable,"scripts/benchmark_post900m_systems.py","--checkpoint",str(BASE),"--output",str(out)])
@@ -74,13 +76,13 @@ def execute(s,dry=False):
     result={"schema":"saturation-response-result-v1","status":"COMPLETE","base_checkpoint":str(BASE),"best_candidate":best,"phases":{k:s.get(k) for k in ("wsd","systems","sft","rlvr")},"dpo":{"status":"SKIPPED","reason":"lower priority; no deterministic evidence requiring it"}}
     atomic(RESULT,result);save(s,"COMPLETE",result=str(RESULT))
 def main():
-    p=argparse.ArgumentParser();p.add_argument("--dry-run",action="store_true");p.add_argument("--state",type=Path);a=p.parse_args();signal.signal(signal.SIGTERM,stop);signal.signal(signal.SIGINT,stop)
+    p=argparse.ArgumentParser();p.add_argument("--dry-run",action="store_true");p.add_argument("--wsd-only",action="store_true");p.add_argument("--state",type=Path);a=p.parse_args();signal.signal(signal.SIGTERM,stop);signal.signal(signal.SIGINT,stop)
     global STATE,PREVIOUS,LOCK,EVENTS
     if a.state:STATE=a.state;PREVIOUS=a.state.with_suffix(".previous.json");LOCK=a.state.with_suffix(".lock");EVENTS=a.state.with_suffix(".events.jsonl")
     with LOCK.open("a+") as f:
         fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB);s=load() or {"schema":"saturation-response-v1","stage":"START","completed":[],"child_pid":None,"base_checkpoint":str(BASE)}
         if s["stage"]=="COMPLETE":return 0
-        try:execute(s,a.dry_run)
+        try:execute(s,a.dry_run,a.wsd_only)
         except InterruptedError:save(s,"STOPPED_SAFE");return 75
         except Exception as e:save(s,"BLOCKED",blocker=f"{type(e).__name__}: {e}");return 2
     return 0
