@@ -23,6 +23,7 @@ CORPUS_ID = "DATA-D-BROAD-v1"
 CORPUS_V2_ID = "DATA-D-BROAD-v2"
 CORPUS_V2R1_ID = "DATA-D-BROAD-v2r1"
 CORPUS_V3_ID = "DATA-D-BROAD-v3"
+CORPUS_V4_ID = "DATA-D-BROAD-v4"
 SOURCES = ("fineweb_edu", "wikipedia", "fineweb", "babylm")
 MIXTURE_COUNTS = {"fineweb_edu": 20, "wikipedia": 8, "fineweb": 6, "babylm": 6}
 DECONTAMINATION_VERSION = "normalized-exact+13gram+simhash-v1"
@@ -273,7 +274,7 @@ class ExactMixtureV2:
 
 def verify_top_manifest(path: str | Path, tokenizer_path: str | Path) -> dict[str, object]:
     path = Path(path); payload = json.loads(path.read_text())
-    if payload.get("schema_version") != "data-d-corpus-v1" or payload.get("corpus_identity") not in {CORPUS_ID, CORPUS_V2_ID, CORPUS_V2R1_ID, CORPUS_V3_ID}:
+    if payload.get("schema_version") != "data-d-corpus-v1" or payload.get("corpus_identity") not in {CORPUS_ID, CORPUS_V2_ID, CORPUS_V2R1_ID, CORPUS_V3_ID, CORPUS_V4_ID}:
         raise ValueError("invalid DATA-D top-level manifest")
     if payload.get("tokenizer_sha256") != sha256_file(tokenizer_path): raise ValueError("wrong tokenizer")
     observed_ids: set[str] = set()

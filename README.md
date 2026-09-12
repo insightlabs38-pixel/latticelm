@@ -57,3 +57,12 @@ resume state belong in a separate private Hugging Face **model** repository.
 See `docs/HUGGINGFACE_STORAGE.md` for authenticated export, upload, download,
 integrity verification, and deterministic inference commands. Credentials are
 accepted only through the process environment and must never be committed.
+
+## Post-900M operation
+
+The deterministic successor for the 32.68M final lineage is documented in
+[`docs/POST900M_MASTER.md`](docs/POST900M_MASTER.md). It uses a separate state
+namespace, waits efficiently for the 900M service, independently certifies and
+evaluates that milestone, and records an explicit DATA-D-v3 to DATA-D-v4
+transition before any authorized continuation. DATA-D-v4 targets 2.25B newly
+certified tokens for expansion headroom.

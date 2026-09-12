@@ -1,0 +1,23 @@
+[Unit]
+Description=LatticeLM autonomous post-900M master
+After=latticelm-final-scale-20260909.service
+Wants=latticelm-final-scale-20260909.service
+
+[Service]
+Type=simple
+User=insightlabs38
+WorkingDirectory=/home/insightlabs38/latticelm
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/insightlabs38/latticelm/src
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_post900m_master.py
+ExecStop=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_post900m_master.py --stop
+Restart=on-failure
+RestartPreventExitStatus=2 75
+RestartSec=300
+TimeoutStopSec=1200
+KillMode=mixed
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

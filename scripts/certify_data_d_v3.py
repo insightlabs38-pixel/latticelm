@@ -22,5 +22,5 @@ def certify(path:Path,minimum=1_000_000_000):
  report={"acceptance":"PASS","clean_unique_train_tokens":top["total_unique_tokens"],"train_documents":len(train),"validation_documents":len(val),"source_tokens":source_tokens,"source_shares":{s:source_tokens[s]/top["total_unique_tokens"] for s in source_tokens},"manifest_sha256":sha256_file(path),"builder_commit":commit,"builder_source_sha256":hashlib.sha256(source).hexdigest(),"train_validation_disjointness":"PASS","all_shards_mmap_and_hash":"PASS","deterministic_first_batch_sha256":digest,"exact_resume":"PASS","stable_unique_ids":"PASS","overlap_handling":top["overlap_registry"],"decontamination":top["decontamination_version"]}
  (base/"certification.json").write_text(json.dumps(report,indent=2)+"\n");return report
 def main():
- p=argparse.ArgumentParser();p.add_argument("manifest",type=Path);p.add_argument("--output",type=Path,required=True);a=p.parse_args();r=certify(a.manifest);a.output.write_text(json.dumps(r,indent=2)+"\n");print(json.dumps(r))
+ p=argparse.ArgumentParser();p.add_argument("manifest",type=Path);p.add_argument("--output",type=Path,required=True);p.add_argument("--minimum",type=int,default=1_000_000_000);a=p.parse_args();r=certify(a.manifest,a.minimum);a.output.write_text(json.dumps(r,indent=2)+"\n");print(json.dumps(r))
 if __name__=="__main__":main()
