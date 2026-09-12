@@ -49,7 +49,9 @@ def save(s,stage=None,**kw):
     s.update(kw);s["updated_at"]=now();atomic(STATE,s,BACKUP);event("STATE",stage=s["current_stage"])
 def request_stop(*_):
     global STOP;STOP=True;s=load()
-    if s:save(s,stop_requested=True)
+    # systemd may invoke ExecStop during normal teardown. Terminal evidence must
+    # remain byte-stable across an idempotent start/stop cycle.
+    if s and s.get("current_stage") not in TERMINAL:save(s,stop_requested=True)
     if CHILD and CHILD.poll() is None:CHILD.terminate()
 class Lock:
     def __enter__(self):

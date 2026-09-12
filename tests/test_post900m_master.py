@@ -31,6 +31,9 @@ def test_sigterm_and_contract(monkeypatch):
  monkeypatch.setattr(master,"STOP",False);monkeypatch.setattr(master,"load",lambda:None);monkeypatch.setattr(master,"CHILD",None);master.request_stop(signal.SIGTERM,None);assert master.STOP
  text=Path("scripts/run_post900m_master.py").read_text()
  for x in ("next_batch_sha256","numpy_rng_state","strict_state_dict","WAIT_SECONDS=300","post900m_handoff.json","dataset-transition-v1"):assert x in text
+def test_stop_does_not_mutate_terminal_state(monkeypatch):
+ monkeypatch.setattr(master,"STOP",False);monkeypatch.setattr(master,"CHILD",None);monkeypatch.setattr(master,"load",lambda:{"current_stage":"COMPLETE"})
+ monkeypatch.setattr(master,"save",lambda *_a,**_k:pytest.fail("terminal state was rewritten"));master.request_stop()
 def test_missing_checkpoint_bad_sha_wrong_tokens_parameters_config_are_gated():
  text=Path("scripts/run_post900m_master.py").read_text()
  for x in ("missing immutable 900M checkpoint","sidecar mismatch",'state.get("tokens_seen")==TARGET','==PARAMS','state.get("config")==cfg.to_dict()'):assert x in text
