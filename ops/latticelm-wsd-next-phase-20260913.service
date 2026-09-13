@@ -1,0 +1,19 @@
+[Unit]
+Description=LatticeLM deterministic WSD adjudication and next-phase master
+After=latticelm-wsd-20260912.service
+Requires=latticelm-wsd-20260912.service
+
+[Service]
+Type=oneshot
+User=insightlabs38
+WorkingDirectory=/home/insightlabs38/latticelm
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/insightlabs38/latticelm/src
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python scripts/wsd_next_phase.py
+TimeoutStopSec=1200
+KillMode=mixed
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

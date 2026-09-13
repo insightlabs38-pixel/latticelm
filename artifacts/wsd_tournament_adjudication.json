@@ -1,0 +1,546 @@
+{
+  "branches": [
+    {
+      "additional_wsd_tokens": 100000000,
+      "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_512m-wsd-100m/milestone.pt",
+      "checkpoint_sha256": "e8be48f90c3c8ff2d2606a02493a0d869df21073d1ae61e6224c54b9b4313097",
+      "config": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "architecture": "co4_causal",
+        "batch_size": 8,
+        "checkpoint_interval": 384,
+        "context_length": 128,
+        "d_model": 432,
+        "dropout": 0.0,
+        "eval_interval": 48828,
+        "ffn_hidden": 1296,
+        "grad_clip": 1.0,
+        "hf_best_upload_interval_tokens": 1048576,
+        "hf_named_checkpoint": null,
+        "hf_persistence_enabled": false,
+        "hf_update_best": false,
+        "hf_upload_interval_tokens": 1048576,
+        "learning_rate": 0.0003,
+        "local_attention_window": 32,
+        "lr_schedule": "constant",
+        "max_steps": 244141,
+        "memory_conv_enabled": true,
+        "memory_conv_kernel": 4,
+        "memory_dim": 64,
+        "memory_dropout": 0.0,
+        "memory_enabled": false,
+        "memory_heads": 2,
+        "memory_insert_layers": [
+          1
+        ],
+        "memory_lr_multiplier": 0.3,
+        "memory_orders": [
+          2,
+          3
+        ],
+        "memory_slots": 65536,
+        "memory_token_map_path": null,
+        "mixer_strategy": "attention",
+        "n_heads": 6,
+        "n_kv_heads": 1,
+        "n_layers": 12,
+        "num_threads": 12,
+        "seed": 271828,
+        "tie_embeddings": false,
+        "vocab_size": 4096,
+        "warmup_fraction": 0.0,
+        "weight_decay": 0.1
+      },
+      "data_stream": {
+        "next_batch_sha256": "37cb501455e75b61deb510e61e22b1c02aa32b22f09a9bd677eecb0bd2ae1355",
+        "selector_state_present": true
+      },
+      "evaluation": {
+        "context_length": 128,
+        "lm_eval_version": "0.4.13",
+        "official": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_512m-wsd-100m/gibc.json",
+        "task_versions": {
+          "arc_easy": 1.0,
+          "hellaswag": 1.0,
+          "piqa": 1.0,
+          "winogrande": 1.0
+        },
+        "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+        "wall_seconds": 791.2609942660201,
+        "wikitext": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_512m-wsd-100m/wikitext.json"
+      },
+      "improvement_from_raw": {
+        "arc_easy": 0.021464646464646464,
+        "hellaswag": 0.0015933081059549825,
+        "piqa": 0.009793253536452662,
+        "validation_loss": 0.2653181701898575,
+        "wikitext_bpb": 0.10045709922434565,
+        "wikitext_ppl": 8.874206898003337,
+        "winogrande": 0.00710339384372527
+      },
+      "label": "612M WSD",
+      "lr_policy": {
+        "budget_tokens": 100000000,
+        "end_lr": 0.0,
+        "name": "cosine",
+        "start_lr": 0.0003
+      },
+      "metrics": {
+        "arc_easy": 0.3265993265993266,
+        "candidate_id": "base_512m-wsd-100m",
+        "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_512m-wsd-100m/milestone.pt",
+        "checkpoint_sha256": "e8be48f90c3c8ff2d2606a02493a0d869df21073d1ae61e6224c54b9b4313097",
+        "hellaswag": 0.26598287193786097,
+        "piqa": 0.5500544069640914,
+        "reasoning_accuracy": 0.0,
+        "validation_loss": 2.990321099758148,
+        "wikitext_bpb": 1.657455649387382,
+        "wikitext_ppl": 36.44326009008398,
+        "winogrande": 0.500394632991318
+      },
+      "problems": [],
+      "raw_checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-512000000.pt",
+      "raw_checkpoint_sha256": "ec9b08e1cd63bf7cdaa89c9142793893ad263d0ecf47c293eb6a763a62332074",
+      "raw_tokens": 512000000,
+      "source_validation": {
+        "fineweb": null,
+        "fineweb_edu": null,
+        "note": "not_evaluated in canonical WSD worker output",
+        "wikipedia": null
+      },
+      "terminal_train_loss": 3.0931408405303955,
+      "tokens": 612000000,
+      "tokens_per_second": 3595.6670208556206,
+      "trainable_parameters": 32678640,
+      "training_wall_seconds": 27811.25154803798,
+      "valid": true
+    },
+    {
+      "additional_wsd_tokens": 100000000,
+      "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_750m-wsd-100m/milestone.pt",
+      "checkpoint_sha256": "30765620d4cf36715c82d97b5826be10b5caa165747db040d7a0dedd9a20b5a2",
+      "config": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "architecture": "co4_causal",
+        "batch_size": 8,
+        "checkpoint_interval": 384,
+        "context_length": 128,
+        "d_model": 432,
+        "dropout": 0.0,
+        "eval_interval": 48828,
+        "ffn_hidden": 1296,
+        "grad_clip": 1.0,
+        "hf_best_upload_interval_tokens": 1048576,
+        "hf_named_checkpoint": null,
+        "hf_persistence_enabled": false,
+        "hf_update_best": false,
+        "hf_upload_interval_tokens": 1048576,
+        "learning_rate": 0.0003,
+        "local_attention_window": 32,
+        "lr_schedule": "constant",
+        "max_steps": 244141,
+        "memory_conv_enabled": true,
+        "memory_conv_kernel": 4,
+        "memory_dim": 64,
+        "memory_dropout": 0.0,
+        "memory_enabled": false,
+        "memory_heads": 2,
+        "memory_insert_layers": [
+          1
+        ],
+        "memory_lr_multiplier": 0.3,
+        "memory_orders": [
+          2,
+          3
+        ],
+        "memory_slots": 65536,
+        "memory_token_map_path": null,
+        "mixer_strategy": "attention",
+        "n_heads": 6,
+        "n_kv_heads": 1,
+        "n_layers": 12,
+        "num_threads": 12,
+        "seed": 271828,
+        "tie_embeddings": false,
+        "vocab_size": 4096,
+        "warmup_fraction": 0.0,
+        "weight_decay": 0.1
+      },
+      "data_stream": {
+        "next_batch_sha256": "3837423ba84da600d59b23eaa5203e94a2d98e12cefeabb3fcc66d2d31ece875",
+        "selector_state_present": true
+      },
+      "evaluation": {
+        "context_length": 128,
+        "lm_eval_version": "0.4.13",
+        "official": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_750m-wsd-100m/gibc.json",
+        "task_versions": {
+          "arc_easy": 1.0,
+          "hellaswag": 1.0,
+          "piqa": 1.0,
+          "winogrande": 1.0
+        },
+        "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+        "wall_seconds": 812.7935401640134,
+        "wikitext": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_750m-wsd-100m/wikitext.json"
+      },
+      "improvement_from_raw": {
+        "arc_easy": 0.024410774410774383,
+        "hellaswag": -0.0016928898625771516,
+        "piqa": 0.007616974972796564,
+        "validation_loss": 0.26731643080711365,
+        "wikitext_bpb": 0.12406928634077086,
+        "wikitext_ppl": 10.595038660785768,
+        "winogrande": -0.012628255722178405
+      },
+      "label": "850M WSD",
+      "lr_policy": {
+        "budget_tokens": 100000000,
+        "end_lr": 0.0,
+        "name": "cosine",
+        "start_lr": 0.0003
+      },
+      "metrics": {
+        "arc_easy": 0.32954545454545453,
+        "candidate_id": "base_750m-wsd-100m",
+        "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_750m-wsd-100m/milestone.pt",
+        "checkpoint_sha256": "30765620d4cf36715c82d97b5826be10b5caa165747db040d7a0dedd9a20b5a2",
+        "hellaswag": 0.2667795259908385,
+        "piqa": 0.5527747551686616,
+        "reasoning_accuracy": 0.0,
+        "validation_loss": 2.9770587533712387,
+        "wikitext_bpb": 1.62955734140281,
+        "wikitext_ppl": 34.3029970389734,
+        "winogrande": 0.5043409629044988
+      },
+      "problems": [],
+      "raw_checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-750000000.pt",
+      "raw_checkpoint_sha256": "27a0cf2345e1991b05ea1a679da6e3ca155db04c629c4eec9eb5f41bb47cdca7",
+      "raw_tokens": 750000000,
+      "source_validation": {
+        "fineweb": null,
+        "fineweb_edu": null,
+        "note": "not_evaluated in canonical WSD worker output",
+        "wikipedia": null
+      },
+      "terminal_train_loss": 3.3829567432403564,
+      "tokens": 850000000,
+      "tokens_per_second": 3588.750844050668,
+      "trainable_parameters": 32678640,
+      "training_wall_seconds": 27864.848897431046,
+      "valid": true
+    },
+    {
+      "additional_wsd_tokens": 100000000,
+      "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_900m-wsd-100m/milestone.pt",
+      "checkpoint_sha256": "1c27b50cd856e6fe8b6bb1d5f2e899c76072a5a4d1ba64e3327190bbb0e8f50e",
+      "config": {
+        "adam_beta1": 0.9,
+        "adam_beta2": 0.999,
+        "architecture": "co4_causal",
+        "batch_size": 8,
+        "checkpoint_interval": 384,
+        "context_length": 128,
+        "d_model": 432,
+        "dropout": 0.0,
+        "eval_interval": 48828,
+        "ffn_hidden": 1296,
+        "grad_clip": 1.0,
+        "hf_best_upload_interval_tokens": 1048576,
+        "hf_named_checkpoint": null,
+        "hf_persistence_enabled": false,
+        "hf_update_best": false,
+        "hf_upload_interval_tokens": 1048576,
+        "learning_rate": 0.0003,
+        "local_attention_window": 32,
+        "lr_schedule": "constant",
+        "max_steps": 244141,
+        "memory_conv_enabled": true,
+        "memory_conv_kernel": 4,
+        "memory_dim": 64,
+        "memory_dropout": 0.0,
+        "memory_enabled": false,
+        "memory_heads": 2,
+        "memory_insert_layers": [
+          1
+        ],
+        "memory_lr_multiplier": 0.3,
+        "memory_orders": [
+          2,
+          3
+        ],
+        "memory_slots": 65536,
+        "memory_token_map_path": null,
+        "mixer_strategy": "attention",
+        "n_heads": 6,
+        "n_kv_heads": 1,
+        "n_layers": 12,
+        "num_threads": 12,
+        "seed": 271828,
+        "tie_embeddings": false,
+        "vocab_size": 4096,
+        "warmup_fraction": 0.0,
+        "weight_decay": 0.1
+      },
+      "data_stream": {
+        "next_batch_sha256": "b452a6728e9405d6d43ca2e48507cda040188e634549a928d5503caa58864f0d",
+        "selector_state_present": true
+      },
+      "evaluation": {
+        "context_length": 128,
+        "lm_eval_version": "0.4.13",
+        "official": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_900m-wsd-100m/gibc.json",
+        "task_versions": {
+          "arc_easy": 1.0,
+          "hellaswag": 1.0,
+          "piqa": 1.0,
+          "winogrande": 1.0
+        },
+        "tokenizer_sha256": "4f313ebc481a77e8ad2179cf2d7a3836b28d50773ef9f62ef08831bf076637e5",
+        "wall_seconds": 815.4660475329729,
+        "wikitext": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_900m-wsd-100m/wikitext.json"
+      },
+      "improvement_from_raw": {
+        "arc_easy": 0.012626262626262597,
+        "hellaswag": 0.0023899621589325015,
+        "piqa": 0.027203482045701888,
+        "validation_loss": 0.283482164144516,
+        "wikitext_bpb": 0.1657314486567787,
+        "wikitext_ppl": 14.298044241284629,
+        "winogrande": 0.007103393843725381
+      },
+      "label": "1B WSD",
+      "lr_policy": {
+        "budget_tokens": 100000000,
+        "end_lr": 0.0,
+        "name": "cosine",
+        "start_lr": 0.0003
+      },
+      "metrics": {
+        "arc_easy": 0.32154882154882153,
+        "candidate_id": "base_900m-wsd-100m",
+        "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/base_900m-wsd-100m/milestone.pt",
+        "checkpoint_sha256": "1c27b50cd856e6fe8b6bb1d5f2e899c76072a5a4d1ba64e3327190bbb0e8f50e",
+        "hellaswag": 0.26618203545110536,
+        "piqa": 0.558215451577802,
+        "reasoning_accuracy": 0.0,
+        "validation_loss": 2.961161717772484,
+        "wikitext_bpb": 1.6123422389842668,
+        "wikitext_ppl": 33.04550443848679,
+        "winogrande": 0.49171270718232046
+      },
+      "problems": [],
+      "raw_checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-900000000.pt",
+      "raw_checkpoint_sha256": "68fe5a3609919e7201557dfaf54320bd1adda10181904ceb09012735fd8afa99",
+      "raw_tokens": 900000000,
+      "source_validation": {
+        "fineweb": null,
+        "fineweb_edu": null,
+        "note": "not_evaluated in canonical WSD worker output",
+        "wikipedia": null
+      },
+      "terminal_train_loss": 3.1113576889038086,
+      "tokens": 1000000000,
+      "tokens_per_second": 3572.5765119651383,
+      "trainable_parameters": 32678640,
+      "training_wall_seconds": 27991.003038026975,
+      "valid": true
+    }
+  ],
+  "classification": "PARETO_INCONCLUSIVE",
+  "experiment": "three_branch_100m_wsd_tournament",
+  "materiality_policy": {
+    "negligible_bpb": 0.005,
+    "negligible_task_mean": 0.003,
+    "task_accuracy_clear": 0.01,
+    "wikitext_bpb_clear": 0.015
+  },
+  "pareto_frontier": [
+    "850M WSD",
+    "1B WSD"
+  ],
+  "pareto_note": "Lower WikiText/BPB and higher task accuracy are preferred; no arbitrary scalar weights are used.",
+  "raw_checkpoints": [
+    {
+      "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-512000000.pt",
+      "checkpoint_sha256": "ec9b08e1cd63bf7cdaa89c9142793893ad263d0ecf47c293eb6a763a62332074",
+      "label": "512M raw",
+      "metrics": {
+        "arc_easy": 0.30513468013468015,
+        "candidate_id": "BASE_512M",
+        "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-512000000.pt",
+        "checkpoint_sha256": "ec9b08e1cd63bf7cdaa89c9142793893ad263d0ecf47c293eb6a763a62332074",
+        "hellaswag": 0.264389563831906,
+        "piqa": 0.5402611534276387,
+        "reasoning_accuracy": 0.0,
+        "validation_loss": 3.2556392699480057,
+        "wikitext_bpb": 1.7579127486117276,
+        "wikitext_ppl": 45.31746698808732,
+        "winogrande": 0.49329123914759276
+      },
+      "tokens": 512000000
+    },
+    {
+      "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-750000000.pt",
+      "checkpoint_sha256": "27a0cf2345e1991b05ea1a679da6e3ca155db04c629c4eec9eb5f41bb47cdca7",
+      "label": "750M raw",
+      "metrics": {
+        "arc_easy": 0.30513468013468015,
+        "candidate_id": "BASE_750M",
+        "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-750000000.pt",
+        "checkpoint_sha256": "27a0cf2345e1991b05ea1a679da6e3ca155db04c629c4eec9eb5f41bb47cdca7",
+        "hellaswag": 0.26847241585341564,
+        "piqa": 0.545157780195865,
+        "reasoning_accuracy": 0.0,
+        "validation_loss": 3.2443751841783524,
+        "wikitext_bpb": 1.7536266277435808,
+        "wikitext_ppl": 44.89803569975917,
+        "winogrande": 0.5169692186266772
+      },
+      "tokens": 750000000
+    },
+    {
+      "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-900000000.pt",
+      "checkpoint_sha256": "68fe5a3609919e7201557dfaf54320bd1adda10181904ceb09012735fd8afa99",
+      "label": "900M raw",
+      "metrics": {
+        "arc_easy": 0.30892255892255893,
+        "candidate_id": "BASE_900M",
+        "checkpoint": "/home/insightlabs38/latticelm/artifacts/checkpoints/co4-final-capacity32-data-d-v3/milestone-900000000.pt",
+        "checkpoint_sha256": "68fe5a3609919e7201557dfaf54320bd1adda10181904ceb09012735fd8afa99",
+        "hellaswag": 0.26379207329217286,
+        "piqa": 0.5310119695321001,
+        "reasoning_accuracy": 0.0,
+        "validation_loss": 3.244643881917,
+        "wikitext_bpb": 1.7780736876410455,
+        "wikitext_ppl": 47.343548679771416,
+        "winogrande": 0.4846093133385951
+      },
+      "tokens": 900000000
+    }
+  ],
+  "raw_result_paths": [
+    "/home/insightlabs38/latticelm/artifacts/saturation/wsd/base_512m/results.json",
+    "/home/insightlabs38/latticelm/artifacts/saturation/wsd/base_750m/results.json",
+    "/home/insightlabs38/latticelm/artifacts/saturation/wsd/base_900m/results.json"
+  ],
+  "schema": "wsd-tournament-adjudication-v1",
+  "uncertainty": {
+    "612_vs_1b": {
+      "arc_easy": {
+        "ci95": [
+          -0.01870665546147603,
+          0.00860564536046593
+        ],
+        "delta": -0.005050505050505051,
+        "method": "paired_item_normal_95ci",
+        "n": 2376
+      },
+      "hellaswag": {
+        "ci95": [
+          -0.0034210688724127564,
+          0.0038193958989015037
+        ],
+        "delta": 0.00019916351324437363,
+        "method": "paired_item_normal_95ci",
+        "n": 10042
+      },
+      "piqa": {
+        "ci95": [
+          -0.00594469336824394,
+          0.02226678259566505
+        ],
+        "delta": 0.008161044613710556,
+        "method": "paired_item_normal_95ci",
+        "n": 1838
+      },
+      "winogrande": {
+        "ci95": [
+          -0.040280624803460244,
+          0.022916773185464978
+        ],
+        "delta": -0.008681925808997633,
+        "method": "paired_item_normal_95ci",
+        "n": 1267
+      }
+    },
+    "612_vs_850": {
+      "arc_easy": {
+        "ci95": [
+          -0.010484832918374055,
+          0.016377088810629947
+        ],
+        "delta": 0.002946127946127946,
+        "method": "paired_item_normal_95ci",
+        "n": 2376
+      },
+      "hellaswag": {
+        "ci95": [
+          -0.002595350044305381,
+          0.00418865815026037
+        ],
+        "delta": 0.0007966540529774945,
+        "method": "paired_item_normal_95ci",
+        "n": 10042
+      },
+      "piqa": {
+        "ci95": [
+          -0.011227574172831755,
+          0.016668270581972126
+        ],
+        "delta": 0.002720348204570185,
+        "method": "paired_item_normal_95ci",
+        "n": 1838
+      },
+      "winogrande": {
+        "ci95": [
+          -0.026965635593295074,
+          0.03485829541965656
+        ],
+        "delta": 0.003946329913180742,
+        "method": "paired_item_normal_95ci",
+        "n": 1267
+      }
+    },
+    "850_vs_1b": {
+      "arc_easy": {
+        "ci95": [
+          -0.02064092562994655,
+          0.004647659636680556
+        ],
+        "delta": -0.007996632996632997,
+        "method": "paired_item_normal_95ci",
+        "n": 2376
+      },
+      "hellaswag": {
+        "ci95": [
+          -0.004154001704366231,
+          0.0029590206248999895
+        ],
+        "delta": -0.0005974905397331209,
+        "method": "paired_item_normal_95ci",
+        "n": 10042
+      },
+      "piqa": {
+        "ci95": [
+          -0.008049394579593534,
+          0.018930787397874276
+        ],
+        "delta": 0.00544069640914037,
+        "method": "paired_item_normal_95ci",
+        "n": 1838
+      },
+      "winogrande": {
+        "ci95": [
+          -0.041901431042110616,
+          0.01664491959775387
+        ],
+        "delta": -0.012628255722178374,
+        "method": "paired_item_normal_95ci",
+        "n": 1267
+      }
+    }
+  }
+}
