@@ -19,7 +19,7 @@ except ModuleNotFoundError:  # Direct ``python scripts/...`` execution.
 
 ROOT=Path(__file__).resolve().parents[1];ART=ROOT/"artifacts";TOKENIZER=ART/"tokenizers/babylm_2026_4k.json"
 OLD=ART/"data/phase7f_v2r1/canonical-100m";DEFAULT_OUT=ART/"data/data_d_v3/canonical-1b"
-SOURCES=("fineweb_edu","wikipedia","fineweb");RESERVE=15*1024**3;SEED=99173
+SOURCES=("fineweb_edu","wikipedia","fineweb");MIXTURE={"fineweb_edu":.5,"wikipedia":.25,"fineweb":.25};RESERVE=15*1024**3;SEED=99173
 
 def atomic(path:Path,obj):
  path.parent.mkdir(parents=True,exist_ok=True);tmp=path.with_name("."+path.name+".tmp")
@@ -33,7 +33,8 @@ def rows(source):
   if len(words)<50 or (source!="wikipedia" and float(raw.get("language_score",1))<.95):yield None;continue
   if source=="fineweb_edu" and float(raw.get("int_score",0))<3:yield None;continue
   if source=="fineweb" and (len(words)<100 or (not set(words)&{"how","step","guide","explain","because","use","method"} and len(words)<300)):yield None;continue
-  ident=str(raw.get("id"));meta={k:raw.get(k) for k in ("id","url","dump","date","title","file_path","language_score","int_score") if k in raw}
+  identity=raw.get("id") or raw.get("url") or raw.get("warc_filename") or hashlib.sha256(text[:4096].encode()).hexdigest()
+  ident=str(identity);meta={k:raw.get(k) for k in ("id","url","dump","date","title","file_path","warc_filename","crawl","language_score","int_score","score") if k in raw}
   yield Document(source,f"{source}:{ident}",text,meta,LICENSES[source])
 
 class Index:
@@ -63,7 +64,7 @@ def init(out,state_path,total):
  if shutil.disk_usage(out).free<RESERVE+total*5:raise RuntimeError("insufficient disk safety reserve")
  shutil.copy2(OLD/"dedup.sqlite",out/"dedup.sqlite")
  commit=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()
- state={"schema":"data-d-v3-builder-state-v1","corpus_identity":CORPUS_V3_ID,"builder_git_commit":commit,"target":total,"source":"fineweb_edu","source_index":0,"raw_position":0,"source_tokens":{s:0 for s in SOURCES},"validation_tokens":{s:0 for s in SOURCES},"children":[],"validation_children":[],"next_shard":{s:0 for s in SOURCES},"stats":{s:Counter() for s in SOURCES},"status":"BUILDING"};atomic(state_path,state);return state
+ state={"schema":"data-d-v3-builder-state-v1","corpus_identity":CORPUS_V3_ID,"builder_git_commit":commit,"target":total,"source":SOURCES[0],"source_index":0,"raw_position":0,"source_tokens":{s:0 for s in SOURCES},"validation_tokens":{s:0 for s in SOURCES},"children":[],"validation_children":[],"next_shard":{s:0 for s in SOURCES},"stats":{s:Counter() for s in SOURCES},"status":"BUILDING"};atomic(state_path,state);return state
 
 def write_block(out,state,index,source,docs,encoded,split):
  number=state["next_shard"][source];suffix="" if split=="train" else "-validation";name=f"{source}{suffix}-{number:04d}.int32"
@@ -80,7 +81,7 @@ def write_block(out,state,index,source,docs,encoded,split):
 def build(out,total,hard_deadline=None,block_tokens=8_000_000,reserve=RESERVE,interrupt_after=None):
  global RESERVE;RESERVE=reserve;state_path=out/"builder-state.json";state=init(out,state_path,total);tok=load_tokenizer(TOKENIZER)
  refs=reference_documents();common,common_meta=common_validation_references(tok);refs["common_validation"]=common;registry=ContaminationRegistry(refs);index=Index(out/"dedup.sqlite")
- targets={"fineweb_edu":total//2,"wikipedia":total//4,"fineweb":total-total//2-total//4};audit=(out/"decisions.jsonl").open("a")
+ targets={s:int(total*MIXTURE[s]) for s in SOURCES};targets[SOURCES[-1]]+=total-sum(targets.values());audit=(out/"decisions.jsonl").open("a")
  for si in range(state["source_index"],len(SOURCES)):
   source=SOURCES[si];state["source"]=source;start=state["raw_position"] if si==state["source_index"] else 0;train_docs=[];train_ids=[];val_docs=[];val_ids=[]
   pending_exact={};pending_para={};pending_bands={}
@@ -123,7 +124,7 @@ def build(out,total,hard_deadline=None,block_tokens=8_000_000,reserve=RESERVE,in
   if val_docs:write_block(out,state,index,source,val_docs,val_ids,"validation")
   if state["source_tokens"][source]<targets[source]:raise RuntimeError(f"{source} exhausted")
   state["source_index"]=si+1;state["raw_position"]=0;atomic(state_path,state)
- audit.close();top={"schema_version":"data-d-corpus-v1","corpus_identity":CORPUS_V3_ID,"prepared":True,"certified":False,"mixture_definition":{"fineweb_edu":.5,"wikipedia":.25,"fineweb":.25},"tokenizer_sha256":sha256_file(TOKENIZER),"dedup_version":DEDUP_VERSION,"decontamination_version":DECONTAMINATION_VERSION,"total_unique_tokens":sum(state["source_tokens"].values()),"total_documents":sum(json.loads((out/x["manifest_path"]).read_text())["document_count"] for x in state["children"]),"canonical_shard_ordering":[x["manifest_path"] for x in state["children"]],"shards":state["children"],"validation_shards":state["validation_children"],"source_stats":state["stats"],"builder_git_commit":state["builder_git_commit"],"common_validation_registry":common_meta,"benchmark_registry_sizes":{k:len(v) for k,v in refs.items() if k!="common_validation"},"overlap_registry":{"base_manifest_sha256":sha256_file(OLD/"manifest.json"),"scope":["DATA-C","DATA-D-BROAD-v2r1"]}}
+ audit.close();top={"schema_version":"data-d-corpus-v1","corpus_identity":CORPUS_V3_ID,"prepared":True,"certified":False,"mixture_definition":MIXTURE,"tokenizer_sha256":sha256_file(TOKENIZER),"dedup_version":DEDUP_VERSION,"decontamination_version":DECONTAMINATION_VERSION,"total_unique_tokens":sum(state["source_tokens"].values()),"total_documents":sum(json.loads((out/x["manifest_path"]).read_text())["document_count"] for x in state["children"]),"canonical_shard_ordering":[x["manifest_path"] for x in state["children"]],"shards":state["children"],"validation_shards":state["validation_children"],"source_stats":state["stats"],"builder_git_commit":state["builder_git_commit"],"common_validation_registry":common_meta,"benchmark_registry_sizes":{k:len(v) for k,v in refs.items() if k!="common_validation"},"overlap_registry":{"base_manifest_sha256":sha256_file(OLD/"manifest.json"),"scope":["DATA-C","DATA-D-BROAD-v2r1","DATA-D-BROAD-v3"]}}
  (out/"manifest.json").write_bytes(canonical_json(top));state["status"]="COMPLETE";atomic(state_path,state);return top
 def main():
  p=argparse.ArgumentParser();p.add_argument("--output",type=Path,default=DEFAULT_OUT);p.add_argument("--total-tokens",type=int,default=1_000_000_000);p.add_argument("--hard-deadline-epoch",type=float);a=p.parse_args();print(json.dumps(build(a.output,a.total_tokens,a.hard_deadline_epoch),default=dict))

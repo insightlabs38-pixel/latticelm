@@ -43,6 +43,11 @@ class LatticeConfig:
     memory_dropout: float = 0.0
     memory_lr_multiplier: float = 0.3
     tie_embeddings: bool = True
+    qk_norm: bool = False
+    real_gqa: bool = False
+    optimizer: str = "adamw"
+    stable_fraction: float = 0.83
+    decay_fraction: float = 0.15
     hf_persistence_enabled: bool = False
     hf_upload_interval_tokens: int = 1_048_576
     hf_best_upload_interval_tokens: int = 1_048_576
@@ -51,11 +56,17 @@ class LatticeConfig:
 
     def __post_init__(self) -> None:
         if self.d_model % self.n_heads or self.n_heads % self.n_kv_heads:
-            raise ValueError("d_model must divide n_heads and n_heads must divide n_kv_heads")
+            raise ValueError("n_heads must divide d_model and n_kv_heads must divide n_heads")
         if self.context_length < 2 or self.memory_slots < 1:
             raise ValueError("invalid context or memory size")
-        if self.lr_schedule not in {"constant", "cosine"}:
-            raise ValueError("lr_schedule must be constant or cosine")
+        if self.lr_schedule not in {"constant", "cosine", "wsd"}:
+            raise ValueError("lr_schedule must be constant, cosine, or wsd")
+        if self.optimizer not in {"adamw", "muon_hybrid"}:
+            raise ValueError("optimizer must be adamw or muon_hybrid")
+        if min(self.warmup_fraction, self.stable_fraction, self.decay_fraction) < 0:
+            raise ValueError("schedule fractions must be non-negative")
+        if self.lr_schedule == "wsd" and not 0.999999 <= self.warmup_fraction + self.stable_fraction + self.decay_fraction <= 1.000001:
+            raise ValueError("WSD schedule fractions must sum to one")
         if self.mixer_strategy not in {"attention", "hybrid"}:
             raise ValueError("mixer_strategy must be attention or hybrid")
         if self.architecture not in {"lattice", "mini_engram", "co4_causal", "co4_memory", "co4_inspired", "sllama_inspired"}:

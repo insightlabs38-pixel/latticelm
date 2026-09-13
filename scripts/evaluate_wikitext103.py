@@ -46,8 +46,8 @@ def main():
          'bits_per_byte':bits_per_byte(nll,byte_count),
          'byte_counting_policy':'sum len(text.encode(UTF-8)) for raw dataset rows; no inserted separators',
          'bos_policy':'prepend BOS per nonempty raw row as context only; BOS is never scored',
-         'windowing_policy':'non-overlapping target windows; stride 128; maximum context 128',
-         'stride':128,'context_length':c.context_length,
+         'windowing_policy':f'non-overlapping target windows; stride {c.context_length}; maximum context {c.context_length}',
+         'stride':c.context_length,'context_length':c.context_length,
          'wall_seconds':time.perf_counter()-started,'checkpoint_sha256':digest(a.checkpoint),
          'tokenizer_sha256':digest(a.tokenizer),'pytorch_threads':a.threads}
  Path(a.output).write_text(json.dumps(result,indent=2)+'\n'); print(json.dumps(result,indent=2))

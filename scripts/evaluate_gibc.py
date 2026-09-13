@@ -33,12 +33,25 @@ class LatticeHarnessLM(LM):
     def _encode(self, text: str) -> list[int]:
         return self.tok.encode(text)
 
+    def _encode_pair(self, context: str, continuation: str) -> tuple[list[int], list[int]]:
+        """Match lm-eval's canonical causal context/continuation boundary."""
+        spaces = len(context) - len(context.rstrip())
+        if spaces:
+            continuation = context[-spaces:] + continuation
+            context = context[:-spaces]
+        if not context:
+            ids = self._encode(continuation)
+            bos = getattr(self.tok, "bos_id", 1)
+            return ([bos], ids) if not ids or ids[0] != bos else (ids[:1], ids[1:])
+        context_ids = self._encode(context)
+        whole_ids = self._encode(context + continuation)
+        return context_ids, whole_ids[len(context_ids):]
+
     def loglikelihood(self, requests):
         prepared = []
         for index, request in enumerate(requests):
             context, continuation = request.args
-            context_ids = self._encode(context) or [getattr(self.tok, "bos_id", 1)]
-            continuation_ids = self._encode(continuation)
+            context_ids, continuation_ids = self._encode_pair(context, continuation)
             joined = (context_ids + continuation_ids)[-(self.config.context_length + 1):]
             input_ids, targets = joined[:-1], joined[1:]
             scored = min(len(continuation_ids), len(targets))
