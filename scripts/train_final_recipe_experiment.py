@@ -102,7 +102,18 @@ def run(a):
         if STOP:return {"status":"STOPPED_SAFE","tokens":tokens}
     wall=prior+time.perf_counter()-started;vals={s:evaluate(model,np.concatenate(v),cfg.context_length) for s,v in valid.items()}
     result={"schema":"final-recipe-experiment-v1","status":"VALID","experiment_id":a.experiment,"parent_decision":a.parent_decision,"git_commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),"config":cfg.to_dict(),"config_sha256":hashlib.sha256(json.dumps(cfg.to_dict(),sort_keys=True).encode()).hexdigest(),"tokenizer":str(a.tokenizer),"tokenizer_sha256":sha256_file(a.tokenizer),"manifest":str(a.manifest),"manifest_sha256":manifest_hash,"seed":cfg.seed,"parameter_count":params,"hardware":"GCP c4a-standard-16","thread_count":a.threads,"pytorch_version":torch.__version__,"compile_settings":a.backend,"optimizer":cfg.optimizer,"optimizer_partition":partition,"training_tokens":tokens,"checkpoint":str(exp/"milestone.pt"),"checkpoint_sha256":checksum,"elapsed_seconds":wall,"tokens_per_second":tokens/wall,"train_loss":loss_value,"source_validation":vals,"validation_loss":sum(vals.values())/len(vals),"peak_rss_bytes":resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,"classification":"MODELING_RESULT"}
-    tmp=result_path.with_name(".result.json.tmp");tmp.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n");os.replace(tmp,result_path);return result
+    # Research checkpoints follow repository precedent: code and compact
+    # evidence live in Git, while terminal weight artifacts are mirrored to HF.
+    api=None
+    if getattr(a,"upload_hf",True):
+        from huggingface_hub import HfApi
+        repo=os.environ.get("LATTICELM_HF_REPO","insightlabs38-pixel/LatticeLM-research");remote=f"final-recipe-research/{a.experiment}"
+        api=HfApi();api.upload_file(path_or_fileobj=exp/"milestone.pt",path_in_repo=f"{remote}/milestone.pt",repo_id=repo,commit_message=f"Upload {a.experiment} terminal checkpoint")
+        api.upload_file(path_or_fileobj=exp/"milestone.sha256",path_in_repo=f"{remote}/milestone.sha256",repo_id=repo,commit_message=f"Record {a.experiment} checkpoint hash")
+        result["huggingface"]={"repo_id":repo,"path":f"{remote}/milestone.pt","checkpoint_sha256":checksum}
+    tmp=result_path.with_name(".result.json.tmp");tmp.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n");os.replace(tmp,result_path)
+    if api is not None:api.upload_file(path_or_fileobj=result_path,path_in_repo=f"{remote}/result.json",repo_id=repo,commit_message=f"Record {a.experiment} evidence")
+    return result
 
 
 def main():

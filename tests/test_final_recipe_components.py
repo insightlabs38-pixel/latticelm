@@ -151,7 +151,7 @@ def test_real_research_trainer_smoke_trajectory_checkpoint_and_result(tmp_path, 
     cfg=config();cfg.batch_size=2;cfg.context_length=8;cfg.vocab_size=64;cfg.max_steps=10
     config_path=tmp_path/"config.json";config_path.write_text(json.dumps(cfg.to_dict()))
     args=SimpleNamespace(config=config_path,threads=2,manifest=manifest,tokenizer=tokenizer,backend="eager",experiment="smoke",
-        fresh=True,resume=False,target_tokens=256,checkpoint_tokens=128,parent_decision="integration-test")
+        fresh=True,resume=False,target_tokens=256,checkpoint_tokens=128,parent_decision="integration-test",upload_hf=False)
     result=research_trainer.run(args)
     assert result["status"]=="VALID" and result["training_tokens"]==256 and result["train_loss"] < 5
     assert (tmp_path/"artifacts/final_recipe_experiments/smoke/milestone.pt").exists()
