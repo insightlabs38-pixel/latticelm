@@ -35,7 +35,7 @@ def load():
   try:
    x=json.loads(p.read_text());assert x["schema"]=="final-recipe-research-state-v1";return x
   except Exception:pass
- return {"schema":"final-recipe-research-state-v1","phase":"START","completed":[],"child_pid":None,"created_at":time.time(),"research_training_seconds":0.0,"research_training_tokens":0,"hard_deadline":"2026-10-01T15:45:00Z","terminal_boundary":"FINAL_RECIPE_CERTIFIED_OR_BLOCKED"}
+ return {"schema":"final-recipe-research-state-v1","phase":"INSPECT_LIVE_STATE","completed":[],"child_pid":None,"created_at":time.time(),"research_training_seconds":0.0,"research_training_tokens":0,"hard_deadline":"2026-10-01T15:45:00Z","terminal_boundary":"FINAL_RECIPE_CERTIFIED_OR_BLOCKED"}
 def save(s,phase=None,**kw):
  if phase:s["phase"]=phase
  s.update(kw);s["updated_at"]=time.time();atomic(STATE,s);event("STATE",phase=s["phase"])
