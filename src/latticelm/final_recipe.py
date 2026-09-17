@@ -67,9 +67,11 @@ def make_optimizer(model: torch.nn.Module, kind: str, lr: float, weight_decay: f
                 name: "adamw" for name, _ in model.named_parameters()}
     if kind != "muon_hybrid": raise ValueError(kind)
     muon, adam, names = muon_parameter_partition(model)
-    # Muon's scale is deliberately independent from the AdamW peak-LR sweep.
+    # PyTorch's match_rms_adamw adjustment is explicitly designed to reuse the
+    # AdamW-tuned learning rate.  The historical .02 setting predated this
+    # implementation audit and would be 25x the frozen 8e-4 peak.
     return OptimizerBundle([
-        torch.optim.Muon(muon, lr=.02, momentum=.95, weight_decay=weight_decay,
+        torch.optim.Muon(muon, lr=lr, momentum=.95, weight_decay=weight_decay,
                          adjust_lr_fn="match_rms_adamw"),
         torch.optim.AdamW(adam, lr=lr, weight_decay=weight_decay,
                           betas=betas, eps=1e-8),

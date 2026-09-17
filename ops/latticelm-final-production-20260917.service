@@ -1,0 +1,23 @@
+[Unit]
+Description=LatticeLM unattended final production master
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=insightlabs38
+WorkingDirectory=/home/insightlabs38/latticelm
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/insightlabs38/latticelm/src
+Environment=HF_HUB_ENABLE_HF_TRANSFER=0
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_final_production_master.py
+Restart=on-failure
+RestartSec=60
+RestartPreventExitStatus=2 73
+TimeoutStopSec=1200
+KillMode=mixed
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

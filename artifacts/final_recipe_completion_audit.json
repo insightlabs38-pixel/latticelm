@@ -1,0 +1,332 @@
+{
+  "schema": "final-recipe-completion-audit-v1",
+  "generated_at": "2026-09-17T21:26:20Z",
+  "scope": "read-only evidence audit; no training or research rerun",
+  "repository": {
+    "head": "cc2f71740fade6fd785935e760ff39e4afda377b",
+    "branch": "main",
+    "preexisting_dirty_worktree": true
+  },
+  "master": {
+    "state_phase": "STOPPED_SAFE",
+    "readiness_recorded": "FINAL_RECIPE_CERTIFIED",
+    "all_declared_phases_completed": true,
+    "final_long_run_launched": false,
+    "systemd_active_state": "failed",
+    "systemd_exit_status": 75,
+    "systemd_interpretation": "stopped after certification; artifacts validated",
+    "active_training_processes": 0
+  },
+  "candidate": {
+    "parameters": 48636168,
+    "parameter_cap_margin": 1363832,
+    "architecture": "co4_causal",
+    "layers": 12,
+    "d_model": 552,
+    "ffn_hidden": 1728,
+    "q_heads": 6,
+    "kv_heads": 2,
+    "real_gqa": true,
+    "gqa_parameter_savings_at_same_width": 4884096,
+    "q_projection_shape": [552, 552],
+    "k_projection_shape": [184, 552],
+    "v_projection_shape": [184, 552],
+    "tokenizer_vocab": 4096,
+    "context": 256,
+    "tie_embeddings": false,
+    "qk_norm": true,
+    "optimizer": "adamw",
+    "adam_betas": [0.9, 0.95],
+    "peak_lr": 0.0008,
+    "schedule": {
+      "name": "wsd",
+      "warmup_fraction": 0.02,
+      "stable_fraction": 0.83,
+      "decay_fraction": 0.15
+    },
+    "batch": 32,
+    "effective_tokens_per_step": 8192,
+    "compile": "torch model.compile max-autotune-no-cudagraphs fullgraph=false",
+    "triton": false,
+    "seed": 1337
+  },
+  "dataset": {
+    "name": "DATA-D-BROAD-v4",
+    "unique_training_tokens": 2259629459,
+    "minimum_target": 2250000000,
+    "target_met": true,
+    "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+    "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7",
+    "train_documents": 1585298,
+    "validation_documents": 34903,
+    "train_shards": 286,
+    "validation_shards": 149,
+    "source_shares": {
+      "fineweb_edu": 0.44829314601354736,
+      "wikipedia": 0.24995248833848735,
+      "fineweb": 0.20105445483130427,
+      "finemath": 0.10069991081666102
+    },
+    "exact_duplicate_events": 992254,
+    "near_duplicate_events": 3575,
+    "contamination_events": 2329,
+    "train_validation_disjointness": "PASS",
+    "stable_unique_ids": "PASS",
+    "direct_hash_verification": {
+      "manifest_and_data_pairs_checked": 435,
+      "mismatches": 0
+    },
+    "deterministic_first_batch": "PASS",
+    "full_deterministic_rebuild": "NOT_RUN",
+    "evidence_caveat": "top manifest says certified=false while external certification says PASS"
+  },
+  "tokenizer": {
+    "selected_vocab": 4096,
+    "selected_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7",
+    "weighted_bytes_per_token_4k": 3.2150551719777973,
+    "weighted_bytes_per_token_8k": 3.5922212581139483,
+    "relative_compression_gain_8k": 0.11731247706835801,
+    "selection_threshold": 0.12,
+    "training_ablation_run": false,
+    "strength": "practical tie-break; no matched LM evidence"
+  },
+  "context": {
+    "selected": 256,
+    "max_task_truncation_fraction": 0.0029923830250272033,
+    "near_final_context_throughput_comparison_run": false,
+    "assessment": "clearly justified for request coverage; throughput cost not directly measured"
+  },
+  "experiments": [
+    {
+      "id": "lr-0p0005",
+      "purpose": "peak LR sweep",
+      "status": "VALID",
+      "tokens": 50000000,
+      "peak_lr": 0.0005,
+      "qk_norm": false,
+      "seconds": 15758.832628629985,
+      "tokens_per_second": 3172.8238492210457,
+      "validation_loss": 3.2325975373387337,
+      "wikitext_ppl": 46.29832740370548,
+      "wikitext_bpb": 1.7555198941928392,
+      "hellaswag": 0.2633937462656841,
+      "arc_easy": 0.29292929292929293,
+      "piqa": 0.545157780195865,
+      "winogrande": 0.5043409629044988,
+      "decision": "runner-up; best WikiText LR arm"
+    },
+    {
+      "id": "lr-0p0008",
+      "purpose": "peak LR sweep and QK-off control",
+      "status": "VALID",
+      "tokens": 50000000,
+      "peak_lr": 0.0008,
+      "qk_norm": false,
+      "seconds": 15896.950111545972,
+      "tokens_per_second": 3145.257401524142,
+      "validation_loss": 3.2320844680070877,
+      "wikitext_ppl": 47.14421076594285,
+      "wikitext_bpb": 1.7638076341781523,
+      "hellaswag": 0.2647878908583947,
+      "arc_easy": 0.3005050505050505,
+      "piqa": 0.5391730141458106,
+      "winogrande": 0.4964483030781373,
+      "decision": "selected by primary validation tie-break"
+    },
+    {
+      "id": "lr-0p0011",
+      "purpose": "peak LR sweep",
+      "status": "VALID",
+      "tokens": 50000000,
+      "peak_lr": 0.0011,
+      "qk_norm": false,
+      "seconds": 15644.370332980063,
+      "tokens_per_second": 3196.0378676663304,
+      "validation_loss": 3.26989309489727,
+      "wikitext_ppl": 50.4064852203314,
+      "wikitext_bpb": 1.794435060085478,
+      "hellaswag": 0.264389563831906,
+      "arc_easy": 0.30176767676767674,
+      "piqa": 0.5386289445048966,
+      "winogrande": 0.505130228887135,
+      "decision": "rejected on language-model quality"
+    },
+    {
+      "id": "qknorm-on",
+      "purpose": "matched QK-Norm ablation",
+      "status": "VALID",
+      "tokens": 50000000,
+      "peak_lr": 0.0008,
+      "qk_norm": true,
+      "seconds": 15770.730770711089,
+      "tokens_per_second": 3170.4301295193277,
+      "validation_loss": 3.2253816947340965,
+      "wikitext_ppl": 45.35343330316595,
+      "wikitext_bpb": 1.746081108836802,
+      "hellaswag": 0.264389563831906,
+      "arc_easy": 0.30008417508417506,
+      "piqa": 0.5359085963003264,
+      "winogrande": 0.48382004735595896,
+      "decision": "promoted on validation and WikiText; tasks slightly lower"
+    },
+    {
+      "id": "integrated-100m",
+      "purpose": "integrated release-candidate pilot",
+      "status": "VALID",
+      "tokens": 100000000,
+      "peak_lr": 0.0008,
+      "qk_norm": true,
+      "seconds": 31669.887123045046,
+      "tokens_per_second": 3157.573615954999,
+      "train_loss": 3.272371768951416,
+      "validation_loss": 3.0454660952091217,
+      "source_validation": {
+        "finemath": 3.050892323255539,
+        "fineweb": 3.1150683164596558,
+        "fineweb_edu": 3.209380656480789,
+        "wikipedia": 2.806523084640503
+      },
+      "wikitext_ppl": 34.842375321764216,
+      "wikitext_bpb": 1.6253945969125814,
+      "hellaswag": 0.26707827126070505,
+      "arc_easy": 0.30597643097643096,
+      "piqa": 0.5576713819368879,
+      "winogrande": 0.5074980268350434,
+      "checkpoint_sha256": "9daf80a4cf7c941634a2f20b329862faad21a8cbff31c52de46eded5556a5a84",
+      "peak_rss_bytes": 15362678784,
+      "decision": "passed integrated certification"
+    }
+  ],
+  "evaluator": {
+    "bug_confirmed": true,
+    "old_behavior": "independent context and continuation BPE tokenization",
+    "corrected_behavior": "joined causal tokenization with continuation masking and left truncation",
+    "corrected_historical_checkpoints": ["850M WSD", "1B WSD"],
+    "current_candidate_scores_comparable": true,
+    "legacy_multiple_choice_scores_comparable": false
+  },
+  "decisions": {
+    "lr": {
+      "selected": 0.0008,
+      "confidence": "low-to-moderate optimality; high numerical viability",
+      "validation_margin_vs_0p0005": 0.000513069331646,
+      "wikitext_bpb_disadvantage_vs_0p0005": 0.0082877399853131
+    },
+    "qk_norm": {
+      "selected": true,
+      "validation_delta": -0.0067027732729912,
+      "wikitext_bpb_delta": -0.0177265253413503,
+      "interpretation": "modest LM gain, no stability evidence, official tasks slightly lower"
+    },
+    "muon": {
+      "classification": "REJECTED",
+      "training_tokens": 0,
+      "throughput_ratio": 0.8928958185528469
+    },
+    "triton": {
+      "classification": "REJECTED",
+      "failed_gate": 1,
+      "reason": "AArch64 smoke command timed out after 180 seconds"
+    },
+    "embedding_allocation": {
+      "classification": "NOT_RUN",
+      "selected": "untied",
+      "tied_parameters_saved": 2260992
+    },
+    "data_mixture_ablation": "NOT_RUN",
+    "posttraining": {
+      "audit_classification": "INCOMPLETE",
+      "master_label": "POSTTRAINING_UNCERTAIN",
+      "sft_run": false,
+      "one_b_challenger_run": false,
+      "rlvr_grpo_run": false,
+      "empirical_justification_to_plan": false
+    }
+  },
+  "compute": {
+    "unique_training_tokens": 300000000,
+    "master_reported_tokens": 350000000,
+    "master_token_counter_issue": "terminal lr-0p0005 checkpoint counted once on failed publish wrapper and again on resume wrapper",
+    "final_result_training_seconds": 94740.77096691215,
+    "final_result_training_hours": 26.316880824142264,
+    "master_wrapper_training_seconds": 95146.9393014689,
+    "event_log_wall_hours": 94.0903,
+    "recorded_systemd_cpu_hours": 450.5788316294444
+  },
+  "throughput": {
+    "pure_short_benchmark_tokens_per_second": 3262.399008338141,
+    "effective_integrated_tokens_per_second": 3157.573615954999,
+    "effective_to_pure_ratio": 0.967256,
+    "context": 256,
+    "batch": 32,
+    "threads": 16,
+    "triton": false,
+    "normal_checkpoint_overhead_included": true,
+    "external_final_evaluation_included": false
+  },
+  "deadline": {
+    "conservative_utc": "2026-10-01T15:45:00Z",
+    "devpost": "October 1 2026 11:45 PM GMT+8",
+    "organizer_extension": "extended from September 21 to October 1",
+    "stale_organizer_landing_date": "2026-09-21T23:59:00+08:00",
+    "calendar_hours_remaining_at_audit": 330.31089741555553,
+    "execution_hours_remaining_at_22h_per_day": 302.7849892975926,
+    "proposed_protected_buffer_hours": 110,
+    "training_envelope_after_buffer_hours": 192.7849892975926
+  },
+  "token_budget_feasibility": [
+    {"tokens": 1000000000, "active_hours": 87.97, "execution_days": 3.999, "completion_utc": "2026-09-21T21:24Z", "raw_buffer_hours": 214.81},
+    {"tokens": 1250000000, "active_hours": 109.96, "execution_days": 4.998, "completion_utc": "2026-09-22T21:24Z", "raw_buffer_hours": 192.82},
+    {"tokens": 1500000000, "active_hours": 131.96, "execution_days": 5.998, "completion_utc": "2026-09-23T21:23Z", "raw_buffer_hours": 170.83},
+    {"tokens": 1650000000, "active_hours": 145.15, "execution_days": 6.598, "completion_utc": "2026-09-24T11:47Z", "raw_buffer_hours": 157.63},
+    {"tokens": 1700000000, "active_hours": 149.55, "execution_days": 6.798, "completion_utc": "2026-09-24T16:35Z", "raw_buffer_hours": 153.23},
+    {"tokens": 1750000000, "active_hours": 153.95, "execution_days": 6.998, "completion_utc": "2026-09-24T21:23Z", "raw_buffer_hours": 148.83},
+    {"tokens": 1800000000, "active_hours": 158.35, "execution_days": 7.198, "completion_utc": "2026-09-25T02:11Z", "raw_buffer_hours": 144.44},
+    {"tokens": 2000000000, "active_hours": 175.94, "execution_days": 7.997, "completion_utc": "2026-09-25T21:22Z", "raw_buffer_hours": 126.84},
+    {"tokens": 2100000000, "active_hours": 184.74, "execution_days": 8.397, "completion_utc": "2026-09-26T06:58Z", "raw_buffer_hours": 118.04},
+    {"tokens": 2150000000, "active_hours": 189.14, "execution_days": 8.597, "completion_utc": "2026-09-26T11:46Z", "raw_buffer_hours": 113.65},
+    {"tokens": 2190000000, "active_hours": 192.66, "execution_days": 8.757, "completion_utc": "2026-09-26T15:36Z", "raw_buffer_hours": 110.13},
+    {"tokens": 2200000000, "active_hours": 193.54, "execution_days": 8.797, "completion_utc": "2026-09-26T16:34Z", "raw_buffer_hours": 109.25},
+    {"tokens": 2250000000, "active_hours": 197.94, "execution_days": 8.997, "completion_utc": "2026-09-26T21:22Z", "raw_buffer_hours": 104.85}
+  ],
+  "potential_pre_final_experiments": [
+    {
+      "name": "fresh matched 100M peak-LR 5e-4 with QK-Norm",
+      "classification": "WARRANTED_BEFORE_FINAL",
+      "active_training_hours": 8.8,
+      "probability_changes_recipe": "35-45%",
+      "expected_change": "peak LR only; expected quality delta small",
+      "authorized": false
+    },
+    {"name": "100M QK-Norm OFF", "classification": "OPTIONAL_BUT_NOT_WORTH_DELAY", "authorized": false},
+    {"name": "8K redesigned sub-50M model", "classification": "OPTIONAL_BUT_NOT_WORTH_DELAY", "authorized": false},
+    {"name": "DATA-D-v4 mixture sweep", "classification": "POST_HACKATHON", "authorized": false},
+    {"name": "tied embedding reallocation", "classification": "OPTIONAL_BUT_NOT_WORTH_DELAY", "authorized": false},
+    {"name": "Muon", "classification": "ALREADY_RESOLVED", "authorized": false},
+    {"name": "Triton-CPU retry", "classification": "POST_HACKATHON", "authorized": false},
+    {"name": "post-training", "classification": "POST_HACKATHON", "authorized": false}
+  ],
+  "readiness": {
+    "evaluator_certified": true,
+    "data_d_v4_certified": true,
+    "tokenizer_selected": true,
+    "context_selected": true,
+    "real_gqa_certified": true,
+    "architecture_under_50m": true,
+    "lr_selected": true,
+    "qk_norm_selected": true,
+    "optimizer_selected": true,
+    "batch_selected": true,
+    "compile_backend_selected": true,
+    "triton_decision_complete": true,
+    "integrated_100m_pilot_passed": true,
+    "exact_resume_passed": true,
+    "posttraining_decision_evidence_available": false,
+    "final_long_run_recipe_fully_specified": true,
+    "status": "READY_FOR_FINAL_RUN_DECISION"
+  },
+  "artifacts": {
+    "markdown": "artifacts/final_recipe_completion_audit.md",
+    "json": "artifacts/final_recipe_completion_audit.json"
+  }
+}
