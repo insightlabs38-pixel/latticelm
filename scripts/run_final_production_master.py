@@ -78,6 +78,16 @@ def object_hash(value) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, default=str).encode()).hexdigest()
 
 
+def last_json_object(output: str) -> dict:
+    """Decode the final JSON line while ignoring compiler/runtime warnings."""
+    for line in reversed(output.splitlines()):
+        try:
+            value = json.loads(line)
+            if isinstance(value, dict): return value
+        except json.JSONDecodeError: pass
+    raise ValueError("child output contained no JSON object")
+
+
 def load_state() -> dict:
     for path in (STATE, PREVIOUS):
         try:
@@ -219,10 +229,15 @@ def phase_triton(state: dict) -> None:
     if code == 124: outcome.update(compile="TIMEOUT", reason="usable AArch64 kernel not available inside 20-minute cap")
     elif code: outcome.update(compile="FAIL", reason=f"isolated gate exited {code}")
     else:
-        try: result = json.loads(output[output.index("{"):]); outcome.update(compile=result.get("gate1"), parity=result.get("gate2"), microbenchmark=result.get("gate3_microbenchmark"))
+        try:
+            result = last_json_object(output)
+            outcome.update(compile=result.get("gate1"), parity=result.get("gate2"), parity_cases=result.get("cases"),
+                           edge_output=result.get("edge_output"), microbenchmark=result.get("gate3_microbenchmark"))
         except Exception: result = {}; outcome.update(reason="gate output was not valid JSON")
-        if result.get("gate2") != "PASS" or not result.get("gate3_microbenchmark", {}).get("pass"):
-            outcome["reason"] = "parity or clear microbenchmark gate failed"
+        if result.get("gate2") != "PASS":
+            outcome["reason"] = "numerical parity gate failed"
+        elif not result.get("gate3_microbenchmark", {}).get("pass"):
+            outcome["reason"] = "parity passed but production-shape microbenchmark was not faster than PyTorch"
         else:
             # The repository has no end-to-end model dispatch using this kernel.
             # A synthetic-kernel win cannot authorize production substitution.

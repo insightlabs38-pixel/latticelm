@@ -59,6 +59,11 @@ def test_paired_bootstrap_direction_and_determinism():
     assert first["ci95"] == [-1.0, -1.0]
 
 
+def test_last_json_object_ignores_warning_source_braces():
+    output = 'warning at cases.append({"n": n})\nmore warning\n{"gate1":"PASS","gate2":"PASS"}\n'
+    assert master.last_json_object(output) == {"gate1": "PASS", "gate2": "PASS"}
+
+
 def test_muon_uses_reference_consistent_adamw_lr():
     import torch
     from latticelm.config import LatticeConfig
