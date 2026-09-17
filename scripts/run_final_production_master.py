@@ -141,7 +141,7 @@ def run_child(state: dict, label: str, command: list, tokens: int = 0, optional:
         # A signal-safe partial checkpoint is not the declared endpoint.  The
         # resumed child will report the complete token budget once, so do not
         # double-count the requested budget across service restarts.
-        if code == 0: state["research_tokens"] += tokens
+        if code == 0 and not STOP: state["research_tokens"] += tokens
     save(state); event("CHILD_END", label=label, exit_code=code, seconds=elapsed, output_tail=output[-4000:])
     if STOP: raise InterruptedError
     if code and not optional: raise RuntimeError(f"{label} exited {code}: {output[-1000:]}")
