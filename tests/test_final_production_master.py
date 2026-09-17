@@ -89,6 +89,8 @@ def test_no_unauthorized_research_axes_in_state_machine():
 
 def test_simulated_triton_timeout_falls_through(monkeypatch, tmp_path):
     written = {}
+    interpreter = tmp_path / "python"; interpreter.write_text("")
+    monkeypatch.setattr(master, "TRITON_PYTHON", interpreter)
     monkeypatch.setattr(master, "run_child", lambda *a, **k: (124, "timeout"))
     monkeypatch.setattr(master, "atomic", lambda path, payload: written.update({path.name: payload}))
     monkeypatch.setattr(master, "complete", lambda state, phase, **fields: state.update(fields, phase="MUON_IMPLEMENTATION_AUDIT"))
@@ -96,6 +98,11 @@ def test_simulated_triton_timeout_falls_through(monkeypatch, tmp_path):
     master.phase_triton(state)
     assert state["triton"]["status"] == "TRITON_REJECTED"
     assert state["phase"] == "MUON_IMPLEMENTATION_AUDIT"
+
+
+def test_triton_gate_uses_existing_isolated_interpreter():
+    assert master.TRITON_PYTHON == master.ROOT / ".triton-cpu-venv/bin/python"
+    assert master.TRITON_PYTHON.is_file()
 
 
 def test_simulated_muon_rejection_falls_through(monkeypatch):

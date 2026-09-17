@@ -37,6 +37,7 @@ LOCK = ART / "final_production_master.lock"; EVENTS = ART / "final_training_even
 DATA = ART / "data/data_d_v4/canonical-2250m"; MANIFEST = DATA / "manifest.json"
 TOKENIZER = ART / "tokenizers/final_corpus_4k.json"; RELEASE_CONFIG = ROOT / "configs/final_recipe_release_candidate.json"
 AUDIT = ART / "final_recipe_completion_audit.json"; RUN = ART / "final_production_run"
+TRITON_PYTHON = ROOT / ".triton-cpu-venv/bin/python"
 DEADLINE = datetime(2026, 9, 30, 16, 0, 0, tzinfo=ZoneInfo("America/New_York")).timestamp()
 TASKS = ("hellaswag", "arc_easy", "piqa", "winogrande")
 PHASES = (
@@ -135,7 +136,12 @@ def run_child(state: dict, label: str, command: list, tokens: int = 0, optional:
         code = 124
     else: code = CHILD.returncode
     elapsed = time.perf_counter() - started; CHILD = None; state["child_pid"] = None
-    if tokens: state["research_tokens"] += tokens; state["research_seconds"] += elapsed
+    if tokens:
+        state["research_seconds"] += elapsed
+        # A signal-safe partial checkpoint is not the declared endpoint.  The
+        # resumed child will report the complete token budget once, so do not
+        # double-count the requested budget across service restarts.
+        if code == 0: state["research_tokens"] += tokens
     save(state); event("CHILD_END", label=label, exit_code=code, seconds=elapsed, output_tail=output[-4000:])
     if STOP: raise InterruptedError
     if code and not optional: raise RuntimeError(f"{label} exited {code}: {output[-1000:]}")
@@ -206,7 +212,10 @@ def phase_inspect(state: dict) -> None:
 def phase_triton(state: dict) -> None:
     outcome = {"status": "TRITON_REJECTED", "engineering_cap_seconds": 1200, "promoted": False,
                "compile": "NOT_RUN", "parity": "NOT_RUN", "microbenchmark": "NOT_RUN", "full_step_speedup": None, "trajectory": "NOT_RUN"}
-    code, output = run_child(state, "triton-final-gate", [sys.executable, "scripts/smoke_triton_co4_mod.py"], optional=True, timeout=1200)
+    if not TRITON_PYTHON.is_file():
+        outcome.update(compile="FAIL", reason=f"isolated Triton interpreter missing: {TRITON_PYTHON}")
+        atomic(ART / "final_triton_decision.json", outcome); complete(state, "TRITON_FINAL_GATE", triton=outcome); return
+    code, output = run_child(state, "triton-final-gate", [TRITON_PYTHON, "scripts/smoke_triton_co4_mod.py"], optional=True, timeout=1200)
     if code == 124: outcome.update(compile="TIMEOUT", reason="usable AArch64 kernel not available inside 20-minute cap")
     elif code: outcome.update(compile="FAIL", reason=f"isolated gate exited {code}")
     else:
