@@ -115,17 +115,21 @@ def main():
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--limit", type=float)
     parser.add_argument("--threads", type=int, default=2)
+    parser.add_argument("--predictions-output", help="optional lm-eval per-example samples JSON")
     args = parser.parse_args()
     torch.set_num_threads(args.threads)
     started = time.perf_counter()
     lm = LatticeHarnessLM(args.checkpoint, args.tokenizer, args.batch_size)
     result = evaluator.simple_evaluate(model=lm, tasks=args.tasks.split(","), num_fewshot=0,
                                        batch_size=args.batch_size, limit=args.limit,
-                                       confirm_run_unsafe_code=True)
+                                       confirm_run_unsafe_code=True, log_samples=bool(args.predictions_output))
     result["phase6_metadata"] = {"checkpoint": args.checkpoint,
         "checkpoint_sha256": sha256(args.checkpoint), "tokenizer_sha256": sha256(args.tokenizer),
         "wall_seconds": time.perf_counter() - started, "lm_eval_version": "0.4.13",
         "pytorch_threads": args.threads}
+    if args.predictions_output:
+        samples = result.pop("samples", {})
+        Path(args.predictions_output).write_text(json.dumps(samples, indent=2, default=str) + "\n")
     Path(args.output).write_text(json.dumps(result, indent=2, default=str) + "\n")
 
 
