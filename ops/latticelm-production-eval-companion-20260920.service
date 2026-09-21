@@ -1,0 +1,19 @@
+[Unit]
+Description=LatticeLM one-shot production checkpoint evaluation companion
+After=network-online.target latticelm-final-production-20260917.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=insightlabs38
+WorkingDirectory=/home/insightlabs38/latticelm
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/insightlabs38/latticelm/src
+Environment=HF_HUB_ENABLE_HF_TRANSFER=0
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python scripts/run_production_checkpoint_evaluation_companion.py
+TimeoutStartSec=infinity
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
