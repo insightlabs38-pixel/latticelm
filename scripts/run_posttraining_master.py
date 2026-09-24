@@ -70,7 +70,14 @@ def command(s,label,args,optional=False,timeout=None):
  global CHILD
  log=PT/"logs"/f"{label}.log";log.parent.mkdir(parents=True,exist_ok=True);event("CHILD_START",label=label,command=[str(x) for x in args]);started=time.perf_counter()
  with log.open("a") as f:
-  CHILD=subprocess.Popen([str(x) for x in args],cwd=ROOT,stdout=f,stderr=subprocess.STDOUT);save(s,child_pid=CHILD.pid,child_label=label);code=CHILD.wait(timeout=timeout);CHILD=None;save(s,child_pid=None)
+  CHILD=subprocess.Popen([str(x) for x in args],cwd=ROOT,stdout=f,stderr=subprocess.STDOUT);save(s,child_pid=CHILD.pid,child_label=label)
+  try:code=CHILD.wait(timeout=max(1,min(timeout or float("inf"),HARD_CUTOFF-time.time()-30)))
+  except subprocess.TimeoutExpired:
+   CHILD.terminate()
+   try:code=CHILD.wait(timeout=30)
+   except subprocess.TimeoutExpired:CHILD.kill();code=CHILD.wait()
+   event("CHILD_DEADLINE_STOP",label=label,exit_code=code)
+  CHILD=None;save(s,child_pid=None)
  elapsed=time.perf_counter()-started;event("CHILD_END",label=label,exit_code=code,seconds=elapsed)
  if code:
   if optional:s["optional_failures"].append({"label":label,"exit_code":code,"log":str(log),"at":time.time()});save(s);return False
@@ -155,10 +162,18 @@ def phase_rollout(s):
  status="CERTIFIED" if out.exists() and json.loads(out.read_text()).get("status")=="PASS" else "REJECTED_OPTIONAL";complete(s,"ROLLOUT_BACKEND_CERTIFICATION",rollout_backend=status,rollout_topology=json.loads(out.read_text()).get("selected") if out.exists() else None)
 def proxy(s,cid,examples=256):
  out=PT/"candidates"/cid/f"proxy-{examples}.json";cp=s["candidates"][cid]["checkpoint"];args=[sys.executable,"scripts/evaluate_posttraining_proxy.py","--checkpoint",cp,"--tokenizer",TOKENIZER,"--manifest",MANIFEST,"--output",out,"--examples",examples,"--threads",16]
+ if out.exists():
+  try:
+   prior=json.loads(out.read_text())
+   if prior.get("checkpoint_sha256")==s["candidates"][cid]["checkpoint_sha256"] and prior.get("examples")==examples:return prior
+  except Exception:pass
  if cid!="BASE" and s["candidates"][cid].get("parent_checkpoint_sha256"):
   parent=next((x for x in s["candidates"].values() if x.get("checkpoint_sha256")==s["candidates"][cid]["parent_checkpoint_sha256"]),None)
   if parent:args.extend(("--parent",parent["checkpoint"]))
- command(s,cid+f"-proxy-{examples}",args,optional=True);return json.loads(out.read_text()) if out.exists() else None
+ started=time.perf_counter();ok=command(s,cid+f"-proxy-{examples}",args,optional=True)
+ if ok:s["proxy_seconds_per_example"]=(time.perf_counter()-started)/max(examples,1)
+ if not out.exists():return None
+ value=json.loads(out.read_text());return value if value.get("checkpoint_sha256")==s["candidates"][cid]["checkpoint_sha256"] else None
 def choose_screen(s,prefix,field,default):
  rows=[]
  for cid,x in s["candidates"].items():
@@ -297,6 +312,24 @@ def phase_interpolation(s):
    payload={"schema":"posttraining-merged-checkpoint-v1","config":first["config"],"model":merged,"method":"merge","merge":{"parents":[p["checkpoint_sha256"] for p in parents],"coefficients":[1-alpha,alpha]}}
    tmp=out/".checkpoint.pt.tmp";torch.save(payload,tmp);os.replace(tmp,cp);digest=sha256(cp);(out/"checkpoint.sha256").write_text(digest+"\n")
   s["candidates"][cid]={"candidate_id":cid,"checkpoint":str(cp),"checkpoint_sha256":digest,"status":"TRAINED","method":"interpolation","method_chain":["merge"],"parents":[p["checkpoint_sha256"] for p in parents],"alpha":alpha};created.append(cid);save(s)
+ for parent_id in ("sft-trunk","ranking","rft-iter-2","rft-iter-3"):
+  parent=s["candidates"].get(parent_id)
+  if not parent:continue
+  milestones=sorted((PT/"candidates"/parent_id).glob("milestone-*.pt"),key=lambda p:int(p.stem.split("-")[-1]))
+  if len(milestones)<2:continue
+  first_path,second_path=milestones[-2:];first_tokens=int(first_path.stem.split("-")[-1]);second_tokens=int(second_path.stem.split("-")[-1])
+  if second_tokens-first_tokens>max(5_000_000,second_tokens//5):continue
+  cid="swa-"+parent_id;out=PT/"candidates"/cid;out.mkdir(parents=True,exist_ok=True);cp=out/"checkpoint.pt";parent_shas=[sha256(first_path),sha256(second_path)]
+  if cp.exists():
+   digest=sha256(cp)
+   if digest!=(out/"checkpoint.sha256").read_text().strip():raise RuntimeError("SWA artifact SHA mismatch")
+  else:
+   first=torch.load(first_path,map_location="cpu",weights_only=False);second=torch.load(second_path,map_location="cpu",weights_only=False)
+   if first["config"]!=second["config"] or first["model"].keys()!=second["model"].keys():raise RuntimeError("SWA identity mismatch")
+   merged={k:first["model"][k].mul(.5).add(second["model"][k],alpha=.5) for k in first["model"]}
+   if not all(torch.isfinite(v).all() for v in merged.values()):raise RuntimeError("nonfinite SWA")
+   tmp=out/".checkpoint.pt.tmp";torch.save({"schema":"posttraining-swa-checkpoint-v1","config":first["config"],"model":merged,"method":"swa","merge":{"parents":parent_shas,"coefficients":[.5,.5]}},tmp);os.replace(tmp,cp);digest=sha256(cp);(out/"checkpoint.sha256").write_text(digest+"\n")
+  s["candidates"][cid]={"candidate_id":cid,"checkpoint":str(cp),"checkpoint_sha256":digest,"status":"TRAINED","method":"swa","method_chain":parent.get("method_chain",[])+["swa"],"parents":parent_shas};created.append(cid);save(s)
  complete(s,"INTERPOLATION",interpolations=created)
 def adaptive_choice(s,now=None):
  now=time.time() if now is None else now;remaining=research_deadline(s,now)-now
@@ -333,7 +366,15 @@ def phase_tournament(s):
  for cid,c in s["candidates"].items():
   if cid=="BASE" or c.get("status") in ("COMPLETE","SAFE_STOPPED_VALID","TRAINED"):
    if not c.get("proxy"):c["proxy"]=proxy(s,cid,256)
- save(s);ids=proxy_shortlist(s["candidates"],min(8,max(5,int((HARD_CUTOFF-time.time())/3600)*2)));event("FINAL_SHORTLIST",candidate_ids=ids,reason="proxy rank and method diversity within official evaluation budget");metrics=[]
+ save(s);limit=min(8,max(5,int((HARD_CUTOFF-time.time())/3600)*2));ids=proxy_shortlist(s["candidates"],limit)
+ for cid in ids:
+  if time.time()>=HARD_CUTOFF-3600:break
+  estimated=s.get("proxy_seconds_per_example",0)*1024*SAFETY
+  if estimated>min(1800,max(0,HARD_CUTOFF-time.time()-3600)/max(1,len(ids))):
+   event("PROMOTION_PROXY_SKIPPED_TIME",candidate_id=cid,estimated_seconds=estimated);break
+  promoted=proxy(s,cid,1024)
+  if promoted:s["candidates"][cid]["proxy"]=promoted
+ ids=proxy_shortlist(s["candidates"],limit);event("FINAL_SHORTLIST",candidate_ids=ids,reason="256-example diversity screen followed by paired 1024-example promotion proxy");metrics=[]
  for cid in ids:
   if time.time()>=HARD_CUTOFF-900:break
   result=eval_finalist(s,cid)

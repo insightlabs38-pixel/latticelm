@@ -11,6 +11,7 @@ from latticelm.tokenizer import load_tokenizer
 from latticelm.lattice_reason_v2 import generate_example
 from latticelm.lattice_reason_v2.natural import generate_from_tokens,verify
 from scripts.train_posttraining_worker import batch_candidate_scores
+from latticelm.posttraining.state import sha256
 
 def summary(rows):
  if not rows:return {"examples":0}
@@ -67,6 +68,6 @@ def main():
   parent,parent_cfg=load_model(a.parent)
   if parent_cfg.to_dict()!=cfg.to_dict():raise RuntimeError("paired proxy architecture mismatch")
   parent_rows=evaluate(parent,cfg,tok,train,a.examples)
- subsets=report(rows,parent_rows);result={"schema":"posttraining-proxy-v2","examples":a.examples,"data_d_validation":retention(model,cfg,validation),**subsets,"v2_ranking_accuracy":subsets["symbolic"]["normalized"]["accuracy"],"v2_mean_margin":subsets["symbolic"]["normalized"]["mean_margin"]}
+ subsets=report(rows,parent_rows);result={"schema":"posttraining-proxy-v2","checkpoint_sha256":sha256(a.checkpoint),"parent_checkpoint_sha256":sha256(a.parent) if a.parent else None,"examples":a.examples,"data_d_validation":retention(model,cfg,validation),**subsets,"v2_ranking_accuracy":subsets["symbolic"]["normalized"]["accuracy"],"v2_mean_margin":subsets["symbolic"]["normalized"]["mean_margin"]}
  a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(result,indent=2)+"\n");print(json.dumps({k:v for k,v in result.items() if k not in ("fixed_example_ids","subsets")}))
 if __name__=="__main__":main()
