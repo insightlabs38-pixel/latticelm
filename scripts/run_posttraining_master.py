@@ -60,6 +60,9 @@ def finalization_reserve(s):
 def research_deadline(s,now=None):
  now=time.time() if now is None else now
  return max(now,min(EXPERIMENT_CUTOFF-finalization_reserve(s),EXPERIMENT_CUTOFF))
+def should_finalize(s,now=None):
+ now=time.time() if now is None else now
+ return bool(s.get("base")) and now>=research_deadline(s,now) and PHASES.index(s["phase"])<PHASES.index("FINAL_CANDIDATE_TOURNAMENT")
 def experiment_allowed(predicted_seconds=0,s=None,now=None):
  now=time.time() if now is None else now;limit=research_deadline(s or {},now)
  return now<EXPERIMENT_CUTOFF and now+predicted_seconds*SAFETY<limit
@@ -207,9 +210,10 @@ def phase_sft(s):
  complete(s,"SFT_TRUNK",sft_winner=cid if result else "BASE",sft_dose_response=history)
 def simple_branch_phase(s,phase,method,cid,parent_key,budget,optional=True):
  parent=base_path(s) if parent_key=="BASE" else Path(s["candidates"].get(parent_key,s["candidates"]["BASE"])["checkpoint"]);result=worker(s,cid,parent,method,budget,s.get("selected_optimizer","muon_hybrid"),s.get("selected_lr",3e-5),s.get("selected_replay",.2),optional,microbatch=s.get("selected_microbatch",1) if method in ("sft","recovery") else 1);complete(s,phase,**{phase.lower():cid if result else "SKIPPED"})
-def strongest_candidate(s,methods=None):
+def strongest_candidate(s,methods=None,include_screens=False):
  rows=[]
  for cid,c in s["candidates"].items():
+  if not include_screens and cid.startswith(("screen-","ranking-screen-","joint-screen-","preflight-")):continue
   if c.get("status") not in ("COMPLETE","SAFE_STOPPED_VALID","TRAINED","CERTIFIED"):continue
   if methods and c.get("method") not in methods:continue
   p=c.get("proxy") or proxy(s,cid)
@@ -225,7 +229,7 @@ def phase_ranking(s):
    p=proxy(s,cid,256);s["candidates"][cid]["proxy"]=p
    if p:rows.append(cid)
  if rows:
-  best=strongest_candidate(s,{"ranking"});parent=s["candidates"][best]["checkpoint"]
+  best=strongest_candidate(s,{"ranking"},include_screens=True);parent=s["candidates"][best]["checkpoint"]
   result=worker(s,"ranking",parent,"ranking",5_000_000,s.get("selected_optimizer","muon_hybrid"),s.get("selected_lr",3e-5),s.get("selected_replay",.2),True,ranking_mode=s["candidates"][best].get("ranking_mode","ranking_dual"),natural_fraction=s["candidates"][best].get("natural_fraction",.5),margin_weight=s["candidates"][best].get("margin_weight",0.))
   if result:s["candidates"]["ranking"]["proxy"]=proxy(s,"ranking",1024)
  complete(s,"RANKING_TOURNAMENT",ranking_screen=rows,ranking_winner="ranking" if "ranking" in s["candidates"] else "SKIPPED")
@@ -236,7 +240,7 @@ def phase_joint(s):
   if result:
    s["candidates"][cid]["proxy"]=proxy(s,cid,256);rows.append(cid)
  if rows:
-  best=strongest_candidate(s,{"joint"});weight=s["candidates"][best]["rank_weight"]
+  best=strongest_candidate(s,{"joint"},include_screens=True);weight=s["candidates"][best]["rank_weight"]
   result=worker(s,"joint",Path(s["candidates"][best]["checkpoint"]),"joint",2_000_000,s.get("selected_optimizer","muon_hybrid"),s.get("selected_lr",3e-5),s.get("selected_replay",.2),True,rank_weight=weight)
   if result:s["candidates"]["joint"]["proxy"]=proxy(s,"joint",1024)
  complete(s,"JOINT_TOURNAMENT",joint_screen=rows,joint_winner="joint" if "joint" in s["candidates"] else "SKIPPED")
@@ -277,6 +281,7 @@ def phase_capability_eligibility(s,phase):
 def phase_recovery(s):
  base=proxy(s,"BASE");target=None
  for cid,c in s["candidates"].items():
+  if cid.startswith(("screen-","ranking-screen-","joint-screen-","preflight-")):continue
   if cid=="BASE" or c.get("status") not in ("COMPLETE","SAFE_STOPPED_VALID"):continue
   p=c.get("proxy") or proxy(s,cid)
   if p and base and p["v2_mean_margin"]>base["v2_mean_margin"] and p["data_d_validation"]>base["data_d_validation"]*1.025:
@@ -448,7 +453,7 @@ def main():
     if time.time()>=HARD_CUTOFF:raise RuntimeError("absolute post-training cutoff reached")
     # Even after the experiment cutoff, semantic handoff and BASE identity
     # certification must occur before jumping over optional research phases.
-    if s.get("base") and time.time()>=research_deadline(s) and PHASES.index(s["phase"])<PHASES.index("FINAL_CANDIDATE_TOURNAMENT"):save(s,"FINAL_CANDIDATE_TOURNAMENT",cutoff_transition_at=time.time(),no_further_research_reason="finalization reserve reached")
+    if should_finalize(s):save(s,"FINAL_CANDIDATE_TOURNAMENT",cutoff_transition_at=time.time(),no_further_research_reason="finalization reserve reached")
     progressed=dispatch(s)
     if not progressed:
      deadline=time.monotonic()+a.poll_seconds

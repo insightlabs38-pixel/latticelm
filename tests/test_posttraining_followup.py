@@ -28,9 +28,12 @@ def test_natural_exact_provenance(transformation):
 
 def test_provenance_restart_idempotency_and_conflict(tmp_path):
  p=append_record(tmp_path,0,{"a":1},2);assert append_record(tmp_path,0,{"a":1},2)==p
+ from latticelm.posttraining import provenance
+ provenance._CACHE.clear();assert append_record(tmp_path,0,{"a":1},2)==p
  with pytest.raises(RuntimeError):append_record(tmp_path,0,{"a":2},2)
  append_record(tmp_path,1,{"b":2},2);assert Path(p).with_suffix(".sha256").read_text().strip()==digest(p)
- with pytest.raises(RuntimeError):append_record(tmp_path,0,{"a":1},2) if False else append_record(tmp_path,1,{"b":3},2)
+ provenance._CACHE.clear()
+ with pytest.raises(RuntimeError):append_record(tmp_path,1,{"b":3},2)
 
 def test_scheduler_100h_fast_slow_six_hours_and_cutoff():
  s=master.initial();now=master.EXPERIMENT_CUTOFF-100*3600
@@ -42,6 +45,7 @@ def test_scheduler_100h_fast_slow_six_hours_and_cutoff():
  with pytest.MonkeyPatch.context() as m:
   m.setattr(master.time,"time",lambda:master.EXPERIMENT_CUTOFF-6*3600);assert master.adaptive_choice(s)["action"]=="FINALIZE";assert not master.experiment_allowed(1,s)
   m.setattr(master.time,"time",lambda:master.HARD_CUTOFF+1);assert not master.experiment_allowed(0,s)
+ s["base"]={"checkpoint":"frozen"};s["phase"]="SFT_TRUNK";assert master.should_finalize(s,master.EXPERIMENT_CUTOFF-6*3600) and not master.should_finalize(s,master.EXPERIMENT_CUTOFF-7*3600)
 
 def test_no_idle_and_all_branches_worse_than_base():
  s=master.initial();s["throughput"]["sft"]=100.;s["candidates"]["weak"]={"status":"COMPLETE","method":"sft","checkpoint":"unused","proxy":{"v2_mean_margin":-1.,"v2_ranking_accuracy":0.,"data_d_validation":2.}}
@@ -73,6 +77,14 @@ def test_worker_exact_resume_and_safe_stop_with_tiny_model(tmp_path):
  for target in (2,4):
   subprocess.run(base_cmd+["--tokens",str(target)],check=True,capture_output=True,text=True,timeout=90);result=json.loads((out/"result.json").read_text());assert result["training_tokens"]==target and result["checkpoint_sha256"]==sha256(out/"latest.pt")
  before=result["updates"];subprocess.run(base_cmd+["--tokens","100","--stop-epoch",str(time.time()-1)],check=True,capture_output=True,text=True,timeout=90);result=json.loads((out/"result.json").read_text());assert result["status"]=="SAFE_STOPPED_VALID" and result["training_tokens"]==4 and result["updates"]==before
+ subprocess.run(base_cmd+["--tokens","8"],check=True,capture_output=True,text=True,timeout=90);resumed=json.loads((out/"result.json").read_text());assert resumed["status"]=="COMPLETE" and resumed["training_tokens"]==8 and resumed["updates"]==before+1
+
+def test_topology_selection_is_passed_to_rollout_worker(tmp_path,monkeypatch):
+ parent=tmp_path/"parent.pt";parent.write_bytes(b"parent");root=tmp_path/"pt";root.mkdir();(root/"rollout_backend_certification.json").write_text(json.dumps({"selected":{"processes":1,"threads":4,"batched":True}}));monkeypatch.setattr(master,"PT",root);s=master.initial();s["rollout_backend"]="CERTIFIED";s["candidates"]["BASE"]={"checkpoint":str(parent),"checkpoint_sha256":master.sha256(parent),"method_chain":[]};s["throughput"]["rft"]=100.;captured=[]
+ monkeypatch.setattr(master.time,"time",lambda:master.EXPERIMENT_CUTOFF-30*3600);monkeypatch.setattr(master,"event",lambda *a,**k:None);monkeypatch.setattr(master,"save",lambda *a,**k:None)
+ def fake_command(_s,_label,args,**_):
+  captured.extend(map(str,args));out=root/"candidates"/"rollout";out.mkdir(parents=True);cp=out/"latest.pt";cp.write_bytes(b"model");(out/"result.json").write_text(json.dumps({"status":"COMPLETE","checkpoint":str(cp),"checkpoint_sha256":master.sha256(cp),"parent_checkpoint_sha256":master.sha256(parent),"method":"rft","training_tokens":100,"processed_tokens":100,"updates":1}));return True
+ monkeypatch.setattr(master,"command",fake_command);assert master.worker(s,"rollout",parent,"rft",100,optional=True);assert "--rollout-topology" in captured and str(root/"rollout_backend_certification.json") in captured
 
 def test_merge_checkpoint_identity_and_finite_tensors(tmp_path,monkeypatch):
  root=tmp_path/"pt";root.mkdir();monkeypatch.setattr(master,"PT",root);base=tmp_path/"base.pt";child=tmp_path/"child.pt";config={"d_model":4};torch.save({"config":config,"model":{"weight":torch.ones(2,2)}},base);torch.save({"config":config,"model":{"weight":torch.full((2,2),3.)}},child)
