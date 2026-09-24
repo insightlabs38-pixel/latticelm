@@ -27,6 +27,23 @@ def sample(model,prompt_ids,example_id,verify,max_new_tokens=16,temperature=1.0,
    logp=F.log_softmax(logits,-1);probs=logp.exp();token=int(torch.multinomial(probs,1,generator=gen));tokens.append(token);generated.append(token);lps.append(float(logp[token]));ent.append(float(-(probs*logp).nan_to_num().sum()))
    if eos_id is not None and token==eos_id:reason="eos";break
  ok=bool(verify(tuple(generated)));return Trajectory(example_id,tuple(prompt_ids),tuple(generated),tuple(lps),tuple(ent),tuple(True for _ in generated),reason,seed,ok,float(ok),policy_sha256 or policy_identity(model))
+def sample_many(model,prompt_ids,example_id,verify,k,max_new_tokens=16,temperature=1.0,top_k=0,eos_id=None,seed=0,policy_sha256=None):
+ if k<1 or temperature<=0:raise ValueError("invalid rollout batch")
+ if policy_sha256 is None:policy_sha256=policy_identity(model)
+ gens=[torch.Generator(device="cpu").manual_seed(seed+i) for i in range(k)];tokens=[list(prompt_ids) for _ in range(k)];generated=[[] for _ in range(k)];lps=[[] for _ in range(k)];ent=[[] for _ in range(k)];done=[False]*k
+ model.eval()
+ with torch.inference_mode():
+  for _ in range(max_new_tokens):
+   logits=model(torch.tensor(tokens,dtype=torch.long))[0][:,-1,:].float()/temperature
+   for i in range(k):
+    if done[i]:tokens[i].append(eos_id if eos_id is not None else 0);continue
+    row=logits[i]
+    if top_k:
+     values,_=torch.topk(row,min(top_k,len(row)));row=row.masked_fill(row<values[-1],float("-inf"))
+    logp=F.log_softmax(row,-1);probs=logp.exp();token=int(torch.multinomial(probs,1,generator=gens[i]));tokens[i].append(token);generated[i].append(token);lps[i].append(float(logp[token]));ent[i].append(float(-(probs*logp).nan_to_num().sum()))
+    if eos_id is not None and token==eos_id:done[i]=True
+   if all(done):break
+ return [Trajectory(example_id,tuple(prompt_ids),tuple(generated[i]),tuple(lps[i]),tuple(ent[i]),tuple(True for _ in generated[i]),"eos" if done[i] else "max_tokens",seed+i,bool(verify(tuple(generated[i]))),float(bool(verify(tuple(generated[i])))),policy_sha256) for i in range(k)]
 def recompute_logprobs(model,trajectory,tolerance=1e-5,current_policy_sha256=None):
  ids=list(trajectory.prompt_ids)+list(trajectory.generated_ids);x=torch.tensor(ids[:-1])[None,:]
  with torch.inference_mode():logits=model(x)[0];lp=F.log_softmax(logits.float(),-1)[0]

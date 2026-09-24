@@ -15,6 +15,17 @@ def ranking_cross_entropy(scores,correct_index):return F.cross_entropy(scores,co
 def ranking_margin_loss(scores,correct_index,margin=.2):
  chosen=scores.gather(1,correct_index[:,None]).squeeze(1);wrong=scores.masked_fill(F.one_hot(correct_index,scores.shape[1]).bool(),float("-inf")).max(1).values
  return F.relu(margin-chosen+wrong).mean()
+def ranking_objective(raw,normalized,correct_index,mode="ranking_dual",dual_weight=.5,margin_weight=0.,margin=.2):
+ if mode not in ("ranking_raw","ranking_norm","ranking_dual"):raise ValueError(mode)
+ if not 0<=dual_weight<=1 or margin_weight<0:raise ValueError("invalid ranking coefficients")
+ raw_loss=ranking_cross_entropy(raw,correct_index)
+ norm_loss=ranking_cross_entropy(normalized,correct_index)
+ loss=raw_loss if mode=="ranking_raw" else norm_loss if mode=="ranking_norm" else (1-dual_weight)*raw_loss+dual_weight*norm_loss
+ score=raw if mode=="ranking_raw" else normalized if mode=="ranking_norm" else (1-dual_weight)*raw+dual_weight*normalized
+ return loss+margin_weight*ranking_margin_loss(score,correct_index,margin)
+def joint_objective(completion,ranking,replay=None,rank_weight=.5,replay_weight=.2):
+ if rank_weight<0 or replay_weight<0:raise ValueError("invalid joint coefficients")
+ return completion+rank_weight*ranking+(0 if replay is None else replay_weight*replay)
 def simpo_loss(chosen,rejected,beta=2.0,gamma=.5):return -F.logsigmoid(beta*(chosen-rejected)-gamma).mean()
 def grpo_advantages(rewards,group_ids,eps=1e-8):
  out=torch.empty_like(rewards,dtype=torch.float)

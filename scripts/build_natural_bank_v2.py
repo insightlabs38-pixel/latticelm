@@ -3,7 +3,7 @@
 import argparse,hashlib,json,os
 from pathlib import Path
 import numpy as np
-from latticelm.lattice_reason_v2.natural import generate_from_tokens,verify
+from latticelm.lattice_reason_v2.natural import TRANSFORMATIONS,generate_from_tokens,verify
 from latticelm.posttraining.state import sha256
 def main():
  p=argparse.ArgumentParser();p.add_argument("--manifest",type=Path,required=True);p.add_argument("--tokenizer",type=Path,required=True);p.add_argument("--output",type=Path,required=True);p.add_argument("--examples",type=int,default=100000);a=p.parse_args();top=json.loads(a.manifest.read_text())
@@ -19,5 +19,5 @@ def main():
    if not verify(ex,array):raise RuntimeError("natural provenance verification failed")
    f.write(json.dumps(ex.to_dict(),sort_keys=True)+"\n")
   f.flush();os.fsync(f.fileno())
- os.replace(tmp,path);manifest={"schema":"lattice-reason-v2-natural-bank-v1","examples":a.examples,"data":path.name,"data_sha256":sha256(path),"source_manifest_sha256":sha256(a.manifest),"tokenizer_sha256":sha256(a.tokenizer),"training_shards_only":True,"transformations":["source_contiguous_next_span"],"verification":"PASS"};(a.output/"manifest.json").write_text(json.dumps(manifest,indent=2)+"\n");print(json.dumps(manifest))
+ os.replace(tmp,path);manifest={"schema":"lattice-reason-v2-natural-bank-v2","examples":a.examples,"data":path.name,"data_sha256":sha256(path),"source_manifest_sha256":sha256(a.manifest),"tokenizer_sha256":sha256(a.tokenizer),"training_shards_only":True,"transformations":TRANSFORMATIONS,"verification":"PASS"};(a.output/"manifest.json").write_text(json.dumps(manifest,indent=2)+"\n");print(json.dumps(manifest))
 if __name__=="__main__":main()
