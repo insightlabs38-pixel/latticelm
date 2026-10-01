@@ -29,15 +29,28 @@ The final model has 12 Co4 causal blocks, width 552, a 1,728-wide SwiGLU feed-fo
 
 Co4 applies the learned receptive-stream transform
 
-`ReLU6(r² + 2r + c(1 + |r|))`
+$$
+\operatorname{Co4}(r,c)=\operatorname{ReLU6}\!\left(r^2+2r+c\left(1+|r|\right)\right)
+$$
 
-to query, key, and value contexts before causal attention. Here `r` is a learned latent receptive stream and `c` is the token-conditioned context. The final language-model adaptation keeps this elementwise MOD law and learned latent streams, then uses causal scaled dot-product attention. It is an adaptation for autoregressive modeling, not an exact reproduction of the original vision operator. See [Architecture](docs/ARCHITECTURE.md) and the [architecture figure](video/final/screenshots/01_architecture.png).
+to query, key, and value contexts before causal attention. Here $r$ is a learned latent receptive stream and $c$ is the token-conditioned context. The final language-model adaptation keeps this elementwise MOD law and learned latent streams, then uses causal scaled dot-product attention. It is an adaptation for autoregressive modeling, not an exact reproduction of the original vision operator. See [Architecture](docs/ARCHITECTURE.md) and the [architecture figure](video/final/screenshots/01_architecture.png).
 
 ## Training
 
 The final recipe used DATA-D-v4, with **2,259,629,459 certified available tokens**, of which 1.9B were consumed. The optimizer assigns hidden two-dimensional matrices to Muon and embeddings, output head, norms, and latents to AdamW: 90.65% and 9.35% of parameters, respectively. The peak learning rate was 0.0008, with a 2% warmup, 83% stable phase, and 15% cosine decay.
 
-The full production run was executed entirely on a Google Cloud `c4a-standard-16` VM with 16 Google Axion CPU cores and 64 GB of RAM; no GPU or TPU acceleration was used. The recorded run duration was **7.73525463 days, or 185.646 hours**, which corresponds to an average whole-run throughput of approximately **2,842.9 tokens per second** across the 1.9B-token production run. CPU records were consistently around **1,550% process utilization** on the 16-core host, equivalent to roughly 15.5 cores being occupied on average, or about **96.9% aggregate core utilization**. For cross-project normalization, the conventional `6NT` estimate gives approximately **5.54 × 10^17 FLOPs, or 0.554 EFLOP**, for the final pretraining run. Co4 follows the `6NT` approximation closely enough at this configuration for that estimate to be useful, although it still excludes optimizer work, data preparation, evaluation, and the separate experimental runs that preceded the final model.
+The full production run was executed entirely on a Google Cloud `c4a-standard-16` VM with 16 Google Axion CPU cores and 64 GB of RAM; no GPU or TPU acceleration was used. The recorded run duration was **7.73525463 days, or 185.646 hours**, which corresponds to an average whole-run throughput of approximately **2,842.9 tokens per second** across the 1.9B-token production run. CPU records were consistently around **1,550% process utilization** on the 16-core host, equivalent to roughly 15.5 cores being occupied on average, or about **96.9% aggregate core utilization**.
+
+For cross-project normalization, the production pretraining compute is estimated with the conventional $6NT$ approximation:
+
+$$
+C\approx 6NT
+=6(48{,}636{,}168)(1.9\times10^9)
+\approx5.54\times10^{17}\ \text{FLOPs}
+=0.554\ \text{EFLOP}.
+$$
+
+Co4 follows the $6NT$ approximation closely enough at this configuration for the estimate to be useful, although it still excludes optimizer work, data preparation, evaluation, and the separate experimental runs that preceded the final model.
 
 Validation loss improved from **2.914503 at 1.5B tokens** to **2.630494 at 1.9B tokens**, during the late decay portion of training. The values and hashes are in the [production report](artifacts/reports/final_production_report.md); a compact two-point validation curve is available as [`artifacts/metrics/final_validation_curve.csv`](artifacts/metrics/final_validation_curve.csv). See [Training](docs/TRAINING.md) for data, optimizer, schedule, and run details.
 
