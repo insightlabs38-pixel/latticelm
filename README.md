@@ -43,6 +43,12 @@ Validation loss improved from **2.914503 at 1.5B tokens** to **2.630494 at 1.9B 
 
 ![DATA-D-v4 training schedule and late validation improvement](video/final/screenshots/04_wsd_training.png)
 
+## CPU training context
+
+The single-node CPU constraint is unusual enough to require careful comparison rather than a broad record claim. A targeted search of published papers, public model cards, and open-source repositories conducted on **October 1, 2026** found no larger publicly documented causal language model than LatticeLM's 48,636,168 trainable parameters that combined at least one billion tokens of pretraining from random initialization, one CPU-only physical node, and conventional full-model next-token training without dynamic sparsity, MoE routing, or sampled, hierarchical, or class-based output approximations.
+
+This is a dated literature and public-repository search result, not a certified world record. Larger nominal CPU-trained language models do exist: historical RNN systems reached billions of parameters by using sampled or hierarchical output computation, while ThirdAI's BOLT2.5B uses dynamic sparse activation and multiple high-core-count CPU systems. Those results are important but represent a different computational regime from running LatticeLM's ordinary training path for 1.9B tokens on one 16-core host. The comparison criteria, historical counterexamples, recent near-misses, and source links are documented in [`docs/CPU_TRAINING_CONTEXT.md`](docs/CPU_TRAINING_CONTEXT.md) so that this statement can be updated if a qualifying public counterexample is found.
+
 ## Post-training study
 
 Targeted ranking and joint objectives produced large gains on the reasoning proxy. Those gains did not transfer to the full GIBC evaluation, and the strongest specialization substantially harmed language-model retention. Recovery annealing restored much of the retention at small blend weights, while larger weights retained more proxy improvement and reduced GIBC performance. The targeted proxy and broad evaluation measure different behavior; the final selection therefore remained BASE.
@@ -132,6 +138,7 @@ This is a small-scale model study; its results do not establish scaling behavior
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [Training](docs/TRAINING.md)
+- [CPU training context](docs/CPU_TRAINING_CONTEXT.md)
 - [Post-training](docs/POSTTRAINING.md)
 - [Reproducibility](docs/REPRODUCIBILITY.md)
 - [Original experiment protocol](EXPERIMENT_LATTICELM.md)
