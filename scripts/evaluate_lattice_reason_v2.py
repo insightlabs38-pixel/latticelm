@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 """Held-out v2 capability map and continuation calibration."""
-import argparse,json,math,time
+import argparse,json,math,sys,time
 from collections import defaultdict
 from pathlib import Path
+
+# When this file is launched as ``python scripts/evaluate_lattice_reason_v2.py``,
+# Python puts ``scripts/`` on sys.path rather than the repository root.  Add the
+# root explicitly so imports shared with the master work under systemd too.
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 import torch
 from latticelm.config import LatticeConfig
 from latticelm.model import build_model

@@ -84,3 +84,11 @@ def test_normalize_dedup_decontam_split_tokenize_shard_mmap_manifest_verificatio
  # The production builder/certifier exercise the remainder in the restart test;
  # this explicit assertion guards the immutable little-endian storage contract.
  p=tmp_path/"s.int32";np.asarray([1,2,3],dtype="<i4").tofile(p);m={"schema_version":SCHEMA_VERSION,"sha256":sha256_file(p),"token_count":3};assert list(Int32Shard(p,m).tokens)==[1,2,3]
+
+def test_distinct_documents_with_reused_upstream_id_get_stable_unique_ids():
+ accepted={"finemath:reused"}
+ first=builder.collision_safe_document_id("finemath:reused",[1,2,3],accepted)
+ second=builder.collision_safe_document_id("finemath:reused",[4,5,6],accepted|{first})
+ assert first!=second and first.startswith("finemath:reused#tokens-")
+ with pytest.raises(ValueError,match="repeated stable ID and token payload"):
+  builder.collision_safe_document_id("finemath:reused",[1,2,3],accepted|{first})

@@ -24,7 +24,11 @@ def load_model(path):
  ck=torch.load(path,map_location="cpu",weights_only=False);cfg=LatticeConfig(**ck["config"]);model=build_model(cfg);model.load_state_dict(ck["model"],strict=True);model.eval();return model,cfg
 def score(model,prompt,candidates,correct,context,kind,extra):
  with torch.inference_mode():raw,norm=batch_candidate_scores(model,prompt,candidates,context)
- row={"kind":kind,"answer_length":len(candidates[correct]),**extra}
+ row={"kind":kind,"answer_length":len(candidates[correct]),"candidate_count":len(candidates),**extra}
+ # A single candidate provides no evidence of ranking discrimination. Keep
+ # it out of ranking summaries; natural retention is measured independently.
+ if len(candidates)<2:return {**row,"ranking_eligible":False}
+ row["ranking_eligible"]=True
  for name,values in (("raw",raw.tolist()),("normalized",norm.tolist())):row[name+"_margin"]=values[correct]-max(v for j,v in enumerate(values) if j!=correct)
  return row
 def evaluate(model,cfg,tok,arrays,n):
@@ -43,8 +47,9 @@ def retention(model,cfg,arrays):
     z=torch.tensor(np.asarray(array[offset:offset+cfg.context_length+1]).astype(np.int64));logits=model(z[:-1][None,:])[0];losses.append(float(F.cross_entropy(logits.reshape(-1,cfg.vocab_size),z[1:])))
  return float(np.mean(losses))
 def report(rows,parent_rows=None):
- out={"symbolic":summary([r for r in rows if r["kind"]=="symbolic"]),"natural":summary([r for r in rows if r["kind"]=="natural"]),"subsets":{},"fixed_example_ids":[r["example_id"] for r in rows]};groups=defaultdict(list)
- for r in rows:
+ ranked=[r for r in rows if r.get("ranking_eligible",True)]
+ out={"symbolic":summary([r for r in ranked if r["kind"]=="symbolic"]),"natural":summary([r for r in ranked if r["kind"]=="natural"]),"subsets":{},"fixed_example_ids":[r["example_id"] for r in rows],"ranking_exclusions":{"natural_single_candidate":sum(r["kind"]=="natural" and r.get("candidate_count")==1 for r in rows),"natural_nonranking_examples":sum(r["kind"]=="natural" and r.get("candidate_count",0)<2 for r in rows)}};groups=defaultdict(list)
+ for r in ranked:
   if r["kind"]=="symbolic":
    for skill in r["skills"]:groups["skill:"+skill].append(r)
    for key in ("difficulty","surface","answer_format"):groups[key+":"+str(r[key])].append(r)
@@ -54,8 +59,8 @@ def report(rows,parent_rows=None):
  if parent_rows:
   out["paired_vs_parent"]={}
   for mode in ("raw","normalized"):
-   deltas=np.asarray([r[mode+"_margin"]-p[mode+"_margin"] for r,p in zip(rows,parent_rows)]);se=float(np.std(deltas,ddof=1)/math.sqrt(len(deltas))) if len(deltas)>1 else 0.;mean=float(np.mean(deltas))
-   out["paired_vs_parent"][mode]={"mean_margin_change":mean,"standard_error":se,"approximate_95pct_interval":[mean-1.96*se,mean+1.96*se],"fraction_toward_correct":float(np.mean(deltas>0)),"negative_to_positive":sum(p[mode+"_margin"]<=0<r[mode+"_margin"] for r,p in zip(rows,parent_rows)),"positive_to_negative":sum(r[mode+"_margin"]<=0<p[mode+"_margin"] for r,p in zip(rows,parent_rows))}
+   paired=[(r,p) for r,p in zip(rows,parent_rows) if r.get("ranking_eligible",True) and p.get("ranking_eligible",True)];deltas=np.asarray([r[mode+"_margin"]-p[mode+"_margin"] for r,p in paired]);se=float(np.std(deltas,ddof=1)/math.sqrt(len(deltas))) if len(deltas)>1 else 0.;mean=float(np.mean(deltas)) if len(deltas) else 0.
+   out["paired_vs_parent"][mode]={"examples":len(paired),"mean_margin_change":mean,"standard_error":se,"approximate_95pct_interval":[mean-1.96*se,mean+1.96*se],"fraction_toward_correct":float(np.mean(deltas>0)) if len(deltas) else 0.,"negative_to_positive":sum(p[mode+"_margin"]<=0<r[mode+"_margin"] for r,p in paired),"positive_to_negative":sum(r[mode+"_margin"]<=0<p[mode+"_margin"] for r,p in paired)}
  return out
 def main():
  p=argparse.ArgumentParser();p.add_argument("--checkpoint",type=Path,required=True);p.add_argument("--parent",type=Path);p.add_argument("--tokenizer",type=Path,required=True);p.add_argument("--manifest",type=Path,required=True);p.add_argument("--output",type=Path,required=True);p.add_argument("--examples",type=int,default=256);p.add_argument("--threads",type=int,default=16);a=p.parse_args();torch.set_num_threads(a.threads)

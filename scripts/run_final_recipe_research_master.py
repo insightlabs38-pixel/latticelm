@@ -103,7 +103,7 @@ def phase_context(s):
  if not (ART/"context_decision.json").exists():run_child(s,"official-context-audit",[sys.executable,"scripts/final_recipe_prepare.py","context"])
  d=json.loads((ART/"context_decision.json").read_text());cert("AUDIT_CONTEXT",results=d);complete(s,"AUDIT_CONTEXT",context=d["selected_context"])
 def phase_build_data(s):
- if not MANIFEST.exists():run_child(s,"data-d-v4-build",[sys.executable,"scripts/build_data_d_v4.py","--output",DATA,"--total-tokens",2_250_000_000,"--tokenizer",json.loads((ART/"tokenizer_decision.json").read_text())["selected"],"--hard-deadline-epoch",DEADLINE-8*86400])
+ if not MANIFEST.exists():run_child(s,"data-d-v4-build",[sys.executable,"scripts/build_data_d_v4.py","--output",DATA,"--total-tokens",2_250_000_000,"--tokenizer",json.loads((ART/"tokenizer_decision.json").read_text())["selected"]])
  top=json.loads(MANIFEST.read_text());cert("BUILD_DATA_D_V4",results={"tokens":top["total_unique_tokens"],"mixture":top["mixture_definition"],"manifest_sha256":sha256_file(MANIFEST)});complete(s,"BUILD_DATA_D_V4")
 def phase_cert_data(s):
  out=DATA/"certification.json";tok=json.loads((ART/"tokenizer_decision.json").read_text())["selected"]
@@ -242,6 +242,7 @@ def main():
  signal.signal(signal.SIGTERM,stop);signal.signal(signal.SIGINT,stop);LOCK.parent.mkdir(parents=True,exist_ok=True)
  with LOCK.open("a+") as f:
   fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB);s=load()
+  if s.get("phase")=="STOPPED_SAFE" and not MANIFEST.exists():save(s,"BUILD_DATA_D_V4",child_pid=None)
   if s.get("readiness")=="FINAL_RECIPE_CERTIFIED":return 0
   try:
    while s["phase"] in HANDLERS and not STOP:

@@ -81,7 +81,7 @@ def main():
   if topology.get("threads"):torch.set_num_threads(int(topology["threads"]))
  else:topology=None
  frontier=json.loads(a.frontier_map.read_text()).get("regions",{}) if a.frontier_map and a.frontier_map.exists() else {}
- model.train();train_model=torch.compile(model) if a.compile_mode and a.method in ("sft","recovery") else model;started=time.perf_counter();processed_tokens=ck.get("processed_tokens",0) if latest.exists() and "ck" in locals() else 0;a.processed_tokens=processed_tokens;rollout_audit_every=32
+ model.train();train_model=torch.compile(model,mode="max-autotune-no-cudagraphs",fullgraph=False) if a.compile_mode and a.method in ("sft","recovery") else model;started=time.perf_counter();processed_tokens=ck.get("processed_tokens",0) if latest.exists() and "ck" in locals() else 0;a.processed_tokens=processed_tokens;rollout_audit_every=32
  while tokens<a.tokens:
   if STOP or time.time()>=a.stop_epoch:
    if tokens==0:

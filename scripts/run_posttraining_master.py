@@ -66,8 +66,12 @@ def should_finalize(s,now=None):
 def experiment_allowed(predicted_seconds=0,s=None,now=None):
  now=time.time() if now is None else now;limit=research_deadline(s or {},now)
  return now<EXPERIMENT_CUTOFF and now+predicted_seconds*SAFETY<limit
+EXPENSIVE_METHODS={"simpo","ranking","joint","rft","rlvr-grpo","rlvr-rloo"}
 def schedule_decision(s,name,tokens,minimum=1_000_000,standard=None,maximum=None):
- tps=float(s["throughput"].get(name,s["throughput"].get("sft",50.0)));standard=standard or tokens;maximum=maximum or standard;now=time.time();remaining=max(0,research_deadline(s,now)-now);fit=int(remaining*tps/SAFETY);budget=min(maximum,fit,standard) if fit>=minimum else 0
+ # An unseen method must not inherit SFT's logical-token rate: ranking and
+ # rollout objectives do materially different work per counted token.
+ measured=s["throughput"].get(name)
+ tps=float(measured if measured is not None else (1.0 if name in EXPENSIVE_METHODS else s["throughput"].get("sft",50.0)));standard=standard or tokens;maximum=maximum or standard;now=time.time();remaining=max(0,research_deadline(s,now)-now);fit=int(remaining*tps/SAFETY);budget=min(maximum,fit,standard) if fit>=minimum else 0
  return {"objective":name,"minimum":minimum,"standard":standard,"maximum":maximum,"selected":budget,"measured_logical_tokens_per_second":tps,"safety_factor":SAFETY,"seconds_to_experiment_cutoff":max(0,EXPERIMENT_CUTOFF-now),"seconds_for_research":remaining,"finalization_reserve":finalization_reserve(s),"estimated_seconds":budget/max(tps,1e-9)*SAFETY}
 def command(s,label,args,optional=False,timeout=None):
  global CHILD
@@ -86,12 +90,33 @@ def command(s,label,args,optional=False,timeout=None):
   if optional:s["optional_failures"].append({"label":label,"exit_code":code,"log":str(log),"at":time.time()});save(s);return False
   raise RuntimeError(f"required child failed: {label} ({code})")
  return True
-def worker(s,cid,parent,method,tokens,optimizer="muon_hybrid",lr=3e-5,replay=.2,optional=False,wall_limit_seconds=None,**options):
+def worker(s,cid,parent,method,tokens,optimizer="muon_hybrid",lr=3e-5,replay=.2,optional=False,wall_limit_seconds=None,continue_safe_stopped=False,**options):
  out=PT/"candidates"/cid;prior=json.loads((out/"result.json").read_text()) if (out/"result.json").exists() else None
  if prior and int(prior["training_tokens"])>=tokens:return prior
- plan=schedule_decision(s,method,tokens,min(tokens,100_000),tokens,tokens);event("SCHEDULE_DECISION",candidate_id=cid,plan=plan)
+ if prior and prior.get("status")=="SAFE_STOPPED_VALID" and not continue_safe_stopped:
+  checkpoint=Path(prior.get("checkpoint",""))
+  if prior.get("schema")=="posttraining-worker-result-v2" and prior.get("method")==method and checkpoint.is_file() and sha256(checkpoint)==prior.get("checkpoint_sha256"):
+   return prior
+  raise RuntimeError(f"invalid SAFE_STOPPED_VALID candidate cannot be reused: {cid}")
+ # First measurements for expensive objectives are bounded wall-clock pilots.
+ if method in EXPENSIVE_METHODS and method not in s.get("throughput",{}):
+  pilot_cap=min(900.0,max(0.0,research_deadline(s)-time.time())*.10)
+  if pilot_cap<=0:return None
+  wall_limit_seconds=min(wall_limit_seconds,pilot_cap) if wall_limit_seconds is not None else pilot_cap
+ if method in ("rlvr-grpo","rlvr-rloo"):
+  pilot_cap=min(600.0,max(0.0,research_deadline(s)-time.time())*.10)
+  wall_limit_seconds=min(wall_limit_seconds,pilot_cap) if wall_limit_seconds is not None else pilot_cap
+ elif method in EXPENSIVE_METHODS:
+  branch_cap=min(1800.0,max(0.0,research_deadline(s)-time.time())*.20)
+  wall_limit_seconds=min(wall_limit_seconds,branch_cap) if wall_limit_seconds is not None else branch_cap
+ if cid=="rlvr-extension":
+  extension_cap=min(1800.0,max(0.0,research_deadline(s)-time.time())*.20)
+  wall_limit_seconds=min(wall_limit_seconds,extension_cap) if wall_limit_seconds is not None else extension_cap
+ plan=schedule_decision(s,method,tokens,1 if method in EXPENSIVE_METHODS and method not in s.get("throughput",{}) else min(tokens,100_000),tokens,tokens);event("SCHEDULE_DECISION",candidate_id=cid,plan=plan)
  if wall_limit_seconds is not None:
-  fit=int(max(0,wall_limit_seconds)*plan["measured_logical_tokens_per_second"]/SAFETY);plan["selected"]=min(plan["selected"],fit);plan["wall_limit_seconds"]=wall_limit_seconds
+  fit=int(max(0,wall_limit_seconds)*plan["measured_logical_tokens_per_second"]/SAFETY)
+  plan["selected"]=min(plan["selected"],fit) if method in s.get("throughput",{}) else plan["selected"]
+  plan["wall_limit_seconds"]=wall_limit_seconds;plan["pilot"]=method not in s.get("throughput",{})
  if not plan["selected"]:
   event("EXPERIMENT_SKIPPED_CUTOFF",candidate_id=cid,plan=plan);return None
  parent_sha=sha256(parent);parent_candidate=next((x for x in s["candidates"].values() if x.get("checkpoint_sha256")==parent_sha),None);chain=list(parent_candidate.get("method_chain",[]) if parent_candidate else [])+[method]
@@ -453,7 +478,11 @@ def main():
     if time.time()>=HARD_CUTOFF:raise RuntimeError("absolute post-training cutoff reached")
     # Even after the experiment cutoff, semantic handoff and BASE identity
     # certification must occur before jumping over optional research phases.
-    if should_finalize(s):save(s,"FINAL_CANDIDATE_TOURNAMENT",cutoff_transition_at=time.time(),no_further_research_reason="finalization reserve reached")
+    # Let SIMPO finish its restart-safe phase and always record the actual
+    # RLVR eligibility decision at the research cutoff. That decision can then
+    # mark RLVR ineligible for insufficient time before finalization proceeds.
+    if should_finalize(s) and s.get("phase") not in ("SIMPO_TOURNAMENT","RLVR_ELIGIBILITY"):
+     save(s,"FINAL_CANDIDATE_TOURNAMENT",cutoff_transition_at=time.time(),no_further_research_reason="finalization reserve reached")
     progressed=dispatch(s)
     if not progressed:
      deadline=time.monotonic()+a.poll_seconds

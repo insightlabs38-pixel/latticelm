@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse,hashlib,json,os,shutil,sqlite3,subprocess,time
 from collections import Counter
+from dataclasses import replace
 from datetime import datetime,timezone
 from pathlib import Path
 import numpy as np
@@ -36,6 +37,14 @@ def rows(source):
   identity=raw.get("id") or raw.get("url") or raw.get("warc_filename") or hashlib.sha256(text[:4096].encode()).hexdigest()
   ident=str(identity);meta={k:raw.get(k) for k in ("id","url","dump","date","title","file_path","warc_filename","crawl","language_score","int_score","score") if k in raw}
   yield Document(source,f"{source}:{ident}",text,meta,LICENSES[source])
+def collision_safe_document_id(document_id,encoded,accepted_ids):
+ """Disambiguate reused upstream IDs without discarding distinct documents."""
+ if document_id not in accepted_ids:return document_id
+ payload=np.asarray(encoded,dtype="<i4").tobytes()
+ candidate=f"{document_id}#tokens-{hashlib.sha256(payload).hexdigest()}"
+ if candidate in accepted_ids:raise ValueError(f"repeated stable ID and token payload: {document_id}")
+ return candidate
+
 
 class Index:
  def __init__(self,path):self.db=sqlite3.connect(path);self.db.execute("pragma journal_mode=WAL");self.db.execute("pragma synchronous=FULL")
@@ -81,6 +90,9 @@ def write_block(out,state,index,source,docs,encoded,split):
 def build(out,total,hard_deadline=None,block_tokens=8_000_000,reserve=RESERVE,interrupt_after=None):
  global RESERVE;RESERVE=reserve;state_path=out/"builder-state.json";state=init(out,state_path,total);tok=load_tokenizer(TOKENIZER)
  refs=reference_documents();common,common_meta=common_validation_references(tok);refs["common_validation"]=common;registry=ContaminationRegistry(refs);index=Index(out/"dedup.sqlite")
+ accepted_ids=set()
+ for entry in state.get("children",[])+state.get("validation_children",[]):
+  accepted_ids.update(json.loads((out/entry["manifest_path"]).read_text())["stable_document_ids"])
  targets={s:int(total*MIXTURE[s]) for s in SOURCES};targets[SOURCES[-1]]+=total-sum(targets.values());audit=(out/"decisions.jsonl").open("a")
  for si in range(state["source_index"],len(SOURCES)):
   source=SOURCES[si];state["source"]=source;start=state["raw_position"] if si==state["source_index"] else 0;train_docs=[];train_ids=[];val_docs=[];val_ids=[]
@@ -105,9 +117,12 @@ def build(out,total,hard_deadline=None,block_tokens=8_000_000,reserve=RESERVE,in
       if close and close[0][0]<=3:rule,winner="near_duplicate",close[0][1]
    if rule:state["stats"][source][rule]=state["stats"][source].get(rule,0)+1;audit.write(json.dumps({"id":doc.document_id,"decision":"duplicate","reason":rule,"winner":winner})+"\n");continue
    ids=tok.encode(doc.text+"\n");is_val=validation_assignment(doc.document_id)=="validation"
+   stable_id=collision_safe_document_id(doc.document_id,ids,accepted_ids)
+   if stable_id!=doc.document_id:doc=replace(doc,document_id=stable_id)
    if is_val and state["validation_tokens"][source]<max(250_000,total//200):val_docs.append(doc);val_ids.append(ids)
    elif not is_val and state["source_tokens"][source]<targets[source]:train_docs.append(doc);train_ids.append(ids)
    else:continue
+   accepted_ids.add(doc.document_id)
    dh=document_hash(doc.text);pending_exact[dh]=doc.document_id
    for value in paragraph_hashes(doc.text):pending_para[value]=doc.document_id
    fp=simhash64(doc.text)

@@ -116,9 +116,19 @@ def expected_lr_scale(tokens,target,warmup=.02,stable=.83,decay=.15):
 def curve_progress(after_tokens):
  if not CURVE.exists():return None
  try:
-  with CURVE.open() as f:rows=[x for x in csv.DictReader(f) if int(x.get("tokens",-1))>after_tokens]
+  # Production writes an eight-column positional schema. A previous run left
+  # a different header in this shared CSV, so DictReader silently hid valid
+  # production rows. Accept only rows matching the production column count.
+  with CURVE.open(newline="") as f:
+   rows=[]
+   for row in csv.reader(f):
+    if len(row)!=8:continue
+    try:
+     parsed={"step":int(row[0]),"tokens":int(row[1]),"train_loss":float(row[2]),"lr":float(row[3]),"lr_scale":float(row[4]),"elapsed_seconds":float(row[5]),"effective_tok_s":float(row[6]),"target_tokens":int(row[7])}
+    except ValueError:continue
+    if parsed["tokens"]>after_tokens:rows.append(parsed)
   if not rows:return None
-  row=rows[-1];return {"event":"CURVE_PROGRESS","tokens":int(row["tokens"]),"target_tokens":int(row["target_tokens"]),"train_loss":float(row["train_loss"]),"effective_tok_s":float(row["effective_tok_s"]),"lr":float(row["lr"]),"lr_scale":float(row["lr_scale"])}
+  row=max(rows,key=lambda x:x["tokens"]);return {"event":"CURVE_PROGRESS",**row}
  except (OSError,ValueError,KeyError):return None
 def restart_and_verify(state):
  save(state,"PRODUCTION_RESTARTING",restart_requested_at=now());result=systemctl("start",SERVICE,check=False)
@@ -128,7 +138,7 @@ def restart_and_verify(state):
   if service_active() and len(production_processes())==2:break
   time.sleep(2)
  if not service_active() or len(production_processes())!=2:raise RuntimeError("resume did not produce exactly one master and trainer")
- base=state["resume_checkpoint"];resume=progress=None;end=time.monotonic()+360
+ base=state["resume_checkpoint"];resume=progress=None;end=time.monotonic()+1800
  while time.monotonic()<end:
   rows=event_records();rs=[x for x in rows if x.get("event")=="RESUME" and int(x.get("tokens",-1))==int(base["tokens"]) and float(x.get("at",0))>=state["restart_requested_at"]];progress=curve_progress(int(base["tokens"]))
   if rs:resume=rs[-1]

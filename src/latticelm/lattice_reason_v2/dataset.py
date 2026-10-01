@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 from tokenizers import Tokenizer
 from .core import GENERATOR_VERSION,generate_example,verify_example
-from .audit import contamination_hits
+from .audit import contamination_hits,prepare_registry
 
 SCHEMA="lattice-reason-v2-reservoir-v1"; MILESTONES=(150_000_000,300_000_000,500_000_000,1_000_000_000)
 def sha256(path):
@@ -19,6 +19,7 @@ def adaptive_target(tokens_per_second,bytes_per_token,available_bytes,seconds_to
  fits=[x for x in MILESTONES if x<=cap];return max(fits,default=150_000_000)
 def build(output,tokenizer_path,target_tokens,seed=260921,shard_tokens=5_000_000,registry=None,stop=None,reserve_bytes=20<<30):
  output=Path(output);output.mkdir(parents=True,exist_ok=True);tok=Tokenizer.from_file(str(tokenizer_path));tok_hash=sha256(tokenizer_path);state_path=output/"build_state.json"
+ registry=prepare_registry(registry)
  if shutil.disk_usage(output).free-target_tokens*4<reserve_bytes:raise RuntimeError("v2 reservoir would cross disk reserve")
  state=json.loads(state_path.read_text()) if state_path.exists() else {"schema":SCHEMA,"generator_version":GENERATOR_VERSION,"tokenizer_sha256":tok_hash,"seed":seed,"next_index":0,"tokens":0,"shards":[],"contamination_rejections":0}
  if state["tokenizer_sha256"]!=tok_hash or state["seed"]!=seed:raise RuntimeError("reservoir resume identity mismatch")
