@@ -1,71 +1,126 @@
 # LatticeLM
 
-LatticeLM is a reproducible CPU-first language-model experiment that compares a
-compact causal Transformer with an identical backbone augmented by trainable,
-causal hashed n-gram memory. It is trained from random initialization and keeps
-all trainable parameters below the 50M Track 01 limit.
+LatticeLM is a sub-50M-parameter language-model research project about architecture and training efficiency, rather than parameter scaling. Its final model has **48,636,168 parameters** and was trained from random initialization on **1.9B tokens** from DATA-D-v4. The model adapts the Co4 receptive-stream mechanism to causal language modeling, uses a Muon/AdamW optimizer split, and was selected after a broader post-training comparison retained the original **BASE** checkpoint.
 
-## Quick start
+## Key results
 
-```powershell
-$env:PYTHONPATH = 'src'
-python -m latticelm.train --config configs/dense_smoke.json --experiment dense_smoke
-python -m latticelm.train --config configs/lattice_smoke.json --experiment lattice_64k_128
+| Measure | Final result |
+|---|---:|
+| Parameters | 48,636,168 |
+| Pretraining tokens | 1.9B |
+| DATA-D validation loss | 2.630494 |
+| WikiText-103 perplexity | 21.9298 |
+| WikiText-103 bits per byte | 1.413462 |
+| HellaSwag accuracy | 0.27096 |
+| ARC-Easy accuracy | 0.36785 |
+| PIQA accuracy | 0.56692 |
+| WinoGrande accuracy | 0.50987 |
+
+The benchmark values are the final BASE checkpoint evaluation. The separate 256-example reasoning proxy used during post-training is a screening metric and is not included in this table. Evaluation protocol, checkpoint, tokenizer, and data-manifest hashes are recorded in [`artifacts/reports/final_production_report.md`](artifacts/reports/final_production_report.md) and [`artifacts/manifests/final_production_provenance.json`](artifacts/manifests/final_production_provenance.json).
+
+## Architecture
+
+The final model has 12 Co4 causal blocks, width 552, a 1,728-wide SwiGLU feed-forward path, context length 256, and a 4,096-token vocabulary. Embeddings are untied. Each attention layer has six query heads and two key/value heads (real 6Q/2KV GQA), with QK-RMS normalization and rotary position embeddings.
+
+Co4 applies the learned receptive-stream transform
+
+`ReLU6(r² + 2r + c(1 + |r|))`
+
+to query, key, and value contexts before causal attention. Here `r` is a learned latent receptive stream and `c` is the token-conditioned context. The final language-model adaptation keeps this elementwise MOD law and learned latent streams, then uses causal scaled dot-product attention. It is an adaptation for autoregressive modeling, not an exact reproduction of the original vision operator. See [Architecture](docs/ARCHITECTURE.md) and the [architecture figure](video/final/screenshots/01_architecture.png).
+
+## Training
+
+The final recipe used DATA-D-v4, with **2,259,629,459 certified available tokens**, of which 1.9B were consumed. The optimizer assigns hidden two-dimensional matrices to Muon and embeddings, output head, norms, and latents to AdamW: 90.65% and 9.35% of parameters, respectively. The peak learning rate was 0.0008, with a 2% warmup, 83% stable phase, and 15% cosine decay.
+
+Validation loss improved from **2.914503 at 1.5B tokens** to **2.630494 at 1.9B tokens**, during the late decay portion of training. The values and hashes are in the [production report](artifacts/reports/final_production_report.md); a compact two-point validation curve is available as [`artifacts/metrics/final_validation_curve.csv`](artifacts/metrics/final_validation_curve.csv). See [Training](docs/TRAINING.md) for data, optimizer, schedule, and run details.
+
+![DATA-D-v4 training schedule and late validation improvement](video/final/screenshots/04_wsd_training.png)
+
+## Post-training study
+
+Targeted ranking and joint objectives produced large gains on the reasoning proxy. Those gains did not transfer to the full GIBC evaluation, and the strongest specialization substantially harmed language-model retention. Recovery annealing restored much of the retention at small blend weights, while larger weights retained more proxy improvement and reduced GIBC performance. The targeted proxy and broad evaluation measure different behavior; the final selection therefore remained BASE.
+
+| Candidate | DATA-D vs BASE | WikiText BPB vs BASE | Reasoning proxy | GIBC mean |
+|---|---:|---:|---:|---:|
+| BASE | 1.000× | 1.000× | 0.2686 | 0.4289 |
+| 10M recovery, 5% | 1.016× | 1.026× | 0.2764 | 0.4288 |
+| 10M recovery, 17% | 1.199× | 1.194× | 0.3672 | 0.4151 |
+| Mixed objective, 15% | 1.168× | 1.162× | 0.3418 | 0.4154 |
+
+The GIBC mean is the full-suite result; proxy accuracy is a separate 256-example screening result. The report includes candidates without a completed GIBC evaluation and explains why they cannot replace BASE. See [Post-training](docs/POSTTRAINING.md), the [curated comparison](artifacts/metrics/final_posttraining_comparison.json), and the [post-training report](artifacts/reports/posttraining_final_report.md).
+
+![Retention and capability comparison](video/final/screenshots/06_recovery_evaluation.png)
+
+## Repository map
+
+| Path | Purpose |
+|---|---|
+| `src/latticelm/` | Model, data pipeline, optimizer, evaluation, and post-training implementation |
+| `configs/` | Smoke, research, and final production/recipe configurations |
+| `scripts/` | Dataset certification, training, evaluation, benchmarks, and experiment drivers |
+| `tests/` | Unit and integration coverage for model behavior and experiment state machines |
+| `artifacts/` | Historical tracked evidence plus curated final reports, metrics, and manifests |
+| `video/` | Reproducible Manim source, metric inputs, build scripts, and final stills |
+
+## Reproduction
+
+The final run depends on the certified DATA-D-v4 token shards and tokenizer, which are deliberately not stored in Git. Create an environment and install the project and evaluation dependencies:
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -e '.[evaluation]' pytest
+```
+
+The following commands show the verified interfaces. Dataset construction and full training are compute- and storage-intensive; they are not run as part of this documentation pass.
+
+```bash
+python scripts/build_data_d_v4.py --help
+python scripts/train_final_production.py --help
+python scripts/evaluate_wikitext103.py --help
+python scripts/evaluate_gibc.py --help
+python scripts/run_posttraining_master.py --help
 python -m pytest -q
 ```
 
-The training command creates a deterministic byte-level BPE tokenizer from its permitted training text. To keep laptop setup bounded, it learns up to 128 merges from a fixed corpus sample and reserves the remaining IDs in the configured 4K vocabulary,
-saves resumable checkpoints, appends machine-readable metrics to
-`artifacts/results.jsonl` and `artifacts/results.csv`, and records the resolved
-configuration beside each checkpoint. `scripts/run_overnight.ps1` runs matched
-dense and Lattice experiments sequentially. Resume with `--resume PATH`.
+For an existing certified manifest and tokenizer, the production trainer accepts:
 
-## Design and scientific controls
+```bash
+DEADLINE_EPOCH="$(date -u -d '+8 days' +%s)"
+python scripts/train_final_production.py \
+  --config configs/final_production.json \
+  --manifest artifacts/data/data_d_v4/canonical-2250m/manifest.json \
+  --tokenizer artifacts/tokenizers/final_corpus_4k.json \
+  --target-tokens 1900000000 \
+  --deadline-epoch "$DEADLINE_EPOCH" \
+  --backend compile --fresh
+```
 
-The two primary configurations use the same tokenizer, data split, seed,
-context, optimizer, and Transformer backbone. Lattice only adds memory:
+To evaluate a checkpoint, provide its local path and the same tokenizer:
 
-`E2[h2] + E3[h3] + E4[h4] -> linear projection -> sigmoid gate -> residual`
+```bash
+python scripts/evaluate_wikitext103.py --checkpoint CHECKPOINT.pt \
+  --tokenizer artifacts/tokenizers/final_corpus_4k.json \
+  --output artifacts/wikitext-final.json
+python scripts/evaluate_gibc.py --checkpoint CHECKPOINT.pt \
+  --tokenizer artifacts/tokenizers/final_corpus_4k.json \
+  --output artifacts/gibc-final.json
+```
 
-The n-gram at input position `t` contains only tokens at or before `t`; it
-cannot inspect the target token at `t + 1`. Hashes use an explicit 64-bit
-integer mixing function, never Python's randomized `hash()`.
+The `--help` output for these interfaces was checked against the current scripts. Full evaluation requires the checkpoint and dataset access configured for the project. [Reproducibility](docs/REPRODUCIBILITY.md) documents inputs, hashes, expected outputs, and scope; [video build instructions](video/README.md) cover the visual package.
 
-`kernels/` contains PyTorch reference implementations and a guarded Triton-CPU
-probe. Triton is optional: the reference path remains the only training path
-unless a future custom backward implementation is validated.
+## Experimental artifacts
 
-## Reproducibility
+Curated final evidence is indexed in [`artifacts/README.md`](artifacts/README.md). It includes the production report, checkpoint comparison, post-training and recovery analysis, metric summaries, provenance hashes, and compact validation curve. Full model checkpoints, raw logs, transient run state, intermediate candidates, and generated QA frames are excluded from Git because they are large or reproducible execution output. Existing tracked historical research artifacts remain in place.
 
-Use Python 3.12 and PyTorch CPU. The default seed is 1337. See
-`EXPERIMENT_LATTICELM.md` for the experiment protocol and
-`artifacts/overnight_report.md` for locally measured results and limitations.
+## Limitations
 
-## Research status through Phase 7E
+This is a small-scale model study; its results do not establish scaling behavior at larger model sizes. The targeted reasoning proxy did not predict GIBC transfer, so broad evaluation remains necessary for future post-training selection. The specialization/retention tradeoff and its dependence on training data and candidate weight deserve further study.
 
-Early same-token, low-data experiments favored smaller Co4 models on efficiency; that result is preserved rather than retroactively reinterpreted. In the later DATA-C regime, controlled scaling showed that Co4-L (15.95M parameters) became clearly superior to Co4-S in common-validation and WikiText language modeling by 25M tokens. Its 25M reasoning gains were mixed despite the strong WikiText improvement.
+## Further reading
 
-Phase 7E continued the valid Co4-L lineage to 50M and 100M tokens. Common-validation loss improved from 3.328604 at 25M to 3.208180 and 3.134722; WikiText-103 perplexity improved from 102.551 to 79.679 and 72.582. Reasoning improved on all four tracked tasks at 50M, then became mixed from 50M to 100M (small HellaSwag/ARC-Easy gains, PIQA/WinoGrande regressions). The FineWeb-Edu pool was expanded without repeating its old prefix, but the planned DATA-D-BROAD-v1 control was not implemented or trained. See `artifacts/phase7e_overnight_report.md` and `artifacts/phase7e_decision.md`.
-
-Future capacity decisions therefore follow the measured data-rich regime, not the old 3M comparison. A ~24M model remains deferred until broader-data and bounded continued-pretraining tests distinguish data/optimization limits from capacity limits. Negative and invalid runs remain excluded explicitly, including the archived unpaired Phase 7D Co4-L attempt.
-
-## Persistent model storage
-
-Source code, configs, tests, reports, and metrics remain in this Git repository.
-Selected safetensors weights, tokenizer/memory metadata, manifests, and private
-resume state belong in a separate private Hugging Face **model** repository.
-See `docs/HUGGINGFACE_STORAGE.md` for authenticated export, upload, download,
-integrity verification, and deterministic inference commands. Credentials are
-accepted only through the process environment and must never be committed.
-
-## Post-900M operation
-
-The deterministic successor for the 32.68M final lineage is documented in
-[`docs/POST900M_MASTER.md`](docs/POST900M_MASTER.md). It uses a separate state
-namespace, waits efficiently for the 900M service, independently certifies and
-evaluates that milestone, and records an explicit DATA-D-v3 to DATA-D-v4
-transition before any authorized continuation. DATA-D-v4 targets 2.25B newly
-certified tokens for expansion headroom.
-If scaling is `SATURATING_OR_LOW_VALUE`, an isolated WSD, systems, and
-verifier-only post-training tournament runs instead. An `INCONCLUSIVE` result
-stops for review without spending more training compute.
+- [Architecture](docs/ARCHITECTURE.md)
+- [Training](docs/TRAINING.md)
+- [Post-training](docs/POSTTRAINING.md)
+- [Reproducibility](docs/REPRODUCIBILITY.md)
+- [Original experiment protocol](EXPERIMENT_LATTICELM.md)
