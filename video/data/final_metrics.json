@@ -1,0 +1,75 @@
+{
+  "architecture": {
+    "parameters": 48636168,
+    "layers": 12,
+    "d_model": 552,
+    "ffn_hidden": 1728,
+    "context": 256,
+    "tokenizer_vocab": 4096,
+    "dataset_tokens": 2259629459,
+    "final_training_tokens": 1900000000,
+    "gqa": "6Q/2KV real GQA",
+    "optimizer": "muon_hybrid",
+    "architecture": "Co4 causal",
+    "muon_parameters": 44089344,
+    "adamw_parameters": 4546824,
+    "head_dim": 92,
+    "q_heads": 6,
+    "kv_heads": 2,
+    "parameter_allocation": {
+      "ffn": 34338816,
+      "attention_projections": 9750528,
+      "embeddings_and_head": 4521984,
+      "latents_and_norms": 24840
+    }
+  },
+  "pretraining": {
+    "final_model_name": "BASE",
+    "final_checkpoint_sha": "94b91a2d39c2889209cb47b2e04b2c0d307a25610c40c5a124b595020eb762b0",
+    "final_lineage": "1.9B-token pretraining BASE",
+    "final_recovery_tokens": null,
+    "final_interpolation_alpha": 0,
+    "data_d": 2.6304937191307545,
+    "wikitext_ppl": 21.92980620690272,
+    "wikitext_bpb": 1.4134619981025516,
+    "hellaswag": 0.2709619597689703,
+    "arc_easy": 0.36784511784511786,
+    "piqa": 0.5669205658324266,
+    "winogrande": 0.5098658247829518,
+    "reasoning_accuracy": null,
+    "reasoning_margin": null,
+    "reasoning_scope": "posttraining_proxy_1024_separate"
+  },
+  "posttraining_proxy": {
+    "scope": "posttraining salvage proxy; separate from official pretraining evaluation",
+    "base_reasoning": 0.2686,
+    "base_data_d_approx": 2.63
+  },
+  "recovery": {
+    "scope": "proxy accuracy is a screening metric; GIBC is full-suite mean",
+    "base": {
+      "data_d_ratio": 1,
+      "wikitext_bpb_ratio": 1,
+      "reasoning_proxy": 0.2686,
+      "gibc_mean": 0.4289
+    },
+    "recovery_10m_5pct": {
+      "data_d_ratio": 1.016,
+      "wikitext_bpb_ratio": 1.026,
+      "reasoning_proxy": 0.2764,
+      "gibc_mean": 0.4288
+    },
+    "recovery_10m_17pct": {
+      "data_d_ratio": 1.199,
+      "wikitext_bpb_ratio": 1.194,
+      "reasoning_proxy": 0.3672,
+      "gibc_mean": 0.4151
+    },
+    "mixed_500k_15pct": {
+      "data_d_ratio": 1.168,
+      "wikitext_bpb_ratio": 1.162,
+      "reasoning_proxy": 0.3418,
+      "gibc_mean": 0.4154
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "status": "final",
+  "final": {
+    "final_model_name": "joint-recovery-150000",
+    "final_checkpoint_sha": "abcdef0123456789",
+    "final_lineage": "joint",
+    "final_recovery_tokens": 150000,
+    "final_interpolation_alpha": null,
+    "data_d": 6.91,
+    "wikitext_ppl": 24.2,
+    "wikitext_bpb": 1.51,
+    "hellaswag": 0.29,
+    "arc_easy": 0.41,
+    "piqa": 0.59,
+    "winogrande": 0.52,
+    "reasoning_accuracy": 0.901,
+    "reasoning_margin": 5.2,
+    "reasoning_scope": "proxy_1024"
+  },
+  "source": {
+    "selection": "tests/fixtures/mock_selection.json",
+    "evaluations": "tests/fixtures/mock_evaluations.json"
+  }
+}

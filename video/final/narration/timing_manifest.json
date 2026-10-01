@@ -1,0 +1,86 @@
+[
+  {
+    "scene": "Opening",
+    "id": "opening_01",
+    "target_start_seconds": 0,
+    "target_duration_seconds": 8,
+    "expected_pause_seconds": 0.5,
+    "estimated_wpm": 160,
+    "estimated_words": 20,
+    "estimated_duration": 7.5,
+    "actual_audio": null,
+    "actual_duration": null
+  },
+  {
+    "scene": "Architecture",
+    "id": "architecture_01",
+    "target_start_seconds": 8,
+    "target_duration_seconds": 88,
+    "expected_pause_seconds": 1.0,
+    "estimated_wpm": 160,
+    "estimated_words": 232,
+    "estimated_duration": 87.0,
+    "actual_audio": null,
+    "actual_duration": null
+  },
+  {
+    "scene": "Training",
+    "id": "training_01",
+    "target_start_seconds": 96,
+    "target_duration_seconds": 75,
+    "expected_pause_seconds": 3.75,
+    "estimated_wpm": 160,
+    "estimated_words": 190,
+    "estimated_duration": 71.25,
+    "actual_audio": null,
+    "actual_duration": null
+  },
+  {
+    "scene": "PostTraining",
+    "id": "posttraining_01",
+    "target_start_seconds": 171,
+    "target_duration_seconds": 45,
+    "expected_pause_seconds": 6.38,
+    "estimated_wpm": 160,
+    "estimated_words": 103,
+    "estimated_duration": 38.62,
+    "actual_audio": null,
+    "actual_duration": null
+  },
+  {
+    "scene": "Recovery",
+    "id": "recovery_01",
+    "target_start_seconds": 216,
+    "target_duration_seconds": 45,
+    "expected_pause_seconds": 3.75,
+    "estimated_wpm": 160,
+    "estimated_words": 110,
+    "estimated_duration": 41.25,
+    "actual_audio": null,
+    "actual_duration": null
+  },
+  {
+    "scene": "FinalProof",
+    "id": "finalproof_01",
+    "target_start_seconds": 261,
+    "target_duration_seconds": 12,
+    "expected_pause_seconds": 0.75,
+    "estimated_wpm": 160,
+    "estimated_words": 30,
+    "estimated_duration": 11.25,
+    "actual_audio": null,
+    "actual_duration": null
+  },
+  {
+    "scene": "Recap",
+    "id": "recap_01",
+    "target_start_seconds": 273,
+    "target_duration_seconds": 25,
+    "expected_pause_seconds": 0.62,
+    "estimated_wpm": 160,
+    "estimated_words": 65,
+    "estimated_duration": 24.38,
+    "actual_audio": null,
+    "actual_duration": null
+  }
+]

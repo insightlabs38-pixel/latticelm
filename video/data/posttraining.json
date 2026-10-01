@@ -1,0 +1,28 @@
+{
+  "branches": [
+    "optimizer screen",
+    "SFT",
+    "LR screen",
+    "replay screen",
+    "ranking",
+    "joint",
+    "SimPO",
+    "RFT",
+    "RLVR"
+  ],
+  "gated": [
+    "RFT",
+    "RLVR"
+  ],
+  "base": {
+    "reasoning_accuracy": 27.34,
+    "data_d": 2.397,
+    "kind": "proxy_256"
+  },
+  "joint": {
+    "reasoning_accuracy": 89.45,
+    "reasoning_margin": 5.349,
+    "data_d": 15.025,
+    "kind": "proxy_256"
+  }
+}

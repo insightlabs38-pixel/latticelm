@@ -1,0 +1,50 @@
+{
+  "measured": [
+    {
+      "tokens": 150000,
+      "reasoning_accuracy": 90.23,
+      "data_d": 6.964,
+      "kind": "proxy_256"
+    },
+    {
+      "tokens": 1000000,
+      "reasoning_accuracy": 89.8,
+      "data_d": 4.9,
+      "kind": "proxy_256"
+    },
+    {
+      "tokens": 2500000,
+      "reasoning_accuracy": 87.1,
+      "data_d": 3.5,
+      "kind": "proxy_256"
+    },
+    {
+      "tokens": 5000000,
+      "reasoning_accuracy": 83.2,
+      "data_d": 2.8,
+      "kind": "proxy_256"
+    }
+  ],
+  "planned_tokens": [],
+  "interpolation": [
+    {
+      "alpha": 0.2,
+      "reasoning_accuracy": 50.1,
+      "data_d": 2.8,
+      "kind": "proxy_256"
+    },
+    {
+      "alpha": 0.5,
+      "reasoning_accuracy": 72.4,
+      "data_d": 4.2,
+      "kind": "proxy_256"
+    },
+    {
+      "alpha": 0.8,
+      "reasoning_accuracy": 86.9,
+      "data_d": 8.0,
+      "kind": "proxy_256"
+    }
+  ],
+  "show_interpolation": true
+}

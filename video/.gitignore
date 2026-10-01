@@ -1,0 +1,27 @@
+__pycache__/
+.pytest_cache/
+renders/
+tools/
+screenshots/debug/
+assets/audio/*
+!assets/audio/.gitkeep
+
+# Rendered media and review captures. Keep scene source, metrics, narration,
+# VHS tapes, screenshot manifest, and the seven final submission stills.
+renders/
+tools/
+screenshots/debug/
+screenshots/generated/
+screenshots/generated_1440/
+final/qa/
+final/renders/
+final/screenshots_1440/
+final/components/
+final/config/
+final/data/
+final/scenes/
+final/scripts/
+final/BUILD.md
+final/*.zip
+*bundle.zip
+assets/terminal/*.mp4

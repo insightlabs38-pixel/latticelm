@@ -1,0 +1,65 @@
+[
+  {
+    "filename": "screenshots/generated/01_architecture.png",
+    "scene": "ArchitectureStill",
+    "frame": "final static state",
+    "description": "Twelve-layer Co4 model, six query heads sharing two KV streams, dimensions and parameter allocation.",
+    "final_results_required": false,
+    "status": "final",
+    "resolution": "1920,1080"
+  },
+  {
+    "filename": "screenshots/generated/02_data_pipeline.png",
+    "scene": "PipelineStill",
+    "frame": "final static state",
+    "description": "DATA-D-v4 source processing, deduplication, tokenization and certified usable token count.",
+    "final_results_required": false,
+    "status": "final",
+    "resolution": "1920,1080"
+  },
+  {
+    "filename": "screenshots/generated/03_optimizer.png",
+    "scene": "OptimizerStill",
+    "frame": "final static state",
+    "description": "Muon and AdamW parameter allocation with exact counts and percentages.",
+    "final_results_required": false,
+    "status": "final",
+    "resolution": "1920,1080"
+  },
+  {
+    "filename": "screenshots/generated/04_wsd_training.png",
+    "scene": "ScheduleStill",
+    "frame": "final static state",
+    "description": "WSD schedule aligned with late validation improvement.",
+    "final_results_required": false,
+    "status": "final",
+    "resolution": "1920,1080"
+  },
+  {
+    "filename": "screenshots/generated/05_posttraining.png",
+    "scene": "PostTrainingStill",
+    "frame": "final static state",
+    "description": "Post-training method branches and capability gates.",
+    "final_results_required": false,
+    "status": "final",
+    "resolution": "1920,1080"
+  },
+  {
+    "filename": "screenshots/generated/06_recovery_evaluation.png",
+    "scene": "RecoveryStill",
+    "frame": "final static state",
+    "description": "Retention, targeted proxy and full GIBC comparison for evaluated candidates.",
+    "final_results_required": true,
+    "status": "final",
+    "resolution": "1920,1080"
+  },
+  {
+    "filename": "screenshots/generated/07_final_recap.png",
+    "scene": "RecapStill",
+    "frame": "final static state",
+    "description": "Architecture, training, evaluations, research finding and BASE selection.",
+    "final_results_required": true,
+    "status": "final",
+    "resolution": "1920,1080"
+  }
+]

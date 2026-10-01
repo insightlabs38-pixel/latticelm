@@ -1,0 +1,17 @@
+{
+  "measured": [
+    {
+      "tokens": 150000,
+      "reasoning_accuracy": 90.23,
+      "data_d": 6.964,
+      "kind": "proxy_256"
+    }
+  ],
+  "planned_tokens": [
+    1000000,
+    2500000,
+    5000000
+  ],
+  "interpolation": [],
+  "show_interpolation": false
+}

@@ -1,0 +1,25 @@
+{
+  "base": {
+    "reasoning_accuracy": 27.34,
+    "data_d": 2.397,
+    "kind": "proxy_256"
+  },
+  "joint": {
+    "reasoning_accuracy": 89.45,
+    "reasoning_margin": 5.349,
+    "data_d": 15.025,
+    "kind": "proxy_256"
+  },
+  "recovery": [
+    {
+      "tokens": 150000,
+      "reasoning_accuracy": 90.23,
+      "data_d": 6.964,
+      "kind": "proxy_256"
+    }
+  ],
+  "throughput": {
+    "logical_tokens_per_second": 2408,
+    "processed_tokens_per_second": 2433
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "parameters": 48636168,
+  "layers": 12,
+  "d_model": 552,
+  "ffn_hidden": 1728,
+  "context": 256,
+  "tokenizer_vocab": 4096,
+  "dataset_tokens": 2259629459,
+  "final_training_tokens": 1900000000,
+  "gqa": "6Q/2KV real GQA",
+  "optimizer": "muon_hybrid",
+  "architecture": "Co4 causal",
+  "muon_parameters": 44089344,
+  "adamw_parameters": 4546824,
+  "head_dim": 92,
+  "q_heads": 6,
+  "kv_heads": 2,
+  "parameter_allocation": {
+    "ffn": 34338816,
+    "attention_projections": 9750528,
+    "embeddings_and_head": 4521984,
+    "latents_and_norms": 24840
+  }
+}

@@ -1,0 +1,1 @@
+{"joint-recovery-150000":{"checkpoint_sha256":"abcdef0123456789","lineage":"joint","recovery_tokens":150000,"data_d":{"loss":6.91},"wikitext_bpb":1.51,"wikitext_ppl":24.2,"gibc_raw":{"hellaswag":0.29,"arc_easy":0.41,"piqa":0.59,"winogrande":0.52},"proxy_1024":{"accuracy":0.901,"mean_margin":5.2}}}
