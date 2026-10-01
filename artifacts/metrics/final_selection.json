@@ -1,0 +1,7 @@
+{
+  "selected": "BASE",
+  "checkpoint_sha256": "94b91a2d39c2889209cb47b2e04b2c0d307a25610c40c5a124b595020eb762b0",
+  "reason": "No evaluated post-training candidate improved the full GIBC mean over BASE while retaining the BASE model quality. The targeted reasoning proxy is a screening measure, not a substitute for GIBC.",
+  "measured_parameters": 48636168,
+  "training_tokens": 1900000000
+}

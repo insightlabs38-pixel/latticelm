@@ -1,0 +1,31 @@
+{
+  "baseline": "BASE",
+  "scope": "256-example reasoning proxy for screening; GIBC is the full-suite mean",
+  "comparison": {
+    "scope": "proxy accuracy is a screening metric; GIBC is full-suite mean",
+    "base": {
+      "data_d_ratio": 1,
+      "wikitext_bpb_ratio": 1,
+      "reasoning_proxy": 0.2686,
+      "gibc_mean": 0.4289
+    },
+    "recovery_10m_5pct": {
+      "data_d_ratio": 1.016,
+      "wikitext_bpb_ratio": 1.026,
+      "reasoning_proxy": 0.2764,
+      "gibc_mean": 0.4288
+    },
+    "recovery_10m_17pct": {
+      "data_d_ratio": 1.199,
+      "wikitext_bpb_ratio": 1.194,
+      "reasoning_proxy": 0.3672,
+      "gibc_mean": 0.4151
+    },
+    "mixed_500k_15pct": {
+      "data_d_ratio": 1.168,
+      "wikitext_bpb_ratio": 1.162,
+      "reasoning_proxy": 0.3418,
+      "gibc_mean": 0.4154
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "final-submission-results-v1",
+  "actual_tokens_trained": 1900000000,
+  "parameter_count": 48636168,
+  "checkpoint_sha256": "94b91a2d39c2889209cb47b2e04b2c0d307a25610c40c5a124b595020eb762b0",
+  "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7",
+  "data_manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+  "selected_optimizer": "muon_hybrid",
+  "selected_lr": 0.0008,
+  "schedule": {
+    "cosine_decay": 0.15,
+    "stable": 0.83,
+    "warmup": 0.02
+  },
+  "metrics": {
+    "arc_easy": 0.36784511784511786,
+    "evaluator": "corrected joined causal boundary",
+    "hellaswag": 0.2709619597689703,
+    "piqa": 0.5669205658324266,
+    "source_validation": {
+      "finemath": 2.6136393547058105,
+      "fineweb": 2.6591973900794983,
+      "fineweb_edu": 2.7862366139888763,
+      "wikipedia": 2.4629015177488327
+    },
+    "tokens": 1900000000,
+    "validation_loss": 2.6304937191307545,
+    "wikitext_bpb": 1.4134619981025516,
+    "wikitext_ppl": 21.92980620690272,
+    "winogrande": 0.5098658247829518
+  }
+}

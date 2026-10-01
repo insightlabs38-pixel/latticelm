@@ -48,3 +48,56 @@ artifacts/seed2026_lr10_100m/*.pt
 artifacts/seed2026_lr10_100m/*.sha256
 artifacts/capacity24_150m_gibc.json
 artifacts/posttraining/
+
+# Runtime files and model weights are local research state, not source assets.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.lock
+*.pid
+*.orig
+*.log
+*.tmp
+__pycache__/
+.pytest_cache/
+.pytest-tmp/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Named resume/state files. Keep result and evidence JSON eligible for review.
+**/master_state.json
+**/*_master_state.json
+**/*_master_state.previous.json
+**/salvage_state.json
+**/run_state.json
+**/*_state.previous.json
+
+# Most files below artifacts/ are generated run output. Historical tracked
+# evidence remains tracked; new evidence is admitted through these curated dirs.
+artifacts/*
+!artifacts/README.md
+!artifacts/reports/
+!artifacts/metrics/
+!artifacts/manifests/
+
+# Video source is maintained at video/ root. Exclude renders, review captures,
+# local tools, delivery archives, and the frozen duplicate source copy.
+video/renders/
+video/tools/
+video/screenshots/debug/
+video/screenshots/generated/
+video/screenshots/generated_1440/
+video/final/qa/
+video/final/renders/
+video/final/screenshots_1440/
+video/final/components/
+video/final/config/
+video/final/data/
+video/final/scenes/
+video/final/scripts/
+video/final/BUILD.md
+video/final/*.zip
+video/*bundle.zip
+video/assets/terminal/*.mp4
