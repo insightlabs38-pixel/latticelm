@@ -8,6 +8,10 @@ LatticeLM is a sub-50M-parameter language-model research project about architect
 |---|---:|
 | Parameters | 48,636,168 |
 | Pretraining tokens | 1.9B |
+| Training hardware | Google Cloud `c4a-standard-16`: 16 Google Axion CPU cores, 64 GB RAM, no GPU or TPU |
+| Production training time | ≈188.4 hours (≈7.85 days) |
+| Sustained throughput | ≈2,800–2,830 tokens/s over most of the run |
+| Approx. production pretraining compute | ≈5.54 × 10^17 FLOPs (0.554 EFLOP, conventional 6NT estimate) |
 | DATA-D validation loss | 2.630494 |
 | WikiText-103 perplexity | 21.9298 |
 | WikiText-103 bits per byte | 1.413462 |
@@ -20,7 +24,7 @@ The benchmark values are the final BASE checkpoint evaluation. The separate 256-
 
 ## Architecture
 
-The final model has 12 Co4 causal blocks, width 552, a 1,728-wide SwiGLU feed-forward path, context length 256, and a 4,096-token vocabulary. Embeddings are untied. Each attention layer has six query heads and two key/value heads (real 6Q/2KV GQA), with QK-RMS normalization and rotary position embeddings.
+The final model has 12 Co4 causal blocks, width 552, a 1,728-wide SwiGLU feed-forward path, context length 256, and a 4,096-token vocabulary. Embeddings are untied. Each attention layer has six query heads and two key/value heads (real 6Q/2KV GQA), with QK-RMS normalization and rotary position embeddings. The reported 48,636,168-parameter total includes the trainable embeddings and output head; the exact production configuration is preserved in [`configs/final_production.json`](configs/final_production.json).
 
 Co4 applies the learned receptive-stream transform
 
@@ -31,6 +35,8 @@ to query, key, and value contexts before causal attention. Here `r` is a learned
 ## Training
 
 The final recipe used DATA-D-v4, with **2,259,629,459 certified available tokens**, of which 1.9B were consumed. The optimizer assigns hidden two-dimensional matrices to Muon and embeddings, output head, norms, and latents to AdamW: 90.65% and 9.35% of parameters, respectively. The peak learning rate was 0.0008, with a 2% warmup, 83% stable phase, and 15% cosine decay.
+
+The full production run was executed entirely on a Google Cloud `c4a-standard-16` VM with 16 Google Axion CPU cores and 64 GB of RAM; no GPU or TPU acceleration was used. Training sustained approximately 2,800–2,830 tokens per second over most of the run, and using 2,800 tokens/s as a conservative whole-run rate gives approximately **188.4 hours, or 7.85 days**, for 1.9B tokens. For cross-project normalization, the conventional `6NT` estimate gives approximately **5.54 × 10^17 FLOPs, or 0.554 EFLOP**, for the final pretraining run. Co4 follows the `6NT` approximation closely enough at this configuration for that estimate to be useful, although it still excludes optimizer work, data preparation, evaluation, and the separate experimental runs that preceded the final model.
 
 Validation loss improved from **2.914503 at 1.5B tokens** to **2.630494 at 1.9B tokens**, during the late decay portion of training. The values and hashes are in the [production report](artifacts/reports/final_production_report.md); a compact two-point validation curve is available as [`artifacts/metrics/final_validation_curve.csv`](artifacts/metrics/final_validation_curve.csv). See [Training](docs/TRAINING.md) for data, optimizer, schedule, and run details.
 
@@ -112,6 +118,10 @@ The `--help` output for these interfaces was checked against the current scripts
 ## Experimental artifacts
 
 Curated final evidence is indexed in [`artifacts/README.md`](artifacts/README.md). It includes the production report, checkpoint comparison, post-training and recovery analysis, metric summaries, provenance hashes, and compact validation curve. Full model checkpoints, raw logs, transient run state, intermediate candidates, and generated QA frames are excluded from Git because they are large or reproducible execution output. Existing tracked historical research artifacts remain in place.
+
+## AI assistance
+
+ChatGPT was used as a research, planning, repository-analysis, and documentation assistant during development, while Codex was used as a coding assistant for implementation, debugging, and parts of the post-training infrastructure. The author directed the research questions, architecture, experimental design, training methodology, evaluation protocol, checkpoint selection, and final claims. AI assistance was therefore part of the development workflow, but the reported experiments and conclusions were selected against the project's recorded evaluation and provenance rather than accepted from an assistant without verification.
 
 ## Limitations
 
