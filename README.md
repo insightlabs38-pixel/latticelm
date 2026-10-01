@@ -30,7 +30,7 @@ The final model has 12 Co4 causal blocks, width 552, a 1,728-wide SwiGLU feed-fo
 Co4 applies the learned receptive-stream transform
 
 $$
-\operatorname{Co4}(r,c)=\operatorname{ReLU6}\!\left(r^2+2r+c\left(1+|r|\right)\right)
+\mathrm{Co4}(r,c)=\mathrm{ReLU6}\left(r^2+2r+c\left(1+|r|\right)\right)
 $$
 
 to query, key, and value contexts before causal attention. Here $r$ is a learned latent receptive stream and $c$ is the token-conditioned context. The final language-model adaptation keeps this elementwise MOD law and learned latent streams, then uses causal scaled dot-product attention. It is an adaptation for autoregressive modeling, not an exact reproduction of the original vision operator. See [Architecture](docs/ARCHITECTURE.md) and the [architecture figure](video/final/screenshots/01_architecture.png).
