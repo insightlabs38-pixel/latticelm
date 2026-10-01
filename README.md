@@ -9,8 +9,9 @@ LatticeLM is a sub-50M-parameter language-model research project about architect
 | Parameters | 48,636,168 |
 | Pretraining tokens | 1.9B |
 | Training hardware | Google Cloud `c4a-standard-16`: 16 Google Axion CPU cores, 64 GB RAM, no GPU or TPU |
-| Production training time | ≈188.4 hours (≈7.85 days) |
-| Sustained throughput | ≈2,800–2,830 tokens/s over most of the run |
+| Production training time | 7.73525463 days (185.646 hours) |
+| Whole-run throughput | ≈2,842.9 tokens/s |
+| Recorded CPU utilization | ≈1,550% process CPU, or ≈15.5/16 cores busy (≈96.9% aggregate core utilization) |
 | Approx. production pretraining compute | ≈5.54 × 10^17 FLOPs (0.554 EFLOP, conventional 6NT estimate) |
 | DATA-D validation loss | 2.630494 |
 | WikiText-103 perplexity | 21.9298 |
@@ -36,7 +37,7 @@ to query, key, and value contexts before causal attention. Here `r` is a learned
 
 The final recipe used DATA-D-v4, with **2,259,629,459 certified available tokens**, of which 1.9B were consumed. The optimizer assigns hidden two-dimensional matrices to Muon and embeddings, output head, norms, and latents to AdamW: 90.65% and 9.35% of parameters, respectively. The peak learning rate was 0.0008, with a 2% warmup, 83% stable phase, and 15% cosine decay.
 
-The full production run was executed entirely on a Google Cloud `c4a-standard-16` VM with 16 Google Axion CPU cores and 64 GB of RAM; no GPU or TPU acceleration was used. Training sustained approximately 2,800–2,830 tokens per second over most of the run, and using 2,800 tokens/s as a conservative whole-run rate gives approximately **188.4 hours, or 7.85 days**, for 1.9B tokens. For cross-project normalization, the conventional `6NT` estimate gives approximately **5.54 × 10^17 FLOPs, or 0.554 EFLOP**, for the final pretraining run. Co4 follows the `6NT` approximation closely enough at this configuration for that estimate to be useful, although it still excludes optimizer work, data preparation, evaluation, and the separate experimental runs that preceded the final model.
+The full production run was executed entirely on a Google Cloud `c4a-standard-16` VM with 16 Google Axion CPU cores and 64 GB of RAM; no GPU or TPU acceleration was used. The recorded run duration was **7.73525463 days, or 185.646 hours**, which corresponds to an average whole-run throughput of approximately **2,842.9 tokens per second** across the 1.9B-token production run. CPU records were consistently around **1,550% process utilization** on the 16-core host, equivalent to roughly 15.5 cores being occupied on average, or about **96.9% aggregate core utilization**. For cross-project normalization, the conventional `6NT` estimate gives approximately **5.54 × 10^17 FLOPs, or 0.554 EFLOP**, for the final pretraining run. Co4 follows the `6NT` approximation closely enough at this configuration for that estimate to be useful, although it still excludes optimizer work, data preparation, evaluation, and the separate experimental runs that preceded the final model.
 
 Validation loss improved from **2.914503 at 1.5B tokens** to **2.630494 at 1.9B tokens**, during the late decay portion of training. The values and hashes are in the [production report](artifacts/reports/final_production_report.md); a compact two-point validation curve is available as [`artifacts/metrics/final_validation_curve.csv`](artifacts/metrics/final_validation_curve.csv). See [Training](docs/TRAINING.md) for data, optimizer, schedule, and run details.
 
