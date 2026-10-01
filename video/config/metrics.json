@@ -18,9 +18,9 @@
     "reasoning_scope": "posttraining_proxy_1024_separate"
   },
   "source": {
-    "pretraining": "artifacts/final_model_facts.json",
-    "selection": "artifacts/posttraining_salvage/final_selection.json",
-    "recovery": "artifacts/posttraining_salvage_followup/followup_report.md",
-    "mixed_objective": "artifacts/posttraining_salvage_followup/mixed_objective_diagnostic/mixed_objective_report.md"
+    "pretraining": "artifacts/metrics/final_pretraining_metrics.json",
+    "selection": "artifacts/metrics/final_selection.json",
+    "recovery": "artifacts/reports/recovery_experiment_report.md",
+    "mixed_objective": "artifacts/reports/recovery_experiment_report.md"
   }
 }
