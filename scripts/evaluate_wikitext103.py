@@ -7,7 +7,7 @@ import torch
 import torch.nn.functional as F
 from datasets import load_dataset
 from latticelm.config import LatticeConfig
-from latticelm.model import build_model
+from latticelm.posthack_variants import build_posthack_model
 from latticelm.tokenizer import load_tokenizer
 
 
@@ -23,7 +23,7 @@ def digest(path):
 
 def main():
  p=argparse.ArgumentParser(); p.add_argument('--checkpoint',required=True); p.add_argument('--tokenizer',required=True); p.add_argument('--output',required=True); p.add_argument('--batch-size',type=int,default=8); p.add_argument('--threads',type=int,default=2); a=p.parse_args()
- torch.set_num_threads(a.threads); started=time.perf_counter(); ck=torch.load(a.checkpoint,map_location='cpu',weights_only=False); c=LatticeConfig(**ck['config']); model=build_model(c); model.load_state_dict(ck['model']); model.eval(); tok=load_tokenizer(a.tokenizer)
+ torch.set_num_threads(a.threads); started=time.perf_counter(); ck=torch.load(a.checkpoint,map_location='cpu',weights_only=False); c=LatticeConfig(**ck['config']); model=build_posthack_model(c,ck.get('variant','baseline')); model.load_state_dict(ck['model']); model.eval(); tok=load_tokenizer(a.tokenizer)
  ds=load_dataset('Salesforce/wikitext','wikitext-103-raw-v1',split='test')
  groups=defaultdict(list); count=0; byte_count=0
  for text in ds['text']:

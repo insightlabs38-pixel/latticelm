@@ -14,8 +14,23 @@ from lm_eval import evaluator
 from lm_eval.api.model import LM
 
 from latticelm.config import LatticeConfig
-from latticelm.model import build_model
+from latticelm.posthack_variants import build_posthack_model
 from latticelm.tokenizer import load_tokenizer
+
+
+def encode_pair(tokenizer, context: str, continuation: str) -> tuple[list[int], list[int]]:
+    """Canonical joined causal tokenization used by evaluation and length audits."""
+    spaces = len(context) - len(context.rstrip())
+    if spaces:
+        continuation = context[-spaces:] + continuation
+        context = context[:-spaces]
+    if not context:
+        ids = tokenizer.encode(continuation)
+        bos = getattr(tokenizer, "bos_id", 1)
+        return ([bos], ids) if not ids or ids[0] != bos else (ids[:1], ids[1:])
+    context_ids = tokenizer.encode(context)
+    whole_ids = tokenizer.encode(context + continuation)
+    return context_ids, whole_ids[len(context_ids):]
 
 
 class LatticeHarnessLM(LM):
@@ -23,7 +38,7 @@ class LatticeHarnessLM(LM):
         super().__init__()
         payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
         self.config = LatticeConfig(**payload["config"])
-        self.model = build_model(self.config)
+        self.model = build_posthack_model(self.config, payload.get("variant", "baseline"))
         self.model.load_state_dict(payload["model"], strict=True)
         self.model.eval()
         self.tok = load_tokenizer(tokenizer)
@@ -34,18 +49,7 @@ class LatticeHarnessLM(LM):
         return self.tok.encode(text)
 
     def _encode_pair(self, context: str, continuation: str) -> tuple[list[int], list[int]]:
-        """Match lm-eval's canonical causal context/continuation boundary."""
-        spaces = len(context) - len(context.rstrip())
-        if spaces:
-            continuation = context[-spaces:] + continuation
-            context = context[:-spaces]
-        if not context:
-            ids = self._encode(continuation)
-            bos = getattr(self.tok, "bos_id", 1)
-            return ([bos], ids) if not ids or ids[0] != bos else (ids[:1], ids[1:])
-        context_ids = self._encode(context)
-        whole_ids = self._encode(context + continuation)
-        return context_ids, whole_ids[len(context_ids):]
+        return encode_pair(self.tok, context, continuation)
 
     def loglikelihood(self, requests):
         prepared = []

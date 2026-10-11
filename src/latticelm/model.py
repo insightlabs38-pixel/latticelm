@@ -28,6 +28,7 @@ class CausalAttention(nn.Module):
         super().__init__()
         self.n_heads, self.n_kv_heads = config.n_heads, config.n_kv_heads
         self.head_dim = config.d_model // config.n_heads
+        self.qk_norm = bool(config.qk_norm)
         self.q_proj = nn.Linear(config.d_model, config.d_model, bias=False)
         self.k_proj = nn.Linear(config.d_model, self.head_dim * config.n_kv_heads, bias=False)
         self.v_proj = nn.Linear(config.d_model, self.head_dim * config.n_kv_heads, bias=False)
@@ -38,6 +39,9 @@ class CausalAttention(nn.Module):
         q = self.q_proj(x).view(batch, length, self.n_heads, self.head_dim).transpose(1, 2)
         k = self.k_proj(x).view(batch, length, self.n_kv_heads, self.head_dim).transpose(1, 2)
         v = self.v_proj(x).view(batch, length, self.n_kv_heads, self.head_dim).transpose(1, 2)
+        if self.qk_norm:
+            from .co4_reference import rms_unit
+            q, k = rms_unit(q), rms_unit(k)
         q, k = apply_rope(q), apply_rope(k)
         repeat = self.n_heads // self.n_kv_heads
         k, v = k.repeat_interleave(repeat, 1), v.repeat_interleave(repeat, 1)

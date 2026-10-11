@@ -1,0 +1,12 @@
+{
+  "ihms2026.pdf": "e0931fe41c1a6ba7c7f0a50da733a450f0a86f34bd0180dcedd51366b4c6b2f3",
+  "babylm2025.pdf": "fb736beb8c45af196e6384d727a8c07c2fdc7068735da15517579c8a897030b2",
+  "IHMS": {
+    "url": "https://github.com/ARIA-Funded-TREND/IHMS",
+    "commit": "e25e9119173d59fdb9e4548ef640734dbd19f067"
+  },
+  "HMS": {
+    "url": "https://github.com/ARIA-Funded-TREND/HMS",
+    "commit": "72aceea25b0bac49699d05deaa51860e6dfa5724"
+  }
+}

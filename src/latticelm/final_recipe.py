@@ -26,7 +26,7 @@ def muon_parameter_partition(model: torch.nn.Module) -> tuple[list[torch.nn.Para
     """Muon for hidden 2-D matrices; AdamW for embeddings/head/norms/latents."""
     muon, adam, names = [], [], {}
     for name, parameter in model.named_parameters():
-        unsuitable = (parameter.ndim != 2 or "token_embedding" in name or
+        unsuitable = (parameter.ndim != 2 or "router" in name or "token_embedding" in name or
                       "lm_head" in name or "norm" in name or "latent_" in name)
         group = adam if unsuitable else muon
         group.append(parameter); names[name] = "adamw" if unsuitable else "muon"
