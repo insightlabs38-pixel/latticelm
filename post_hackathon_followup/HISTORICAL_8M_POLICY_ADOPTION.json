@@ -1,0 +1,81 @@
+{
+  "at_after": "2026-10-11T05:25:47.072254+00:00",
+  "at_before": "2026-10-11T05:24:20.597951+00:00",
+  "heartbeat_after": {
+    "attempt": "cad267c6f56c46fdbf5a5fd2bbffb66b",
+    "boot_id": "2977ce7e-ea0b-4d72-926c-13426d4f3694",
+    "expected_checkpoint_path": "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F32-DENSE-S1337-FRESH300M/checkpoint_manifest.json",
+    "experiment_id": "F32-DENSE-S1337-FRESH300M",
+    "heartbeat_epoch": 1791696335.4496033,
+    "heartbeat_utc": "2026-10-11T05:25:35.449599+00:00",
+    "launch_utc": "2026-10-11T01:43:40.295013+00:00",
+    "logical_tokens": 52314112,
+    "phase": "TRAINING",
+    "pid": 1088639,
+    "process_state": "R",
+    "start_ticks": "7567307",
+    "step": 6386,
+    "working_directory": "/home/insightlabs38/latticelm"
+  },
+  "heartbeat_before": {
+    "attempt": "cad267c6f56c46fdbf5a5fd2bbffb66b",
+    "boot_id": "2977ce7e-ea0b-4d72-926c-13426d4f3694",
+    "expected_checkpoint_path": "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F32-DENSE-S1337-FRESH300M/checkpoint_manifest.json",
+    "experiment_id": "F32-DENSE-S1337-FRESH300M",
+    "heartbeat_epoch": 1791696255.44286,
+    "heartbeat_utc": "2026-10-11T05:24:15.442854+00:00",
+    "launch_utc": "2026-10-11T01:43:40.295013+00:00",
+    "logical_tokens": 52002816,
+    "phase": "TRAINING",
+    "pid": 1088639,
+    "process_state": "R",
+    "start_ticks": "7567307",
+    "step": 6348,
+    "working_directory": "/home/insightlabs38/latticelm"
+  },
+  "new_master": {
+    "boot_id": "2977ce7e-ea0b-4d72-926c-13426d4f3694",
+    "pid": 1103332,
+    "process_state": "S",
+    "start_ticks": "8892923"
+  },
+  "old_master": {
+    "boot_id": "2977ce7e-ea0b-4d72-926c-13426d4f3694",
+    "pid": 1097803,
+    "process_state": "S",
+    "start_ticks": "8317998"
+  },
+  "operation": "SIGKILL validated controller MainPID only, preserving trainer and attempt; systemd restarts with recovered-control policy.",
+  "passed": true,
+  "per_control_selection": {
+    "CO4-1337": "CONTROL-A8-CO4-S1337",
+    "CO4-2026": "CONTROL-A8-CO4-S2026",
+    "DENSE-1337": "CONTROL-A8-DENSE-S1337",
+    "DENSE-2026": "CONTROL-A8-DENSE-S2026"
+  },
+  "scientific_sources_unchanged_after": true,
+  "scientific_sources_unchanged_before": true,
+  "source_commit": "bba67b15e79b9a0e5042f4d94b29755549164bcf",
+  "trainer_after": {
+    "boot_id": "2977ce7e-ea0b-4d72-926c-13426d4f3694",
+    "expected_checkpoint_path": "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F32-DENSE-S1337-FRESH300M/checkpoint_manifest.json",
+    "experiment_id": "F32-DENSE-S1337-FRESH300M",
+    "launch_utc": "2026-10-11T01:43:39.471565+00:00",
+    "phase": "RUNNING",
+    "pid": 1088639,
+    "process_state": "R",
+    "start_ticks": "7567307",
+    "working_directory": "/home/insightlabs38/latticelm"
+  },
+  "trainer_before": {
+    "boot_id": "2977ce7e-ea0b-4d72-926c-13426d4f3694",
+    "expected_checkpoint_path": "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F32-DENSE-S1337-FRESH300M/checkpoint_manifest.json",
+    "experiment_id": "F32-DENSE-S1337-FRESH300M",
+    "launch_utc": "2026-10-11T01:43:39.471565+00:00",
+    "phase": "RUNNING",
+    "pid": 1088639,
+    "process_state": "R",
+    "start_ticks": "7567307",
+    "working_directory": "/home/insightlabs38/latticelm"
+  }
+}
