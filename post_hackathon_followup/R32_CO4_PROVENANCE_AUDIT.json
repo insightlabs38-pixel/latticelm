@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-11T01:21:27.686389+00:00",
+  "checkpoint_sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+  "config_sha256": "c48d016103a15467997227734b258615fbeff82a420dc09998ba16804efdeab2",
+  "control": "R32-CO4-CONTROL",
+  "event_counts": {
+    "BEST_CHECKPOINT": 26,
+    "CHECKPOINT": 30,
+    "HF_ARCHIVE_VERIFIED": 10,
+    "RUN_REGISTERED": 1,
+    "SCREEN_EVALUATED_AND_ARCHIVED": 1,
+    "TRAIN_END": 1,
+    "TRAIN_START": 1
+  },
+  "evidence_limit": "No initial checkpoint was archived; three-step fresh replay, matching trainer source, contiguous receipts and exact whole-run LR/cursor checks establish provenance within FP32 tolerance.",
+  "fresh_optimizer_empty": true,
+  "fresh_replay": [
+    {
+      "absolute_error": 0.0,
+      "loss": 8.476421356201172,
+      "recorded_loss": 8.476421356201172,
+      "step": 1
+    },
+    {
+      "absolute_error": 0.0,
+      "loss": 8.475424766540527,
+      "recorded_loss": 8.475424766540527,
+      "step": 2
+    },
+    {
+      "absolute_error": 0.0,
+      "loss": 8.478633880615234,
+      "recorded_loss": 8.478633880615234,
+      "step": 3
+    }
+  ],
+  "initial_batch_sha256": "eb980bc1883626bc2ce03cdd3e5830a525551043aafda772730a7eae46f8a740",
+  "logical_tokens": 300000000,
+  "maximum_lr_error": 0.0,
+  "mixture_cycle": [
+    "finemath",
+    "finemath",
+    "fineweb",
+    "fineweb",
+    "fineweb",
+    "fineweb",
+    "fineweb_edu",
+    "fineweb_edu",
+    "fineweb_edu",
+    "fineweb_edu",
+    "fineweb_edu",
+    "fineweb_edu",
+    "fineweb_edu",
+    "fineweb_edu",
+    "fineweb_edu",
+    "wikipedia",
+    "wikipedia",
+    "wikipedia",
+    "wikipedia",
+    "wikipedia"
+  ],
+  "passed": true,
+  "processed_tokens": 300007424,
+  "saved_next_batch_sha256": "ccaf68090e8890c8784737226c8123e3d0baba1e3513ab86da4f684f7f24a4f5",
+  "schema": "r32-control-provenance-v1",
+  "seed": 1337,
+  "source_hashes": {
+    "scripts/posthack_train.py": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7",
+    "scripts/train_final_production.py": "903106cedee65b630dad1903b0c09d9ad519e773921279bc3287438777ca6d1f",
+    "src/latticelm/data_d.py": "c08631d747fab1083f9d4a31a7cf4b5df2213db5e94b913d85281e51e6608b42",
+    "src/latticelm/final_recipe.py": "d9555ed1a8ca12b628423ba11787b6dcd1a593b5f54d060078427d9809d94dc9",
+    "src/latticelm/model.py": "304b426b181b17688dbf8cd81ff97ab1d9060c59a0b763feec630857a6c9e5f7",
+    "src/latticelm/posthack_variants.py": "889dddd9b7d388174db3a270487b13fa06777bccf24a7b51f6cc3b0ea51e8c50"
+  },
+  "source_order": [
+    "finemath",
+    "fineweb",
+    "fineweb_edu",
+    "wikipedia"
+  ],
+  "source_seed_rule": "seed + 17 * index in manifest-loaded source order",
+  "total_steps": 36622
+}

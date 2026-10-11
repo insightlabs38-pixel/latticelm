@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-11T01:22:21.273443+00:00",
+  "status": "BLOCKED_USER_DEADLINE",
+  "reason": "User described absolute hard deadline as Saturday October 10 at 16:10 EDT; in 2026 this is 2026-10-10T20:10:00Z, before current VM clock. Exact year/month/day requested before any trainer launch.",
+  "r32_provenance_audit": "PASSED",
+  "trainer_launched": false,
+  "next_experiment": "Fresh dense 300M matched to R32-CO4-CONTROL, as authorized."
+}
