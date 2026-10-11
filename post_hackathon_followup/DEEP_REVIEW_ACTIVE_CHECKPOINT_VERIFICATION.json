@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-11T03:51:04.966596+00:00",
+  "checkpoint_file": "checkpoint-00003418-55e6cc35.pt",
+  "checkpoint_sha256": "4aeb15875eef074fed20f5c557d43b15de7110dc096a88290d9c5d723f56c4ce",
+  "checks": {
+    "config_hash": true,
+    "config_values_json_normalized": true,
+    "exact_parameter_count": true,
+    "file_sha_and_size": true,
+    "fresh_initial_optimizer_empty": true,
+    "initial_sampler_zero": true,
+    "logical_progress": true,
+    "manifest_hash": true,
+    "optimizer_lr_schedule": true,
+    "processed_progress": true,
+    "registration_hash": true,
+    "rng_sampler_present": true,
+    "same_training_attempt": true,
+    "sampler_draw_count": true,
+    "single_target_schedule": true,
+    "source_commit": true,
+    "source_hashes": true,
+    "tokenizer_hash": true
+  },
+  "config_serialization_note": "Torch config keeps memory_orders/memory_insert_layers tuples; immutable JSON registration keeps equivalent lists. Canonical JSON hashes and normalized values agree.",
+  "exact_parameter_count": 31986396,
+  "experiment_id": "F32-DENSE-S1337-FRESH300M",
+  "logical_tokens": 28000256,
+  "passed": true,
+  "scope": "One current checkpoint and initialization metadata; exact sampler next-batch restoration is covered by the pre-launch interruption certificate. No repeated data-shard read or competing training.",
+  "source_commit": "c9ed214a5131c2e891f9e77b5ecee74243be4f72",
+  "step": 3418
+}

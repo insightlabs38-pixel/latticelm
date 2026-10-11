@@ -49,3 +49,9 @@ The previous review's historical 8M provenance blocker remains explicit. R32 and
 Focused tests cover operator outputs/gradients/one optimizer step, exact ties, prefix/future/gradient leakage, parameter counts, scheduler/queue transitions, PID identity, publication crash edges, torn logs, partial exits, fallback retention, endpoint-validation recovery, archive protocol/cooldown and compressed reconstruction. These are small tests at one CPU thread. Actual production-batch smoke/resume and throughput gates run exclusively through the supervisor before each new long experiment.
 
 This review does not certify future experimental outcomes, complete HF coverage or unavailable source fidelity. The outstanding scientific control choice remains pending. Live archival, supervisor code adoption and active-trainer integrity checks are recorded separately with timestamps/hashes; no historical deletion is performed.
+
+## Live adoption and metadata evidence
+
+- `DEEP_REVIEW_CONTROLLER_ADOPTION.json`: controller source commit `1c5230c42e2675fd20e5fc43d5a545c12a5ee2e4` adopted the same trainer PID/attempt, with increasing optimizer steps and unchanged registered scientific hashes.
+- `DEEP_REVIEW_ACTIVE_CHECKPOINT_VERIFICATION.json`: current 28,000,256-token checkpoint hash, normalized actual config, 31,986,396 parameters, fresh empty optimizer/zero sampler receipt, complete 300M schedule position, optimizer LR, RNG presence and sampler draw accounting passed. Existing pre-launch certificates cover exact next-batch restore.
+- `DEEP_REVIEW_LIVE_ARCHIVE_VERIFICATION.json`: independent remote metadata checks passed for a 16-file canonical-data commit. The two gzip indexes reconstruct to original source hashes. Mutable reports modified after that snapshot await the next delta; whole migration coverage and new endpoint download are not yet claimed.

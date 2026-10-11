@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-11T03:49:22.327959+00:00",
+  "batched_commit_verified_canonical_files": 16,
+  "coverage_scope": "Live immutable canonical-data batch verification only; continuous migration is ongoing. Mutable reports changed after this upload snapshot and await the next delta. No new trained endpoint is yet available for real download.",
+  "gzip_reconstruction_certificates": "COMPRESSED_INDEX_VERIFICATION.json",
+  "independent_remote_spot_checks": [
+    {
+      "local_file": "artifacts/data/data_d_v4/canonical-2250m/fineweb-0000.int32",
+      "passed": true,
+      "remote_file": "post-hackathon-followup/2026-10-11/shared/artifacts/data/data_d_v4/canonical-2250m/fineweb-0000.int32",
+      "sha256": "da685914bff8532c2476448f77cd1859d26d1687eef51e2e8d0cfb32c08f068c",
+      "size_bytes": 31995948
+    },
+    {
+      "local_file": "artifacts/data/data_d_v4/canonical-2250m/fineweb-0000.manifest.json",
+      "passed": true,
+      "remote_file": "post-hackathon-followup/2026-10-11/shared/artifacts/data/data_d_v4/canonical-2250m/fineweb-0000.manifest.json",
+      "sha256": "0794f8b777d387b56f4e413181fc459d2f24bd625f578985d20775424cd10494",
+      "size_bytes": 2542422
+    },
+    {
+      "local_file": "artifacts/data/data_d_v4/canonical-2250m/fineweb-0002.int32",
+      "passed": true,
+      "remote_file": "post-hackathon-followup/2026-10-11/shared/artifacts/data/data_d_v4/canonical-2250m/fineweb-0002.int32",
+      "sha256": "64be1221b835ceef16265724e0019dc64acbc1bcef5396e39dd5ec93511ab607",
+      "size_bytes": 32000592
+    }
+  ],
+  "repo": "insightlabs38-pixel/LatticeLM-research",
+  "revision": "840cb9d30947834b0685f3e95f7f6f8c54415855"
+}
