@@ -1,0 +1,366 @@
+{
+  "blocker": "100M dense WSD schedule has already decayed to zero; cannot provide matched uninterrupted 300M schedule continuation.",
+  "branch": "posthack-followup-2026-10",
+  "checkpoints": [
+    {
+      "checksum_matches": true,
+      "config_matches_after_json_normalization": true,
+      "config_sha256": "f1b008812ebe068034292ed1015abdb27696db67ff942b1babbd912d16446b66",
+      "experiment_id": "A32-DENSE-S1337",
+      "logical_tokens": 100000000,
+      "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "next_batch_reconstruction_tested": false,
+      "next_batch_sha256": "20e769dab9db63c43d20e40307151b2bb61f49056846bcaeab96f1f48e0f5f4d",
+      "optimizer_learning_rates": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "path": "post_hackathon_research/runs/A32-DENSE-S1337/latest.pt",
+      "processed_tokens": 100007936,
+      "receipt_hash_matches": true,
+      "rng_states_present": true,
+      "sampler_state_present": true,
+      "sha256": "03efcec3267bb73e823d7745f3bfc3c81a006f6f253f006c4e4778fc143f6a43",
+      "size_bytes": 272138470,
+      "step": 12208,
+      "target_tokens": 100000000,
+      "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+    },
+    {
+      "checksum_matches": true,
+      "config_matches_after_json_normalization": true,
+      "config_sha256": "bcaf5ae485a9372ac0095b302b6009c9c512356e4977924f34613390d309f5c7",
+      "experiment_id": "A32-CO4-S1337",
+      "logical_tokens": 100000000,
+      "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "next_batch_reconstruction_tested": false,
+      "next_batch_sha256": "20e769dab9db63c43d20e40307151b2bb61f49056846bcaeab96f1f48e0f5f4d",
+      "optimizer_learning_rates": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "path": "post_hackathon_research/runs/A32-CO4-S1337/latest.pt",
+      "processed_tokens": 100007936,
+      "receipt_hash_matches": true,
+      "rng_states_present": true,
+      "sampler_state_present": true,
+      "sha256": "a851c2b767e885a174fda8ab5f7fe0bb84cc0d0f8f0a7514a1b5033fba25c2dc",
+      "size_bytes": 272270046,
+      "step": 12208,
+      "target_tokens": 100000000,
+      "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+    },
+    {
+      "checksum_matches": true,
+      "config_matches_after_json_normalization": true,
+      "config_sha256": "bcaf5ae485a9372ac0095b302b6009c9c512356e4977924f34613390d309f5c7",
+      "experiment_id": "R32-CO4-CONTROL",
+      "logical_tokens": 300000000,
+      "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "next_batch_reconstruction_tested": false,
+      "next_batch_sha256": "ccaf68090e8890c8784737226c8123e3d0baba1e3513ab86da4f684f7f24a4f5",
+      "optimizer_learning_rates": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "path": "post_hackathon_research/runs/R32-CO4-CONTROL/latest.pt",
+      "processed_tokens": 300007424,
+      "receipt_hash_matches": true,
+      "rng_states_present": true,
+      "sampler_state_present": true,
+      "sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+      "size_bytes": 272270046,
+      "step": 36622,
+      "target_tokens": 300000000,
+      "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+    },
+    {
+      "checksum_matches": true,
+      "config_matches_after_json_normalization": true,
+      "config_sha256": "3f3daad9c63702633d67b0fb6d4769b8842f55d8d092bb1e553e6725bf2ef56a",
+      "experiment_id": "R16-S2026-CONTROL",
+      "logical_tokens": 150000000,
+      "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "next_batch_reconstruction_tested": false,
+      "next_batch_sha256": "7d447e74a3fadd2afae638ad628675e9f27b8dc6374989983e4f68c60ab3a1bd",
+      "optimizer_learning_rates": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "path": "post_hackathon_research/runs/R16-S2026-CONTROL/latest.pt",
+      "processed_tokens": 150003712,
+      "receipt_hash_matches": true,
+      "rng_states_present": true,
+      "sampler_state_present": true,
+      "sha256": "86be653ef976397aebf4c4c52e7680d535e31516d5a892d5653a6329a49732ae",
+      "size_bytes": 138953182,
+      "step": 18311,
+      "target_tokens": 150000000,
+      "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+    },
+    {
+      "checksum_matches": true,
+      "config_matches_after_json_normalization": true,
+      "config_sha256": "ab5652fe81df164018abdd129e22f36960159f8dbebe129569c6ec6b842d2d91",
+      "experiment_id": "D4-16M-ANNEAL",
+      "logical_tokens": 150000000,
+      "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "next_batch_reconstruction_tested": false,
+      "next_batch_sha256": "2d9679b2a3198762f8568435192daab1fa1252b13a9bac419e59c7dc83c01860",
+      "optimizer_learning_rates": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "path": "post_hackathon_research/runs/D4-16M-ANNEAL/latest.pt",
+      "processed_tokens": 150003712,
+      "receipt_hash_matches": true,
+      "rng_states_present": true,
+      "sampler_state_present": true,
+      "sha256": "8116e957ec7875c579f4458e9fca21c10c87d7976ec775768b0c3a203f23e583",
+      "size_bytes": 138953630,
+      "step": 18311,
+      "target_tokens": 150000000,
+      "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+    },
+    {
+      "checksum_matches": true,
+      "config_matches_after_json_normalization": true,
+      "config_sha256": "30291f2b69c8e632cd4e63b78e8d0aeb93223c39e389128dac2fab85b8563abf",
+      "experiment_id": "S2-8M-DIFFCO4",
+      "logical_tokens": 50000000,
+      "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "next_batch_reconstruction_tested": false,
+      "next_batch_sha256": "a9951c1bb55f18097f78776881c7ed257d3ae543d1c376738880733536ecf966",
+      "optimizer_learning_rates": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "path": "post_hackathon_research/runs/S2-8M-DIFFCO4/latest.pt",
+      "processed_tokens": 50003968,
+      "receipt_hash_matches": true,
+      "rng_states_present": true,
+      "sampler_state_present": true,
+      "sha256": "d5a9e0a03e0123534a183fb58fb01e34ae65b3f2746ad352dd5dda4338b42bab",
+      "size_bytes": 72237854,
+      "step": 6104,
+      "target_tokens": 50000000,
+      "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+    },
+    {
+      "checksum_matches": true,
+      "config_matches_after_json_normalization": true,
+      "config_sha256": "30291f2b69c8e632cd4e63b78e8d0aeb93223c39e389128dac2fab85b8563abf",
+      "experiment_id": "A8-CO4-S1337",
+      "logical_tokens": 100000000,
+      "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "next_batch_reconstruction_tested": false,
+      "next_batch_sha256": "20e769dab9db63c43d20e40307151b2bb61f49056846bcaeab96f1f48e0f5f4d",
+      "optimizer_learning_rates": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "path": "post_hackathon_research/runs/A8-CO4-S1337/latest.pt",
+      "processed_tokens": 100007936,
+      "receipt_hash_matches": true,
+      "rng_states_present": true,
+      "sampler_state_present": true,
+      "sha256": "a01b837828e05c4c211b86e6b70d37f56a0a478f203bf8e8b7f39270be90f966",
+      "size_bytes": 72189982,
+      "step": 12208,
+      "target_tokens": 100000000,
+      "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+    },
+    {
+      "checksum_matches": true,
+      "config_matches_after_json_normalization": true,
+      "config_sha256": "01bce33cb23a6dacf5dce80cb0c889b6d6d091f398b2692b64a04ee0cb9b78ae",
+      "experiment_id": "A8-CO4-S2026",
+      "logical_tokens": 100000000,
+      "manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "next_batch_reconstruction_tested": false,
+      "next_batch_sha256": "4e9063fccee0cbcbe23e5c08506142069ba41b1377521d177ef3c542bd9ddd7d",
+      "optimizer_learning_rates": [
+        [
+          0.0
+        ],
+        [
+          0.0
+        ]
+      ],
+      "path": "post_hackathon_research/runs/A8-CO4-S2026/latest.pt",
+      "processed_tokens": 100007936,
+      "receipt_hash_matches": true,
+      "rng_states_present": true,
+      "sampler_state_present": true,
+      "sha256": "6df3154e5a73d157ffebd06e5708422ce669106539f693b1ca1d70afa35e4e5b",
+      "size_bytes": 72190686,
+      "step": 12208,
+      "target_tokens": 100000000,
+      "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+    }
+  ],
+  "created_utc": "2026-10-11T01:06:39.315387+00:00",
+  "main_sha": "43832b4c7bfe8be007ca6b9d1042aa2041c7f280",
+  "production_source_commit": "6e2c6f0f6f5278a2991c04708859baae7580368c",
+  "schema": "followup-input-audit-v1",
+  "trusted_files": [
+    {
+      "path": "post_hackathon_research/TRAINING_SUPERVISOR_FINAL_REPORT.md",
+      "sha256": "b9b1b808abd4a415c814e6140c7fc717d9ffdb6c477121b323be2e136b0ef061",
+      "size_bytes": 14060
+    },
+    {
+      "path": "post_hackathon_research/FINAL_RESEARCH_SYNTHESIS.md",
+      "sha256": "b2ce2c5afe9207b43d68f8e3889b0bcb952ef29dfdbae54ad9921b78cf4933cf",
+      "size_bytes": 7055
+    },
+    {
+      "path": "post_hackathon_research/MATCHED_CO4_DENSE.md",
+      "sha256": "6ba505ee4623d45d8f66b3bc74494532174c788081ca0e0ae8a27e15c8b211eb",
+      "size_bytes": 3341
+    },
+    {
+      "path": "post_hackathon_research/PROMOTION_32M.md",
+      "sha256": "895b6afb34ac9949ca70c837b4e1ee6df0153ebc5ed797b9f846d669078cf1cf",
+      "size_bytes": 786
+    },
+    {
+      "path": "post_hackathon_research/STRETCH_DIFFCO4.md",
+      "sha256": "7ed4430e8b1ee376cf806e6ff662d116c6165c3d5b24f101ab613c07549c14e1",
+      "size_bytes": 1302
+    },
+    {
+      "path": "post_hackathon_research/DATA_CURRICULUM.md",
+      "sha256": "2447793e2b356457bf9e60201aea320c30a4216726c5f7e5381b0fce4059800a",
+      "size_bytes": 2730
+    },
+    {
+      "path": "post_hackathon_research/STRETCH_NCO4.md",
+      "sha256": "1e8cc87f8f0fe9819862a8be302a89fcf2dca1453834e60945882eb0522804c6",
+      "size_bytes": 1070
+    },
+    {
+      "path": "post_hackathon_research/DEVELOPMENTAL_EXPERTS.md",
+      "sha256": "1f43e2245311dcffee4654b769b7e02888af8dd8cbefb2c664847e77ca47d4b5",
+      "size_bytes": 1931
+    },
+    {
+      "path": "post_hackathon_research/PHM4_SCREEN.md",
+      "sha256": "31285ec7d3b9fa9869e97cb68ef4cfce00b9c4f3ca6bbd11306f6926b0594c9d",
+      "size_bytes": 1165
+    },
+    {
+      "path": "post_hackathon_research/VALUE_RESIDUAL.md",
+      "sha256": "e871e0dfc98e2b8dfa9f3922cf193d4cb6fb07f390535d5887fbe65c77cc3510",
+      "size_bytes": 957
+    },
+    {
+      "path": "post_hackathon_research/master_state.json",
+      "sha256": "8b45f785f7524dc5f61673c86e4b3a8549d8c393abd9cf62eaf9fd5fbb6e34ec",
+      "size_bytes": 2479
+    },
+    {
+      "path": "post_hackathon_research/controller_state.json",
+      "sha256": "7d8b504256569ad356be394e0b1ebf2fac80b0857b974e4d2b40993985b8cfb0",
+      "size_bytes": 39439
+    },
+    {
+      "path": "post_hackathon_research/RUN_REGISTRY.jsonl",
+      "sha256": "1de7645fdae2fb0e58cd14b1d4d2c6c171dfd2a743230685c8c4e4c2a43bf917",
+      "size_bytes": 572827
+    },
+    {
+      "path": "post_hackathon_research/FROZEN_HACKATHON_STATE.json",
+      "sha256": "0494a507b42b9c6a76eac6b40da16229096b26ebd89ecf32605cd6900b55be5e",
+      "size_bytes": 947
+    },
+    {
+      "path": "post_hackathon_research/FINAL_ARCHIVE_MANIFEST.json",
+      "sha256": "9c8bbe34ab50c9a3e7375be10e1afc150b367ee7b42c76ff8fb443607dcbe3ed",
+      "size_bytes": 988
+    },
+    {
+      "path": "post_hackathon_research/GIT_ISOLATION.md",
+      "sha256": "d6e28cc8366715c750aa80f96d9e92b1a6ad6d625847b666b53bdaac184c9c3b",
+      "size_bytes": 1525
+    },
+    {
+      "path": "scripts/posthack_master.py",
+      "sha256": "e30c139d2255ad7dcaf00902ac76a39db821e3c187a4ff0fb34e335e85b7d368",
+      "size_bytes": 9311
+    },
+    {
+      "path": "scripts/posthack_train.py",
+      "sha256": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7",
+      "size_bytes": 31816
+    },
+    {
+      "path": "src/latticelm/final_recipe.py",
+      "sha256": "d9555ed1a8ca12b628423ba11787b6dcd1a593b5f54d060078427d9809d94dc9",
+      "size_bytes": 3601
+    },
+    {
+      "path": "src/latticelm/data_d.py",
+      "sha256": "c08631d747fab1083f9d4a31a7cf4b5df2213db5e94b913d85281e51e6608b42",
+      "size_bytes": 15290
+    },
+    {
+      "path": "scripts/train_final_production.py",
+      "sha256": "903106cedee65b630dad1903b0c09d9ad519e773921279bc3287438777ca6d1f",
+      "size_bytes": 22291
+    },
+    {
+      "path": "src/latticelm/model.py",
+      "sha256": "304b426b181b17688dbf8cd81ff97ab1d9060c59a0b763feec630857a6c9e5f7",
+      "size_bytes": 7063
+    },
+    {
+      "path": "src/latticelm/posthack_variants.py",
+      "sha256": "889dddd9b7d388174db3a270487b13fa06777bccf24a7b51f6cc3b0ea51e8c50",
+      "size_bytes": 25011
+    },
+    {
+      "path": "artifacts/final_production_run/final.pt",
+      "sha256": "94b91a2d39c2889209cb47b2e04b2c0d307a25610c40c5a124b595020eb762b0",
+      "size_bytes": 407413854
+    },
+    {
+      "path": "artifacts/data/data_d_v4/canonical-2250m/manifest.json",
+      "sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+      "size_bytes": 71079
+    },
+    {
+      "path": "artifacts/tokenizers/final_corpus_4k.json",
+      "sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7",
+      "size_bytes": 262988
+    }
+  ]
+}
