@@ -1,7 +1,14 @@
 {
   "at": "2026-10-11T03:49:22.327959+00:00",
   "batched_commit_verified_canonical_files": 16,
-  "coverage_scope": "Live immutable canonical-data batch verification only; continuous migration is ongoing. Mutable reports changed after this upload snapshot and await the next delta. No new trained endpoint is yet available for real download.",
+  "completed_live_archive_pass": {
+    "at": "2026-10-11T03:50:19.988383+00:00",
+    "file_count": 1773,
+    "manifest_sha256": "55c5723ab0fe9c9ef620d98809d9738d4e18e480ce1b8e26593a43d6599a117b",
+    "remote_manifest_verified": true,
+    "revision": "14548aacfbaca5ef4804cb2d3fae6805c1c99fd6"
+  },
+  "coverage_scope": "Live snapshot pass completed: 1773 verified selected files and a verified remote manifest. Later code/report revisions await the next delta; future checkpoints and a real new endpoint download remain pending.",
   "gzip_reconstruction_certificates": "COMPRESSED_INDEX_VERIFICATION.json",
   "independent_remote_spot_checks": [
     {
