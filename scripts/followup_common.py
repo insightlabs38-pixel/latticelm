@@ -34,6 +34,17 @@ def object_hash(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
+def metric_rows(path):
+    """Read fsynced journals without treating a torn final append as corruption."""
+    data=Path(path).read_bytes();lines=data.splitlines();rows=[]
+    for index,line in enumerate(lines):
+        try:rows.append(json.loads(line))
+        except json.JSONDecodeError:
+            if index==len(lines)-1 and not data.endswith(b'\n'):break
+            raise ValueError('Malformed committed metric record: '+str(path))
+    return rows
+
+
 def sync_dir(directory):
     fd = os.open(directory, os.O_DIRECTORY)
     try: os.fsync(fd)
@@ -105,7 +116,16 @@ def alive(identity, expected_name):
     if any(actual[k] != identity[k] for k in ("pid", "boot_id", "start_ticks")): return False
     try: command = Path(f"/proc/{identity['pid']}/cmdline").read_bytes().split(b"\0")
     except (FileNotFoundError, PermissionError): return False
-    return expected_name.encode() in command
+    if expected_name.encode() in command:return True
+    # Standalone public evaluators carry the run identity in --checkpoint,
+    # including when their wrapper dies. Require the exact local script and
+    # checkpoint parent; a substring match would accept unrelated processes.
+    scripts={str(ROOT/'scripts'/name).encode() for name in ('evaluate_gibc.py','evaluate_wikitext103.py')}
+    if not scripts.intersection(command) or b'--checkpoint' not in command:return False
+    try:
+        checkpoint=Path(command[command.index(b'--checkpoint')+1].decode()).resolve()
+        return checkpoint.parent==(RESEARCH/'runs'/expected_name).resolve()
+    except (IndexError,UnicodeDecodeError,OSError):return False
 
 
 def init_state(deadline=None, reserve_hours=4):
@@ -160,6 +180,19 @@ def verified_checkpoint(run_dir):
     raise RuntimeError("no verified checkpoint in manifest")
 
 
+def reconcile_rolling_manifest(run_dir):
+    """Before restart, promote the verified fallback into the retained head."""
+    path=Path(run_dir)/'checkpoint_manifest.json'
+    if not path.exists():return
+    manifest=json.loads(path.read_text());head=verified_checkpoint(run_dir)
+    if manifest['rolling'][0]['file']==head['file']:return
+    original=manifest['rolling'];offset=next(i for i,item in enumerate(original) if item['file']==head['file'])
+    # Preserve original metadata and all weights. Only the restart selection
+    # changes, so the trainer keeps an actual known-good previous checkpoint.
+    atomic_json(Path(run_dir)/'CHECKPOINT_FALLBACK_RECOVERY.json',{'at':utc(),'original_rolling':original,'verified_head':head})
+    manifest['rolling']=original[offset:];atomic_json(path,manifest)
+
+
 def complete_evidence(run_dir, record, require_evaluation=True):
     path = Path(run_dir) / "train_receipt.json"
     if not path.exists(): return False
@@ -172,6 +205,13 @@ def complete_evidence(run_dir, record, require_evaluation=True):
         if not ev.exists(): return False
         evaluation = json.loads(ev.read_text())
         if evaluation.get("checkpoint_sha256") != checkpoint["sha256"] or evaluation.get("status") != "COMPLETED": return False
+        if record.get('schema')=='followup-run-registration-v1':
+            mode=record.get('evaluation_mode','full')
+            required={'latest_validation.json','evaluation_protocol.json'}
+            if mode!='validation_only':required.update({'wikitext103.json','capability_samples.json',
+                'capability_full.json' if mode=='full' else 'capability_screen.json'})
+            if not required.issubset({i['file'] for i in evaluation.get('outputs',[])}):return False
+            if evaluation.get('evaluation_mode')!=mode or not evaluation.get('evaluation_source_hashes'):return False
         if 'registration_sha256' in evaluation and evaluation['registration_sha256']!=object_hash(record):return False
         for item in evaluation.get('outputs',[]):
             output=Path(run_dir)/item['file']

@@ -22,6 +22,26 @@ _HASH_CACHE_PATH=RESEARCH/'.archive-hash-cache.json'
 _HASHES=json.loads(_HASH_CACHE_PATH.read_text()) if _HASH_CACHE_PATH.exists() else {}
 
 
+def verify_compressed_indexes():
+    """Certify gzip reconstruction once per immutable compressed source digest."""
+    import gzip
+    receipt=RESEARCH/'COMPRESSED_INDEX_VERIFICATION.json'
+    previous=json.loads(receipt.read_text()) if receipt.exists() else {'files':{}}
+    for compressed in (ROOT/'post_hackathon_research/research_d').glob('*.jsonl.gz'):
+        sidecar=compressed.with_name(compressed.name+'.source.sha256')
+        if not sidecar.exists():raise ValueError('Compressed index lacks original source SHA')
+        expected=sidecar.read_text().strip();digest=cached_hash(compressed)
+        key=str(compressed.relative_to(ROOT));prior=previous['files'].get(key,{})
+        if prior.get('compressed_sha256')==digest and prior.get('source_sha256')==expected and prior.get('passed'):continue
+        h=hashlib.sha256();size=0
+        with gzip.open(compressed,'rb') as handle:
+            for block in iter(lambda:handle.read(1<<20),b''):h.update(block);size+=len(block)
+        if h.hexdigest()!=expected:raise ValueError('Compressed index reconstructs different bytes: '+key)
+        previous['files'][key]={'compressed_sha256':digest,'source_sha256':expected,'reconstructed_size_bytes':size,'passed':True,'at':utc()}
+        atomic_json(receipt,previous)
+        print('Verified reconstructable index: '+key,flush=True)
+
+
 def cached_hash(path):
     s=path.stat();key=json.dumps((str(path),s.st_ino,s.st_size,s.st_mtime_ns,s.st_ctime_ns))
     if key not in _HASHES:
@@ -84,7 +104,7 @@ def selected_files():
     if runs.exists():
         for run in runs.iterdir():
             if not run.is_dir():continue
-            files.extend(p for p in run.iterdir() if p.is_file() and p.suffix in (".json", ".jsonl",'.log'))
+            files.extend(p for p in run.iterdir() if p.is_file() and p.suffix in (".json", ".jsonl",'.log','.md'))
             if run.name.startswith('SMOKE-'):continue
             mp=run/'checkpoint_manifest.json'
             if mp.exists():
@@ -111,6 +131,7 @@ def archive(final=False):
             if final:raise RuntimeError('HF archive cooling down until '+utc(retry['retry_epoch']))
             return {'deferred':True,**retry}
     os.nice(10)
+    verify_compressed_indexes()
     source_snapshot()
     api=HfApi(token=SECRET.read_text().strip())
     info=api.repo_info(REPO,files_metadata=True)
@@ -158,13 +179,14 @@ def archive(final=False):
                 rel=local.relative_to(ROOT).as_posix()
                 destination=('post-hackathon/2026-10-01/'+local.relative_to(ROOT/'post_hackathon_research').as_posix() if local.is_relative_to(ROOT/'post_hackathon_research') else
                   PREFIX+'/'+(local.relative_to(RESEARCH).as_posix() if local.is_relative_to(RESEARCH) else 'shared/'+rel))
-                snapshot=Path(directory)/(str(index)+'-'+local.name)
                 immutable=local.suffix in ('.pt','.int32','.gz','.zip')
+                snapshot=local if immutable else Path(directory)/(str(index)+'-'+local.name)
                 if immutable:
-                    try:os.link(local,snapshot)
-                    except OSError as error:
-                        if error.errno!=errno.EXDEV:raise
-                        shutil.copyfile(local,snapshot)
+                    # Milestones/completed endpoints, frozen history and input
+                    # shards are immutable and retained. Hardlinking and then
+                    # unlinking changed their ctime, invalidating the persistent
+                    # hash cache and forcing repeated multi-GB reads each pass.
+                    pass
                 else:snapshot.write_bytes(local.read_bytes())
                 digest=cached_hash(local) if immutable else sha256(snapshot)
                 sibling=remote.get(destination)
@@ -172,7 +194,9 @@ def archive(final=False):
                     sibling=by_digest[digest];destination=sibling.rfilename
                 entry={'relative':rel,'destination':destination,'snapshot':snapshot,'digest':digest}
                 if remote_matches(snapshot,sibling,digest):
-                    record(entry,sibling,latest_revision,False);snapshot.unlink();continue
+                    record(entry,sibling,latest_revision,False)
+                    if not immutable:snapshot.unlink()
+                    continue
                 if snapshot.stat().st_size<2_000_000 and re.search(rb'github_pat_[A-Za-z0-9_]{30,}|hf_[A-Za-z0-9]{30,}',snapshot.read_bytes()):
                     raise RuntimeError('Credential-pattern content refused: '+rel)
                 if immutable and digest in pending_digests:entry['destination']=pending_digests[digest]
@@ -221,7 +245,8 @@ def representative_loads(require_new=False):
         expected=next(r['sha256'] for r in expected['trusted_files'] if r['path']=='artifacts/final_production_run/final.pt')
         selections=[('frozen submission model',frozen,expected,info.sha)]
         candidates=[r for r in registrations() if not r.get('smoke') and not r.get('historical_experiment') and complete_evidence(RESEARCH/'runs'/r['experiment_id'],r)]
-        candidates.sort(key=lambda r:(not bool(r.get('full_co4')),r['experiment_id']!='F32-DENSE-S1337-FRESH300M'))
+        def modulated(r):return bool(r.get('full_co4') and 'modulated' in r['full_co4']['block_types'])
+        candidates.sort(key=lambda r:(not modulated(r),-r['token_budget'] if modulated(r) else 0,r['experiment_id']!='F32-DENSE-S1337-FRESH300M'))
         if candidates:
             r=candidates[0];cp=verified_checkpoint(RESEARCH/'runs'/r['experiment_id'])
             local='post_hackathon_followup/runs/'+r['experiment_id']+'/'+cp['file'];m=manifest['files'][local]

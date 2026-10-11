@@ -1,0 +1,18 @@
+{
+  "files": {
+    "post_hackathon_research/research_d/capability_documents.jsonl.gz": {
+      "at": "2026-10-11T03:44:00.144969+00:00",
+      "compressed_sha256": "7b1022673ee390f3529a0fb0989e0aa6e56a8a3cecb338ccb1a57061c36b697f",
+      "passed": true,
+      "reconstructed_size_bytes": 1305585440,
+      "source_sha256": "28707f9335416c84d22bf35a4f1d1f7babc92d5f321e1b2fad3959113a773081"
+    },
+    "post_hackathon_research/research_d/documents.jsonl.gz": {
+      "at": "2026-10-11T03:44:04.004627+00:00",
+      "compressed_sha256": "84e135249d20fb79a7d510057ffeda0c82d784b172b6a763a373656002bc56cc",
+      "passed": true,
+      "reconstructed_size_bytes": 1282963114,
+      "source_sha256": "bae17f2bb64dbb0c1c8c3f58f0f35e043f901984747f733a0de59e9fa8b0e7b1"
+    }
+  }
+}

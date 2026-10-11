@@ -4,7 +4,7 @@ import argparse
 import json
 import subprocess
 from pathlib import Path
-from followup_common import ROOT,RESEARCH,STATE,atomic_json,atomic_bytes,complete_evidence,decision,registrations,utc
+from followup_common import ROOT,RESEARCH,STATE,atomic_json,atomic_bytes,complete_evidence,decision,registrations,utc,metric_rows
 
 
 def read(path,default=None):
@@ -48,6 +48,23 @@ def reports(state,plots=False):
           'compute_caveat':'6NT is a coarse matrix-training proxy including embeddings. Prefix-local latent QKV/MLP matrix applications add explicit extra work using the same weights; triadic arithmetic/selected attention add a separate element-operation proxy. These are not measured FLOPs. Top-k comparisons, memory traffic, framework overhead and standard attention costs are not fully counted. Wall time is authoritative.',
           'checkpoint_sha256':receipt.get('checkpoint_sha256'),'source_commit':r['code_commit'],'source_hashes':r['source_hashes'],
           'config':cfg,'full_co4':r.get('full_co4')})
+        summary=summaries[-1]
+        lines=['# '+r['experiment_id'],'','Post-submission research. Updated '+utc()+'.','',
+          'Status: '+summary['status']+'. '+('Endpoint checkpoint and evaluation evidence verified.' if complete else 'Incomplete; no final scientific conclusion.'),'',
+          'Role: '+str(summary['role']),
+          f"Seed: {cfg['seed']}; parameters: {r['parameter_count']:,}; token target: {r['token_budget']:,}.",
+          'Source commit: `'+r['code_commit']+'`.',
+          'Checkpoint SHA256: `'+str(summary['checkpoint_sha256'])+'`.',
+          'Initialization/schedule: '+r.get('initialization_policy','See immutable registration.')+'.',
+          'Full-Co4: '+json.dumps(r.get('full_co4'))+'.',
+          '','','| Metric | Value |','|---|---|']
+        for key in ('logical_tokens','processed_tokens','wall_seconds','tokens_per_second','peak_rss_bytes','heldout_loss','bits_per_byte','perplexity','capability_scope'):
+            lines.append('| '+key+' | '+str(summary[key])+' |')
+        lines.extend(['','Source losses: '+json.dumps(summary['source_losses'])+'.',
+          'Capability results: '+json.dumps(summary['capability'])+'.',
+          '','Compute/depth claims require the paired comparison reports and their uncertainty; parameter matching does not imply compute matching.',
+          'Full-Co4 diagnostic statistics, when available, are in `architecture_diagnostics.json`. Configuration and source hashes are in the immutable run registry and `FOLLOWUP_RUN_SUMMARY.json`.'])
+        atomic_bytes(run/'REPORT.md',('\n'.join(lines)+'\n').encode())
     atomic_json(RESEARCH/'FOLLOWUP_RUN_SUMMARY.json',{'at':utc(),'post_submission':True,'runs':summaries})
     plan=read(RESEARCH/'FOLLOWUP_EXPERIMENT_PLAN.json',{})
     family_decisions={p.name:read(p) for p in (RESEARCH/'decisions').glob('*.json')}
@@ -79,7 +96,9 @@ def reports(state,plots=False):
     for index,(q,a) in enumerate(answers,1):lines.extend([f'## {index}. {q}','',a,''])
     atomic_bytes(RESEARCH/'FOLLOWUP_FINAL_SYNTHESIS.md',('\n'.join(lines).rstrip()+'\n').encode())
     matrix=['# Follow-up execution matrix','','| Experiment | Status | Parameters | Tokens | Loss | BPB | Wall hours |','|---|---|---:|---:|---:|---:|---:|']
-    for r in summaries:matrix.append(f"| {r['experiment_id']} | {r['status']} | {r['parameters']:,} | {r['logical_tokens']:,} | {r['heldout_loss']} | {r['bits_per_byte']} | {(r['wall_seconds'] or 0)/3600:.3f} |")
+    for r in summaries:
+        wall='pending' if r['wall_seconds'] is None else f"{r['wall_seconds']/3600:.3f}"
+        matrix.append(f"| {r['experiment_id']} | {r['status']} | {r['parameters']:,} | {r['logical_tokens']:,} | {r['heldout_loss']} | {r['bits_per_byte']} | {wall} |")
     atomic_bytes(RESEARCH/'FOLLOWUP_EXPERIMENT_MATRIX.md',('\n'.join(matrix)+'\n').encode())
     if plots:
         import matplotlib
@@ -91,7 +110,7 @@ def reports(state,plots=False):
             path=RESEARCH/'runs'/r['experiment_id']/'validation_history.jsonl'
             if not path.exists():path=path.parent/'historical_learning_curve.jsonl'
             if not path.exists():continue
-            history=[json.loads(x) for x in path.read_text().splitlines()]
+            history=metric_rows(path)
             if not history:continue
             ys=[x['frozen_mixture_weighted_loss'] for x in history]
             axes[0].plot([x['logical_tokens']/1e6 for x in history],ys,label=r['experiment_id'])
@@ -119,6 +138,10 @@ def publish_git():
     paths += [str(p.relative_to(ROOT)) for p in (ROOT/'tests').glob('test_followup_*.py')]
     paths += [str(p.relative_to(ROOT)) for p in (ROOT/'tests/fixtures/ihms').glob('*') if p.is_file()]
     subprocess.run(['git','add','--',*paths],cwd=ROOT,check=True)
+    # The run namespace is deliberately ignored to keep weights out of Git.
+    # Add only these generated, small Markdown reports with an exact allowlist.
+    run_reports=[str(p.relative_to(ROOT)) for p in (RESEARCH/'runs').glob('*/REPORT.md') if not p.parent.name.startswith('SMOKE-')]
+    if run_reports:subprocess.run(['git','add','-f','--',*run_reports],cwd=ROOT,check=True)
     if subprocess.run(['git','diff','--cached','--quiet'],cwd=ROOT).returncode:
         subprocess.run(['git','commit','-m','Finalize post-submission follow-up research evidence'],cwd=ROOT,check=True)
     subprocess.run(['git','-c','credential.helper=','-c','credential.helper=/home/insightlabs38/.config/latticelm-followup/git-credential','push','https://github.com/insightlabs38-pixel/latticelm','HEAD:posthack-followup-2026-10'],cwd=ROOT,check=True)
@@ -143,14 +166,18 @@ def finalize(state):
     with (RESEARCH/'.archive.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX)
         archive(final=True);loads=representative_loads(require_new=True)
-        state['finalized']=True
-        reports(state,plots=True)
-        revision=publish_git()
-        atomic_json(RESEARCH/'FOLLOWUP_CLOSEOUT_RECEIPT.json',{'at':utc(),'final_git_commit':revision,'main_unchanged':True,
-             'remote_loads_passed':loads['passed'],'scientific_results_complete':all(complete_evidence(RESEARCH/'runs'/r['experiment_id'],r) for r in registrations() if r['experiment_id'] in ('F32-DENSE-S1337-FRESH300M','F16-D4-S2026-FRESH150M','F8-MOD-S7331-FRESH100M','F8-DIFF-S7331-FRESH100M')) and any(complete_evidence(RESEARCH/'runs'/r['experiment_id'],r) for r in registrations() if r.get('full_co4') and 'modulated' in r['full_co4']['block_types'] and r['token_budget']>=50_000_000),
-             'conditional_run_semantics':'Closed gates and deadline skips are reported as unrun, never negative experiments.'})
-        manifest=archive(final=True)
-        state['finalized_git_commit']=revision;state['finalized_utc']=utc();atomic_json(STATE,state)
+        closing=dict(state,finalized=True)
+        try:
+            reports(closing,plots=True)
+            revision=publish_git()
+            atomic_json(RESEARCH/'FOLLOWUP_CLOSEOUT_RECEIPT.json',{'at':utc(),'final_git_commit':revision,'main_unchanged':True,
+                 'remote_loads_passed':loads['passed'],'scientific_results_complete':all(complete_evidence(RESEARCH/'runs'/r['experiment_id'],r) for r in registrations() if r['experiment_id'] in ('F32-DENSE-S1337-FRESH300M','F16-D4-S2026-FRESH150M','F8-MOD-S7331-FRESH100M','F8-DIFF-S7331-FRESH100M')) and any(complete_evidence(RESEARCH/'runs'/r['experiment_id'],r) for r in registrations() if r.get('full_co4') and 'modulated' in r['full_co4']['block_types'] and r['token_budget']>=50_000_000),
+                 'conditional_run_semantics':'Closed gates and deadline skips are reported as unrun, never negative experiments.'})
+            manifest=archive(final=True)
+        except Exception:
+            reports(state,plots=True)
+            raise
+        state.update(finalized=True,finalized_git_commit=revision,finalized_utc=utc());atomic_json(STATE,state)
         decision('FOLLOWUP_FINALIZED',git_commit=revision,verified_file_count=len(manifest['files']))
 
 if __name__=='__main__':

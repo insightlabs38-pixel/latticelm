@@ -13,9 +13,13 @@ def released_prefix(q, k, v, ql, kl, vl, top_k=12, differential_lambda=None):
     km = k + kl * q
     vm = v**2 + 2*v + (ql*kl)*(1+vl.abs())
     count = min(top_k, q.shape[-2])
-    qs, qi = qm.topk(count, dim=-2)
-    ks, ki = km.topk(count, dim=-2)
-    vs, vi = vm.topk(count, dim=-2)
+    # Source topk leaves exact ties unspecified. The causal LM adaptation
+    # explicitly chooses earliest prefix indices so future padding cannot
+    # change either the emitted token update or a tie's chosen subgradient.
+    qi = qm.argsort(dim=-2, descending=True, stable=True)[...,:count,:]
+    ki = km.argsort(dim=-2, descending=True, stable=True)[...,:count,:]
+    vi = vm.argsort(dim=-2, descending=True, stable=True)[...,:count,:]
+    qs, ks, vs = qm.gather(-2,qi), km.gather(-2,ki), vm.gather(-2,vi)
     qa = torch.cat([ql, qs], dim=-2)
     ka = torch.cat([kl, ks], dim=-2)
     va = torch.cat([vl, vs], dim=-2)

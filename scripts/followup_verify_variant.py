@@ -10,7 +10,7 @@ import sys
 import time
 from types import SimpleNamespace
 import torch
-from followup_common import ROOT,RESEARCH,registered,register,verified_checkpoint,atomic_json,object_hash,alive,utc
+from followup_common import ROOT,RESEARCH,registered,register,verified_checkpoint,atomic_json,object_hash,alive,utc,reconcile_rolling_manifest
 from followup_verify_launch import compare
 
 CHILD=None
@@ -19,6 +19,7 @@ CHILD=None
 def launch(record):
     global CHILD
     run=RESEARCH/'runs'/record['experiment_id'];run.mkdir(parents=True,exist_ok=True)
+    reconcile_rolling_manifest(run)
     heartbeat=run/'heartbeat.json'
     if heartbeat.exists():
         identity=json.loads(heartbeat.read_text())

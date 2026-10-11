@@ -46,6 +46,10 @@ A hybrid is a separate family and must keep its ordinary attention/FFN costs vis
 
 The implemented hybrid's ordinary MHSA processes causal token states and carries the prefix-local latent unchanged. The released vision MHSA jointly processes a global CLS token. This is an additional disclosed causal LM adaptation; raw modulated-operator equivalence does not establish whole-hybrid equivalence. Standard control blocks use four attention heads; modulated blocks retain one head/latent as required by the released operator.
 
+### Exact selection ties
+
+The deeper review reproduced a prefix-invariance failure with integer-valued/tied relevance scores: `torch.topk` can choose different tied items when a prefix is padded to different future lengths. The causal LM adaptation now resolves exact ties by descending value followed by earliest prefix index, including the selected order/subgradient. The literal oracle uses a full stable sort; production repairs ambiguous cutoff rows and tied selected ranks independently. This is an explicitly disclosed LM tie policy. The author's unmodified fixture remains pinned and checks the released operator on non-tied random inputs; it does not claim equivalence to the author's unspecified tie choices. Both pure and Differential oracle/gradient/prefix tests now include tied inputs. No full-Co4 training preceded this correction.
+
 ## VM interruption assumptions
 
 Metadata confirms this VM is preemptible, automatic restart is disabled, and maintenance action is TERMINATE. No dedicated 120-second notice is assumed. The controller polls `instance/preempted`, requests a flush if available, and relies on periodic atomic checkpoints and persistent disk. A user systemd service can recover the controller when the VM boots; it cannot start a stopped VM.

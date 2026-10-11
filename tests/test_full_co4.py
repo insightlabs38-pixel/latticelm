@@ -81,3 +81,24 @@ def test_compatibility_with_pinned_author_code():
     ga=torch.autograd.grad(oracle.square().sum(),(x,author.qkv.weight),retain_graph=True)
     gb=torch.autograd.grad(output.square().sum(),(x,author.qkv.weight))
     for a,b in zip(ga,gb):torch.testing.assert_close(a,b,atol=2e-10,rtol=2e-10)
+
+
+@pytest.mark.parametrize('differential',[False,True])
+def test_tied_selection_is_prefix_invariant_and_matches_oracle_gradients(differential):
+    torch.manual_seed(0)
+    raw=[torch.zeros(1,37,4,dtype=torch.float64),torch.zeros(1,37,4,dtype=torch.float64),
+         torch.randint(0,3,(1,37,4)).double()]
+    raw += [torch.zeros(1,37,1,4,dtype=torch.float64) for _ in range(3)]
+    raw=[x.requires_grad_() for x in raw];copies=[x.detach().clone().requires_grad_() for x in raw]
+    lam=torch.tensor(.8,dtype=torch.float64) if differential else None
+    reference=causal_reference(*raw,differential_lambda=lam)
+    production=causal_production(*copies,return_indices=True,differential_lambda=lam)
+    for a,b in zip(reference[:2],production[:2]):torch.testing.assert_close(a,b,atol=2e-12,rtol=2e-12)
+    for a,b in zip(reference[2],production[2]):
+        for x,y in zip(a,b):assert torch.equal(x,y)
+    for t in (13,22,29,35):
+        prefix=causal_production(*(x[:,:t] for x in copies),differential_lambda=lam)
+        for a,b in zip(prefix[:2],production[:2]):torch.testing.assert_close(a,b[:,:t],atol=2e-12,rtol=2e-12)
+    sum(x.square().mean() for x in reference[:2]).backward()
+    sum(x.square().mean() for x in production[:2]).backward()
+    for a,b in zip(raw,copies):torch.testing.assert_close(a.grad,b.grad,atol=2e-11,rtol=2e-11)

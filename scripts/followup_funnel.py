@@ -7,7 +7,7 @@ import os
 import subprocess
 from pathlib import Path
 import torch
-from followup_common import ROOT,RESEARCH,atomic_json,complete_evidence,decision,registered,registrations,register,sha256,utc,verified_checkpoint
+from followup_common import ROOT,RESEARCH,atomic_json,complete_evidence,decision,registered,registrations,register,sha256,utc,verified_checkpoint,metric_rows
 from latticelm.final_recipe import wsd_lr_scale
 from followup_prepare import make_record
 from followup_plan import shallow_control
@@ -21,6 +21,7 @@ def ensure(name,recipe,budget,role,control='',seed=1337,**extra):
     if name in existing:return existing[name]
     cfg=copy.deepcopy(recipe['config']);cfg['seed']=seed
     full=copy.deepcopy(recipe.get('full_co4'))
+    if full:extra.setdefault('max_checkpoint_seconds',900)
     r=make_record(name,cfg,budget,800 if full else 10000,control,
         variant=recipe.get('variant','baseline'),role=role,auto_preflight=extra.pop('auto_preflight',True),
         full_co4=full,architecture_specific_tuning=bool(full),
@@ -114,14 +115,18 @@ def import_control(old_name):
 def learned(name):
     directory=RESEARCH/'runs'/name;history=directory/'validation_history.jsonl'
     if not history.exists():return False
-    rows=[json.loads(line) for line in history.read_text().splitlines()]
-    return len(rows)>1 and rows[-1]['frozen_mixture_weighted_loss']<rows[0]['frozen_mixture_weighted_loss']
+    rows=metric_rows(history)
+    latest=read(directory/'latest_validation.json')
+    return bool(rows and latest['logical_tokens']>rows[0]['logical_tokens'] and latest['frozen_mixture_weighted_loss']<rows[0]['frozen_mixture_weighted_loss'])
 
 
 def late_improvement(name):
     path=RESEARCH/'runs'/name/'validation_history.jsonl'
     if not path.exists():return False
-    rows=[json.loads(line) for line in path.read_text().splitlines()]
+    rows=metric_rows(path)
+    latest=read(path.parent/'latest_validation.json')
+    if not any(r['logical_tokens']==latest['logical_tokens'] for r in rows):rows.append(latest)
+    rows=sorted({r['logical_tokens']:r for r in rows}.values(),key=lambda r:r['logical_tokens'])
     late=[r for r in rows if r['logical_tokens']>=50_000_000]
     if len(late)<2:return False
     weights=read(ROOT/registered(name)['manifest_path'])['mixture_definition']

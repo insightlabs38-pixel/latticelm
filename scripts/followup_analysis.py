@@ -5,10 +5,25 @@ import math
 from pathlib import Path
 import numpy as np
 from scipy.stats import binomtest
-from followup_common import ROOT,RESEARCH,registered,utc,atomic_json,sha256
+from followup_common import ROOT,RESEARCH,registered,utc,atomic_json,sha256,metric_rows,parse_time
 
 
 def read(path):return json.loads(Path(path).read_text())
+
+
+def training_wall(record,receipt):
+    """Retained training time and actual elapsed interval remain separate."""
+    if record.get('historical_experiment'):
+        events=metric_rows(ROOT/'post_hackathon_research/controller_events.jsonl')
+        starts=[parse_time(e['at']) for e in events if e.get('experiment_id')==record['historical_experiment'] and e['event']=='TRAIN_START']
+        ends=[parse_time(e['at']) for e in events if e.get('experiment_id')==record['historical_experiment'] and e['event']=='TRAIN_END']
+        elapsed=max(ends)-min(starts) if starts and ends else None
+    else:
+        initialization=RESEARCH/'runs'/record['experiment_id']/'initialization_receipt.json'
+        elapsed=parse_time(receipt['at'])-parse_time(read(initialization)['at']) if initialization.exists() and receipt.get('at') else None
+    if elapsed is not None and elapsed<=0:raise ValueError('Nonpositive observed training interval')
+    return {'retained_training_seconds':receipt['wall_seconds'],'observed_elapsed_seconds':elapsed,
+            'scope':'Elapsed interval includes replayed work/resume initialization and downtime where observable; retained checkpoint wall excludes discarded work. Neither includes preflight/evaluation cost.'}
 
 
 def paired_loss(candidate,control,weights,draws=2000):
@@ -50,7 +65,7 @@ def paired_tasks(candidate,control):
         def index(rows):
             result={}
             for row in rows:
-                key=(str(row['doc_id']),row['target_hash'])
+                key=(str(row['doc_id']),row.get('doc_hash'),row.get('prompt_hash'),row['target_hash'])
                 if key in result:raise ValueError('Duplicate capability identity')
                 result[key]=row
             return result
@@ -98,8 +113,18 @@ def comparison(candidate_name,control_name):
     for key in ('seed','batch_size','context_length','optimizer','learning_rate','warmup_fraction','stable_fraction','decay_fraction'):
         if candidate['config'][key]!=control['config'][key] and not (key=='learning_rate' and candidate.get('architecture_specific_tuning')):raise ValueError('Unmatched config '+key)
     cd=RESEARCH/'runs'/candidate_name;rd=RESEARCH/'runs'/control_name
+    ce=read(cd/'evaluation_receipt.json');re=read(rd/'evaluation_receipt.json')
+    if not ce.get('evaluation_source_hashes') or ce['evaluation_source_hashes']!=re.get('evaluation_source_hashes'):
+        raise ValueError('Comparators did not use the same pinned evaluation pipeline')
+    if ce.get('evaluation_mode')!=re.get('evaluation_mode'):raise ValueError('Full and screened evaluations cannot be paired')
     cache=RESEARCH/'comparisons'/(candidate_name+'__'+control_name+'.json')
     identity={str(directory/k):sha256(directory/k) for directory in (cd,rd) for k in ('train_receipt.json','evaluation_receipt.json','latest_validation.json','wikitext103.json')}
+    identity['analysis_source_sha256']=sha256(Path(__file__))
+    for directory,record in ((cd,candidate),(rd,control)):
+        paths=list(directory.glob('metrics-*.jsonl'))+[directory/'validation_history.jsonl',directory/'capability_samples.json',directory/'initialization_receipt.json']
+        if record.get('historical_experiment'):
+            paths += [ROOT/'post_hackathon_research/controller_events.jsonl',ROOT/'post_hackathon_research/runs'/record['historical_experiment']/'metrics.jsonl']
+        identity.update({str(path):sha256(path) for path in paths if path.exists()})
     if cache.exists():
         existing=read(cache)
         if existing.get('input_receipt_hashes')==identity:return existing
@@ -111,24 +136,37 @@ def comparison(candidate_name,control_name):
     quality=loss['candidate_minus_control']<0 and bpb['candidate_minus_control']<0 and (loss['ci95'][1]<0 or bpb['ci95'][1]<0)
     clear_worse=loss['ci95'][0]>0 or bpb['ci95'][0]>0
     consistent_with_tie=loss['ci95'][0]<=0<=loss['ci95'][1] and bpb['ci95'][0]<=0<=bpb['ci95'][1]
-    wall_ratio=cr['wall_seconds']/rr['wall_seconds'];depth_ratio=candidate['config']['n_layers']/control['config']['n_layers']
+    candidate_wall=training_wall(candidate,cr);control_wall=training_wall(control,rr)
+    elapsed_known=candidate_wall['observed_elapsed_seconds'] is not None and control_wall['observed_elapsed_seconds'] is not None
+    retained_ratio=cr['wall_seconds']/rr['wall_seconds']
+    wall_ratio=candidate_wall['observed_elapsed_seconds']/control_wall['observed_elapsed_seconds'] if elapsed_known else retained_ratio
+    depth_ratio=candidate['config']['n_layers']/control['config']['n_layers']
     lower_token_thresholds=[]
     history=cd/'validation_history.jsonl'
     if history.exists():
-        for line in history.read_text().splitlines():
-            row=json.loads(line)
+        by_tokens={row['logical_tokens']:row for row in metric_rows(history)}
+        previous_strong=None
+        for tokens,row in sorted(by_tokens.items()):
             if row['logical_tokens']>=candidate['token_budget']:continue
             result=paired_loss(row,read(rd/'latest_validation.json'),weights)
-            if result['ci95'][1]<0:lower_token_thresholds.append(row['logical_tokens'])
+            if result['ci95'][1]<0:
+                if previous_strong is not None:lower_token_thresholds.extend([previous_strong,tokens])
+                previous_strong=tokens
+            else:previous_strong=None
+        lower_token_thresholds=sorted(set(lower_token_thresholds))
     wall=wall_uncertainty(candidate,control)
+    clear_wall_gain=bool(elapsed_known and wall_ratio<1 and wall.get('ratio_ci95') and wall['ratio_ci95'][1]<1)
     result={'at':utc(),'candidate':candidate_name,'control':control_name,'input_receipt_hashes':identity,'paired_loss':loss,'paired_bpb':bpb,'capability':tasks,
             'quality_gain':bool(quality and not tasks['any_clear_regression']),'clear_lm_regression':bool(clear_worse),
             'quality_consistent_with_tie':bool(consistent_with_tie),'tie_note':'Failure to detect a difference is not proof of statistical equivalence.',
-            'wall_ratio':wall_ratio,'wall_uncertainty':wall,'clear_wall_gain':bool(wall.get('ratio_ci95') and wall['ratio_ci95'][1]<1),
+            'wall_ratio':wall_ratio,'wall_uncertainty':wall,'clear_wall_gain':clear_wall_gain,
+            'retained_training_wall_ratio':retained_ratio,'candidate_wall_accounting':candidate_wall,'control_wall_accounting':control_wall,
+            'wall_ratio_scope':'Observed elapsed training interval' if elapsed_known else 'Retained productive time only; cannot auto-promote on wall efficiency',
             'depth_ratio':depth_ratio,'parameter_ratio':candidate['parameter_count']/control['parameter_count'],
             'sample_efficiency_strong_threshold_tokens':lower_token_thresholds,
+            'sample_efficiency_policy':'At least two adjacent distinct earlier token positions beat the comparator endpoint under paired loss uncertainty; an isolated crossing is descriptive only.',
             'efficiency_signal':bool(not clear_worse and not tasks['any_clear_regression'] and
-                                    (lower_token_thresholds or (consistent_with_tie and ((wall.get('ratio_ci95') and wall['ratio_ci95'][1]<1) or depth_ratio<1)))),
+                                    (lower_token_thresholds or (consistent_with_tie and (clear_wall_gain or depth_ratio<1)))),
             'axes_are_separate':True,'final_claim_requires_two_seeds':True}
     atomic_json(cache,result);return result
 
@@ -140,11 +178,13 @@ def wall_uncertainty(candidate,control,draws=1000):
         if record.get('historical_experiment'):paths=[ROOT/'post_hackathon_research/runs'/record['historical_experiment']/'metrics.jsonl']
         by_step={}
         for path in paths:
-            for line in path.read_text().splitlines():
-                row=json.loads(line);by_step[row['step']]=row
+            for row in metric_rows(path):
+                prior=by_step.get(row['step'])
+                if prior is None or row.get('at','')>=prior.get('at',''):by_step[row['step']]=row
         rows=sorted(by_step.values(),key=lambda r:r['step']);values=[]
         for i in range(0,len(rows)-100,100):
             a,b=rows[i],rows[i+100];duration=b['wall_seconds']-a['wall_seconds'];tokens=b['processed_tokens']-a['processed_tokens']
+            if b['step']-a['step']!=100 or len({r.get('attempt') for r in rows[i:i+101]})>1:continue
             if duration>0 and tokens>0:values.append(duration/tokens)
         return np.asarray(values)
     a,b=blocks(candidate),blocks(control)

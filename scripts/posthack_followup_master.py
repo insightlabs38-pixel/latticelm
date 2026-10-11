@@ -15,7 +15,7 @@ from pathlib import Path
 from followup_common import (ROOT, RESEARCH, STATE, alive, atomic_bytes, atomic_json, complete_evidence,
                              decision, failure_class, init_state, process_identity, projected_seconds,
                              registrations, sha256, utc, verified_checkpoint)
-from followup_common import object_hash
+from followup_common import object_hash,reconcile_rolling_manifest
 
 STOP = False
 
@@ -29,10 +29,53 @@ def valid_certificate(record):
             and certificate.get("source_hashes") == record.get("source_hashes", {}))
 
 
+def disappeared_classification(active,record,return_code,failure):
+    if failure:return failure_class(return_code,failure)
+    if active['phase']=='RUNNING':
+        run=RESEARCH/'runs'/record['experiment_id'];receipt=run/'train_receipt.json'
+        if receipt.exists():
+            data=json.loads(receipt.read_text())
+            if data.get('status')=='INTERRUPTED_INFRA':
+                cp=verified_checkpoint(run)
+                if cp and cp['sha256']==data['checkpoint_sha256'] and cp['logical_tokens']==data['logical_tokens']:
+                    return 'INTERRUPTED_INFRA'
+    return failure_class(return_code,failure)
+
+
+def scarce_time(records,state,now):
+    """Switch to prompt section36 when unfinished core work threatens reserve."""
+    terminal={'COMPLETED','ARCHIVED','REJECTED','FAILED_CODE','FAILED_DATA','FAILED_SCIENCE'}
+    core_seconds=0.;full_rates=[];meaningful_full_complete=False;full_remaining=[]
+    for r in records:
+        if r.get('smoke'):continue
+        name=r['experiment_id'];info=state['runs'].get(name,{})
+        status=info.get('status','PLANNED');full=r.get('full_co4')
+        modulated=bool(full and 'modulated' in full['block_types'])
+        if modulated and info.get('measured_tps'):full_rates.append(info['measured_tps'])
+        if modulated and r['token_budget']>=50_000_000:
+            if status in ('COMPLETED','ARCHIVED'):meaningful_full_complete=True
+            elif status not in terminal:
+                left=max(0,r['token_budget']-info.get('saved_tokens',r.get('initial_logical_tokens',0)))
+                full_remaining.append(projected_seconds(left,info.get('measured_tps',r['planning_tps']),evaluation_seconds=r.get('evaluation_seconds',3600)))
+        if name in ('F32-DENSE-S1337-FRESH300M','F16-D4-S2026-FRESH150M','F8-MOD-S7331-FRESH100M','F8-DIFF-S7331-FRESH100M') and status not in terminal:
+            left=max(0,r['token_budget']-info.get('saved_tokens',0))
+            core_seconds+=projected_seconds(left,info.get('measured_tps',r['planning_tps']),evaluation_seconds=r.get('evaluation_seconds',1800))
+    if meaningful_full_complete:needed_full=0.
+    else:needed_full=min(full_remaining) if full_remaining else projected_seconds(50_000_000,max(full_rates,default=800),evaluation_seconds=3600)
+    return state['scientific_stop_epoch']-now < core_seconds+needed_full
+
+
 def choose(records, state, only=None, now=None):
     now = time.time() if now is None else now
+    scarce=scarce_time(records,state,now) if not only else False
     def priority(record):
         n=record['experiment_id']
+        if scarce:
+            if n.startswith(('F32-','CONTROL-R32')):return 0
+            if n.startswith(('F8-MOD-S7331','F8-DIFF-S7331')):return 2
+            if n.startswith(('F16-D4','CONTROL-R16')):return 4
+            if '16M' in n or 'DEPTH' in n or 'EXT200M' in n or 'DIFFERENTIAL' in n:return 5
+            if n.startswith('FC') or 'FULLCONTROL' in n:return 3 if 'S2026' in n else 1
         if n.startswith(('F32-','CONTROL-R32')):return 0
         if n.startswith(('F16-D4','CONTROL-R16')):return 1
         if n.startswith(('F8-MOD-S7331','F8-DIFF-S7331')):return 2
@@ -98,6 +141,7 @@ def preemption_notice():
 
 def launch(record, phase, state):
     name = record["experiment_id"]; run = RESEARCH / "runs" / name; run.mkdir(parents=True, exist_ok=True)
+    if phase=='RUNNING':reconcile_rolling_manifest(run)
     script = {"RUNNING":"followup_train.py","EVALUATING":"followup_evaluate.py","VERIFYING":"followup_verify_variant.py"}[phase]
     if phase=='RUNNING':script=record.get('trainer_script',script)
     cmd = [sys.executable, str(ROOT / "scripts" / script), "--experiment-id", name]
@@ -242,7 +286,7 @@ def master(args):
                 elif active["phase"] == "EVALUATING" and complete_evidence(run, record):
                     info["status"] = "COMPLETED"; decision("ENDPOINT_COMPLETED", experiment_id=name)
                 else:
-                    classification = failure_class(rc, failure)
+                    classification = disappeared_classification(active,record,rc,failure)
                     info["status"] = classification
                     info["infrastructure_interruptions"] = info.get("infrastructure_interruptions", 0) + int(classification == "INTERRUPTED_INFRA")
                     if classification == "INTERRUPTED_INFRA":

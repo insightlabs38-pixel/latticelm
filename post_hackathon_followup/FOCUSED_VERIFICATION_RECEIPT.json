@@ -1,12 +1,16 @@
 {
-  "at": "2026-10-11T03:15:27.486406+00:00",
+  "active_dense_registered_sources_unchanged": true,
+  "at": "2026-10-11T03:48:07.863666+00:00",
+  "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 .venv/bin/python -m pytest -q tests/test_full_co4.py tests/test_followup_controller.py tests/test_followup_science.py tests/test_followup_archive.py tests/test_followup_review.py",
   "passed": true,
-  "policy": "Tiny correctness/controller/provenance/archive tests only, with one CPU thread. Actual scientific-batch smoke/resume is exclusive and gated separately. Real batched HF upload waits for rate-limit cooldown.",
+  "policy": "Focused tiny tests only, one CPU thread. Deep review regressions include tied selector causality, evaluator crash publication/identity, partial-exit classification, torn final journals, fallback retention, source-validation recovery, archive batching and compressed reconstruction. Actual scientific-batch smoke/resume runs exclusively through the supervisor.",
   "test_paths": [
     "tests/test_full_co4.py",
     "tests/test_followup_controller.py",
     "tests/test_followup_science.py",
-    "tests/test_followup_archive.py"
+    "tests/test_followup_archive.py",
+    "tests/test_followup_review.py"
   ],
-  "tests": 40
+  "test_wall_seconds": 3.16,
+  "tests": 59
 }

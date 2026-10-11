@@ -1,6 +1,6 @@
 # Follow-up final synthesis
 
-Post-submission research. Updated 2026-10-11T02:30:32.812399+00:00.
+Post-submission research. Updated 2026-10-11T03:48:07.972630+00:00.
 Status: LIVE — incomplete endpoints are explicitly unresolved.
 
 ## 1. At 32M/300M, does existing MOD-Co4 differ meaningfully from dense?
@@ -61,4 +61,4 @@ Verified coverage is determined by FOLLOWUP_ARCHIVE_MANIFEST.json and HF_REPRESE
 
 ## 15. What exact Git/HF state defines the research?
 
-Reporting source revision `c9ed214a5131c2e891f9e77b5ecee74243be4f72`; branch `posthack-followup-2026-10`, frozen main/submission `43832b4c7bfe8be007ca6b9d1042aa2041c7f280`. HF `insightlabs38-pixel/LatticeLM-research`, prefix `post-hackathon-followup/2026-10-11`, last verified receipt d1e2f1f5436dbb2e30bf5ba6db761c6f8534f84e. Final closeout commit/revision are recorded in FOLLOWUP_CLOSEOUT_RECEIPT.json and the archive manifest.
+Reporting source revision `035002e7c6db902f56f0166c8265e144a26f182c`; branch `posthack-followup-2026-10`, frozen main/submission `43832b4c7bfe8be007ca6b9d1042aa2041c7f280`. HF `insightlabs38-pixel/LatticeLM-research`, prefix `post-hackathon-followup/2026-10-11`, last verified receipt d1e2f1f5436dbb2e30bf5ba6db761c6f8534f84e. Final closeout commit/revision are recorded in FOLLOWUP_CLOSEOUT_RECEIPT.json and the archive manifest.

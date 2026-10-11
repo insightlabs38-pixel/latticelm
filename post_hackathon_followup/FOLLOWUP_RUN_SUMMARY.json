@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-11T02:29:55.937502+00:00",
+  "at": "2026-10-11T03:48:07.955538+00:00",
   "post_submission": true,
   "runs": [
     {
@@ -436,8 +436,8 @@
       "depth_total_blocks": 10,
       "experiment_id": "F32-DENSE-S1337-FRESH300M",
       "full_co4": null,
-      "heldout_loss": 3.901065093278885,
-      "logical_tokens": 10633216,
+      "heldout_loss": 3.5002628505229954,
+      "logical_tokens": 28803072,
       "matrix_training_flops_proxy_6NT": 0,
       "parameters": 31986396,
       "peak_rss_bytes": null,
@@ -458,10 +458,10 @@
         "src/latticelm/research_sampling.py": "150fdafc14f37b8fcc52d0963bcc0d8597843a79fa775b8aa87d9108b2992150"
       },
       "source_losses": {
-        "finemath": 3.859048753976822,
-        "fineweb": 3.9562887251377106,
-        "fineweb_edu": 4.027585059404373,
-        "wikipedia": 3.6459567844867706
+        "finemath": 3.4396474361419678,
+        "fineweb": 3.5722316205501556,
+        "fineweb_edu": 3.630252420902252,
+        "wikipedia": 3.2329527735710144
       },
       "status": "RUNNING",
       "tokens_per_second": null,

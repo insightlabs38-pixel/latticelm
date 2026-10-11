@@ -10,6 +10,33 @@ import torch.nn.functional as F
 from torch import nn
 
 
+def prefix_topk(projected,allowed,count):
+    """Descending value, earliest index for exact boundary ties.
+
+    torch.topk's arbitrary tie choice can depend on padded future length. Keep
+    its fast path, then sort only feature/prefix rows with an ambiguous cutoff.
+    """
+    masked=projected.masked_fill(~allowed[None,:,:,None],float('-inf'))
+    values,indices=masked.topk(count,dim=2)
+    boundary=values[:,:,-1:,:]
+    ambiguous=((masked==boundary).sum(2)>(values==boundary).sum(2)) & (allowed.sum(1)>count)[None,:,None]
+    if ambiguous.any():
+        rows=masked.permute(0,1,3,2)[ambiguous]
+        chosen=rows.argsort(dim=-1,descending=True,stable=True)[:,:count]
+        revised=indices.permute(0,1,3,2).clone();revised[ambiguous]=chosen
+        indices=revised.permute(0,1,3,2)
+        values=masked.gather(2,indices)
+    if count>1 and (values[:,:,:-1,:]==values[:,:,1:,:]).any():
+        # Fix ordering inside a tied selected set too: although its values are
+        # equal, feature-wise gathering can otherwise choose different input
+        # subgradients across ranks. This sorts at most k<=12 selected items.
+        indices=indices.sort(dim=2).values
+        values=masked.gather(2,indices)
+        ranks=values.argsort(dim=2,descending=True,stable=True)
+        indices=indices.gather(2,ranks);values=values.gather(2,ranks)
+    return values,indices
+
+
 def causal_production(q,k,v,ql,kl,vl,top_k=12,chunk_size=8,return_indices=False,differential_lambda=None):
     # q/k/v: B,T,D; latent projections: B,T,1,D. No future information enters
     # a selector, and only the current prefix's current-token update is emitted.
@@ -28,7 +55,7 @@ def causal_production(q,k,v,ql,kl,vl,top_k=12,chunk_size=8,return_indices=False,
         count=min(top_k,end)
         selection=[]; all_indices=[]
         for projected in (qm,km,vm):
-            values,idx=projected.masked_fill(~allowed[None,:,:,None],float('-inf')).topk(count,dim=2)
+            values,idx=prefix_topk(projected,allowed,count)
             selection.append(values); all_indices.append(idx)
         valid_slots=torch.arange(count,device=q.device)[None,:] < (positions+1).clamp(max=count)[:,None]
         selected=[x.masked_fill(~valid_slots[None,:,:,None],0) for x in selection]
@@ -153,7 +180,7 @@ class FullCo4LM(nn.Module):
                                   'saturation_fraction':None,'saturation_note':'No bounded activation or ReLU6 in this released random-latent operator.'}
         return {'family':self.family,'block_types':self.block_types,'latent_state':'stateless across batches; prefix-local within each forward',
                 'top_k':self.top_k,'activation_statistics_last_validation_forward':statistics,'parameter_accounting':self.parameter_accounting(),
-                'sequence_complexity':'quadratic prefix modulation/selection; selected attention O(T*k*k*D); no near-linear claim'}
+                'sequence_complexity':'quadratic prefix modulation/selection; worst-case tied-selector stable repair O(T*T*D*log(T)); selected attention O(T*k*k*D); no near-linear claim'}
 
     def parameter_accounting(self):
         groups={'embedding_head':0,'latent':0,'attention_readout':0,'ffn':0,'normalization':0}
