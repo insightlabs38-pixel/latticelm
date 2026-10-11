@@ -1,0 +1,18 @@
+{
+  "evidence_paths": [
+    "post_hackathon_followup/provenance_recovery/EXACT_SOURCE_SEARCH.json",
+    "post_hackathon_followup/provenance_recovery/HISTORICAL_REMOTE_SNAPSHOT_SEARCH.json",
+    "post_hackathon_followup/provenance_recovery/remote_snapshots/23ea388b563137f3a8e756baef590e11611a9099/source-snapshot-final.zip",
+    "post_hackathon_followup/provenance_recovery/remote_snapshots/044fc0c3c4df2072639069e92ef4aae394b40997/SOURCE_SNAPSHOT_MANIFEST.json",
+    "post_hackathon_research/implementation_archive_receipt.json"
+  ],
+  "executed_trainer_sha256": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87",
+  "frozen_parent_commit": "43832b4c7bfe8be007ca6b9d1042aa2041c7f280",
+  "overlay_archive_path": "post_hackathon_followup/provenance_recovery/remote_snapshots/23ea388b563137f3a8e756baef590e11611a9099/source-snapshot-final.zip",
+  "overlay_archive_sha256": "76f45e4ce625944da03a5821ec4c23e84d167ac7b96b504da902df21a828c7f6",
+  "remote_path": "post-hackathon/2026-10-01/source-snapshot-final.zip",
+  "remote_revision": "23ea388b563137f3a8e756baef590e11611a9099",
+  "snapshot_construction": "Exact frozen parent src/scripts plus receipt-hash-verified source overlay; no source inferred from filenames or timestamps.",
+  "source_manifest_path": "post_hackathon_followup/provenance_recovery/remote_snapshots/044fc0c3c4df2072639069e92ef4aae394b40997/SOURCE_SNAPSHOT_MANIFEST.json",
+  "source_manifest_sha256": "cd5c5e6a247bb0167c81ca869477ae1f92cd2be21c6e41ab9274c7552464b22e"
+}

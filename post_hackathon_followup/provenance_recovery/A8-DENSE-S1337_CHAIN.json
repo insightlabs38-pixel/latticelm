@@ -1,0 +1,22 @@
+{
+  "checkpoint_disk_trainer_path": "post_hackathon_followup/provenance_recovery/recovered/58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87/posthack_train.py",
+  "checkpoint_disk_trainer_sha256": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87",
+  "discrepancy_explanation": "Launch source 65bc computes trainer_sha256 from Path(__file__) again at each checkpoint. Disk source changed to exact recovered 58e; loaded checkpoint payload has all and only 65bc fields, and lacks new 58e best/adaptive fields. No resume or dynamic code reload occurred in the recovered execution path. This is an on-disk hash versus loaded-code distinction, not an inferred equivalence between two implementations.",
+  "evidence_paths": [
+    "post_hackathon_followup/provenance_recovery/EXACT_SOURCE_SEARCH.json",
+    "post_hackathon_followup/provenance_recovery/HISTORICAL_REMOTE_SNAPSHOT_SEARCH.json",
+    "post_hackathon_followup/provenance_recovery/remote_snapshots/8c4f2508cb408bbc44931b25579ecc1e7fb9d2df/source-snapshot-final.zip",
+    "post_hackathon_followup/provenance_recovery/remote_snapshots/c449249dbcf0b56b0f4465327d167ac27986edfc/SOURCE_SNAPSHOT_MANIFEST.json",
+    "post_hackathon_research/git_isolation_hf_archive_receipt.json",
+    "post_hackathon_followup/provenance_recovery/recovered/58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87/posthack_train.py"
+  ],
+  "executed_trainer_sha256": "65bcf8ffcf59e19eef73f78dffefe9cf2fed81e734366973a4b4a9289520f121",
+  "frozen_parent_commit": "43832b4c7bfe8be007ca6b9d1042aa2041c7f280",
+  "overlay_archive_path": "post_hackathon_followup/provenance_recovery/remote_snapshots/8c4f2508cb408bbc44931b25579ecc1e7fb9d2df/source-snapshot-final.zip",
+  "overlay_archive_sha256": "de1bd2d9835acc03411c9afefae3a8991b3b2faa4ff9890db64e1919a84e1180",
+  "remote_path": "post-hackathon/2026-10-01/source-snapshot-final.zip",
+  "remote_revision": "8c4f2508cb408bbc44931b25579ecc1e7fb9d2df",
+  "snapshot_construction": "Exact frozen parent src/scripts plus receipt-hash-verified source overlay; no source inferred from filenames or timestamps.",
+  "source_manifest_path": "post_hackathon_followup/provenance_recovery/remote_snapshots/c449249dbcf0b56b0f4465327d167ac27986edfc/SOURCE_SNAPSHOT_MANIFEST.json",
+  "source_manifest_sha256": "5758626cfd0b15949fd73da7801f5ed2ded398700e9f1d6d6705bdd0276539d0"
+}

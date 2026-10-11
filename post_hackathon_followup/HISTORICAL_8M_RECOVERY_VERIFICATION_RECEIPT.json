@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-11T05:19:56.254479+00:00",
+  "existing_dense_training_uninterrupted": true,
+  "first_three_losses_exact_for_all_four": true,
+  "focused_test_wall_seconds": 3.22,
+  "focused_tests": 63,
+  "new_control_training_required": false,
+  "no_historical_changes_or_deletions": true,
+  "passed": true,
+  "runs": [
+    {
+      "control": "A8-CO4-S1337",
+      "fresh_replay_max_error": 0.0,
+      "maximum_lr_error": 0.0,
+      "passed": true,
+      "source_hashes_and_evidence_revalidated": true
+    },
+    {
+      "control": "A8-DENSE-S1337",
+      "fresh_replay_max_error": 0.0,
+      "maximum_lr_error": 0.0,
+      "passed": true,
+      "source_hashes_and_evidence_revalidated": true
+    },
+    {
+      "control": "A8-CO4-S2026",
+      "fresh_replay_max_error": 0.0,
+      "maximum_lr_error": 0.0,
+      "passed": true,
+      "source_hashes_and_evidence_revalidated": true
+    },
+    {
+      "control": "A8-DENSE-S2026",
+      "fresh_replay_max_error": 0.0,
+      "maximum_lr_error": 0.0,
+      "passed": true,
+      "source_hashes_and_evidence_revalidated": true
+    }
+  ],
+  "search_scope": "All local Git objects (including unreachable objects), all current pushed branches fetched to isolated audit refs, available run/launch/checkpoint records and local source archives, plus source snapshots at exact HF receipt revisions. Search stopped once the exact trainer snapshots were recovered."
+}

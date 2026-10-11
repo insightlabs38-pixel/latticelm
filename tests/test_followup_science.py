@@ -42,7 +42,8 @@ def test_imported_endpoint_goes_to_evaluation_without_training_certificate(tmp_p
         assert master.choose([r],{'runs':{},'scientific_stop_epoch':1000},now=0)==(None,None)
 
 
-def test_missing_legacy_source_is_not_accepted_as_current_trainer():
+def test_missing_legacy_source_is_not_accepted_as_current_trainer(tmp_path,monkeypatch):
+    monkeypatch.setattr(historical,'RESEARCH',tmp_path)
     with pytest.raises(ValueError,match='not recoverable'):
         historical.verify_historical_control('A8-CO4-S1337',{'trainer_sha256':None},'sha')
 
@@ -55,6 +56,53 @@ def test_primary_controls_wait_for_explicit_choice(tmp_path,monkeypatch):
     common.atomic_json(tmp_path/'HISTORICAL_8M_CONTROL_POLICY.json',{'selection':'fresh_matched_controls'})
     assert funnel.primary_control('DENSE',1337)=='F8-DENSE-FULLCONTROL-100M-S1337'
     assert funnel.primary_control('CO4',2026)=='F8-CO4-FULLCONTROL-100M-S2026'
+
+
+def test_per_control_policy_reuses_only_certified_runs(tmp_path,monkeypatch):
+    monkeypatch.setattr(funnel,'RESEARCH',tmp_path)
+    audit=tmp_path/'audit.json';common.atomic_json(audit,{'passed':True,'control':'A8-CO4-S1337'})
+    policy={'selection':'per_control_audit','controls':{
+        'A8-CO4-S1337':{'action':'certified_historical','audit_path':'audit.json','audit_sha256':common.sha256(audit)},
+        'A8-DENSE-S1337':{'action':'fresh_rerun'},'A8-CO4-S2026':{'action':'fresh_rerun'}}}
+    common.atomic_json(tmp_path/'HISTORICAL_8M_CONTROL_POLICY.json',policy)
+    assert funnel.primary_control('CO4',1337)=='CONTROL-A8-CO4-S1337'
+    assert funnel.primary_control('DENSE',1337)=='F8-DENSE-FULLCONTROL-100M-S1337'
+    assert funnel.primary_control('DENSE',2026) is None
+    audit.write_text('{}')
+    with pytest.raises(ValueError,match='audit changed'):funnel.primary_control('CO4',1337)
+
+
+def test_two_seed_pairing_supports_historical_and_fresh_control_names():
+    a=effect('CONTROL-A8-DENSE-S1337');b=effect('F8-DENSE-FULLCONTROL-100M-S2026')
+    a['control_pair_key']=b['control_pair_key']='same-matched-recipe'
+    assert analysis.two_seed_consistency([a],[b])['passed']
+    b['control_pair_key']='another-recipe'
+    with pytest.raises(ValueError,match='Missing second-seed comparator'):analysis.two_seed_consistency([a],[b])
+
+
+def test_recovered_audit_binds_source_evidence_and_checkpoint(tmp_path,monkeypatch):
+    monkeypatch.setattr(historical,'ROOT',tmp_path);monkeypatch.setattr(historical,'RESEARCH',tmp_path)
+    source=tmp_path/'source.py';source.write_text('exact recovered bytes')
+    digest=common.sha256(source);name='A8-CO4-S1337'
+    result={'passed':True,'executed_snapshot_chain_verified':True,'control':name,'checkpoint_sha256':'cp',
+        'checks':{'source':True},'source_snapshot_hashes':{'source.py':digest},'evidence_hashes':{'source.py':digest},
+        'matched_current_source_hashes':{'source.py':digest},'config':{'seed':1337},'manifest_sha256':'data',
+        'tokenizer_sha256':'tokenizer','checkpoint_disk_trainer_sha256':None,'data_shards':[]}
+    common.atomic_json(tmp_path/'provenance_recovery'/f'{name}_AUDIT.json',result)
+    cp={'config':{'seed':1337},'manifest_sha256':'data','tokenizer_sha256':'tokenizer','logical_tokens':100_000_000,'target_tokens':100_000_000}
+    assert historical.verify_historical_control(name,cp,'cp')['passed']
+    with pytest.raises(ValueError,match='metadata changed'):
+        historical.verify_historical_control(name,{**cp,'target_tokens':200_000_000},'cp')
+    source.write_text('changed')
+    with pytest.raises(ValueError,match='source changed'):historical.verify_historical_control(name,cp,'cp')
+
+
+def test_recovered_payload_parser_and_explicit_original_paths():
+    from followup_audit_8m import payload_keys,original_root_path
+    code='MANIFEST = ROOT / "actual/registered.json"\nTOKENIZER = ROOT / "actual/tokenizer.json"\ndef run():\n    payload = {"schema": "old", "trainer_sha256": sha256(Path(__file__))}\n'
+    assert payload_keys(code)=={'schema','trainer_sha256'}
+    assert original_root_path(code,'MANIFEST')=='actual/registered.json'
+    with pytest.raises(ValueError):original_root_path('MANIFEST = infer_from_timestamp()','MANIFEST')
 
 
 def test_r32_import_binds_audited_source_and_checkpoint(tmp_path,monkeypatch):

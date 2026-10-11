@@ -97,9 +97,13 @@ def selected_files():
     for directory in ("configs", "certificates"):
         base=RESEARCH/directory
         if base.exists():files.extend(p for p in base.rglob("*") if p.is_file() and p.suffix in (".json", ".md"))
-    for directory in ('decisions','comparisons','plots'):
+    for directory in ('decisions','comparisons','plots','provenance_recovery'):
         base=RESEARCH/directory
-        if base.exists():files.extend(p for p in base.rglob('*') if p.is_file() and p.suffix in ('.json','.md','.png','.svg','.csv'))
+        if base.exists():files.extend(p for p in base.rglob('*') if p.is_file() and p.suffix in ('.json','.md','.png','.svg','.csv','.zip'))
+    # Certificates bind these recovered source bytes by their exact local path.
+    for certificate in (RESEARCH/'provenance_recovery').glob('*_AUDIT.json'):
+        result=json.loads(certificate.read_text())
+        if result.get('passed'):files.extend(ROOT/p for p in result.get('source_snapshot_hashes',{}))
     runs=RESEARCH/"runs"
     if runs.exists():
         for run in runs.iterdir():

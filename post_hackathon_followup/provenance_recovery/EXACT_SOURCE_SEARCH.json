@@ -1,0 +1,79 @@
+{
+  "archive_trainer_members": [
+    {
+      "archive": "post_hackathon_research/phase1-source-v2.zip",
+      "archive_sha256": "5920a5c484d2340c8c643ca614878b3a02dd038c6f7fcb33909bd8ec0ed4dd5a",
+      "member": "scripts/posthack_train.py",
+      "trainer_sha256": "d9c3b6d05e75ebc22b715bf25630765d03e08ab869116028dcbedd1543ef63f4"
+    },
+    {
+      "archive": "post_hackathon_research/phase1-source.zip",
+      "archive_sha256": "a5600e66a898c5c67f31a31907d8d0482f5dcb7a2d84bfca2c183dda19ef3001",
+      "member": "scripts/posthack_train.py",
+      "trainer_sha256": "84111597bd74d89abcb23b1da336dbc12f0749abc7261822360a935a291e0891"
+    },
+    {
+      "archive": "post_hackathon_research/source-snapshot-final.zip",
+      "archive_sha256": "cf14daf350a5fc313b4ab7fce4ff9ae0a1b026d91237eab7957e9de6e00e88bc",
+      "member": "scripts/posthack_train.py",
+      "trainer_sha256": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7"
+    },
+    {
+      "archive": "post_hackathon_followup/source-snapshot-035002e7c6db902f56f0166c8265e144a26f182c.zip",
+      "archive_sha256": "86b70c471ee13f28341e344fde4207ae3f468b47401e94b58abdac464db16fe8",
+      "member": "scripts/posthack_train.py",
+      "trainer_sha256": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7"
+    },
+    {
+      "archive": "post_hackathon_followup/source-snapshot-66eef59a9c6391979433ebe2de480838272a3354.zip",
+      "archive_sha256": "09c242a3bcd56f40e4e8410d8de3e90a9eecaaed819016e31871222375b05501",
+      "member": "scripts/posthack_train.py",
+      "trainer_sha256": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7"
+    },
+    {
+      "archive": "post_hackathon_followup/source-snapshot-c9ed214a5131c2e891f9e77b5ecee74243be4f72.zip",
+      "archive_sha256": "32f12339cd57f187168ef6fdc4be518614cbdb828548ec4eb3101fd180afbec3",
+      "member": "scripts/posthack_train.py",
+      "trainer_sha256": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7"
+    },
+    {
+      "archive": "post_hackathon_followup/source-snapshot-f88db24aa1dcc4aaab26fefc5d01c1262d74bd68.zip",
+      "archive_sha256": "0a9933083c2e8aa648fb1408f85a20ce3bfab68916f6c7e77225e8dc7ef8ff6e",
+      "member": "scripts/posthack_train.py",
+      "trainer_sha256": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7"
+    }
+  ],
+  "at": "2026-10-11T05:06:13.124173+00:00",
+  "exact_matches": [
+    {
+      "recovered_path": "post_hackathon_followup/provenance_recovery/recovered/84111597bd74d89abcb23b1da336dbc12f0749abc7261822360a935a291e0891/posthack_train.py",
+      "sha256": "84111597bd74d89abcb23b1da336dbc12f0749abc7261822360a935a291e0891",
+      "source": {
+        "archive": "post_hackathon_research/phase1-source.zip",
+        "archive_sha256": "a5600e66a898c5c67f31a31907d8d0482f5dcb7a2d84bfca2c183dda19ef3001",
+        "member": "scripts/posthack_train.py",
+        "trainer_sha256": "84111597bd74d89abcb23b1da336dbc12f0749abc7261822360a935a291e0891"
+      }
+    }
+  ],
+  "git_blob_size_bound": 524288,
+  "git_blobs_hashed": 1004,
+  "git_bytes_hashed": 11172281,
+  "git_objects_count": 1502,
+  "remote_heads": [
+    "refs/remotes/provenance-audit/codex/conduct-phase-7a-final-training-data-selection b547f6aa11e7c4426f9a78098965b7945059196f",
+    "refs/remotes/provenance-audit/codex/continue-latticelm-phase-4-experiments c32015a2d51f3cc9e5739fe0350c48d07dc4afdf",
+    "refs/remotes/provenance-audit/codex/continue-latticelm-phase-5-research e6a2d95d9367ba8386a682615f13a21d1088ca29",
+    "refs/remotes/provenance-audit/codex/continue-latticelm-phase-7b-for-pretraining a5547b1628a666d2ac5e6d0ac893bed11608e6e8",
+    "refs/remotes/provenance-audit/codex/inspect-existing-latticelm-repository 7b44138c8c0f4dbd7cd26e9672d4e8f5cb3dbdde",
+    "refs/remotes/provenance-audit/codex/inspect-existing-latticelm-repository-xh4c6t e3ed796360a9d5413fd7dbb88d096f1010a8d168",
+    "refs/remotes/provenance-audit/codex/proceed-with-phase-6-of-latticelm-research b50685d95080e31aa647254ba12c803617314912",
+    "refs/remotes/provenance-audit/main 43832b4c7bfe8be007ca6b9d1042aa2041c7f280",
+    "refs/remotes/provenance-audit/posthack-followup-2026-10 f88db24aa1dcc4aaab26fefc5d01c1262d74bd68"
+  ],
+  "wanted_trainer_hashes": [
+    "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87",
+    "65bcf8ffcf59e19eef73f78dffefe9cf2fed81e734366973a4b4a9289520f121",
+    "84111597bd74d89abcb23b1da336dbc12f0749abc7261822360a935a291e0891"
+  ]
+}

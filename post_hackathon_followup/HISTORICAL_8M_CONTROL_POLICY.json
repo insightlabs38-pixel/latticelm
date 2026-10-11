@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-11T05:19:56.238968+00:00",
+  "controls": {
+    "A8-CO4-S1337": {
+      "action": "certified_historical",
+      "audit_path": "provenance_recovery/A8-CO4-S1337_AUDIT.json",
+      "audit_sha256": "67a6fc7fcb57aa74cee2135c119164985226380aa8257d3c5491cb75f0fd1206",
+      "checkpoint_sha256": "a01b837828e05c4c211b86e6b70d37f56a0a478f203bf8e8b7f39270be90f966",
+      "executed_trainer_sha256": "84111597bd74d89abcb23b1da336dbc12f0749abc7261822360a935a291e0891"
+    },
+    "A8-CO4-S2026": {
+      "action": "certified_historical",
+      "audit_path": "provenance_recovery/A8-CO4-S2026_AUDIT.json",
+      "audit_sha256": "118060a7683d4e6a74a47bc71ccca28ba3eb805f407218e75582bf1e67e358cf",
+      "checkpoint_sha256": "6df3154e5a73d157ffebd06e5708422ce669106539f693b1ca1d70afa35e4e5b",
+      "executed_trainer_sha256": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87"
+    },
+    "A8-DENSE-S1337": {
+      "action": "certified_historical",
+      "audit_path": "provenance_recovery/A8-DENSE-S1337_AUDIT.json",
+      "audit_sha256": "8bbf6203413195d76d6af362160a3d8bf866aa369f574fda330ddfdcd576793d",
+      "checkpoint_sha256": "c8b6d11065cd95a0e9ef42a29c630cf8dd0c3462c04c3a506a5a6efa05bca3f8",
+      "executed_trainer_sha256": "65bcf8ffcf59e19eef73f78dffefe9cf2fed81e734366973a4b4a9289520f121"
+    },
+    "A8-DENSE-S2026": {
+      "action": "certified_historical",
+      "audit_path": "provenance_recovery/A8-DENSE-S2026_AUDIT.json",
+      "audit_sha256": "e3875a0fac98305ae18a0945641e3689ba98309c6f91a21a20018fcf0490777f",
+      "checkpoint_sha256": "0fc6daac6d70ca007335e8e29ceaee2b8e56c401bafcd1f456c22037500a0bc4",
+      "executed_trainer_sha256": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87"
+    }
+  },
+  "execution_gate": "Import and evaluate controls only when C2/C3/C4 scientific gates require them; no new control training for certified runs.",
+  "fresh_reruns_required": [],
+  "recovery_effort_limit_minutes": 30,
+  "schema": "historical-8m-per-control-policy-v1",
+  "selection": "per_control_audit",
+  "user_authorization": "Bounded exact-source recovery, certify independently, rerun only controls with remaining material gaps."
+}

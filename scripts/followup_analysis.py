@@ -5,7 +5,7 @@ import math
 from pathlib import Path
 import numpy as np
 from scipy.stats import binomtest
-from followup_common import ROOT,RESEARCH,registered,utc,atomic_json,sha256,metric_rows,parse_time
+from followup_common import ROOT,RESEARCH,registered,utc,atomic_json,sha256,metric_rows,parse_time,object_hash
 
 
 def read(path):return json.loads(Path(path).read_text())
@@ -91,9 +91,11 @@ def two_seed_consistency(first,second):
     veto=any(e['capability']['any_clear_regression'] for e in first+second)
     for a in first:
         expected=a['control'].replace('S1337','S2026')
-        b=next((e for e in second if e['control']==expected),None)
+        matches=[e for e in second if (e.get('control_pair_key')==a['control_pair_key'] if a.get('control_pair_key') else e['control']==expected)]
+        if len(matches)>1:raise ValueError('Ambiguous second-seed comparator: '+expected)
+        b=matches[0] if matches else None
         if b is None:raise ValueError('Missing second-seed comparator: '+expected)
-        matched.append(expected)
+        expected=b['control'];matched.append(expected)
         if a['clear_lm_regression'] or b['clear_lm_regression']:continue
         if all(e['paired_loss']['candidate_minus_control']<0 and e['paired_bpb']['candidate_minus_control']<0 for e in (a,b)) and (a['quality_gain'] or b['quality_gain']):
             axes.append({'control':expected,'axis':'coherent loss/BPB quality direction'})
@@ -156,7 +158,11 @@ def comparison(candidate_name,control_name):
         lower_token_thresholds=sorted(set(lower_token_thresholds))
     wall=wall_uncertainty(candidate,control)
     clear_wall_gain=bool(elapsed_known and wall_ratio<1 and wall.get('ratio_ci95') and wall['ratio_ci95'][1]<1)
-    result={'at':utc(),'candidate':candidate_name,'control':control_name,'input_receipt_hashes':identity,'paired_loss':loss,'paired_bpb':bpb,'capability':tasks,
+    pair_key=object_hash({'config':{k:v for k,v in control['config'].items() if k!='seed'},
+        'parameter_count':control['parameter_count'],'token_budget':control['token_budget'],
+        'sampling_manifest_sha256':control['sampling_manifest_sha256'],'tokenizer_sha256':control['tokenizer_sha256'],
+        'variant':control.get('variant','baseline'),'full_co4':control.get('full_co4')})
+    result={'at':utc(),'candidate':candidate_name,'control':control_name,'control_pair_key':pair_key,'input_receipt_hashes':identity,'paired_loss':loss,'paired_bpb':bpb,'capability':tasks,
             'quality_gain':bool(quality and not tasks['any_clear_regression']),'clear_lm_regression':bool(clear_worse),
             'quality_consistent_with_tie':bool(consistent_with_tie),'tie_note':'Failure to detect a difference is not proof of statistical equivalence.',
             'wall_ratio':wall_ratio,'wall_uncertainty':wall,'clear_wall_gain':clear_wall_gain,

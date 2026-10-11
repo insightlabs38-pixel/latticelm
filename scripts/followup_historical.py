@@ -12,12 +12,37 @@ from followup_common import ROOT, RESEARCH, atomic_json, sha256, utc
 from latticelm.final_recipe import wsd_lr_scale
 
 
-def verify_historical_control(name, checkpoint, digest):
-    """Accept only the source-recoverable, independently audited control family.
+def verify_recovered_8m(name,checkpoint,digest):
+    path=RESEARCH/'provenance_recovery'/f'{name}_AUDIT.json'
+    if not path.exists():raise ValueError('Historical trainer source is not recoverable: '+name)
+    result=json.loads(path.read_text())
+    if (not result.get('passed') or not result.get('executed_snapshot_chain_verified') or result.get('control')!=name
+        or result.get('checkpoint_sha256')!=digest or not result.get('checks') or not all(result['checks'].values())):
+        raise ValueError('Recovered historical control certificate failed: '+name)
+    for key in ('source_snapshot_hashes','evidence_hashes','matched_current_source_hashes'):
+        if not result.get(key):raise ValueError('Incomplete recovered source certificate: '+name)
+        for rel,expected in result[key].items():
+            if sha256(ROOT/rel)!=expected:raise ValueError('Recovered historical evidence/source changed: '+rel)
+    if (json.loads(json.dumps(checkpoint['config']))!=result['config']
+        or checkpoint['manifest_sha256']!=result['manifest_sha256']
+        or checkpoint['tokenizer_sha256']!=result['tokenizer_sha256']
+        or checkpoint.get('trainer_sha256')!=result['checkpoint_disk_trainer_sha256']
+        or not (checkpoint['logical_tokens']==checkpoint['target_tokens']==100_000_000)):
+        raise ValueError('Recovered control checkpoint metadata changed: '+name)
+    for shard in result['data_shards']:
+        file=ROOT/shard['path'];stat=file.stat();identity=[stat.st_ino,stat.st_size,stat.st_mtime_ns,stat.st_ctime_ns]
+        if identity!=shard['stat_identity'] and sha256(file)!=shard['sha256']:
+            raise ValueError('Recovered historical data shard changed: '+shard['path'])
+    return result
 
-    The early A8 runs need their missing source snapshots or fresh replacements;
-    a matching endpoint/config alone does not establish their trainer provenance.
+
+def verify_historical_control(name, checkpoint, digest):
+    """Accept recovered per-run A8 certificates or the audited R32/R16 family.
+
+    An endpoint/config match alone never establishes trainer provenance.
     """
+    if name in ('A8-CO4-S1337','A8-DENSE-S1337','A8-CO4-S2026','A8-DENSE-S2026'):
+        return verify_recovered_8m(name,checkpoint,digest)
     if name not in ('R32-CO4-CONTROL', 'R16-S2026-CONTROL'):
         raise ValueError('Historical trainer source is not recoverable: ' + name)
     audit = json.loads((RESEARCH / 'R32_CO4_PROVENANCE_AUDIT.json').read_text())

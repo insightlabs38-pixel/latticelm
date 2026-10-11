@@ -23,7 +23,7 @@ Post-submission research on `posthack-followup-2026-10`; frozen main/submission 
 | C3 primary | Fresh100M promoted family and controls | Full evaluation; comparator-specific coherent quality/sample/depth/wall evidence |
 | C4 confirmation | One winner, exactly one additional seed2026 | Same-direction evidence on the same comparator/axis across seeds1337/2026; reject clear task regression |
 
-Historical8M controls have incomplete source provenance. Their primary comparisons remain held pending the user's choice of four fresh matched100M controls or recovered historical trainer snapshots. Fresh replacements are implemented and will be scheduled only for promoted comparisons, after explicit choice. R32/R16, mandatory replications and fresh C1/C2 work proceed independently.
+The bounded recovery pass certified all four historical 8M/100M controls independently. Exact missing trainer bytes were recovered from receipt-pinned historical HF revisions. Dense seed 1337's launch/disk hash discrepancy is explained by the recovered checkpoint code rehashing the file on disk; its payload schema identifies the loaded launch implementation. Config, data/tokenizer, complete WSD/source order, optimizer partition and saved next-batch checks passed, with three exactly matching fresh replay losses per run. `HISTORICAL_8M_CONTROL_POLICY.json` selects these certified endpoints only when primary-comparison gates open. No fresh replacements are currently needed; per-run fresh fallback remains implemented for an uncertifiable control.
 
 ## Optional work — implemented, supervisor decides execution
 

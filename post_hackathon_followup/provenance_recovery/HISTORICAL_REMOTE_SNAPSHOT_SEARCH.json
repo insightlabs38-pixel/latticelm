@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-11T05:07:35.255620+00:00",
+  "files": [
+    {
+      "archive_sha256": "5758626cfd0b15949fd73da7801f5ed2ded398700e9f1d6d6705bdd0276539d0",
+      "local_path": "post_hackathon_followup/provenance_recovery/remote_snapshots/c449249dbcf0b56b0f4465327d167ac27986edfc/SOURCE_SNAPSHOT_MANIFEST.json",
+      "receipt": "git_isolation_hf_archive_receipt.json",
+      "remote": "post-hackathon/2026-10-01/SOURCE_SNAPSHOT_MANIFEST.json",
+      "revision": "c449249dbcf0b56b0f4465327d167ac27986edfc"
+    },
+    {
+      "archive_sha256": "de1bd2d9835acc03411c9afefae3a8991b3b2faa4ff9890db64e1919a84e1180",
+      "local_path": "post_hackathon_followup/provenance_recovery/remote_snapshots/8c4f2508cb408bbc44931b25579ecc1e7fb9d2df/source-snapshot-final.zip",
+      "receipt": "git_isolation_hf_archive_receipt.json",
+      "recovered_path": "post_hackathon_followup/provenance_recovery/recovered/65bcf8ffcf59e19eef73f78dffefe9cf2fed81e734366973a4b4a9289520f121/posthack_train.py",
+      "remote": "post-hackathon/2026-10-01/source-snapshot-final.zip",
+      "revision": "8c4f2508cb408bbc44931b25579ecc1e7fb9d2df",
+      "trainer_sha256": "65bcf8ffcf59e19eef73f78dffefe9cf2fed81e734366973a4b4a9289520f121"
+    },
+    {
+      "archive_sha256": "cd5c5e6a247bb0167c81ca869477ae1f92cd2be21c6e41ab9274c7552464b22e",
+      "local_path": "post_hackathon_followup/provenance_recovery/remote_snapshots/044fc0c3c4df2072639069e92ef4aae394b40997/SOURCE_SNAPSHOT_MANIFEST.json",
+      "receipt": "implementation_archive_receipt.json",
+      "remote": "post-hackathon/2026-10-01/SOURCE_SNAPSHOT_MANIFEST.json",
+      "revision": "044fc0c3c4df2072639069e92ef4aae394b40997"
+    },
+    {
+      "archive_sha256": "76f45e4ce625944da03a5821ec4c23e84d167ac7b96b504da902df21a828c7f6",
+      "local_path": "post_hackathon_followup/provenance_recovery/remote_snapshots/23ea388b563137f3a8e756baef590e11611a9099/source-snapshot-final.zip",
+      "receipt": "implementation_archive_receipt.json",
+      "recovered_path": "post_hackathon_followup/provenance_recovery/recovered/58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87/posthack_train.py",
+      "remote": "post-hackathon/2026-10-01/source-snapshot-final.zip",
+      "revision": "23ea388b563137f3a8e756baef590e11611a9099",
+      "trainer_sha256": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87"
+    }
+  ]
+}

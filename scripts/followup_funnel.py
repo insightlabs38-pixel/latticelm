@@ -67,6 +67,17 @@ def primary_control(architecture,seed):
     path=RESEARCH/'HISTORICAL_8M_CONTROL_POLICY.json'
     if not path.exists():return None
     policy=read(path)
+    if policy.get('selection')=='per_control_audit':
+        old=f'A8-{architecture}-S{seed}';choice=policy.get('controls',{}).get(old)
+        if not choice:return None
+        if choice['action']=='certified_historical':
+            audit=RESEARCH/choice['audit_path']
+            if sha256(audit)!=choice['audit_sha256']:raise ValueError('Historical control audit changed: '+old)
+            result=read(audit)
+            if not result.get('passed') or result.get('control')!=old:raise ValueError('Uncertified historical control selected: '+old)
+            return 'CONTROL-'+old
+        if choice['action']=='fresh_rerun':return f'F8-{architecture}-FULLCONTROL-100M-S{seed}'
+        raise ValueError('Unknown per-control provenance action: '+old)
     if policy.get('selection')=='fresh_matched_controls':
         return f'F8-{architecture}-FULLCONTROL-100M-S{seed}'
     return None  # Waiting for recoverable source snapshots and their audit.
@@ -160,14 +171,17 @@ def advance(state):
     # executes only while the controller has no active heavy worker.
     import_control('R32-CO4-CONTROL')
     import_control('R16-S2026-CONTROL')
-    # Legacy A8 trainer bytes are missing. Hold only their affected comparisons
-    # until the user selects fresh replacements or supplies auditable snapshots.
+    # Each A8 control has an independent audit decision. Create a fresh
+    # replacement only for an uncertifiable control when its gate opens.
     for seed in (1337,2026):
         if seed==1337 and not any(read(p).get('run') for p in (RESEARCH/'decisions').glob('*-C2-promotion.json')):continue
         if seed==2026 and not (RESEARCH/'decisions/full-winner.json').exists():continue
         for architecture in ('DENSE','CO4'):
             name=primary_control(architecture,seed)
             if name:
+                if name.startswith('CONTROL-'):
+                    import_control(f'A8-{architecture}-S{seed}')
+                    continue
                 old=rows[f'A8-{architecture}-S{seed}']
                 ensure(name,{'config':old['config']},100_000_000,
                     'Fresh primary matched control replacing historical control with incomplete trainer provenance',seed=seed,

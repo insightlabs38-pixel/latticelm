@@ -5,6 +5,7 @@
     "Four fresh matched 100M dense/MOD controls at seeds1337/2026 (~10 additional training hours), implemented and gated on explicit user choice",
     "Wait for recovered historical source snapshots and audit them before reuse"
   ],
+  "fresh_reruns_required": [],
   "historical_8m_endpoint_trainer_sha256": {
     "A8-CO4-S1337": null,
     "A8-CO4-S2026": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87",
@@ -19,6 +20,9 @@
     "Full-Co4 fresh C1 compatibility and C2 screens"
   ],
   "modern_control_checks": "R32 and R16 audits passed, exact whole-run LR/cursors/next-batch and recovered source family.",
+  "resolution_note": "All four controls certified independently. Missing 65bc/58e trainers were recovered from exact receipt-pinned historical HF revisions, not the latest overwritten archive. Dense1337 loaded-source/disk-hash discrepancy resolved by the recovered code and exact payload schema.",
+  "resolution_policy": "HISTORICAL_8M_CONTROL_POLICY.json",
+  "resolved_at": "2026-10-11T05:19:56.248855+00:00",
   "scope": "Full-Co4 primary 100M comparisons against deeper dense/current MOD controls only",
-  "status": "AWAITING_USER_CHOICE"
+  "status": "RESOLVED_BY_EXACT_SOURCE_RECOVERY"
 }

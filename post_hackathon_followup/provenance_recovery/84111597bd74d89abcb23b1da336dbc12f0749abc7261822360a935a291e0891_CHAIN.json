@@ -1,0 +1,15 @@
+{
+  "evidence_paths": [
+    "post_hackathon_followup/provenance_recovery/EXACT_SOURCE_SEARCH.json",
+    "post_hackathon_followup/provenance_recovery/HISTORICAL_REMOTE_SNAPSHOT_SEARCH.json",
+    "post_hackathon_research/phase1-source.zip",
+    "post_hackathon_research/PHASE1_SOURCE_MANIFEST.json",
+    "post_hackathon_research/phase1_preflight_archive_receipt.json",
+    "post_hackathon_research/phase1_v2_archive_receipt.json"
+  ],
+  "executed_trainer_sha256": "84111597bd74d89abcb23b1da336dbc12f0749abc7261822360a935a291e0891",
+  "frozen_parent_commit": "43832b4c7bfe8be007ca6b9d1042aa2041c7f280",
+  "overlay_archive_path": "post_hackathon_research/phase1-source.zip",
+  "overlay_archive_sha256": "a5600e66a898c5c67f31a31907d8d0482f5dcb7a2d84bfca2c183dda19ef3001",
+  "snapshot_construction": "Exact frozen parent src/scripts plus receipt-hash-verified source overlay; no source inferred from filenames or timestamps."
+}
