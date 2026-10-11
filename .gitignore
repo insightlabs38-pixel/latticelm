@@ -110,3 +110,4 @@ post_hackathon_followup/FOLLOWUP_DECISIONS.jsonl
 post_hackathon_followup/FOLLOWUP_LIVE_SCHEDULE.md
 post_hackathon_followup/*-master.log
 post_hackathon_followup/source-snapshot-*.zip
+post_hackathon_followup/.archive-hash-cache.json

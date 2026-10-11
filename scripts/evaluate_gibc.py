@@ -38,7 +38,11 @@ class LatticeHarnessLM(LM):
         super().__init__()
         payload = torch.load(checkpoint, map_location="cpu", weights_only=False)
         self.config = LatticeConfig(**payload["config"])
-        self.model = build_posthack_model(self.config, payload.get("variant", "baseline"))
+        if payload.get("full_co4"):
+            from latticelm.full_co4 import FullCo4LM
+            self.model = FullCo4LM(self.config, **payload["full_co4"])
+        else:
+            self.model = build_posthack_model(self.config, payload.get("variant", "baseline"))
         self.model.load_state_dict(payload["model"], strict=True)
         self.model.eval()
         self.tok = load_tokenizer(tokenizer)

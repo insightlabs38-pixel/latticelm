@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-11T01:42:51.032055+00:00",
+  "checkpoint_hashes": [
+    "50cd93d47736b58c1a98300ac444d38a6879ced7790a2a38a0d05753720e0937",
+    "db578894ffdda5dac8eac91d3b38b9b2a558a28760f3edb797efc5a57d64b46c",
+    "65fb9e5fe75e8a3c93823c9045aeb871ece8b4f34b57c6981ccfc63971004780"
+  ],
+  "code_commit_containing_verified_scientific_sources": "c9ed214a5131c2e891f9e77b5ecee74243be4f72",
+  "evaluator_compatibility": true,
+  "exact_equality_control": "SMOKE-NUMERICAL-CONTROL-F32-DENSE-S1337-300M",
+  "exact_model_optimizer_rng_sampler_equality": true,
+  "experiment_id": "F32-DENSE-S1337-FRESH300M",
+  "immediate_model_optimizer_restore_bitwise_exact": true,
+  "kill_checkpoint_step": 20,
+  "max_independent_repeat_loss_difference": 3.337860107421875e-06,
+  "max_independent_repeat_model_difference": 0.00010060518980026245,
+  "max_resume_loss_difference": 3.337860107421875e-06,
+  "max_resume_model_difference": 0.00010060518980026245,
+  "metadata_only_supersession": true,
+  "numerical_policy": "Bitwise equality of model, optimizer, RNG, sampler, and all 100 losses/gradient norms to an independent uninterrupted control. Original reference drift is retained as a failed gate diagnostic, not accepted by loosening a tolerance.",
+  "passed": true,
+  "registration_sha256": "5a2a345d52b079ef8bef3c72a7cbdb7db4253fd71cf8c7a20387630dc6b00811",
+  "rng_sampler_schedule_exact": true,
+  "sample_loglikelihood": -18.189285278320312,
+  "smoke_batch_size": 32,
+  "smoke_context_length": 256,
+  "smoke_steps": 100,
+  "smoke_tokens_per_second": 3392.0131321856416,
+  "source_hashes": {
+    "scripts/followup_train.py": "e8bb8dd8012897ad8c302b60a18d5a4f6c0dbc458763291458725a28b7c4d0b1",
+    "scripts/train_final_production.py": "903106cedee65b630dad1903b0c09d9ad519e773921279bc3287438777ca6d1f",
+    "src/latticelm/co4_reference.py": "586947e3250d66895758c9549cdaa360f3d2bb058d0ab53f320d276d9f601f3f",
+    "src/latticelm/config.py": "1444488cf6ec8c4de9c67cf440dab83223c0d7f0a7937277c3b1942cc6547c52",
+    "src/latticelm/data_d.py": "c08631d747fab1083f9d4a31a7cf4b5df2213db5e94b913d85281e51e6608b42",
+    "src/latticelm/final_recipe.py": "d9555ed1a8ca12b628423ba11787b6dcd1a593b5f54d060078427d9809d94dc9",
+    "src/latticelm/model.py": "304b426b181b17688dbf8cd81ff97ab1d9060c59a0b763feec630857a6c9e5f7",
+    "src/latticelm/posthack_variants.py": "889dddd9b7d388174db3a270487b13fa06777bccf24a7b51f6cc3b0ea51e8c50",
+    "src/latticelm/research_sampling.py": "150fdafc14f37b8fcc52d0963bcc0d8597843a79fa775b8aa87d9108b2992150"
+  },
+  "training_numerically_equivalent": true,
+  "verified_preflight_registration": "F32-DENSE-S1337-300M"
+}

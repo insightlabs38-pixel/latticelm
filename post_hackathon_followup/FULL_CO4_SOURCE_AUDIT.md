@@ -44,6 +44,8 @@ Vision code is noncausal. A final triangular attention mask cannot repair noncau
 
 A hybrid is a separate family and must keep its ordinary attention/FFN costs visible. Prepare source-inspired modulated/ordinary block order, matched shallow dense and MOD controls, and a deeper dense control. The initial implementation must expose depth, latents, heads, top-k, initialization scale, and readout choices in frozen records. Compute accounting includes actual wall time and a disclosed proxy; top-k prefix reference is quadratic and cannot claim the source's near-linear scaling.
 
+The implemented hybrid's ordinary MHSA processes causal token states and carries the prefix-local latent unchanged. The released vision MHSA jointly processes a global CLS token. This is an additional disclosed causal LM adaptation; raw modulated-operator equivalence does not establish whole-hybrid equivalence. Standard control blocks use four attention heads; modulated blocks retain one head/latent as required by the released operator.
+
 ## VM interruption assumptions
 
 Metadata confirms this VM is preemptible, automatic restart is disabled, and maintenance action is TERMINATE. No dedicated 120-second notice is assumed. The controller polls `instance/preempted`, requests a flush if available, and relies on periodic atomic checkpoints and persistent disk. A user systemd service can recover the controller when the VM boots; it cannot start a stopped VM.

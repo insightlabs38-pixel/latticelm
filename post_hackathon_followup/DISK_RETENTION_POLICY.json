@@ -1,0 +1,8 @@
+{
+  "confirmed_by_user": "Storage will be expanded by 25 GB; cleanup authorization covers only redundant transient/rolling checkpoints created by the current master, plus the separately approved passed smoke weights.",
+  "historical_deletion_allowed": false,
+  "scientific_cleanup_scope": "post_hackathon_followup/runs only; retain current resumable, previous known-good and milestone/promoted checkpoints",
+  "smoke_cleanup_scope": "Only completed reproducible smoke weights with passed comparison evidence; preserve logs, hashes, receipts and certificates",
+  "historical_paths": ["post_hackathon_research", "artifacts", "latticelm-frozen", "latticelm-preisolation-git-metadata"],
+  "historical_policy": "Read/upload/verify only. No deletion or pruning."
+}

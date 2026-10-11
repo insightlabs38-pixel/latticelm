@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-11T02:29:55.944896+00:00",
+  "decisions": {},
+  "policy": {
+    "confirmed_by_user": true,
+    "final_claim": "Winning formation must remain directionally consistent across exactly two primary seeds.",
+    "other_axes": "Sample, depth, compute and wall-clock judged separately. Favorable sample/depth efficiency may promote a quality tie. No rigid percentage thresholds.",
+    "quality": "Coherent held-out loss and BPB evidence; paired uncertainty; reject statistically clear task regressions.",
+    "uncertainty": "Stratified paired held-out bootstrap, paired WikiText rows, paired exact task-item tests with correction across all available raw/normalized metrics, and blocked timing intervals. Two seeds separately check direction; no rigid percentage thresholds."
+  }
+}

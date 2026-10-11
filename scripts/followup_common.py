@@ -18,6 +18,7 @@ DECISIONS = RESEARCH / "FOLLOWUP_DECISIONS.jsonl"
 HARD_DEADLINE = "2026-10-17T20:10:00+00:00"
 STATES = {"PLANNED", "IMPLEMENTING", "READY", "RUNNING", "CHECKPOINTED", "INTERRUPTED_INFRA",
           "FAILED_CODE", "FAILED_DATA", "FAILED_SCIENCE", "EVALUATING", "COMPLETED", "REJECTED", "PROMOTED", "ARCHIVED"}
+_CHECKPOINT_HASH_CACHE = {}
 
 
 def utc(epoch=None):
@@ -148,7 +149,13 @@ def verified_checkpoint(run_dir):
     manifest = json.loads(path.read_text())
     for item in manifest["rolling"]:
         checkpoint = Path(run_dir) / item["file"]
-        if checkpoint.is_file() and checkpoint.stat().st_size == item["size_bytes"] and sha256(checkpoint) == item["sha256"]:
+        if not checkpoint.is_file():continue
+        stat=checkpoint.stat();key=(str(checkpoint),stat.st_ino,stat.st_size,stat.st_mtime_ns,stat.st_ctime_ns)
+        if stat.st_size != item['size_bytes']:continue
+        digest=_CHECKPOINT_HASH_CACHE.get(key)
+        if digest is None:
+            digest=sha256(checkpoint);_CHECKPOINT_HASH_CACHE[key]=digest
+        if digest == item["sha256"]:
             return item
     raise RuntimeError("no verified checkpoint in manifest")
 
@@ -165,4 +172,13 @@ def complete_evidence(run_dir, record, require_evaluation=True):
         if not ev.exists(): return False
         evaluation = json.loads(ev.read_text())
         if evaluation.get("checkpoint_sha256") != checkpoint["sha256"] or evaluation.get("status") != "COMPLETED": return False
+        if 'registration_sha256' in evaluation and evaluation['registration_sha256']!=object_hash(record):return False
+        for item in evaluation.get('outputs',[]):
+            output=Path(run_dir)/item['file']
+            if not output.is_file():return False
+            stat=output.stat();key=(str(output),stat.st_ino,stat.st_size,stat.st_mtime_ns,stat.st_ctime_ns)
+            if stat.st_size!=item['size_bytes']:return False
+            digest=_CHECKPOINT_HASH_CACHE.get(key)
+            if digest is None:digest=sha256(output);_CHECKPOINT_HASH_CACHE[key]=digest
+            if digest!=item['sha256']:return False
     return True

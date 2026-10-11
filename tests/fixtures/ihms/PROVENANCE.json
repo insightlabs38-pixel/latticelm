@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/ARIA-Funded-TREND/IHMS",
+  "commit": "e25e9119173d59fdb9e4548ef640734dbd19f067",
+  "path": "Vision/object_recognition/attention.py",
+  "sha256": "1fe3c064ded77a35f336df7ebc8caebc90e0e10e2870e8efd527b4b659c6d191",
+  "authors": "ARIA-Funded-TREND / Adeel and Bilal",
+  "license": "CC-BY-NC-4.0",
+  "modifications": "None; original operator used as an independent test fixture only."
+}

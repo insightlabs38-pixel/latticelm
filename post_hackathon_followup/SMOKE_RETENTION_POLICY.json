@@ -1,0 +1,5 @@
+{
+  "delete_passed_weights": true,
+  "approved_by_user": "Delete passed smoke weights; retain evidence",
+  "scope": "Completed reproducible smoke tests with endpoint SHA covered by a passed exact state-comparison certificate. Retain all scientific weights, active tests, logs, receipts, registrations, hashes and comparison evidence."
+}
