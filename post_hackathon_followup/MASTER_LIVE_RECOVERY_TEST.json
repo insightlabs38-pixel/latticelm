@@ -1,0 +1,14 @@
+{
+  "after_attempt": "cad267c6f56c46fdbf5a5fd2bbffb66b",
+  "after_child_pid": 1088639,
+  "after_master_pid": 1091520,
+  "after_step": 1376,
+  "at": "2026-10-11T02:31:16.041328+00:00",
+  "before_attempt": "cad267c6f56c46fdbf5a5fd2bbffb66b",
+  "before_child_pid": 1088639,
+  "before_master_pid": 1088637,
+  "before_step": 1343,
+  "method": "Kill only controller main PID; systemd restarts it and adopts the unchanged live scientific trainer. Never signal trainer or its group.",
+  "passed": true,
+  "verified_at": "2026-10-11T02:32:42.356356+00:00"
+}

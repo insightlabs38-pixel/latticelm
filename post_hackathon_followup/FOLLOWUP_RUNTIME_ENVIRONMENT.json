@@ -1,5 +1,6 @@
 {
   "at": "2026-10-11T02:24:47.140240+00:00",
+  "diagnostic_policy": "Full-Co4 checkpoint diagnostics include held-out and last training-forward token/latent activation ranges, unbounded abs>6 fractions, learned latent-agent statistics, and exact parameter categories. Training logs retain gradient norms.",
   "machine": "aarch64",
   "packages": {
     "DataProperty": "1.1.1",

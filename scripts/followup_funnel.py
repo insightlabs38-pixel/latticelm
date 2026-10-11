@@ -32,6 +32,8 @@ def ensure(name,recipe,budget,role,control='',seed=1337,**extra):
         r['co4_stages']=full['block_types'].count('modulated');r['total_blocks']=len(full['block_types'])
     if r.get('trainer_script'):
         r['source_hashes'][('scripts/'+r['trainer_script'])]=sha256(ROOT/'scripts'/r['trainer_script'])
+        if r['trainer_script']=='followup_continuation_train.py':
+            r['source_hashes']['scripts/followup_historical.py']=sha256(ROOT/'scripts/followup_historical.py')
     # Every mathematical source must be recoverable from the stated revision.
     import hashlib
     for path,digest in r['source_hashes'].items():
@@ -59,12 +61,24 @@ def frozen_decision(path,value):
 def historical_rows():return {r['experiment_id']:r for r in map(json.loads,(ROOT/'post_hackathon_research/RUN_REGISTRY.jsonl').read_text().splitlines())}
 
 
+def primary_control(architecture,seed):
+    """Choice stays explicit; missing legacy source is never silently accepted."""
+    path=RESEARCH/'HISTORICAL_8M_CONTROL_POLICY.json'
+    if not path.exists():return None
+    policy=read(path)
+    if policy.get('selection')=='fresh_matched_controls':
+        return f'F8-{architecture}-FULLCONTROL-100M-S{seed}'
+    return None  # Waiting for recoverable source snapshots and their audit.
+
+
 def import_control(old_name):
     name='CONTROL-'+old_name;run=RESEARCH/'runs'/name
     if (run/'train_receipt.json').exists():return name
     rows=historical_rows();old=rows[old_name];original=ROOT/'post_hackathon_research/runs'/old_name/'latest.pt'
     checkpoint=torch.load(original,map_location='cpu',weights_only=False)
     digest=sha256(original)
+    from followup_historical import verify_historical_control
+    provenance=verify_historical_control(old_name,checkpoint,digest)
     if checkpoint['logical_tokens']!=old['token_budget'] or json.loads(json.dumps(checkpoint['config']))!=old['config']:raise ValueError('Historical control identity mismatch')
     cfg=old['config'];recipe={'config':cfg,'variant':old.get('variant','baseline')}
     r=ensure(name,recipe,old['token_budget'],'historical control; fresh original run, no new training',seed=cfg['seed'],
@@ -75,7 +89,6 @@ def import_control(old_name):
     from train_final_production import load_arrays
     model=build_model(r);model.load_state_dict(checkpoint['model'],strict=True)
     if sum(p.numel() for p in model.parameters() if p.requires_grad)!=r['parameter_count']:raise ValueError('Control parameter mismatch')
-    if checkpoint.get('trainer_sha256')!=sha256(ROOT/'scripts/posthack_train.py'):raise ValueError('Historical trainer provenance mismatch')
     _,_,valid=load_arrays(ROOT/r['manifest_path'])
     losses,paired=evaluate_sources(model,valid,cfg['context_length'])
     run.mkdir(parents=True,exist_ok=True);destination=run/'historical-control.pt'
@@ -93,7 +106,8 @@ def import_control(old_name):
         atomic_bytes(run/'historical_learning_curve.jsonl',history.read_bytes())
     atomic_json(run/'train_receipt.json',{'status':'TRAINED','experiment_id':name,'logical_tokens':checkpoint['logical_tokens'],
        'processed_tokens':checkpoint['processed_tokens'],'step':checkpoint['step'],'checkpoint_sha256':digest,'wall_seconds':checkpoint['wall_seconds'],
-       'imported_historical_control':True,'historical_experiment':old_name,'historical_checkpoint_sha256':digest,'at':utc()})
+       'imported_historical_control':True,'historical_experiment':old_name,'historical_checkpoint_sha256':digest,
+       'historical_trainer_sha256':checkpoint.get('trainer_sha256'),'provenance_control':provenance['control'],'at':utc()})
     return name
 
 
@@ -140,11 +154,20 @@ def advance(state):
     # Comparator endpoints are evaluated once through the same pipeline. Import
     # executes only while the controller has no active heavy worker.
     import_control('R32-CO4-CONTROL')
-    for seed in (1337,2026):
-        for architecture in ('DENSE','CO4'):
-            old=f'A8-{architecture}-S{seed}'
-            if old in rows:import_control(old)
     import_control('R16-S2026-CONTROL')
+    # Legacy A8 trainer bytes are missing. Hold only their affected comparisons
+    # until the user selects fresh replacements or supplies auditable snapshots.
+    for seed in (1337,2026):
+        if seed==1337 and not any(read(p).get('run') for p in (RESEARCH/'decisions').glob('*-C2-promotion.json')):continue
+        if seed==2026 and not (RESEARCH/'decisions/full-winner.json').exists():continue
+        for architecture in ('DENSE','CO4'):
+            name=primary_control(architecture,seed)
+            if name:
+                old=rows[f'A8-{architecture}-S{seed}']
+                ensure(name,{'config':old['config']},100_000_000,
+                    'Fresh primary matched control replacing historical control with incomplete trainer provenance',seed=seed,
+                    evaluation_mode='full',evaluation_seconds=7200,
+                    replaces_historical_control=f'A8-{architecture}-S{seed}')
     dense='F32-DENSE-S1337-FRESH300M';co4='CONTROL-R32-CO4-CONTROL'
     if done(dense) and done(co4):
         frozen_decision('dense-300m-closure.json',{'run':False,'evidence':comparison(dense,co4),
@@ -205,7 +228,8 @@ def advance(state):
     candidates=[]
     for family in plan['families']:
         main=f'FC{family}-100M-S1337';shallow=f'FC{family}-SHALLOW-100M-S1337'
-        controls=[shallow,'CONTROL-A8-DENSE-S1337','CONTROL-A8-CO4-S1337']
+        controls=[shallow,primary_control('DENSE',1337),primary_control('CO4',1337)]
+        if any(c is None for c in controls):continue
         if not done(main) or not all(done(c) for c in controls):continue
         evidence=[comparison(main,c) for c in controls]
         if not any(e['capability']['any_clear_regression'] for e in evidence) and any(e['quality_gain'] or e['efficiency_signal'] for e in evidence):
@@ -222,7 +246,8 @@ def advance(state):
         second=f'FC{family}-100M-S2026';shallow=f'FC{family}-SHALLOW-100M-S2026'
         ensure(shallow,entry['shallow_dense'],100_000_000,'Second-seed matched shallow dense',seed=2026,evaluation_mode='full',evaluation_seconds=7200)
         ensure(second,recipe,100_000_000,'C4 exactly one second primary full-Co4 seed',shallow,seed=2026,evaluation_mode='full',evaluation_seconds=7200,family=family)
-        second_controls=[shallow,'CONTROL-A8-DENSE-S2026','CONTROL-A8-CO4-S2026']
+        second_controls=[shallow,primary_control('DENSE',2026),primary_control('CO4',2026)]
+        if any(c is None for c in second_controls):return
         if done(second) and all(done(c) for c in second_controls):
             evidence=[comparison(second,c) for c in second_controls]
             from followup_analysis import two_seed_consistency
@@ -233,7 +258,7 @@ def advance(state):
             if confirmed['run']:
                 if late_improvement(choice['seed1']) or late_improvement(second):
                     for seed,parent in [(1337,choice['seed1']),(2026,second)]:
-                        for n in [parent,f'FC{family}-SHALLOW-100M-S{seed}',f'CONTROL-A8-DENSE-S{seed}',f'CONTROL-A8-CO4-S{seed}']:extension(n)
+                        for n in [parent,f'FC{family}-SHALLOW-100M-S{seed}',primary_control('DENSE',seed),primary_control('CO4',seed)]:extension(n)
                 ladder=entry['depth_ladder']['1'];control=f'FC{family}-DEPTH1-DENSE-100M-S1337'
                 ensure(control,ladder['shallow_dense'],100_000_000,'Optional depth-1 matched dense',evaluation_mode='full',evaluation_seconds=7200)
                 settings=copy.deepcopy(ladder['candidate']);settings['config']['learning_rate']=first['config']['learning_rate'];settings['full_co4']['initialization_scale']=first['full_co4']['initialization_scale']

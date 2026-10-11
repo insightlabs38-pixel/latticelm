@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-11T03:13:05.347979+00:00",
+  "checkpoint_sha256": "86be653ef976397aebf4c4c52e7680d535e31516d5a892d5653a6329a49732ae",
+  "control": "R16-S2026-CONTROL",
+  "event_counts": {
+    "BEST_CHECKPOINT": 15,
+    "CHECKPOINT": 15,
+    "HF_ARCHIVE_VERIFIED": 10,
+    "RUN_REGISTERED": 1,
+    "SCREEN_EVALUATED_AND_ARCHIVED": 1,
+    "TRAIN_END": 1,
+    "TRAIN_START": 1
+  },
+  "evidence_hashes": {
+    "post_hackathon_research/RUN_REGISTRY.jsonl": "1de7645fdae2fb0e58cd14b1d4d2c6c171dfd2a743230685c8c4e4c2a43bf917",
+    "post_hackathon_research/controller_events.jsonl": "8414cf93ae93f75ac4d53733d95a2f85770bd80b03da7dc31f55d70af987c38e",
+    "post_hackathon_research/runs/R16-S2026-CONTROL/latest.sha256": "dc95c65a246bb70cb71b3c03d41fa5d01e7fb599a5ca28c518bd6008be5d2e42",
+    "post_hackathon_research/runs/R16-S2026-CONTROL/metrics.jsonl": "e5f7135d63e9e64e17e6bf06e6b874a3f58e0631dc61a5ddd2e59307cfa9ff55",
+    "post_hackathon_research/runs/R16-S2026-CONTROL/result.json": "f5352752fa531d142311fffb381d96933b2ee401ddade6bc0d6acd03f6c29617"
+  },
+  "evidence_limit": "No initial R16 checkpoint archived. Fresh initialization follows the recovered trainer source and single start/no resume history; no new forward replay was run. Token shards inherit prior R32/dense launch hash verification.",
+  "maximum_lr_error": 0.0,
+  "passed": true,
+  "saved_next_batch_sha256": "7d447e74a3fadd2afae638ad628675e9f27b8dc6374989983e4f68c60ab3a1bd",
+  "schema": "historical-control-provenance-v1",
+  "source_hashes": {
+    "scripts/posthack_train.py": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7",
+    "scripts/train_final_production.py": "903106cedee65b630dad1903b0c09d9ad519e773921279bc3287438777ca6d1f",
+    "src/latticelm/data_d.py": "c08631d747fab1083f9d4a31a7cf4b5df2213db5e94b913d85281e51e6608b42",
+    "src/latticelm/final_recipe.py": "d9555ed1a8ca12b628423ba11787b6dcd1a593b5f54d060078427d9809d94dc9",
+    "src/latticelm/model.py": "304b426b181b17688dbf8cd81ff97ab1d9060c59a0b763feec630857a6c9e5f7",
+    "src/latticelm/posthack_variants.py": "889dddd9b7d388174db3a270487b13fa06777bccf24a7b51f6cc3b0ea51e8c50"
+  },
+  "total_steps": 18311,
+  "trainer_sha256": "3f00fbbf6750e727e265138f0ac6a256d9de396136c08fa618c7bdeb7adc5fb7"
+}

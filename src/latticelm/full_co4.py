@@ -139,11 +139,13 @@ class FullCo4LM(nn.Module):
         logits=self.lm_head(self.norm(x))
         loss=None if targets is None else F.cross_entropy(logits.reshape(-1,logits.shape[-1]),targets.reshape(-1))
         self.last_token_state=x.detach();self.last_latent_state=latent.detach()
+        if self.training:
+            self.last_training_token_state=x.detach();self.last_training_latent_state=latent.detach()
         return logits,loss
 
     def architecture_state(self):
         statistics={}
-        for name in ('last_token_state','last_latent_state'):
+        for name in ('last_token_state','last_latent_state','last_training_token_state','last_training_latent_state','latent_agents'):
             value=getattr(self,name,None)
             if value is not None:
                 statistics[name]={'min':float(value.min()),'max':float(value.max()),'mean':float(value.mean()),

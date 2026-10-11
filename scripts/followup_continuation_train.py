@@ -157,8 +157,9 @@ def train(args):
         if ck["logical_tokens"] != record["initial_logical_tokens"] or ck["step"] != record["schedule_start_step"]: raise ValueError("continuation parent position mismatch")
         if ck.get("full_co4") != record.get("full_co4") or ck.get("variant", "baseline") != record.get("variant", "baseline"): raise ValueError("continuation operator mismatch")
         if ck["manifest_sha256"] != record["sampling_manifest_sha256"] or ck["tokenizer_sha256"] != record["tokenizer_sha256"]: raise ValueError("continuation data/tokenizer mismatch")
-        if ck.get('schema')=='posthack-checkpoint-v1' and ck.get('trainer_sha256')!=sha256(ROOT/'scripts/posthack_train.py'):
-            raise ValueError('Historical continuation trainer provenance mismatch')
+        if ck.get('schema')=='posthack-checkpoint-v1':
+            from followup_historical import verify_historical_control
+            verify_historical_control(ck['experiment_id'],ck,record['continuation_checkpoint_sha256'])
         for rel,digest in ck.get("source_hashes",{}).items():
             if record["source_hashes"].get(rel) != digest: raise RuntimeError("continuation scientific source changed: "+rel)
         decision("EXPLICIT_EXTENSION_PHASE_START",experiment_id=args.experiment_id,parent_sha256=record["continuation_checkpoint_sha256"],

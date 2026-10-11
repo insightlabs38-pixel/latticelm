@@ -1,11 +1,12 @@
 {
-  "at": "2026-10-11T02:29:56.040231+00:00",
+  "at": "2026-10-11T03:15:27.486406+00:00",
   "passed": true,
-  "policy": "Tiny correctness/controller tests only, with one CPU thread; actual scientific-batch smoke/resume is exclusive and gated separately.",
+  "policy": "Tiny correctness/controller/provenance/archive tests only, with one CPU thread. Actual scientific-batch smoke/resume is exclusive and gated separately. Real batched HF upload waits for rate-limit cooldown.",
   "test_paths": [
     "tests/test_full_co4.py",
     "tests/test_followup_controller.py",
-    "tests/test_followup_science.py"
+    "tests/test_followup_science.py",
+    "tests/test_followup_archive.py"
   ],
-  "tests": 34
+  "tests": 40
 }

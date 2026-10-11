@@ -1,0 +1,49 @@
+{
+  "after_sfdisk_json": {
+    "partitiontable": {
+      "device": "/dev/nvme0n1",
+      "firstlba": 34,
+      "id": "5ADEEB9D-EC28-4167-96A8-177107072E73",
+      "label": "gpt",
+      "lastlba": 471859166,
+      "partitions": [
+        {
+          "node": "/dev/nvme0n1p1",
+          "size": 469759967,
+          "start": 2099200,
+          "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
+          "uuid": "D5900B66-0912-460B-9C19-985D1E295888"
+        },
+        {
+          "node": "/dev/nvme0n1p15",
+          "size": 202753,
+          "start": 2048,
+          "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
+          "uuid": "4F043F26-602A-43C0-BB87-50A34A64A9C9"
+        },
+        {
+          "node": "/dev/nvme0n1p16",
+          "size": 1890305,
+          "start": 206848,
+          "type": "BC13C2FF-59E6-4262-A352-B275FD6F7172",
+          "uuid": "1E04DBBC-E04D-42BF-934F-D582C5F8DF0B"
+        }
+      ],
+      "sectorsize": 512,
+      "unit": "sectors"
+    }
+  },
+  "at": "2026-10-11T02:32:42.345979+00:00",
+  "available_bytes": 40178782208,
+  "before_sfdisk_dump": "label: gpt\nlabel-id: 5ADEEB9D-EC28-4167-96A8-177107072E73\ndevice: /dev/nvme0n1\nunit: sectors\nfirst-lba: 34\nlast-lba: 419430366\nsector-size: 512\n\n/dev/nvme0n1p1 : start=     2099200, size=   417331167, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=D5900B66-0912-460B-9C19-985D1E295888\n/dev/nvme0n1p15 : start=        2048, size=      202753, type=C12A7328-F81F-11D2-BA4B-00A0C93EC93B, uuid=4F043F26-602A-43C0-BB87-50A34A64A9C9\n/dev/nvme0n1p16 : start=      206848, size=     1890305, type=BC13C2FF-59E6-4262-A352-B275FD6F7172, uuid=1E04DBBC-E04D-42BF-934F-D582C5F8DF0B\n",
+  "boot_partitions_unchanged": true,
+  "disk": "/dev/nvme0n1",
+  "filesystem": "ext4",
+  "filesystem_bytes": 232903327744,
+  "new_partition_sectors": 469759967,
+  "old_partition_sectors": 417331167,
+  "online_resize": true,
+  "partition_start_unchanged": true,
+  "root": "/dev/nvme0n1p1",
+  "user_authorized": true
+}

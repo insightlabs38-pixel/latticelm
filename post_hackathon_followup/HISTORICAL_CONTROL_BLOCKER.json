@@ -1,0 +1,24 @@
+{
+  "additional_note": "A8-DENSE-S1337 start event has trainer65bcf8ffcf59e19eef73f78dffefe9cf2fed81e734366973a4b4a9289520f121, different from its endpoint hash. No exact matching trainer snapshots were found in historical source archives or Git history; this is not silently labeled equivalent.",
+  "at": "2026-10-11T03:15:27.483386+00:00",
+  "choices": [
+    "Four fresh matched 100M dense/MOD controls at seeds1337/2026 (~10 additional training hours), implemented and gated on explicit user choice",
+    "Wait for recovered historical source snapshots and audit them before reuse"
+  ],
+  "historical_8m_endpoint_trainer_sha256": {
+    "A8-CO4-S1337": null,
+    "A8-CO4-S2026": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87",
+    "A8-DENSE-S1337": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87",
+    "A8-DENSE-S2026": "58e2387640395864abd49e70e6bf188e20ae449afd064ede0edb5d8157792f87"
+  },
+  "independent_work_continues": [
+    "F32-DENSE-S1337-FRESH300M",
+    "F16-D4-S2026-FRESH150M",
+    "F8-MOD-S7331-FRESH100M",
+    "F8-DIFF-S7331-FRESH100M",
+    "Full-Co4 fresh C1 compatibility and C2 screens"
+  ],
+  "modern_control_checks": "R32 and R16 audits passed, exact whole-run LR/cursors/next-batch and recovered source family.",
+  "scope": "Full-Co4 primary 100M comparisons against deeper dense/current MOD controls only",
+  "status": "AWAITING_USER_CHOICE"
+}

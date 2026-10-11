@@ -10,6 +10,7 @@ import followup_analysis as analysis
 import followup_funnel as funnel
 import followup_common as common
 import posthack_followup_master as master
+import followup_historical as historical
 from followup_plan import full_count
 from latticelm.config import LatticeConfig
 from latticelm.full_co4 import FullCo4LM
@@ -39,6 +40,41 @@ def test_imported_endpoint_goes_to_evaluation_without_training_certificate(tmp_p
         assert master.choose([r],{'runs':{},'scientific_stop_epoch':1000,'hard_deadline_epoch':2000},now=0)==(r,'EVALUATING')
     with patch.object(master,'complete_evidence',return_value=False):
         assert master.choose([r],{'runs':{},'scientific_stop_epoch':1000},now=0)==(None,None)
+
+
+def test_missing_legacy_source_is_not_accepted_as_current_trainer():
+    with pytest.raises(ValueError,match='not recoverable'):
+        historical.verify_historical_control('A8-CO4-S1337',{'trainer_sha256':None},'sha')
+
+
+def test_primary_controls_wait_for_explicit_choice(tmp_path,monkeypatch):
+    monkeypatch.setattr(funnel,'RESEARCH',tmp_path)
+    assert funnel.primary_control('DENSE',1337) is None
+    common.atomic_json(tmp_path/'HISTORICAL_8M_CONTROL_POLICY.json',{'selection':'waiting_for_source_snapshots'})
+    assert funnel.primary_control('DENSE',1337) is None
+    common.atomic_json(tmp_path/'HISTORICAL_8M_CONTROL_POLICY.json',{'selection':'fresh_matched_controls'})
+    assert funnel.primary_control('DENSE',1337)=='F8-DENSE-FULLCONTROL-100M-S1337'
+    assert funnel.primary_control('CO4',2026)=='F8-CO4-FULLCONTROL-100M-S2026'
+
+
+def test_r32_import_binds_audited_source_and_checkpoint(tmp_path,monkeypatch):
+    monkeypatch.setattr(historical,'ROOT',tmp_path)
+    monkeypatch.setattr(historical,'RESEARCH',tmp_path)
+    trainer=tmp_path/'trainer.py';trainer.write_text('frozen')
+    h=common.sha256(trainer)
+    # The key is intentionally the actual trainer identity, not any current
+    # unrelated source hash; the immutable endpoint also must match.
+    target=tmp_path/'scripts/posthack_train.py';target.parent.mkdir();target.write_text('frozen')
+    common.atomic_json(tmp_path/'R32_CO4_PROVENANCE_AUDIT.json',{'passed':True,'control':'R32-CO4-CONTROL',
+      'checkpoint_sha256':'correct','source_hashes':{'scripts/posthack_train.py':h}})
+    assert historical.verify_historical_control('R32-CO4-CONTROL',{'trainer_sha256':h},'correct')['passed']
+    with pytest.raises(ValueError,match='endpoint differs'):
+        historical.verify_historical_control('R32-CO4-CONTROL',{'trainer_sha256':h},'changed')
+    with pytest.raises(ValueError,match='trainer differs'):
+        historical.verify_historical_control('R32-CO4-CONTROL',{'trainer_sha256':'unknown'},'correct')
+    target.write_text('changed')
+    with pytest.raises(ValueError,match='source family changed'):
+        historical.verify_historical_control('R32-CO4-CONTROL',{'trainer_sha256':h},'correct')
 
 
 def test_paired_loss_interval_and_pairing_rejection():

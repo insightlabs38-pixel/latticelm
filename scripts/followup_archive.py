@@ -38,7 +38,7 @@ def historical_files():
         if p.suffix in ('.json','.jsonl','.md','.csv','.png','.sha256','.gz','.int32','.zip','.pt','.log','.service'):files.append(p)
     manifest=ROOT/'artifacts/data/data_d_v4/canonical-2250m/manifest.json'
     top=json.loads(manifest.read_text());files.append(manifest)
-    for item in top['shards']:
+    for item in top['shards']+top['validation_shards']:
         child=manifest.parent/item['manifest_path'];row=json.loads(child.read_text())
         if cached_hash(child)!=item['manifest_sha256']:raise ValueError('Canonical child manifest changed')
         shard=manifest.parent/row['path']
@@ -102,65 +102,105 @@ def selected_files():
 
 
 def archive(final=False):
+    import time
+    from huggingface_hub import CommitOperationAdd
+    retry_path=RESEARCH/'HF_ARCHIVE_RETRY.json'
+    if retry_path.exists():
+        retry=json.loads(retry_path.read_text())
+        if retry.get('retry_epoch',0)>time.time():
+            if final:raise RuntimeError('HF archive cooling down until '+utc(retry['retry_epoch']))
+            return {'deferred':True,**retry}
     os.nice(10)
     source_snapshot()
     api=HfApi(token=SECRET.read_text().strip())
     info=api.repo_info(REPO,files_metadata=True)
-    if not info.private:raise RuntimeError("archive destination must be private")
+    if not info.private:raise RuntimeError('archive destination must be private')
     remote={s.rfilename:s for s in info.siblings}
     by_digest={s.lfs.sha256:s for s in info.siblings if s.lfs}
-    manifest_path=RESEARCH/"FOLLOWUP_ARCHIVE_MANIFEST.json"
-    manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {"schema":"followup-archive-v1","files":{}}
-    selected=selected_files()+historical_files()
-    # Scientific outputs and their code precede historical/input delta uploads.
-    for local in dict.fromkeys(selected):
-        if local.is_symlink():raise RuntimeError("symlinks refused")
-        rel=local.relative_to(ROOT).as_posix()
-        destination=('post-hackathon/2026-10-01/'+local.relative_to(ROOT/'post_hackathon_research').as_posix()
-                     if local.is_relative_to(ROOT/'post_hackathon_research') else
-                     PREFIX+"/"+(local.relative_to(RESEARCH).as_posix() if local.is_relative_to(RESEARCH) else "shared/"+rel))
-        # Snapshot mutable reports/receipts so hash, upload, and remote verification refer to identical bytes.
-        with tempfile.TemporaryDirectory(prefix="followup-upload-") as tmp:
-            snapshot=Path(tmp)/local.name
-            if local.suffix in ('.pt','.int32','.gz','.zip'):
-                try:
-                    os.link(local,snapshot)  # immutable checkpoint; zero-copy stable inode
-                except OSError as error:
-                    if error.errno != errno.EXDEV: raise
-                    shutil.copyfile(local,snapshot)
-            else:
-                snapshot.write_bytes(local.read_bytes())
-            digest=cached_hash(local) if local.suffix in ('.pt','.int32','.gz','.zip') else sha256(snapshot)
-            sibling=remote.get(destination)
-            if not remote_matches(snapshot,sibling,digest) and digest in by_digest:
-                sibling=by_digest[digest];destination=sibling.rfilename
-            changed=not remote_matches(snapshot,sibling,digest)
-            revision=info.sha
-            if changed:
-                if snapshot.stat().st_size < 2_000_000:
-                    data=snapshot.read_bytes()
-                    if re.search(rb"github_pat_[A-Za-z0-9_]{30,}|hf_[A-Za-z0-9]{30,}",data):raise RuntimeError("credential-pattern content refused: "+rel)
-                print("Delta upload: "+rel,flush=True)
-                result=api.upload_file(path_or_fileobj=str(snapshot),path_in_repo=destination,repo_id=REPO,
-                                      commit_message="Verified final-week research delta",repo_type="model")
-                revision=result.oid
-                current=api.get_paths_info(REPO,[destination],revision=revision)
-                sibling=next((s for s in current if s.rfilename==destination),None)
-                remote[destination]=sibling
-                if sibling and sibling.lfs:by_digest[sibling.lfs.sha256]=sibling
-            if not remote_matches(snapshot,sibling,digest):raise RuntimeError("remote hash/size verification failed: "+destination)
-            manifest["files"][rel]={"local_sha256":digest,"size_bytes":snapshot.stat().st_size,"remote":destination,
-                "repo":REPO,"revision":revision,"verified":True,"at":utc(),
-                "verification":"LFS SHA256" if sibling.lfs else "Git blob SHA1 and size","uploaded_this_pass":changed}
-        manifest["updated_utc"]=utc();manifest["git_commit"]=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()
-        manifest["hard_deadline_utc"]="2026-10-17T20:10:00+00:00"
+    manifest_path=RESEARCH/'FOLLOWUP_ARCHIVE_MANIFEST.json'
+    manifest=json.loads(manifest_path.read_text()) if manifest_path.exists() else {'schema':'followup-archive-v1','files':{}}
+    selected=list(dict.fromkeys(selected_files()+historical_files()))
+    pending=[];pending_bytes=0;pending_digests={};latest_revision=info.sha
+    def record(entry,sibling,revision,changed):
+        if not remote_matches(entry['snapshot'],sibling,entry['digest']):raise RuntimeError('Remote hash/size mismatch: '+entry['destination'])
+        manifest['files'][entry['relative']]={'local_sha256':entry['digest'],'size_bytes':entry['snapshot'].stat().st_size,
+          'remote':entry['destination'],'repo':REPO,'revision':revision,'verified':True,'at':utc(),
+          'verification':'LFS SHA256' if sibling.lfs else 'Git blob SHA1 and size','uploaded_this_pass':changed}
+    def publish():
+        manifest.update(updated_utc=utc(),git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),hard_deadline_utc='2026-10-17T20:10:00+00:00')
         atomic_json(manifest_path,manifest)
-    # Publish the manifest after its entries have all been verified; no recursive self hash.
-    result=api.upload_file(path_or_fileobj=str(manifest_path),path_in_repo=PREFIX+"/FOLLOWUP_ARCHIVE_MANIFEST.json",
-                          repo_id=REPO,commit_message="Final-week verified delta manifest")
-    atomic_json(RESEARCH/"last_archive_receipt.json",{"at":utc(),"revision":result.oid,"file_count":len(manifest["files"]),"manifest_sha256":sha256(manifest_path)})
-    decision("HF_DELTA_VERIFIED",revision=result.oid,file_count=len(manifest["files"]))
-    return manifest
+    def flush():
+        nonlocal latest_revision,pending_bytes
+        if not pending:return
+        unique={e['destination']:e for e in pending}
+        commit=api.create_commit(REPO,operations=[CommitOperationAdd(path_in_repo=e['destination'],path_or_fileobj=str(e['snapshot'])) for e in unique.values()],
+             commit_message='Verified final-week research delta batch',repo_type='model',num_threads=1)
+        latest_revision=commit.oid
+        returned={s.rfilename:s for s in api.get_paths_info(REPO,list(unique),revision=latest_revision)}
+        for entry in pending:
+            sibling=returned.get(entry['destination']);record(entry,sibling,latest_revision,True)
+            remote[entry['destination']]=sibling
+            if sibling.lfs:by_digest[sibling.lfs.sha256]=sibling
+        publish();print('Verified delta batch: '+str(len(unique))+' files',flush=True)
+        pending.clear();pending_digests.clear();pending_bytes=0
+    try:
+        # Ensure binary canonical shards use LFS before preupload inspects them.
+        with tempfile.TemporaryDirectory(prefix='followup-attributes-') as directory:
+            attrs=Path(hf_hub_download(REPO,'.gitattributes',revision=info.sha,token=SECRET.read_text().strip(),local_dir=directory)).read_bytes()
+            rule=b'*.int32 filter=lfs diff=lfs merge=lfs -text'
+            if rule not in attrs:
+                attributes=api.create_commit(REPO,operations=[CommitOperationAdd(path_in_repo='.gitattributes',path_or_fileobj=attrs.rstrip()+b'\n'+rule+b'\n')],
+                    commit_message='Preserve canonical training shards through LFS',repo_type='model',num_threads=1)
+                latest_revision=attributes.oid
+        with tempfile.TemporaryDirectory(prefix='followup-delta-batch-') as directory:
+            for index,local in enumerate(selected):
+                if local.is_symlink():raise RuntimeError('symlinks refused')
+                rel=local.relative_to(ROOT).as_posix()
+                destination=('post-hackathon/2026-10-01/'+local.relative_to(ROOT/'post_hackathon_research').as_posix() if local.is_relative_to(ROOT/'post_hackathon_research') else
+                  PREFIX+'/'+(local.relative_to(RESEARCH).as_posix() if local.is_relative_to(RESEARCH) else 'shared/'+rel))
+                snapshot=Path(directory)/(str(index)+'-'+local.name)
+                immutable=local.suffix in ('.pt','.int32','.gz','.zip')
+                if immutable:
+                    try:os.link(local,snapshot)
+                    except OSError as error:
+                        if error.errno!=errno.EXDEV:raise
+                        shutil.copyfile(local,snapshot)
+                else:snapshot.write_bytes(local.read_bytes())
+                digest=cached_hash(local) if immutable else sha256(snapshot)
+                sibling=remote.get(destination)
+                if not remote_matches(snapshot,sibling,digest) and digest in by_digest:
+                    sibling=by_digest[digest];destination=sibling.rfilename
+                entry={'relative':rel,'destination':destination,'snapshot':snapshot,'digest':digest}
+                if remote_matches(snapshot,sibling,digest):
+                    record(entry,sibling,latest_revision,False);snapshot.unlink();continue
+                if snapshot.stat().st_size<2_000_000 and re.search(rb'github_pat_[A-Za-z0-9_]{30,}|hf_[A-Za-z0-9]{30,}',snapshot.read_bytes()):
+                    raise RuntimeError('Credential-pattern content refused: '+rel)
+                if immutable and digest in pending_digests:entry['destination']=pending_digests[digest]
+                pending.append(entry);pending_bytes+=snapshot.stat().st_size
+                if immutable:pending_digests[digest]=entry['destination']
+                if len(pending)>=48 or pending_bytes>=256_000_000:
+                    flush()
+                    for old in Path(directory).iterdir():old.unlink()
+            flush();publish()
+        # Publish the verified ledger after all selected artifacts, never before.
+        commit=api.create_commit(REPO,operations=[CommitOperationAdd(path_in_repo=PREFIX+'/FOLLOWUP_ARCHIVE_MANIFEST.json',path_or_fileobj=str(manifest_path))],
+             commit_message='Final-week verified delta manifest',repo_type='model',num_threads=1)
+        ledger_path=PREFIX+'/FOLLOWUP_ARCHIVE_MANIFEST.json'
+        ledger=next((s for s in api.get_paths_info(REPO,[ledger_path],revision=commit.oid) if s.rfilename==ledger_path),None)
+        ledger_digest=sha256(manifest_path)
+        if not remote_matches(manifest_path,ledger,ledger_digest):raise RuntimeError('Remote archive ledger hash/size mismatch')
+        atomic_json(RESEARCH/'last_archive_receipt.json',{'at':utc(),'revision':commit.oid,'file_count':len(manifest['files']),
+          'manifest_sha256':ledger_digest,'remote_manifest_verified':True})
+        atomic_json(retry_path,{'status':'CLEARED','at':utc(),'retry_epoch':0})
+        decision('HF_DELTA_VERIFIED',revision=commit.oid,file_count=len(manifest['files']))
+        return manifest
+    except Exception as error:
+        response=getattr(error,'response',None)
+        if response is not None and response.status_code==429:
+            retry={'status':'RATE_LIMIT_COOLDOWN','at':utc(),'retry_epoch':time.time()+3600,'reason':'HF commit rate limit; batched single-thread uploader waits for reset.'}
+            atomic_json(retry_path,retry);publish();decision('HF_ARCHIVE_DEFERRED',**retry)
+            if not final:return {'deferred':True,**retry}
+        raise
 
 
 def representative_loads(require_new=False):
