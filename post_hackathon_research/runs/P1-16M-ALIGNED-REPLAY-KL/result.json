@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "444453f105a4e93441b40a7ebf6a59cb1faf2a1eb98b491739cd305c78b13527",
+  "best_logical_tokens": 1004053,
+  "best_weighted_heldout_loss": 3.1237879559397697,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/P1-16M-ALIGNED-REPLAY-KL/latest.pt",
+  "checkpoint_sha256": "444453f105a4e93441b40a7ebf6a59cb1faf2a1eb98b491739cd305c78b13527",
+  "experiment_id": "P1-16M-ALIGNED-REPLAY-KL",
+  "finished_utc": "2026-10-08T10:05:00.763242+00:00",
+  "generation_processed_tokens": 0,
+  "logical_tokens": 1004053,
+  "processed_tokens": 1974272,
+  "sft_raw_bytes": 1057401,
+  "status": "COMPLETED",
+  "steps": 241,
+  "wall_seconds": 379.78907500600326
+}

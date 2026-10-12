@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-10T08:18:04.160210+00:00",
+  "estimated_tps": 6708.247954686489,
+  "evidence_passed": false,
+  "predicted_finish_utc": "2026-10-10T15:56:31.182219+00:00",
+  "reason": "F3 did not clear the pre-registered quality, MI, and capability gates",
+  "run": false
+}

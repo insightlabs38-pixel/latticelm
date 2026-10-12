@@ -1,0 +1,10 @@
+{
+  "active_run": null,
+  "archive_start_utc": "2026-10-16T10:24:33.875000+00:00",
+  "at": "2026-10-10T09:31:51.489674+00:00",
+  "projections": [],
+  "queued_runs": [],
+  "remaining_training_hours": 144.87844036837419,
+  "remaining_working_hours": 156.87844036837419,
+  "working_deadline_utc": "2026-10-16T22:24:33.875000+00:00"
+}

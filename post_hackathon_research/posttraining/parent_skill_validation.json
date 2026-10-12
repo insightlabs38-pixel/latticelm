@@ -1,0 +1,30 @@
+{
+  "aggregate_nll_nats_per_completion_token": 7.852390095547795,
+  "by_resource": {
+    "commonsense_qa": {
+      "completion_tokens": 499,
+      "examples": 128,
+      "nll_nats": 4872.335863113403,
+      "nll_nats_per_completion_token": 9.764200126479766
+    },
+    "qasc": {
+      "completion_tokens": 572,
+      "examples": 128,
+      "nll_nats": 4136.651412963867,
+      "nll_nats_per_completion_token": 7.231908064622146
+    },
+    "sciq": {
+      "completion_tokens": 632,
+      "examples": 128,
+      "nll_nats": 4363.633056640625,
+      "nll_nats_per_completion_token": 6.9044826845579506
+    }
+  },
+  "checkpoint_sha256": "8116e957ec7875c579f4458e9fca21c10c87d7976ec775768b0c3a203f23e583",
+  "context_length": 256,
+  "created_utc": "2026-10-08T09:47:30.185514+00:00",
+  "data_sha256": "d49c1430bd3daf269bc89d59bd998427a283631749dd2690ae957569c3c79b05",
+  "prompt_policy": "same tokenization and answer mask as post-training; at most 128 pinned validation examples per resource",
+  "schema": "posthack-heldout-skill-completion-v1",
+  "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7"
+}

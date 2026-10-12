@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-02T02:01:10.688381+00:00",
+  "files": [
+    {
+      "at": "2026-10-02T02:01:07.023278+00:00",
+      "path": "GIT_ISOLATION.md",
+      "remote": "post-hackathon/2026-10-01/GIT_ISOLATION.md",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "76badf46496cba3d028ce1b8fd02f19e8f7d4034",
+      "sha256": "d6e28cc8366715c750aa80f96d9e92b1a6ad6d625847b666b53bdaac184c9c3b",
+      "size_bytes": 1525,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T02:01:08.091756+00:00",
+      "path": "MASTER_CONTROLLER.md",
+      "remote": "post-hackathon/2026-10-01/MASTER_CONTROLLER.md",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "64d1cda7b96f967481809904aaa80d66b3fbc626",
+      "sha256": "ab491e19efd19ed13e698313aa5d3fb3ff261f51af9dd06ee36a6243efe1ddd0",
+      "size_bytes": 2900,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T02:01:08.817462+00:00",
+      "path": "SOURCE_SNAPSHOT_MANIFEST.json",
+      "remote": "post-hackathon/2026-10-01/SOURCE_SNAPSHOT_MANIFEST.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "c449249dbcf0b56b0f4465327d167ac27986edfc",
+      "sha256": "5758626cfd0b15949fd73da7801f5ed2ded398700e9f1d6d6705bdd0276539d0",
+      "size_bytes": 7391,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T02:01:10.686341+00:00",
+      "path": "source-snapshot-final.zip",
+      "remote": "post-hackathon/2026-10-01/source-snapshot-final.zip",
+      "remote_lfs_sha256": "de1bd2d9835acc03411c9afefae3a8991b3b2faa4ff9890db64e1919a84e1180",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "8c4f2508cb408bbc44931b25579ecc1e7fb9d2df",
+      "sha256": "de1bd2d9835acc03411c9afefae3a8991b3b2faa4ff9890db64e1919a84e1180",
+      "size_bytes": 124399,
+      "verified": true
+    }
+  ]
+}

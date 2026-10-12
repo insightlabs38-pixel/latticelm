@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "07cdf3c13418974138143b664b52774e6c3e9d847e16bd85cc01715fb728f52f",
+  "best_logical_tokens": 1004027,
+  "best_weighted_heldout_loss": 3.1133254304528237,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/P2-16M-TASK-TUNED-DIAGNOSTIC/latest.pt",
+  "checkpoint_sha256": "07cdf3c13418974138143b664b52774e6c3e9d847e16bd85cc01715fb728f52f",
+  "experiment_id": "P2-16M-TASK-TUNED-DIAGNOSTIC",
+  "finished_utc": "2026-10-08T10:15:58.686635+00:00",
+  "generation_processed_tokens": 0,
+  "logical_tokens": 1004027,
+  "processed_tokens": 1851392,
+  "sft_raw_bytes": 738709,
+  "status": "COMPLETED",
+  "steps": 226,
+  "wall_seconds": 310.0089542680071
+}

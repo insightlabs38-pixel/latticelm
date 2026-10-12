@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "7d7065c05af0a7c189ece362317e6e2d912fe7bfa222ae353aa7ffa47ea4d29f",
+  "best_logical_tokens": 50000000,
+  "best_weighted_heldout_loss": 3.415741787850857,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/O8-ENGRAM-REVISIT/latest.pt",
+  "checkpoint_sha256": "7d7065c05af0a7c189ece362317e6e2d912fe7bfa222ae353aa7ffa47ea4d29f",
+  "experiment_id": "O8-ENGRAM-REVISIT",
+  "finished_utc": "2026-10-10T09:28:11.204298+00:00",
+  "logical_tokens": 50000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 50003968,
+  "status": "COMPLETED",
+  "steps": 6104,
+  "variant": "baseline",
+  "wall_seconds": 4161.625164491003
+}

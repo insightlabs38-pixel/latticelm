@@ -1,0 +1,17 @@
+{
+  "checkpoint_path": "post_hackathon_research/runs/D4-16M-ANNEAL/latest.pt",
+  "checkpoint_sha256": "8116e957ec7875c579f4458e9fca21c10c87d7976ec775768b0c3a203f23e583",
+  "eligible": [
+    "D4-16M-ANNEAL",
+    "A16-CO4-S1337",
+    "D2-16M-CAPABILITY",
+    "B16-VALUE-RESIDUAL-S1337",
+    "D1-16M-REBALANCED-S1337",
+    "D3-16M-CURRICULUM",
+    "G-16M-PHM4-FFN",
+    "E2-16M-GROWTH-CURRICULUM",
+    "E1-16M-GROWTH-STATIC"
+  ],
+  "experiment_id": "D4-16M-ANNEAL",
+  "selection_rule": "minimum WikiText BPB among 16M 4K models with <=1 point four-task raw capability regression and <=5% source-wise held-out loss regression versus A16 Co4"
+}

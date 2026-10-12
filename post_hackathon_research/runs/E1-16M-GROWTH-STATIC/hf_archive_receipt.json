@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-06T08:29:36.456684+00:00",
+  "files": [
+    {
+      "at": "2026-10-06T08:29:18.099680+00:00",
+      "path": "configs/16m_co4.json",
+      "remote": "post-hackathon/2026-10-01/configs/16m_co4.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "b1d08a574ef666da3d593f84c198be242bd9db33",
+      "sha256": "5d26e2717eb7a496a3f4d8dfdd845b26635186c9d9e44a89cf45e727d569d4fe",
+      "size_bytes": 1198,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:19.460848+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "bf51ddff76e288e02918c338bbc9b49b0e4c03a0",
+      "sha256": "eef2b7e704a647d497943e1cfd8f5e0e243b336835eff2028dcc4a84aa7462ff",
+      "size_bytes": 690,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:21.995280+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/metrics.jsonl",
+      "remote_lfs_sha256": "887d664db62c02eb2e3fc7241da4c3f4471640fa8bf3dd5d07ffd0afb7567b4b",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "39f2c49dcc061ce5f4bd90d24f238be3cfc88c30",
+      "sha256": "887d664db62c02eb2e3fc7241da4c3f4471640fa8bf3dd5d07ffd0afb7567b4b",
+      "size_bytes": 14266785,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:22.872795+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "5d6a32900a4900adb449e580f59669032d3d9765",
+      "sha256": "803139ce08454d9438998f9f5fb078f8d296437898d66266521da44ef577f8d8",
+      "size_bytes": 15785,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:23.822951+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "3d4cccfbece9afb4495f786cdcdd4e1c0a692f76",
+      "sha256": "c5c0347a1a40310d3d0cc53adc0baaaaec0f5c1e10112409ed655a1f2c7a0420",
+      "size_bytes": 938,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:24.976620+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "07373211a843b8dbdddfeed420dfedc69ef48f36",
+      "sha256": "26b8ccfd23b38987ba3f57d202319c6625f66170d06bb340b1b9b35419031f37",
+      "size_bytes": 20356,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:27.441674+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/capability_samples.json",
+      "remote_lfs_sha256": "827bbb2ab4b6a78b713e30a359104a6b0f8538ae439254393110f65f12ffb93f",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "547114637c4acd3c9d7aa131bf880509ca45c455",
+      "sha256": "827bbb2ab4b6a78b713e30a359104a6b0f8538ae439254393110f65f12ffb93f",
+      "size_bytes": 17243491,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:33.345170+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/latest.pt",
+      "remote_lfs_sha256": "cf6e1030f0742b8b0bd84a4b22d2d600d08695516da266c15d131d2803dbf180",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "c0ae6e676f9b6aaa655725ba6deeb4b62eec2aff",
+      "sha256": "cf6e1030f0742b8b0bd84a4b22d2d600d08695516da266c15d131d2803dbf180",
+      "size_bytes": 138959027,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:35.024109+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/best.pt",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/best.pt",
+      "remote_lfs_sha256": "cf6e1030f0742b8b0bd84a4b22d2d600d08695516da266c15d131d2803dbf180",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "e38b47fff807424b22541f7f9d58a4f6fc201ac6",
+      "sha256": "cf6e1030f0742b8b0bd84a4b22d2d600d08695516da266c15d131d2803dbf180",
+      "size_bytes": 138959027,
+      "verified": true
+    },
+    {
+      "at": "2026-10-06T08:29:36.454813+00:00",
+      "path": "runs/E1-16M-GROWTH-STATIC/best.sha256",
+      "remote": "post-hackathon/2026-10-01/runs/E1-16M-GROWTH-STATIC/best.sha256",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "9ea08217310a43ad348d223c16266bad8b3ba568",
+      "sha256": "d461bdea4ecbc804ea1afeb497b2822f2400454f89d17d07da524648bdb32654",
+      "size_bytes": 65,
+      "verified": true
+    }
+  ]
+}

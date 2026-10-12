@@ -1,0 +1,35 @@
+[
+  {
+    "at": "2026-10-01T22:29:17.832825+00:00",
+    "path": "FROZEN_HACKATHON_STATE.json",
+    "remote": "post-hackathon/2026-10-01/FROZEN_HACKATHON_STATE.json",
+    "repo": "insightlabs38-pixel/LatticeLM-research",
+    "sha256": "0494a507b42b9c6a76eac6b40da16229096b26ebd89ecf32605cd6900b55be5e",
+    "size_bytes": 947,
+    "remote_lfs_sha256": null,
+    "revision": "e246e9f7ca2c412747efe79b2facd0e9a20979c9",
+    "verified": true
+  },
+  {
+    "at": "2026-10-01T22:29:18.656196+00:00",
+    "path": "CAMPAIGN_PLAN.md",
+    "remote": "post-hackathon/2026-10-01/CAMPAIGN_PLAN.md",
+    "repo": "insightlabs38-pixel/LatticeLM-research",
+    "sha256": "614e358a9827dec36cdd7d7fdbe6660a1436c6853abe3b8d6531d1af7b28e9d5",
+    "size_bytes": 3351,
+    "remote_lfs_sha256": null,
+    "revision": "574122dd46c8d45170e35022953a3b3a09f747ad",
+    "verified": true
+  },
+  {
+    "at": "2026-10-01T22:29:19.346950+00:00",
+    "path": "LIVE_SCHEDULE.md",
+    "remote": "post-hackathon/2026-10-01/LIVE_SCHEDULE.md",
+    "repo": "insightlabs38-pixel/LatticeLM-research",
+    "sha256": "9d3c5df15616df87510a970877c9398f7c3c041ecc13a6842b3fd6cd5c404105",
+    "size_bytes": 1181,
+    "remote_lfs_sha256": null,
+    "revision": "2e866cb1a6f784b8aaea3ac6b6057d77c7443783",
+    "verified": true
+  }
+]

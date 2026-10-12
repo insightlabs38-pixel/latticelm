@@ -1,0 +1,79 @@
+{
+  "child_checkpoint_sha256": "444453f105a4e93441b40a7ebf6a59cb1faf2a1eb98b491739cd305c78b13527",
+  "created_utc": "2026-10-08T10:39:02.659838+00:00",
+  "parent_checkpoint_sha256": "8116e957ec7875c579f4458e9fca21c10c87d7976ec775768b0c3a203f23e583",
+  "recovery_training_launched": false,
+  "rows": [
+    {
+      "alpha": 0.0,
+      "bits_per_byte": 1.6216899756946888,
+      "checkpoint_sha256": "8116e957ec7875c579f4458e9fca21c10c87d7976ec775768b0c3a203f23e583",
+      "source_losses": {
+        "finemath": 3.0029645562171936,
+        "fineweb": 3.161060482263565,
+        "fineweb_edu": 3.2072313129901886,
+        "wikipedia": 2.8811093866825104
+      }
+    },
+    {
+      "alpha": 0.1,
+      "bits_per_byte": 1.6222839885660054,
+      "checkpoint_path": "post_hackathon_research/posttraining/interpolation/alpha_10.pt",
+      "checkpoint_sha256": "70e028d6fa99abf9c1524e9c9c3fc1a34e7cda81ff2abe52e94cc243557bf098",
+      "source_losses": {
+        "finemath": 3.0033216774463654,
+        "fineweb": 3.1609309911727905,
+        "fineweb_edu": 3.2074216306209564,
+        "wikipedia": 2.8803440630435944
+      }
+    },
+    {
+      "alpha": 0.25,
+      "bits_per_byte": 1.6243465733083287,
+      "checkpoint_path": "post_hackathon_research/posttraining/interpolation/alpha_25.pt",
+      "checkpoint_sha256": "c2b3511b143e6e4bd52b8eaf98904ddf0304f993d84b58b23abc85a4244784f5",
+      "source_losses": {
+        "finemath": 3.005444049835205,
+        "fineweb": 3.161831945180893,
+        "fineweb_edu": 3.2089051008224487,
+        "wikipedia": 2.879933774471283
+      }
+    },
+    {
+      "alpha": 0.5,
+      "bits_per_byte": 1.629267350305867,
+      "checkpoint_path": "post_hackathon_research/posttraining/interpolation/alpha_50.pt",
+      "checkpoint_sha256": "d041897db5d98dbad40d967014d78db0717250f12faac107ed553396edc4d146",
+      "source_losses": {
+        "finemath": 3.0132060945034027,
+        "fineweb": 3.166172742843628,
+        "fineweb_edu": 3.2149140536785126,
+        "wikipedia": 2.8811908662319183
+      }
+    },
+    {
+      "alpha": 1.0,
+      "bits_per_byte": 1.6433232671594245,
+      "checkpoint_sha256": "444453f105a4e93441b40a7ebf6a59cb1faf2a1eb98b491739cd305c78b13527",
+      "source_losses": {
+        "finemath": 3.0454591810703278,
+        "fineweb": 3.1857433915138245,
+        "fineweb_edu": 3.243210017681122,
+        "wikipedia": 2.890595406293869
+      }
+    }
+  ],
+  "schema": "posthack-interpolation-v1",
+  "selected": {
+    "alpha": 1.0,
+    "bits_per_byte": 1.6433232671594245,
+    "checkpoint_sha256": "444453f105a4e93441b40a7ebf6a59cb1faf2a1eb98b491739cd305c78b13527",
+    "source_losses": {
+      "finemath": 3.0454591810703278,
+      "fineweb": 3.1857433915138245,
+      "fineweb_edu": 3.243210017681122,
+      "wikipedia": 2.890595406293869
+    }
+  },
+  "selection_rule": "largest P1 fraction with <=2% WikiText BPB loss and <=5% source-wise held-out regression; broad capability evaluated for non-endpoint selection"
+}

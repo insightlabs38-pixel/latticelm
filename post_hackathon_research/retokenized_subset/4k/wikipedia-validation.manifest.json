@@ -1,0 +1,992 @@
+{
+  "document_boundary_offsets": [
+    0,
+    849,
+    8835,
+    28795,
+    33991,
+    36588,
+    41578,
+    44089,
+    53158,
+    64995,
+    66348,
+    76492,
+    89454,
+    91395,
+    96636,
+    99885,
+    102925,
+    111664,
+    124877,
+    128096,
+    134153,
+    134602,
+    140772,
+    142949,
+    144285,
+    146975,
+    153992,
+    155203,
+    161266,
+    171569,
+    176063,
+    184204,
+    206786,
+    213198,
+    215143,
+    216676,
+    235828,
+    268812,
+    278607,
+    285807,
+    294906,
+    295069,
+    295978,
+    298666,
+    305911,
+    309243,
+    310500,
+    312391,
+    328897,
+    334169,
+    334327,
+    358899,
+    359885,
+    362403,
+    376529,
+    377231,
+    383289,
+    384875,
+    385721,
+    386428,
+    386620,
+    387387,
+    387551,
+    389235,
+    389427,
+    390076,
+    393234,
+    393779,
+    393963,
+    395944,
+    396516,
+    397819,
+    400161,
+    400937,
+    403841,
+    405696,
+    405911,
+    406230,
+    407957,
+    408606,
+    409102,
+    409416,
+    409621,
+    411455,
+    413416,
+    414081,
+    414424,
+    415288,
+    416020,
+    416380,
+    420410,
+    420660,
+    423043,
+    423474,
+    423582,
+    424380,
+    424844,
+    425375,
+    430179,
+    431609,
+    433135,
+    434151,
+    434249,
+    434742,
+    437875,
+    438835,
+    440427,
+    440565,
+    440868,
+    441383,
+    441639,
+    442773,
+    445626,
+    445760,
+    445898,
+    448428,
+    449454,
+    453264,
+    454355,
+    454699,
+    456476,
+    456843,
+    457361,
+    461041,
+    461242,
+    466922,
+    467441,
+    467967,
+    468455,
+    470087,
+    472545,
+    473670,
+    474639,
+    475803,
+    477730,
+    478080,
+    478282,
+    479577,
+    480585,
+    482056
+  ],
+  "document_count": 139,
+  "document_upstream_metadata": [
+    {
+      "id": "316",
+      "title": "Academy Award for Best Production Design",
+      "url": "https://en.wikipedia.org/wiki/Academy%20Award%20for%20Best%20Production%20Design"
+    },
+    {
+      "id": "782",
+      "title": "Mouthwash",
+      "url": "https://en.wikipedia.org/wiki/Mouthwash"
+    },
+    {
+      "id": "852",
+      "title": "Alexander Graham Bell",
+      "url": "https://en.wikipedia.org/wiki/Alexander%20Graham%20Bell"
+    },
+    {
+      "id": "1055",
+      "title": "All Souls' Day",
+      "url": "https://en.wikipedia.org/wiki/All%20Souls%27%20Day"
+    },
+    {
+      "id": "1227",
+      "title": "Ashmore and Cartier Islands",
+      "url": "https://en.wikipedia.org/wiki/Ashmore%20and%20Cartier%20Islands"
+    },
+    {
+      "id": "1241",
+      "title": "American (word)",
+      "url": "https://en.wikipedia.org/wiki/American%20%28word%29"
+    },
+    {
+      "id": "1422",
+      "title": "Amide",
+      "url": "https://en.wikipedia.org/wiki/Amide"
+    },
+    {
+      "id": "1425",
+      "title": "Antonio Vivaldi",
+      "url": "https://en.wikipedia.org/wiki/Antonio%20Vivaldi"
+    },
+    {
+      "id": "1576",
+      "title": "Afonso de Albuquerque",
+      "url": "https://en.wikipedia.org/wiki/Afonso%20de%20Albuquerque"
+    },
+    {
+      "id": "1749",
+      "title": "Ancus Marcius",
+      "url": "https://en.wikipedia.org/wiki/Ancus%20Marcius"
+    },
+    {
+      "id": "1773",
+      "title": "Apollo 7",
+      "url": "https://en.wikipedia.org/wiki/Apollo%207"
+    },
+    {
+      "id": "1944",
+      "title": "Australian Capital Territory",
+      "url": "https://en.wikipedia.org/wiki/Australian%20Capital%20Territory"
+    },
+    {
+      "id": "2024",
+      "title": "Amber Road",
+      "url": "https://en.wikipedia.org/wiki/Amber%20Road"
+    },
+    {
+      "id": "2039",
+      "title": "Avionics",
+      "url": "https://en.wikipedia.org/wiki/Avionics"
+    },
+    {
+      "id": "2142",
+      "title": "List of artificial intelligence projects",
+      "url": "https://en.wikipedia.org/wiki/List%20of%20artificial%20intelligence%20projects"
+    },
+    {
+      "id": "2166",
+      "title": "ABC",
+      "url": "https://en.wikipedia.org/wiki/ABC"
+    },
+    {
+      "id": "2187",
+      "title": "Antisemitism in the Arab world",
+      "url": "https://en.wikipedia.org/wiki/Antisemitism%20in%20the%20Arab%20world"
+    },
+    {
+      "id": "2210",
+      "title": "Folklore of the United States",
+      "url": "https://en.wikipedia.org/wiki/Folklore%20of%20the%20United%20States"
+    },
+    {
+      "id": "2251",
+      "title": "Accusative case",
+      "url": "https://en.wikipedia.org/wiki/Accusative%20case"
+    },
+    {
+      "id": "2341",
+      "title": "Alkaloid",
+      "url": "https://en.wikipedia.org/wiki/Alkaloid"
+    },
+    {
+      "id": "2459",
+      "title": "Appomattox",
+      "url": "https://en.wikipedia.org/wiki/Appomattox"
+    },
+    {
+      "id": "2560",
+      "title": "Administrative law",
+      "url": "https://en.wikipedia.org/wiki/Administrative%20law"
+    },
+    {
+      "id": "2628",
+      "title": "Aegis",
+      "url": "https://en.wikipedia.org/wiki/Aegis"
+    },
+    {
+      "id": "2662",
+      "title": "Affiliation (family law)",
+      "url": "https://en.wikipedia.org/wiki/Affiliation%20%28family%20law%29"
+    },
+    {
+      "id": "2766",
+      "title": "Ames test",
+      "url": "https://en.wikipedia.org/wiki/Ames%20test"
+    },
+    {
+      "id": "2919",
+      "title": "Ana\u00efs Nin",
+      "url": "https://en.wikipedia.org/wiki/Ana%C3%AFs%20Nin"
+    },
+    {
+      "id": "2956",
+      "title": "Ain't I a Woman? (book)",
+      "url": "https://en.wikipedia.org/wiki/Ain%27t%20I%20a%20Woman%3F%20%28book%29"
+    },
+    {
+      "id": "3038",
+      "title": "Acid\u2013base reaction",
+      "url": "https://en.wikipedia.org/wiki/Acid%E2%80%93base%20reaction"
+    },
+    {
+      "id": "3201",
+      "title": "Attribution of recent climate change",
+      "url": "https://en.wikipedia.org/wiki/Attribution%20of%20recent%20climate%20change"
+    },
+    {
+      "id": "3375",
+      "title": "Love and Theft (Bob Dylan album)",
+      "url": "https://en.wikipedia.org/wiki/Love%20and%20Theft%20%28Bob%20Dylan%20album%29"
+    },
+    {
+      "id": "3376",
+      "title": "The Beverly Hillbillies",
+      "url": "https://en.wikipedia.org/wiki/The%20Beverly%20Hillbillies"
+    },
+    {
+      "id": "3410",
+      "title": "Bird",
+      "url": "https://en.wikipedia.org/wiki/Bird"
+    },
+    {
+      "id": "3616",
+      "title": "Economy of Botswana",
+      "url": "https://en.wikipedia.org/wiki/Economy%20of%20Botswana"
+    },
+    {
+      "id": "3699",
+      "title": "Communications in Burundi",
+      "url": "https://en.wikipedia.org/wiki/Communications%20in%20Burundi"
+    },
+    {
+      "id": "3870",
+      "title": "Bundle theory",
+      "url": "https://en.wikipedia.org/wiki/Bundle%20theory"
+    },
+    {
+      "id": "3978",
+      "title": "Book of Mormon",
+      "url": "https://en.wikipedia.org/wiki/Book%20of%20Mormon"
+    },
+    {
+      "id": "4477",
+      "title": "The Beach Boys",
+      "url": "https://en.wikipedia.org/wiki/The%20Beach%20Boys"
+    },
+    {
+      "id": "4552",
+      "title": "Bernard of Clairvaux",
+      "url": "https://en.wikipedia.org/wiki/Bernard%20of%20Clairvaux"
+    },
+    {
+      "id": "4554",
+      "title": "Bishkek",
+      "url": "https://en.wikipedia.org/wiki/Bishkek"
+    },
+    {
+      "id": "4582",
+      "title": "Bud Selig",
+      "url": "https://en.wikipedia.org/wiki/Bud%20Selig"
+    },
+    {
+      "id": "4701",
+      "title": "Backpacking",
+      "url": "https://en.wikipedia.org/wiki/Backpacking"
+    },
+    {
+      "id": "4797",
+      "title": "Bob Young (businessman)",
+      "url": "https://en.wikipedia.org/wiki/Bob%20Young%20%28businessman%29"
+    },
+    {
+      "id": "4859",
+      "title": "Bodmin Moor",
+      "url": "https://en.wikipedia.org/wiki/Bodmin%20Moor"
+    },
+    {
+      "id": "4940",
+      "title": "Brass instrument",
+      "url": "https://en.wikipedia.org/wiki/Brass%20instrument"
+    },
+    {
+      "id": "5050",
+      "title": "Bill Bryson",
+      "url": "https://en.wikipedia.org/wiki/Bill%20Bryson"
+    },
+    {
+      "id": "5187",
+      "title": "Capital",
+      "url": "https://en.wikipedia.org/wiki/Capital"
+    },
+    {
+      "id": "5228",
+      "title": "Cheirogaleidae",
+      "url": "https://en.wikipedia.org/wiki/Cheirogaleidae"
+    },
+    {
+      "id": "5233",
+      "title": "Carl Linnaeus",
+      "url": "https://en.wikipedia.org/wiki/Carl%20Linnaeus"
+    },
+    {
+      "id": "5248",
+      "title": "Cold War (1948\u20131953)",
+      "url": "https://en.wikipedia.org/wiki/Cold%20War%20%281948%E2%80%931953%29"
+    },
+    {
+      "id": "5255",
+      "title": "Civil law",
+      "url": "https://en.wikipedia.org/wiki/Civil%20law"
+    },
+    {
+      "id": "5314",
+      "title": "Charlemagne",
+      "url": "https://en.wikipedia.org/wiki/Charlemagne"
+    },
+    {
+      "id": "5324",
+      "title": "Catalan",
+      "url": "https://en.wikipedia.org/wiki/Catalan"
+    },
+    {
+      "id": "5362",
+      "title": "Casino game",
+      "url": "https://en.wikipedia.org/wiki/Casino%20game"
+    },
+    {
+      "id": "5382",
+      "title": "Inflation (cosmology)",
+      "url": "https://en.wikipedia.org/wiki/Inflation%20%28cosmology%29"
+    },
+    {
+      "id": "5497",
+      "title": "Chilean Armed Forces",
+      "url": "https://en.wikipedia.org/wiki/Chilean%20Armed%20Forces"
+    },
+    {
+      "id": "5920",
+      "title": "Celtic languages",
+      "url": "https://en.wikipedia.org/wiki/Celtic%20languages"
+    },
+    {
+      "id": "4045466",
+      "title": "Andrew Martinez",
+      "url": "https://en.wikipedia.org/wiki/Andrew%20Martinez"
+    },
+    {
+      "id": "4047068",
+      "title": "John A. Carroll",
+      "url": "https://en.wikipedia.org/wiki/John%20A.%20Carroll"
+    },
+    {
+      "id": "4047233",
+      "title": "Thomas Leabhart",
+      "url": "https://en.wikipedia.org/wiki/Thomas%20Leabhart"
+    },
+    {
+      "id": "4047570",
+      "title": "Electoral district of Coffs Harbour",
+      "url": "https://en.wikipedia.org/wiki/Electoral%20district%20of%20Coffs%20Harbour"
+    },
+    {
+      "id": "4047856",
+      "title": "\u00d6zdemir Sabanc\u0131",
+      "url": "https://en.wikipedia.org/wiki/%C3%96zdemir%20Sabanc%C4%B1"
+    },
+    {
+      "id": "4047989",
+      "title": "Rovinari",
+      "url": "https://en.wikipedia.org/wiki/Rovinari"
+    },
+    {
+      "id": "4048769",
+      "title": "J. Steward Davis",
+      "url": "https://en.wikipedia.org/wiki/J.%20Steward%20Davis"
+    },
+    {
+      "id": "4049394",
+      "title": "Pharyngeal raphe",
+      "url": "https://en.wikipedia.org/wiki/Pharyngeal%20raphe"
+    },
+    {
+      "id": "4049457",
+      "title": "Noli",
+      "url": "https://en.wikipedia.org/wiki/Noli"
+    },
+    {
+      "id": "4050322",
+      "title": "Heavy Tank M6",
+      "url": "https://en.wikipedia.org/wiki/Heavy%20Tank%20M6"
+    },
+    {
+      "id": "4050383",
+      "title": "PKP class OKl27",
+      "url": "https://en.wikipedia.org/wiki/PKP%20class%20OKl27"
+    },
+    {
+      "id": "4050706",
+      "title": "Rosendahl",
+      "url": "https://en.wikipedia.org/wiki/Rosendahl"
+    },
+    {
+      "id": "4052237",
+      "title": "Peggy March",
+      "url": "https://en.wikipedia.org/wiki/Peggy%20March"
+    },
+    {
+      "id": "4052384",
+      "title": "List of presidents of districts of Quebec City",
+      "url": "https://en.wikipedia.org/wiki/List%20of%20presidents%20of%20districts%20of%20Quebec%20City"
+    },
+    {
+      "id": "4052643",
+      "title": "John E. Erickson (Montana politician)",
+      "url": "https://en.wikipedia.org/wiki/John%20E.%20Erickson%20%28Montana%20politician%29"
+    },
+    {
+      "id": "4052805",
+      "title": "Agora Theatre and Ballroom",
+      "url": "https://en.wikipedia.org/wiki/Agora%20Theatre%20and%20Ballroom"
+    },
+    {
+      "id": "4052977",
+      "title": "Isidoro de Atondo y Antill\u00f3n",
+      "url": "https://en.wikipedia.org/wiki/Isidoro%20de%20Atondo%20y%20Antill%C3%B3n"
+    },
+    {
+      "id": "4053403",
+      "title": "Darien High School",
+      "url": "https://en.wikipedia.org/wiki/Darien%20High%20School"
+    },
+    {
+      "id": "4053912",
+      "title": "Richard J. Pearson",
+      "url": "https://en.wikipedia.org/wiki/Richard%20J.%20Pearson"
+    },
+    {
+      "id": "4054349",
+      "title": "Qutaibi",
+      "url": "https://en.wikipedia.org/wiki/Qutaibi"
+    },
+    {
+      "id": "4054949",
+      "title": "Muffin tin",
+      "url": "https://en.wikipedia.org/wiki/Muffin%20tin"
+    },
+    {
+      "id": "4056251",
+      "title": "TNT Sunday Night Football",
+      "url": "https://en.wikipedia.org/wiki/TNT%20Sunday%20Night%20Football"
+    },
+    {
+      "id": "4056319",
+      "title": "Cogito (software)",
+      "url": "https://en.wikipedia.org/wiki/Cogito%20%28software%29"
+    },
+    {
+      "id": "4057001",
+      "title": "Dorothy Goodman",
+      "url": "https://en.wikipedia.org/wiki/Dorothy%20Goodman"
+    },
+    {
+      "id": "4057142",
+      "title": "Medell\u00edn River",
+      "url": "https://en.wikipedia.org/wiki/Medell%C3%ADn%20River"
+    },
+    {
+      "id": "4057220",
+      "title": "Tim Walsh",
+      "url": "https://en.wikipedia.org/wiki/Tim%20Walsh"
+    },
+    {
+      "id": "4057289",
+      "title": "Unholy Grave",
+      "url": "https://en.wikipedia.org/wiki/Unholy%20Grave"
+    },
+    {
+      "id": "4057305",
+      "title": "Sami Jo Small",
+      "url": "https://en.wikipedia.org/wiki/Sami%20Jo%20Small"
+    },
+    {
+      "id": "4057640",
+      "title": "Tin\u00e9u",
+      "url": "https://en.wikipedia.org/wiki/Tin%C3%A9u"
+    },
+    {
+      "id": "4057902",
+      "title": "Logar River",
+      "url": "https://en.wikipedia.org/wiki/Logar%20River"
+    },
+    {
+      "id": "4058203",
+      "title": "Isle of the Ape",
+      "url": "https://en.wikipedia.org/wiki/Isle%20of%20the%20Ape"
+    },
+    {
+      "id": "4059305",
+      "title": "Paul Themba Nyathi",
+      "url": "https://en.wikipedia.org/wiki/Paul%20Themba%20Nyathi"
+    },
+    {
+      "id": "4059336",
+      "title": "Sabinian of Troyes",
+      "url": "https://en.wikipedia.org/wiki/Sabinian%20of%20Troyes"
+    },
+    {
+      "id": "4059459",
+      "title": "Belle Gunness",
+      "url": "https://en.wikipedia.org/wiki/Belle%20Gunness"
+    },
+    {
+      "id": "4059502",
+      "title": "Hygrophanous",
+      "url": "https://en.wikipedia.org/wiki/Hygrophanous"
+    },
+    {
+      "id": "4059507",
+      "title": "Pelsall Villa F.C.",
+      "url": "https://en.wikipedia.org/wiki/Pelsall%20Villa%20F.C."
+    },
+    {
+      "id": "4061189",
+      "title": "Kucura",
+      "url": "https://en.wikipedia.org/wiki/Kucura"
+    },
+    {
+      "id": "4061290",
+      "title": "Chevrolet SS (concept car)",
+      "url": "https://en.wikipedia.org/wiki/Chevrolet%20SS%20%28concept%20car%29"
+    },
+    {
+      "id": "4061512",
+      "title": "Whatever Happened to Micheal Ray?",
+      "url": "https://en.wikipedia.org/wiki/Whatever%20Happened%20to%20Micheal%20Ray%3F"
+    },
+    {
+      "id": "4062286",
+      "title": "Mir Laiq Ali",
+      "url": "https://en.wikipedia.org/wiki/Mir%20Laiq%20Ali"
+    },
+    {
+      "id": "4062645",
+      "title": "Brian Tompkins",
+      "url": "https://en.wikipedia.org/wiki/Brian%20Tompkins"
+    },
+    {
+      "id": "4063057",
+      "title": "Temple of Confucius",
+      "url": "https://en.wikipedia.org/wiki/Temple%20of%20Confucius"
+    },
+    {
+      "id": "4063486",
+      "title": "Pedro Telemaco",
+      "url": "https://en.wikipedia.org/wiki/Pedro%20Telemaco"
+    },
+    {
+      "id": "4063609",
+      "title": "WILB (AM)",
+      "url": "https://en.wikipedia.org/wiki/WILB%20%28AM%29"
+    },
+    {
+      "id": "4063736",
+      "title": "Harunur Rashid (cricketer)",
+      "url": "https://en.wikipedia.org/wiki/Harunur%20Rashid%20%28cricketer%29"
+    },
+    {
+      "id": "4064098",
+      "title": "Hong Kong Association of Science and Mathematics Education",
+      "url": "https://en.wikipedia.org/wiki/Hong%20Kong%20Association%20of%20Science%20and%20Mathematics%20Education"
+    },
+    {
+      "id": "4065185",
+      "title": "Caf\u00e9 Wars",
+      "url": "https://en.wikipedia.org/wiki/Caf%C3%A9%20Wars"
+    },
+    {
+      "id": "4065268",
+      "title": "Destrehan Plantation",
+      "url": "https://en.wikipedia.org/wiki/Destrehan%20Plantation"
+    },
+    {
+      "id": "4066014",
+      "title": "Al gran sole carico d'amore",
+      "url": "https://en.wikipedia.org/wiki/Al%20gran%20sole%20carico%20d%27amore"
+    },
+    {
+      "id": "4066146",
+      "title": "Think Twice (game show)",
+      "url": "https://en.wikipedia.org/wiki/Think%20Twice%20%28game%20show%29"
+    },
+    {
+      "id": "4066195",
+      "title": "Patrick Devlin",
+      "url": "https://en.wikipedia.org/wiki/Patrick%20Devlin"
+    },
+    {
+      "id": "4066867",
+      "title": "Operation Bruilof",
+      "url": "https://en.wikipedia.org/wiki/Operation%20Bruilof"
+    },
+    {
+      "id": "4067151",
+      "title": "Kristine Holzer",
+      "url": "https://en.wikipedia.org/wiki/Kristine%20Holzer"
+    },
+    {
+      "id": "4067463",
+      "title": "AJ's Fine Foods",
+      "url": "https://en.wikipedia.org/wiki/AJ%27s%20Fine%20Foods"
+    },
+    {
+      "id": "4067502",
+      "title": "Eddie Basha Jr.",
+      "url": "https://en.wikipedia.org/wiki/Eddie%20Basha%20Jr."
+    },
+    {
+      "id": "4067665",
+      "title": "The King of Fighters 2001",
+      "url": "https://en.wikipedia.org/wiki/The%20King%20of%20Fighters%202001"
+    },
+    {
+      "id": "4067849",
+      "title": "Kewaigue",
+      "url": "https://en.wikipedia.org/wiki/Kewaigue"
+    },
+    {
+      "id": "4068001",
+      "title": "Ron Steward",
+      "url": "https://en.wikipedia.org/wiki/Ron%20Steward"
+    },
+    {
+      "id": "4068503",
+      "title": "Palazzo Pallavicini-Rospigliosi",
+      "url": "https://en.wikipedia.org/wiki/Palazzo%20Pallavicini-Rospigliosi"
+    },
+    {
+      "id": "4068856",
+      "title": "Penryn railway station",
+      "url": "https://en.wikipedia.org/wiki/Penryn%20railway%20station"
+    },
+    {
+      "id": "4069165",
+      "title": "Knight engine",
+      "url": "https://en.wikipedia.org/wiki/Knight%20engine"
+    },
+    {
+      "id": "4069697",
+      "title": "\u00c9douard Le Roy",
+      "url": "https://en.wikipedia.org/wiki/%C3%89douard%20Le%20Roy"
+    },
+    {
+      "id": "4069989",
+      "title": "Ministry of Tourism (Greece)",
+      "url": "https://en.wikipedia.org/wiki/Ministry%20of%20Tourism%20%28Greece%29"
+    },
+    {
+      "id": "4070280",
+      "title": "Kramer Levin Naftalis & Frankel",
+      "url": "https://en.wikipedia.org/wiki/Kramer%20Levin%20Naftalis%20%26%20Frankel"
+    },
+    {
+      "id": "4070346",
+      "title": "Hutton, Cumbria",
+      "url": "https://en.wikipedia.org/wiki/Hutton%2C%20Cumbria"
+    },
+    {
+      "id": "4071482",
+      "title": "Torngat (band)",
+      "url": "https://en.wikipedia.org/wiki/Torngat%20%28band%29"
+    },
+    {
+      "id": "4071518",
+      "title": "Northern Branch Corridor Project",
+      "url": "https://en.wikipedia.org/wiki/Northern%20Branch%20Corridor%20Project"
+    },
+    {
+      "id": "4071570",
+      "title": "Kansas Crew",
+      "url": "https://en.wikipedia.org/wiki/Kansas%20Crew"
+    },
+    {
+      "id": "4071821",
+      "title": "Valtra",
+      "url": "https://en.wikipedia.org/wiki/Valtra"
+    },
+    {
+      "id": "4072959",
+      "title": "Matija Ban",
+      "url": "https://en.wikipedia.org/wiki/Matija%20Ban"
+    },
+    {
+      "id": "4072963",
+      "title": "BCDMH",
+      "url": "https://en.wikipedia.org/wiki/BCDMH"
+    },
+    {
+      "id": "4073298",
+      "title": "Est\u00e1dio Joia da Princesa",
+      "url": "https://en.wikipedia.org/wiki/Est%C3%A1dio%20Joia%20da%20Princesa"
+    },
+    {
+      "id": "4073953",
+      "title": "Genene Jones",
+      "url": "https://en.wikipedia.org/wiki/Genene%20Jones"
+    },
+    {
+      "id": "4075515",
+      "title": "Booze Cruise (The Office)",
+      "url": "https://en.wikipedia.org/wiki/Booze%20Cruise%20%28The%20Office%29"
+    },
+    {
+      "id": "4076762",
+      "title": "Hadrian's Gate",
+      "url": "https://en.wikipedia.org/wiki/Hadrian%27s%20Gate"
+    },
+    {
+      "id": "4076967",
+      "title": "John Bowler (politician)",
+      "url": "https://en.wikipedia.org/wiki/John%20Bowler%20%28politician%29"
+    },
+    {
+      "id": "4077497",
+      "title": "A.F.C. St Austell",
+      "url": "https://en.wikipedia.org/wiki/A.F.C.%20St%20Austell"
+    },
+    {
+      "id": "4077778",
+      "title": "Amelia Voght",
+      "url": "https://en.wikipedia.org/wiki/Amelia%20Voght"
+    },
+    {
+      "id": "4077867",
+      "title": "Henricus Regius",
+      "url": "https://en.wikipedia.org/wiki/Henricus%20Regius"
+    },
+    {
+      "id": "4078360",
+      "title": "East Charlotte, Vermont",
+      "url": "https://en.wikipedia.org/wiki/East%20Charlotte%2C%20Vermont"
+    },
+    {
+      "id": "4079539",
+      "title": "Payable-through account",
+      "url": "https://en.wikipedia.org/wiki/Payable-through%20account"
+    },
+    {
+      "id": "4080434",
+      "title": "Thorpdale, Victoria",
+      "url": "https://en.wikipedia.org/wiki/Thorpdale%2C%20Victoria"
+    },
+    {
+      "id": "4080663",
+      "title": "Wetheral",
+      "url": "https://en.wikipedia.org/wiki/Wetheral"
+    }
+  ],
+  "path": "wikipedia-validation.int32",
+  "raw_byte_count": 1520090,
+  "schema_version": "data-d-shard-v1",
+  "sha256": "d7cc38edc77375c95f03468b677faee7112dd4d3e5f5b5f49b80c8480f6997ac",
+  "source": "wikipedia",
+  "split": "validation",
+  "stable_document_ids": [
+    "wikipedia:316",
+    "wikipedia:782",
+    "wikipedia:852",
+    "wikipedia:1055",
+    "wikipedia:1227",
+    "wikipedia:1241",
+    "wikipedia:1422",
+    "wikipedia:1425",
+    "wikipedia:1576",
+    "wikipedia:1749",
+    "wikipedia:1773",
+    "wikipedia:1944",
+    "wikipedia:2024",
+    "wikipedia:2039",
+    "wikipedia:2142",
+    "wikipedia:2166",
+    "wikipedia:2187",
+    "wikipedia:2210",
+    "wikipedia:2251",
+    "wikipedia:2341",
+    "wikipedia:2459",
+    "wikipedia:2560",
+    "wikipedia:2628",
+    "wikipedia:2662",
+    "wikipedia:2766",
+    "wikipedia:2919",
+    "wikipedia:2956",
+    "wikipedia:3038",
+    "wikipedia:3201",
+    "wikipedia:3375",
+    "wikipedia:3376",
+    "wikipedia:3410",
+    "wikipedia:3616",
+    "wikipedia:3699",
+    "wikipedia:3870",
+    "wikipedia:3978",
+    "wikipedia:4477",
+    "wikipedia:4552",
+    "wikipedia:4554",
+    "wikipedia:4582",
+    "wikipedia:4701",
+    "wikipedia:4797",
+    "wikipedia:4859",
+    "wikipedia:4940",
+    "wikipedia:5050",
+    "wikipedia:5187",
+    "wikipedia:5228",
+    "wikipedia:5233",
+    "wikipedia:5248",
+    "wikipedia:5255",
+    "wikipedia:5314",
+    "wikipedia:5324",
+    "wikipedia:5362",
+    "wikipedia:5382",
+    "wikipedia:5497",
+    "wikipedia:5920",
+    "wikipedia:4045466",
+    "wikipedia:4047068",
+    "wikipedia:4047233",
+    "wikipedia:4047570",
+    "wikipedia:4047856",
+    "wikipedia:4047989",
+    "wikipedia:4048769",
+    "wikipedia:4049394",
+    "wikipedia:4049457",
+    "wikipedia:4050322",
+    "wikipedia:4050383",
+    "wikipedia:4050706",
+    "wikipedia:4052237",
+    "wikipedia:4052384",
+    "wikipedia:4052643",
+    "wikipedia:4052805",
+    "wikipedia:4052977",
+    "wikipedia:4053403",
+    "wikipedia:4053912",
+    "wikipedia:4054349",
+    "wikipedia:4054949",
+    "wikipedia:4056251",
+    "wikipedia:4056319",
+    "wikipedia:4057001",
+    "wikipedia:4057142",
+    "wikipedia:4057220",
+    "wikipedia:4057289",
+    "wikipedia:4057305",
+    "wikipedia:4057640",
+    "wikipedia:4057902",
+    "wikipedia:4058203",
+    "wikipedia:4059305",
+    "wikipedia:4059336",
+    "wikipedia:4059459",
+    "wikipedia:4059502",
+    "wikipedia:4059507",
+    "wikipedia:4061189",
+    "wikipedia:4061290",
+    "wikipedia:4061512",
+    "wikipedia:4062286",
+    "wikipedia:4062645",
+    "wikipedia:4063057",
+    "wikipedia:4063486",
+    "wikipedia:4063609",
+    "wikipedia:4063736",
+    "wikipedia:4064098",
+    "wikipedia:4065185",
+    "wikipedia:4065268",
+    "wikipedia:4066014",
+    "wikipedia:4066146",
+    "wikipedia:4066195",
+    "wikipedia:4066867",
+    "wikipedia:4067151",
+    "wikipedia:4067463",
+    "wikipedia:4067502",
+    "wikipedia:4067665",
+    "wikipedia:4067849",
+    "wikipedia:4068001",
+    "wikipedia:4068503",
+    "wikipedia:4068856",
+    "wikipedia:4069165",
+    "wikipedia:4069697",
+    "wikipedia:4069989",
+    "wikipedia:4070280",
+    "wikipedia:4070346",
+    "wikipedia:4071482",
+    "wikipedia:4071518",
+    "wikipedia:4071570",
+    "wikipedia:4071821",
+    "wikipedia:4072959",
+    "wikipedia:4072963",
+    "wikipedia:4073298",
+    "wikipedia:4073953",
+    "wikipedia:4075515",
+    "wikipedia:4076762",
+    "wikipedia:4076967",
+    "wikipedia:4077497",
+    "wikipedia:4077778",
+    "wikipedia:4077867",
+    "wikipedia:4078360",
+    "wikipedia:4079539",
+    "wikipedia:4080434",
+    "wikipedia:4080663"
+  ],
+  "token_count": 482056,
+  "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7",
+  "validation_assignment_method": "sha256-document-id-mod50-v1"
+}

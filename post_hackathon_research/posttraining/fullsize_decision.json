@@ -1,0 +1,70 @@
+{
+  "bpb_relative_change": 0.01333996743457,
+  "capability_gain": 0.0047499999999999765,
+  "created_utc": "2026-10-08T10:39:04.862074+00:00",
+  "criterion": "P1 gains >=1 point four-task raw accuracy with positive paired item-bootstrap lower bound, <=2% BPB and <=5% worst-source loss damage; bounded 49M child must fit reserve",
+  "estimated_tps": 560.0,
+  "paired_capability": {
+    "bootstrap_draws": 2000,
+    "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/P1-16M-ALIGNED-REPLAY-KL/capability_samples.json",
+    "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/D4-16M-ANNEAL/capability_samples.json",
+    "four_task_equal_weight_ci95": [
+      -0.004,
+      0.0135
+    ],
+    "four_task_equal_weight_delta": 0.00475,
+    "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+    "per_task": {
+      "arc_easy": {
+        "candidate_minus_control": 0.024,
+        "ci95": [
+          0.001,
+          0.048
+        ],
+        "discordant_candidate_wins": 88,
+        "discordant_control_wins": 64,
+        "mcnemar_exact_p_two_sided": 0.06174850711174889,
+        "n": 1000
+      },
+      "hellaswag": {
+        "candidate_minus_control": 0.0,
+        "ci95": [
+          -0.008,
+          0.009
+        ],
+        "discordant_candidate_wins": 9,
+        "discordant_control_wins": 9,
+        "mcnemar_exact_p_two_sided": 1.0,
+        "n": 1000
+      },
+      "piqa": {
+        "candidate_minus_control": -0.002,
+        "ci95": [
+          -0.019,
+          0.015
+        ],
+        "discordant_candidate_wins": 35,
+        "discordant_control_wins": 37,
+        "mcnemar_exact_p_two_sided": 0.906294324703081,
+        "n": 1000
+      },
+      "winogrande": {
+        "candidate_minus_control": -0.003,
+        "ci95": [
+          -0.02,
+          0.014
+        ],
+        "discordant_candidate_wins": 39,
+        "discordant_control_wins": 42,
+        "mcnemar_exact_p_two_sided": 0.8243132151052085,
+        "n": 1000
+      }
+    },
+    "schema": "posthack-paired-capability-v1",
+    "seed": 2026
+  },
+  "predicted_finish_utc": "2026-10-08T14:23:57.719200+00:00",
+  "reason": "16M retention/transfer evidence insufficient",
+  "run": false,
+  "worst_source_relative_change": 0.014150891246836439
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-12T11:00:59.538857+00:00",
+  "family": "B",
+  "reason": "Bounded LR/init tuning only when clearly poorly tuned or unstable; compatibility validation only.",
+  "run": true
+}

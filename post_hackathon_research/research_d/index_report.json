@@ -1,0 +1,14 @@
+{
+  "build_seconds": 127.89743810798973,
+  "capability_policy": "unscored until the disjoint selector is frozen",
+  "created_utc": "2026-10-05T02:25:05.398288+00:00",
+  "data_manifest_sha256": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+  "difficulty_policy": "equal mean of within-source training percentiles of log document token length and first-256-token lexical diversity",
+  "documents": 1620201,
+  "index_sha256": "bae17f2bb64dbb0c1c8c3f58f0f35e043f901984747f733a0de59e9fa8b0e7b1",
+  "missing_normalized_hashes": 75,
+  "quality_policy": "within-source percentile of existing upstream score where available",
+  "raw_bytes_policy": "exact per shard; document bytes estimated by shard bytes/token ratio",
+  "schema": "research-d-index-v1",
+  "train_documents": 1585298
+}

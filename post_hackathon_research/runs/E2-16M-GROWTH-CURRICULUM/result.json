@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "cb5fc18d0ed7bdaafb421eb08590946e10ef874231e5ec444f69b1d99bf1ad11",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.1276984825730327,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/E2-16M-GROWTH-CURRICULUM/latest.pt",
+  "checkpoint_sha256": "cb5fc18d0ed7bdaafb421eb08590946e10ef874231e5ec444f69b1d99bf1ad11",
+  "experiment_id": "E2-16M-GROWTH-CURRICULUM",
+  "finished_utc": "2026-10-07T00:48:25.525536+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "progressive_depth",
+  "wall_seconds": 20045.836322921223
+}

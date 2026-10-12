@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "cf6e1030f0742b8b0bd84a4b22d2d600d08695516da266c15d131d2803dbf180",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.1253284558653833,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/E1-16M-GROWTH-STATIC/latest.pt",
+  "checkpoint_sha256": "cf6e1030f0742b8b0bd84a4b22d2d600d08695516da266c15d131d2803dbf180",
+  "experiment_id": "E1-16M-GROWTH-STATIC",
+  "finished_utc": "2026-10-06T08:24:40.075405+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "progressive_depth",
+  "wall_seconds": 19978.90357931005
+}

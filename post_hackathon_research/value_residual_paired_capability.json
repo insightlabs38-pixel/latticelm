@@ -1,0 +1,59 @@
+{
+  "bootstrap_draws": 2000,
+  "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/B16-VALUE-RESIDUAL-S1337/capability_samples.json",
+  "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+  "four_task_equal_weight_ci95": [
+    -0.0095,
+    0.01675
+  ],
+  "four_task_equal_weight_delta": 0.0037500000000000007,
+  "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+  "per_task": {
+    "arc_easy": {
+      "candidate_minus_control": 0.001,
+      "ci95": [
+        -0.024,
+        0.026
+      ],
+      "discordant_candidate_wins": 74,
+      "discordant_control_wins": 73,
+      "mcnemar_exact_p_two_sided": 1.0,
+      "n": 1000
+    },
+    "hellaswag": {
+      "candidate_minus_control": 0.0,
+      "ci95": [
+        -0.013,
+        0.014
+      ],
+      "discordant_candidate_wins": 24,
+      "discordant_control_wins": 24,
+      "mcnemar_exact_p_two_sided": 1.0,
+      "n": 1000
+    },
+    "piqa": {
+      "candidate_minus_control": 0.017,
+      "ci95": [
+        -0.003,
+        0.037
+      ],
+      "discordant_candidate_wins": 64,
+      "discordant_control_wins": 47,
+      "mcnemar_exact_p_two_sided": 0.12847543208575976,
+      "n": 1000
+    },
+    "winogrande": {
+      "candidate_minus_control": -0.003,
+      "ci95": [
+        -0.041,
+        0.038
+      ],
+      "discordant_candidate_wins": 203,
+      "discordant_control_wins": 206,
+      "mcnemar_exact_p_two_sided": 0.9212386202872286,
+      "n": 1000
+    }
+  },
+  "schema": "posthack-paired-capability-v1",
+  "seed": 2026
+}

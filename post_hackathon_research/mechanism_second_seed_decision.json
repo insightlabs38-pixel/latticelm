@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-10-09T19:52:35.041698+00:00",
+  "estimated_tps": {
+    "R16-S2026-CONTROL": 5636.334343621044,
+    "R16-S2026-REPLICATION": 5636.334343621044
+  },
+  "evidence_passed": false,
+  "predicted_finish_including_protected_time_utc": "2026-10-10T18:46:08.083222+00:00",
+  "protected_downstream_hours": 12,
+  "reason": "no promotable 16M mechanism",
+  "run": false
+}

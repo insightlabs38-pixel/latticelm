@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-02T14:53:33.493287+00:00",
+  "files": [
+    {
+      "at": "2026-10-02T14:53:19.279125+00:00",
+      "path": "configs/16m_co4.json",
+      "remote": "post-hackathon/2026-10-01/configs/16m_co4.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "3f7672d1841738dd343a1eeedd50e14968993573",
+      "sha256": "5d26e2717eb7a496a3f4d8dfdd845b26635186c9d9e44a89cf45e727d569d4fe",
+      "size_bytes": 1198,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T14:53:20.410417+00:00",
+      "path": "runs/A16-CO4-S1337/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/A16-CO4-S1337/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "e1e8c92a921dd4b86e54654cbdbd1817aedab7e2",
+      "sha256": "bcbcc7ed8989bb4424fe3d7f760e442b9c7a1ec43f9dc960f5a37b581c890745",
+      "size_bytes": 668,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T14:53:21.158170+00:00",
+      "path": "runs/A16-CO4-S1337/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A16-CO4-S1337/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "62265f47d8df57874ea4e25ba50ce43870d6bb92",
+      "sha256": "95a349766a5dd06e40f42faf6fc9e96272586c42f071b9a15d111cc49bb622c2",
+      "size_bytes": 15777,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T14:53:23.435854+00:00",
+      "path": "runs/A16-CO4-S1337/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A16-CO4-S1337/metrics.jsonl",
+      "remote_lfs_sha256": "bc98505399375d0be2ebaa1ba63f78059c9bbf669010be9e279ccccd897c751c",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "07cfd3a4876d2bd1216030a8c13773a106857d89",
+      "sha256": "bc98505399375d0be2ebaa1ba63f78059c9bbf669010be9e279ccccd897c751c",
+      "size_bytes": 14267945,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T14:53:24.172341+00:00",
+      "path": "runs/A16-CO4-S1337/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/A16-CO4-S1337/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "fbfb45548c19ce142091bcb2607ceeba80d1b17a",
+      "sha256": "aed9bca4225c1d2a43db90a60601e66c20d3b50b22eba224db3ae6ebccb112d1",
+      "size_bytes": 940,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T14:53:24.927856+00:00",
+      "path": "runs/A16-CO4-S1337/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/A16-CO4-S1337/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "fa2569f1493a0d8dbf444a5653f6e6fef18d86bc",
+      "sha256": "6e5f8513e6393a912ae036cb18d863b18c37100e5f9c1638e69099f3faeeec84",
+      "size_bytes": 20356,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T14:53:27.714196+00:00",
+      "path": "runs/A16-CO4-S1337/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/A16-CO4-S1337/capability_samples.json",
+      "remote_lfs_sha256": "bb9e7fdce795b67b80442b7747f4aa929ae78824ef8a4d19160c51fca7b3319c",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "16ee400da99b007b67926680c5c168a62940e33c",
+      "sha256": "bb9e7fdce795b67b80442b7747f4aa929ae78824ef8a4d19160c51fca7b3319c",
+      "size_bytes": 17242989,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T14:53:33.490751+00:00",
+      "path": "runs/A16-CO4-S1337/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/A16-CO4-S1337/latest.pt",
+      "remote_lfs_sha256": "2930be60344a20b3a1014138f6bd3e14eef6904211188be1a56ed66a216f2ea8",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "dac9d0742e832382b623a797d78f1998b583e9cb",
+      "sha256": "2930be60344a20b3a1014138f6bd3e14eef6904211188be1a56ed66a216f2ea8",
+      "size_bytes": 138953246,
+      "verified": true
+    }
+  ]
+}

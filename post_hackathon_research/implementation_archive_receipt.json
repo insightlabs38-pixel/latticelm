@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-02T03:26:27.186404+00:00",
+  "files": [
+    {
+      "at": "2026-10-02T03:26:23.557233+00:00",
+      "path": "SOURCE_SNAPSHOT_MANIFEST.json",
+      "remote": "post-hackathon/2026-10-01/SOURCE_SNAPSHOT_MANIFEST.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "044fc0c3c4df2072639069e92ef4aae394b40997",
+      "sha256": "cd5c5e6a247bb0167c81ca869477ae1f92cd2be21c6e41ab9274c7552464b22e",
+      "size_bytes": 9365,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:26:25.496980+00:00",
+      "path": "source-snapshot-final.zip",
+      "remote": "post-hackathon/2026-10-01/source-snapshot-final.zip",
+      "remote_lfs_sha256": "76f45e4ce625944da03a5821ec4c23e84d167ac7b96b504da902df21a828c7f6",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "23ea388b563137f3a8e756baef590e11611a9099",
+      "sha256": "76f45e4ce625944da03a5821ec4c23e84d167ac7b96b504da902df21a828c7f6",
+      "size_bytes": 173877,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:26:26.338776+00:00",
+      "path": "IMPLEMENTATION_AUDIT.md",
+      "remote": "post-hackathon/2026-10-01/IMPLEMENTATION_AUDIT.md",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "6e0b10eee5e84dc8e41bbf2083fc49a9635ffe1d",
+      "sha256": "83bdc3217d9a711f7334ce867ce6af12da22ba1d953e806f2fbba77b8bb75a90",
+      "size_bytes": 7477,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:26:27.184851+00:00",
+      "path": "posttraining/data/hf_archive_receipt.json",
+      "remote": "post-hackathon/2026-10-01/posttraining/data/hf_archive_receipt.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "2bcb68a4ac960ea9e87140c333f99556d1392a3b",
+      "sha256": "96c54c8e7dbe0a12207e6337dbdb9fdef8537467d63d0eebddb171ae224b4d35",
+      "size_bytes": 2683,
+      "verified": true
+    }
+  ]
+}

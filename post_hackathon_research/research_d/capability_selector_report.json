@@ -1,0 +1,329 @@
+{
+  "base_index_sha256": "bae17f2bb64dbb0c1c8c3f58f0f35e043f901984747f733a0de59e9fa8b0e7b1",
+  "contamination_audit": {
+    "benchmark_registry_sizes": {
+      "arc_easy": 2946,
+      "hellaswag": 20045,
+      "piqa": 4922,
+      "wikitext_103": 8118,
+      "winogrande": 3034
+    },
+    "certified_source_corpus": false,
+    "decontamination_version": "normalized-exact+13gram+simhash-v1",
+    "overlap_registry": {
+      "base_manifest_sha256": "e8ad8989c9e000515a755dda45dcfdd11d6c3da7921da366aaaca4d10c099ff0",
+      "scope": [
+        "DATA-C",
+        "DATA-D-BROAD-v2r1",
+        "DATA-D-BROAD-v3"
+      ]
+    },
+    "positive_training_resources_disjoint_from_evaluation_tasks": true,
+    "selected_document_hashes_preserved": true
+  },
+  "contamination_caveat": "Inherited DATA-D-v4 exact/13-gram/SimHash exclusion covers its registered benchmarks; semantic overlap with transfer tasks remains an audit limit. Random selected snippets are preserved for manual inspection.",
+  "created_utc": "2026-10-05T08:32:52.203620+00:00",
+  "evaluation_exclusion": "SciQ, CommonsenseQA and QASC TRAIN only; none are in the frozen competition or transfer evaluation suite",
+  "fit": {
+    "classifier": "scikit-learn SGD logistic regression, class balanced",
+    "feature_policy": "4K token-count frequency over first 256 tokens; no evaluation examples",
+    "heldout_example_accuracy": 0.9761904761904762,
+    "negative_corpus_samples": {
+      "finemath": {
+        "eligible_documents": 128124,
+        "negative_samples": 5000
+      },
+      "fineweb": {
+        "eligible_documents": 315263,
+        "negative_samples": 5000
+      },
+      "fineweb_edu": {
+        "eligible_documents": 701963,
+        "negative_samples": 5000
+      },
+      "wikipedia": {
+        "eligible_documents": 439948,
+        "negative_samples": 5000
+      }
+    },
+    "positive_examples": 29554,
+    "positive_resources": {
+      "allenai/qasc": {
+        "revision": "a34ba204eb9a33b919c10cc08f4f1c8dae5ec070",
+        "train_parquet_sha256": "b9a297b5ab55f1605c7682ffbb7042c26d7ecb9ff1e1aa5a820d4e791c8302d1",
+        "train_rows": 8134
+      },
+      "allenai/sciq": {
+        "revision": "2c94ad3e1aafab77146f384e23536f97a4849815",
+        "train_parquet_sha256": "19644360954006d06e9ad3df07bddb34f8535c081b831d48f604603c713ac167",
+        "train_rows": 11679
+      },
+      "tau/commonsense_qa": {
+        "revision": "94630fe30dad47192a8546eb75f094926d47e155",
+        "train_parquet_sha256": "b0449767ed986bfc2ca52b1244a46ef12f732756727f3cb0a4ab69ac8b3d282b",
+        "train_rows": 9741
+      }
+    },
+    "seed": 738291,
+    "vocabulary_size": 4096
+  },
+  "schema": "research-d-disjoint-capability-selector-v1",
+  "scoring": {
+    "documents_scored": 1620201,
+    "index_sha256": "28707f9335416c84d22bf35a4f1d1f7babc92d5f321e1b2fad3959113a773081",
+    "random_selected_document_inspection": {
+      "finemath": [
+        {
+          "document_id": "finemath:https://teacherscollegesj.org/can-parallel-lines-have-a-negative-and-positive-slope/",
+          "rank": 0.9352033967094378,
+          "text_prefix": "# Can parallel lines have a negative and positive slope?\n\n## Can parallel lines have a negative and positive slope?\n\nIf lines are parallel, they slant in exactly the same direction. If two lines are perpendicular and neither one is vertical, then one of the lines has a positive slope, and the other has a negative slope. Also, the absolute values of their slopes are reciprocals.\n\n## Can parallel lines have negative slopes?\n\nIn other words, the slopes"
+        },
+        {
+          "document_id": "finemath:http://www.bankrate.com/calculators/real-estate/how-much-carpet-calculator.aspx",
+          "rank": 0.968288532983672,
+          "text_prefix": "How much carpet will you need?\nUsing the calculator below, enter the length and then the width of the area to be covered and then click on \"submit.\" You will get two figures -- one as square yards and the other as square feet -- of how much carpet you will need. More details ...\nEnter measurements\nLength: ft. in. Width: ft. in. Your results Square yards needed: Square feet needed: Getting a rough idea of how much"
+        },
+        {
+          "document_id": "finemath:https://www.physicsforums.com/threads/rotation-is-axle-or-wheel-rotating.402124/",
+          "rank": 0.9971824170334987,
+          "text_prefix": "# Rotation- is axle or wheel rotating?\n\nWhat determines if something is rotating? For example, if we have a spaceship with a fake gravity rotation thing, how do we know if the outer ring is rotating or if it is stationary and the inner axle is spinning? Normally we could just say its all relative, etc, but weather or not you feel gravity is determined by which one is spinning. So how can you decide? The outer one might is sp"
+        },
+        {
+          "document_id": "finemath:https://www.nagwa.com/en/videos/983191807484/",
+          "rank": 0.980222284661734,
+          "text_prefix": "# Video: Finding the Energy Dissipated by an Electrical Component\n\nA bulb is connected to a cell in series. The potential difference across the bulb is 4 V and the current through it is 0.1 A. How much charge passes through the bulb in 60 seconds? How much energy does the bulb dissipate as light and heat in 60 seconds?\n\n02:19\n\n### Video Transcript\n\nA bulb is connected to a"
+        },
+        {
+          "document_id": "finemath:https://dir.md/wiki/Velocity?host=en.wikipedia.org",
+          "rank": 0.9756017607942306,
+          "text_prefix": "# Velocity\n\nVelocity is the directional speed of an object in motion as an indication of its rate of change in position as observed from a particular frame of reference and as measured by a particular standard of time (e.g. 60 km/h to the north).[1] Velocity is a fundamental concept in kinematics, the branch of classical mechanics that describes the motion of bodies.\n\nVelocity is a physical vector quantity; both magnitude and direction"
+        },
+        {
+          "document_id": "finemath:https://cseweb.ucsd.edu/~viscomp/classes/cse167/wi17/online/transforms2-normals.txt",
+          "rank": 0.9499469264150354,
+          "text_prefix": "In this segment, we will talk about transforming normals. So far, all of our activity has been about transforming geometric objects and points on the surface. However, the surface orientation of the surface normal is also critical for computer graphics. One important use is in lighting. The intensity you see from the surface depends on the angle between the light source and the surface normal. For highlights on the surface it depends on the angle between the viewer, the surface normal and the light source. And the normals do not transform the same way"
+        },
+        {
+          "document_id": "finemath:https://termsdepot.com/inertia/",
+          "rank": 0.9867784333926509,
+          "text_prefix": "# Inertia\n\nInertia is the tendency of an object to resist changes in its state of motion. It is the resistance of an object to changes in its velocity. Inertia is a property of matter and is the measure of an object's resistance to changes in its state of motion. What is an inertia example? An example of inertia would be if you were driving a car and suddenly had to brake hard to avoid hitting something in the road. The inertia of the car would cause it to keep moving forward even"
+        },
+        {
+          "document_id": "finemath:http://math.stackexchange.com/questions/247070/cournot-equilibrium-and-stackelberg-equilibrium-question",
+          "rank": 0.9008226405669507,
+          "text_prefix": "# cournot equilibrium and stackelberg equilibrium question\n\nQuestion is as follow: there are 2 firms that want to enter the apple juice market in country A. There are no existing firms in the market or potential entrants.\n\nThey need to decide on yearly capacity Q1 and Q2, measured in liter. Starting next year, the annual demand for apple juice in country A is estimated to be D(P) = 800 \u2013 P"
+        },
+        {
+          "document_id": "finemath:http://mathhelpforum.com/statistics/187533-permutations.html",
+          "rank": 0.9630045893041116,
+          "text_prefix": "1. ## Permutations\n\nI don't know how to do this question. Can someone help me?\nThere are 3 boys and 9 girls. But there are only 5 seats. The 3 boys must sit in the middle. The leftover seats are for the girls. How many ways can this be arranged?\n\n2. ## Re: Permutations\n\nOriginally Posted by GuMing\nI don't know how to do this question. Can someone help me?\nThere are 3 boys and"
+        },
+        {
+          "document_id": "finemath:https://replichemoncler.com/how-many-face-cords-in-a-full-cord-of-wood/",
+          "rank": 0.926664793481315,
+          "text_prefix": "# Unlocking the Mystery: How Many Face Cords in a Full Cord of Wood\n\n## The Basics of Cord Wood Measurements\n\nContents\n\nHello Readers! If you\u2019re someone who loves the warmth and coziness provided by a wood-burning fire, then you know how important it is to use the right amount of firewood. So, when it comes to measuring your firewood, have you ever wondered how many face cords are in a full cord of wood? Let"
+        }
+      ],
+      "fineweb": [
+        {
+          "document_id": "fineweb:<urn:uuid:79e24bed-4f92-43e5-92e2-e769998348fd>",
+          "rank": 0.9223283417337271,
+          "text_prefix": "A helicopter carrying Paul McCartney and his wife Nancy Shevell came within feet of crashing earlier this year in England, the Mail on Sunday reports. The pilot of the Air Harrods charter craft reportedly became \"disoriented\" in bad weather while trying to land at night at McCartney's estate in East Sussex. The helicopter nearly crashed into trees before the pilot was able to lift away at the last second and land at a nearby airport. The he"
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:2f1eb433-9502-4f75-b781-7d6df8d631f4>",
+          "rank": 0.9845145164513438,
+          "text_prefix": "East and west of the Great Lakes, above the spreading expanse of the Northern interior plains, pine forest meets the deciduous and dark, rolling hills rise into the mountains of the Adirondacks and western Appalachians. Skies open to the grey slate horizon and the cities and sprawl of the east coast megalopolis shrink. Pinched off from the riches and spoils of conquest and violence, the survivors of this region"
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:a6eb5f36-8976-499e-8185-3d79c8ed3e11>",
+          "rank": 0.9583427170330803,
+          "text_prefix": "Hank Steinbrenner is doing his best impression of Hamlet - indecisive to a fault. We can't analyze this Santana thing any more than we already have, so these latest comments from Hank are just fuel for the hot stove flames that were flickering. The Daily News reports that Hank spoke to the media outside Legends Field yesterday and said: \"It's still in the deciding process. We're still discussing it. There's still a little talk back and forth.\""
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:813ba42c-5938-4e05-a310-228f3e79ef18>",
+          "rank": 0.9479767686027222,
+          "text_prefix": "I am a political conservative; anyone who knows me knows this. My experiences over just the past few years have brought me to the conclusion that a major part of the deterioration of this country is the fact that we are not, as a society or as individual families, teaching our children to be responsible and productive citizens.\nI see parents every day that allow their children of all ages to run them, parents that state \"I can't get my child to take their medicine\" to \"It is easier to give in to their demands than to stand my ground.\""
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:3ec58fc4-2da8-4bfb-a882-fcd9a94da27a>",
+          "rank": 0.9802577530506276,
+          "text_prefix": "Archive for January 2011\nMy previous blog post entitled, The Writing is on the Wall. Why Isn\u2019t Anyone Reading It?, provided some research, statistics, and rationale on how institutionalized education is failing today\u2019s students. Michael Wesch, of A Vision of Todays Students fame, produced the following video, Rethinking Education. It provides some additional thoughts about how institutionalized education \u2013 university in this case \u2013 is not serving today"
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:2ed4f69c-ffd0-441a-a880-aa5d00942997>",
+          "rank": 0.9316031376977317,
+          "text_prefix": "ErichTheRed writes \"Computerworld has put together an interesting collection of links to various sources detailing the decline of US R&D/innovation in technology. The cross section of sources is interesting \u2014 everything from government to private industry. It's interesting to see that some people are actually concerned about this...even though all the US does is argue internally while rewarding the behaviour that hastens the decline.\"\nTechieAlizay points out a post at Geekword.net about a man who hacked M"
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:4c047434-f9f2-44b0-800b-9ce35a86acd6>",
+          "rank": 0.9628500648664765,
+          "text_prefix": "Two FARM Activists unfurled an anti-egg banner at today\u2019s Congressional hearing on the recent massive egg recall. The banner read \u201cRecall All Egg Production.\u201d\n\u201cDeCoster and his cohorts are a piece of the larger picture. This is not an isolated incident,\u201d was yelled out as the hearing stopped. As the activists were being escorted out, they chanted \u201cAll Eggs Kill!\u201d repeatedly. Each year,"
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:f3462918-b538-475a-a0f2-d2f1bcaa0146>",
+          "rank": 0.93897793271015,
+          "text_prefix": "A Christmas cookie exchange is one of those fun Christmas party ideas that puts everyone in the holiday spirit. Hmmm, could it be because you leave with dozens of cookies to eat and lots of new recipes to try?\nI have to admit, I had an ulterior motive to hosting my first Cookie Exchange. I like baking cookies, but don\u2019t have the patience to bake more than one or two varieties. Hosting a cookie ex"
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:39172213-dc42-4b80-8cf6-fb169de34df9>",
+          "rank": 0.9648071610052559,
+          "text_prefix": "Birth: it's a miracle. A rite of passage. A natural part of life. But more than anything, birth is a business. Compelled to find answers after a disappointing birth experience with her ... See full summary \u00bb\nBirth: it's a miracle. A rite of passage. A natural part of life. But more than anything, birth is a business. Compelled to find answers after a disappointing birth experience with her first child, actress Ricki Lake recruits film"
+        },
+        {
+          "document_id": "fineweb:<urn:uuid:bb889ed3-bd86-40ca-b0a9-cdd7991420eb>",
+          "rank": 0.9187757523083901,
+          "text_prefix": "Tech Ed is a big part of many successful and inspirational teachers' classrooms. But who in American history was more successful and inspirational than George Washington? While he was not necessarily knowledgable in the technology of war, he knew how to find the diverse groups of experts he needed to educate his men. This post is about two of those Revolutionary technology expert educators.\nRevolutionary Tech Expert #1: Daniel Morgan\nMorgan knew how to party, but he also knew how to handle a new kind of we"
+        }
+      ],
+      "fineweb_edu": [
+        {
+          "document_id": "fineweb_edu:<urn:uuid:4db5e620-71e1-4f1c-8bb7-308a87a58ff5>",
+          "rank": 0.9665324240736335,
+          "text_prefix": "How do new species evolve? Although Darwin identified inherited variation as the creative force in evolution, he never formally speculated where it comes from. His successors thought that new species arise from the gradual accumulation of random mutations of DNA. But despite its acceptance in every major textbook, there is no documented instance of it. Lynn Margulis and Dorion Sagan take a radically new approach to this question. They show that speciation events are not, in fact, rare"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:54a51dc5-8b30-4b3f-80a0-007bbbd1fd04>",
+          "rank": 0.9034991872791016,
+          "text_prefix": "Bandicoot, a small mammal related to the kangaroo. Like the kangaroo, it is a marsupial, an animal whose young are suckled and carried in a pouch on the female's abdomen. There are 17 species of bandicoots, ranging in length from 6 to 21 inches (15 to 53 cm). They are found in Australia, New Guinea, and nearby islands. Most bandicoots have long, pointed snouts, sharp"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:7727fcab-3980-438a-a201-9691be631823>",
+          "rank": 0.9721666241668008,
+          "text_prefix": "Northeast has been the home to a wide range of ethnic tribes and communities and each tribe boasts of its own unique culture, customs and cuisines. When it comes to food, the tribes of Northeast have acquired a very rich melange of traditional knowledge as they have always had the exposure and accessibilty to forests, plants and plant products. These food habits are then passed on from generations to generations which changed along with time depending on the availability of resources.\nOne such common food habit that"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:c0eede35-6c81-47b8-b092-061156a7fd09>",
+          "rank": 0.9556002239434273,
+          "text_prefix": "Disease causing organisms live and multiply in pool water that has not been properly treated and give rise to eye, ear, skin and intestinal infection. Inadequate chemical balance of pool water can also cause skin rashes and conjunctivitis.\nSpa pools can create a higher infection risk than swimming pools if poorly maintained. The warm aerated water provides an ideal environment for the rapid growth of many undesirable organisms. With large numbers of people"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:899f39d1-baed-45af-84a7-ebec6d0540ad>",
+          "rank": 0.9039579009150055,
+          "text_prefix": "California Gov. Jerry Brown issued mandatory statewide water reductions of 25 percent in 2015. The reason is simple: The entire state was in a drought. This summer, Brown lifted the mandatory reductions due to the abundance of rain the state received last winter and spring. El Nino weather patterns caused the above-normal rainfall.\nBut most of California, save a small area in the north that is classified as \u201cabnormally dry,\u201d is still suffering"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:8630280d-f7c0-4b39-a212-c5cf51b6bee4>",
+          "rank": 0.9098228824026338,
+          "text_prefix": "How does Dickens expose the failings of utilitarianism in his novel Hard Times?\nUtilitarianism is a term quite unfamiliar among today\u2019s generation, therefore let me start by defining what this word means. Utilitarianism says an action is morally right if it benefits the greatest number of people. You determine what is right by calculating the amount of pleasure or suffering your actions may cause. The opinion of the majority is more important than that of the minority.\nNow, what I want is"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:870cb08d-02c1-47e8-9eb0-9e89eca4c2a9>",
+          "rank": 0.9104710647142371,
+          "text_prefix": "Dementia is a kind of disease caused by damage and changes in the brain. The common cause of dementia is Alzheimer\u2019s disease. It mainly occurs after the age of 60. The patient is unable to remember anything. Sometimes they go back to the previous days and behave oddly.\nDementia can be treated with the help of some exercises. However, it doesn\u2019t have any specific medicine to cure properly. The intensity of the disease can be reduced but it cannot be cured completely.\n"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:b8794373-325d-4414-9a71-d6e76fee341d>",
+          "rank": 0.9520615758950258,
+          "text_prefix": "What are siloxanes?\nThe generation of electricity from municipal digesters and land fill is of increasing interest, as the biogas generated is a form of renewable energy. Organosilicon compounds are often present in products such as shampoo and cosmetics, as well as industrial products and lubricants, and they move into land-fill. These volatile compounds find their way into land-fill or digester gases as siloxanes.\nBy Protea Limited based in"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:06736531-197e-4445-9883-1570f9b4a38a>",
+          "rank": 0.9823024860284659,
+          "text_prefix": "Nicolas was just under 3 years old when he attended his grandfather\u2019s funeral. He wandered through the sea of adults, holding tight to his mommy and daddy\u2019s hands as he made his way to the front of the line where his grandfather lay peacefully in the casket. His grandmother picked him up as he tried to climb into the casket. \u201cSleeping?\u201d he asked his grandmother. \u201cNo, sweetheart. Your grandfather died.\u201d"
+        },
+        {
+          "document_id": "fineweb_edu:<urn:uuid:afbe5f6d-9b53-4d89-a16a-499b60964ebe>",
+          "rank": 0.9230614719009407,
+          "text_prefix": "More outgoing than some of the other macaws, a green-winged macaw can make an affectionate pet. They are also considered more intelligent of the species. Green-winged macaws are often confused with the scarlet macaw because of their similar coloring, but as their name describes they have more green on their wings. Green-winged macaws adapt quickly to a new environment and will quickly become a loving member of the family.\nGreen-winged"
+        }
+      ],
+      "wikipedia": [
+        {
+          "document_id": "wikipedia:11157845",
+          "rank": 0.9643980652258903,
+          "text_prefix": "Welcome to the Voice is a bilingual opera (French and English) based on an original story and libretto by Muriel T\u00e9odori with music composed by Steve Nieve. A first draft was given a workshop performance at the Bell Atlantic Jazz Festival In New York City in 2000. The performance cast was Elvis Costello, Ron Sexsmith, John Flansburgh and students of the Juilliard School of Music. Music"
+        },
+        {
+          "document_id": "wikipedia:9978379",
+          "rank": 0.9912603307663633,
+          "text_prefix": "Mycobacterium elephantis, a bacterium of the family Mycobacteriaceae, was discovered and isolated from a deceased elephant near India and may be linked to respiratory dysfunction. Organisms in the genus Mycobacterium are known to be aerobic and non-motile. Organisms within Mycobacterium belong to either the rapid growing group (Organismal growth under seven days) or the slow growing group. M. eleph"
+        },
+        {
+          "document_id": "wikipedia:11638375",
+          "rank": 0.9614886304745106,
+          "text_prefix": "Whitneyville is a neighborhood in the southeastern portion of the town of Hamden, Connecticut. It started in the early nineteenth century as a factory town for workers in Eli Whitney's gun factory. Around the turn of the twentieth century, it evolved into a trolley suburb of New Haven. Today it is primarily residential, with a mixture of single-family homes and small apartment and condominium buildings. There is some commer"
+        },
+        {
+          "document_id": "wikipedia:10053167",
+          "rank": 0.9698350714175311,
+          "text_prefix": "The Southern Steel Valley is the area of post-industrial and industrial concentration along the upper Ohio River valley as well as the Monongahela River all the way to the West Virginia border. It has also included most of the Allegheny River, Beaver River and Youghiogheny River valleys. Most of the Pittsburgh metro area is considered part of \"Steel Valley\", as well as most of the Weirton-Steubenville-Wheeling Ohio"
+        },
+        {
+          "document_id": "wikipedia:6589076",
+          "rank": 0.9221180684990045,
+          "text_prefix": "Spi\u0161sk\u00e1 Kapitula (, ) (both meaning the \"Spi\u0161 Chapter house\") is an exceptionally well-preserved ecclesiastical town on the outskirts of Spi\u0161sk\u00e9 Podhradie, Slovakia, and overlooking Spi\u0161 Castle. It is part of the UNESCO World Heritage Site \"Levo\u010da, Spi\u0161 Castle and the associated cultural monuments\".\n"
+        },
+        {
+          "document_id": "wikipedia:9770391",
+          "rank": 0.9588746851900679,
+          "text_prefix": "In computing, an eFuse (electronic fuse) is a microscopic fuse put into a computer chip. This technology was invented by IBM in 2004 to allow for the dynamic real-time reprogramming of chips. In the abstract, computer logic is generally \"etched\" or \"hard-wired\" onto a chip and cannot be changed after the chip has finished being manufactured. By utilizing a set of eFuses, a chip manufacturer"
+        },
+        {
+          "document_id": "wikipedia:6438140",
+          "rank": 0.9261094492985534,
+          "text_prefix": "Pern\u0161tejn Castle (, from , originally from B\u00e4renstein) is a castle in the South Moravian Region of the Czech Republic. It lies on a rock above the village of Nedv\u011bdice and the rivers Svratka and Nedv\u011bdi\u010dka, about northwest of Brno. Pern\u0161tejn came to be known as the marble castle because of the marble-like stone used to frame the doors and wind"
+        },
+        {
+          "document_id": "wikipedia:8398738",
+          "rank": 0.9527603262203715,
+          "text_prefix": "Acer cissifolium (vine-leafed maple, vineleaf maple, and variations thereof; ) is a maple native to Japan, from southern Hokkaid\u014d south through Honsh\u016b and Shikoku to Ky\u016bsh\u016b.\n\nIt is a deciduous small tree or large shrub growing to 5\u201310 m (rarely 15 m) in height, with smooth grey bark. The young shoots are green"
+        },
+        {
+          "document_id": "wikipedia:8736223",
+          "rank": 0.9793725622118977,
+          "text_prefix": "Zellij (; also spelled zillij or zellige) is a style of mosaic tilework made from individually hand-chiseled tile pieces. The pieces were typically of different colours and fitted together to form various patterns on the basis of tessellations, most notably elaborate Islamic geometric motifs such as radiating star patterns. This form of Islamic art is one of the main characteristics of architecture in the western Islamic world. It is found in the architecture of Moroc"
+        },
+        {
+          "document_id": "wikipedia:8053643",
+          "rank": 0.9880054006382573,
+          "text_prefix": "Frindsbury is part of the Medway Towns conurbation in Kent, southern England. It lies on the opposite side of the River Medway to Rochester, and at various times in its history has been considered fully or partially part of the City of Rochester. Frindsbury today is part of the town of Strood and covers the most northern part of the town. Frindsbury refers to both a parish and a manor. Within the civil parish of Frindsb"
+        }
+      ]
+    },
+    "raw_score_quantiles_by_source": {
+      "finemath": {
+        "0": -17.608728789374435,
+        "0.1": -5.392436081587629,
+        "0.5": -2.9489590475522616,
+        "0.9": -1.3488434535033316,
+        "0.99": -0.21850091132791888,
+        "1": 6.385646774231237
+      },
+      "fineweb": {
+        "0": -15.653456815824438,
+        "0.1": -2.9784710533462655,
+        "0.5": -1.85249451646855,
+        "0.9": -0.9291492881279279,
+        "0.99": -0.0835698632158251,
+        "1": 36.556556846909686
+      },
+      "fineweb_edu": {
+        "0": -14.80357666146342,
+        "0.1": -2.493139085222037,
+        "0.5": -1.416854462935998,
+        "0.9": -0.45500663416333015,
+        "0.99": 0.3802435137691195,
+        "1": 10.150707673994066
+      },
+      "wikipedia": {
+        "0": -24.059561155140464,
+        "0.1": -5.038957231091853,
+        "0.5": -2.9367004422096668,
+        "0.9": -1.5396709360943073,
+        "0.99": -0.37334964880012605,
+        "1": 1.5636427911181732
+      }
+    },
+    "score_seconds": 122.90905701182783,
+    "selected_at_90th_percentile": {
+      "finemath": 12812,
+      "fineweb": 31527,
+      "fineweb_edu": 70197,
+      "wikipedia": 43995
+    }
+  },
+  "selection_rule": "Within-source top decile, sampled as 12.5% of each source stream",
+  "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7",
+  "total_seconds": 138.10941695980728
+}

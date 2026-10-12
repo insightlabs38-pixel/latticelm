@@ -1,0 +1,11 @@
+{
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/SMOKE-A8-REFERENCE/latest.pt",
+  "checkpoint_sha256": "610f3264c462305cd7aa789472127972aaa5dbd7c1a6648469564b161d54e5ac",
+  "experiment_id": "SMOKE-A8-REFERENCE",
+  "finished_utc": "2026-10-01T22:36:56.820622+00:00",
+  "logical_tokens": 65536,
+  "processed_tokens": 65536,
+  "status": "COMPLETED",
+  "steps": 8,
+  "wall_seconds": 17.335198784712702
+}

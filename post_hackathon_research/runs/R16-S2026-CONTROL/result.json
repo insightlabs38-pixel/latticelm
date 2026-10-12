@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "86be653ef976397aebf4c4c52e7680d535e31516d5a892d5653a6329a49732ae",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.0851018115878106,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/R16-S2026-CONTROL/latest.pt",
+  "checkpoint_sha256": "86be653ef976397aebf4c4c52e7680d535e31516d5a892d5653a6329a49732ae",
+  "experiment_id": "R16-S2026-CONTROL",
+  "finished_utc": "2026-10-09T14:01:41.507279+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "baseline",
+  "wall_seconds": 21618.38435047801
+}

@@ -1,0 +1,11 @@
+{
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/SMOKE-A8-TRAINER/latest.pt",
+  "checkpoint_sha256": "1b8e00b715391fe11fa8b743891938c9dcecdcb4f90f4152d4d72c5b4f00b86f",
+  "experiment_id": "SMOKE-A8-TRAINER",
+  "finished_utc": "2026-10-01T22:34:00.382936+00:00",
+  "logical_tokens": 16384,
+  "processed_tokens": 16384,
+  "status": "COMPLETED",
+  "steps": 2,
+  "wall_seconds": 2.6096087768673897
+}

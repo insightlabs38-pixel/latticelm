@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "314e4c0d36fec6b0f77b71af4714aafcc99ccf4fafe9425a428c3d73de290883",
+  "best_logical_tokens": 100000000,
+  "best_weighted_heldout_loss": 3.227768413722515,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/F0-8M-FIXED-EXPERTS/latest.pt",
+  "checkpoint_sha256": "314e4c0d36fec6b0f77b71af4714aafcc99ccf4fafe9425a428c3d73de290883",
+  "experiment_id": "F0-8M-FIXED-EXPERTS",
+  "finished_utc": "2026-10-07T18:13:45.952121+00:00",
+  "logical_tokens": 100000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 100007936,
+  "status": "COMPLETED",
+  "steps": 12208,
+  "variant": "moe_fixed",
+  "wall_seconds": 13911.173011487
+}

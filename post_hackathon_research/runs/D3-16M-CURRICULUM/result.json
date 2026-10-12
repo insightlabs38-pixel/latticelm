@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "b24abd65d9199c3fe823b6371e87a3738dade0813db42588ec31d3902713ac39",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.09946458786726,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/D3-16M-CURRICULUM/latest.pt",
+  "checkpoint_sha256": "b24abd65d9199c3fe823b6371e87a3738dade0813db42588ec31d3902713ac39",
+  "experiment_id": "D3-16M-CURRICULUM",
+  "finished_utc": "2026-10-05T20:40:58.557872+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "baseline",
+  "wall_seconds": 21635.005334568676
+}

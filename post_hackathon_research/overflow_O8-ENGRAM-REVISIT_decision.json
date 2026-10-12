@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-10T08:18:04.175207+00:00",
+  "estimated_tps": 5957.455819075202,
+  "evidence_passed": true,
+  "predicted_finish_utc": "2026-10-10T14:07:57.019644+00:00",
+  "reason": "evidence and time gate passed",
+  "run": true
+}

@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-04T02:30:28.696545+00:00",
+  "criterion": "full eight-task 4K audit >=1.5% meaningful truncation in any task, and 150M-token matched-context run fits reserve",
+  "max_task_truncation_fraction": 0.2389908256880734,
+  "predicted_finish_utc": "2026-10-04T18:06:17.309961+00:00",
+  "reason": "audit and time gate passed",
+  "run": true
+}

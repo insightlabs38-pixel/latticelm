@@ -1,0 +1,156 @@
+{
+  "at": "2026-10-12T04:31:05.669071+00:00",
+  "axes_are_separate": true,
+  "candidate": "F16-D4-S2026-FRESH150M",
+  "candidate_wall_accounting": {
+    "observed_elapsed_seconds": 21385.601634979248,
+    "retained_training_seconds": 21385.55844819601,
+    "scope": "Elapsed interval includes replayed work/resume initialization and downtime where observable; retained checkpoint wall excludes discarded work. Neither includes preflight/evaluation cost."
+  },
+  "capability": {
+    "any_clear_regression": false,
+    "per_task": {
+      "arc_easy": {
+        "acc": {
+          "delta": 0.013047138047138047,
+          "discordant_losses": 142,
+          "discordant_wins": 173,
+          "n": 2376,
+          "paired_exact_p": 0.09081003816306275,
+          "statistically_clear_regression": false
+        },
+        "acc_norm": {
+          "delta": 0.004208754208754209,
+          "discordant_losses": 119,
+          "discordant_wins": 129,
+          "n": 2376,
+          "paired_exact_p": 0.5677487762519421,
+          "statistically_clear_regression": false
+        }
+      },
+      "hellaswag": {
+        "acc": {
+          "delta": 0.002688707428799044,
+          "discordant_losses": 188,
+          "discordant_wins": 215,
+          "n": 10042,
+          "paired_exact_p": 0.19520533336120655,
+          "statistically_clear_regression": false
+        },
+        "acc_norm": {
+          "delta": -0.0044811790479984065,
+          "discordant_losses": 379,
+          "discordant_wins": 334,
+          "n": 10042,
+          "paired_exact_p": 0.09932323652297713,
+          "statistically_clear_regression": false
+        }
+      },
+      "piqa": {
+        "acc": {
+          "delta": 0.001632208922742111,
+          "discordant_losses": 91,
+          "discordant_wins": 94,
+          "n": 1838,
+          "paired_exact_p": 0.8831496927414336,
+          "statistically_clear_regression": false
+        },
+        "acc_norm": {
+          "delta": -0.001088139281828074,
+          "discordant_losses": 102,
+          "discordant_wins": 100,
+          "n": 1838,
+          "paired_exact_p": 0.9439304738571261,
+          "statistically_clear_regression": false
+        }
+      },
+      "winogrande": {
+        "acc": {
+          "delta": 0.009471191791633781,
+          "discordant_losses": 222,
+          "discordant_wins": 234,
+          "n": 1267,
+          "paired_exact_p": 0.606516168750087,
+          "statistically_clear_regression": false
+        }
+      }
+    },
+    "policy": "Paired exact test; Bonferroni across all available task/metric tests. Screens are not final evidence.",
+    "tests_corrected": 7
+  },
+  "clear_lm_regression": false,
+  "clear_wall_gain": true,
+  "control": "CONTROL-R16-S2026-CONTROL",
+  "control_pair_key": "55d31922a0508b67cb0fc89377e07264f61bcb939e4d6baf79bcc12bff3fe14a",
+  "control_wall_accounting": {
+    "observed_elapsed_seconds": 21618.64222407341,
+    "retained_training_seconds": 21616.13032674801,
+    "scope": "Elapsed interval includes replayed work/resume initialization and downtime where observable; retained checkpoint wall excludes discarded work. Neither includes preflight/evaluation cost."
+  },
+  "depth_ratio": 1.0,
+  "efficiency_signal": false,
+  "final_claim_requires_two_seeds": true,
+  "input_receipt_hashes": {
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/CONTROL-R16-S2026-CONTROL/capability_samples.json": "6455e99efdb61f7ff84841aefb037aa047d468d6735045343349b960023c7604",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/CONTROL-R16-S2026-CONTROL/evaluation_receipt.json": "87bdd71c7359ad5386d7176187fa15bff3a3c987ebf5be5d7462dadb1d41d7e3",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/CONTROL-R16-S2026-CONTROL/latest_validation.json": "6a37f2e1a070c0b5e8a26570c7ffea90cf600572b9621d0ef284e1b07999dfb4",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/CONTROL-R16-S2026-CONTROL/train_receipt.json": "3927a798e70251d5619cf5ed97b81c973cb98241d34795b51ff0740a3bd4656e",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/CONTROL-R16-S2026-CONTROL/wikitext103.json": "3096dd1d605d8002bc594597e3579d5288c202ee45ff6510d902cb7ca10bc639",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F16-D4-S2026-FRESH150M/capability_samples.json": "ddc2953b32acfb0fcd10227531c4f3830be1887e32e6344a18ad16b1697e9265",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F16-D4-S2026-FRESH150M/evaluation_receipt.json": "58ae1c2dd4e6f1233b6a9600e7965e16ee70dd1c10997d1b4c7ee69375aa0844",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F16-D4-S2026-FRESH150M/initialization_receipt.json": "15474f0a6646e790b83aeb15c397336bdf5d6f429545b023f6cf8500a05a4d70",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F16-D4-S2026-FRESH150M/latest_validation.json": "bb7cff8ef47de24a05d82066ee2cf9ccd6ec203fba9b1a712c58f5c802c4fce5",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F16-D4-S2026-FRESH150M/metrics-b25723807f8147648aced1b9e12b5b15.jsonl": "8d82bb2334d338e575ed9fa9de4545e423f1b33fc93ec5a09804ae38d854f052",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F16-D4-S2026-FRESH150M/train_receipt.json": "c054c15e307d199a11b678409147941d490b849b8c9b2b83057ed7b7b38f3d5c",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F16-D4-S2026-FRESH150M/validation_history.jsonl": "34135b9c6a908c26543cd552cf09bb86e508002739986703a0e669646a36d6ff",
+    "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F16-D4-S2026-FRESH150M/wikitext103.json": "76ab6e1e4ac2173aab60b26cc1720c005d42984c64bf01c2af0281ed065b3b61",
+    "/home/insightlabs38/latticelm/post_hackathon_research/controller_events.jsonl": "8414cf93ae93f75ac4d53733d95a2f85770bd80b03da7dc31f55d70af987c38e",
+    "/home/insightlabs38/latticelm/post_hackathon_research/runs/R16-S2026-CONTROL/metrics.jsonl": "e5f7135d63e9e64e17e6bf06e6b874a3f58e0631dc61a5ddd2e59307cfa9ff55",
+    "analysis_source_sha256": "d28fe8104460e0eaa42bc8e160e316958594ceea42b997caa8fc7749fd955a89"
+  },
+  "paired_bpb": {
+    "candidate_minus_control": -0.005211054065576981,
+    "ci95": [
+      -0.00651527535967071,
+      -0.003748956482277909
+    ],
+    "limitation": "row uncertainty; adjacent paragraphs are not independent documents; no training-seed inference",
+    "unit": "paired raw WikiText rows; ratio bootstrap"
+  },
+  "paired_loss": {
+    "candidate_minus_control": 0.005091618001461029,
+    "ci95": [
+      -0.00298002067953348,
+      0.01304946634918451
+    ],
+    "limitation": "fixed held-out subset and evaluation-item uncertainty, not training-seed uncertainty",
+    "source_deltas": {
+      "finemath": -0.047904759645462036,
+      "fineweb": 0.03207194805145264,
+      "fineweb_edu": -0.014816731214523315,
+      "wikipedia": 0.04054093360900879
+    },
+    "unit": "four-sequence held-out block; stratified by source"
+  },
+  "parameter_ratio": 1.0,
+  "quality_consistent_with_tie": false,
+  "quality_gain": false,
+  "retained_training_wall_ratio": 0.9893333415802602,
+  "sample_efficiency_policy": "At least two adjacent distinct earlier token positions beat the comparator endpoint under paired loss uncertainty; an isolated crossing is descriptive only.",
+  "sample_efficiency_strong_threshold_tokens": [],
+  "tie_note": "Failure to detect a difference is not proof of statistical equivalence.",
+  "wall_ratio": 0.9892203873546388,
+  "wall_ratio_scope": "Observed elapsed training interval",
+  "wall_uncertainty": {
+    "blocks": [
+      183,
+      183
+    ],
+    "limitation": "Within-run timing variability only; historical host conditions, boot/downtime and discarded preemption work are not estimated by this interval. Endpoint wall includes checkpoint overhead.",
+    "ratio_ci95": [
+      0.9857636444529619,
+      0.9924825479389521
+    ],
+    "unit": "100 consecutive optimizer steps; independent block bootstrap across runs"
+  }
+}

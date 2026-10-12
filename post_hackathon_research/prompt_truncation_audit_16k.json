@@ -1,0 +1,158 @@
+{
+  "context512_trigger_fraction": 0.015,
+  "created_utc": "2026-10-04T09:25:44.585113+00:00",
+  "decision_rule": "train 512 only if any full-suite task has >=1.5% requests with lost context or continuation at 256",
+  "limited_examples_per_task": null,
+  "max_task_meaningful_truncation_fraction_at_256": 0.10948012232415902,
+  "per_request_lengths_sha256": "b63902f5250c900f4794f59cffbdbb86ac9c4f33b57e9514d206b3c371e67f28",
+  "schema": "posthack-full-prompt-audit-v1",
+  "tasks": {
+    "arc_challenge": {
+      "continuation_tokens_max": 48,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.004267121826328142,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "mean_total_tokens": 39.66247066353744,
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 204,
+      "requests": 4687,
+      "rolling_requests": 0,
+      "total_tokens_max": 206,
+      "total_tokens_p95": 76
+    },
+    "arc_easy": {
+      "continuation_tokens_max": 34,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0026313019682138723,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "mean_total_tokens": 34.02252394484791,
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 189,
+      "requests": 9501,
+      "rolling_requests": 0,
+      "total_tokens_max": 193,
+      "total_tokens_p95": 67
+    },
+    "boolq": {
+      "continuation_tokens_max": 1,
+      "dropped_context_tokens": 56312,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0003058103975535168,
+        "128": 0.637308868501529,
+        "256": 0.11223241590214067,
+        "512": 0.005198776758409786
+      },
+      "mean_total_tokens": 165.7195718654434,
+      "meaningfully_truncated_fraction_at_256": 0.10948012232415902,
+      "prompt_tokens_max": 1346,
+      "requests": 6540,
+      "rolling_requests": 0,
+      "total_tokens_max": 1347,
+      "total_tokens_p95": 312
+    },
+    "hellaswag": {
+      "continuation_tokens_max": 97,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.06400617406891057,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "mean_total_tokens": 87.36407090221071,
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 119,
+      "requests": 40168,
+      "rolling_requests": 0,
+      "total_tokens_max": 169,
+      "total_tokens_p95": 131
+    },
+    "lambada_openai": {
+      "continuation_tokens_max": 9,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.011643702697457792,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "mean_total_tokens": 87.06190568600815,
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 237,
+      "requests": 5153,
+      "rolling_requests": 0,
+      "total_tokens_max": 239,
+      "total_tokens_p95": 113
+    },
+    "openbookqa": {
+      "continuation_tokens_max": 18,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "mean_total_tokens": 16.5345,
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 67,
+      "requests": 2000,
+      "rolling_requests": 0,
+      "total_tokens_max": 76,
+      "total_tokens_p95": 32
+    },
+    "piqa": {
+      "continuation_tokens_max": 268,
+      "dropped_context_tokens": 22,
+      "dropped_continuation_tokens": 19,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.018498367791077257,
+        "256": 0.000544069640914037,
+        "512": 0.0
+      },
+      "mean_total_tokens": 40.54461371055495,
+      "meaningfully_truncated_fraction_at_256": 0.000544069640914037,
+      "prompt_tokens_max": 37,
+      "requests": 3676,
+      "rolling_requests": 0,
+      "total_tokens_max": 279,
+      "total_tokens_p95": 95
+    },
+    "winogrande": {
+      "continuation_tokens_max": 23,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "mean_total_tokens": 24.955406471981057,
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 41,
+      "requests": 2534,
+      "rolling_requests": 0,
+      "total_tokens_max": 45,
+      "total_tokens_p95": 33
+    }
+  },
+  "tokenizer_sha256": "f635489a25b15ea525be3131acc84f2e7ca35b3954fa9d9b7e14e06032d02a37",
+  "train_context512": true,
+  "windowing_policy": "joined context/continuation tokenization; evaluator keeps final context_length+1 tokens and scores surviving continuation; rolling requests use separate windows"
+}

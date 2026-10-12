@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "a9f57c12635bba3202e90f3aa64251ab587d201c4d5e599362cfada7a51ebab8",
+  "best_logical_tokens": 100000000,
+  "best_weighted_heldout_loss": 3.3177732571959497,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/F3-8M-CLONE-CATCHUP/latest.pt",
+  "checkpoint_sha256": "a9f57c12635bba3202e90f3aa64251ab587d201c4d5e599362cfada7a51ebab8",
+  "experiment_id": "F3-8M-CLONE-CATCHUP",
+  "finished_utc": "2026-10-08T09:39:26.634496+00:00",
+  "logical_tokens": 100000000,
+  "moe_birth_tokens": 25001984,
+  "processed_tokens": 100007936,
+  "status": "COMPLETED",
+  "steps": 12208,
+  "variant": "moe_growth",
+  "wall_seconds": 13894.26393623001
+}

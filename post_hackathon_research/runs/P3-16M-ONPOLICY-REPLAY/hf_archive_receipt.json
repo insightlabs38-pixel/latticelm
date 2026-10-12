@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-08T10:35:34.832379+00:00",
+  "files": [
+    {
+      "at": "2026-10-08T10:35:36.175725+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "7c521fbbd3bc3c5db8b69bab8965a0456bb9a0c2",
+      "sha256": "4973e96dce1fc6c88af64a758002927488a7d9363d61e4ba917de692fe054114",
+      "size_bytes": 694,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:37.552745+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/metrics.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "600594939b2f85f5462aa5a01efd6da62dbe2adf",
+      "sha256": "465233635cdbf82f53c62562bb7ea6ccdffbe470e0ca95bc02dedcb200ab1af1",
+      "size_bytes": 147517,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:38.742669+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "265f509b0e17dc4c40d74174faa0c792f275042f",
+      "sha256": "d45b0e70d2c98145568f8a25ef13c383a692be403024cd9ad51ecf7fb4b6ac1f",
+      "size_bytes": 4043,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:39.639255+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "5c6bef15785166e29a49ec56601ae4b8074feda9",
+      "sha256": "ef48e0fbec7c8119e538bf6933a9d0b99251bdfc18a142acec3f0560e834aaf4",
+      "size_bytes": 939,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:40.395181+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "89f857886503dc5a9fd15ccb7c78962c337119e8",
+      "sha256": "ea024b2789f111f45b81ff00e6966729a38e1cdea5b30665cfbd7d808be81ba2",
+      "size_bytes": 20362,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:42.792278+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/capability_samples.json",
+      "remote_lfs_sha256": "3b78ac71b757ecacaae0ba52aa21670b58fbacc66d854601a58b5cfc21d5c580",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "7098d4545876cebb27ea97ba2f5e0b471e00d925",
+      "sha256": "3b78ac71b757ecacaae0ba52aa21670b58fbacc66d854601a58b5cfc21d5c580",
+      "size_bytes": 17241421,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:43.571067+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/heldout_skill_validation.json",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/heldout_skill_validation.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "8e7c93bd98787cc0fdac1989c7de53020bc75b94",
+      "sha256": "05fe8f4947c4d76d2c8f9fe04635ac0af3e9ce60bbd3def38ceb828dadeaa9f7",
+      "size_bytes": 1139,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:49.409721+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/latest.pt",
+      "remote_lfs_sha256": "3ad383c958b751d988c6b5f918fe2dc9ba99fcf34becb1cd2ab09f844fce7e0a",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "e775f78bdcb46a9fe2791b70f4d6db2238a1bf00",
+      "sha256": "3ad383c958b751d988c6b5f918fe2dc9ba99fcf34becb1cd2ab09f844fce7e0a",
+      "size_bytes": 192194582,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:51.238590+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/best.pt",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/best.pt",
+      "remote_lfs_sha256": "3ad383c958b751d988c6b5f918fe2dc9ba99fcf34becb1cd2ab09f844fce7e0a",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "dade0360b465feead468b3ea2ad7b4edaf836a3c",
+      "sha256": "3ad383c958b751d988c6b5f918fe2dc9ba99fcf34becb1cd2ab09f844fce7e0a",
+      "size_bytes": 192194582,
+      "verified": true
+    },
+    {
+      "at": "2026-10-08T10:35:51.943843+00:00",
+      "path": "runs/P3-16M-ONPOLICY-REPLAY/best.sha256",
+      "remote": "post-hackathon/2026-10-01/runs/P3-16M-ONPOLICY-REPLAY/best.sha256",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "8d4c83891b5529feda1ad9e4e188862e8c2d20c9",
+      "sha256": "104efa01335af2bdbacb0a30b44df74f65642273e135da1b5aaaa6dc08c97097",
+      "size_bytes": 65,
+      "verified": true
+    }
+  ]
+}

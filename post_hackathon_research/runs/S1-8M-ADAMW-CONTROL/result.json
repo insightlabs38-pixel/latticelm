@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "1adec3e21bd11a41003e4e5bb3a313d6d48c6bd1b374c4e565a5e8533ff69963",
+  "best_logical_tokens": 50000000,
+  "best_weighted_heldout_loss": 3.569804048538208,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/S1-8M-ADAMW-CONTROL/latest.pt",
+  "checkpoint_sha256": "1adec3e21bd11a41003e4e5bb3a313d6d48c6bd1b374c4e565a5e8533ff69963",
+  "experiment_id": "S1-8M-ADAMW-CONTROL",
+  "finished_utc": "2026-10-10T05:33:25.071451+00:00",
+  "logical_tokens": 50000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 50003968,
+  "status": "COMPLETED",
+  "steps": 6104,
+  "variant": "baseline",
+  "wall_seconds": 3741.03003472501
+}

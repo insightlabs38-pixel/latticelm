@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "6807719c3b712c867cb87957e061ca2c01d19ceace061356418a4c0adbfad95b",
+  "best_logical_tokens": 100000000,
+  "best_weighted_heldout_loss": 3.3069079399108885,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/F2-8M-CLONE-BIRTH/latest.pt",
+  "checkpoint_sha256": "6807719c3b712c867cb87957e061ca2c01d19ceace061356418a4c0adbfad95b",
+  "experiment_id": "F2-8M-CLONE-BIRTH",
+  "finished_utc": "2026-10-08T05:40:20.068060+00:00",
+  "logical_tokens": 100000000,
+  "moe_birth_tokens": 25001984,
+  "processed_tokens": 100007936,
+  "status": "COMPLETED",
+  "steps": 12208,
+  "variant": "moe_growth",
+  "wall_seconds": 13388.992765663992
+}

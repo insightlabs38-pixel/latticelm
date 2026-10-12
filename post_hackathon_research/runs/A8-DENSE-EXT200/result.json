@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "70b4c27b934c3a39285dcc03f91acbf1051febe1ebf23814cd7d24f04b0d1082",
+  "best_logical_tokens": 200000000,
+  "best_weighted_heldout_loss": 3.189979536831379,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A8-DENSE-EXT200/latest.pt",
+  "checkpoint_sha256": "70b4c27b934c3a39285dcc03f91acbf1051febe1ebf23814cd7d24f04b0d1082",
+  "experiment_id": "A8-DENSE-EXT200",
+  "finished_utc": "2026-10-03T20:20:19.439375+00:00",
+  "logical_tokens": 200000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 200007680,
+  "status": "COMPLETED",
+  "steps": 24415,
+  "variant": "baseline",
+  "wall_seconds": 18278.196248427965
+}

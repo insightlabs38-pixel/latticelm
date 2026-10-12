@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "9c80c0632cd824bd2a1f628ba2c0b1deff16e2c66e880df185b6d3d53561aa3b",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.0890955582261084,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/B16-VALUE-RESIDUAL-S1337/latest.pt",
+  "checkpoint_sha256": "9c80c0632cd824bd2a1f628ba2c0b1deff16e2c66e880df185b6d3d53561aa3b",
+  "experiment_id": "B16-VALUE-RESIDUAL-S1337",
+  "finished_utc": "2026-10-04T02:24:49.064481+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "value_residual",
+  "wall_seconds": 21531.085074489005
+}

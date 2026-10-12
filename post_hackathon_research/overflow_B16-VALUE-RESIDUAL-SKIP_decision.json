@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-10T08:18:04.169595+00:00",
+  "estimated_tps": 6089.145626894674,
+  "evidence_passed": false,
+  "predicted_finish_utc": "2026-10-10T18:38:38.167386+00:00",
+  "reason": "first value-residual screen was not provisionally positive",
+  "run": false
+}

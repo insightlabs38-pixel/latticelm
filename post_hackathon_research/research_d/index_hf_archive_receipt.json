@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-05T02:25:14.586316+00:00",
+  "files": [
+    {
+      "at": "2026-10-05T02:25:16.014808+00:00",
+      "path": "research_d/index_report.json",
+      "remote": "post-hackathon/2026-10-01/research_d/index_report.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "bb26710fa5341dfe3840ccb72ce33cb49e16e6fc",
+      "sha256": "655ebf97914b54d6a5f6d2808853e73e373b0a93f69b7433364532d050dc1363",
+      "size_bytes": 799,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T02:25:22.735890+00:00",
+      "path": "research_d/documents.jsonl.gz",
+      "remote": "post-hackathon/2026-10-01/research_d/documents.jsonl.gz",
+      "remote_lfs_sha256": "84e135249d20fb79a7d510057ffeda0c82d784b172b6a763a373656002bc56cc",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "94be13df09c141bf7ff6219cc7bcca9ad8aabeea",
+      "sha256": "84e135249d20fb79a7d510057ffeda0c82d784b172b6a763a373656002bc56cc",
+      "size_bytes": 239247128,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T02:25:23.529822+00:00",
+      "path": "research_d/documents.jsonl.gz.source.sha256",
+      "remote": "post-hackathon/2026-10-01/research_d/documents.jsonl.gz.source.sha256",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "9c38d0bb081746097f3615b4cb9f25d4a8b697cd",
+      "sha256": "4ed150c55d77370df962cacdfc8dec62aca85096740423ff500ba0dec9c2fe7c",
+      "size_bytes": 65,
+      "verified": true
+    }
+  ]
+}

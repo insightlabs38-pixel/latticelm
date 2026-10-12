@@ -1,0 +1,346 @@
+{
+  "baseline_loss_by_source": {
+    "finemath": 3.2504265308380127,
+    "fineweb": 3.6040186882019043,
+    "fineweb_edu": 3.226794481277466,
+    "wikipedia": 1.8326945304870605
+  },
+  "checkpoint_sha256": "6807719c3b712c867cb87957e061ca2c01d19ceace061356418a4c0adbfad95b",
+  "created_utc": "2026-10-08T05:47:28.971614+00:00",
+  "diagnostic_limit": "small fixed windows and first-router gradient estimate; infer mechanism only alongside held-out and broad capability changes",
+  "expert_ablation_loss_increase_by_source": {
+    "0": {
+      "finemath": 0.050669193267822266,
+      "fineweb": 0.052207231521606445,
+      "fineweb_edu": 0.0918886661529541,
+      "wikipedia": 0.0781639814376831
+    },
+    "1": {
+      "finemath": 0.08562207221984863,
+      "fineweb": 0.07317876815795898,
+      "fineweb_edu": 0.07889533042907715,
+      "wikipedia": 0.056896090507507324
+    },
+    "2": {
+      "finemath": 0.07304978370666504,
+      "fineweb": 0.09490561485290527,
+      "fineweb_edu": 0.1059260368347168,
+      "wikipedia": 0.10654032230377197
+    },
+    "3": {
+      "finemath": 0.06554555892944336,
+      "fineweb": 0.03790163993835449,
+      "fineweb_edu": 0.07786321640014648,
+      "wikipedia": 0.028261661529541016
+    },
+    "4": {
+      "finemath": 0.09451174736022949,
+      "fineweb": 0.07348084449768066,
+      "fineweb_edu": 0.15827536582946777,
+      "wikipedia": 0.23230361938476562
+    },
+    "5": {
+      "finemath": 0.20801877975463867,
+      "fineweb": 0.3305034637451172,
+      "fineweb_edu": 0.27469968795776367,
+      "wikipedia": 0.3528439998626709
+    },
+    "6": {
+      "finemath": 0.21192216873168945,
+      "fineweb": 0.20223569869995117,
+      "fineweb_edu": 0.16089129447937012,
+      "wikipedia": 0.2028961181640625
+    },
+    "7": {
+      "finemath": 0.10165858268737793,
+      "fineweb": 0.06795358657836914,
+      "fineweb_edu": 0.1234591007232666,
+      "wikipedia": 0.13690590858459473
+    }
+  },
+  "fineweb_edu_vs_finemath_first_router_gradient_cosine": -0.24579979479312897,
+  "forced_expert_loss_by_source": {
+    "0": {
+      "finemath": 4.518799304962158,
+      "fineweb": 4.862637042999268,
+      "fineweb_edu": 4.578070640563965,
+      "wikipedia": 3.5178825855255127
+    },
+    "1": {
+      "finemath": 4.525821685791016,
+      "fineweb": 5.038742542266846,
+      "fineweb_edu": 4.773226261138916,
+      "wikipedia": 3.925339937210083
+    },
+    "2": {
+      "finemath": 4.283923625946045,
+      "fineweb": 4.624195575714111,
+      "fineweb_edu": 4.4170308113098145,
+      "wikipedia": 3.381873607635498
+    },
+    "3": {
+      "finemath": 4.457220554351807,
+      "fineweb": 4.761556625366211,
+      "fineweb_edu": 4.557279109954834,
+      "wikipedia": 3.451881170272827
+    },
+    "4": {
+      "finemath": 4.61863899230957,
+      "fineweb": 4.869878768920898,
+      "fineweb_edu": 4.684531211853027,
+      "wikipedia": 3.4589011669158936
+    },
+    "5": {
+      "finemath": 4.334855556488037,
+      "fineweb": 4.595770835876465,
+      "fineweb_edu": 4.3763298988342285,
+      "wikipedia": 3.433241844177246
+    },
+    "6": {
+      "finemath": 4.176223278045654,
+      "fineweb": 4.544132709503174,
+      "fineweb_edu": 4.308371543884277,
+      "wikipedia": 3.2318379878997803
+    },
+    "7": {
+      "finemath": 4.424136161804199,
+      "fineweb": 4.654743194580078,
+      "fineweb_edu": 4.508889675140381,
+      "wikipedia": 3.4955999851226807
+    }
+  },
+  "parent_child_representation_and_parameter_distance": [
+    {
+      "child": 4,
+      "layer": 0,
+      "output_cosine_on_finemath_activation": 0.8494975566864014,
+      "parent": 0,
+      "relative_parameter_distance": 0.8468974828720093
+    },
+    {
+      "child": 5,
+      "layer": 0,
+      "output_cosine_on_finemath_activation": 0.8378222584724426,
+      "parent": 1,
+      "relative_parameter_distance": 0.8632110953330994
+    },
+    {
+      "child": 6,
+      "layer": 0,
+      "output_cosine_on_finemath_activation": 0.8871563076972961,
+      "parent": 2,
+      "relative_parameter_distance": 0.6683017015457153
+    },
+    {
+      "child": 7,
+      "layer": 0,
+      "output_cosine_on_finemath_activation": 0.8701532483100891,
+      "parent": 3,
+      "relative_parameter_distance": 0.7415956258773804
+    },
+    {
+      "child": 5,
+      "layer": 1,
+      "output_cosine_on_finemath_activation": 0.3204362094402313,
+      "parent": 0,
+      "relative_parameter_distance": 1.1926146745681763
+    },
+    {
+      "child": 4,
+      "layer": 1,
+      "output_cosine_on_finemath_activation": 0.3441990315914154,
+      "parent": 1,
+      "relative_parameter_distance": 1.0581697225570679
+    },
+    {
+      "child": 6,
+      "layer": 1,
+      "output_cosine_on_finemath_activation": 0.32536762952804565,
+      "parent": 2,
+      "relative_parameter_distance": 1.1462364196777344
+    },
+    {
+      "child": 7,
+      "layer": 1,
+      "output_cosine_on_finemath_activation": 0.4435160458087921,
+      "parent": 3,
+      "relative_parameter_distance": 1.0467970371246338
+    },
+    {
+      "child": 5,
+      "layer": 2,
+      "output_cosine_on_finemath_activation": 0.1515655815601349,
+      "parent": 0,
+      "relative_parameter_distance": 1.2823361158370972
+    },
+    {
+      "child": 4,
+      "layer": 2,
+      "output_cosine_on_finemath_activation": 0.27276742458343506,
+      "parent": 1,
+      "relative_parameter_distance": 1.2246230840682983
+    },
+    {
+      "child": 6,
+      "layer": 2,
+      "output_cosine_on_finemath_activation": 0.21801714599132538,
+      "parent": 2,
+      "relative_parameter_distance": 1.2136043310165405
+    },
+    {
+      "child": 7,
+      "layer": 2,
+      "output_cosine_on_finemath_activation": 0.2504701018333435,
+      "parent": 3,
+      "relative_parameter_distance": 1.1295212507247925
+    },
+    {
+      "child": 5,
+      "layer": 3,
+      "output_cosine_on_finemath_activation": 0.22185645997524261,
+      "parent": 0,
+      "relative_parameter_distance": 1.1766351461410522
+    },
+    {
+      "child": 6,
+      "layer": 3,
+      "output_cosine_on_finemath_activation": 0.2759183347225189,
+      "parent": 1,
+      "relative_parameter_distance": 1.102635145187378
+    },
+    {
+      "child": 7,
+      "layer": 3,
+      "output_cosine_on_finemath_activation": 0.29928165674209595,
+      "parent": 2,
+      "relative_parameter_distance": 1.1053169965744019
+    },
+    {
+      "child": 4,
+      "layer": 3,
+      "output_cosine_on_finemath_activation": 0.26813066005706787,
+      "parent": 3,
+      "relative_parameter_distance": 1.1503347158432007
+    },
+    {
+      "child": 5,
+      "layer": 4,
+      "output_cosine_on_finemath_activation": 0.1967683732509613,
+      "parent": 0,
+      "relative_parameter_distance": 1.2126195430755615
+    },
+    {
+      "child": 4,
+      "layer": 4,
+      "output_cosine_on_finemath_activation": 0.1863190233707428,
+      "parent": 1,
+      "relative_parameter_distance": 1.1897095441818237
+    },
+    {
+      "child": 6,
+      "layer": 4,
+      "output_cosine_on_finemath_activation": 0.29098808765411377,
+      "parent": 2,
+      "relative_parameter_distance": 1.092002034187317
+    },
+    {
+      "child": 7,
+      "layer": 4,
+      "output_cosine_on_finemath_activation": 0.23899522423744202,
+      "parent": 3,
+      "relative_parameter_distance": 1.1489046812057495
+    },
+    {
+      "child": 4,
+      "layer": 5,
+      "output_cosine_on_finemath_activation": 0.3409276604652405,
+      "parent": 0,
+      "relative_parameter_distance": 1.0556670427322388
+    },
+    {
+      "child": 5,
+      "layer": 5,
+      "output_cosine_on_finemath_activation": 0.4116464853286743,
+      "parent": 1,
+      "relative_parameter_distance": 0.9738715887069702
+    },
+    {
+      "child": 6,
+      "layer": 5,
+      "output_cosine_on_finemath_activation": 0.24667638540267944,
+      "parent": 2,
+      "relative_parameter_distance": 1.1308577060699463
+    },
+    {
+      "child": 7,
+      "layer": 5,
+      "output_cosine_on_finemath_activation": 0.2861050069332123,
+      "parent": 3,
+      "relative_parameter_distance": 1.1548219919204712
+    },
+    {
+      "child": 5,
+      "layer": 6,
+      "output_cosine_on_finemath_activation": 0.38062307238578796,
+      "parent": 0,
+      "relative_parameter_distance": 1.0592317581176758
+    },
+    {
+      "child": 4,
+      "layer": 6,
+      "output_cosine_on_finemath_activation": 0.30484700202941895,
+      "parent": 1,
+      "relative_parameter_distance": 1.107596755027771
+    },
+    {
+      "child": 6,
+      "layer": 6,
+      "output_cosine_on_finemath_activation": 0.2746693789958954,
+      "parent": 2,
+      "relative_parameter_distance": 1.0708425045013428
+    },
+    {
+      "child": 7,
+      "layer": 6,
+      "output_cosine_on_finemath_activation": 0.3653724789619446,
+      "parent": 3,
+      "relative_parameter_distance": 1.0744915008544922
+    },
+    {
+      "child": 5,
+      "layer": 7,
+      "output_cosine_on_finemath_activation": 0.47820234298706055,
+      "parent": 0,
+      "relative_parameter_distance": 1.0527756214141846
+    },
+    {
+      "child": 6,
+      "layer": 7,
+      "output_cosine_on_finemath_activation": 0.47754448652267456,
+      "parent": 1,
+      "relative_parameter_distance": 0.9455716609954834
+    },
+    {
+      "child": 7,
+      "layer": 7,
+      "output_cosine_on_finemath_activation": 0.5597163438796997,
+      "parent": 2,
+      "relative_parameter_distance": 0.8666368126869202
+    },
+    {
+      "child": 4,
+      "layer": 7,
+      "output_cosine_on_finemath_activation": 0.5087609887123108,
+      "parent": 3,
+      "relative_parameter_distance": 0.9974281191825867
+    }
+  ],
+  "parent_child_swap_loss_increase_by_source": {
+    "finemath": 0.3104245662689209,
+    "fineweb": 0.4532928466796875,
+    "fineweb_edu": 0.43996572494506836,
+    "wikipedia": 0.7314519882202148
+  },
+  "schema": "posthack-moe-endpoint-diagnostics-v1",
+  "validation_policy": "first two 256-token windows per certified validation source"
+}

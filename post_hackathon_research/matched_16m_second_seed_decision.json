@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-10-09T08:01:13.374683+00:00",
+  "estimated_tps": {
+    "A16-DENSE-S2026": 6054.624895879275,
+    "R16-S2026-CONTROL": 5636.334343621044
+  },
+  "evidence_passed": true,
+  "predicted_finish_including_protected_time_utc": "2026-10-11T05:17:40.865917+00:00",
+  "protected_downstream_hours": 24,
+  "reason": "evidence and measured-time gates passed",
+  "run": true
+}

@@ -1,0 +1,3759 @@
+{
+  "document_boundary_offsets": [
+    0,
+    252,
+    462,
+    8549,
+    8720,
+    11270,
+    11933,
+    12610,
+    12931,
+    13540,
+    15364,
+    16172,
+    16896,
+    17195,
+    17402,
+    18645,
+    19011,
+    19612,
+    23720,
+    23911,
+    25055,
+    25649,
+    26196,
+    29488,
+    30808,
+    31607,
+    32218,
+    32741,
+    34551,
+    36864,
+    37191,
+    38912,
+    39154,
+    39854,
+    40747,
+    42325,
+    43473,
+    43993,
+    50248,
+    53139,
+    53716,
+    54697,
+    55578,
+    55897,
+    56586,
+    57581,
+    59892,
+    63003,
+    63278,
+    64196,
+    64482,
+    65328,
+    66236,
+    68134,
+    68471,
+    69148,
+    69921,
+    71230,
+    71536,
+    72138,
+    72550,
+    83877,
+    84536,
+    85616,
+    87401,
+    88173,
+    88728,
+    90293,
+    90754,
+    91631,
+    91968,
+    92636,
+    92983,
+    93958,
+    94487,
+    95805,
+    96507,
+    98240,
+    98854,
+    99389,
+    102888,
+    103600,
+    104515,
+    108801,
+    110087,
+    110357,
+    110754,
+    111926,
+    112965,
+    114370,
+    115257,
+    116033,
+    116820,
+    117547,
+    118102,
+    118564,
+    119328,
+    120896,
+    121049,
+    121294,
+    122183,
+    126813,
+    128486,
+    129832,
+    131248,
+    131886,
+    132735,
+    134026,
+    134265,
+    134969,
+    135805,
+    136415,
+    137532,
+    138678,
+    139289,
+    140819,
+    141576,
+    141751,
+    143576,
+    144069,
+    144214,
+    144812,
+    145997,
+    148538,
+    149256,
+    152122,
+    152617,
+    153270,
+    153835,
+    154152,
+    154557,
+    155080,
+    155576,
+    156990,
+    160789,
+    161127,
+    164048,
+    165214,
+    165966,
+    166795,
+    168219,
+    169218,
+    171507,
+    173132,
+    173785,
+    174371,
+    174657,
+    175419,
+    176504,
+    177220,
+    178438,
+    179120,
+    180628,
+    181204,
+    181823,
+    182793,
+    183563,
+    186997,
+    187690,
+    188172,
+    188493,
+    190168,
+    191240,
+    191877,
+    193458,
+    195970,
+    197129,
+    197754,
+    198093,
+    198422,
+    198801,
+    200587,
+    202484,
+    203070,
+    203755,
+    204556,
+    205149,
+    207733,
+    209478,
+    210267,
+    211805,
+    212900,
+    213045,
+    213550,
+    213803,
+    214336,
+    215649,
+    217173,
+    219043,
+    219701,
+    219937,
+    225698,
+    226040,
+    227106,
+    227943,
+    228593,
+    229574,
+    230277,
+    232045,
+    232617,
+    232850,
+    234127,
+    234468,
+    235228,
+    236260,
+    240488,
+    241022,
+    242318,
+    249554,
+    250592,
+    250942,
+    251369,
+    251769,
+    252150,
+    252425,
+    253273,
+    253597,
+    254299,
+    255291,
+    255886,
+    256755,
+    257721,
+    258113,
+    258315,
+    259016,
+    259477,
+    260511,
+    261768,
+    262524,
+    264975,
+    267365,
+    269338,
+    270672,
+    270934,
+    271166,
+    272026,
+    272995,
+    274606,
+    275735,
+    276731,
+    277343,
+    278679,
+    279082,
+    279933,
+    280574,
+    281038,
+    283377,
+    284075,
+    284638,
+    285173,
+    286131,
+    286596,
+    287537,
+    287871,
+    288930,
+    293154,
+    294103,
+    294479,
+    295020,
+    295498,
+    295679,
+    296128,
+    299174,
+    299737,
+    301603,
+    302303,
+    302884,
+    303794,
+    305545,
+    305715,
+    306828,
+    308048,
+    309879,
+    311057,
+    312634,
+    313046,
+    313516,
+    315086,
+    315424,
+    317059,
+    319300,
+    319774,
+    320543,
+    321086,
+    322050,
+    323291,
+    324854,
+    325455,
+    325908,
+    326298,
+    327360,
+    328362,
+    341608,
+    342523,
+    345447,
+    346167,
+    347307,
+    349153,
+    352717,
+    353662,
+    354010,
+    354166,
+    354690,
+    355327,
+    356205,
+    356586,
+    357269,
+    357799,
+    359923,
+    360908,
+    361374,
+    362617,
+    364422,
+    365025,
+    365634,
+    366122,
+    366747,
+    367815,
+    368213,
+    375287,
+    376719,
+    382237,
+    382410,
+    383215,
+    383643,
+    384195,
+    385113,
+    386383,
+    386836,
+    387370,
+    387952,
+    388238,
+    388743,
+    389422,
+    389594,
+    391151,
+    392678,
+    393141,
+    393512,
+    397010,
+    397415,
+    398049,
+    398433,
+    399486,
+    400179,
+    400320,
+    407183,
+    408550,
+    409300,
+    409772,
+    410367,
+    410765,
+    412259,
+    415195,
+    415667,
+    415818,
+    416821,
+    418017,
+    418905,
+    419684,
+    421028,
+    421951,
+    422546,
+    422957,
+    424863,
+    425075,
+    426004,
+    426631,
+    427829,
+    428655,
+    431514,
+    433101,
+    433464,
+    433589,
+    433861
+  ],
+  "document_count": 374,
+  "document_upstream_metadata": [
+    {
+      "date": "2013-05-25T13:50:16Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a2ed7c3c-e00a-4562-aabb-f55c6092f721>",
+      "language_score": 0.9613254070281982,
+      "url": "http://forum.realityfanforum.com/index.php/topic,27465.msg773437.html"
+    },
+    {
+      "date": "2013-05-23T05:35:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:aa171e96-6ac7-4cbc-9c34-e80dde5ad0e5>",
+      "language_score": 0.9609188437461853,
+      "url": "http://www.woot.com/blog/post/the-trivial-eye-beer-labels"
+    },
+    {
+      "date": "2013-05-23T05:29:52Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:28aa046d-ff6b-401d-8cd2-746179481cc7>",
+      "language_score": 0.9517503976821899,
+      "url": "http://www.yorksoft.co.uk/mr2/index.asp?selection=Problem&problemview=Mechanical"
+    },
+    {
+      "date": "2013-05-25T13:16:06Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:23c0ee26-1a6b-4890-aeb1-86f00d5ebe9b>",
+      "language_score": 0.9708247780799866,
+      "url": "http://ricochet.com/main-feed/The-Military-Loves-Ron-Paul"
+    },
+    {
+      "date": "2013-05-25T13:51:17Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1888a325-4260-4b28-8319-cc9af23632d1>",
+      "language_score": 0.9854350090026855,
+      "url": "http://www.fayobserver.com/articles/2012/09/25/1200188?sac=fo.military"
+    },
+    {
+      "date": "2013-05-25T13:46:02Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:daeee1e3-2442-4634-b0b3-a7910bbae89e>",
+      "language_score": 0.9593977928161621,
+      "url": "http://www.phonearena.com/news/Seton-Hall-freshmen-get-their-Nokia-Lumia-900-handsets_id32679"
+    },
+    {
+      "date": "2013-05-25T13:38:18Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:fa20c45f-e4f8-4a6b-8e9c-794d1bfd81bf>",
+      "language_score": 0.9726516008377075,
+      "url": "http://usatoday30.usatoday.com/money/perfi/2008-12-03-pension-funds-endowments-hurt_N.htm"
+    },
+    {
+      "date": "2013-05-25T13:49:37Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:523ee44e-8686-477f-9b8d-5622d5053bfe>",
+      "language_score": 0.967854917049408,
+      "url": "http://forums.battle.net/post.html?forumId=12007&topicId=14133418966&postId=142856629317&op=4"
+    },
+    {
+      "date": "2013-05-25T13:43:29Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:af98a530-eb14-43d0-ad03-a4066ce0828d>",
+      "language_score": 0.9559463262557983,
+      "url": "http://www.sfexaminer.com/opinion/editorials/2011/06/democrats-answer-debt-more-spending?category=1529"
+    },
+    {
+      "date": "2013-05-25T13:16:06Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:25d51c57-2ed9-4828-adf7-1fd5a2f8f696>",
+      "language_score": 0.9529373645782471,
+      "url": "http://dianemeier.com/index.php/press/rss_2.0/"
+    },
+    {
+      "date": "2013-05-23T05:35:27Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:faba507e-b9a4-43ed-9fef-9f8a47fca74c>",
+      "language_score": 0.9716713428497314,
+      "url": "http://www.toledoblade.com/Politics/2003/09/21/Clark-s-entry-further-clouds-unsettled-race.html"
+    },
+    {
+      "date": "2013-05-25T13:16:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d852b2f6-5358-4073-b993-efd8994dd585>",
+      "language_score": 0.9806758165359497,
+      "url": "http://newyork.citysearch.com/profile/629914890/new_york_ny/waldorf_towers_new_york_hotels.html"
+    },
+    {
+      "date": "2013-05-23T05:24:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:50c93067-6df2-4ab0-b7dd-8e536cd47523>",
+      "language_score": 0.9870509505271912,
+      "url": "http://www.vindy.com/users/Lou/comments/"
+    },
+    {
+      "date": "2013-05-25T13:42:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:99f38f5b-f62a-413c-900b-91dac9b680f3>",
+      "language_score": 0.9663218855857849,
+      "url": "http://etsylove.ning.com/profile/Unameit"
+    },
+    {
+      "date": "2013-05-25T13:16:57Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7f8501a0-afba-4963-8356-c3328ce9e340>",
+      "language_score": 0.9806106686592102,
+      "url": "http://www.nooga.com/158070/instant-analysis-south-carolina-38-tennessee-35/"
+    },
+    {
+      "date": "2013-05-23T05:28:11Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:af7afece-8449-4f2f-a4ed-3d289f0672c7>",
+      "language_score": 0.9842978119850159,
+      "url": "http://zzsimonb.blogspot.com/2008/01/clint-boxes.html"
+    },
+    {
+      "date": "2013-05-25T13:35:51Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cbb6bc04-d378-4d51-a47c-616bf026e89b>",
+      "language_score": 0.9623213410377502,
+      "url": "http://contrarianmonthly.com/tag/tim-black/"
+    },
+    {
+      "date": "2013-05-25T13:23:22Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3051870a-0208-4713-8be9-a4ba914f8b04>",
+      "language_score": 0.96288001537323,
+      "url": "http://www.makeupalley.com/product/x_userreviews.asp/page=6/pagesize=15/Brand=/CategoryId=/u=girlndocs/"
+    },
+    {
+      "date": "2013-05-25T13:42:57Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:dbd69af8-7aef-4ecc-b047-816fc823a74b>",
+      "language_score": 0.9955263137817383,
+      "url": "http://www.omg-facts.com/Celebs/That-70s-Show-Took-Place-Over-3-5-Years/50348"
+    },
+    {
+      "date": "2013-05-23T05:37:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:157be7f3-d6c7-42d0-a49b-b31fb31543ae>",
+      "language_score": 0.950384259223938,
+      "url": "http://www.ratrodbikes.com/forum/viewtopic.php?f=24&t=7825&start=30&st=0&sk=t&sd=a"
+    },
+    {
+      "date": "2013-05-23T05:38:06Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:63e31929-f089-4809-bfeb-49de672a6c96>",
+      "language_score": 0.9798873066902161,
+      "url": "http://www.iol.co.za/motoring/industry-news/parking-pain-at-gautrain-stations-1.1403706"
+    },
+    {
+      "date": "2013-06-20T02:38:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:844419c0-485c-4ca9-b5f3-22310228281a>",
+      "language_score": 0.9671381711959839,
+      "url": "http://birdbander.blogspot.jp/2009_06_01_archive.html"
+    },
+    {
+      "date": "2013-05-25T13:50:00Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cebcd6a3-da4b-4b01-8068-7dfbc919e7ed>",
+      "language_score": 0.9603046774864197,
+      "url": "http://townhall-talk.edmunds.com/direct/view/.ef0829f/1121"
+    },
+    {
+      "date": "2013-05-25T13:45:36Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a0bc9d30-8eda-47c9-949d-b3522c8e7c5f>",
+      "language_score": 0.9755447506904602,
+      "url": "http://www.ocregister.com/articles/marine-195663-young-levi.html"
+    },
+    {
+      "date": "2013-05-25T13:29:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:43099656-605f-4b82-a8cf-74f7fbae346e>",
+      "language_score": 0.9762012362480164,
+      "url": "http://www.pasadenastarnews.com/preps/ci_22271553"
+    },
+    {
+      "date": "2013-05-25T13:37:22Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b317969b-2239-4e03-81af-44921664837f>",
+      "language_score": 0.963786244392395,
+      "url": "http://www.semanticbible.com/rsv-hyperconc/A/Afterward.html"
+    },
+    {
+      "date": "2013-05-23T05:37:41Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:42c3fccd-b035-40ff-ad03-d9efca64f3e7>",
+      "language_score": 0.9509750008583069,
+      "url": "http://www.defensenews.com/article/20120923/DEFREG01/309230003/1001/DEFSECT"
+    },
+    {
+      "date": "2013-06-20T02:46:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:08576d69-5092-4189-99e8-fc38cc31414a>",
+      "language_score": 0.9783968329429626,
+      "url": "http://coldrealitynews.wordpress.com/2012/10/15/once-when-we-were-free/"
+    },
+    {
+      "date": "2013-05-25T13:38:54Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ec961323-312e-4343-8728-7eb456cc354e>",
+      "language_score": 0.9591658115386963,
+      "url": "http://everything2.com/title/townie"
+    },
+    {
+      "date": "2013-05-23T05:09:23Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:803cb3cd-5b3f-432a-90f7-02a34fcbc399>",
+      "language_score": 0.9663503766059875,
+      "url": "http://www.stmaryswistaston.org.uk/mothers-union.html"
+    },
+    {
+      "date": "2013-05-25T13:15:32Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:c487eaaa-c4db-4e26-bd8a-932d1e37338a>",
+      "language_score": 0.9676833152770996,
+      "url": "http://www.frontstretch.com/bkeith/33824/"
+    },
+    {
+      "date": "2013-06-20T02:52:52Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8b6a7e9b-2095-4ea6-acd0-705dbffbe77a>",
+      "language_score": 0.9558840394020081,
+      "url": "http://hollywoodlife.com/2012/08/07/liberty-ross-rupert-sanders-together-after-kristen-stewart-affair/"
+    },
+    {
+      "date": "2013-06-20T03:00:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:09ca008e-f16c-46da-a652-c07470810809>",
+      "language_score": 0.977778971195221,
+      "url": "http://pantheon.org/articles/p/padmasambhava.html"
+    },
+    {
+      "date": "2013-06-20T02:32:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a8e5d36b-dd87-4652-ad12-79cd2c653cce>",
+      "language_score": 0.9743725061416626,
+      "url": "http://thealbanyjournal.com/2011/09/special-session-ended/"
+    },
+    {
+      "date": "2013-06-20T02:53:09Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f7b297a5-7c4f-4267-b5ae-532b3b06d877>",
+      "language_score": 0.9746264219284058,
+      "url": "http://thegospelcoalition.org/blogs/tgc/2012/08/15/factchecker-the-cross-an-electric-chair/"
+    },
+    {
+      "date": "2013-06-20T02:31:13Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:75bfc396-5279-487a-8846-844af3a9d2ee>",
+      "language_score": 0.9615833163261414,
+      "url": "http://specialsections.suntimes.com/homes/builder/12318605-555/millbrook-pointe-brings-homeowners-together.html"
+    },
+    {
+      "date": "2013-06-20T02:41:24Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7422bd81-6d1f-423e-b510-1db53933ce14>",
+      "language_score": 0.9884458780288696,
+      "url": "http://roleplayerguild.com/showthread.php?106673-Tenshi-Jigoku-Academy-4-OOC/page305&p=4928919"
+    },
+    {
+      "date": "2013-05-23T05:30:04Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8e0b286f-1d53-4171-9840-c7621a01c393>",
+      "language_score": 0.9805110096931458,
+      "url": "http://www.realitytvworld.com/realitytvdb/big-brother-5/"
+    },
+    {
+      "date": "2013-06-20T02:32:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a8d8b39d-74a7-49a5-8201-22aba615ebbd>",
+      "language_score": 0.9672883152961731,
+      "url": "http://lettersiarrange.tumblr.com/tagged/politics"
+    },
+    {
+      "date": "2013-05-25T13:24:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4105e3fe-aae5-4b32-88c4-560d75829c2e>",
+      "language_score": 0.9731294512748718,
+      "url": "http://blog.al.com/spotnews/2011/03/birmingham_council_oks_18_mill.html"
+    },
+    {
+      "date": "2013-05-25T13:30:31Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:229f8caa-c851-43a3-a6a6-270f10653fa3>",
+      "language_score": 0.95645672082901,
+      "url": "http://www.resilience.org/stories/2005-09-16/central-american-poor-struggle-oil-prices-soar"
+    },
+    {
+      "date": "2013-05-23T05:45:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0ca48619-5eb1-4d9c-83b7-19df445c023a>",
+      "language_score": 0.9733842611312866,
+      "url": "http://www.stlawfirm.com/Gifting-An-Easy-and-Satisfying-Way-to-Reduce-Estate-Taxes/"
+    },
+    {
+      "date": "2013-06-20T02:53:10Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0dc1cf1b-6473-4bdc-b28d-3ac5671780f4>",
+      "language_score": 0.9575255513191223,
+      "url": "http://dogshowpoop.blogspot.com/2009/10/another-belated-bis.html"
+    },
+    {
+      "date": "2013-05-25T13:29:23Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b028d00c-c5dc-4801-850d-9db08b9c234c>",
+      "language_score": 0.985788881778717,
+      "url": "http://sandrascoppettone.blogspot.com/2007_09_01_archive.html"
+    },
+    {
+      "date": "2013-05-25T13:29:12Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:569eb313-5095-4596-ad51-d00e58f2bbf9>",
+      "language_score": 0.9591206908226013,
+      "url": "http://blog.thecanadianencyclopedia.com/blog/posts/loving-l-cohen/"
+    },
+    {
+      "date": "2013-05-25T13:30:30Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:fd9a09fb-a469-4030-8ef7-ccb535000ff3>",
+      "language_score": 0.9772800207138062,
+      "url": "http://www.greatschools.org/michigan/detroit/260-Detroit-Service-Learning-Academy/?tab=reviews"
+    },
+    {
+      "date": "2013-06-20T02:54:02Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e06c03ac-7b31-4aae-9529-d38a744b6119>",
+      "language_score": 0.9500302076339722,
+      "url": "http://openjurist.org/642/f2d/785"
+    },
+    {
+      "date": "2013-05-23T05:36:24Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1e2a9308-2218-427c-b60f-e96d0dd624de>",
+      "language_score": 0.9560170769691467,
+      "url": "http://www.musiquespoetry.com/search/label/Got%202%20be%20real"
+    },
+    {
+      "date": "2013-05-23T05:46:02Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7844c48b-dac1-4306-a462-4371f839c138>",
+      "language_score": 0.9589101076126099,
+      "url": "http://www.nextgov.com/cybersecurity/2012/10/panetta-intruders-successfully-gained-access-critical-control-systems/58734/"
+    },
+    {
+      "date": "2013-05-23T05:46:01Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:48934fa3-2e81-4659-a8bb-4cf5e266fdc4>",
+      "language_score": 0.9612804651260376,
+      "url": "http://www.thehogs.net/blogs/2008/10/10/randle-els-option-pass/"
+    },
+    {
+      "date": "2013-06-20T02:31:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:198d4774-6abf-453b-b7e1-f778838b2635>",
+      "language_score": 0.9799877405166626,
+      "url": "http://lookingtowardportugal.blogspot.com/2012/08/got-moxie-dispatches-from-maine.html"
+    },
+    {
+      "date": "2013-05-25T13:16:37Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:df8fc5b4-4adf-4e44-aab8-0fd4ce7bc4ed>",
+      "language_score": 0.9527703523635864,
+      "url": "http://www.mybanktracker.com/news/2012/05/10/urge-app-save-money/"
+    },
+    {
+      "date": "2013-05-25T13:36:53Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:af38728c-80b3-4be4-a1ce-7e358bec05b1>",
+      "language_score": 0.9853682518005371,
+      "url": "http://www.atheistnexus.org/group/hangwithfriends/forum/topics/the-meaning-of-life-whats?page=7&commentId=2182797%3AComment%3A1337015&x=1"
+    },
+    {
+      "date": "2013-06-20T03:00:04Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0c2ea4af-3e3f-413a-a467-4bb373659544>",
+      "language_score": 0.9644003510475159,
+      "url": "http://www.impac-systems.com/"
+    },
+    {
+      "date": "2013-06-20T02:40:09Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:58283546-1261-4a58-8804-ebf35b117899>",
+      "language_score": 0.966541588306427,
+      "url": "http://www.christianpost.com/news/fla-presbyterian-church-splits-over-gay-ordination-76468/print.html"
+    },
+    {
+      "date": "2013-05-23T05:24:43Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ec01294a-c2c0-4c02-acc7-4c5ee72d583a>",
+      "language_score": 0.9691393971443176,
+      "url": "http://www.nypost.com/p/across_th_yl1UnaTul5sykVpskNRYVP"
+    },
+    {
+      "date": "2013-05-25T13:29:43Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4e3f8fa6-f533-4273-bb6b-bd9a61c1024f>",
+      "language_score": 0.9544587731361389,
+      "url": "http://seattletimes.com/html/pacificnw/2009328290_pacificpadviser21.html"
+    },
+    {
+      "date": "2013-06-20T02:33:24Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:28b615bd-4e10-427e-bf22-5f161a0b2015>",
+      "language_score": 0.9665077924728394,
+      "url": "http://www.jewishjournal.com/tag/transcendence"
+    },
+    {
+      "date": "2013-05-23T05:36:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1aca992c-1f5c-49e7-819f-227eadf27783>",
+      "language_score": 0.9795849323272705,
+      "url": "http://www.perthnow.com.au/news/world/phoenix-high-school-girl-pupils-youtube-threat-to-kill-everyone/story-fnd14032-1226541896443"
+    },
+    {
+      "date": "2013-06-20T02:31:08Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6e7cd64e-aae0-4e94-96e6-34c5b3fb6229>",
+      "language_score": 0.9624024629592896,
+      "url": "http://readwrite.com/2012/01/19/sopa_pipa_votes_indefinitely_delayed"
+    },
+    {
+      "date": "2013-06-20T02:53:51Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6e4ba7a5-533c-40c9-ba11-718f58c4c68b>",
+      "language_score": 0.9705088138580322,
+      "url": "http://home.earthlink.net/~eilonwy/highflight/Goodbadsparkly1.htm"
+    },
+    {
+      "date": "2013-05-25T13:18:05Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ff158579-a89b-483c-8c43-a8fb56c53ccf>",
+      "language_score": 0.9746535420417786,
+      "url": "http://www.whycenter.com/why-does-my-ovary-hurt/"
+    },
+    {
+      "date": "2013-06-20T02:47:48Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4a4ebf23-3da8-41b0-a871-b64957293711>",
+      "language_score": 0.9839314222335815,
+      "url": "http://serendip.brynmawr.edu/exchange/node/4787"
+    },
+    {
+      "date": "2013-05-25T13:50:31Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9e3ff1f9-a62d-4beb-9925-597a5f50ecc6>",
+      "language_score": 0.951709508895874,
+      "url": "http://theshirts.info/?tag=sweatshirts"
+    },
+    {
+      "date": "2013-06-20T02:41:41Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:272258fc-470d-483b-bff2-50c118cc44f8>",
+      "language_score": 0.975155234336853,
+      "url": "http://www.kansas.com/2011/12/12/2137599/home-health-care-provider-looks.html"
+    },
+    {
+      "date": "2013-06-20T02:48:34Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a1f6c7cf-c433-45d5-91d3-ce3c363189fd>",
+      "language_score": 0.9688286185264587,
+      "url": "http://www.wvgazette.com/News/201102230992?page=2"
+    },
+    {
+      "date": "2013-06-20T02:46:49Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7f94911b-0af1-4b3a-b1e3-f6610a345bb5>",
+      "language_score": 0.970264196395874,
+      "url": "http://www.jewishexponent.com/welcome-to-eurabia"
+    },
+    {
+      "date": "2013-05-25T13:30:03Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a9dbf7dc-bfda-4396-b0b0-d6f13a5be819>",
+      "language_score": 0.9813769459724426,
+      "url": "http://country-kennels.net/tacoma-dog-kennels/country-kennel-staff.asp"
+    },
+    {
+      "date": "2013-06-20T03:07:21Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:91b84bde-5be8-4561-a680-4523e6b3161d>",
+      "language_score": 0.9832879304885864,
+      "url": "http://www.silive.com/southshore/index.ssf/2010/12/68_years_and_counting_for_talk.html"
+    },
+    {
+      "date": "2013-06-20T02:52:24Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1cb42150-bb68-47d2-83e5-0d00e7109725>",
+      "language_score": 0.9710047841072083,
+      "url": "http://cheezburger.com/6359553024"
+    },
+    {
+      "date": "2013-06-20T02:38:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1efd339e-501a-4d7a-a975-b24b697140f5>",
+      "language_score": 0.9611778259277344,
+      "url": "http://reverttosaved.com/2013/02/25/the-sheer-horror-of-having-to-watch-a-credit-sequence-on-netflix/"
+    },
+    {
+      "date": "2013-06-20T02:53:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:93c0a868-226f-4efb-a2e0-56ad9c5be0d3>",
+      "language_score": 0.9777691960334778,
+      "url": "http://tonispilsbury.com/blog/"
+    },
+    {
+      "date": "2013-06-20T02:59:31Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:78ef4b3c-272b-408c-8d29-fa1d4a032ff7>",
+      "language_score": 0.9715479016304016,
+      "url": "http://www.tilrc.org/assests/news/0911news/0911state14.html"
+    },
+    {
+      "date": "2013-06-20T02:31:41Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:52b3517d-cec9-4afd-a2ea-65c2e15358a3>",
+      "language_score": 0.9575196504592896,
+      "url": "http://screenwerk.com/2012/11/20/promoted-posts-simplify-ads-but-not-facebook-for-smbs/"
+    },
+    {
+      "date": "2013-05-23T05:09:27Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:950465a6-e120-49fb-bdd3-58f41a2b8a09>",
+      "language_score": 0.9714058041572571,
+      "url": "http://www.fashionbeans.com/2011/lyle-scott-clothing-behind-the-brand/"
+    },
+    {
+      "date": "2013-05-23T05:28:22Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:fe11c3f9-aa11-4bb3-9bc7-f1ff6392214d>",
+      "language_score": 0.9537060856819153,
+      "url": "http://www.providencebruins.com/View/PressReleases/375"
+    },
+    {
+      "date": "2013-05-21T00:50:10Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:741c5a0c-79c4-42b2-ab57-e51b79017b80>",
+      "language_score": 0.9761609435081482,
+      "url": "http://dogearedandwellread.wordpress.com/tag/summer/"
+    },
+    {
+      "date": "2013-06-20T02:58:58Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:49efe111-7382-4d8d-95f6-f56f08f0ae98>",
+      "language_score": 0.9701653122901917,
+      "url": "http://spinspin-handmade.blogspot.com/2010_09_01_archive.html"
+    },
+    {
+      "date": "2013-05-25T13:51:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7ab55072-aa26-449b-84f6-2dd36512085f>",
+      "language_score": 0.9870389699935913,
+      "url": "http://articles.baltimoresun.com/2007-01-10/news/0701100164_1_make-the-team-wiseman-brittany"
+    },
+    {
+      "date": "2013-05-23T05:09:42Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d0308adc-1fcd-4d05-b7d9-12b39308ffe3>",
+      "language_score": 0.9529755115509033,
+      "url": "http://www.socialmarketingforum.net/2010/12/social-media-marketing-metrics-explained/"
+    },
+    {
+      "date": "2013-06-20T02:55:24Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1d69485c-1734-4557-90a7-b107bfd3bf64>",
+      "language_score": 0.9791194796562195,
+      "url": "http://bleacherreport.com/articles/1433347-chiefs-vs-browns-preview-key-matchup-and-prediction"
+    },
+    {
+      "date": "2013-06-20T02:52:32Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b58f19ec-01f9-4119-afba-7c04515e8a95>",
+      "language_score": 0.9642406105995178,
+      "url": "http://www.wcax.com/story/18990036/burlington-mayor-appoints-city-attorney"
+    },
+    {
+      "date": "2013-06-20T02:58:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:283c7fec-f025-445c-b7dd-f5e2ce6349a8>",
+      "language_score": 0.9842805862426758,
+      "url": "http://www.arbuturian.com/2012/twenty-days-in-june"
+    },
+    {
+      "date": "2013-05-25T13:14:56Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:837cbae1-ba0b-4100-8554-217c3aabc2d2>",
+      "language_score": 0.9908709526062012,
+      "url": "http://schmidleysscribblins.com/2012/04/08/the-little-rabbit/"
+    },
+    {
+      "date": "2013-05-25T13:44:46Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0c900059-c53c-4564-befb-2e8839cc2390>",
+      "language_score": 0.9669022560119629,
+      "url": "http://www.sootoday.com/content/news/national/details.asp?c=50219"
+    },
+    {
+      "date": "2013-06-20T02:42:48Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f8191abb-7cdb-453e-be07-f150a875f4bd>",
+      "language_score": 0.988418698310852,
+      "url": "http://www.thenational.ae/sport/rugby/davies-warns-of-backlash"
+    },
+    {
+      "date": "2013-06-20T02:45:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e82ada0c-8866-4b02-bcd1-09a80d979ae9>",
+      "language_score": 0.9643682241439819,
+      "url": "http://www.wgbh.org/News/Articles/2012/4/24/Can_A_Computer_Grade_Essays_As_Well_As_A_Human_Maybe_Even_Better_Study_Says.cfm"
+    },
+    {
+      "date": "2013-05-25T13:51:57Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:168cb312-33c5-444d-a6ec-0a40cc5afa86>",
+      "language_score": 0.9699034094810486,
+      "url": "http://www.sfgate.com/bayarea/article/Public-defender-s-push-to-boost-staff-irks-supe-3174553.php"
+    },
+    {
+      "date": "2013-05-21T01:34:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b71a0d2b-e2f7-433d-bbd1-c490355a84ce>",
+      "language_score": 0.9659409523010254,
+      "url": "http://southtownstar.suntimes.com/opinions/18409072-474/speak-out-for-feb-25-2013.html"
+    },
+    {
+      "date": "2013-05-21T02:22:17Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0973b49c-15f9-44cf-92c0-2ab7259727d8>",
+      "language_score": 0.9900059700012207,
+      "url": "http://2knowmusic.com/pauly-d-confesses-hes-addicted-to-the-cameras/"
+    },
+    {
+      "date": "2013-05-23T05:46:09Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ab25a7cc-0b4c-4169-b5de-ddf3e1626385>",
+      "language_score": 0.9654413461685181,
+      "url": "http://www.websleuths.com/forums/showthread.php?p=6600071&mode=threaded"
+    },
+    {
+      "date": "2013-05-21T01:39:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:aa92695d-8161-423d-9d2d-bc954f3b1593>",
+      "language_score": 0.9754877090454102,
+      "url": "http://sewrandom.blogspot.com/2007/10/heading-into-swap-season.html"
+    },
+    {
+      "date": "2013-05-23T05:46:12Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e4894f63-bb85-4dd5-b5e9-e16555977084>",
+      "language_score": 0.9811558723449707,
+      "url": "http://www.musicomh.com/opera/fidelio_1005.htm"
+    },
+    {
+      "date": "2013-06-20T02:39:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:036c0d90-8c56-4246-9e3b-1df26ecd11f3>",
+      "language_score": 0.9711135029792786,
+      "url": "http://www.ohmidog.com/tag/hoyt/"
+    },
+    {
+      "date": "2013-05-21T01:02:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:db621c55-2a80-420f-b71c-002c10ef8e5f>",
+      "language_score": 0.9643459916114807,
+      "url": "http://billdanielslaw.com/wordpress/?p=58"
+    },
+    {
+      "date": "2013-05-21T01:34:23Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f7cceebc-1a61-4a03-ad88-7391f8feb54c>",
+      "language_score": 0.9786924719810486,
+      "url": "http://blog.al.com/archiblog/2010/08/archibald_rank_doesnt_make_gen.html"
+    },
+    {
+      "date": "2013-05-21T01:04:02Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:71146826-3281-429a-8b33-968618250106>",
+      "language_score": 0.9918374419212341,
+      "url": "http://sportsillustrated.cnn.com/2004/writers/rick_reilly/02/16/hnida/index.html"
+    },
+    {
+      "date": "2013-06-20T02:47:58Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8460116a-2783-4a02-9b42-c5f49ed395d4>",
+      "language_score": 0.9730150103569031,
+      "url": "http://www.pagetreidyork.com/fees"
+    },
+    {
+      "date": "2013-05-25T13:24:03Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:747990fc-5dd0-47cb-80e2-d1bb6cc76294>",
+      "language_score": 0.969118058681488,
+      "url": "http://www.digitalspy.co.uk/bollywood/news/a393510/neha-sharma-forced-to-shoot-two-films-at-once.html"
+    },
+    {
+      "date": "2013-06-20T03:06:49Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a41deca0-7809-48f0-8d08-67de034bbcc3>",
+      "language_score": 0.9661192893981934,
+      "url": "http://news.bangthebook.com/2012/01/11/pittsburgh-penguins-washington-capitals-free-nhl-pick-11112/?prsrc=3"
+    },
+    {
+      "date": "2013-05-21T00:57:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:34656ed8-9216-4230-bc44-22d9d0524064>",
+      "language_score": 0.9771438241004944,
+      "url": "http://hamsapshouse.wordpress.com/category/luna/"
+    },
+    {
+      "date": "2013-05-25T13:49:15Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:466c7cfc-d00a-46af-9238-7e51879607c5>",
+      "language_score": 0.9644823670387268,
+      "url": "http://www.sevenstories.com/news/powering-down-on-japans-energy-use-in-the-wake-of-the-tsunami/"
+    },
+    {
+      "date": "2013-06-20T02:38:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e01e63bf-bf11-49d5-812e-ae3a40227c0c>",
+      "language_score": 0.9505807757377625,
+      "url": "http://www.fiercemobilecontent.com/story/isis-chance-success-diminishing-rapidly/2012-09-19"
+    },
+    {
+      "date": "2013-05-25T13:22:21Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b48cf2ae-e769-491a-9818-158d6a659b09>",
+      "language_score": 0.9815964698791504,
+      "url": "http://www.uscho.com/2007/03/07/stewart-a-quiet-freshman-for-northern-michigan/"
+    },
+    {
+      "date": "2013-05-21T02:21:22Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:dbad9e6f-0efc-4fbd-9e40-78bcfd189905>",
+      "language_score": 0.9589142799377441,
+      "url": "http://occupyto.tumblr.com/tagged/ProtestTheSystem"
+    },
+    {
+      "date": "2013-05-21T00:56:18Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8d2c96a1-867a-4dd2-8a96-ffa954eea48c>",
+      "language_score": 0.9530407190322876,
+      "url": "http://vator.tv/news/2010-12-07-wikileaks-stays-alive-despite-assange-arrest"
+    },
+    {
+      "date": "2013-06-20T02:39:29Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:454c152f-10b8-4f01-b485-3e5f877f7b7c>",
+      "language_score": 0.9548612833023071,
+      "url": "http://www.fitpregnancy.com/labor-delivery/ask-labor-nurse/women%E2%80%99s-right-choose"
+    },
+    {
+      "date": "2013-06-20T03:06:23Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:52845db4-5ade-41a3-998b-6c0565c063a5>",
+      "language_score": 0.9596562385559082,
+      "url": "http://www.pavelspuzzles.com/g4g8/"
+    },
+    {
+      "date": "2013-05-21T01:41:43Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:c5b3750f-1082-4641-b92b-dbdb830bda74>",
+      "language_score": 0.9832384586334229,
+      "url": "http://forum.blackhairmedia.com/a-new-wave-of-long-haired-vets_topic346668_post10072236.html"
+    },
+    {
+      "date": "2013-06-20T02:53:54Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:31164449-9620-426a-b3cc-3a4cf7f6d17b>",
+      "language_score": 0.9709651470184326,
+      "url": "http://www.thenonprofittimes.com/news-articles/nonprofits-rate-themselves-against-for-profits/"
+    },
+    {
+      "date": "2013-06-20T02:39:34Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:692bc0e1-9e91-4e9f-a560-dd1fe9296da4>",
+      "language_score": 0.9758657813072205,
+      "url": "http://www.themwc.com/sports/m-footbl/spec-rel/041212aaa.html"
+    },
+    {
+      "date": "2013-05-21T01:04:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5e1f79b1-6c54-4a55-bc9e-5d6f0a919682>",
+      "language_score": 0.9751853346824646,
+      "url": "http://narragansettnumber7.com/tag/nose-picking"
+    },
+    {
+      "date": "2013-06-20T02:40:21Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:c62d46b6-1748-4226-8e92-3efaae826938>",
+      "language_score": 0.9584505558013916,
+      "url": "http://ec.europa.eu/research/infocentre/article_en.cfm?id=/research/star/index_en.cfm?p=ss-esoa&calledby=infocentre&item=All&artid=28935"
+    },
+    {
+      "date": "2013-05-21T00:50:50Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:385f9df8-5627-48a3-b01a-b200253e9213>",
+      "language_score": 0.9577497243881226,
+      "url": "http://www.mcvuk.com/index.php/news/tag/forecast"
+    },
+    {
+      "date": "2013-06-20T02:31:17Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f9e18efc-2d08-453a-9856-1854fdc7a0ca>",
+      "language_score": 0.966230034828186,
+      "url": "http://www.insidemobileapps.com/2013/02/27/guest-post-clash-of-clans-engagement-analysis/"
+    },
+    {
+      "date": "2013-06-20T02:33:36Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d1e83b10-7b19-4db1-afbd-6b383d6eccb5>",
+      "language_score": 0.9780938625335693,
+      "url": "http://www.voanews.com/content/a-13-2007-02-12-voa20/402453.html"
+    },
+    {
+      "date": "2013-05-23T05:35:42Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:bd1aba83-32e2-4975-8692-2f137388c279>",
+      "language_score": 0.9652946591377258,
+      "url": "http://www.elasouthgate.me.uk/"
+    },
+    {
+      "date": "2013-06-20T02:33:03Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9c09060a-bc5a-4d86-84c1-c8091a7adee2>",
+      "language_score": 0.9701851606369019,
+      "url": "http://queen.musichall.cz/en/interviews/freddie-mercury-melody-maker-84.html"
+    },
+    {
+      "date": "2013-06-20T02:32:12Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:df9fe58d-aa07-4f2e-b89a-df2f68f4120f>",
+      "language_score": 0.9893909692764282,
+      "url": "http://akbarpasha.com/2012/05/"
+    },
+    {
+      "date": "2013-05-25T13:35:32Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6fa84dfc-983d-4e06-a21f-a07290f17dc0>",
+      "language_score": 0.9687698483467102,
+      "url": "http://www.farrismarketing.com/videos"
+    },
+    {
+      "date": "2013-06-20T03:00:42Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cb9c8ea5-2fc0-4b99-92b6-6f9c2c0a4814>",
+      "language_score": 0.9868888854980469,
+      "url": "http://www.papworth.org.uk/blog.php?bid=3&aid=105"
+    },
+    {
+      "date": "2013-05-21T01:03:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3d0db8a3-452d-416b-8f96-594362092b27>",
+      "language_score": 0.9697834253311157,
+      "url": "http://www.biographi.ca/009004-119.01-e.php?id_nbr=4300"
+    },
+    {
+      "date": "2013-05-21T01:32:49Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f6d75db5-f76b-45a8-950e-4bf99d2e8f81>",
+      "language_score": 0.9525565505027771,
+      "url": "http://www.marksdailyapple.com/forum/printthread35-463.html"
+    },
+    {
+      "date": "2013-05-21T01:04:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f3ee8892-8631-42df-ba79-4dd487872b29>",
+      "language_score": 0.9691440463066101,
+      "url": "http://www.clevelandbanner.com/view/full_story/17982905/article-Bradle"
+    },
+    {
+      "date": "2013-05-21T01:33:54Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:51dd4498-fd46-49e6-9bee-de45dfcfd34d>",
+      "language_score": 0.9679890871047974,
+      "url": "http://www.nytimes.com/1989/12/03/sports/television-lavishes-money-on-sports-but-does-it-pay.html?pagewanted=all&src=pm"
+    },
+    {
+      "date": "2013-06-20T03:06:03Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:409ee803-f3f4-44ec-a9cd-cb4ae7d575a2>",
+      "language_score": 0.9721611142158508,
+      "url": "http://www.christianfreedom.org/news/shahbaz-bhatti/"
+    },
+    {
+      "date": "2013-05-21T01:32:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8ba1c84d-e264-49c3-a16d-b30445cdf9e5>",
+      "language_score": 0.9821750521659851,
+      "url": "http://www.ohio.edu/outlook/06-07/February/368f-067.cfm"
+    },
+    {
+      "date": "2013-06-20T02:33:26Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:df4695c6-88f4-4b4b-b234-b2855d781568>",
+      "language_score": 0.9562873244285583,
+      "url": "http://christwire.org/2011/12/hrc-increasing-gay-recruitment-measures-amassing-homo-army-for-armageddon/"
+    },
+    {
+      "date": "2013-05-23T12:25:00Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d6405d71-0c5a-4955-bfe3-e062052b5c08>",
+      "language_score": 0.9726861715316772,
+      "url": "http://articles.mcall.com/2008-10-08/sports/4211855_1_colgate-fordham-patriot-league"
+    },
+    {
+      "date": "2013-05-21T02:21:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8c551323-df4d-4f99-8ab7-8b994510d6f5>",
+      "language_score": 0.9522441625595093,
+      "url": "http://www.dishesandlaundry.com/2013/02/vegan-pancake-recipe.html"
+    },
+    {
+      "date": "2013-05-25T13:37:03Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:836a4dda-890f-47a1-974f-5157c3fead5b>",
+      "language_score": 0.9549463391304016,
+      "url": "http://www.todaysparentusa.com/site/2012/07/captivate-children-with-stories-that-include-poetry/"
+    },
+    {
+      "date": "2013-05-21T01:31:37Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e9399ea7-19ef-4e75-96a7-a5f0d7a2c3a2>",
+      "language_score": 0.9809291362762451,
+      "url": "http://www.southportvisiter.co.uk/southport-news/southport-southport-news/2011/08/09/model-railway-village-in-southport-is-up-for-sale-101022-29198597/"
+    },
+    {
+      "date": "2013-05-21T00:56:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f7301304-6518-47dc-b92f-c3b93ddc0ebf>",
+      "language_score": 0.9702296257019043,
+      "url": "http://bigthink.com/ideas/a-talk-to-parents-why-laptops"
+    },
+    {
+      "date": "2013-06-20T02:51:43Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:33a2819d-c5e0-4ea5-9930-235864b631db>",
+      "language_score": 0.9766079783439636,
+      "url": "http://www.ted.com/talks/jeremy_jackson.html?quote=713"
+    },
+    {
+      "date": "2013-05-23T12:36:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6a838833-2e4a-448d-b71d-1e2384b8751f>",
+      "language_score": 0.9826298356056213,
+      "url": "http://thethousandteeth.wordpress.com/2013/02/06/stressraswelling/"
+    },
+    {
+      "date": "2013-05-23T12:17:29Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f19b2817-41c8-4009-b2ac-7ded3999f0b0>",
+      "language_score": 0.962249219417572,
+      "url": "http://rismedia.com/2010-04-05/predatory-mortgage-servicing-fraud-first-of-a-series/"
+    },
+    {
+      "date": "2013-05-23T12:31:15Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:dd4edb77-ade7-46da-be08-a3cc47b256c6>",
+      "language_score": 0.9678034782409668,
+      "url": "http://travel.yahoo.com/p-travelguide-19896724R-ciseros_restaurant_and_nightclub-i?showmap=1"
+    },
+    {
+      "date": "2013-05-21T00:52:30Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8f4dd6b6-a0de-4623-99b6-cf2f1f719852>",
+      "language_score": 0.9514414668083191,
+      "url": "http://www.thebody.com/Forums/AIDS/Fatigue/Q4115.html"
+    },
+    {
+      "date": "2013-05-23T12:31:06Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4e4f3ccc-ecdc-4d67-9a7e-0d5fee576bdc>",
+      "language_score": 0.9765609502792358,
+      "url": "http://davesgarden.com/guides/articles/view/3664/"
+    },
+    {
+      "date": "2013-05-21T00:58:42Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:fd4b6f82-2ef8-4b6d-8cb8-a96ef5a2f2c1>",
+      "language_score": 0.9690157175064087,
+      "url": "http://www.tvrage.com/Star_Trek/episodes/162345/recap"
+    },
+    {
+      "date": "2013-05-21T01:34:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ddacc6c2-cea8-43b5-854c-6d7120a137d3>",
+      "language_score": 0.9665191769599915,
+      "url": "http://www.invisibleheart.com/2003/05/"
+    },
+    {
+      "date": "2013-05-21T02:21:34Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b9aae8c8-740f-410c-a52f-28914892931e>",
+      "language_score": 0.9797057509422302,
+      "url": "http://marciaconner.com/blog/learning-styles-gold/"
+    },
+    {
+      "date": "2013-06-20T02:46:36Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:259e21c7-82c0-4499-80c7-5857a6cc41b1>",
+      "language_score": 0.9859253168106079,
+      "url": "http://www.sansabanews.com/news/33730/"
+    },
+    {
+      "date": "2013-05-21T01:03:27Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:16d0097b-a3a7-4b12-a74e-bef169cbdebc>",
+      "language_score": 0.9881149530410767,
+      "url": "http://mirror.augusta.com/stories/031804/new_031804_2024_1.shtml"
+    },
+    {
+      "date": "2013-05-23T12:23:51Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4bc884aa-f487-40a4-923c-be14fd5b844d>",
+      "language_score": 0.963390052318573,
+      "url": "http://townhall.com/columnists/armstrongwilliams/2004/01/07/secretary_paige_and_mayor_williams_fight_for_change/page/2"
+    },
+    {
+      "date": "2013-05-23T12:29:29Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:bb241198-a4cd-4d44-8a76-d7bfeb605df9>",
+      "language_score": 0.9923384189605713,
+      "url": "http://mydissolutelife.com/2012/03/firsts/"
+    },
+    {
+      "date": "2013-05-23T12:08:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4f296f8a-1fa3-4b2e-89c8-c611133dc97e>",
+      "language_score": 0.9643674492835999,
+      "url": "http://slam.canoe.ca/Slam/Wrestling/Wrestlemania23/2007/04/04/3923783.html"
+    },
+    {
+      "date": "2013-05-21T00:50:39Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:91f5df28-68ee-44ac-b4c1-1c8817167667>",
+      "language_score": 0.9733746647834778,
+      "url": "http://www.nj.com/nets/index.ssf/2011/12/dwight_howard_trade_talks_incl.html"
+    },
+    {
+      "date": "2013-05-23T12:30:05Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7d9deb3d-e651-4eb9-8d6b-2fd63d940579>",
+      "language_score": 0.9677768349647522,
+      "url": "http://dalyhistory.wordpress.com/tag/royal-botanic-gardens-kew/"
+    },
+    {
+      "date": "2013-06-20T02:52:39Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:796be7d1-dc91-4c15-9aa0-391b0a24fb83>",
+      "language_score": 0.9776291251182556,
+      "url": "http://objectivistanswers.com/questions/6/why-isnt-objectivism-more-widespread"
+    },
+    {
+      "date": "2013-05-23T12:37:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:46ff6f7f-e60a-4344-a111-a3ed3155c073>",
+      "language_score": 0.960282564163208,
+      "url": "http://wisconsinbudgetproject.blogspot.com/2012/06/dor-expects-wisconsin-to-fall-far-short.html"
+    },
+    {
+      "date": "2013-05-23T12:09:12Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d18d356c-88db-4425-9960-488301a2a877>",
+      "language_score": 0.9646605253219604,
+      "url": "http://theassailedteacher.com/tag/inequality/"
+    },
+    {
+      "date": "2013-05-21T00:49:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4c96bbab-61b9-4cf4-a75a-2f23518086c7>",
+      "language_score": 0.9695778489112854,
+      "url": "http://www.wisegeek.com/what-is-the-history-of-floridas-state-flag.htm"
+    },
+    {
+      "date": "2013-05-23T12:44:58Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b4601c55-b84c-430f-9a12-aeaf07eeef08>",
+      "language_score": 0.9843727350234985,
+      "url": "http://www.deltacountyindependent.com/index.php/opinion/soapbox/949-former-employee-takes-pride-in-her-service?font-size=smaller"
+    },
+    {
+      "date": "2013-05-23T12:46:43Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:83e114af-68de-474a-95f7-40facb5c762b>",
+      "language_score": 0.9575476050376892,
+      "url": "http://inventorspot.com/articles/gdgt_spreading_gadget_gospel_29904"
+    },
+    {
+      "date": "2013-06-20T02:54:05Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:353069b2-de69-4459-b9e1-d33e627b2891>",
+      "language_score": 0.985902726650238,
+      "url": "http://www.sohh.com/2011/06/busta_rhymes_drops_a_rock_on_funny_bones.html"
+    },
+    {
+      "date": "2013-05-25T13:16:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8bfa1e91-369c-4286-b121-5fd7e6d283bf>",
+      "language_score": 0.9649214148521423,
+      "url": "http://www.thelocal.se/blogs/corneliushamelberg/2011/12/28/to-shard-2/"
+    },
+    {
+      "date": "2013-05-23T12:15:58Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a1de9eaa-5a0e-40e5-abd7-697dec27c34b>",
+      "language_score": 0.9863413572311401,
+      "url": "http://jlpicard.blogspot.com/2006/08/back-from-shore-leave-part-one.html?showComment=1156706700000"
+    },
+    {
+      "date": "2013-05-23T05:44:39Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8792025d-9cda-442b-8ecf-cdbceec57329>",
+      "language_score": 0.9556621313095093,
+      "url": "http://www.thesunisshining.com/radiant-bydesign/posts/grab-your-boards-and-ride-the-sap-business-bydesign-wave-2"
+    },
+    {
+      "date": "2013-06-20T02:45:21Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a1829fdb-30c5-4f59-b44f-a5239f6dcb5a>",
+      "language_score": 0.9902991056442261,
+      "url": "http://www.enclaveforum.net/index.php?topic=11382.msg166146;topicseen"
+    },
+    {
+      "date": "2013-05-21T00:50:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ce058924-6930-4be4-95ef-9567ca6dcea7>",
+      "language_score": 0.967252254486084,
+      "url": "http://www.atheistnexus.org/forum/topics/contentious-issues-in-the-atheist-community?groupUrl=originsuniverselifehumankindanddarwin&xg_source=activity&groupId=2182797%3AGroup%3A109911&id=2182797%3ATopic%3A1833929&page=4"
+    },
+    {
+      "date": "2013-05-21T02:24:01Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:89e05a29-4667-424f-9d84-e8ec8ba0f738>",
+      "language_score": 0.9838636517524719,
+      "url": "http://www.caller.com/news/2012/jun/10/in-the-matter-of-condit-v-editorial-board/"
+    },
+    {
+      "date": "2013-05-23T12:08:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4fe2fa14-7572-48ca-9936-4598470fee17>",
+      "language_score": 0.9903720021247864,
+      "url": "http://glimpsingthepast.blogspot.com/2011/03/me.html?showComment=1299119501591"
+    },
+    {
+      "date": "2013-05-23T12:17:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:99ab895b-e04f-4d30-a1b6-916f47a878ae>",
+      "language_score": 0.9696721434593201,
+      "url": "http://forums.bestbuy.com/t5/Recycling-Going-Green/Taken-for-a-Ride/m-p/29904"
+    },
+    {
+      "date": "2013-05-21T01:39:21Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a4fdfe9c-cde4-4ed1-b7e2-f51df17b619b>",
+      "language_score": 0.9599522352218628,
+      "url": "http://alablawg.wordpress.com/category/the-homosexual-agenda/"
+    },
+    {
+      "date": "2013-05-21T01:06:05Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f89d4ad3-e63a-4363-88cf-faea2f1961b1>",
+      "language_score": 0.9720194935798645,
+      "url": "http://www.d3football.com/seasons/2010/contrib/201010091b3nhm"
+    },
+    {
+      "date": "2013-05-21T00:58:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:be706c13-b5dc-4979-b95b-4a1daf96e14e>",
+      "language_score": 0.9605832099914551,
+      "url": "http://www.wzzm13.com/news/story.aspx?storyid=214245"
+    },
+    {
+      "date": "2013-05-21T00:59:28Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:57e0d7c2-91c6-44f8-b745-38ec750bcd96>",
+      "language_score": 0.9784075021743774,
+      "url": "http://nymag.com/thecut/2010/04/theoutnets_1_sale_was_too_good.html"
+    },
+    {
+      "date": "2013-06-20T02:47:20Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f6658746-b754-4dd1-816d-68bd1ddb307e>",
+      "language_score": 0.9519957900047302,
+      "url": "http://petapixel.com/2013/03/09/new-gel-makes-any-gloves-play-nice-with-your-cameras-touchscreen/"
+    },
+    {
+      "date": "2013-05-23T12:29:21Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4c82205e-4abe-441c-b162-78804dce77d6>",
+      "language_score": 0.964982807636261,
+      "url": "http://www.israeltoday.co.il/NewsItem/tabid/178/nid/22275/Default.aspx?archive=article_title"
+    },
+    {
+      "date": "2013-05-23T05:36:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368702849682/warc/CC-MAIN-20130516111409-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7bf0410b-0d48-4b89-8d3d-082075531333>",
+      "language_score": 0.952157199382782,
+      "url": "http://www.mydiversekitchen.com/2010_03_01_archive.html"
+    },
+    {
+      "date": "2013-05-21T01:02:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:67bbdb39-c72a-49a2-a6c3-ad086504ce83>",
+      "language_score": 0.9687443971633911,
+      "url": "http://fotr.mlblogs.com/tag/juan-cruz/"
+    },
+    {
+      "date": "2013-05-25T13:51:00Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:baef7fb4-1254-4bd5-a315-3c2b2ad146b2>",
+      "language_score": 0.9770156145095825,
+      "url": "http://www.theregister.co.uk/2011/07/21/euro_filesharing_nastygrams/print.html"
+    },
+    {
+      "date": "2013-05-21T02:20:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3d408111-00ed-4867-8de3-edb842f9ff80>",
+      "language_score": 0.9522675275802612,
+      "url": "http://www.gatorzone.com/volleyball/bios.php?year=2001&bio=riester.html"
+    },
+    {
+      "date": "2013-05-23T12:16:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6eaf0478-f0f7-4cc5-bbb0-cfc85b671d96>",
+      "language_score": 0.9690386056900024,
+      "url": "http://gpbuilders.wordpress.com/category/uncategorized/"
+    },
+    {
+      "date": "2013-06-20T02:46:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4b9157d3-3633-4cb6-a9ef-c33a0fe56355>",
+      "language_score": 0.971733808517456,
+      "url": "http://haverford.patch.com/groups/police-and-fire/p/police-press-release-reveals-more-info-of-gunman-standoff"
+    },
+    {
+      "date": "2013-05-23T12:36:04Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:39e0d059-54c5-497a-a58a-ccdbfdf5e800>",
+      "language_score": 0.974897563457489,
+      "url": "http://www.natmedtalk.com/f74/22442-what-causes-acid-reflux.html"
+    },
+    {
+      "date": "2013-05-23T12:24:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7b56d60b-f398-4018-a552-f5e24c40190c>",
+      "language_score": 0.9508119225502014,
+      "url": "http://alisonsboomstick.blogspot.com/2010/08/419-eater.html"
+    },
+    {
+      "date": "2013-05-21T01:33:47Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cf9bfced-6559-4768-8750-4ab73c5f94e9>",
+      "language_score": 0.9755323529243469,
+      "url": "http://parentingpoetryandpiety.wordpress.com/"
+    },
+    {
+      "date": "2013-05-23T12:37:54Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8faad1bc-f888-4b5e-b67d-790c0bca5de2>",
+      "language_score": 0.9838502407073975,
+      "url": "http://www.philadelphiaweekly.com/news-and-opinion/phillynow/Tributes-to-Steven-Wells-49085126.html"
+    },
+    {
+      "date": "2013-05-23T12:30:24Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:67d17b63-6d89-4ac9-a79f-298e57aeff6c>",
+      "language_score": 0.9788281321525574,
+      "url": "http://video.foxnews.com/v/1811791318001/sen-portman-to-play-obama-in-gop-debate-preps/?playlist_id=86858"
+    },
+    {
+      "date": "2013-05-23T12:29:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9181c837-0575-4a95-a06a-7b0b2f5f6157>",
+      "language_score": 0.9604309797286987,
+      "url": "http://financialfreedumb.blogspot.com/2006/03/earn-250-aadvantage-miles-american.html"
+    },
+    {
+      "date": "2013-05-25T20:44:34Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:13410997-0f70-4bd7-9a58-673d72a2e832>",
+      "language_score": 0.962149977684021,
+      "url": "http://b-townblog.com/2012/12/18/legal-tip-did-you-know-an-uncontested-divorce-doesnt-have-to-be-expensive/"
+    },
+    {
+      "date": "2013-05-23T12:12:18Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:52e726fe-6e92-4e36-ac35-14d44d4a1ae7>",
+      "language_score": 0.977660596370697,
+      "url": "http://www.telegram.com/article/20121129/APN/311299861"
+    },
+    {
+      "date": "2013-05-23T12:16:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7aab3458-e2bf-4943-a652-11be0662dc92>",
+      "language_score": 0.9748795628547668,
+      "url": "http://grafton.patch.com/blog_posts/what-was-the-hardest-test-you-ever-took"
+    },
+    {
+      "date": "2013-05-23T12:44:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f703119e-deb8-453d-9d8f-71f0bbaa9897>",
+      "language_score": 0.962076723575592,
+      "url": "http://articles.latimes.com/2010/dec/05/travel/la-tr-newyork-20101205"
+    },
+    {
+      "date": "2013-05-23T12:17:02Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8a112ae6-27ca-4d18-b65d-1832f63fd751>",
+      "language_score": 0.9757140874862671,
+      "url": "http://arstechnica.com/gaming/2010/05/modnation-racers-review-kart-racing-expanded-improved/"
+    },
+    {
+      "date": "2013-05-23T12:40:57Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d00cf83d-d33d-4be8-88e8-a2648842a8b8>",
+      "language_score": 0.9505760073661804,
+      "url": "http://www.flipkart.com/sniper-elite-v2/p/itmd8x53gchusxn4?pid=AVMDCAJHRWBEDFCW&ref=6d0c15dd-f440-42bd-b3ee-802c77fb9818"
+    },
+    {
+      "date": "2013-05-25T13:42:46Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:169405b1-a339-460a-a690-8f7530c15648>",
+      "language_score": 0.9525305032730103,
+      "url": "http://www.networksolutions.com/smallbusiness/2013/01/9-employment-trends-you-need-to-know-about-for-2013/"
+    },
+    {
+      "date": "2013-05-25T20:39:43Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:2ae762ea-9816-46c9-906e-3aa0de77a407>",
+      "language_score": 0.9662588834762573,
+      "url": "http://blogs.msdn.com/b/donovanf/archive/2011/04/22/making-a-wireless-connection-accessible-to-a-hyper-v-virtual-machine-vm.aspx"
+    },
+    {
+      "date": "2013-05-23T12:23:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:75e0a849-860c-459a-ad4e-9f3ed4325a50>",
+      "language_score": 0.9529596567153931,
+      "url": "http://www.ncsall.net/index.html@id=771&pid=395.html"
+    },
+    {
+      "date": "2013-05-25T20:52:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7d6f5be6-ad9d-4fe7-9f25-e32d47eb4904>",
+      "language_score": 0.95811527967453,
+      "url": "http://boingboing.net/2009/06/22/mining-email-traffic.html"
+    },
+    {
+      "date": "2013-05-21T01:41:02Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0936b6bc-df67-4f03-896d-1d9f4f4ad425>",
+      "language_score": 0.9524533152580261,
+      "url": "http://www.philadelphiaweekly.com/screen/Third-Act-Plot-Twists-Make-Summer-Fall-166940336.html"
+    },
+    {
+      "date": "2013-05-23T12:08:26Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ade37467-b158-4daf-b879-fa6b45159df7>",
+      "language_score": 0.9837090373039246,
+      "url": "http://www.goingwest.net/journal/?currentPage=103"
+    },
+    {
+      "date": "2013-05-23T12:10:58Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e97b6b9d-80f0-4bfc-b548-c264f1eb6ab8>",
+      "language_score": 0.9687888026237488,
+      "url": "http://www.womensrefugeecommission.org/press-room/1217-wrc-welcomes-nobel-peace-prize-announcement"
+    },
+    {
+      "date": "2013-05-23T12:30:50Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f706b10a-96be-411f-aceb-ed1ad2634a4c>",
+      "language_score": 0.9631022810935974,
+      "url": "http://www.kqed.org/news/story/2013/02/22/116833/as_police_drones_take_off_washington_state_pushes_back?source=npr&category=u.s"
+    },
+    {
+      "date": "2013-05-23T12:24:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4f86fb90-a020-43d8-b5f9-8feb9933028b>",
+      "language_score": 0.9546864032745361,
+      "url": "http://blog.mysanantonio.com/artbeat/2011/01/review-tango-buenos-aires/"
+    },
+    {
+      "date": "2013-05-23T12:17:53Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8ccccb76-6e27-4c8d-acfa-68a955134d2b>",
+      "language_score": 0.9765204191207886,
+      "url": "http://www.dlife.com/diabetes/famous_people/writers_reporters_editors/larry_king"
+    },
+    {
+      "date": "2013-05-23T12:43:02Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:fa61bf39-6531-4890-8a7f-9751bcd028ac>",
+      "language_score": 0.9630621075630188,
+      "url": "http://shawsblog2011.blogspot.com/2012/08/is-gm-really-going-to-go-bankrupt-again.html"
+    },
+    {
+      "date": "2013-05-23T12:40:52Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d90b8846-f13c-4833-8a71-19d7bcf3cef1>",
+      "language_score": 0.9699873328208923,
+      "url": "http://www.audible.com/pd/ref=pd_sim_auth_1?asin=B002VAA8YU"
+    },
+    {
+      "date": "2013-05-25T20:51:13Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e4af0843-a86f-422e-be03-04ac39e1e183>",
+      "language_score": 0.9693474173545837,
+      "url": "http://joeldeane.blogspot.com/2008_11_01_archive.html"
+    },
+    {
+      "date": "2013-05-23T12:17:06Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5a48c1b3-29b7-4488-8116-2b478b4a66eb>",
+      "language_score": 0.9541433453559875,
+      "url": "http://www.memestreams.net/users/tinkerman/blogid107605/"
+    },
+    {
+      "date": "2013-05-25T20:22:41Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:87b670e0-077a-4b98-899d-a4c9a4660509>",
+      "language_score": 0.9704744219779968,
+      "url": "http://blog.bread.org/2012/11/american-realities_a_south_dakota_faimilys_struggle.html"
+    },
+    {
+      "date": "2013-05-21T01:40:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4479e227-69e3-403a-abf4-ca8569bfeb3a>",
+      "language_score": 0.9587070941925049,
+      "url": "http://rangers.lohudblogs.com/2012/07/14/need-ice-need-hockey-theres-some-on-msg-network-tonight/?dem_action=view&dem_poll_id=91"
+    },
+    {
+      "date": "2013-05-23T12:23:08Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6ed409a3-893d-452f-b7a5-eab0c96ea178>",
+      "language_score": 0.9673347473144531,
+      "url": "http://www.bigskybusiness.com/index.php/politics/city-a-county?start=225"
+    },
+    {
+      "date": "2013-05-23T12:09:03Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:87f77b46-3f05-4b87-b660-0a2826d8f621>",
+      "language_score": 0.9551963210105896,
+      "url": "http://www.theatlantic.com/health/archive/2012/04/special-k-can-lead-to-ongoing-bladder-problems-in-its-users/256056/"
+    },
+    {
+      "date": "2013-05-23T12:30:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0d469c02-6691-441f-96f2-66b5b0e3479a>",
+      "language_score": 0.9622922539710999,
+      "url": "http://mmtimes.com/index.php/in-depth/3581-why-i-opposed-tribunal-law-changes.html"
+    },
+    {
+      "date": "2013-06-20T03:00:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cc878d0d-1270-4f03-96d5-e3baff12e521>",
+      "language_score": 0.956738293170929,
+      "url": "http://knowfuture.wordpress.com/category/germany/"
+    },
+    {
+      "date": "2013-05-21T00:57:27Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:63f3d14b-3eb8-41d7-9a1e-9adbd695018b>",
+      "language_score": 0.9837768077850342,
+      "url": "http://www.sportingnews.com/ncaa-basketball/story/2012-03-16/ncaa-tournament-2012-syracuse-near-disaster-asheville-advances"
+    },
+    {
+      "date": "2013-05-25T20:44:34Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5d5a551f-6fd4-4d19-a71f-a0f1ee75a327>",
+      "language_score": 0.9553970098495483,
+      "url": "http://necolebitchie.com/2010/07/22/kim-kardashian-and-miles-austin-vacation-in-cabo/?cid=430694"
+    },
+    {
+      "date": "2013-05-25T20:36:23Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:30cb5148-be23-4f76-8e67-d596deb710c7>",
+      "language_score": 0.9518236517906189,
+      "url": "http://trustmeimascientist.com/2012/02/06/south-brooklyn-recording-studios-featuring-systems-two/"
+    },
+    {
+      "date": "2013-05-21T01:31:52Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3e7ecb5a-08ca-4399-8d0b-2331ec6aea59>",
+      "language_score": 0.9654141664505005,
+      "url": "http://minnesota.sbnation.com/2012/10/14/3502148/minnesota-vikings-to-host-game-in-london-in-2013"
+    },
+    {
+      "date": "2013-06-20T02:35:31Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:19b72688-fcd3-4d1f-b401-445f385c104b>",
+      "language_score": 0.9812175631523132,
+      "url": "http://articles.latimes.com/2008/apr/19/entertainment/et-cause19"
+    },
+    {
+      "date": "2013-05-25T20:24:29Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:da5f725b-70ea-4578-980e-1528ce41f33f>",
+      "language_score": 0.9598743915557861,
+      "url": "http://www.emel.com/blog/2010/09/what-is-the-meaning-of-life/"
+    },
+    {
+      "date": "2013-05-21T01:33:25Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:26ad0986-53ab-418d-a33e-60a67c680c89>",
+      "language_score": 0.9840203523635864,
+      "url": "http://www.wright-brothers.org/TBR/History/History%20of%20Airplane/moving%20on.htm"
+    },
+    {
+      "date": "2013-06-20T03:00:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0f3334b9-a28a-483f-8876-5112c5fc1aca>",
+      "language_score": 0.9667247533798218,
+      "url": "http://www.thinkcommon.com/users/kNoHxWgy/blogs/5051551/comments"
+    },
+    {
+      "date": "2013-05-25T20:44:01Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d3b90acb-75f5-4264-b479-7649382a477b>",
+      "language_score": 0.9578592777252197,
+      "url": "http://jaredbernsteinblog.com/greece-and-the-eurozone-what-to-expect-when-youre-expecting-the-unknowable/"
+    },
+    {
+      "date": "2013-06-20T02:31:18Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:bd8e94a9-783b-4611-986e-167290fc5d67>",
+      "language_score": 0.9673327207565308,
+      "url": "http://www.jancifra.eu/2011/06/the-document-of-the-future/"
+    },
+    {
+      "date": "2013-05-23T12:39:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9dc514c5-4844-4dba-b2e2-d85dd88fd9d0>",
+      "language_score": 0.966615617275238,
+      "url": "http://www.dallasnews.com/sports/high-schools/football-news/headlines/20120914-waxahachie-s-defense-suffocates-no.-3-ranked-west-mesquite-to-score-upset-win.ece?ssimg=714934"
+    },
+    {
+      "date": "2013-05-23T12:44:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0cb0fd06-9cd3-436f-aca5-49e547d9173a>",
+      "language_score": 0.9509298801422119,
+      "url": "http://whenfallsthecoliseum.com/category/advice/"
+    },
+    {
+      "date": "2013-05-25T20:16:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:444233a0-04c5-49a1-a60a-4b32be7f4293>",
+      "language_score": 0.9716207981109619,
+      "url": "http://www.genderacrossborders.com/2010/01/15/more-on-standardized-testing/"
+    },
+    {
+      "date": "2013-05-25T20:31:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:df145331-00b6-4c58-881c-710377e87232>",
+      "language_score": 0.9504950046539307,
+      "url": "http://domain-b.com/industry/power/20100703_energy_economy.html"
+    },
+    {
+      "date": "2013-05-25T20:16:27Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:056aad73-ca22-41bf-8884-2c82f43009ab>",
+      "language_score": 0.9624945521354675,
+      "url": "http://amdiazart.blogspot.com/2010/08/harry-potter-concept-art-tale-of.html"
+    },
+    {
+      "date": "2013-05-25T20:30:26Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:967e982a-ddc2-4e0b-bbbd-319ba099508e>",
+      "language_score": 0.9611889719963074,
+      "url": "http://thedressingupbox.blogspot.com/2008/04/interactions.html"
+    },
+    {
+      "date": "2013-05-25T20:24:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:31b5dafd-d0e1-425b-8a5c-7cb9ab622728>",
+      "language_score": 0.9697690606117249,
+      "url": "http://www.aherotwiceamonth.com/2012/01/is-ultimate-edition-of-d-possible.html"
+    },
+    {
+      "date": "2013-05-23T12:35:42Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6714da8e-0b67-4201-a08c-6f69500e2bbc>",
+      "language_score": 0.9664612412452698,
+      "url": "http://www.thecoxguide.com/news.html"
+    },
+    {
+      "date": "2013-05-21T01:33:09Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d1b69f58-3157-4c6c-bd0a-717ef6c332c6>",
+      "language_score": 0.9821469783782959,
+      "url": "http://www.hanknuwer.com/blog/2007/08/viewpoint-article-by-dr-susan-lipkins/"
+    },
+    {
+      "date": "2013-05-25T20:15:39Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:07edb52f-b5c7-4747-a44d-f3a580cd6dc9>",
+      "language_score": 0.9595367312431335,
+      "url": "http://horsesass.org/?p=2602"
+    },
+    {
+      "date": "2013-05-25T20:24:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d2372a5b-6e32-4b06-b7d8-f95320b47736>",
+      "language_score": 0.9613655209541321,
+      "url": "http://www.filmcomment.com/entry/cannes-2012-diary-invasion-of-the-body/interview-joachim-trier-director-of-oslo-august-31st"
+    },
+    {
+      "date": "2013-05-23T12:26:32Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:985195ff-804a-416b-aefd-fbab5bca4238>",
+      "language_score": 0.9545217752456665,
+      "url": "http://www.wmich.edu/grad/policies-grad-appointees.html"
+    },
+    {
+      "date": "2013-05-23T12:08:26Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:011eb532-2491-4b0c-a439-ef28cc45cb85>",
+      "language_score": 0.9675896763801575,
+      "url": "http://buzz.money.cnn.com/tag/jpmorgan/"
+    },
+    {
+      "date": "2013-05-25T20:24:15Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8b36ddc0-4600-4302-b943-d64b0b55de20>",
+      "language_score": 0.9563759565353394,
+      "url": "http://www.r2communications.com/projects.php"
+    },
+    {
+      "date": "2013-05-21T01:33:11Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6802ad0c-a99f-42d2-8744-fb99db83baf9>",
+      "language_score": 0.9801222681999207,
+      "url": "http://freethoughtblogs.com/almostdiamonds/2008/07/24/one-of-those-nights/?ak_action=force_mobile"
+    },
+    {
+      "date": "2013-05-25T13:31:27Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368705955434/warc/CC-MAIN-20130516120555-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7bb05f4e-24a4-4164-b444-f5a14d702911>",
+      "language_score": 0.958494246006012,
+      "url": "http://www.televisionwithoutpity.com/show/the-practice/judge-knot.php?page=8"
+    },
+    {
+      "date": "2013-05-25T20:30:49Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1f66dee2-4960-4f8b-854b-2c20fbb019eb>",
+      "language_score": 0.9604557156562805,
+      "url": "http://newsok.com/sutter-keys-rally-penguins-top-bruins-3-2/article/feed/512693?custom_click=rss"
+    },
+    {
+      "date": "2013-05-25T20:16:27Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ab138ecf-7bab-4ef8-b107-cc554c3b5299>",
+      "language_score": 0.9697308540344238,
+      "url": "http://mattyzimmer.tumblr.com/post/31848383008/steve-sabols-nfl"
+    },
+    {
+      "date": "2013-05-25T20:52:06Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:57303b2b-014e-4ba8-beb8-925ceaa1c523>",
+      "language_score": 0.9649231433868408,
+      "url": "http://www.russpage.net/page/20/"
+    },
+    {
+      "date": "2013-05-25T20:24:52Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:760bfbac-e683-41c8-a0a6-1c46b9d61b21>",
+      "language_score": 0.9571466445922852,
+      "url": "http://en.wikipedia.org/wiki/Mauerpark"
+    },
+    {
+      "date": "2013-05-25T20:37:15Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:461decb1-b543-4e87-a5b7-7c4eaef774b6>",
+      "language_score": 0.9697129726409912,
+      "url": "http://thebestthingsince.com/blog/tag/angry-kid/"
+    },
+    {
+      "date": "2013-05-23T12:30:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f30f6691-afff-49ac-89ab-cb2ab88e94ab>",
+      "language_score": 0.9732387661933899,
+      "url": "http://asymptotia.com/2007/07/02/"
+    },
+    {
+      "date": "2013-05-25T20:45:06Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:dadcaae8-1180-4269-8b2b-81e4a1647b45>",
+      "language_score": 0.9667834043502808,
+      "url": "http://blog.vincentlaforet.com/page/3/"
+    },
+    {
+      "date": "2013-05-25T20:24:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4e96baf2-ff05-4a18-9726-83673ce90424>",
+      "language_score": 0.9781098961830139,
+      "url": "http://www.theautochannel.com/news/2008/10/16/178048.html"
+    },
+    {
+      "date": "2013-05-21T00:49:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:387c0157-70cf-4dfd-a328-f7784c9755c7>",
+      "language_score": 0.9855080246925354,
+      "url": "http://missfikingdom.com/blog/2010/05/26/fionas-art-featured-on-etsy/"
+    },
+    {
+      "date": "2013-05-25T20:16:39Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:665dcd33-bd6e-48fa-bccf-6d33dbf739fb>",
+      "language_score": 0.9637265205383301,
+      "url": "http://www.thexuniverse.com/threads/20422-XTC-V1-0-Manual?p=190115&viewfull=1"
+    },
+    {
+      "date": "2013-05-25T20:43:52Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a25f922c-dd3b-4e66-80c3-9ef351b07598>",
+      "language_score": 0.9702221155166626,
+      "url": "http://www.halmaclean.co.uk/2008/12/26/bluetooth-pairing-for-car-and-iphone-audi-gsm-phone-system/"
+    },
+    {
+      "date": "2013-05-25T20:23:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5c53f503-f22b-4916-b4a9-b78d0e1788c7>",
+      "language_score": 0.9604067206382751,
+      "url": "http://www.allaboutsymbian.com/features/item/12887_Why_the_N8_Still_standing_out_.php"
+    },
+    {
+      "date": "2013-05-23T12:30:26Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b9e90764-6091-4b10-81ff-cabf571f15a9>",
+      "language_score": 0.9778670072555542,
+      "url": "http://www.mainstreetnews.com/archives/27659-ROLLASON-The-Madness-begins.html"
+    },
+    {
+      "date": "2013-05-25T20:17:56Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:778a8cdb-d7ae-47df-bdd0-188d66c6f039>",
+      "language_score": 0.9858415722846985,
+      "url": "http://www.adamkoch.com/tag/old-age/"
+    },
+    {
+      "date": "2013-05-25T20:38:51Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:71ee58c2-2229-456e-916c-3827a5d295a0>",
+      "language_score": 0.9559114575386047,
+      "url": "http://www.hapabento.com/2009/12/19/paperwhites-omelette-bento-box/"
+    },
+    {
+      "date": "2013-05-21T01:33:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:72ee0b5e-ccb0-42ff-95ea-457ffeb4d3c3>",
+      "language_score": 0.9758517146110535,
+      "url": "http://www.people.com/people/archive/article/0,,20142334,00.html"
+    },
+    {
+      "date": "2013-05-21T01:03:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:382812d8-4fa1-4ce5-b17f-9c8edbcee822>",
+      "language_score": 0.9533336758613586,
+      "url": "http://insureblog.blogspot.com/2007/07/sicko-profits.html"
+    },
+    {
+      "date": "2013-05-25T20:23:37Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:760560d2-6edb-4b84-9566-4cfaf4642da1>",
+      "language_score": 0.9655031561851501,
+      "url": "http://sarasotamagazine.com/blog/2005/03/01/made-in-sarasota-21/"
+    },
+    {
+      "date": "2013-05-21T01:05:29Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:44a58e75-b825-4cb1-919e-826fb531349f>",
+      "language_score": 0.9668938517570496,
+      "url": "http://www.opencongress.org/articles/view/587-Wal-Mart-vs-Card-Check"
+    },
+    {
+      "date": "2013-06-20T09:50:39Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1b0ea674-db43-421c-8e0f-df64cde4f864>",
+      "language_score": 0.9631727337837219,
+      "url": "http://dairybusiness.com/archive/?p=6187"
+    },
+    {
+      "date": "2013-05-25T20:51:42Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8c309578-4502-43a8-a464-4e6161b00dca>",
+      "language_score": 0.9884829521179199,
+      "url": "http://www.chattanoogan.com/2013/2/6/243917/Press-Conference-Comments-From-Vols-.aspx"
+    },
+    {
+      "date": "2013-06-20T09:38:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cd79006f-2c86-4192-b63a-350d584bda8d>",
+      "language_score": 0.9617958664894104,
+      "url": "http://io9.com/5988333/a-supermassive-ice-age-may-have-led-to-complex-life-on-earth"
+    },
+    {
+      "date": "2013-06-20T09:42:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e805f946-3f8e-4203-8188-f1b106e8bb1a>",
+      "language_score": 0.9640529155731201,
+      "url": "http://fdic.gov/news/news/press/1998/pr9854.html"
+    },
+    {
+      "date": "2013-05-23T12:10:27Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:825c8758-f999-4fbb-8654-b2ad8f2955c2>",
+      "language_score": 0.9832448959350586,
+      "url": "http://www.obsidianportal.com/campaign/fighting-the-fiends-who-come-to-wreak-havoc-unto-the-land-of-greyhawk/adventure-log/chapter-3"
+    },
+    {
+      "date": "2013-05-25T20:16:37Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:041a559d-3b2d-4957-ab8c-f9b38a691590>",
+      "language_score": 0.9833646416664124,
+      "url": "http://www.emilysreadingroom.com/2012/08/enchanted-by-althea-kontis-audio-review.html"
+    },
+    {
+      "date": "2013-05-23T12:24:06Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:31baa354-1953-42fd-9bb2-8a7fa7d56fc5>",
+      "language_score": 0.972739040851593,
+      "url": "http://www.mixmag.net/words/news/jay-z-signs-sander-van-doorn-to-roc-nation"
+    },
+    {
+      "date": "2013-05-25T20:32:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3436154c-8d11-4c1d-b8cc-b283e00b0a8a>",
+      "language_score": 0.9886460304260254,
+      "url": "http://www.publicopiniononline.com/news/ci_22561457/pleasant-hall-volunteer-fire-company-recognizes-top-members?source=most_viewed"
+    },
+    {
+      "date": "2013-05-25T20:23:17Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8ba95794-12c5-4e46-b652-222c102ff63c>",
+      "language_score": 0.9648094177246094,
+      "url": "http://sharkshirt.tumblr.com/tagged/funny"
+    },
+    {
+      "date": "2013-05-25T20:38:22Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:64994ec4-15f7-440f-a56e-019262ce186a>",
+      "language_score": 0.9724805355072021,
+      "url": "http://tallgrassprairiestudio.blogspot.com/2008/12/friday-night-was-productive-night-and.html?showComment=1228765560000"
+    },
+    {
+      "date": "2013-06-20T09:51:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6af46d5b-bb0c-46c4-a57e-ae29de768aea>",
+      "language_score": 0.9590928554534912,
+      "url": "http://ssa.gov/OP_Home/cfr20/404/404-0313.htm"
+    },
+    {
+      "date": "2013-06-20T09:42:32Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5de410bd-e5c8-4626-a400-0c311c4699a4>",
+      "language_score": 0.9717809557914734,
+      "url": "http://robert.accettura.com/blog/category/google/"
+    },
+    {
+      "date": "2013-06-20T09:32:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:79de5015-c6f6-4a8f-852d-5458faeb40f3>",
+      "language_score": 0.9689031839370728,
+      "url": "http://latimesblogs.latimes.com/lanow/2011/03/daylong-fundraiser-for-japan-earthquake-victims-on-spring-street-outside-la-city-hall.html?lanow"
+    },
+    {
+      "date": "2013-06-20T09:30:30Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b3031bf0-53e8-45e4-8404-c541f6cbd916>",
+      "language_score": 0.9533603191375732,
+      "url": "http://www.agweb.com/agday/blog/100_Grass-Fed_139/cattles_grazing_memories/"
+    },
+    {
+      "date": "2013-06-20T09:25:28Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:234838d5-3eea-487e-8c19-c78b3e1a1d2d>",
+      "language_score": 0.9648566842079163,
+      "url": "http://seekingalpha.com/article/1265701-4-stocks-that-could-move-big-this-week?source=feed"
+    },
+    {
+      "date": "2013-05-25T20:16:11Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e437ec43-e6be-460b-a6ae-15ba0ed30890>",
+      "language_score": 0.9801785945892334,
+      "url": "http://www.sewinspiredblog.com/2008/01/cuteness.html"
+    },
+    {
+      "date": "2013-05-25T20:46:25Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9726b8aa-53fa-430b-9953-c8f52fc2eb4c>",
+      "language_score": 0.9548711776733398,
+      "url": "http://www.makemytrip.com/international-flights/goa-budapest-cheap-airtickets.html"
+    },
+    {
+      "date": "2013-05-23T12:15:45Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:610e53e8-6327-4b54-8324-0a1a540878fa>",
+      "language_score": 0.989727795124054,
+      "url": "http://www.ralst.com/BarelyAwake.HTM"
+    },
+    {
+      "date": "2013-05-25T20:43:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b7b0cc9f-f073-4349-9176-af76255dbc34>",
+      "language_score": 0.9827219247817993,
+      "url": "http://www.thediabeticscornerbooth.com/2011/03/funky-eye-syndrome.html"
+    },
+    {
+      "date": "2013-05-25T20:23:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:26a2df66-ca49-4567-976e-273dfd391ac3>",
+      "language_score": 0.9578156471252441,
+      "url": "http://humanegames.tumblr.com/archive/2011/5"
+    },
+    {
+      "date": "2013-05-25T20:44:24Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0c550306-aa97-4abd-b216-cf637f52a493>",
+      "language_score": 0.96114581823349,
+      "url": "http://www.gamerevolution.com/review/deus-ex"
+    },
+    {
+      "date": "2013-05-25T20:31:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:07acb75f-6f3c-4a3b-8eff-8acfbb9a1114>",
+      "language_score": 0.9889333844184875,
+      "url": "http://www.tressugar.com/Stuck-Between-Two-Guys-22349142"
+    },
+    {
+      "date": "2013-05-25T20:15:49Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:c6452d4b-4fed-453d-ac4b-a3d94a0674fc>",
+      "language_score": 0.9608554244041443,
+      "url": "http://www.nucksmisconduct.com/2012/4/4/2924447/morning-buzz-canucks-win-wild-one-vs-ducks-dallas-falls-behind-in"
+    },
+    {
+      "date": "2013-05-21T01:04:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:bdff7a55-f638-4d0f-bfb7-0371dab5e07e>",
+      "language_score": 0.9583287239074707,
+      "url": "http://www.havredailynews.com/cms/news/story-419682.html"
+    },
+    {
+      "date": "2013-05-25T20:51:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b13c9626-2ac5-431f-96a4-3a4a845851e4>",
+      "language_score": 0.9506902694702148,
+      "url": "http://www.fiercebiotechit.com/story/gobalto-lands-major-pharma-cro-customer-cloud-software/2013-01-14"
+    },
+    {
+      "date": "2013-06-20T09:53:11Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f93842c6-e468-410b-bd96-2c9c4abd3b18>",
+      "language_score": 0.9544577598571777,
+      "url": "http://vet.osu.edu/cvm/connect-veterinary-medicine-april-2007"
+    },
+    {
+      "date": "2013-06-20T09:28:51Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5983cf4c-6c6a-4a00-9de5-2f2b0228d0f1>",
+      "language_score": 0.9626790285110474,
+      "url": "http://marksteele.co.nz/2008/10/28/2008-part-6/"
+    },
+    {
+      "date": "2013-05-23T12:45:53Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:dd04863e-9f07-48ad-a659-d1d0fda0f6d9>",
+      "language_score": 0.9760910272598267,
+      "url": "http://www.televisionwithoutpity.com/show/gossip-girl/war-at-the-roses-1.php?page=15"
+    },
+    {
+      "date": "2013-06-20T09:43:11Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:81f91017-909e-4780-b324-9ec8cb467d00>",
+      "language_score": 0.9514605402946472,
+      "url": "http://www.insidejapantours.com/fully-tailored-japan-holidays/i-acc005/buddhist-temple-stay/"
+    },
+    {
+      "date": "2013-05-25T20:18:07Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cb15943b-ca39-423f-9a45-e7e17b1bfb8a>",
+      "language_score": 0.9645088315010071,
+      "url": "http://swtimes.com/sections/news/aquatics-center-extras-table-fort-smith-meeting.html"
+    },
+    {
+      "date": "2013-05-23T12:44:51Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:49cf5d06-1d17-4620-820b-8c5fd044e6ca>",
+      "language_score": 0.979548454284668,
+      "url": "http://www.rollins.edu/news/2011/06/students-discover-passion-in-ghana.html"
+    },
+    {
+      "date": "2013-06-20T09:22:52Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:2a25cead-719d-4796-91b5-23228632cff6>",
+      "language_score": 0.9647574424743652,
+      "url": "http://www.golocalprov.com/sports/23155/"
+    },
+    {
+      "date": "2013-05-25T20:37:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b184c00f-8e30-4d6f-8711-b4d8b379dbad>",
+      "language_score": 0.9545518159866333,
+      "url": "http://www.richmondcarotary.org/archive_fw07/index_030907.htm"
+    },
+    {
+      "date": "2013-05-25T20:38:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:22cc9329-5221-48d0-b722-d118d7e78bb3>",
+      "language_score": 0.9692632555961609,
+      "url": "http://www2.ljworld.com/news/2011/apr/07/turnout-defeat/"
+    },
+    {
+      "date": "2013-05-25T20:24:53Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:2638a138-18c0-4671-be27-4e0660d5f305>",
+      "language_score": 0.9780121445655823,
+      "url": "http://www.mi-reporter.com/community/48170422.html"
+    },
+    {
+      "date": "2013-06-20T09:44:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:2bb443ce-df5b-4000-ad81-99b60f4c9863>",
+      "language_score": 0.9517639875411987,
+      "url": "http://alibi.com/music/10807/Music-to-Your-Ears.html"
+    },
+    {
+      "date": "2013-06-20T09:54:13Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:814f95aa-160c-4521-a194-a0eb63f4b2eb>",
+      "language_score": 0.9614340662956238,
+      "url": "http://www.deseretnews.com/article/700078426/Republicans-ride-voter-unrest-to-control-of-House.html"
+    },
+    {
+      "date": "2013-06-20T09:52:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:dd03b20c-72eb-48e5-b02a-4ab8e37f1908>",
+      "language_score": 0.9870866537094116,
+      "url": "http://www.foodiewithfamily.com/2008/05/30/one-thing-you-should-never-ask-the-fedex-guy/"
+    },
+    {
+      "date": "2013-06-20T09:23:47Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5f643eb3-aa0a-41a2-bcf3-600cbc77d731>",
+      "language_score": 0.9774518013000488,
+      "url": "http://edition.cnn.com/TRANSCRIPTS/1201/10/es.01.html"
+    },
+    {
+      "date": "2013-05-25T20:51:04Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:af97aa98-3fb9-4533-8faf-c10a68458a3e>",
+      "language_score": 0.9732133746147156,
+      "url": "http://www.bullz-eye.com/on_location/2009/racey_girl.htm"
+    },
+    {
+      "date": "2013-06-20T09:29:55Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1a4a398e-7b93-4a3d-82e1-91f27c80f329>",
+      "language_score": 0.9862989783287048,
+      "url": "http://www.helpinghaitianangels.org/?p=4966"
+    },
+    {
+      "date": "2013-06-20T09:52:39Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1c920937-108c-4e38-ac21-4b17c9002f55>",
+      "language_score": 0.9512439370155334,
+      "url": "http://www.ccdga.org/"
+    },
+    {
+      "date": "2013-06-20T09:58:16Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:263ce980-4665-4bb9-aadb-83549d5cd946>",
+      "language_score": 0.9746755361557007,
+      "url": "http://www.cheatcc.com/xbox360/rev/darksiderswrathofwarpreview3.html"
+    },
+    {
+      "date": "2013-05-21T00:55:53Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8b4eff54-3976-455a-b84e-c855902860d1>",
+      "language_score": 0.9653445482254028,
+      "url": "http://www.all-science-fair-projects.com/science_fair_projects_encyclopedia/Warren_Beatty"
+    },
+    {
+      "date": "2013-05-23T12:45:03Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e7ab9a33-11f6-4371-989d-fa96ce77c45d>",
+      "language_score": 0.9779884815216064,
+      "url": "http://www.liveleak.com/view?i=9e6_1319635010"
+    },
+    {
+      "date": "2013-05-23T12:25:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:03202fb1-d5b5-431b-9cbb-3a8943a31135>",
+      "language_score": 0.9534686803817749,
+      "url": "http://www.shoebuy.com/ansi-for-electrical-workers-mens-steel-toe-boots.htm"
+    },
+    {
+      "date": "2013-06-20T09:22:48Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7daccef3-dd48-468c-96b4-ca1a46f5e471>",
+      "language_score": 0.9607986807823181,
+      "url": "http://www.poynerbaxter.com/"
+    },
+    {
+      "date": "2013-06-20T09:52:18Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:c06ddf12-4958-48c2-ac30-b017ac4f38f9>",
+      "language_score": 0.985485315322876,
+      "url": "http://mojo.myfoxla.com/biz/needles-niceties/upland/ca/91784/11047978"
+    },
+    {
+      "date": "2013-05-23T12:08:54Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:752312f3-fda5-4445-babc-a3854d1b68ae>",
+      "language_score": 0.9689391255378723,
+      "url": "http://www.hampshirechronicle.co.uk/sport/10309428.Students_crowned_snooker_champs/?ref=rss"
+    },
+    {
+      "date": "2013-06-20T09:43:57Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:66ac8bf1-1c71-4a5d-bb91-bad78b2b294e>",
+      "language_score": 0.9586056470870972,
+      "url": "http://www.ibhe.state.il.us/Media%20Center/2010/HTM/0326_agenda.htm"
+    },
+    {
+      "date": "2013-06-20T09:29:36Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a753941d-fcaf-48a6-b52d-a2381e99638e>",
+      "language_score": 0.9765306115150452,
+      "url": "http://reason.com/archives/2008/11/12/obama-on-drugs/print"
+    },
+    {
+      "date": "2013-05-25T20:50:48Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:21fa511e-fcd5-49eb-b494-575939aa94ba>",
+      "language_score": 0.9617487788200378,
+      "url": "http://sidewiseinsights.blogspot.com/2012/04/random-jottings-7.html"
+    },
+    {
+      "date": "2013-05-21T00:58:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b8b2d2b6-970e-4648-a27d-2fc771096b9e>",
+      "language_score": 0.9618404507637024,
+      "url": "http://www.nps.gov/drto/historyculture/lighthouses.htm"
+    },
+    {
+      "date": "2013-06-20T09:59:51Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:0e54e807-9bdb-4b0b-967e-0bfbb83ffbf3>",
+      "language_score": 0.9698849320411682,
+      "url": "http://www.icis.com/blogs/asian-chemical-connections/2011/02/pulled-from-all-sides/"
+    },
+    {
+      "date": "2013-06-20T09:59:04Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f310fa58-099e-4050-b3cf-306110340b39>",
+      "language_score": 0.9591977000236511,
+      "url": "http://money.stackexchange.com/questions/974/is-there-a-good-options-strategy-that-has-a-fairly-low-risk"
+    },
+    {
+      "date": "2013-05-21T01:33:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:99940867-7a78-4035-acd3-1bf0376ac7c2>",
+      "language_score": 0.9744341373443604,
+      "url": "http://crooksandliars.com/taxonomy/term/41865"
+    },
+    {
+      "date": "2013-05-25T20:31:08Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:bcb2baae-e6c7-4842-a0b8-57bad0468dbb>",
+      "language_score": 0.9765099883079529,
+      "url": "http://www.ordinarilyrandomme.blogspot.com/2009/10/new-season-for-new-reason.html"
+    },
+    {
+      "date": "2013-06-20T09:43:47Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:8684651d-6f52-4952-b8e8-7acb61c91231>",
+      "language_score": 0.9813096523284912,
+      "url": "http://thehistoryprofessor.us/bin/histprof/misc/flu.html"
+    },
+    {
+      "date": "2013-06-20T09:39:59Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:fc043f55-42d3-4633-8c80-15112b0d720f>",
+      "language_score": 0.9618641138076782,
+      "url": "http://www.thenational.ae/lifestyle/house-home/a-room-that-grows-with-baby"
+    },
+    {
+      "date": "2013-06-20T09:24:14Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1500dff7-4510-48f2-87da-c68a2426eea3>",
+      "language_score": 0.9509561061859131,
+      "url": "http://anabolicminds.com/forum/better-body-sports/127845-faq-bbs-c-post1999565.html"
+    },
+    {
+      "date": "2013-05-25T20:44:37Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:33c12bd4-c18e-4c9b-aa70-761c15a9c6cc>",
+      "language_score": 0.970413327217102,
+      "url": "http://adviceforsleepdisorders.com/is-this-an-eating-disorder-which-one-how-to-get-help/"
+    },
+    {
+      "date": "2013-05-25T20:45:52Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:735b50f2-5826-4a48-b2fa-bb067b68eab8>",
+      "language_score": 0.9540116786956787,
+      "url": "http://mocpages.com/moc.php/119187"
+    },
+    {
+      "date": "2013-05-18T09:19:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6b82fc8a-0a01-4fa5-b562-4f6699c4eeba>",
+      "language_score": 0.9698593616485596,
+      "url": "http://blog.oregonlive.com/peteramescarlin/2007/10/umthat_happened_and_more_notes.html"
+    },
+    {
+      "date": "2013-06-20T09:22:57Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ac1156bc-cf6e-49af-9b7e-327dff25d4a3>",
+      "language_score": 0.9540498852729797,
+      "url": "http://www.newsobserver.com/2013/02/14/2681131/dome-bill-would-restart-payday.html"
+    },
+    {
+      "date": "2013-06-20T09:31:13Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:26f816bb-d758-49cd-bdf0-daa3df43c77c>",
+      "language_score": 0.9597761034965515,
+      "url": "http://www.theargus.co.uk/news/10138737.New_technology_to_eliminate_waste_station_s_stink/"
+    },
+    {
+      "date": "2013-06-20T02:40:24Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368710115542/warc/CC-MAIN-20130516131515-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:dd208733-d8af-4ecd-8a8b-cb9c487171fa>",
+      "language_score": 0.9793063998222351,
+      "url": "http://www.peregrine-foundation.ca/tops/stcath.html"
+    },
+    {
+      "date": "2013-05-25T20:44:54Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:25685bc0-38cb-41c8-8f6d-21a5e8ec4d88>",
+      "language_score": 0.9738322496414185,
+      "url": "http://www.foodiewithfamily.com/tag/vegetarian/page/4/"
+    },
+    {
+      "date": "2013-06-20T09:23:37Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5d4349cd-9588-4ab0-9041-4ef733044a29>",
+      "language_score": 0.9928834438323975,
+      "url": "http://www.nifty.org/nifty/gay/athletics/college-swimmer-and-the-twins/college-swimmer-and-the-twins-2.html"
+    },
+    {
+      "date": "2013-06-20T09:25:37Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9f01aba9-e304-4ee4-a4ea-fd3c4af1992f>",
+      "language_score": 0.9523152709007263,
+      "url": "http://www.basenotes.net/t/238805/any-other-frags-like-tdh-and-the-dreamer"
+    },
+    {
+      "date": "2013-05-23T12:23:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:649815a7-3977-4d0a-af2a-adb3422bf628>",
+      "language_score": 0.9624006152153015,
+      "url": "http://givingpubs.unc.edu/documents/carolina_connections/archives/fall2009/index.html"
+    },
+    {
+      "date": "2013-05-18T09:48:04Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e9363aaf-da20-42c8-baf5-6849321bdaf7>",
+      "language_score": 0.975707471370697,
+      "url": "http://blogs.palmbeachpost.com/opinionzone/2011/12/29/are-%E2%80%98flippers%E2%80%99-or-feds-more-to-blame-in-housing-bust/"
+    },
+    {
+      "date": "2013-05-25T20:15:31Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4a879eb5-bc23-4b85-b3aa-905c046a32e2>",
+      "language_score": 0.9538832902908325,
+      "url": "http://www.sensationalsaver.com/2012/09/free-trial-offer-savingsangelcom.html"
+    },
+    {
+      "date": "2013-05-21T02:21:47Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:75913d21-b38c-44ce-bee2-ba80c1efd9e7>",
+      "language_score": 0.9645312428474426,
+      "url": "http://thesnapper.com/2012/10/17/soul-it-up-with-seales/"
+    },
+    {
+      "date": "2013-06-20T09:58:23Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:28271f61-63e3-48aa-b151-a034eb15a603>",
+      "language_score": 0.9536208510398865,
+      "url": "http://www.myxpitstop.com/festivals-in-malaysia-hari-raya-aidil-fitrieid-al-fitr/"
+    },
+    {
+      "date": "2013-05-23T12:09:22Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368703306113/warc/CC-MAIN-20130516112146-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:aca0a8bb-462f-4ac4-be98-81e435fd4ec4>",
+      "language_score": 0.9886597394943237,
+      "url": "http://www.fox21online.com/content/hermantown-police-arrest-daytime-burglar"
+    },
+    {
+      "date": "2013-06-20T09:45:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:a0ed21dd-510b-450c-878a-a36651107a9e>",
+      "language_score": 0.951266348361969,
+      "url": "http://www.unicef.org/india/reallives_3712.htm"
+    },
+    {
+      "date": "2013-06-20T09:42:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:78db58c4-4c16-42c6-bff5-ed7d82b8840c>",
+      "language_score": 0.9719322919845581,
+      "url": "http://www.clusterheadaches.com/wwwboard/messages/38121.html"
+    },
+    {
+      "date": "2013-06-20T09:23:20Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:aa03e7e6-9f96-48d5-b511-86fe2c9456ac>",
+      "language_score": 0.9700552821159363,
+      "url": "http://www.pamperrypr.com/why-pastors-should-publish-books/"
+    },
+    {
+      "date": "2013-05-18T09:28:20Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:bbd05ff5-a475-4d7e-a1fe-6a3571d009db>",
+      "language_score": 0.9612342715263367,
+      "url": "http://blogs.thespectrum.com/throughthegearbox/2012/09/08/let-the-chase-begin/"
+    },
+    {
+      "date": "2013-05-25T20:37:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f1388385-1703-4bdc-8fc9-a9b1e665386c>",
+      "language_score": 0.9703136682510376,
+      "url": "http://wvde.state.wv.us/news/628/"
+    },
+    {
+      "date": "2013-05-21T00:48:17Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b667c6bb-24be-4a03-8c93-3091e58cb7d5>",
+      "language_score": 0.9689612984657288,
+      "url": "http://www.ccm.edu/newsEvents/eventDetails.aspx?Channel=/Channels/Sitewide&WorkflowItemID=b4ebfdaf-0a87-4c7a-898b-0d04351cbe93"
+    },
+    {
+      "date": "2013-05-18T09:11:54Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:1e366a7f-58d8-40c8-8c0d-2f40e81d5058>",
+      "language_score": 0.957737147808075,
+      "url": "http://food-management.com/equipment-amp-technology/waste-disposal-choices"
+    },
+    {
+      "date": "2013-05-25T20:52:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3ca02370-2445-4643-94af-3bf65cd1b493>",
+      "language_score": 0.9658417701721191,
+      "url": "http://www.dreadcentral.com/reviews/damned-the-2006"
+    },
+    {
+      "date": "2013-05-18T09:28:13Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9daf61f0-282e-47a9-aa24-e6868e020523>",
+      "language_score": 0.9551741480827332,
+      "url": "http://blog.uml.edu/hawktalk/guthrie/2009/01/is_it_summer_yet.html"
+    },
+    {
+      "date": "2013-05-18T09:47:30Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:aa8291ff-2661-412f-ac56-ca8af7b1e36e>",
+      "language_score": 0.9605382680892944,
+      "url": "http://snappedshot.com/ghost/nzk"
+    },
+    {
+      "date": "2013-06-20T09:43:50Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:bdcf6dfd-ec9f-4b5d-b3b1-4d113e9d0af7>",
+      "language_score": 0.9615182280540466,
+      "url": "http://www.thebody.com/content/art1513.html"
+    },
+    {
+      "date": "2013-06-20T09:22:36Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b512d49a-92cc-47b4-999d-9cfe7f0955a0>",
+      "language_score": 0.9623757004737854,
+      "url": "http://yahoo.uservoice.com/forums/169857-uk-ireland-sport/suggestions/3569711-dakar-coverage-this-year-has-been-terrible-"
+    },
+    {
+      "date": "2013-05-18T09:59:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:5c06c17b-ba22-437c-8191-a6748a8bc4b3>",
+      "language_score": 0.956950306892395,
+      "url": "http://www.bingoport.co.uk/"
+    },
+    {
+      "date": "2013-05-18T09:59:13Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cd363450-9ed1-47e0-8fcf-7c05c70e7eb7>",
+      "language_score": 0.9923880100250244,
+      "url": "http://ari.scout.com/2/1037100.html"
+    },
+    {
+      "date": "2013-05-25T20:53:00Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:148c7fad-f63c-4b06-99ef-edc45439a0db>",
+      "language_score": 0.981687068939209,
+      "url": "http://www.guardian.co.uk/commentisfree/belief/2010/mar/03/dispatches-islamic-forum-europe"
+    },
+    {
+      "date": "2013-06-20T09:30:30Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:36873f95-a1ff-4f95-b90b-4710d3f75998>",
+      "language_score": 0.9822465181350708,
+      "url": "http://powertochange.com/blogposts/2012/06/18/producing-fruit-gods-job-or-mine/?flip=yes"
+    },
+    {
+      "date": "2013-06-20T09:59:18Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:657dde41-2f18-4193-8bbd-d224aae9deb8>",
+      "language_score": 0.9817426204681396,
+      "url": "http://zoeuna.deviantart.com/"
+    },
+    {
+      "date": "2013-05-25T20:37:44Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9d6f883f-f85a-49d3-ba55-266b974a7461>",
+      "language_score": 0.953748345375061,
+      "url": "http://www.thetorquereport.com/american_cars/buick/"
+    },
+    {
+      "date": "2013-05-25T20:45:20Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:c12425b4-74e1-4322-8e72-17f3416bf853>",
+      "language_score": 0.9901496171951294,
+      "url": "http://www.biblestudytools.com/msg/luke/2.html"
+    },
+    {
+      "date": "2013-05-18T10:00:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:de62a2e9-b3c5-47e4-8304-0cdf4b75d347>",
+      "language_score": 0.9861977100372314,
+      "url": "http://library.buffalo.edu/libraries/exhibits/panam/food/agreport.html"
+    },
+    {
+      "date": "2013-05-18T09:37:01Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b00d991a-6c87-4e53-bc88-a86e8957169c>",
+      "language_score": 0.9782283306121826,
+      "url": "http://lehighvalleyramblings.blogspot.com/2012/12/bill-white-on-reibmans-executive-race.html"
+    },
+    {
+      "date": "2013-06-20T09:37:04Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:6ba40c8b-db8a-44e5-9681-a0ae825ce810>",
+      "language_score": 0.9512670636177063,
+      "url": "http://www.kodiaksportsmanslodge.com/alaska-halibut-fishing.html"
+    },
+    {
+      "date": "2013-05-18T09:48:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3bb8fe84-9bf4-4c21-869c-87689babda41>",
+      "language_score": 0.9622762799263,
+      "url": "http://www.mlive.com/business/west-michigan/index.ssf/2013/01/buchanan_fitness_center_draws.html"
+    },
+    {
+      "date": "2013-05-18T09:47:35Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ccb2a766-3408-4022-9bad-175df7a74086>",
+      "language_score": 0.9566048979759216,
+      "url": "http://www.everythingwillbe.com/2011/12/"
+    },
+    {
+      "date": "2013-05-18T09:38:32Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:65b1237e-0937-48d8-a86c-926a78d8e40f>",
+      "language_score": 0.9536449909210205,
+      "url": "http://gamesmonitor.org.uk/taxonomy/term/100"
+    },
+    {
+      "date": "2013-05-21T02:21:40Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368699632815/warc/CC-MAIN-20130516102032-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:fc3a172b-68d1-4c0c-a5b6-82010e582452>",
+      "language_score": 0.9563795924186707,
+      "url": "http://mikefrandsen.org/tag/health-care/"
+    },
+    {
+      "date": "2013-05-25T20:37:34Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368706298270/warc/CC-MAIN-20130516121138-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:4222f03b-5b5d-44d8-8884-22b43db6e3fb>",
+      "language_score": 0.9771970510482788,
+      "url": "http://www.comicbookthings.com/"
+    },
+    {
+      "date": "2013-05-18T10:00:31Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ac803522-da43-46b5-9add-3b540ade5e83>",
+      "language_score": 0.9706651568412781,
+      "url": "http://wmich.edu/news/2012/03/254"
+    },
+    {
+      "date": "2013-06-20T09:42:33Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:b33c2da0-8b82-47c5-aa4c-8a3cb6ff0840>",
+      "language_score": 0.9759759306907654,
+      "url": "http://www.brutallyhonest.org/brutally_honest/2007/01/the_washington_.html"
+    },
+    {
+      "date": "2013-06-20T09:52:01Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:25fd3558-cf53-4e9e-8d96-4c4448ff31b7>",
+      "language_score": 0.9774081707000732,
+      "url": "http://www.openleft.com/diary/20374/one-nation-working-together-looking-forward"
+    },
+    {
+      "date": "2013-05-18T09:11:22Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7974b611-b061-46e2-b887-d4d6b9a82bad>",
+      "language_score": 0.9719581604003906,
+      "url": "http://www.explosion.com/3494/did-ff13-have-it-right-all-along/"
+    },
+    {
+      "date": "2013-05-18T09:25:03Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:591aaa4a-4239-406c-af8d-fa3b022fbe5b>",
+      "language_score": 0.9927520155906677,
+      "url": "http://www.insiderpages.com/b/3722940304/collision-experts-llc-winchester"
+    },
+    {
+      "date": "2013-05-18T09:38:21Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:7b119ed7-5b98-48ee-b4a0-187698d22fef>",
+      "language_score": 0.9689111113548279,
+      "url": "http://www.tshaonline.org/handbook/online/articles/qbc42"
+    },
+    {
+      "date": "2013-06-20T09:29:22Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:9c1ec27b-8178-4fa1-af83-17bc412ba199>",
+      "language_score": 0.9759749174118042,
+      "url": "http://homesandcondosblog.com/home/daniels-high-park-development-headed-to-the-omb-6705.html"
+    },
+    {
+      "date": "2013-05-18T09:09:41Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:aff3dd76-1bbe-4354-aa0c-348c08bb6921>",
+      "language_score": 0.9771949648857117,
+      "url": "http://worldwidewords.org/qa/qa-hap3.htm"
+    },
+    {
+      "date": "2013-05-18T09:59:04Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:042bfe32-e8a2-427d-bbc5-bade7ca5c873>",
+      "language_score": 0.9857856631278992,
+      "url": "http://community.babycenter.com/post/a7751345/postpartum_joint_pain?cpg=3&csi=2150898614&pd=-1"
+    },
+    {
+      "date": "2013-05-18T09:21:17Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:cd17fac3-552a-44ff-bd3f-5de19790d78e>",
+      "language_score": 0.9515412449836731,
+      "url": "http://www.dvice.com/archives/2009/11/fujitsu-and-doc.php"
+    },
+    {
+      "date": "2013-05-18T09:30:38Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:75470cd0-9574-4b7d-a4e2-632d3e123e30>",
+      "language_score": 0.9781372547149658,
+      "url": "http://www.popsci.com/entertainment-gaming/article/2008-07/making-olympian?page=4"
+    },
+    {
+      "date": "2013-06-20T09:22:51Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:ea294d41-81f3-49db-b2c0-5647f5fded64>",
+      "language_score": 0.9759864807128906,
+      "url": "http://www.poormojo.org/pmjadaily/archives/cat_kulture.php?page=108"
+    },
+    {
+      "date": "2013-06-20T09:53:08Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3bb69e3c-fb59-4eef-a967-f8d3f7a15c6a>",
+      "language_score": 0.9654785394668579,
+      "url": "http://blogs.reuters.com/small-business/2012/12/03/loans-optimism-scarce-for-most-small-businesses/"
+    },
+    {
+      "date": "2013-05-18T09:30:53Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:af2a8c8c-79f1-4346-8a75-f386bf0f7ec6>",
+      "language_score": 0.9693862199783325,
+      "url": "http://www.oregonlive.com/portland/index.ssf/2012/09/understanding_the_middle_east.html"
+    },
+    {
+      "date": "2013-05-18T09:47:29Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:3b1df425-be50-4ea2-a321-242dd784bda8>",
+      "language_score": 0.9605792164802551,
+      "url": "http://noisyroom.net/blog/2012/11/29/that-infernal-un-petition/"
+    },
+    {
+      "date": "2013-06-20T09:52:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:f0a9fea3-c914-4f35-b259-2e16e2786744>",
+      "language_score": 0.9915857315063477,
+      "url": "http://www.today.com/id/31232718/"
+    },
+    {
+      "date": "2013-05-18T09:39:19Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:e3cfeff9-107f-4151-aa54-78fe9f43abef>",
+      "language_score": 0.9565895199775696,
+      "url": "http://www.fictionpress.com/r/2806770/"
+    },
+    {
+      "date": "2013-05-18T09:59:57Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368696382185/warc/CC-MAIN-20130516092622-00037-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:546616fd-b7fc-4577-b027-84f067c983c7>",
+      "language_score": 0.9894191026687622,
+      "url": "http://www.primroseschools.com/schools/woodbury"
+    },
+    {
+      "date": "2013-06-20T09:36:32Z",
+      "dump": "CC-MAIN-2013-20",
+      "file_path": "s3://commoncrawl/crawl-data/CC-MAIN-2013-20/segments/1368711240143/warc/CC-MAIN-20130516133400-00087-ip-10-60-113-184.ec2.internal.warc.gz",
+      "id": "<urn:uuid:d0411035-4376-48fd-a42c-fb6513bcbac9>",
+      "language_score": 0.9631234407424927,
+      "url": "http://geekologie.com/2009/04/how-to-quit-your-gaming-develo.php"
+    }
+  ],
+  "path": "fineweb-validation.int32",
+  "raw_byte_count": 1739254,
+  "schema_version": "data-d-shard-v1",
+  "sha256": "c5f6a5fd354faf8099065bc78d664c4ce98f6df471d3638ecfc5e823c3ac5899",
+  "source": "fineweb",
+  "split": "validation",
+  "stable_document_ids": [
+    "fineweb:<urn:uuid:a2ed7c3c-e00a-4562-aabb-f55c6092f721>",
+    "fineweb:<urn:uuid:aa171e96-6ac7-4cbc-9c34-e80dde5ad0e5>",
+    "fineweb:<urn:uuid:28aa046d-ff6b-401d-8cd2-746179481cc7>",
+    "fineweb:<urn:uuid:23c0ee26-1a6b-4890-aeb1-86f00d5ebe9b>",
+    "fineweb:<urn:uuid:1888a325-4260-4b28-8319-cc9af23632d1>",
+    "fineweb:<urn:uuid:daeee1e3-2442-4634-b0b3-a7910bbae89e>",
+    "fineweb:<urn:uuid:fa20c45f-e4f8-4a6b-8e9c-794d1bfd81bf>",
+    "fineweb:<urn:uuid:523ee44e-8686-477f-9b8d-5622d5053bfe>",
+    "fineweb:<urn:uuid:af98a530-eb14-43d0-ad03-a4066ce0828d>",
+    "fineweb:<urn:uuid:25d51c57-2ed9-4828-adf7-1fd5a2f8f696>",
+    "fineweb:<urn:uuid:faba507e-b9a4-43ed-9fef-9f8a47fca74c>",
+    "fineweb:<urn:uuid:d852b2f6-5358-4073-b993-efd8994dd585>",
+    "fineweb:<urn:uuid:50c93067-6df2-4ab0-b7dd-8e536cd47523>",
+    "fineweb:<urn:uuid:99f38f5b-f62a-413c-900b-91dac9b680f3>",
+    "fineweb:<urn:uuid:7f8501a0-afba-4963-8356-c3328ce9e340>",
+    "fineweb:<urn:uuid:af7afece-8449-4f2f-a4ed-3d289f0672c7>",
+    "fineweb:<urn:uuid:cbb6bc04-d378-4d51-a47c-616bf026e89b>",
+    "fineweb:<urn:uuid:3051870a-0208-4713-8be9-a4ba914f8b04>",
+    "fineweb:<urn:uuid:dbd69af8-7aef-4ecc-b047-816fc823a74b>",
+    "fineweb:<urn:uuid:157be7f3-d6c7-42d0-a49b-b31fb31543ae>",
+    "fineweb:<urn:uuid:63e31929-f089-4809-bfeb-49de672a6c96>",
+    "fineweb:<urn:uuid:844419c0-485c-4ca9-b5f3-22310228281a>",
+    "fineweb:<urn:uuid:cebcd6a3-da4b-4b01-8068-7dfbc919e7ed>",
+    "fineweb:<urn:uuid:a0bc9d30-8eda-47c9-949d-b3522c8e7c5f>",
+    "fineweb:<urn:uuid:43099656-605f-4b82-a8cf-74f7fbae346e>",
+    "fineweb:<urn:uuid:b317969b-2239-4e03-81af-44921664837f>",
+    "fineweb:<urn:uuid:42c3fccd-b035-40ff-ad03-d9efca64f3e7>",
+    "fineweb:<urn:uuid:08576d69-5092-4189-99e8-fc38cc31414a>",
+    "fineweb:<urn:uuid:ec961323-312e-4343-8728-7eb456cc354e>",
+    "fineweb:<urn:uuid:803cb3cd-5b3f-432a-90f7-02a34fcbc399>",
+    "fineweb:<urn:uuid:c487eaaa-c4db-4e26-bd8a-932d1e37338a>",
+    "fineweb:<urn:uuid:8b6a7e9b-2095-4ea6-acd0-705dbffbe77a>",
+    "fineweb:<urn:uuid:09ca008e-f16c-46da-a652-c07470810809>",
+    "fineweb:<urn:uuid:a8e5d36b-dd87-4652-ad12-79cd2c653cce>",
+    "fineweb:<urn:uuid:f7b297a5-7c4f-4267-b5ae-532b3b06d877>",
+    "fineweb:<urn:uuid:75bfc396-5279-487a-8846-844af3a9d2ee>",
+    "fineweb:<urn:uuid:7422bd81-6d1f-423e-b510-1db53933ce14>",
+    "fineweb:<urn:uuid:8e0b286f-1d53-4171-9840-c7621a01c393>",
+    "fineweb:<urn:uuid:a8d8b39d-74a7-49a5-8201-22aba615ebbd>",
+    "fineweb:<urn:uuid:4105e3fe-aae5-4b32-88c4-560d75829c2e>",
+    "fineweb:<urn:uuid:229f8caa-c851-43a3-a6a6-270f10653fa3>",
+    "fineweb:<urn:uuid:0ca48619-5eb1-4d9c-83b7-19df445c023a>",
+    "fineweb:<urn:uuid:0dc1cf1b-6473-4bdc-b28d-3ac5671780f4>",
+    "fineweb:<urn:uuid:b028d00c-c5dc-4801-850d-9db08b9c234c>",
+    "fineweb:<urn:uuid:569eb313-5095-4596-ad51-d00e58f2bbf9>",
+    "fineweb:<urn:uuid:fd9a09fb-a469-4030-8ef7-ccb535000ff3>",
+    "fineweb:<urn:uuid:e06c03ac-7b31-4aae-9529-d38a744b6119>",
+    "fineweb:<urn:uuid:1e2a9308-2218-427c-b60f-e96d0dd624de>",
+    "fineweb:<urn:uuid:7844c48b-dac1-4306-a462-4371f839c138>",
+    "fineweb:<urn:uuid:48934fa3-2e81-4659-a8bb-4cf5e266fdc4>",
+    "fineweb:<urn:uuid:198d4774-6abf-453b-b7e1-f778838b2635>",
+    "fineweb:<urn:uuid:df8fc5b4-4adf-4e44-aab8-0fd4ce7bc4ed>",
+    "fineweb:<urn:uuid:af38728c-80b3-4be4-a1ce-7e358bec05b1>",
+    "fineweb:<urn:uuid:0c2ea4af-3e3f-413a-a467-4bb373659544>",
+    "fineweb:<urn:uuid:58283546-1261-4a58-8804-ebf35b117899>",
+    "fineweb:<urn:uuid:ec01294a-c2c0-4c02-acc7-4c5ee72d583a>",
+    "fineweb:<urn:uuid:4e3f8fa6-f533-4273-bb6b-bd9a61c1024f>",
+    "fineweb:<urn:uuid:28b615bd-4e10-427e-bf22-5f161a0b2015>",
+    "fineweb:<urn:uuid:1aca992c-1f5c-49e7-819f-227eadf27783>",
+    "fineweb:<urn:uuid:6e7cd64e-aae0-4e94-96e6-34c5b3fb6229>",
+    "fineweb:<urn:uuid:6e4ba7a5-533c-40c9-ba11-718f58c4c68b>",
+    "fineweb:<urn:uuid:ff158579-a89b-483c-8c43-a8fb56c53ccf>",
+    "fineweb:<urn:uuid:4a4ebf23-3da8-41b0-a871-b64957293711>",
+    "fineweb:<urn:uuid:9e3ff1f9-a62d-4beb-9925-597a5f50ecc6>",
+    "fineweb:<urn:uuid:272258fc-470d-483b-bff2-50c118cc44f8>",
+    "fineweb:<urn:uuid:a1f6c7cf-c433-45d5-91d3-ce3c363189fd>",
+    "fineweb:<urn:uuid:7f94911b-0af1-4b3a-b1e3-f6610a345bb5>",
+    "fineweb:<urn:uuid:a9dbf7dc-bfda-4396-b0b0-d6f13a5be819>",
+    "fineweb:<urn:uuid:91b84bde-5be8-4561-a680-4523e6b3161d>",
+    "fineweb:<urn:uuid:1cb42150-bb68-47d2-83e5-0d00e7109725>",
+    "fineweb:<urn:uuid:1efd339e-501a-4d7a-a975-b24b697140f5>",
+    "fineweb:<urn:uuid:93c0a868-226f-4efb-a2e0-56ad9c5be0d3>",
+    "fineweb:<urn:uuid:78ef4b3c-272b-408c-8d29-fa1d4a032ff7>",
+    "fineweb:<urn:uuid:52b3517d-cec9-4afd-a2ea-65c2e15358a3>",
+    "fineweb:<urn:uuid:950465a6-e120-49fb-bdd3-58f41a2b8a09>",
+    "fineweb:<urn:uuid:fe11c3f9-aa11-4bb3-9bc7-f1ff6392214d>",
+    "fineweb:<urn:uuid:741c5a0c-79c4-42b2-ab57-e51b79017b80>",
+    "fineweb:<urn:uuid:49efe111-7382-4d8d-95f6-f56f08f0ae98>",
+    "fineweb:<urn:uuid:7ab55072-aa26-449b-84f6-2dd36512085f>",
+    "fineweb:<urn:uuid:d0308adc-1fcd-4d05-b7d9-12b39308ffe3>",
+    "fineweb:<urn:uuid:1d69485c-1734-4557-90a7-b107bfd3bf64>",
+    "fineweb:<urn:uuid:b58f19ec-01f9-4119-afba-7c04515e8a95>",
+    "fineweb:<urn:uuid:283c7fec-f025-445c-b7dd-f5e2ce6349a8>",
+    "fineweb:<urn:uuid:837cbae1-ba0b-4100-8554-217c3aabc2d2>",
+    "fineweb:<urn:uuid:0c900059-c53c-4564-befb-2e8839cc2390>",
+    "fineweb:<urn:uuid:f8191abb-7cdb-453e-be07-f150a875f4bd>",
+    "fineweb:<urn:uuid:e82ada0c-8866-4b02-bcd1-09a80d979ae9>",
+    "fineweb:<urn:uuid:168cb312-33c5-444d-a6ec-0a40cc5afa86>",
+    "fineweb:<urn:uuid:b71a0d2b-e2f7-433d-bbd1-c490355a84ce>",
+    "fineweb:<urn:uuid:0973b49c-15f9-44cf-92c0-2ab7259727d8>",
+    "fineweb:<urn:uuid:ab25a7cc-0b4c-4169-b5de-ddf3e1626385>",
+    "fineweb:<urn:uuid:aa92695d-8161-423d-9d2d-bc954f3b1593>",
+    "fineweb:<urn:uuid:e4894f63-bb85-4dd5-b5e9-e16555977084>",
+    "fineweb:<urn:uuid:036c0d90-8c56-4246-9e3b-1df26ecd11f3>",
+    "fineweb:<urn:uuid:db621c55-2a80-420f-b71c-002c10ef8e5f>",
+    "fineweb:<urn:uuid:f7cceebc-1a61-4a03-ad88-7391f8feb54c>",
+    "fineweb:<urn:uuid:71146826-3281-429a-8b33-968618250106>",
+    "fineweb:<urn:uuid:8460116a-2783-4a02-9b42-c5f49ed395d4>",
+    "fineweb:<urn:uuid:747990fc-5dd0-47cb-80e2-d1bb6cc76294>",
+    "fineweb:<urn:uuid:a41deca0-7809-48f0-8d08-67de034bbcc3>",
+    "fineweb:<urn:uuid:34656ed8-9216-4230-bc44-22d9d0524064>",
+    "fineweb:<urn:uuid:466c7cfc-d00a-46af-9238-7e51879607c5>",
+    "fineweb:<urn:uuid:e01e63bf-bf11-49d5-812e-ae3a40227c0c>",
+    "fineweb:<urn:uuid:b48cf2ae-e769-491a-9818-158d6a659b09>",
+    "fineweb:<urn:uuid:dbad9e6f-0efc-4fbd-9e40-78bcfd189905>",
+    "fineweb:<urn:uuid:8d2c96a1-867a-4dd2-8a96-ffa954eea48c>",
+    "fineweb:<urn:uuid:454c152f-10b8-4f01-b485-3e5f877f7b7c>",
+    "fineweb:<urn:uuid:52845db4-5ade-41a3-998b-6c0565c063a5>",
+    "fineweb:<urn:uuid:c5b3750f-1082-4641-b92b-dbdb830bda74>",
+    "fineweb:<urn:uuid:31164449-9620-426a-b3cc-3a4cf7f6d17b>",
+    "fineweb:<urn:uuid:692bc0e1-9e91-4e9f-a560-dd1fe9296da4>",
+    "fineweb:<urn:uuid:5e1f79b1-6c54-4a55-bc9e-5d6f0a919682>",
+    "fineweb:<urn:uuid:c62d46b6-1748-4226-8e92-3efaae826938>",
+    "fineweb:<urn:uuid:385f9df8-5627-48a3-b01a-b200253e9213>",
+    "fineweb:<urn:uuid:f9e18efc-2d08-453a-9856-1854fdc7a0ca>",
+    "fineweb:<urn:uuid:d1e83b10-7b19-4db1-afbd-6b383d6eccb5>",
+    "fineweb:<urn:uuid:bd1aba83-32e2-4975-8692-2f137388c279>",
+    "fineweb:<urn:uuid:9c09060a-bc5a-4d86-84c1-c8091a7adee2>",
+    "fineweb:<urn:uuid:df9fe58d-aa07-4f2e-b89a-df2f68f4120f>",
+    "fineweb:<urn:uuid:6fa84dfc-983d-4e06-a21f-a07290f17dc0>",
+    "fineweb:<urn:uuid:cb9c8ea5-2fc0-4b99-92b6-6f9c2c0a4814>",
+    "fineweb:<urn:uuid:3d0db8a3-452d-416b-8f96-594362092b27>",
+    "fineweb:<urn:uuid:f6d75db5-f76b-45a8-950e-4bf99d2e8f81>",
+    "fineweb:<urn:uuid:f3ee8892-8631-42df-ba79-4dd487872b29>",
+    "fineweb:<urn:uuid:51dd4498-fd46-49e6-9bee-de45dfcfd34d>",
+    "fineweb:<urn:uuid:409ee803-f3f4-44ec-a9cd-cb4ae7d575a2>",
+    "fineweb:<urn:uuid:8ba1c84d-e264-49c3-a16d-b30445cdf9e5>",
+    "fineweb:<urn:uuid:df4695c6-88f4-4b4b-b234-b2855d781568>",
+    "fineweb:<urn:uuid:d6405d71-0c5a-4955-bfe3-e062052b5c08>",
+    "fineweb:<urn:uuid:8c551323-df4d-4f99-8ab7-8b994510d6f5>",
+    "fineweb:<urn:uuid:836a4dda-890f-47a1-974f-5157c3fead5b>",
+    "fineweb:<urn:uuid:e9399ea7-19ef-4e75-96a7-a5f0d7a2c3a2>",
+    "fineweb:<urn:uuid:f7301304-6518-47dc-b92f-c3b93ddc0ebf>",
+    "fineweb:<urn:uuid:33a2819d-c5e0-4ea5-9930-235864b631db>",
+    "fineweb:<urn:uuid:6a838833-2e4a-448d-b71d-1e2384b8751f>",
+    "fineweb:<urn:uuid:f19b2817-41c8-4009-b2ac-7ded3999f0b0>",
+    "fineweb:<urn:uuid:dd4edb77-ade7-46da-be08-a3cc47b256c6>",
+    "fineweb:<urn:uuid:8f4dd6b6-a0de-4623-99b6-cf2f1f719852>",
+    "fineweb:<urn:uuid:4e4f3ccc-ecdc-4d67-9a7e-0d5fee576bdc>",
+    "fineweb:<urn:uuid:fd4b6f82-2ef8-4b6d-8cb8-a96ef5a2f2c1>",
+    "fineweb:<urn:uuid:ddacc6c2-cea8-43b5-854c-6d7120a137d3>",
+    "fineweb:<urn:uuid:b9aae8c8-740f-410c-a52f-28914892931e>",
+    "fineweb:<urn:uuid:259e21c7-82c0-4499-80c7-5857a6cc41b1>",
+    "fineweb:<urn:uuid:16d0097b-a3a7-4b12-a74e-bef169cbdebc>",
+    "fineweb:<urn:uuid:4bc884aa-f487-40a4-923c-be14fd5b844d>",
+    "fineweb:<urn:uuid:bb241198-a4cd-4d44-8a76-d7bfeb605df9>",
+    "fineweb:<urn:uuid:4f296f8a-1fa3-4b2e-89c8-c611133dc97e>",
+    "fineweb:<urn:uuid:91f5df28-68ee-44ac-b4c1-1c8817167667>",
+    "fineweb:<urn:uuid:7d9deb3d-e651-4eb9-8d6b-2fd63d940579>",
+    "fineweb:<urn:uuid:796be7d1-dc91-4c15-9aa0-391b0a24fb83>",
+    "fineweb:<urn:uuid:46ff6f7f-e60a-4344-a111-a3ed3155c073>",
+    "fineweb:<urn:uuid:d18d356c-88db-4425-9960-488301a2a877>",
+    "fineweb:<urn:uuid:4c96bbab-61b9-4cf4-a75a-2f23518086c7>",
+    "fineweb:<urn:uuid:b4601c55-b84c-430f-9a12-aeaf07eeef08>",
+    "fineweb:<urn:uuid:83e114af-68de-474a-95f7-40facb5c762b>",
+    "fineweb:<urn:uuid:353069b2-de69-4459-b9e1-d33e627b2891>",
+    "fineweb:<urn:uuid:8bfa1e91-369c-4286-b121-5fd7e6d283bf>",
+    "fineweb:<urn:uuid:a1de9eaa-5a0e-40e5-abd7-697dec27c34b>",
+    "fineweb:<urn:uuid:8792025d-9cda-442b-8ecf-cdbceec57329>",
+    "fineweb:<urn:uuid:a1829fdb-30c5-4f59-b44f-a5239f6dcb5a>",
+    "fineweb:<urn:uuid:ce058924-6930-4be4-95ef-9567ca6dcea7>",
+    "fineweb:<urn:uuid:89e05a29-4667-424f-9d84-e8ec8ba0f738>",
+    "fineweb:<urn:uuid:4fe2fa14-7572-48ca-9936-4598470fee17>",
+    "fineweb:<urn:uuid:99ab895b-e04f-4d30-a1b6-916f47a878ae>",
+    "fineweb:<urn:uuid:a4fdfe9c-cde4-4ed1-b7e2-f51df17b619b>",
+    "fineweb:<urn:uuid:f89d4ad3-e63a-4363-88cf-faea2f1961b1>",
+    "fineweb:<urn:uuid:be706c13-b5dc-4979-b95b-4a1daf96e14e>",
+    "fineweb:<urn:uuid:57e0d7c2-91c6-44f8-b745-38ec750bcd96>",
+    "fineweb:<urn:uuid:f6658746-b754-4dd1-816d-68bd1ddb307e>",
+    "fineweb:<urn:uuid:4c82205e-4abe-441c-b162-78804dce77d6>",
+    "fineweb:<urn:uuid:7bf0410b-0d48-4b89-8d3d-082075531333>",
+    "fineweb:<urn:uuid:67bbdb39-c72a-49a2-a6c3-ad086504ce83>",
+    "fineweb:<urn:uuid:baef7fb4-1254-4bd5-a315-3c2b2ad146b2>",
+    "fineweb:<urn:uuid:3d408111-00ed-4867-8de3-edb842f9ff80>",
+    "fineweb:<urn:uuid:6eaf0478-f0f7-4cc5-bbb0-cfc85b671d96>",
+    "fineweb:<urn:uuid:4b9157d3-3633-4cb6-a9ef-c33a0fe56355>",
+    "fineweb:<urn:uuid:39e0d059-54c5-497a-a58a-ccdbfdf5e800>",
+    "fineweb:<urn:uuid:7b56d60b-f398-4018-a552-f5e24c40190c>",
+    "fineweb:<urn:uuid:cf9bfced-6559-4768-8750-4ab73c5f94e9>",
+    "fineweb:<urn:uuid:8faad1bc-f888-4b5e-b67d-790c0bca5de2>",
+    "fineweb:<urn:uuid:67d17b63-6d89-4ac9-a79f-298e57aeff6c>",
+    "fineweb:<urn:uuid:9181c837-0575-4a95-a06a-7b0b2f5f6157>",
+    "fineweb:<urn:uuid:13410997-0f70-4bd7-9a58-673d72a2e832>",
+    "fineweb:<urn:uuid:52e726fe-6e92-4e36-ac35-14d44d4a1ae7>",
+    "fineweb:<urn:uuid:7aab3458-e2bf-4943-a652-11be0662dc92>",
+    "fineweb:<urn:uuid:f703119e-deb8-453d-9d8f-71f0bbaa9897>",
+    "fineweb:<urn:uuid:8a112ae6-27ca-4d18-b65d-1832f63fd751>",
+    "fineweb:<urn:uuid:d00cf83d-d33d-4be8-88e8-a2648842a8b8>",
+    "fineweb:<urn:uuid:169405b1-a339-460a-a690-8f7530c15648>",
+    "fineweb:<urn:uuid:2ae762ea-9816-46c9-906e-3aa0de77a407>",
+    "fineweb:<urn:uuid:75e0a849-860c-459a-ad4e-9f3ed4325a50>",
+    "fineweb:<urn:uuid:7d6f5be6-ad9d-4fe7-9f25-e32d47eb4904>",
+    "fineweb:<urn:uuid:0936b6bc-df67-4f03-896d-1d9f4f4ad425>",
+    "fineweb:<urn:uuid:ade37467-b158-4daf-b879-fa6b45159df7>",
+    "fineweb:<urn:uuid:e97b6b9d-80f0-4bfc-b548-c264f1eb6ab8>",
+    "fineweb:<urn:uuid:f706b10a-96be-411f-aceb-ed1ad2634a4c>",
+    "fineweb:<urn:uuid:4f86fb90-a020-43d8-b5f9-8feb9933028b>",
+    "fineweb:<urn:uuid:8ccccb76-6e27-4c8d-acfa-68a955134d2b>",
+    "fineweb:<urn:uuid:fa61bf39-6531-4890-8a7f-9751bcd028ac>",
+    "fineweb:<urn:uuid:d90b8846-f13c-4833-8a71-19d7bcf3cef1>",
+    "fineweb:<urn:uuid:e4af0843-a86f-422e-be03-04ac39e1e183>",
+    "fineweb:<urn:uuid:5a48c1b3-29b7-4488-8116-2b478b4a66eb>",
+    "fineweb:<urn:uuid:87b670e0-077a-4b98-899d-a4c9a4660509>",
+    "fineweb:<urn:uuid:4479e227-69e3-403a-abf4-ca8569bfeb3a>",
+    "fineweb:<urn:uuid:6ed409a3-893d-452f-b7a5-eab0c96ea178>",
+    "fineweb:<urn:uuid:87f77b46-3f05-4b87-b660-0a2826d8f621>",
+    "fineweb:<urn:uuid:0d469c02-6691-441f-96f2-66b5b0e3479a>",
+    "fineweb:<urn:uuid:cc878d0d-1270-4f03-96d5-e3baff12e521>",
+    "fineweb:<urn:uuid:63f3d14b-3eb8-41d7-9a1e-9adbd695018b>",
+    "fineweb:<urn:uuid:5d5a551f-6fd4-4d19-a71f-a0f1ee75a327>",
+    "fineweb:<urn:uuid:30cb5148-be23-4f76-8e67-d596deb710c7>",
+    "fineweb:<urn:uuid:3e7ecb5a-08ca-4399-8d0b-2331ec6aea59>",
+    "fineweb:<urn:uuid:19b72688-fcd3-4d1f-b401-445f385c104b>",
+    "fineweb:<urn:uuid:da5f725b-70ea-4578-980e-1528ce41f33f>",
+    "fineweb:<urn:uuid:26ad0986-53ab-418d-a33e-60a67c680c89>",
+    "fineweb:<urn:uuid:0f3334b9-a28a-483f-8876-5112c5fc1aca>",
+    "fineweb:<urn:uuid:d3b90acb-75f5-4264-b479-7649382a477b>",
+    "fineweb:<urn:uuid:bd8e94a9-783b-4611-986e-167290fc5d67>",
+    "fineweb:<urn:uuid:9dc514c5-4844-4dba-b2e2-d85dd88fd9d0>",
+    "fineweb:<urn:uuid:0cb0fd06-9cd3-436f-aca5-49e547d9173a>",
+    "fineweb:<urn:uuid:444233a0-04c5-49a1-a60a-4b32be7f4293>",
+    "fineweb:<urn:uuid:df145331-00b6-4c58-881c-710377e87232>",
+    "fineweb:<urn:uuid:056aad73-ca22-41bf-8884-2c82f43009ab>",
+    "fineweb:<urn:uuid:967e982a-ddc2-4e0b-bbbd-319ba099508e>",
+    "fineweb:<urn:uuid:31b5dafd-d0e1-425b-8a5c-7cb9ab622728>",
+    "fineweb:<urn:uuid:6714da8e-0b67-4201-a08c-6f69500e2bbc>",
+    "fineweb:<urn:uuid:d1b69f58-3157-4c6c-bd0a-717ef6c332c6>",
+    "fineweb:<urn:uuid:07edb52f-b5c7-4747-a44d-f3a580cd6dc9>",
+    "fineweb:<urn:uuid:d2372a5b-6e32-4b06-b7d8-f95320b47736>",
+    "fineweb:<urn:uuid:985195ff-804a-416b-aefd-fbab5bca4238>",
+    "fineweb:<urn:uuid:011eb532-2491-4b0c-a439-ef28cc45cb85>",
+    "fineweb:<urn:uuid:8b36ddc0-4600-4302-b943-d64b0b55de20>",
+    "fineweb:<urn:uuid:6802ad0c-a99f-42d2-8744-fb99db83baf9>",
+    "fineweb:<urn:uuid:7bb05f4e-24a4-4164-b444-f5a14d702911>",
+    "fineweb:<urn:uuid:1f66dee2-4960-4f8b-854b-2c20fbb019eb>",
+    "fineweb:<urn:uuid:ab138ecf-7bab-4ef8-b107-cc554c3b5299>",
+    "fineweb:<urn:uuid:57303b2b-014e-4ba8-beb8-925ceaa1c523>",
+    "fineweb:<urn:uuid:760bfbac-e683-41c8-a0a6-1c46b9d61b21>",
+    "fineweb:<urn:uuid:461decb1-b543-4e87-a5b7-7c4eaef774b6>",
+    "fineweb:<urn:uuid:f30f6691-afff-49ac-89ab-cb2ab88e94ab>",
+    "fineweb:<urn:uuid:dadcaae8-1180-4269-8b2b-81e4a1647b45>",
+    "fineweb:<urn:uuid:4e96baf2-ff05-4a18-9726-83673ce90424>",
+    "fineweb:<urn:uuid:387c0157-70cf-4dfd-a328-f7784c9755c7>",
+    "fineweb:<urn:uuid:665dcd33-bd6e-48fa-bccf-6d33dbf739fb>",
+    "fineweb:<urn:uuid:a25f922c-dd3b-4e66-80c3-9ef351b07598>",
+    "fineweb:<urn:uuid:5c53f503-f22b-4916-b4a9-b78d0e1788c7>",
+    "fineweb:<urn:uuid:b9e90764-6091-4b10-81ff-cabf571f15a9>",
+    "fineweb:<urn:uuid:778a8cdb-d7ae-47df-bdd0-188d66c6f039>",
+    "fineweb:<urn:uuid:71ee58c2-2229-456e-916c-3827a5d295a0>",
+    "fineweb:<urn:uuid:72ee0b5e-ccb0-42ff-95ea-457ffeb4d3c3>",
+    "fineweb:<urn:uuid:382812d8-4fa1-4ce5-b17f-9c8edbcee822>",
+    "fineweb:<urn:uuid:760560d2-6edb-4b84-9566-4cfaf4642da1>",
+    "fineweb:<urn:uuid:44a58e75-b825-4cb1-919e-826fb531349f>",
+    "fineweb:<urn:uuid:1b0ea674-db43-421c-8e0f-df64cde4f864>",
+    "fineweb:<urn:uuid:8c309578-4502-43a8-a464-4e6161b00dca>",
+    "fineweb:<urn:uuid:cd79006f-2c86-4192-b63a-350d584bda8d>",
+    "fineweb:<urn:uuid:e805f946-3f8e-4203-8188-f1b106e8bb1a>",
+    "fineweb:<urn:uuid:825c8758-f999-4fbb-8654-b2ad8f2955c2>",
+    "fineweb:<urn:uuid:041a559d-3b2d-4957-ab8c-f9b38a691590>",
+    "fineweb:<urn:uuid:31baa354-1953-42fd-9bb2-8a7fa7d56fc5>",
+    "fineweb:<urn:uuid:3436154c-8d11-4c1d-b8cc-b283e00b0a8a>",
+    "fineweb:<urn:uuid:8ba95794-12c5-4e46-b652-222c102ff63c>",
+    "fineweb:<urn:uuid:64994ec4-15f7-440f-a56e-019262ce186a>",
+    "fineweb:<urn:uuid:6af46d5b-bb0c-46c4-a57e-ae29de768aea>",
+    "fineweb:<urn:uuid:5de410bd-e5c8-4626-a400-0c311c4699a4>",
+    "fineweb:<urn:uuid:79de5015-c6f6-4a8f-852d-5458faeb40f3>",
+    "fineweb:<urn:uuid:b3031bf0-53e8-45e4-8404-c541f6cbd916>",
+    "fineweb:<urn:uuid:234838d5-3eea-487e-8c19-c78b3e1a1d2d>",
+    "fineweb:<urn:uuid:e437ec43-e6be-460b-a6ae-15ba0ed30890>",
+    "fineweb:<urn:uuid:9726b8aa-53fa-430b-9953-c8f52fc2eb4c>",
+    "fineweb:<urn:uuid:610e53e8-6327-4b54-8324-0a1a540878fa>",
+    "fineweb:<urn:uuid:b7b0cc9f-f073-4349-9176-af76255dbc34>",
+    "fineweb:<urn:uuid:26a2df66-ca49-4567-976e-273dfd391ac3>",
+    "fineweb:<urn:uuid:0c550306-aa97-4abd-b216-cf637f52a493>",
+    "fineweb:<urn:uuid:07acb75f-6f3c-4a3b-8eff-8acfbb9a1114>",
+    "fineweb:<urn:uuid:c6452d4b-4fed-453d-ac4b-a3d94a0674fc>",
+    "fineweb:<urn:uuid:bdff7a55-f638-4d0f-bfb7-0371dab5e07e>",
+    "fineweb:<urn:uuid:b13c9626-2ac5-431f-96a4-3a4a845851e4>",
+    "fineweb:<urn:uuid:f93842c6-e468-410b-bd96-2c9c4abd3b18>",
+    "fineweb:<urn:uuid:5983cf4c-6c6a-4a00-9de5-2f2b0228d0f1>",
+    "fineweb:<urn:uuid:dd04863e-9f07-48ad-a659-d1d0fda0f6d9>",
+    "fineweb:<urn:uuid:81f91017-909e-4780-b324-9ec8cb467d00>",
+    "fineweb:<urn:uuid:cb15943b-ca39-423f-9a45-e7e17b1bfb8a>",
+    "fineweb:<urn:uuid:49cf5d06-1d17-4620-820b-8c5fd044e6ca>",
+    "fineweb:<urn:uuid:2a25cead-719d-4796-91b5-23228632cff6>",
+    "fineweb:<urn:uuid:b184c00f-8e30-4d6f-8711-b4d8b379dbad>",
+    "fineweb:<urn:uuid:22cc9329-5221-48d0-b722-d118d7e78bb3>",
+    "fineweb:<urn:uuid:2638a138-18c0-4671-be27-4e0660d5f305>",
+    "fineweb:<urn:uuid:2bb443ce-df5b-4000-ad81-99b60f4c9863>",
+    "fineweb:<urn:uuid:814f95aa-160c-4521-a194-a0eb63f4b2eb>",
+    "fineweb:<urn:uuid:dd03b20c-72eb-48e5-b02a-4ab8e37f1908>",
+    "fineweb:<urn:uuid:5f643eb3-aa0a-41a2-bcf3-600cbc77d731>",
+    "fineweb:<urn:uuid:af97aa98-3fb9-4533-8faf-c10a68458a3e>",
+    "fineweb:<urn:uuid:1a4a398e-7b93-4a3d-82e1-91f27c80f329>",
+    "fineweb:<urn:uuid:1c920937-108c-4e38-ac21-4b17c9002f55>",
+    "fineweb:<urn:uuid:263ce980-4665-4bb9-aadb-83549d5cd946>",
+    "fineweb:<urn:uuid:8b4eff54-3976-455a-b84e-c855902860d1>",
+    "fineweb:<urn:uuid:e7ab9a33-11f6-4371-989d-fa96ce77c45d>",
+    "fineweb:<urn:uuid:03202fb1-d5b5-431b-9cbb-3a8943a31135>",
+    "fineweb:<urn:uuid:7daccef3-dd48-468c-96b4-ca1a46f5e471>",
+    "fineweb:<urn:uuid:c06ddf12-4958-48c2-ac30-b017ac4f38f9>",
+    "fineweb:<urn:uuid:752312f3-fda5-4445-babc-a3854d1b68ae>",
+    "fineweb:<urn:uuid:66ac8bf1-1c71-4a5d-bb91-bad78b2b294e>",
+    "fineweb:<urn:uuid:a753941d-fcaf-48a6-b52d-a2381e99638e>",
+    "fineweb:<urn:uuid:21fa511e-fcd5-49eb-b494-575939aa94ba>",
+    "fineweb:<urn:uuid:b8b2d2b6-970e-4648-a27d-2fc771096b9e>",
+    "fineweb:<urn:uuid:0e54e807-9bdb-4b0b-967e-0bfbb83ffbf3>",
+    "fineweb:<urn:uuid:f310fa58-099e-4050-b3cf-306110340b39>",
+    "fineweb:<urn:uuid:99940867-7a78-4035-acd3-1bf0376ac7c2>",
+    "fineweb:<urn:uuid:bcb2baae-e6c7-4842-a0b8-57bad0468dbb>",
+    "fineweb:<urn:uuid:8684651d-6f52-4952-b8e8-7acb61c91231>",
+    "fineweb:<urn:uuid:fc043f55-42d3-4633-8c80-15112b0d720f>",
+    "fineweb:<urn:uuid:1500dff7-4510-48f2-87da-c68a2426eea3>",
+    "fineweb:<urn:uuid:33c12bd4-c18e-4c9b-aa70-761c15a9c6cc>",
+    "fineweb:<urn:uuid:735b50f2-5826-4a48-b2fa-bb067b68eab8>",
+    "fineweb:<urn:uuid:6b82fc8a-0a01-4fa5-b562-4f6699c4eeba>",
+    "fineweb:<urn:uuid:ac1156bc-cf6e-49af-9b7e-327dff25d4a3>",
+    "fineweb:<urn:uuid:26f816bb-d758-49cd-bdf0-daa3df43c77c>",
+    "fineweb:<urn:uuid:dd208733-d8af-4ecd-8a8b-cb9c487171fa>",
+    "fineweb:<urn:uuid:25685bc0-38cb-41c8-8f6d-21a5e8ec4d88>",
+    "fineweb:<urn:uuid:5d4349cd-9588-4ab0-9041-4ef733044a29>",
+    "fineweb:<urn:uuid:9f01aba9-e304-4ee4-a4ea-fd3c4af1992f>",
+    "fineweb:<urn:uuid:649815a7-3977-4d0a-af2a-adb3422bf628>",
+    "fineweb:<urn:uuid:e9363aaf-da20-42c8-baf5-6849321bdaf7>",
+    "fineweb:<urn:uuid:4a879eb5-bc23-4b85-b3aa-905c046a32e2>",
+    "fineweb:<urn:uuid:75913d21-b38c-44ce-bee2-ba80c1efd9e7>",
+    "fineweb:<urn:uuid:28271f61-63e3-48aa-b151-a034eb15a603>",
+    "fineweb:<urn:uuid:aca0a8bb-462f-4ac4-be98-81e435fd4ec4>",
+    "fineweb:<urn:uuid:a0ed21dd-510b-450c-878a-a36651107a9e>",
+    "fineweb:<urn:uuid:78db58c4-4c16-42c6-bff5-ed7d82b8840c>",
+    "fineweb:<urn:uuid:aa03e7e6-9f96-48d5-b511-86fe2c9456ac>",
+    "fineweb:<urn:uuid:bbd05ff5-a475-4d7e-a1fe-6a3571d009db>",
+    "fineweb:<urn:uuid:f1388385-1703-4bdc-8fc9-a9b1e665386c>",
+    "fineweb:<urn:uuid:b667c6bb-24be-4a03-8c93-3091e58cb7d5>",
+    "fineweb:<urn:uuid:1e366a7f-58d8-40c8-8c0d-2f40e81d5058>",
+    "fineweb:<urn:uuid:3ca02370-2445-4643-94af-3bf65cd1b493>",
+    "fineweb:<urn:uuid:9daf61f0-282e-47a9-aa24-e6868e020523>",
+    "fineweb:<urn:uuid:aa8291ff-2661-412f-ac56-ca8af7b1e36e>",
+    "fineweb:<urn:uuid:bdcf6dfd-ec9f-4b5d-b3b1-4d113e9d0af7>",
+    "fineweb:<urn:uuid:b512d49a-92cc-47b4-999d-9cfe7f0955a0>",
+    "fineweb:<urn:uuid:5c06c17b-ba22-437c-8191-a6748a8bc4b3>",
+    "fineweb:<urn:uuid:cd363450-9ed1-47e0-8fcf-7c05c70e7eb7>",
+    "fineweb:<urn:uuid:148c7fad-f63c-4b06-99ef-edc45439a0db>",
+    "fineweb:<urn:uuid:36873f95-a1ff-4f95-b90b-4710d3f75998>",
+    "fineweb:<urn:uuid:657dde41-2f18-4193-8bbd-d224aae9deb8>",
+    "fineweb:<urn:uuid:9d6f883f-f85a-49d3-ba55-266b974a7461>",
+    "fineweb:<urn:uuid:c12425b4-74e1-4322-8e72-17f3416bf853>",
+    "fineweb:<urn:uuid:de62a2e9-b3c5-47e4-8304-0cdf4b75d347>",
+    "fineweb:<urn:uuid:b00d991a-6c87-4e53-bc88-a86e8957169c>",
+    "fineweb:<urn:uuid:6ba40c8b-db8a-44e5-9681-a0ae825ce810>",
+    "fineweb:<urn:uuid:3bb8fe84-9bf4-4c21-869c-87689babda41>",
+    "fineweb:<urn:uuid:ccb2a766-3408-4022-9bad-175df7a74086>",
+    "fineweb:<urn:uuid:65b1237e-0937-48d8-a86c-926a78d8e40f>",
+    "fineweb:<urn:uuid:fc3a172b-68d1-4c0c-a5b6-82010e582452>",
+    "fineweb:<urn:uuid:4222f03b-5b5d-44d8-8884-22b43db6e3fb>",
+    "fineweb:<urn:uuid:ac803522-da43-46b5-9add-3b540ade5e83>",
+    "fineweb:<urn:uuid:b33c2da0-8b82-47c5-aa4c-8a3cb6ff0840>",
+    "fineweb:<urn:uuid:25fd3558-cf53-4e9e-8d96-4c4448ff31b7>",
+    "fineweb:<urn:uuid:7974b611-b061-46e2-b887-d4d6b9a82bad>",
+    "fineweb:<urn:uuid:591aaa4a-4239-406c-af8d-fa3b022fbe5b>",
+    "fineweb:<urn:uuid:7b119ed7-5b98-48ee-b4a0-187698d22fef>",
+    "fineweb:<urn:uuid:9c1ec27b-8178-4fa1-af83-17bc412ba199>",
+    "fineweb:<urn:uuid:aff3dd76-1bbe-4354-aa0c-348c08bb6921>",
+    "fineweb:<urn:uuid:042bfe32-e8a2-427d-bbc5-bade7ca5c873>",
+    "fineweb:<urn:uuid:cd17fac3-552a-44ff-bd3f-5de19790d78e>",
+    "fineweb:<urn:uuid:75470cd0-9574-4b7d-a4e2-632d3e123e30>",
+    "fineweb:<urn:uuid:ea294d41-81f3-49db-b2c0-5647f5fded64>",
+    "fineweb:<urn:uuid:3bb69e3c-fb59-4eef-a967-f8d3f7a15c6a>",
+    "fineweb:<urn:uuid:af2a8c8c-79f1-4346-8a75-f386bf0f7ec6>",
+    "fineweb:<urn:uuid:3b1df425-be50-4ea2-a321-242dd784bda8>",
+    "fineweb:<urn:uuid:f0a9fea3-c914-4f35-b259-2e16e2786744>",
+    "fineweb:<urn:uuid:e3cfeff9-107f-4151-aa54-78fe9f43abef>",
+    "fineweb:<urn:uuid:546616fd-b7fc-4577-b027-84f067c983c7>",
+    "fineweb:<urn:uuid:d0411035-4376-48fd-a42c-fb6513bcbac9>"
+  ],
+  "token_count": 433861,
+  "tokenizer_sha256": "f635489a25b15ea525be3131acc84f2e7ca35b3954fa9d9b7e14e06032d02a37",
+  "validation_assignment_method": "sha256-document-id-mod50-v1"
+}

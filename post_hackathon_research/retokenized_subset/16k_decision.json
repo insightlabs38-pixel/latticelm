@@ -1,0 +1,10 @@
+{
+  "8k_bpb_change_vs_4k": 0.002213712392428402,
+  "compression_gain_over_8k": 0.09201766210174878,
+  "created_utc": "2026-10-04T21:16:27.346822+00:00",
+  "criterion": "16K bytes/token improves >=4% over 8K or 8K BPB improves >=1% over 4K; predicted finish must precede archival reserve",
+  "estimated_16k_tps": 4919.914178970879,
+  "estimated_finish_utc": "2026-10-05T09:14:35.683507+00:00",
+  "reason": "evidence and time gate passed",
+  "run_16k": true
+}

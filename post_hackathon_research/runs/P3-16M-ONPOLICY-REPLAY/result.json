@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "3ad383c958b751d988c6b5f918fe2dc9ba99fcf34becb1cd2ab09f844fce7e0a",
+  "best_logical_tokens": 1004053,
+  "best_weighted_heldout_loss": 3.1237706527113915,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/P3-16M-ONPOLICY-REPLAY/latest.pt",
+  "checkpoint_sha256": "3ad383c958b751d988c6b5f918fe2dc9ba99fcf34becb1cd2ab09f844fce7e0a",
+  "experiment_id": "P3-16M-ONPOLICY-REPLAY",
+  "finished_utc": "2026-10-08T10:30:36.568636+00:00",
+  "generation_processed_tokens": 2186352,
+  "logical_tokens": 1004053,
+  "processed_tokens": 4160624,
+  "sft_raw_bytes": 1057401,
+  "status": "COMPLETED",
+  "steps": 241,
+  "wall_seconds": 542.1348274280026
+}

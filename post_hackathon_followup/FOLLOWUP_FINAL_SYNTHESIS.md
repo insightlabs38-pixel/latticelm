@@ -1,19 +1,19 @@
 # Follow-up final synthesis
 
-Post-submission research. Updated 2026-10-11T03:48:07.972630+00:00.
+Post-submission research. Updated 2026-10-12T20:29:24.834792+00:00.
 Status: LIVE — incomplete endpoints are explicitly unresolved.
 
 ## 1. At 32M/300M, does existing MOD-Co4 differ meaningfully from dense?
 
-Unresolved: paired endpoint evaluation is not yet complete. This is a separately registered fresh dense300M comparison. Historical dense100M had ended its WSD; it was not silently continued.
+Candidate `F32-DENSE-S1337-FRESH300M` against `CONTROL-R32-CO4-CONTROL`: loss delta -0.00977837, 95% paired interval [-0.01673524618148804, -0.002895634844899178]; BPB delta -0.00438447, interval [-0.005904554904227413, -0.002856395280048923]; clear task regression False; wall ratio 0.9512. Gate closed/not promoted. See `decisions/dense-300m-closure.json` for source-wise evidence and limits. This is a separately registered fresh dense300M comparison. Historical dense100M had ended its WSD; it was not silently continued.
 
 ## 2. Does D4 annealing reproduce?
 
-Unresolved: paired endpoint evaluation is not yet complete. The sampler cycle, source draw counts and transition receipt preserve the exact late mixture. BPB-only movement is distinguished from coherent recipe promotion.
+Candidate `F16-D4-S2026-FRESH150M` against `CONTROL-R16-S2026-CONTROL`: loss delta 0.00509162, 95% paired interval [-0.00298002067953348, 0.01304946634918451]; BPB delta -0.00521105, interval [-0.00651527535967071, -0.003748956482277909]; clear task regression False; wall ratio 0.9892. Gate closed/not promoted. See `decisions/d4-replication.json` for source-wise evidence and limits. The sampler cycle, source draw counts and transition receipt preserve the exact late mixture. BPB-only movement is distinguished from coherent recipe promotion.
 
 ## 3. Does Differential-Co4 reproduce?
 
-Unresolved: paired endpoint evaluation is not yet complete. One fresh matched seed7331 pair supplements the historical pilot; no automatic four-seed tournament.
+Candidate `F8-DIFF-S7331-FRESH100M` against `F8-MOD-S7331-FRESH100M`: loss delta 0.0270503, 95% paired interval [0.020634501054883004, 0.03363640710711478]; BPB delta 0.0291915, interval [0.02754903048557248, 0.03088266160215893]; clear task regression False; wall ratio 1.2. Gate closed/not promoted. See `decisions/differential-replication.json` for source-wise evidence and limits. One fresh matched seed7331 pair supplements the historical pilot; no automatic four-seed tournament.
 
 ## 4. Which exact full-Co4 architectures were implemented?
 
@@ -25,7 +25,7 @@ The released IHMS operator is independently fixture-tested. Its autoregressive L
 
 ## 6. Did causal leak tests pass?
 
-Tiny oracle/author/causality tests implemented; configuration-specific C0 certificates are pending or failed. Consult certificates and C0 receipts. Tests cover multiple seeds/prefix lengths, changed future tokens, selection indices and future embedding gradients; forward, gradients and one optimizer step match an independent literal oracle.
+Passed all 11 tested production configurations. Tests cover multiple seeds/prefix lengths, changed future tokens, selection indices and future embedding gradients; forward, gradients and one optimizer step match an independent literal oracle.
 
 ## 7. Did full Co4 beat shallow dense, current MOD or deeper dense?
 
@@ -61,4 +61,4 @@ Verified coverage is determined by FOLLOWUP_ARCHIVE_MANIFEST.json and HF_REPRESE
 
 ## 15. What exact Git/HF state defines the research?
 
-Reporting source revision `035002e7c6db902f56f0166c8265e144a26f182c`; branch `posthack-followup-2026-10`, frozen main/submission `43832b4c7bfe8be007ca6b9d1042aa2041c7f280`. HF `insightlabs38-pixel/LatticeLM-research`, prefix `post-hackathon-followup/2026-10-11`, last verified receipt d1e2f1f5436dbb2e30bf5ba6db761c6f8534f84e. Final closeout commit/revision are recorded in FOLLOWUP_CLOSEOUT_RECEIPT.json and the archive manifest.
+Reporting source revision `578254776c269e9fd012ad3dd71e085095059714`; branch `posthack-followup-2026-10`, frozen main/submission `43832b4c7bfe8be007ca6b9d1042aa2041c7f280`. HF `insightlabs38-pixel/LatticeLM-research`, prefix `post-hackathon-followup/2026-10-11`, last verified receipt f8aa76b2af7c2eca2b6369b6a060250c9fd23f56. Final closeout commit/revision are recorded in FOLLOWUP_CLOSEOUT_RECEIPT.json and the archive manifest.

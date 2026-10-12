@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-02T06:11:59.869431+00:00",
+  "files": [
+    {
+      "at": "2026-10-02T06:11:46.971939+00:00",
+      "path": "configs/8m_co4_seed2026.json",
+      "remote": "post-hackathon/2026-10-01/configs/8m_co4_seed2026.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "7d2cc5e6cc481c2823ef6e9faa89ddcd0e5dc124",
+      "sha256": "e1f2257c062cab194d17c16b9cb13b93912146ac46777636e04f891d96f9fb5c",
+      "size_bytes": 1196,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T06:11:47.938920+00:00",
+      "path": "runs/A8-CO4-S2026/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-S2026/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "923752c5b4f0751cf0e25b1b9eb633faec534543",
+      "sha256": "9976697dd90eb11cb30c690cfa1d493be1a9186aa123cb14089edf5e493a6026",
+      "size_bytes": 664,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T06:11:48.872572+00:00",
+      "path": "runs/A8-CO4-S2026/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-S2026/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "359f517adb1e94a8b7c24a59bdebb4916eb4a3cf",
+      "sha256": "dce6faaa95b3a9e590f6f78767ed73c0d44d65ff6d570a610f2def9722f68a7d",
+      "size_bytes": 10495,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T06:11:50.559043+00:00",
+      "path": "runs/A8-CO4-S2026/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-S2026/metrics.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "aa0c046792e7807507e0a089e0f36eed467a1a29",
+      "sha256": "419eeefcfa349356262305887ac197b6b3eec5a01dbc25f070873f7216116d1b",
+      "size_bytes": 9494233,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T06:11:51.545701+00:00",
+      "path": "runs/A8-CO4-S2026/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-S2026/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "b0bd1a7fdeb83976d895db9058ea137f637ca49c",
+      "sha256": "31f9cdb6fa8b78e4c93b10f3906e942d4ff73fee8ec0610863de32c37ec5d756",
+      "size_bytes": 938,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T06:11:52.476935+00:00",
+      "path": "runs/A8-CO4-S2026/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-S2026/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "29728fe1f3e8d2cf341b92493bf0337fd9a38bf4",
+      "sha256": "afd3df40ab8ffe7aef197b63974005796c31c936f00c805e3aa0b9070d52be72",
+      "size_bytes": 20352,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T06:11:54.870201+00:00",
+      "path": "runs/A8-CO4-S2026/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-S2026/capability_samples.json",
+      "remote_lfs_sha256": "5792d74a2fc0cddd8f81447f062bf502ea69a72e02e90a49ccbefd011ea1b3ca",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "4edaa425fc416ce04bb2cb6805494afaa1f9fad7",
+      "sha256": "5792d74a2fc0cddd8f81447f062bf502ea69a72e02e90a49ccbefd011ea1b3ca",
+      "size_bytes": 17242620,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T06:11:59.867343+00:00",
+      "path": "runs/A8-CO4-S2026/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-S2026/latest.pt",
+      "remote_lfs_sha256": "6df3154e5a73d157ffebd06e5708422ce669106539f693b1ca1d70afa35e4e5b",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "f70f86819a2e49f7f1de415e3009a602ce786ac2",
+      "sha256": "6df3154e5a73d157ffebd06e5708422ce669106539f693b1ca1d70afa35e4e5b",
+      "size_bytes": 72190686,
+      "verified": true
+    }
+  ]
+}

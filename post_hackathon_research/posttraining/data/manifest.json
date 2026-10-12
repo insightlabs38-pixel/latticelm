@@ -1,0 +1,120 @@
+{
+  "comparison_label": "task_train is diagnostic benchmark-task tuning; never compare it as pretraining-only",
+  "contamination_policy": "Only pinned TRAIN splits enter training. Pinned SciQ/CommonsenseQA/QASC validation examples for specialized skill scoring exclude exact normalized training and competition held-out prompts. Exact normalized competition prompts from official held-out validation and ARC-Easy test are excluded",
+  "counts": {
+    "arc_easy/heldout_exact_prompt_excluded": 9,
+    "arc_easy/included": 2242,
+    "commonsense_qa/heldout_skill_included": 128,
+    "commonsense_qa/included": 9741,
+    "hellaswag/heldout_exact_prompt_excluded": 25,
+    "hellaswag/included": 39880,
+    "piqa/heldout_exact_prompt_excluded": 579,
+    "piqa/included": 15534,
+    "qasc/heldout_skill_included": 128,
+    "qasc/included": 16268,
+    "sciq/heldout_skill_included": 128,
+    "sciq/included": 23358,
+    "winogrande/included": 40398
+  },
+  "created_utc": "2026-10-02T03:23:06.106079+00:00",
+  "files": {
+    "posttraining/data/aligned_train.jsonl": "c3acec1b22a91adb31dfec4e184c8e7be669bf52da489d2fc40fe8be8dc640f1",
+    "posttraining/data/generic_train.jsonl": "cadad20b404a362ee734465d773ab283864ef5cb82be329a09237df502b154f8",
+    "posttraining/data/heldout_skill_validation.jsonl": "d49c1430bd3daf269bc89d59bd998427a283631749dd2690ae957569c3c79b05",
+    "posttraining/data/task_train.jsonl": "dbfaf32da26e2f04efd05180e466188c5718383a28be3a95e6edde2ccf22213b"
+  },
+  "posttraining_arm_policy": "P0 uses generic SciQ/QASC reasoning examples; P1/P3/P4 add CommonsenseQA train for capability alignment while retaining disjoint SciQ/QASC breadth; P2 uses official task training splits only",
+  "resources": {
+    "arc_easy/test": {
+      "path": "ARC-Easy/test-00000-of-00001.parquet",
+      "repo": "allenai/ai2_arc",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "sha256": "4160597d618ae851c7eb04e281574f3f654776216ac6b6641588d64527b47177"
+    },
+    "arc_easy/train": {
+      "path": "ARC-Easy/train-00000-of-00001.parquet",
+      "repo": "allenai/ai2_arc",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "sha256": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5"
+    },
+    "arc_easy/validation": {
+      "path": "ARC-Easy/validation-00000-of-00001.parquet",
+      "repo": "allenai/ai2_arc",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "sha256": "ed890ff1e4cef7a7140d3a30dcea3ed2c9d467c6458f447ad9ef0176d8dcbb74"
+    },
+    "commonsense_qa/train": {
+      "path": "data/train-00000-of-00001.parquet",
+      "repo": "tau/commonsense_qa",
+      "revision": "94630fe30dad47192a8546eb75f094926d47e155",
+      "sha256": "b0449767ed986bfc2ca52b1244a46ef12f732756727f3cb0a4ab69ac8b3d282b"
+    },
+    "commonsense_qa/validation": {
+      "path": "data/validation-00000-of-00001.parquet",
+      "repo": "tau/commonsense_qa",
+      "revision": "94630fe30dad47192a8546eb75f094926d47e155",
+      "sha256": "bdbd9bf9cc4d2349b24901038b2ab2f58e10e4e507ad2fd425dca55cd3cb6660"
+    },
+    "hellaswag/train": {
+      "path": "data/train-00000-of-00001.parquet",
+      "repo": "Rowan/hellaswag",
+      "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+      "sha256": "cacb12587faa63d7f723a72d61d12bfa94b140446f5a6a0a2e1c6906ab88bf02"
+    },
+    "hellaswag/validation": {
+      "path": "data/validation-00000-of-00001.parquet",
+      "repo": "Rowan/hellaswag",
+      "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+      "sha256": "899813071e1e95efafec90f856e1987d2150fa4d020fc005df6962c259f660cd"
+    },
+    "piqa/train": {
+      "path": "piqa_train.parquet",
+      "repo": "baber/piqa",
+      "revision": "142f6d7367fd9877f0fb3b5734ea6a545f54cdd1",
+      "sha256": "3114602b31fa724309a6c493cc86368c4eab7ab6e79e285056fd5ce3b60ddf02"
+    },
+    "piqa/validation": {
+      "path": "piqa_validation.parquet",
+      "repo": "baber/piqa",
+      "revision": "142f6d7367fd9877f0fb3b5734ea6a545f54cdd1",
+      "sha256": "2b17ee1215b1ceb2ddabf4c90a05c5a8b833bef9d207960f57d111c43a2080f3"
+    },
+    "qasc/train": {
+      "path": "data/train-00000-of-00001.parquet",
+      "repo": "allenai/qasc",
+      "revision": "a34ba204eb9a33b919c10cc08f4f1c8dae5ec070",
+      "sha256": "b9a297b5ab55f1605c7682ffbb7042c26d7ecb9ff1e1aa5a820d4e791c8302d1"
+    },
+    "qasc/validation": {
+      "path": "data/validation-00000-of-00001.parquet",
+      "repo": "allenai/qasc",
+      "revision": "a34ba204eb9a33b919c10cc08f4f1c8dae5ec070",
+      "sha256": "d1ae34ae13c5fce2c55305372c203c6cdb789728d0d7e5ea2956d55bc33f40ae"
+    },
+    "sciq/train": {
+      "path": "data/train-00000-of-00001.parquet",
+      "repo": "allenai/sciq",
+      "revision": "2c94ad3e1aafab77146f384e23536f97a4849815",
+      "sha256": "19644360954006d06e9ad3df07bddb34f8535c081b831d48f604603c713ac167"
+    },
+    "sciq/validation": {
+      "path": "data/validation-00000-of-00001.parquet",
+      "repo": "allenai/sciq",
+      "revision": "2c94ad3e1aafab77146f384e23536f97a4849815",
+      "sha256": "455dd9f1d725cd3ecbce369799a2fbbdbbfecf51ab84a86d56ba3370dc847b8a"
+    },
+    "winogrande/train": {
+      "path": "winogrande_xl/train-00000-of-00001.parquet",
+      "repo": "allenai/winogrande",
+      "revision": "01e74176c63542e6b0bcb004dcdea22d94fb67b5",
+      "sha256": "5d8c38ad12b9a6c88f79b6e00aaf0f40781f93d4f94816f6cff2b67625d67399"
+    },
+    "winogrande/validation": {
+      "path": "winogrande_xl/validation-00000-of-00001.parquet",
+      "repo": "allenai/winogrande",
+      "revision": "01e74176c63542e6b0bcb004dcdea22d94fb67b5",
+      "sha256": "f9d914d1818c0aba98cabdf8af2bc4bd943c462b9c5e7062647e05c2ce3315d1"
+    }
+  },
+  "schema": "posthack-posttraining-data-v1"
+}

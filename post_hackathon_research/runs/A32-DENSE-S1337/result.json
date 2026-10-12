@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "03efcec3267bb73e823d7745f3bfc3c81a006f6f253f006c4e4778fc143f6a43",
+  "best_logical_tokens": 100000000,
+  "best_weighted_heldout_loss": 3.065934547781944,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A32-DENSE-S1337/latest.pt",
+  "checkpoint_sha256": "03efcec3267bb73e823d7745f3bfc3c81a006f6f253f006c4e4778fc143f6a43",
+  "experiment_id": "A32-DENSE-S1337",
+  "finished_utc": "2026-10-03T10:30:24.097945+00:00",
+  "logical_tokens": 100000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 100007936,
+  "status": "COMPLETED",
+  "steps": 12208,
+  "variant": "baseline",
+  "wall_seconds": 24344.119667642284
+}

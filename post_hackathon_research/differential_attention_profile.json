@@ -1,0 +1,20 @@
+{
+  "candidate": {
+    "attention_fraction": 0.001265908687604106,
+    "attention_self_cpu_time_us": 853.4499999999434,
+    "batch_size": 32,
+    "context_length": 256,
+    "policy": "one full scientific-batch forward/backward CPU profile; SDPA operator self time divided by all operator self time; excludes Python/data-loader and optimizer overhead",
+    "threads": 16,
+    "total_self_cpu_time_us": 674179.7479999972
+  },
+  "control": {
+    "attention_fraction": 0.13041635856106723,
+    "attention_self_cpu_time_us": 78793.37200000013,
+    "batch_size": 32,
+    "context_length": 256,
+    "policy": "one full scientific-batch forward/backward CPU profile; SDPA operator self time divided by all operator self time; excludes Python/data-loader and optimizer overhead",
+    "threads": 16,
+    "total_self_cpu_time_us": 604167.8580000014
+  }
+}

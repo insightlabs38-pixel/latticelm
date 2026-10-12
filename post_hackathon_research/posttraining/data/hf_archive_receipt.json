@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-02T03:23:28.186513+00:00",
+  "files": [
+    {
+      "at": "2026-10-02T03:23:18.432006+00:00",
+      "path": "posttraining/data/manifest.json",
+      "remote": "post-hackathon/2026-10-01/posttraining/data/manifest.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "6cac23fa55965e30f5c80c02c90fafdf4a65161b",
+      "sha256": "38d46bd7efa8a153f4078f37ddba6e8c3ee43534dd071b3f99f2eae66db08675",
+      "size_bytes": 5719,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:23:21.185112+00:00",
+      "path": "posttraining/data/generic_train.jsonl",
+      "remote": "post-hackathon/2026-10-01/posttraining/data/generic_train.jsonl",
+      "remote_lfs_sha256": "cadad20b404a362ee734465d773ab283864ef5cb82be329a09237df502b154f8",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "994b1c88e68c30afcbba55f51183e904331892cf",
+      "sha256": "cadad20b404a362ee734465d773ab283864ef5cb82be329a09237df502b154f8",
+      "size_bytes": 11410020,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:23:23.693628+00:00",
+      "path": "posttraining/data/aligned_train.jsonl",
+      "remote": "post-hackathon/2026-10-01/posttraining/data/aligned_train.jsonl",
+      "remote_lfs_sha256": "c3acec1b22a91adb31dfec4e184c8e7be669bf52da489d2fc40fe8be8dc640f1",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "d5ba91d251b8ce45d25dbfbd430d1cb01bf06300",
+      "sha256": "c3acec1b22a91adb31dfec4e184c8e7be669bf52da489d2fc40fe8be8dc640f1",
+      "size_bytes": 14489712,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:23:27.071642+00:00",
+      "path": "posttraining/data/task_train.jsonl",
+      "remote": "post-hackathon/2026-10-01/posttraining/data/task_train.jsonl",
+      "remote_lfs_sha256": "dbfaf32da26e2f04efd05180e466188c5718383a28be3a95e6edde2ccf22213b",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "e12c138c83768a0d19d3ac6d60a9e5aae1b10dc7",
+      "sha256": "dbfaf32da26e2f04efd05180e466188c5718383a28be3a95e6edde2ccf22213b",
+      "size_bytes": 41193034,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:23:28.184438+00:00",
+      "path": "posttraining/data/heldout_skill_validation.jsonl",
+      "remote": "post-hackathon/2026-10-01/posttraining/data/heldout_skill_validation.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "d5c00b1e01fbc4ed34417a73acd08da212fe93e4",
+      "sha256": "d49c1430bd3daf269bc89d59bd998427a283631749dd2690ae957569c3c79b05",
+      "size_bytes": 173378,
+      "verified": true
+    }
+  ]
+}

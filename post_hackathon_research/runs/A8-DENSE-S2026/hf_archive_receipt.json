@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-02T08:48:23.469419+00:00",
+  "files": [
+    {
+      "at": "2026-10-02T08:48:08.690136+00:00",
+      "path": "configs/8m_dense_seed2026.json",
+      "remote": "post-hackathon/2026-10-01/configs/8m_dense_seed2026.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "e09cda3d35fa97c2f155e635460fd66a65d19a90",
+      "sha256": "3b71150ef19153aacf2efc8b640c0c520c80e6419499d8af0d489f2589b28a3a",
+      "size_bytes": 1193,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T08:48:09.692780+00:00",
+      "path": "runs/A8-DENSE-S2026/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S2026/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "402548a464815caf08c0190f76a87aa4951dcc44",
+      "sha256": "62a00724ade5c6caaf067da717e33ec3a48e8b59423a132c9a682d41026edc89",
+      "size_bytes": 667,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T08:48:10.729547+00:00",
+      "path": "runs/A8-DENSE-S2026/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S2026/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "a654acf89f4d02de028372126cf734374d96b4df",
+      "sha256": "b2b50f9eeee1ba7b88733a4bb2a2313ef37f64dc3f8d2abdae082b30fe76bcc5",
+      "size_bytes": 10498,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T08:48:12.865765+00:00",
+      "path": "runs/A8-DENSE-S2026/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S2026/metrics.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "404a1b8a3e354cb093aaabc8c873ce3ed5a4683e",
+      "sha256": "6bc5c1674bd68cad90666d36d5d91dfbfb01a51ee57ff4aa2e39c4c4d582ee7e",
+      "size_bytes": 9493920,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T08:48:13.698417+00:00",
+      "path": "runs/A8-DENSE-S2026/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S2026/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "b4458b32e5947cfb41d742d0853eb6bab7ad9f0d",
+      "sha256": "b88673d75908091d9759be4ec583f23d0782f32c311c2793474ccda37c4b2e46",
+      "size_bytes": 938,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T08:48:14.567006+00:00",
+      "path": "runs/A8-DENSE-S2026/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S2026/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "153e802699bd90161d4304724df7267356357966",
+      "sha256": "fec017452471773478e539805793ea18020e96bc8796a2a7c9a66b8debbf8eee",
+      "size_bytes": 20353,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T08:48:18.278394+00:00",
+      "path": "runs/A8-DENSE-S2026/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S2026/capability_samples.json",
+      "remote_lfs_sha256": "736198e30991be044b9e71a29661e45184ce3d3c86ff12a12da54fbd3f6640e8",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "c0942db73718818f402fddd17b2f307ac0e4461c",
+      "sha256": "736198e30991be044b9e71a29661e45184ce3d3c86ff12a12da54fbd3f6640e8",
+      "size_bytes": 17242577,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T08:48:23.467378+00:00",
+      "path": "runs/A8-DENSE-S2026/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S2026/latest.pt",
+      "remote_lfs_sha256": "0fc6daac6d70ca007335e8e29ceaee2b8e56c401bafcd1f456c22037500a0bc4",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "0275fcd0698a9925f14d62d661c435d988623474",
+      "sha256": "0fc6daac6d70ca007335e8e29ceaee2b8e56c401bafcd1f456c22037500a0bc4",
+      "size_bytes": 72117758,
+      "verified": true
+    }
+  ]
+}

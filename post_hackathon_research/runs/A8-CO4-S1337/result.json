@@ -1,0 +1,11 @@
+{
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A8-CO4-S1337/latest.pt",
+  "checkpoint_sha256": "a01b837828e05c4c211b86e6b70d37f56a0a478f203bf8e8b7f39270be90f966",
+  "experiment_id": "A8-CO4-S1337",
+  "finished_utc": "2026-10-02T01:05:36.412638+00:00",
+  "logical_tokens": 100000000,
+  "processed_tokens": 100007936,
+  "status": "COMPLETED",
+  "steps": 12208,
+  "wall_seconds": 8826.2691987562
+}

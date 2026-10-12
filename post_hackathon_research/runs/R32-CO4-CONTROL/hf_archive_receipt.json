@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-09T08:01:08.672888+00:00",
+  "files": [
+    {
+      "at": "2026-10-09T08:00:48.677422+00:00",
+      "path": "configs/32m_co4.json",
+      "remote": "post-hackathon/2026-10-01/configs/32m_co4.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "850ca07f4fc94436ab5287b5af4bfbe79fc02e49",
+      "sha256": "c48d016103a15467997227734b258615fbeff82a420dc09998ba16804efdeab2",
+      "size_bytes": 1198,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:00:49.834698+00:00",
+      "path": "runs/R32-CO4-CONTROL/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "4a5a7f5a20e345a4f700263d3e508af18b026bd8",
+      "sha256": "185b640d990a338bfa1674331951b9e5c7f5e90816cec624b78d6384a8899688",
+      "size_bytes": 669,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:00:52.834184+00:00",
+      "path": "runs/R32-CO4-CONTROL/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/metrics.jsonl",
+      "remote_lfs_sha256": "019c9ab3833f8f7185a461d9337e94d3bd58427b7e6350105b9e726c07061af1",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "545b20675cf8dfbe5611be9f5a465d26f2c45c67",
+      "sha256": "019c9ab3833f8f7185a461d9337e94d3bd58427b7e6350105b9e726c07061af1",
+      "size_bytes": 28580231,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:00:53.644197+00:00",
+      "path": "runs/R32-CO4-CONTROL/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "8cf36530c24c8696427b4e9919ef80574d6c684a",
+      "sha256": "f37ec7f0e1002e038f9f90c3e0b6847d459b1f4d3f76dcd7ea110270eac0cf8e",
+      "size_bytes": 31567,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:00:54.769727+00:00",
+      "path": "runs/R32-CO4-CONTROL/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "585c24583b22ae37514a517bee94bfd35c923ed7",
+      "sha256": "4f60809481f125d450207323b3e871d139f1a8425469db291b0454a33cceea8b",
+      "size_bytes": 940,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:00:55.796468+00:00",
+      "path": "runs/R32-CO4-CONTROL/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "95e3c308d3e21172c91d54e3a7896b595b8c5068",
+      "sha256": "07209d84d6687c4bfdafcf4f114ac2551a8838724b8ffae0fab90734ba0f65d6",
+      "size_bytes": 20354,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:00:58.522896+00:00",
+      "path": "runs/R32-CO4-CONTROL/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/capability_samples.json",
+      "remote_lfs_sha256": "fc4d891d12832624c6565d36111980392a8c7f8a868b73867e19d0817ea16e9c",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "0f4d3596959fd8e40ff9fdab7ce672751198a253",
+      "sha256": "fc4d891d12832624c6565d36111980392a8c7f8a868b73867e19d0817ea16e9c",
+      "size_bytes": 17243772,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:01:05.721411+00:00",
+      "path": "runs/R32-CO4-CONTROL/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/latest.pt",
+      "remote_lfs_sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "25a6105a31cb392c8674e144778a3ae57caa4b63",
+      "sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+      "size_bytes": 272270046,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:01:07.644833+00:00",
+      "path": "runs/R32-CO4-CONTROL/best.pt",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/best.pt",
+      "remote_lfs_sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "1aa99f57676b54c575ddb156bfc403aa77fa69ca",
+      "sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+      "size_bytes": 272270046,
+      "verified": true
+    },
+    {
+      "at": "2026-10-09T08:01:08.671263+00:00",
+      "path": "runs/R32-CO4-CONTROL/best.sha256",
+      "remote": "post-hackathon/2026-10-01/runs/R32-CO4-CONTROL/best.sha256",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "3e2d411dda02f1dabf89ffa3738dc1a3509233ea",
+      "sha256": "3cd9fd1b9cc968d59432aad2b3413cd29243353c8a623a19fe4560e11c49544c",
+      "size_bytes": 65,
+      "verified": true
+    }
+  ]
+}

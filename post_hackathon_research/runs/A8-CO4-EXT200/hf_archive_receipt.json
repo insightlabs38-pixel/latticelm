@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-03T15:15:31.808776+00:00",
+  "files": [
+    {
+      "at": "2026-10-03T15:15:14.412123+00:00",
+      "path": "configs/8m_co4.json",
+      "remote": "post-hackathon/2026-10-01/configs/8m_co4.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "7c73b4437f56589b933e27ecb5c544c408d9ae3d",
+      "sha256": "161ac83a45f7570e9e4715b7f3a54621816caa62e1bfe2d22c2358691835030b",
+      "size_bytes": 1196,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:15.542378+00:00",
+      "path": "runs/A8-CO4-EXT200/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "6ec79cb6ce753b17eddc72c2dab1835545d87fb1",
+      "sha256": "0f09465776515845f1f8e546656210d980a26901cf473ad6c77c8775390f3e9a",
+      "size_bytes": 668,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:18.265413+00:00",
+      "path": "runs/A8-CO4-EXT200/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/metrics.jsonl",
+      "remote_lfs_sha256": "be5d3f5312366839f0483c374f6db16b4f2664ed3ebc8373ccf37693f9fad793",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "7ba663cfb1233e6bc99fa8732f3b51496a83e938",
+      "sha256": "be5d3f5312366839f0483c374f6db16b4f2664ed3ebc8373ccf37693f9fad793",
+      "size_bytes": 19031186,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:19.390962+00:00",
+      "path": "runs/A8-CO4-EXT200/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "c224b7f4db28e95df16a2f9abd42813fa3af7416",
+      "sha256": "b8a5dcf3882867535b1f3ba6c36d289ea635c2fafc61dfe5d7479856f25c6c8b",
+      "size_bytes": 21032,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:20.211717+00:00",
+      "path": "runs/A8-CO4-EXT200/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "34e1ecaebabf6ab2ca499f7757b3e19da8be7046",
+      "sha256": "ae52b1d79370e23220e74d708932fb33df8213307d2ebd18972497760cf726c6",
+      "size_bytes": 939,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:20.991235+00:00",
+      "path": "runs/A8-CO4-EXT200/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "0ef57f14ecea8979a51b2aef0f699b83a52cca8a",
+      "sha256": "f7087860b6206c60125343ec8d7c0c93d434ba03e173cb4f4f5d566c75bfae80",
+      "size_bytes": 20348,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:23.685941+00:00",
+      "path": "runs/A8-CO4-EXT200/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/capability_samples.json",
+      "remote_lfs_sha256": "370e9e7fe24349d47a773debe26bb8f338ad76728b9f1c4cbaf7ff857b170626",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "e65a364c1dad7756153945750079c22718231e56",
+      "sha256": "370e9e7fe24349d47a773debe26bb8f338ad76728b9f1c4cbaf7ff857b170626",
+      "size_bytes": 17243075,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:29.081884+00:00",
+      "path": "runs/A8-CO4-EXT200/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/latest.pt",
+      "remote_lfs_sha256": "e3522a0c992da310c484ae6011266c8707eadc15d4740941a4d53d4ce7f1bc6d",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "0b744fd057f8b2476e650b16395aa1f88557bb07",
+      "sha256": "e3522a0c992da310c484ae6011266c8707eadc15d4740941a4d53d4ce7f1bc6d",
+      "size_bytes": 72190750,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:30.525317+00:00",
+      "path": "runs/A8-CO4-EXT200/best.pt",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/best.pt",
+      "remote_lfs_sha256": "e3522a0c992da310c484ae6011266c8707eadc15d4740941a4d53d4ce7f1bc6d",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "78f55714915eb922cde0e39d662e4b1f7f494d27",
+      "sha256": "e3522a0c992da310c484ae6011266c8707eadc15d4740941a4d53d4ce7f1bc6d",
+      "size_bytes": 72190750,
+      "verified": true
+    },
+    {
+      "at": "2026-10-03T15:15:31.806922+00:00",
+      "path": "runs/A8-CO4-EXT200/best.sha256",
+      "remote": "post-hackathon/2026-10-01/runs/A8-CO4-EXT200/best.sha256",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "be9a46f0740b7e6924b6a3bd35acc83c6a041313",
+      "sha256": "a20ea6a7d7eff292df94df59284b309ef7f848d49933673962a2ed70c857482d",
+      "size_bytes": 65,
+      "verified": true
+    }
+  ]
+}

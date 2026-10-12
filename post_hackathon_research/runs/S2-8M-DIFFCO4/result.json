@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "d5a9e0a03e0123534a183fb58fb01e34ae65b3f2746ad352dd5dda4338b42bab",
+  "best_logical_tokens": 50000000,
+  "best_weighted_heldout_loss": 3.465896727144718,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/S2-8M-DIFFCO4/latest.pt",
+  "checkpoint_sha256": "d5a9e0a03e0123534a183fb58fb01e34ae65b3f2746ad352dd5dda4338b42bab",
+  "experiment_id": "S2-8M-DIFFCO4",
+  "finished_utc": "2026-10-10T08:12:57.221484+00:00",
+  "logical_tokens": 50000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 50003968,
+  "status": "COMPLETED",
+  "steps": 6104,
+  "variant": "differential_co4",
+  "wall_seconds": 4982.640366848999
+}

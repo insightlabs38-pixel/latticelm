@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "23261298675ffe95c3dc25970af654e4c8e9c8feb307f18ec14e0f371b710a2b",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.164440516650677,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/C16-4K-SUBSET/latest.pt",
+  "checkpoint_sha256": "23261298675ffe95c3dc25970af654e4c8e9c8feb307f18ec14e0f371b710a2b",
+  "experiment_id": "C16-4K-SUBSET",
+  "finished_utc": "2026-10-04T15:25:49.593246+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "baseline",
+  "wall_seconds": 21552.627882189117
+}

@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "91d632118f1030c16c49a1d144f41d8bbd9d479994a886329e7737da60e6b142",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.1143179312348366,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/G-16M-PHM4-FFN/latest.pt",
+  "checkpoint_sha256": "91d632118f1030c16c49a1d144f41d8bbd9d479994a886329e7737da60e6b142",
+  "experiment_id": "G-16M-PHM4-FFN",
+  "finished_utc": "2026-10-07T14:11:58.375559+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "phm4_ffn",
+  "wall_seconds": 47813.443845812
+}

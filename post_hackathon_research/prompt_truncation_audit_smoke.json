@@ -1,0 +1,149 @@
+{
+  "context512_trigger_fraction": 0.015,
+  "created_utc": "2026-10-02T02:24:49.394516+00:00",
+  "decision_rule": "train 512 only if any full-suite task has >=1.5% requests with lost context or continuation at 256",
+  "limited_examples_per_task": 1,
+  "max_task_meaningful_truncation_fraction_at_256": 1.0,
+  "schema": "posthack-full-prompt-audit-v1",
+  "tasks": {
+    "arc_challenge": {
+      "continuation_tokens_max": 12,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 49,
+      "requests": 4,
+      "rolling_requests": 0,
+      "total_tokens_max": 61,
+      "total_tokens_p95": 61
+    },
+    "arc_easy": {
+      "continuation_tokens_max": 17,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 32,
+      "requests": 4,
+      "rolling_requests": 0,
+      "total_tokens_max": 49,
+      "total_tokens_p95": 47
+    },
+    "boolq": {
+      "continuation_tokens_max": 2,
+      "dropped_context_tokens": 293,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 1.0,
+        "256": 1.0,
+        "512": 0.0
+      },
+      "meaningfully_truncated_fraction_at_256": 1.0,
+      "prompt_tokens_max": 402,
+      "requests": 2,
+      "rolling_requests": 0,
+      "total_tokens_max": 404,
+      "total_tokens_p95": 403
+    },
+    "hellaswag": {
+      "continuation_tokens_max": 14,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 21,
+      "requests": 4,
+      "rolling_requests": 0,
+      "total_tokens_max": 35,
+      "total_tokens_p95": 35
+    },
+    "lambada_openai": {
+      "continuation_tokens_max": 2,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 110,
+      "requests": 1,
+      "rolling_requests": 0,
+      "total_tokens_max": 112,
+      "total_tokens_p95": 112
+    },
+    "openbookqa": {
+      "continuation_tokens_max": 7,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 52,
+      "requests": 4,
+      "rolling_requests": 0,
+      "total_tokens_max": 59,
+      "total_tokens_p95": 59
+    },
+    "piqa": {
+      "continuation_tokens_max": 52,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 29,
+      "requests": 2,
+      "rolling_requests": 0,
+      "total_tokens_max": 81,
+      "total_tokens_p95": 80
+    },
+    "winogrande": {
+      "continuation_tokens_max": 7,
+      "dropped_context_tokens": 0,
+      "dropped_continuation_tokens": 0,
+      "fraction_crossing": {
+        "1024": 0.0,
+        "128": 0.0,
+        "256": 0.0,
+        "512": 0.0
+      },
+      "meaningfully_truncated_fraction_at_256": 0.0,
+      "prompt_tokens_max": 17,
+      "requests": 2,
+      "rolling_requests": 0,
+      "total_tokens_max": 24,
+      "total_tokens_p95": 23
+    }
+  },
+  "tokenizer_sha256": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7",
+  "train_context512": false,
+  "windowing_policy": "joined context/continuation tokenization; evaluator keeps final context_length+1 tokens and scores surviving continuation; rolling requests use separate windows"
+}

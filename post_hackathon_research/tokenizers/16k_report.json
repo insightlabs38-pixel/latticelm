@@ -1,0 +1,66 @@
+{
+  "artifact_bytes": 1135310,
+  "created_utc": "2026-10-04T02:29:40.049921+00:00",
+  "embedding_economics_at_16m_width328": {
+    "16384": {
+      "tied_parameters": 5373952,
+      "untied_parameters": 10747904
+    },
+    "4096": {
+      "tied_parameters": 1343488,
+      "untied_parameters": 2686976
+    },
+    "8192": {
+      "tied_parameters": 2686976,
+      "untied_parameters": 5373952
+    }
+  },
+  "schema": "posthack-16k-tokenizer-audit-v1",
+  "source_metrics": {
+    "finemath": {
+      "bytes_per_token": 3.118773018997948,
+      "characters": 2004372,
+      "characters_per_token": 3.090071826211094,
+      "tokens": 648649,
+      "utf8_bytes": 2022989,
+      "words": 343306,
+      "words_per_token": 0.5292631299824713
+    },
+    "fineweb": {
+      "bytes_per_token": 4.016090938881208,
+      "characters": 2000703,
+      "characters_per_token": 3.997664186321603,
+      "tokens": 500468,
+      "utf8_bytes": 2009925,
+      "words": 347243,
+      "words_per_token": 0.6938365689714427
+    },
+    "fineweb_edu": {
+      "bytes_per_token": 4.298926027069418,
+      "characters": 2000947,
+      "characters_per_token": 4.275692227478834,
+      "tokens": 467982,
+      "utf8_bytes": 2011820,
+      "words": 333121,
+      "words_per_token": 0.7118243864080243
+    },
+    "wikipedia": {
+      "bytes_per_token": 4.038657271874173,
+      "characters": 2011136,
+      "characters_per_token": 4.032627788159995,
+      "tokens": 498716,
+      "utf8_bytes": 2014143,
+      "words": 315956,
+      "words_per_token": 0.6335389279670193
+    }
+  },
+  "tokenizer_path": "post_hackathon_research/tokenizers/final_corpus_16k.json",
+  "tokenizer_sha256": "f635489a25b15ea525be3131acc84f2e7ca35b3954fa9d9b7e14e06032d02a37",
+  "training_sample": {
+    "finemath_sample_sha256": "74f124fc2c609cbeaddcdd797e1f02e47f3151cb2cf6e17e710479d2462ef59b",
+    "raw_cache_sha256": "56abab5e5ec495ab768ece1052252ea30569cd1be8060b08f8119ac78ea56c49",
+    "same_sample_as_4k_8k": true
+  },
+  "training_seconds": 15.545220358297229,
+  "vocab_size": 16384
+}

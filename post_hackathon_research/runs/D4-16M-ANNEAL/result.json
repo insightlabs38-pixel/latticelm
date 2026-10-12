@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "8116e957ec7875c579f4458e9fca21c10c87d7976ec775768b0c3a203f23e583",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.0960399895906447,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/D4-16M-ANNEAL/latest.pt",
+  "checkpoint_sha256": "8116e957ec7875c579f4458e9fca21c10c87d7976ec775768b0c3a203f23e583",
+  "experiment_id": "D4-16M-ANNEAL",
+  "finished_utc": "2026-10-06T02:46:01.176191+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "baseline",
+  "wall_seconds": 21609.123490381055
+}

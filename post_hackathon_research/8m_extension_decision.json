@@ -1,0 +1,14 @@
+{
+  "ambiguous_8m_effect": true,
+  "created_utc": "2026-10-03T10:36:20.313048+00:00",
+  "criterion": "two-seed sign disagreement, both paired intervals include zero, or <0.5% mean loss separation; both TPS >=9000; fresh paired 200M runs leave 180h for mandatory work",
+  "mean_relative_heldout_delta": 0.0034565957092637543,
+  "measured_tps": {
+    "co4": 10831.737852864004,
+    "dense": 10954.606614915452
+  },
+  "predicted_pair_seconds": 61921.41726648685,
+  "protected_mandatory_seconds": 648000,
+  "reason": "ambiguity, speed, and time gates passed",
+  "run": true
+}

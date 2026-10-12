@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-12T06:58:00.880129+00:00",
+  "checkpoint_hashes": [
+    "46e89b0e1b71bede545417bbb08edcc6c39402346813f54d2da70d7c1df328c0",
+    "2372cd23c81b05d2be0669aaa741cf6faca628743be14ead646a478dc298902e"
+  ],
+  "evaluator_compatibility": true,
+  "exact_equality_control": "SMOKE-REFERENCE-F8-DIFF-S7331-FRESH100M",
+  "exact_model_optimizer_rng_sampler_equality": true,
+  "experiment_id": "F8-DIFF-S7331-FRESH100M",
+  "kill_checkpoint_step": 20,
+  "numerical_policy": "Bitwise exact model/optimizer/RNG/sampler comparison; one independent repeat allowed to diagnose CPU floating-point variation; no relaxed tolerance.",
+  "passed": true,
+  "reference_and_causal_gates_passed": null,
+  "registration_sha256": "c0e7ba4600c1e05df52f579493a647f6e316fe67914ac479a8334930cfb50fad",
+  "sample_loglikelihood": -18.491615295410156,
+  "smoke_batch_size": 32,
+  "smoke_context_length": 256,
+  "smoke_steps": 100,
+  "smoke_tokens_per_second": 9109.263508827837,
+  "source_hashes": {
+    "scripts/followup_train.py": "e8bb8dd8012897ad8c302b60a18d5a4f6c0dbc458763291458725a28b7c4d0b1",
+    "scripts/train_final_production.py": "903106cedee65b630dad1903b0c09d9ad519e773921279bc3287438777ca6d1f",
+    "src/latticelm/co4_reference.py": "586947e3250d66895758c9549cdaa360f3d2bb058d0ab53f320d276d9f601f3f",
+    "src/latticelm/config.py": "1444488cf6ec8c4de9c67cf440dab83223c0d7f0a7937277c3b1942cc6547c52",
+    "src/latticelm/data_d.py": "c08631d747fab1083f9d4a31a7cf4b5df2213db5e94b913d85281e51e6608b42",
+    "src/latticelm/final_recipe.py": "d9555ed1a8ca12b628423ba11787b6dcd1a593b5f54d060078427d9809d94dc9",
+    "src/latticelm/model.py": "304b426b181b17688dbf8cd81ff97ab1d9060c59a0b763feec630857a6c9e5f7",
+    "src/latticelm/posthack_variants.py": "889dddd9b7d388174db3a270487b13fa06777bccf24a7b51f6cc3b0ea51e8c50",
+    "src/latticelm/research_sampling.py": "150fdafc14f37b8fcc52d0963bcc0d8597843a79fa775b8aa87d9108b2992150"
+  }
+}

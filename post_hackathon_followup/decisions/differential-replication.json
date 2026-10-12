@@ -1,0 +1,161 @@
+{
+  "at": "2026-10-12T09:46:25.628520+00:00",
+  "evidence": {
+    "at": "2026-10-12T09:46:25.624235+00:00",
+    "axes_are_separate": true,
+    "candidate": "F8-DIFF-S7331-FRESH100M",
+    "candidate_wall_accounting": {
+      "observed_elapsed_seconds": 9798.9247879982,
+      "retained_training_seconds": 9798.901962403004,
+      "scope": "Elapsed interval includes replayed work/resume initialization and downtime where observable; retained checkpoint wall excludes discarded work. Neither includes preflight/evaluation cost."
+    },
+    "capability": {
+      "any_clear_regression": false,
+      "per_task": {
+        "arc_easy": {
+          "acc": {
+            "delta": 0.007996632996632997,
+            "discordant_losses": 166,
+            "discordant_wins": 185,
+            "n": 2376,
+            "paired_exact_p": 0.33667762909136845,
+            "statistically_clear_regression": false
+          },
+          "acc_norm": {
+            "delta": -0.003367003367003367,
+            "discordant_losses": 147,
+            "discordant_wins": 139,
+            "n": 2376,
+            "paired_exact_p": 0.6790073111835653,
+            "statistically_clear_regression": false
+          }
+        },
+        "hellaswag": {
+          "acc": {
+            "delta": 0.002688707428799044,
+            "discordant_losses": 177,
+            "discordant_wins": 204,
+            "n": 10042,
+            "paired_exact_p": 0.18277956737311618,
+            "statistically_clear_regression": false
+          },
+          "acc_norm": {
+            "delta": 0.00029874526986656047,
+            "discordant_losses": 380,
+            "discordant_wins": 383,
+            "n": 10042,
+            "paired_exact_p": 0.9422859879448084,
+            "statistically_clear_regression": false
+          }
+        },
+        "piqa": {
+          "acc": {
+            "delta": -0.014145810663764961,
+            "discordant_losses": 124,
+            "discordant_wins": 98,
+            "n": 1838,
+            "paired_exact_p": 0.09314509859731927,
+            "statistically_clear_regression": false
+          },
+          "acc_norm": {
+            "delta": -0.007072905331882481,
+            "discordant_losses": 127,
+            "discordant_wins": 114,
+            "n": 1838,
+            "paired_exact_p": 0.4395941254506643,
+            "statistically_clear_regression": false
+          }
+        },
+        "winogrande": {
+          "acc": {
+            "delta": -0.0023677979479084454,
+            "discordant_losses": 259,
+            "discordant_wins": 256,
+            "n": 1267,
+            "paired_exact_p": 0.9297842090294897,
+            "statistically_clear_regression": false
+          }
+        }
+      },
+      "policy": "Paired exact test; Bonferroni across all available task/metric tests. Screens are not final evidence.",
+      "tests_corrected": 7
+    },
+    "clear_lm_regression": true,
+    "clear_wall_gain": false,
+    "control": "F8-MOD-S7331-FRESH100M",
+    "control_pair_key": "cf602036846185b7643978106f43b04cbf514dea423680c5dd3fcf820c8d7bc4",
+    "control_wall_accounting": {
+      "observed_elapsed_seconds": 8165.265597820282,
+      "retained_training_seconds": 8165.242968100996,
+      "scope": "Elapsed interval includes replayed work/resume initialization and downtime where observable; retained checkpoint wall excludes discarded work. Neither includes preflight/evaluation cost."
+    },
+    "depth_ratio": 1.0,
+    "efficiency_signal": false,
+    "final_claim_requires_two_seeds": true,
+    "input_receipt_hashes": {
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-DIFF-S7331-FRESH100M/capability_samples.json": "be7169acfef71e6aa18b7e59205716805f380bc1d08d6d727d6f0f861c698cf9",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-DIFF-S7331-FRESH100M/evaluation_receipt.json": "405143be1a94eab86e066982b187a93feba5f4cf6dfc7f3890c6639ed446f46a",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-DIFF-S7331-FRESH100M/initialization_receipt.json": "9b9dd220b0bdcb3e5164fe4bc6a0618cdd03db66e1d6909ea5030680a8426352",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-DIFF-S7331-FRESH100M/latest_validation.json": "1f00313a2df7a3e5ed8808409e7380c355ba3e94917c178e2925735239d37295",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-DIFF-S7331-FRESH100M/metrics-3fc7eaa25fd44995ab961ebd3164ab94.jsonl": "ffad595c8065baec7587f44021dfa0c74fc43b2bb864a0b83f2727bdd3b4792f",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-DIFF-S7331-FRESH100M/train_receipt.json": "041a4a17a6f3e22851ee085af5ca43f3f2c89455f7991d79f82a6c2d8cb76e32",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-DIFF-S7331-FRESH100M/validation_history.jsonl": "3365eda496c143d7bdf47b67bf5d10c397461d2e9df3559865bc0cf2a9064451",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-DIFF-S7331-FRESH100M/wikitext103.json": "3792bceca77d488b16846fc596a3ba1aefa0288fa8b28fbb8f283e5d5910c3c5",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-MOD-S7331-FRESH100M/capability_samples.json": "a585eba3e004953b0fc64ca9c0e89a680b642a8c13c1eb40d4b627217215db54",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-MOD-S7331-FRESH100M/evaluation_receipt.json": "052a5f71d99992523da2dd67e92828d45b99e4f43b525ddcd16b6657e44d7198",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-MOD-S7331-FRESH100M/initialization_receipt.json": "bfb2e24a78a55e823b98f5c9f13d92b4a4fb24e20932ca5a236511ed9238bd36",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-MOD-S7331-FRESH100M/latest_validation.json": "78138d6447e7565458c1befd49ae637485c7ba61b484cd1ca412e10cacb9d3fb",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-MOD-S7331-FRESH100M/metrics-34dd168390e34d9ea44712a6a3e90c9f.jsonl": "7c4831eaf3a46c975bec77c7f7ea76fa9aa3773fdf7f58c821e3d0e1557f645f",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-MOD-S7331-FRESH100M/train_receipt.json": "5e3cca7dc158c1a4b8b6d40bffc19210d959806a891d38d746d1d4d1390d7297",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-MOD-S7331-FRESH100M/validation_history.jsonl": "9818e107ffff483142339375a8e1cc91b369fa4bb1382e9957bd511afe882822",
+      "/home/insightlabs38/latticelm/post_hackathon_followup/runs/F8-MOD-S7331-FRESH100M/wikitext103.json": "8e09d06ae7eb7c8a15a5c07c8827f515a8866d399040323db3ea6ed261832c32",
+      "analysis_source_sha256": "d28fe8104460e0eaa42bc8e160e316958594ceea42b997caa8fc7749fd955a89"
+    },
+    "paired_bpb": {
+      "candidate_minus_control": 0.029191513131092917,
+      "ci95": [
+        0.02754903048557248,
+        0.03088266160215893
+      ],
+      "limitation": "row uncertainty; adjacent paragraphs are not independent documents; no training-seed inference",
+      "unit": "paired raw WikiText rows; ratio bootstrap"
+    },
+    "paired_loss": {
+      "candidate_minus_control": 0.0270503431558609,
+      "ci95": [
+        0.020634501054883004,
+        0.03363640710711478
+      ],
+      "limitation": "fixed held-out subset and evaluation-item uncertainty, not training-seed uncertainty",
+      "source_deltas": {
+        "finemath": 0.029679030179977417,
+        "fineweb": 0.03456693887710571,
+        "fineweb_edu": 0.030818849802017212,
+        "wikipedia": 0.013202279806137085
+      },
+      "unit": "four-sequence held-out block; stratified by source"
+    },
+    "parameter_ratio": 1.000124127230411,
+    "quality_consistent_with_tie": false,
+    "quality_gain": false,
+    "retained_training_wall_ratio": 1.200074755972871,
+    "sample_efficiency_policy": "At least two adjacent distinct earlier token positions beat the comparator endpoint under paired loss uncertainty; an isolated crossing is descriptive only.",
+    "sample_efficiency_strong_threshold_tokens": [],
+    "tie_note": "Failure to detect a difference is not proof of statistical equivalence.",
+    "wall_ratio": 1.2000742254623074,
+    "wall_ratio_scope": "Observed elapsed training interval",
+    "wall_uncertainty": {
+      "blocks": [
+        122,
+        122
+      ],
+      "limitation": "Within-run timing variability only; historical host conditions, boot/downtime and discarded preemption work are not estimated by this interval. Endpoint wall includes checkpoint overhead.",
+      "ratio_ci95": [
+        1.192797638855968,
+        1.2064973183067889
+      ],
+      "unit": "100 consecutive optimizer steps; independent block bootstrap across runs"
+    }
+  },
+  "run": false
+}

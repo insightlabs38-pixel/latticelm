@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-02T20:41:05.816109+00:00",
+  "files": [
+    {
+      "at": "2026-10-02T20:40:51.675236+00:00",
+      "path": "configs/16m_dense.json",
+      "remote": "post-hackathon/2026-10-01/configs/16m_dense.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "22ffb9fa80e377976f3bff26ca6547d33b2e670d",
+      "sha256": "af30329b71427aff09bd99ab87fc25e3068f67e380830ba8b0af1d222cac4ae4",
+      "size_bytes": 1195,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T20:40:52.827611+00:00",
+      "path": "runs/A16-DENSE-S1337/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/A16-DENSE-S1337/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "0deede17deddea15f024e7b647ba1e8fd43770ad",
+      "sha256": "9185986c95a24340788d3061550de614c5d2575e1441aa97a64ac892aec181ef",
+      "size_bytes": 672,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T20:40:53.612336+00:00",
+      "path": "runs/A16-DENSE-S1337/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A16-DENSE-S1337/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "eadacd97de6799656487390478799659b064370d",
+      "sha256": "2520020585e1849ab484293900ba5bd94aa8841e0dc5dec85d07c74987a901f8",
+      "size_bytes": 15804,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T20:40:56.000156+00:00",
+      "path": "runs/A16-DENSE-S1337/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A16-DENSE-S1337/metrics.jsonl",
+      "remote_lfs_sha256": "d420f91b0ddd23ec37877f0111ba8395fa984c7cc6a716927e9aadb76af57269",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "99adb71e72b23b0794f916e0e324904321fdaf49",
+      "sha256": "d420f91b0ddd23ec37877f0111ba8395fa984c7cc6a716927e9aadb76af57269",
+      "size_bytes": 14267796,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T20:40:56.962857+00:00",
+      "path": "runs/A16-DENSE-S1337/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/A16-DENSE-S1337/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "64179a204759f7b349a0383b756577da399ad02e",
+      "sha256": "bf23f4985aa07364d0a30379c77a79f607c987214899146e99d11a1a4c9f7117",
+      "size_bytes": 940,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T20:40:57.759087+00:00",
+      "path": "runs/A16-DENSE-S1337/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/A16-DENSE-S1337/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "ae6f2ad17a9b5f2e6ce2f08ad5a3b4db0aaf24f9",
+      "sha256": "ad978e2ceb0e50cf86d9f50099770b75d2c137a170577fab1798635a49e60ed3",
+      "size_bytes": 20357,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T20:41:00.282562+00:00",
+      "path": "runs/A16-DENSE-S1337/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/A16-DENSE-S1337/capability_samples.json",
+      "remote_lfs_sha256": "87bd56d0697678fac755f255f425d895099248ceebaf25b2e4bed99b9593a90e",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "d1af2a4d8007c2149cfec7e19dda955b3f8cc5b0",
+      "sha256": "87bd56d0697678fac755f255f425d895099248ceebaf25b2e4bed99b9593a90e",
+      "size_bytes": 17242887,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T20:41:05.813774+00:00",
+      "path": "runs/A16-DENSE-S1337/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/A16-DENSE-S1337/latest.pt",
+      "remote_lfs_sha256": "7162c43b2ae99110150f75925203e571389953f5cf128d069d0eb61ed673c008",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "a800a4f650f452129ee978b2e4fc34e7d8347aeb",
+      "sha256": "7162c43b2ae99110150f75925203e571389953f5cf128d069d0eb61ed673c008",
+      "size_bytes": 138840870,
+      "verified": true
+    }
+  ]
+}

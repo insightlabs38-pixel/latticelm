@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-10-10T09:31:59.051900+00:00",
+  "git_policy": "no commit, no Git/GitHub push; only private Hugging Face archive",
+  "mandatory_reports_missing": [],
+  "plots": {
+    "bpb_capability_vs_compute.png": "ba7cc3fbc51e8e85cac68999c4d654dcfc17bed53a5af57cad04cd221a734aca",
+    "heldout_vs_flops_proxy.png": "deefcb36b00020dd8e83da304e2b458fa22cc5e088dc7d4ad9a64fa2fe3ef652",
+    "heldout_vs_raw_gb.png": "2fe64ac2c6c54db6a45bdf1decb2c465689ea2f41b0b78ca72631326b4b5aa72",
+    "heldout_vs_tokens.png": "c0e88c059e9ccf8906bc46209fb62669ea5cebf0680e3ceeef4b245072e10dcb",
+    "heldout_vs_wall_hours.png": "60d3142713bf726d6a687d00d17bbc943653bd7062c2616026e98f1d4a5f7062"
+  },
+  "schema": "posthack-final-archive-v1",
+  "source_archive_sha256": "cf14daf350a5fc313b4ab7fce4ff9ae0a1b026d91237eab7957e9de6e00e88bc",
+  "source_manifest_sha256": "5e1881a7cd6a4bbb3fb72a505a21ddb39b1a4cf1f082a3c5401136f0a9252585",
+  "working_deadline_utc": "2026-10-16T22:24:33.875000+00:00"
+}

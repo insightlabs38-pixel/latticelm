@@ -1,0 +1,1274 @@
+{
+  "comparisons": [
+    {
+      "co4": "A8-CO4-S1337",
+      "dense": "A8-DENSE-S1337",
+      "four_task_raw_mean_co4": 0.40725,
+      "four_task_raw_mean_dense": 0.41474999999999995,
+      "heldout_loss_delta_co4_minus_dense": 0.019585828483104972,
+      "pair": "8M seed 1337",
+      "paired_capability": {
+        "bootstrap_draws": 2000,
+        "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A8-CO4-S1337/capability_samples.json",
+        "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A8-DENSE-S1337/capability_samples.json",
+        "four_task_equal_weight_ci95": [
+          -0.020006250000000003,
+          0.005506249999999966
+        ],
+        "four_task_equal_weight_delta": -0.0075,
+        "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+        "per_task": {
+          "arc_easy": {
+            "candidate_minus_control": -0.007,
+            "ci95": [
+              -0.03,
+              0.017
+            ],
+            "discordant_candidate_wins": 69,
+            "discordant_control_wins": 76,
+            "mcnemar_exact_p_two_sided": 0.6184454660388146,
+            "n": 1000
+          },
+          "hellaswag": {
+            "candidate_minus_control": -0.005,
+            "ci95": [
+              -0.018,
+              0.009
+            ],
+            "discordant_candidate_wins": 20,
+            "discordant_control_wins": 25,
+            "mcnemar_exact_p_two_sided": 0.5514843298025198,
+            "n": 1000
+          },
+          "piqa": {
+            "candidate_minus_control": -0.008,
+            "ci95": [
+              -0.028,
+              0.013
+            ],
+            "discordant_candidate_wins": 50,
+            "discordant_control_wins": 58,
+            "mcnemar_exact_p_two_sided": 0.5007663934164356,
+            "n": 1000
+          },
+          "winogrande": {
+            "candidate_minus_control": -0.01,
+            "ci95": [
+              -0.049,
+              0.029
+            ],
+            "discordant_candidate_wins": 205,
+            "discordant_control_wins": 215,
+            "mcnemar_exact_p_two_sided": 0.660600381295118,
+            "n": 1000
+          }
+        },
+        "schema": "posthack-paired-capability-v1",
+        "seed": 2026
+      },
+      "paired_window_bootstrap": {
+        "candidate_minus_control": 0.024265840649604797,
+        "ci95": [
+          0.014559610188007355,
+          0.034857973828911766
+        ],
+        "n": 32,
+        "status": "paired_bootstrap"
+      },
+      "training_wall_ratio_co4_over_dense": 0.944459383541623,
+      "transfer_raw_mean_co4": 0.21075000000000002,
+      "transfer_raw_mean_dense": 0.20325000000000001,
+      "wikitext_bpb_delta_co4_minus_dense": 0.01171787441030192
+    },
+    {
+      "co4": "A8-CO4-S2026",
+      "dense": "A8-DENSE-S2026",
+      "four_task_raw_mean_co4": 0.41175,
+      "four_task_raw_mean_dense": 0.41200000000000003,
+      "heldout_loss_delta_co4_minus_dense": 0.0030898675322532654,
+      "pair": "8M seed 2026",
+      "paired_capability": {
+        "bootstrap_draws": 2000,
+        "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A8-CO4-S2026/capability_samples.json",
+        "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A8-DENSE-S2026/capability_samples.json",
+        "four_task_equal_weight_ci95": [
+          -0.01225,
+          0.0125
+        ],
+        "four_task_equal_weight_delta": -0.0002500000000000002,
+        "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+        "per_task": {
+          "arc_easy": {
+            "candidate_minus_control": -0.007,
+            "ci95": [
+              -0.029,
+              0.016
+            ],
+            "discordant_candidate_wins": 63,
+            "discordant_control_wins": 70,
+            "mcnemar_exact_p_two_sided": 0.6030463891288798,
+            "n": 1000
+          },
+          "hellaswag": {
+            "candidate_minus_control": -0.002,
+            "ci95": [
+              -0.015,
+              0.011
+            ],
+            "discordant_candidate_wins": 22,
+            "discordant_control_wins": 24,
+            "mcnemar_exact_p_two_sided": 0.8829959121223965,
+            "n": 1000
+          },
+          "piqa": {
+            "candidate_minus_control": -0.004,
+            "ci95": [
+              -0.025,
+              0.015
+            ],
+            "discordant_candidate_wins": 48,
+            "discordant_control_wins": 52,
+            "mcnemar_exact_p_two_sided": 0.7643534344026671,
+            "n": 1000
+          },
+          "winogrande": {
+            "candidate_minus_control": 0.012,
+            "ci95": [
+              -0.024,
+              0.05002499999999987
+            ],
+            "discordant_candidate_wins": 204,
+            "discordant_control_wins": 192,
+            "mcnemar_exact_p_two_sided": 0.5804759839450513,
+            "n": 1000
+          }
+        },
+        "schema": "posthack-paired-capability-v1",
+        "seed": 2026
+      },
+      "paired_window_bootstrap": {
+        "candidate_minus_control": 0.009274065494537354,
+        "ci95": [
+          0.0007534228265285493,
+          0.017901642248034477
+        ],
+        "n": 32,
+        "status": "paired_bootstrap"
+      },
+      "training_wall_ratio_co4_over_dense": 0.9178564334893574,
+      "transfer_raw_mean_co4": 0.20875000000000002,
+      "transfer_raw_mean_dense": 0.2165,
+      "wikitext_bpb_delta_co4_minus_dense": -0.012714232728173958
+    },
+    {
+      "co4": "A16-CO4-S1337",
+      "dense": "A16-DENSE-S1337",
+      "four_task_raw_mean_co4": 0.4105,
+      "four_task_raw_mean_dense": 0.41175,
+      "heldout_loss_delta_co4_minus_dense": -0.0019245281815529758,
+      "pair": "16M seed 1337",
+      "paired_capability": {
+        "bootstrap_draws": 2000,
+        "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+        "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-DENSE-S1337/capability_samples.json",
+        "four_task_equal_weight_ci95": [
+          -0.014006250000000001,
+          0.0115
+        ],
+        "four_task_equal_weight_delta": -0.0012499999999999994,
+        "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+        "per_task": {
+          "arc_easy": {
+            "candidate_minus_control": 0.004,
+            "ci95": [
+              -0.022,
+              0.029
+            ],
+            "discordant_candidate_wins": 74,
+            "discordant_control_wins": 70,
+            "mcnemar_exact_p_two_sided": 0.8026933550697278,
+            "n": 1000
+          },
+          "hellaswag": {
+            "candidate_minus_control": -0.003,
+            "ci95": [
+              -0.015,
+              0.009
+            ],
+            "discordant_candidate_wins": 19,
+            "discordant_control_wins": 22,
+            "mcnemar_exact_p_two_sided": 0.755228657504631,
+            "n": 1000
+          },
+          "piqa": {
+            "candidate_minus_control": -0.022,
+            "ci95": [
+              -0.042,
+              -0.001
+            ],
+            "discordant_candidate_wins": 46,
+            "discordant_control_wins": 68,
+            "mcnemar_exact_p_two_sided": 0.04872468639868199,
+            "n": 1000
+          },
+          "winogrande": {
+            "candidate_minus_control": 0.016,
+            "ci95": [
+              -0.023,
+              0.056
+            ],
+            "discordant_candidate_wins": 204,
+            "discordant_control_wins": 188,
+            "mcnemar_exact_p_two_sided": 0.4487232955541157,
+            "n": 1000
+          }
+        },
+        "schema": "posthack-paired-capability-v1",
+        "seed": 2026
+      },
+      "paired_window_bootstrap": {
+        "candidate_minus_control": -0.0039012357592582703,
+        "ci95": [
+          -0.01180789079517126,
+          0.004252386465668677
+        ],
+        "n": 32,
+        "status": "paired_bootstrap"
+      },
+      "training_wall_ratio_co4_over_dense": 1.051261455963795,
+      "transfer_raw_mean_co4": 0.2605,
+      "transfer_raw_mean_dense": 0.2585,
+      "wikitext_bpb_delta_co4_minus_dense": -0.012430872809790161
+    },
+    {
+      "co4": "A32-CO4-S1337",
+      "dense": "A32-DENSE-S1337",
+      "four_task_raw_mean_co4": 0.41625,
+      "four_task_raw_mean_dense": 0.42100000000000004,
+      "heldout_loss_delta_co4_minus_dense": 0.001889775693416862,
+      "pair": "32M seed 1337",
+      "paired_capability": {
+        "bootstrap_draws": 2000,
+        "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A32-CO4-S1337/capability_samples.json",
+        "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A32-DENSE-S1337/capability_samples.json",
+        "four_task_equal_weight_ci95": [
+          -0.01775625,
+          0.008749999999999999
+        ],
+        "four_task_equal_weight_delta": -0.00475,
+        "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+        "per_task": {
+          "arc_easy": {
+            "candidate_minus_control": -0.004,
+            "ci95": [
+              -0.028,
+              0.02
+            ],
+            "discordant_candidate_wins": 78,
+            "discordant_control_wins": 82,
+            "mcnemar_exact_p_two_sided": 0.8126155651898863,
+            "n": 1000
+          },
+          "hellaswag": {
+            "candidate_minus_control": -0.008,
+            "ci95": [
+              -0.022,
+              0.005
+            ],
+            "discordant_candidate_wins": 18,
+            "discordant_control_wins": 26,
+            "mcnemar_exact_p_two_sided": 0.2912152365458951,
+            "n": 1000
+          },
+          "piqa": {
+            "candidate_minus_control": 0.011,
+            "ci95": [
+              -0.009024999999999998,
+              0.032
+            ],
+            "discordant_candidate_wins": 64,
+            "discordant_control_wins": 53,
+            "mcnemar_exact_p_two_sided": 0.35527968165224766,
+            "n": 1000
+          },
+          "winogrande": {
+            "candidate_minus_control": -0.018,
+            "ci95": [
+              -0.055025,
+              0.023
+            ],
+            "discordant_candidate_wins": 194,
+            "discordant_control_wins": 212,
+            "mcnemar_exact_p_two_sided": 0.3988676269203958,
+            "n": 1000
+          }
+        },
+        "schema": "posthack-paired-capability-v1",
+        "seed": 2026
+      },
+      "paired_window_bootstrap": {
+        "candidate_minus_control": 0.0033418014645576477,
+        "ci95": [
+          -0.006278814189136029,
+          0.013256011344492433
+        ],
+        "n": 32,
+        "status": "paired_bootstrap"
+      },
+      "training_wall_ratio_co4_over_dense": 1.0289482248043431,
+      "transfer_raw_mean_co4": 0.22725,
+      "transfer_raw_mean_dense": 0.23275,
+      "wikitext_bpb_delta_co4_minus_dense": -0.0019832276190399067
+    }
+  ],
+  "created_utc": "2026-10-03T10:36:18.530960+00:00",
+  "limitations": [
+    "8M has only two seeds",
+    "16M/32M have one seed",
+    "capability evaluations are 1000-example screens",
+    "raw bytes and FLOPs are estimated"
+  ],
+  "local_scaling_trends": {
+    "co4": {
+      "heldout_loss_per_ln_parameter_slope": -0.16328984483927717,
+      "intercept": 5.8611396880006685,
+      "points": [
+        "A8-CO4-S1337",
+        "A16-CO4-S1337",
+        "A32-CO4-S1337"
+      ]
+    },
+    "dense": {
+      "heldout_loss_per_ln_parameter_slope": -0.15049747498628666,
+      "intercept": 5.642367221337351,
+      "points": [
+        "A8-DENSE-S1337",
+        "A16-DENSE-S1337",
+        "A32-DENSE-S1337"
+      ]
+    }
+  },
+  "runs": {
+    "A16-CO4-S1337": {
+      "capability_competition": {
+        "arc_easy": {
+          "normalized_accuracy": 0.313,
+          "raw_accuracy": 0.304,
+          "sample_count": 1000
+        },
+        "hellaswag": {
+          "normalized_accuracy": 0.341,
+          "raw_accuracy": 0.312,
+          "sample_count": 1000
+        },
+        "piqa": {
+          "normalized_accuracy": 0.495,
+          "raw_accuracy": 0.522,
+          "sample_count": 1000
+        },
+        "winogrande": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.504,
+          "sample_count": 1000
+        }
+      },
+      "capability_transfer": {
+        "arc_challenge": {
+          "normalized_accuracy": 0.215,
+          "raw_accuracy": 0.166,
+          "sample_count": 1000
+        },
+        "boolq": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.626,
+          "sample_count": 1000
+        },
+        "lambada_openai": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.126,
+          "sample_count": 1000
+        },
+        "openbookqa": {
+          "normalized_accuracy": 0.256,
+          "raw_accuracy": 0.124,
+          "sample_count": 500
+        }
+      },
+      "checkpoint_sha256": "2930be60344a20b3a1014138f6bd3e14eef6904211188be1a56ed66a216f2ea8",
+      "effective_tokens_per_second": 6933.936243882751,
+      "estimated_raw_bytes_policy": "sampled source tokens times certified source-level raw-byte/token ratio",
+      "estimated_raw_bytes_seen": 490064439.67638785,
+      "experiment_id": "A16-CO4-S1337",
+      "logical_tokens": 150000000,
+      "paired_source_losses": {
+        "finemath": [
+          2.995502471923828,
+          3.0388402938842773,
+          3.13535213470459,
+          2.94677996635437,
+          2.8120720386505127,
+          3.0940101146698,
+          3.4496257305145264,
+          2.8941550254821777
+        ],
+        "fineweb": [
+          2.9175479412078857,
+          2.7006032466888428,
+          3.275858163833618,
+          3.2704694271087646,
+          3.13839054107666,
+          3.1650524139404297,
+          3.3321073055267334,
+          3.2408907413482666
+        ],
+        "fineweb_edu": [
+          3.1009507179260254,
+          3.188800096511841,
+          2.7893881797790527,
+          2.993795394897461,
+          3.4540491104125977,
+          3.3206443786621094,
+          3.3860723972320557,
+          3.6322860717773438
+        ],
+        "wikipedia": [
+          2.2794697284698486,
+          2.9302165508270264,
+          3.220350980758667,
+          3.2086589336395264,
+          3.3462119102478027,
+          2.5012853145599365,
+          2.5403072834014893,
+          2.690861701965332
+        ]
+      },
+      "processed_tokens": 150003712,
+      "sampled_source_tokens": {
+        "finemath": 15000576,
+        "fineweb": 30001152,
+        "fineweb_edu": 67501824,
+        "wikipedia": 37500160
+      },
+      "source_losses": {
+        "finemath": 3.0457922220230103,
+        "fineweb": 3.1301149725914,
+        "fineweb_edu": 3.233248293399811,
+        "wikipedia": 2.8396703004837036
+      },
+      "steps": 18311,
+      "training_wall_seconds": 21632.734239852987,
+      "weighted_heldout_loss": 3.0954815238714217,
+      "wikitext_bpb": 1.6294135478361724,
+      "wikitext_bytes_scored": 1287656,
+      "wikitext_nll_nats": 1454308.8261117935,
+      "wikitext_ppl": 35.14963102889437,
+      "wikitext_windowing_policy": "non-overlapping target windows; stride 256; maximum context 256"
+    },
+    "A16-DENSE-S1337": {
+      "capability_competition": {
+        "arc_easy": {
+          "normalized_accuracy": 0.326,
+          "raw_accuracy": 0.3,
+          "sample_count": 1000
+        },
+        "hellaswag": {
+          "normalized_accuracy": 0.352,
+          "raw_accuracy": 0.315,
+          "sample_count": 1000
+        },
+        "piqa": {
+          "normalized_accuracy": 0.516,
+          "raw_accuracy": 0.544,
+          "sample_count": 1000
+        },
+        "winogrande": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.488,
+          "sample_count": 1000
+        }
+      },
+      "capability_transfer": {
+        "arc_challenge": {
+          "normalized_accuracy": 0.213,
+          "raw_accuracy": 0.176,
+          "sample_count": 1000
+        },
+        "boolq": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.605,
+          "sample_count": 1000
+        },
+        "lambada_openai": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.135,
+          "sample_count": 1000
+        },
+        "openbookqa": {
+          "normalized_accuracy": 0.236,
+          "raw_accuracy": 0.118,
+          "sample_count": 500
+        }
+      },
+      "checkpoint_sha256": "7162c43b2ae99110150f75925203e571389953f5cf128d069d0eb61ed673c008",
+      "effective_tokens_per_second": 7289.379911304309,
+      "estimated_raw_bytes_policy": "sampled source tokens times certified source-level raw-byte/token ratio",
+      "estimated_raw_bytes_seen": 490064439.67638785,
+      "experiment_id": "A16-DENSE-S1337",
+      "logical_tokens": 150000000,
+      "paired_source_losses": {
+        "finemath": [
+          3.013511896133423,
+          3.090111017227173,
+          3.176692008972168,
+          2.930581569671631,
+          2.8041627407073975,
+          3.1255781650543213,
+          3.4373252391815186,
+          2.847686529159546
+        ],
+        "fineweb": [
+          2.887165069580078,
+          2.6991987228393555,
+          3.2629692554473877,
+          3.263709545135498,
+          3.1616344451904297,
+          3.146005630493164,
+          3.3529396057128906,
+          3.2790181636810303
+        ],
+        "fineweb_edu": [
+          3.087510585784912,
+          3.170335054397583,
+          2.766706943511963,
+          3.010903835296631,
+          3.4500081539154053,
+          3.3170833587646484,
+          3.3989996910095215,
+          3.632784128189087
+        ],
+        "wikipedia": [
+          2.272331476211548,
+          2.9303970336914062,
+          3.219144821166992,
+          3.2268059253692627,
+          3.35685133934021,
+          2.4844260215759277,
+          2.575648307800293,
+          2.7372195720672607
+        ]
+      },
+      "processed_tokens": 150003712,
+      "sampled_source_tokens": {
+        "finemath": 15000576,
+        "fineweb": 30001152,
+        "fineweb_edu": 67501824,
+        "wikipedia": 37500160
+      },
+      "source_losses": {
+        "finemath": 3.053206145763397,
+        "fineweb": 3.1315800547599792,
+        "fineweb_edu": 3.229291468858719,
+        "wikipedia": 2.8503530621528625
+      },
+      "steps": 18311,
+      "training_wall_seconds": 20577.882045547012,
+      "weighted_heldout_loss": 3.0974060520529747,
+      "wikitext_bpb": 1.6418444206459626,
+      "wikitext_bytes_scored": 1287656,
+      "wikitext_nll_nats": 1465403.8167405128,
+      "wikitext_ppl": 36.11724980627328,
+      "wikitext_windowing_policy": "non-overlapping target windows; stride 256; maximum context 256"
+    },
+    "A32-CO4-S1337": {
+      "capability_competition": {
+        "arc_easy": {
+          "normalized_accuracy": 0.343,
+          "raw_accuracy": 0.303,
+          "sample_count": 1000
+        },
+        "hellaswag": {
+          "normalized_accuracy": 0.339,
+          "raw_accuracy": 0.318,
+          "sample_count": 1000
+        },
+        "piqa": {
+          "normalized_accuracy": 0.526,
+          "raw_accuracy": 0.562,
+          "sample_count": 1000
+        },
+        "winogrande": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.482,
+          "sample_count": 1000
+        }
+      },
+      "capability_transfer": {
+        "arc_challenge": {
+          "normalized_accuracy": 0.221,
+          "raw_accuracy": 0.17,
+          "sample_count": 1000
+        },
+        "boolq": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.47,
+          "sample_count": 1000
+        },
+        "lambada_openai": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.137,
+          "sample_count": 1000
+        },
+        "openbookqa": {
+          "normalized_accuracy": 0.25,
+          "raw_accuracy": 0.132,
+          "sample_count": 500
+        }
+      },
+      "checkpoint_sha256": "a851c2b767e885a174fda8ab5f7fe0bb84cc0d0f8f0a7514a1b5033fba25c2dc",
+      "effective_tokens_per_second": 3992.201041014654,
+      "estimated_raw_bytes_policy": "sampled source tokens times certified source-level raw-byte/token ratio",
+      "estimated_raw_bytes_seen": 326727640.12944293,
+      "experiment_id": "A32-CO4-S1337",
+      "logical_tokens": 100000000,
+      "paired_source_losses": {
+        "finemath": [
+          2.980830430984497,
+          3.0365636348724365,
+          3.1357650756835938,
+          2.90765380859375,
+          2.7905497550964355,
+          3.0895001888275146,
+          3.438446283340454,
+          2.935868501663208
+        ],
+        "fineweb": [
+          3.037802219390869,
+          2.6190905570983887,
+          3.3009092807769775,
+          3.304823875427246,
+          3.122154474258423,
+          3.089421272277832,
+          3.2831780910491943,
+          3.1818881034851074
+        ],
+        "fineweb_edu": [
+          3.03007173538208,
+          3.126457452774048,
+          2.7333033084869385,
+          2.999149799346924,
+          3.411223888397217,
+          3.3158228397369385,
+          3.380465507507324,
+          3.60579252243042
+        ],
+        "wikipedia": [
+          2.2675511837005615,
+          2.8555383682250977,
+          3.1835436820983887,
+          3.141254425048828,
+          3.2969775199890137,
+          2.4770779609680176,
+          2.485783576965332,
+          2.701049566268921
+        ]
+      },
+      "processed_tokens": 100007936,
+      "sampled_source_tokens": {
+        "finemath": 10000896,
+        "fineweb": 20001792,
+        "fineweb_edu": 45004032,
+        "wikipedia": 25001216
+      },
+      "source_losses": {
+        "finemath": 3.039397209882736,
+        "fineweb": 3.1174084842205048,
+        "fineweb_edu": 3.200285881757736,
+        "wikipedia": 2.80109703540802
+      },
+      "steps": 12208,
+      "training_wall_seconds": 25048.838716445025,
+      "weighted_heldout_loss": 3.067824323475361,
+      "wikitext_bpb": 1.6176744683802384,
+      "wikitext_bytes_scored": 1287656,
+      "wikitext_nll_nats": 1443831.2853512764,
+      "wikitext_ppl": 34.25967298456044,
+      "wikitext_windowing_policy": "non-overlapping target windows; stride 256; maximum context 256"
+    },
+    "A32-DENSE-S1337": {
+      "capability_competition": {
+        "arc_easy": {
+          "normalized_accuracy": 0.322,
+          "raw_accuracy": 0.307,
+          "sample_count": 1000
+        },
+        "hellaswag": {
+          "normalized_accuracy": 0.336,
+          "raw_accuracy": 0.326,
+          "sample_count": 1000
+        },
+        "piqa": {
+          "normalized_accuracy": 0.527,
+          "raw_accuracy": 0.551,
+          "sample_count": 1000
+        },
+        "winogrande": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.5,
+          "sample_count": 1000
+        }
+      },
+      "capability_transfer": {
+        "arc_challenge": {
+          "normalized_accuracy": 0.216,
+          "raw_accuracy": 0.17,
+          "sample_count": 1000
+        },
+        "boolq": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.478,
+          "sample_count": 1000
+        },
+        "lambada_openai": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.141,
+          "sample_count": 1000
+        },
+        "openbookqa": {
+          "normalized_accuracy": 0.24,
+          "raw_accuracy": 0.142,
+          "sample_count": 500
+        }
+      },
+      "checkpoint_sha256": "03efcec3267bb73e823d7745f3bfc3c81a006f6f253f006c4e4778fc143f6a43",
+      "effective_tokens_per_second": 4107.768174214079,
+      "estimated_raw_bytes_policy": "sampled source tokens times certified source-level raw-byte/token ratio",
+      "estimated_raw_bytes_seen": 326727640.12944293,
+      "experiment_id": "A32-DENSE-S1337",
+      "logical_tokens": 100000000,
+      "paired_source_losses": {
+        "finemath": [
+          2.9492886066436768,
+          3.040461301803589,
+          3.1316592693328857,
+          2.89479660987854,
+          2.7499186992645264,
+          3.1014318466186523,
+          3.463083028793335,
+          2.8686482906341553
+        ],
+        "fineweb": [
+          2.982009172439575,
+          2.6300923824310303,
+          3.2623679637908936,
+          3.2799630165100098,
+          3.126859664916992,
+          3.093092441558838,
+          3.2859225273132324,
+          3.237239360809326
+        ],
+        "fineweb_edu": [
+          3.0401835441589355,
+          3.1589672565460205,
+          2.7294721603393555,
+          2.9726967811584473,
+          3.42411470413208,
+          3.2761216163635254,
+          3.3677425384521484,
+          3.593721628189087
+        ],
+        "wikipedia": [
+          2.286491870880127,
+          2.91843581199646,
+          3.1863973140716553,
+          3.154299259185791,
+          3.2859508991241455,
+          2.471524953842163,
+          2.5077967643737793,
+          2.6878199577331543
+        ]
+      },
+      "processed_tokens": 100007936,
+      "sampled_source_tokens": {
+        "finemath": 10000896,
+        "fineweb": 20001792,
+        "fineweb_edu": 45004032,
+        "wikipedia": 25001216
+      },
+      "source_losses": {
+        "finemath": 3.02491095662117,
+        "fineweb": 3.112193316221237,
+        "fineweb_edu": 3.19537752866745,
+        "wikipedia": 2.8123396039009094
+      },
+      "steps": 12208,
+      "training_wall_seconds": 24344.119667642284,
+      "weighted_heldout_loss": 3.065934547781944,
+      "wikitext_bpb": 1.6196576959992783,
+      "wikitext_bytes_scored": 1287656,
+      "wikitext_nll_nats": 1445601.3856639862,
+      "wikitext_ppl": 34.40842693750164,
+      "wikitext_windowing_policy": "non-overlapping target windows; stride 256; maximum context 256"
+    },
+    "A8-CO4-S1337": {
+      "capability_competition": {
+        "arc_easy": {
+          "normalized_accuracy": 0.304,
+          "raw_accuracy": 0.29,
+          "sample_count": 1000
+        },
+        "hellaswag": {
+          "normalized_accuracy": 0.326,
+          "raw_accuracy": 0.308,
+          "sample_count": 1000
+        },
+        "piqa": {
+          "normalized_accuracy": 0.521,
+          "raw_accuracy": 0.532,
+          "sample_count": 1000
+        },
+        "winogrande": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.499,
+          "sample_count": 1000
+        }
+      },
+      "capability_transfer": {
+        "arc_challenge": {
+          "normalized_accuracy": 0.213,
+          "raw_accuracy": 0.171,
+          "sample_count": 1000
+        },
+        "boolq": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.442,
+          "sample_count": 1000
+        },
+        "lambada_openai": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.098,
+          "sample_count": 1000
+        },
+        "openbookqa": {
+          "normalized_accuracy": 0.226,
+          "raw_accuracy": 0.132,
+          "sample_count": 500
+        }
+      },
+      "checkpoint_sha256": "a01b837828e05c4c211b86e6b70d37f56a0a478f203bf8e8b7f39270be90f966",
+      "effective_tokens_per_second": 11329.815321528153,
+      "estimated_raw_bytes_policy": "sampled source tokens times certified source-level raw-byte/token ratio",
+      "estimated_raw_bytes_seen": 326727640.12944293,
+      "experiment_id": "A8-CO4-S1337",
+      "logical_tokens": 100000000,
+      "paired_source_losses": {
+        "finemath": [
+          3.272779703140259,
+          3.2773728370666504,
+          3.332702159881592,
+          3.132798910140991,
+          3.046844720840454,
+          3.3018901348114014,
+          3.612819194793701,
+          3.1391713619232178
+        ],
+        "fineweb": [
+          3.3466622829437256,
+          2.9506237506866455,
+          3.5255606174468994,
+          3.4959213733673096,
+          3.352872610092163,
+          3.288849353790283,
+          3.4973983764648438,
+          3.4376556873321533
+        ],
+        "fineweb_edu": [
+          3.3030154705047607,
+          3.3982765674591064,
+          2.989720582962036,
+          3.200648307800293,
+          3.6264641284942627,
+          3.4644482135772705,
+          3.562544107437134,
+          3.8644895553588867
+        ],
+        "wikipedia": [
+          2.4754621982574463,
+          3.067456007003784,
+          3.3806943893432617,
+          3.3552653789520264,
+          3.466836452484131,
+          2.705806255340576,
+          2.7429797649383545,
+          2.9216010570526123
+        ]
+      },
+      "processed_tokens": 100007936,
+      "sampled_source_tokens": {
+        "finemath": 10000896,
+        "fineweb": 20001792,
+        "fineweb_edu": 45004032,
+        "wikipedia": 25001216
+      },
+      "source_losses": {
+        "finemath": 3.2645473778247833,
+        "fineweb": 3.361943006515503,
+        "fineweb_edu": 3.4262008666992188,
+        "wikipedia": 3.014512687921524
+      },
+      "steps": 12208,
+      "training_wall_seconds": 8826.2691987562,
+      "weighted_heldout_loss": 3.2942619010806085,
+      "wikitext_bpb": 1.758982180275257,
+      "wikitext_bytes_scored": 1287656,
+      "wikitext_nll_nats": 1569953.3817825317,
+      "wikitext_ppl": 46.649841966957275,
+      "wikitext_windowing_policy": "non-overlapping target windows; stride 256; maximum context 256"
+    },
+    "A8-CO4-S2026": {
+      "capability_competition": {
+        "arc_easy": {
+          "normalized_accuracy": 0.318,
+          "raw_accuracy": 0.299,
+          "sample_count": 1000
+        },
+        "hellaswag": {
+          "normalized_accuracy": 0.352,
+          "raw_accuracy": 0.308,
+          "sample_count": 1000
+        },
+        "piqa": {
+          "normalized_accuracy": 0.519,
+          "raw_accuracy": 0.528,
+          "sample_count": 1000
+        },
+        "winogrande": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.512,
+          "sample_count": 1000
+        }
+      },
+      "capability_transfer": {
+        "arc_challenge": {
+          "normalized_accuracy": 0.22,
+          "raw_accuracy": 0.17,
+          "sample_count": 1000
+        },
+        "boolq": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.461,
+          "sample_count": 1000
+        },
+        "lambada_openai": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.088,
+          "sample_count": 1000
+        },
+        "openbookqa": {
+          "normalized_accuracy": 0.24,
+          "raw_accuracy": 0.116,
+          "sample_count": 500
+        }
+      },
+      "checkpoint_sha256": "6df3154e5a73d157ffebd06e5708422ce669106539f693b1ca1d70afa35e4e5b",
+      "effective_tokens_per_second": 11872.923904256815,
+      "estimated_raw_bytes_policy": "sampled source tokens times certified source-level raw-byte/token ratio",
+      "estimated_raw_bytes_seen": 326727640.12944293,
+      "experiment_id": "A8-CO4-S2026",
+      "logical_tokens": 100000000,
+      "paired_source_losses": {
+        "finemath": [
+          3.283358573913574,
+          3.316115140914917,
+          3.329408645629883,
+          3.1690773963928223,
+          3.0045042037963867,
+          3.3040244579315186,
+          3.626563549041748,
+          3.1540098190307617
+        ],
+        "fineweb": [
+          3.3360095024108887,
+          2.949036121368408,
+          3.4785213470458984,
+          3.468106985092163,
+          3.3308701515197754,
+          3.3255486488342285,
+          3.5066397190093994,
+          3.4269330501556396
+        ],
+        "fineweb_edu": [
+          3.2618045806884766,
+          3.4138293266296387,
+          2.9833950996398926,
+          3.205548048019409,
+          3.586592197418213,
+          3.4989774227142334,
+          3.5711283683776855,
+          3.801698923110962
+        ],
+        "wikipedia": [
+          2.4792540073394775,
+          3.052147626876831,
+          3.3884029388427734,
+          3.371283531188965,
+          3.4904067516326904,
+          2.663301467895508,
+          2.7625863552093506,
+          2.9123122692108154
+        ]
+      },
+      "processed_tokens": 100007936,
+      "sampled_source_tokens": {
+        "finemath": 10000896,
+        "fineweb": 20001792,
+        "fineweb_edu": 45004032,
+        "wikipedia": 25001216
+      },
+      "source_losses": {
+        "finemath": 3.2733827233314514,
+        "fineweb": 3.35270819067955,
+        "fineweb_edu": 3.415371745824814,
+        "wikipedia": 3.0149618685245514
+      },
+      "steps": 12208,
+      "training_wall_seconds": 8422.52513419604,
+      "weighted_heldout_loss": 3.2885376632213594,
+      "wikitext_bpb": 1.7480346329838485,
+      "wikitext_bytes_scored": 1287656,
+      "wikitext_nll_nats": 1560182.311282158,
+      "wikitext_ppl": 45.54740018864618,
+      "wikitext_windowing_policy": "non-overlapping target windows; stride 256; maximum context 256"
+    },
+    "A8-DENSE-S1337": {
+      "capability_competition": {
+        "arc_easy": {
+          "normalized_accuracy": 0.334,
+          "raw_accuracy": 0.297,
+          "sample_count": 1000
+        },
+        "hellaswag": {
+          "normalized_accuracy": 0.344,
+          "raw_accuracy": 0.313,
+          "sample_count": 1000
+        },
+        "piqa": {
+          "normalized_accuracy": 0.517,
+          "raw_accuracy": 0.54,
+          "sample_count": 1000
+        },
+        "winogrande": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.509,
+          "sample_count": 1000
+        }
+      },
+      "capability_transfer": {
+        "arc_challenge": {
+          "normalized_accuracy": 0.21,
+          "raw_accuracy": 0.172,
+          "sample_count": 1000
+        },
+        "boolq": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.393,
+          "sample_count": 1000
+        },
+        "lambada_openai": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.112,
+          "sample_count": 1000
+        },
+        "openbookqa": {
+          "normalized_accuracy": 0.248,
+          "raw_accuracy": 0.136,
+          "sample_count": 500
+        }
+      },
+      "checkpoint_sha256": "c8b6d11065cd95a0e9ef42a29c630cf8dd0c3462c04c3a506a5a6efa05bca3f8",
+      "effective_tokens_per_second": 10700.550394210914,
+      "estimated_raw_bytes_policy": "sampled source tokens times certified source-level raw-byte/token ratio",
+      "estimated_raw_bytes_seen": 326727640.12944293,
+      "experiment_id": "A8-DENSE-S1337",
+      "logical_tokens": 100000000,
+      "paired_source_losses": {
+        "finemath": [
+          3.238293409347534,
+          3.239126205444336,
+          3.329378843307495,
+          3.123319625854492,
+          2.984508514404297,
+          3.2555418014526367,
+          3.588074207305908,
+          3.0802297592163086
+        ],
+        "fineweb": [
+          3.226661443710327,
+          2.885157823562622,
+          3.481220006942749,
+          3.4467108249664307,
+          3.3139848709106445,
+          3.301147937774658,
+          3.4772157669067383,
+          3.447434902191162
+        ],
+        "fineweb_edu": [
+          3.261422872543335,
+          3.411973237991333,
+          2.983579635620117,
+          3.1914563179016113,
+          3.6015377044677734,
+          3.455382823944092,
+          3.565140724182129,
+          3.838881492614746
+        ],
+        "wikipedia": [
+          2.48715877532959,
+          3.038443088531494,
+          3.352104425430298,
+          3.343292474746704,
+          3.4827511310577393,
+          2.6534945964813232,
+          2.7632834911346436,
+          2.9132158756256104
+        ]
+      },
+      "processed_tokens": 100007936,
+      "sampled_source_tokens": {
+        "finemath": 10000896,
+        "fineweb": 20001792,
+        "fineweb_edu": 45004032,
+        "wikipedia": 25001216
+      },
+      "source_losses": {
+        "finemath": 3.229809045791626,
+        "fineweb": 3.3224416971206665,
+        "fineweb_edu": 3.413671851158142,
+        "wikipedia": 3.0042179822921753
+      },
+      "steps": 12208,
+      "training_wall_seconds": 9345.313681630883,
+      "weighted_heldout_loss": 3.2746760725975035,
+      "wikitext_bpb": 1.747264305864955,
+      "wikitext_bytes_scored": 1287656,
+      "wikitext_nll_nats": 1559494.7672700882,
+      "wikitext_ppl": 45.470814962010735,
+      "wikitext_windowing_policy": "non-overlapping target windows; stride 256; maximum context 256"
+    },
+    "A8-DENSE-S2026": {
+      "capability_competition": {
+        "arc_easy": {
+          "normalized_accuracy": 0.318,
+          "raw_accuracy": 0.306,
+          "sample_count": 1000
+        },
+        "hellaswag": {
+          "normalized_accuracy": 0.341,
+          "raw_accuracy": 0.31,
+          "sample_count": 1000
+        },
+        "piqa": {
+          "normalized_accuracy": 0.504,
+          "raw_accuracy": 0.532,
+          "sample_count": 1000
+        },
+        "winogrande": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.5,
+          "sample_count": 1000
+        }
+      },
+      "capability_transfer": {
+        "arc_challenge": {
+          "normalized_accuracy": 0.217,
+          "raw_accuracy": 0.166,
+          "sample_count": 1000
+        },
+        "boolq": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.471,
+          "sample_count": 1000
+        },
+        "lambada_openai": {
+          "normalized_accuracy": null,
+          "raw_accuracy": 0.109,
+          "sample_count": 1000
+        },
+        "openbookqa": {
+          "normalized_accuracy": 0.238,
+          "raw_accuracy": 0.12,
+          "sample_count": 500
+        }
+      },
+      "checkpoint_sha256": "0fc6daac6d70ca007335e8e29ceaee2b8e56c401bafcd1f456c22037500a0bc4",
+      "effective_tokens_per_second": 10897.639589851698,
+      "estimated_raw_bytes_policy": "sampled source tokens times certified source-level raw-byte/token ratio",
+      "estimated_raw_bytes_seen": 326727640.12944293,
+      "experiment_id": "A8-DENSE-S2026",
+      "logical_tokens": 100000000,
+      "paired_source_losses": {
+        "finemath": [
+          3.2508068084716797,
+          3.261688232421875,
+          3.332279920578003,
+          3.1169307231903076,
+          2.939314842224121,
+          3.2616617679595947,
+          3.6069204807281494,
+          3.108229637145996
+        ],
+        "fineweb": [
+          3.3078601360321045,
+          2.9565720558166504,
+          3.482252597808838,
+          3.4523355960845947,
+          3.312314033508301,
+          3.326157331466675,
+          3.482905387878418,
+          3.451939821243286
+        ],
+        "fineweb_edu": [
+          3.2615044116973877,
+          3.375580072402954,
+          2.9907915592193604,
+          3.212761878967285,
+          3.6134300231933594,
+          3.4817750453948975,
+          3.5560929775238037,
+          3.8341517448425293
+        ],
+        "wikipedia": [
+          2.466911554336548,
+          3.0734798908233643,
+          3.3857388496398926,
+          3.377880334854126,
+          3.4971566200256348,
+          2.670114040374756,
+          2.769415855407715,
+          2.9376718997955322
+        ]
+      },
+      "processed_tokens": 100007936,
+      "sampled_source_tokens": {
+        "finemath": 10000896,
+        "fineweb": 20001792,
+        "fineweb_edu": 45004032,
+        "wikipedia": 25001216
+      },
+      "source_losses": {
+        "finemath": 3.234729051589966,
+        "fineweb": 3.3465421199798584,
+        "fineweb_edu": 3.415760964155197,
+        "wikipedia": 3.022296130657196
+      },
+      "steps": 12208,
+      "training_wall_seconds": 9176.29906692123,
+      "weighted_heldout_loss": 3.285447795689106,
+      "wikitext_bpb": 1.7607488657120225,
+      "wikitext_bytes_scored": 1287656,
+      "wikitext_nll_nats": 1571530.2105913162,
+      "wikitext_ppl": 46.830234830602485,
+      "wikitext_windowing_policy": "non-overlapping target windows; stride 256; maximum context 256"
+    }
+  },
+  "schema": "posthack-matched-control-analysis-v1"
+}

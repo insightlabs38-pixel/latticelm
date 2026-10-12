@@ -1,0 +1,510 @@
+{
+  "control": "A16-CO4-S1337",
+  "created_utc": "2026-10-08T10:39:13.232363+00:00",
+  "evidence": {
+    "B16-VALUE-RESIDUAL-S1337": {
+      "eligible": false,
+      "measures": {
+        "bpb_relative": 0.006370492852719067,
+        "capability_absolute": 0.003750000000000031,
+        "heldout_relative": -0.0020629958848298324,
+        "paired_capability": {
+          "bootstrap_draws": 2000,
+          "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/B16-VALUE-RESIDUAL-S1337/capability_samples.json",
+          "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+          "four_task_equal_weight_ci95": [
+            -0.0095,
+            0.01675
+          ],
+          "four_task_equal_weight_delta": 0.0037500000000000007,
+          "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+          "per_task": {
+            "arc_easy": {
+              "candidate_minus_control": 0.001,
+              "ci95": [
+                -0.024,
+                0.026
+              ],
+              "discordant_candidate_wins": 74,
+              "discordant_control_wins": 73,
+              "mcnemar_exact_p_two_sided": 1.0,
+              "n": 1000
+            },
+            "hellaswag": {
+              "candidate_minus_control": 0.0,
+              "ci95": [
+                -0.013,
+                0.014
+              ],
+              "discordant_candidate_wins": 24,
+              "discordant_control_wins": 24,
+              "mcnemar_exact_p_two_sided": 1.0,
+              "n": 1000
+            },
+            "piqa": {
+              "candidate_minus_control": 0.017,
+              "ci95": [
+                -0.003,
+                0.037
+              ],
+              "discordant_candidate_wins": 64,
+              "discordant_control_wins": 47,
+              "mcnemar_exact_p_two_sided": 0.12847543208575976,
+              "n": 1000
+            },
+            "winogrande": {
+              "candidate_minus_control": -0.003,
+              "ci95": [
+                -0.041,
+                0.038
+              ],
+              "discordant_candidate_wins": 203,
+              "discordant_control_wins": 206,
+              "mcnemar_exact_p_two_sided": 0.9212386202872286,
+              "n": 1000
+            }
+          },
+          "schema": "posthack-paired-capability-v1",
+          "seed": 2026
+        },
+        "selection_basis": "none",
+        "supported_capability_gain": false,
+        "wall_ratio_to_control": 0.995301141120815,
+        "worst_source_relative": 0.0007012125202254804
+      }
+    },
+    "D1-16M-REBALANCED-S1337": {
+      "eligible": false,
+      "measures": {
+        "bpb_relative": 0.007371745249635797,
+        "capability_absolute": 0.010500000000000065,
+        "heldout_relative": -0.0021612329359540494,
+        "paired_capability": {
+          "bootstrap_draws": 2000,
+          "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/D1-16M-REBALANCED-S1337/capability_samples.json",
+          "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+          "four_task_equal_weight_ci95": [
+            -0.0024999999999999996,
+            0.02375
+          ],
+          "four_task_equal_weight_delta": 0.010499999999999999,
+          "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+          "per_task": {
+            "arc_easy": {
+              "candidate_minus_control": 0.009,
+              "ci95": [
+                -0.016,
+                0.035
+              ],
+              "discordant_candidate_wins": 83,
+              "discordant_control_wins": 74,
+              "mcnemar_exact_p_two_sided": 0.5233007934374068,
+              "n": 1000
+            },
+            "hellaswag": {
+              "candidate_minus_control": 0.01,
+              "ci95": [
+                -0.003,
+                0.023
+              ],
+              "discordant_candidate_wins": 28,
+              "discordant_control_wins": 18,
+              "mcnemar_exact_p_two_sided": 0.18392482137699062,
+              "n": 1000
+            },
+            "piqa": {
+              "candidate_minus_control": 0.019,
+              "ci95": [
+                -0.003,
+                0.039
+              ],
+              "discordant_candidate_wins": 63,
+              "discordant_control_wins": 44,
+              "mcnemar_exact_p_two_sided": 0.08135304820596596,
+              "n": 1000
+            },
+            "winogrande": {
+              "candidate_minus_control": 0.004,
+              "ci95": [
+                -0.034,
+                0.044
+              ],
+              "discordant_candidate_wins": 197,
+              "discordant_control_wins": 193,
+              "mcnemar_exact_p_two_sided": 0.8792823120406367,
+              "n": 1000
+            }
+          },
+          "schema": "posthack-paired-capability-v1",
+          "seed": 2026
+        },
+        "selection_basis": "none",
+        "supported_capability_gain": false,
+        "wall_ratio_to_control": 0.999538533606372,
+        "worst_source_relative": 0.022855997643412174
+      }
+    },
+    "D2-16M-CAPABILITY": {
+      "eligible": false,
+      "measures": {
+        "bpb_relative": 0.00024386309422186336,
+        "capability_absolute": 0.006750000000000034,
+        "heldout_relative": -0.0018902896496191257,
+        "paired_capability": {
+          "bootstrap_draws": 2000,
+          "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/D2-16M-CAPABILITY/capability_samples.json",
+          "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+          "four_task_equal_weight_ci95": [
+            -0.006999999999999999,
+            0.02025
+          ],
+          "four_task_equal_weight_delta": 0.006750000000000001,
+          "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+          "per_task": {
+            "arc_easy": {
+              "candidate_minus_control": 0.013,
+              "ci95": [
+                -0.011024999999999998,
+                0.038
+              ],
+              "discordant_candidate_wins": 88,
+              "discordant_control_wins": 75,
+              "mcnemar_exact_p_two_sided": 0.34729320909675915,
+              "n": 1000
+            },
+            "hellaswag": {
+              "candidate_minus_control": -0.004,
+              "ci95": [
+                -0.019,
+                0.01
+              ],
+              "discordant_candidate_wins": 24,
+              "discordant_control_wins": 28,
+              "mcnemar_exact_p_two_sided": 0.6778086391424605,
+              "n": 1000
+            },
+            "piqa": {
+              "candidate_minus_control": 0.032,
+              "ci95": [
+                0.01,
+                0.054
+              ],
+              "discordant_candidate_wins": 78,
+              "discordant_control_wins": 46,
+              "mcnemar_exact_p_two_sided": 0.005161224901988053,
+              "n": 1000
+            },
+            "winogrande": {
+              "candidate_minus_control": -0.014,
+              "ci95": [
+                -0.052,
+                0.024024999999999862
+              ],
+              "discordant_candidate_wins": 183,
+              "discordant_control_wins": 197,
+              "mcnemar_exact_p_two_sided": 0.5048972337620441,
+              "n": 1000
+            }
+          },
+          "schema": "posthack-paired-capability-v1",
+          "seed": 2026
+        },
+        "selection_basis": "none",
+        "supported_capability_gain": false,
+        "wall_ratio_to_control": 1.003688527142254,
+        "worst_source_relative": 0.0027956407128200134
+      }
+    },
+    "D3-16M-CURRICULUM": {
+      "eligible": false,
+      "measures": {
+        "bpb_relative": 0.008169688426811206,
+        "capability_absolute": 0.0020000000000000018,
+        "heldout_relative": 0.0012867348634202358,
+        "paired_capability": {
+          "bootstrap_draws": 2000,
+          "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/D3-16M-CURRICULUM/capability_samples.json",
+          "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+          "four_task_equal_weight_ci95": [
+            -0.012,
+            0.01575
+          ],
+          "four_task_equal_weight_delta": 0.001999999999999999,
+          "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+          "per_task": {
+            "arc_easy": {
+              "candidate_minus_control": -0.008,
+              "ci95": [
+                -0.033025,
+                0.019
+              ],
+              "discordant_candidate_wins": 80,
+              "discordant_control_wins": 88,
+              "mcnemar_exact_p_two_sided": 0.5892869358592503,
+              "n": 1000
+            },
+            "hellaswag": {
+              "candidate_minus_control": -0.005,
+              "ci95": [
+                -0.019,
+                0.008
+              ],
+              "discordant_candidate_wins": 24,
+              "discordant_control_wins": 29,
+              "mcnemar_exact_p_two_sided": 0.5831321542611763,
+              "n": 1000
+            },
+            "piqa": {
+              "candidate_minus_control": 0.026,
+              "ci95": [
+                0.003,
+                0.049
+              ],
+              "discordant_candidate_wins": 78,
+              "discordant_control_wins": 52,
+              "mcnemar_exact_p_two_sided": 0.027944840955287733,
+              "n": 1000
+            },
+            "winogrande": {
+              "candidate_minus_control": -0.005,
+              "ci95": [
+                -0.045024999999999996,
+                0.036
+              ],
+              "discordant_candidate_wins": 207,
+              "discordant_control_wins": 212,
+              "mcnemar_exact_p_two_sided": 0.8450991721960291,
+              "n": 1000
+            }
+          },
+          "schema": "posthack-paired-capability-v1",
+          "seed": 2026
+        },
+        "selection_basis": "none",
+        "supported_capability_gain": false,
+        "wall_ratio_to_control": 1.0001049841730827,
+        "worst_source_relative": 0.009218019427586599
+      }
+    },
+    "D4-16M-ANNEAL": {
+      "eligible": false,
+      "measures": {
+        "bpb_relative": -0.004740093238908227,
+        "capability_absolute": 0.0012500000000000289,
+        "heldout_relative": 0.0001804131974028067,
+        "paired_capability": {
+          "bootstrap_draws": 2000,
+          "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/D4-16M-ANNEAL/capability_samples.json",
+          "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+          "four_task_equal_weight_ci95": [
+            -0.011,
+            0.014499999999999999
+          ],
+          "four_task_equal_weight_delta": 0.0012500000000000002,
+          "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+          "per_task": {
+            "arc_easy": {
+              "candidate_minus_control": -0.009,
+              "ci95": [
+                -0.034,
+                0.015024999999999863
+              ],
+              "discordant_candidate_wins": 68,
+              "discordant_control_wins": 77,
+              "mcnemar_exact_p_two_sided": 0.5065964185708861,
+              "n": 1000
+            },
+            "hellaswag": {
+              "candidate_minus_control": -0.006,
+              "ci95": [
+                -0.019,
+                0.007
+              ],
+              "discordant_candidate_wins": 20,
+              "discordant_control_wins": 26,
+              "mcnemar_exact_p_two_sided": 0.4613911821367651,
+              "n": 1000
+            },
+            "piqa": {
+              "candidate_minus_control": 0.028,
+              "ci95": [
+                0.007,
+                0.049
+              ],
+              "discordant_candidate_wins": 68,
+              "discordant_control_wins": 40,
+              "mcnemar_exact_p_two_sided": 0.009057983337532563,
+              "n": 1000
+            },
+            "winogrande": {
+              "candidate_minus_control": -0.008,
+              "ci95": [
+                -0.045024999999999996,
+                0.03
+              ],
+              "discordant_candidate_wins": 173,
+              "discordant_control_wins": 181,
+              "mcnemar_exact_p_two_sided": 0.7099151967035058,
+              "n": 1000
+            }
+          },
+          "schema": "posthack-paired-capability-v1",
+          "seed": 2026
+        },
+        "selection_basis": "none",
+        "supported_capability_gain": false,
+        "wall_ratio_to_control": 0.9989085637899422,
+        "worst_source_relative": 0.014592921647188506
+      }
+    },
+    "E2-16M-GROWTH-CURRICULUM": {
+      "eligible": false,
+      "measures": {
+        "bpb_relative": 0.016747792200554112,
+        "capability_absolute": 0.006500000000000061,
+        "heldout_relative": 0.010407737359491076,
+        "paired_capability": {
+          "bootstrap_draws": 2000,
+          "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/E2-16M-GROWTH-CURRICULUM/capability_samples.json",
+          "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+          "four_task_equal_weight_ci95": [
+            -0.00625,
+            0.01975
+          ],
+          "four_task_equal_weight_delta": 0.0065,
+          "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+          "per_task": {
+            "arc_easy": {
+              "candidate_minus_control": 0.001,
+              "ci95": [
+                -0.024,
+                0.026
+              ],
+              "discordant_candidate_wins": 78,
+              "discordant_control_wins": 77,
+              "mcnemar_exact_p_two_sided": 1.0,
+              "n": 1000
+            },
+            "hellaswag": {
+              "candidate_minus_control": 0.003,
+              "ci95": [
+                -0.011,
+                0.018
+              ],
+              "discordant_candidate_wins": 29,
+              "discordant_control_wins": 26,
+              "mcnemar_exact_p_two_sided": 0.7877061896700431,
+              "n": 1000
+            },
+            "piqa": {
+              "candidate_minus_control": 0.015,
+              "ci95": [
+                -0.008,
+                0.038
+              ],
+              "discordant_candidate_wins": 73,
+              "discordant_control_wins": 58,
+              "mcnemar_exact_p_two_sided": 0.22111601916299542,
+              "n": 1000
+            },
+            "winogrande": {
+              "candidate_minus_control": 0.007,
+              "ci95": [
+                -0.034,
+                0.046
+              ],
+              "discordant_candidate_wins": 207,
+              "discordant_control_wins": 200,
+              "mcnemar_exact_p_two_sided": 0.7661968433878277,
+              "n": 1000
+            }
+          },
+          "schema": "posthack-paired-capability-v1",
+          "seed": 2026
+        },
+        "selection_basis": "none",
+        "supported_capability_gain": false,
+        "wall_ratio_to_control": 0.9266436734562986,
+        "worst_source_relative": 0.015562677854995988
+      }
+    },
+    "G-16M-PHM4-FFN": {
+      "eligible": false,
+      "measures": {
+        "bpb_relative": 0.008653314928484201,
+        "capability_absolute": 0.005750000000000033,
+        "heldout_relative": 0.006085129960606839,
+        "paired_capability": {
+          "bootstrap_draws": 2000,
+          "candidate_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/G-16M-PHM4-FFN/capability_samples.json",
+          "control_samples": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A16-CO4-S1337/capability_samples.json",
+          "four_task_equal_weight_ci95": [
+            -0.0072499999999999995,
+            0.01875
+          ],
+          "four_task_equal_weight_delta": 0.00575,
+          "interpretation_limit": "paired evaluation-item uncertainty only; does not include training-seed or task-selection uncertainty",
+          "per_task": {
+            "arc_easy": {
+              "candidate_minus_control": 0.0,
+              "ci95": [
+                -0.022,
+                0.023
+              ],
+              "discordant_candidate_wins": 68,
+              "discordant_control_wins": 68,
+              "mcnemar_exact_p_two_sided": 1.0,
+              "n": 1000
+            },
+            "hellaswag": {
+              "candidate_minus_control": 0.007,
+              "ci95": [
+                -0.006,
+                0.02
+              ],
+              "discordant_candidate_wins": 25,
+              "discordant_control_wins": 18,
+              "mcnemar_exact_p_two_sided": 0.3603776529357674,
+              "n": 1000
+            },
+            "piqa": {
+              "candidate_minus_control": 0.033,
+              "ci95": [
+                0.01,
+                0.055
+              ],
+              "discordant_candidate_wins": 78,
+              "discordant_control_wins": 45,
+              "mcnemar_exact_p_two_sided": 0.0037314457550981497,
+              "n": 1000
+            },
+            "winogrande": {
+              "candidate_minus_control": -0.017,
+              "ci95": [
+                -0.058,
+                0.022
+              ],
+              "discordant_candidate_wins": 197,
+              "discordant_control_wins": 214,
+              "mcnemar_exact_p_two_sided": 0.43001797621364485,
+              "n": 1000
+            }
+          },
+          "schema": "posthack-paired-capability-v1",
+          "seed": 2026
+        },
+        "selection_basis": "none",
+        "supported_capability_gain": false,
+        "wall_ratio_to_control": 2.21023580818219,
+        "worst_source_relative": 0.011117954131977692
+      }
+    }
+  },
+  "independent_winners": {
+    "architecture": null,
+    "data": null
+  },
+  "phm_policy": "PHM-4 may promote only with the registered LM/BPB/capability signal and <=10% wall-time overhead; 32M/49M PHM configs are parameter matched within 0.01%",
+  "threshold": "at least 1% held-out and 0.5% BPB improvement with <=1 point capability regression; or >=1 point broad capability gain with paired item-bootstrap interval above zero, <=2% held-out and <=5% worst-source regression",
+  "tokenizer_policy": "8K 16M subset result is reported separately; full DATA-D-v4 8K retokenization is outside the incremental data budget"
+}

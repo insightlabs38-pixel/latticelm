@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "629899a88df55932b43ddca6779c7af578ed296aac4796a88929f187ecfae053",
+  "best_logical_tokens": 150000000,
+  "best_weighted_heldout_loss": 3.0896301671862605,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/D2-16M-CAPABILITY/latest.pt",
+  "checkpoint_sha256": "629899a88df55932b43ddca6779c7af578ed296aac4796a88929f187ecfae053",
+  "experiment_id": "D2-16M-CAPABILITY",
+  "finished_utc": "2026-10-05T14:35:27.707976+00:00",
+  "logical_tokens": 150000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 150003712,
+  "status": "COMPLETED",
+  "steps": 18311,
+  "variant": "baseline",
+  "wall_seconds": 21712.527167257853
+}

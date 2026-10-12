@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-05T14:40:01.381191+00:00",
+  "files": [
+    {
+      "at": "2026-10-05T14:39:41.112135+00:00",
+      "path": "configs/16m_co4.json",
+      "remote": "post-hackathon/2026-10-01/configs/16m_co4.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "8c4b836a89dd36998bc3f15bc32eceaf908a5ed1",
+      "sha256": "5d26e2717eb7a496a3f4d8dfdd845b26635186c9d9e44a89cf45e727d569d4fe",
+      "size_bytes": 1198,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:39:42.433677+00:00",
+      "path": "runs/D2-16M-CAPABILITY/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "a0677a6758a7fad34f5416d892f32b69d98858f6",
+      "sha256": "c5ba17077e717a1ed05f86fbc953aa2a6bf664da8aabc9d07e4cb776b75aedf1",
+      "size_bytes": 676,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:39:45.313243+00:00",
+      "path": "runs/D2-16M-CAPABILITY/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/metrics.jsonl",
+      "remote_lfs_sha256": "f43184dc8fc9e6e5a59d995b9577051b311c03f3719334d961d3c3bc9541ddd9",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "90051975087077ee8ece60f7847f7bea7a05240f",
+      "sha256": "f43184dc8fc9e6e5a59d995b9577051b311c03f3719334d961d3c3bc9541ddd9",
+      "size_bytes": 23989264,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:39:46.823417+00:00",
+      "path": "runs/D2-16M-CAPABILITY/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "b8e7a940c69c28353b47dca6c92467e558a791ae",
+      "sha256": "34c6a92fd51d9c3e37b360fd8123e640cd2e952197c8dbad19396525b112bd22",
+      "size_bytes": 15769,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:39:47.881563+00:00",
+      "path": "runs/D2-16M-CAPABILITY/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "0f6047c60544e65dfe727b2f43b868c96b25dd3a",
+      "sha256": "a5584497952cd7d28e833db649ec5a2cc209f732725b30dd0fb682613d85ae3e",
+      "size_bytes": 942,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:39:49.008024+00:00",
+      "path": "runs/D2-16M-CAPABILITY/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "1a62b87b0f475b077cec84e9ef16dca87ab0a451",
+      "sha256": "f85d4aff8e2cfc4158c74d32ca4d0372264db29282eb64b7ad43d5cdb2a0b203",
+      "size_bytes": 20360,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:39:51.850482+00:00",
+      "path": "runs/D2-16M-CAPABILITY/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/capability_samples.json",
+      "remote_lfs_sha256": "059865850a215407b59af2d7858cf7ae9fb5ea52af1052b7168dd44f2e3e126f",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "fc98e4b7fe92a27677266e9316f000dba12695c0",
+      "sha256": "059865850a215407b59af2d7858cf7ae9fb5ea52af1052b7168dd44f2e3e126f",
+      "size_bytes": 17243227,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:39:58.425206+00:00",
+      "path": "runs/D2-16M-CAPABILITY/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/latest.pt",
+      "remote_lfs_sha256": "629899a88df55932b43ddca6779c7af578ed296aac4796a88929f187ecfae053",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "1d99aa6fca5804ae2a6cc0cdd5ffcf40fe92736d",
+      "sha256": "629899a88df55932b43ddca6779c7af578ed296aac4796a88929f187ecfae053",
+      "size_bytes": 138953566,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:40:00.431311+00:00",
+      "path": "runs/D2-16M-CAPABILITY/best.pt",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/best.pt",
+      "remote_lfs_sha256": "629899a88df55932b43ddca6779c7af578ed296aac4796a88929f187ecfae053",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "68064cc675ae170d5eb063ffa01b0e9177fa226d",
+      "sha256": "629899a88df55932b43ddca6779c7af578ed296aac4796a88929f187ecfae053",
+      "size_bytes": 138953566,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T14:40:01.379592+00:00",
+      "path": "runs/D2-16M-CAPABILITY/best.sha256",
+      "remote": "post-hackathon/2026-10-01/runs/D2-16M-CAPABILITY/best.sha256",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "d9da72cd2903165f76ac7d3064b3901dd9a39696",
+      "sha256": "627368b2d85b7db7b8ea967f8b384646e2c3535df93a341e0b0621f874d3e0a7",
+      "size_bytes": 65,
+      "verified": true
+    }
+  ]
+}

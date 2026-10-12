@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "474c21a1ebfacec8f83942ba0d87761450ffa532410bf26ba43c319c416af7a3",
+  "best_logical_tokens": 50000000,
+  "best_weighted_heldout_loss": 3.5682727277278903,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/S1-8M-NCO4/latest.pt",
+  "checkpoint_sha256": "474c21a1ebfacec8f83942ba0d87761450ffa532410bf26ba43c319c416af7a3",
+  "experiment_id": "S1-8M-NCO4",
+  "finished_utc": "2026-10-10T06:45:34.164741+00:00",
+  "logical_tokens": 50000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 50003968,
+  "status": "COMPLETED",
+  "steps": 6104,
+  "variant": "nco4",
+  "wall_seconds": 4111.748249973
+}

@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-12T15:35:40.717529+00:00",
+  "criterion": "held-out loss only; frozen before C2",
+  "family": "B",
+  "run": true,
+  "selected_compatibility_run": "FCB-C1-LR-DOUBLE-S1337"
+}

@@ -1,0 +1,12 @@
+{
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A8-DENSE-S1337/latest.pt",
+  "checkpoint_sha256": "c8b6d11065cd95a0e9ef42a29c630cf8dd0c3462c04c3a506a5a6efa05bca3f8",
+  "experiment_id": "A8-DENSE-S1337",
+  "finished_utc": "2026-10-02T03:44:51.666699+00:00",
+  "logical_tokens": 100000000,
+  "processed_tokens": 100007936,
+  "status": "COMPLETED",
+  "steps": 12208,
+  "variant": "baseline",
+  "wall_seconds": 9345.313681630883
+}

@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-10T06:49:45.324141+00:00",
+  "estimated_train_seconds": 5466.38447118715,
+  "evaluation_checkpoint_safety_and_downstream_seconds": 12600,
+  "predicted_finish_utc": "2026-10-10T11:50:51.708598+00:00",
+  "reason": "measured-time gate passed",
+  "run": true
+}

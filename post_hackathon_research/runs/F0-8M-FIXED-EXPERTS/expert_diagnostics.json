@@ -1,0 +1,121 @@
+{
+  "baseline_loss_by_source": {
+    "finemath": 3.185011625289917,
+    "fineweb": 3.517198085784912,
+    "fineweb_edu": 3.104116201400757,
+    "wikipedia": 1.7555911540985107
+  },
+  "checkpoint_sha256": "314e4c0d36fec6b0f77b71af4714aafcc99ccf4fafe9425a428c3d73de290883",
+  "created_utc": "2026-10-07T21:24:03.525081+00:00",
+  "diagnostic_limit": "small fixed windows and first-router gradient estimate; infer mechanism only alongside held-out and broad capability changes",
+  "expert_ablation_loss_increase_by_source": {
+    "0": {
+      "finemath": 0.11816191673278809,
+      "fineweb": 0.10025715827941895,
+      "fineweb_edu": 0.10669088363647461,
+      "wikipedia": 0.16260254383087158
+    },
+    "1": {
+      "finemath": 0.13954901695251465,
+      "fineweb": 0.18369030952453613,
+      "fineweb_edu": 0.25345492362976074,
+      "wikipedia": 0.2727928161621094
+    },
+    "2": {
+      "finemath": 0.15651631355285645,
+      "fineweb": 0.22987771034240723,
+      "fineweb_edu": 0.23816490173339844,
+      "wikipedia": 0.2069110870361328
+    },
+    "3": {
+      "finemath": 0.22051095962524414,
+      "fineweb": 0.20355820655822754,
+      "fineweb_edu": 0.24836397171020508,
+      "wikipedia": 0.21944165229797363
+    },
+    "4": {
+      "finemath": 0.08237147331237793,
+      "fineweb": 0.0877988338470459,
+      "fineweb_edu": 0.13304495811462402,
+      "wikipedia": 0.15890109539031982
+    },
+    "5": {
+      "finemath": 0.14107632637023926,
+      "fineweb": 0.11808896064758301,
+      "fineweb_edu": 0.11225724220275879,
+      "wikipedia": 0.3166627883911133
+    },
+    "6": {
+      "finemath": 0.19625163078308105,
+      "fineweb": 0.1895594596862793,
+      "fineweb_edu": 0.24964642524719238,
+      "wikipedia": 0.21491622924804688
+    },
+    "7": {
+      "finemath": 0.14803409576416016,
+      "fineweb": 0.1514606475830078,
+      "fineweb_edu": 0.18239212036132812,
+      "wikipedia": 0.08064281940460205
+    }
+  },
+  "fineweb_edu_vs_finemath_first_router_gradient_cosine": -0.247439444065094,
+  "forced_expert_loss_by_source": {
+    "0": {
+      "finemath": 5.023986339569092,
+      "fineweb": 5.458364963531494,
+      "fineweb_edu": 5.367796421051025,
+      "wikipedia": 4.487762928009033
+    },
+    "1": {
+      "finemath": 4.869317531585693,
+      "fineweb": 5.214017868041992,
+      "fineweb_edu": 5.043710231781006,
+      "wikipedia": 4.094456195831299
+    },
+    "2": {
+      "finemath": 4.934028148651123,
+      "fineweb": 5.325955867767334,
+      "fineweb_edu": 5.065659046173096,
+      "wikipedia": 4.020125865936279
+    },
+    "3": {
+      "finemath": 4.772586345672607,
+      "fineweb": 5.104197025299072,
+      "fineweb_edu": 4.902782917022705,
+      "wikipedia": 4.076514720916748
+    },
+    "4": {
+      "finemath": 5.17410135269165,
+      "fineweb": 5.5130438804626465,
+      "fineweb_edu": 5.356563568115234,
+      "wikipedia": 4.551276683807373
+    },
+    "5": {
+      "finemath": 4.6595587730407715,
+      "fineweb": 4.942709445953369,
+      "fineweb_edu": 4.871789932250977,
+      "wikipedia": 3.711576223373413
+    },
+    "6": {
+      "finemath": 4.793467998504639,
+      "fineweb": 5.221829891204834,
+      "fineweb_edu": 4.912998676300049,
+      "wikipedia": 4.126096248626709
+    },
+    "7": {
+      "finemath": 5.239718437194824,
+      "fineweb": 5.519951343536377,
+      "fineweb_edu": 5.364915370941162,
+      "wikipedia": 4.544028282165527
+    }
+  },
+  "parent_child_representation_and_parameter_distance": [],
+  "parent_child_swap_loss_increase_by_source": {
+    "finemath": 0.0,
+    "fineweb": 0.0,
+    "fineweb_edu": 0.0,
+    "wikipedia": 0.0
+  },
+  "schema": "posthack-moe-endpoint-diagnostics-v1",
+  "validation_policy": "first two 256-token windows per certified validation source"
+}

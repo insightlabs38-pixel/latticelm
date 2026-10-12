@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-02T03:48:07.298836+00:00",
+  "files": [
+    {
+      "at": "2026-10-02T03:47:54.450669+00:00",
+      "path": "configs/8m_dense.json",
+      "remote": "post-hackathon/2026-10-01/configs/8m_dense.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "83f7c189d40ff46e4e3880a4c5e5567e8967cc2e",
+      "sha256": "380732eba52abf18f94b03385ae6d0917e49fcaa69cbf5d5fec5840e34c1d631",
+      "size_bytes": 1193,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:47:55.323602+00:00",
+      "path": "runs/A8-DENSE-S1337/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S1337/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "340feaee7bc824fe8ef9810ba7f4ee419ba35e5f",
+      "sha256": "b396f0e447e23cc7220805e76b94aedf3b52b39376b5d92257f6339bbe57375e",
+      "size_bytes": 457,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:47:56.321740+00:00",
+      "path": "runs/A8-DENSE-S1337/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S1337/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "05f7599f80f962e0f5598ba7d9a0eb11b1c17011",
+      "sha256": "1d86d1480f756a3900dfd3ebc5c23ff5adafd4bba86c0435115b391ce097b0b4",
+      "size_bytes": 9992,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:47:58.082721+00:00",
+      "path": "runs/A8-DENSE-S1337/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S1337/metrics.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "4d9cf864cddda2d794fb715e2a20d83afd97f475",
+      "sha256": "916c6eb35ad1745d30d89585fccb2838f50204b89d543d3467bd0a3d1245d030",
+      "size_bytes": 9493672,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:47:59.070562+00:00",
+      "path": "runs/A8-DENSE-S1337/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S1337/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "486f719458a1a42204293d1266d86d5e9c746ab3",
+      "sha256": "338753a2064fd3f2ab186ee701ccc55bc5b3939b4bb3a49de986bce77e7d8d97",
+      "size_bytes": 940,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:47:59.796049+00:00",
+      "path": "runs/A8-DENSE-S1337/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S1337/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "5f47bfad0c0bc00a39239b5b30980fd0ad50c698",
+      "sha256": "45c794a9a4364c84d18dc0114979f2c5022c46698e03ca2c5aced730ff5dea2f",
+      "size_bytes": 20351,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:48:02.195488+00:00",
+      "path": "runs/A8-DENSE-S1337/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S1337/capability_samples.json",
+      "remote_lfs_sha256": "832439c12a63b7f69aa07a59f1fb759e04874649aefbcb2f5bf0048d1efd0f00",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "d3d377b18436c1e8b0afc7cc551b7be06e7674d6",
+      "sha256": "832439c12a63b7f69aa07a59f1fb759e04874649aefbcb2f5bf0048d1efd0f00",
+      "size_bytes": 17242913,
+      "verified": true
+    },
+    {
+      "at": "2026-10-02T03:48:07.297048+00:00",
+      "path": "runs/A8-DENSE-S1337/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/A8-DENSE-S1337/latest.pt",
+      "remote_lfs_sha256": "c8b6d11065cd95a0e9ef42a29c630cf8dd0c3462c04c3a506a5a6efa05bca3f8",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "c5347dd7e0674c06cc405fe884013b995da27f10",
+      "sha256": "c8b6d11065cd95a0e9ef42a29c630cf8dd0c3462c04c3a506a5a6efa05bca3f8",
+      "size_bytes": 72117438,
+      "verified": true
+    }
+  ]
+}

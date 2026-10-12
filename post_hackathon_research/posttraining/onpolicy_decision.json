@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-08T10:21:20.398791+00:00",
+  "criterion": "bounded current-model generation on 25% of replay examples; launch only if predicted endpoint and evaluation fit archival reserve",
+  "estimated_tps": 751.5112458161392,
+  "predicted_finish_utc": "2026-10-08T14:03:31.050854+00:00",
+  "reason": "time gate passed",
+  "run": true
+}

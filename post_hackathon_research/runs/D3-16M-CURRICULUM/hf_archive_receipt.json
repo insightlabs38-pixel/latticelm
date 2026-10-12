@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-05T20:45:29.935936+00:00",
+  "files": [
+    {
+      "at": "2026-10-05T20:45:11.610491+00:00",
+      "path": "configs/16m_co4.json",
+      "remote": "post-hackathon/2026-10-01/configs/16m_co4.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "d9da72cd2903165f76ac7d3064b3901dd9a39696",
+      "sha256": "5d26e2717eb7a496a3f4d8dfdd845b26635186c9d9e44a89cf45e727d569d4fe",
+      "size_bytes": 1198,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:12.905421+00:00",
+      "path": "runs/D3-16M-CURRICULUM/result.json",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/result.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "01de6ebdf4ee74aff310ee83d2e3f7ebdb955efd",
+      "sha256": "7485f820ba4b632c2d9aaeb6dc7ffdb845370aaa20b7f98d938f466035e73e5f",
+      "size_bytes": 674,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:15.754401+00:00",
+      "path": "runs/D3-16M-CURRICULUM/metrics.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/metrics.jsonl",
+      "remote_lfs_sha256": "ba38aa5bb32e9542d8bd500dd232e2d46923fd199d75b0e938268854cb2beb4b",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "99c1bd572e19d0e0a4efe61e19b85b8a26abf795",
+      "sha256": "ba38aa5bb32e9542d8bd500dd232e2d46923fd199d75b0e938268854cb2beb4b",
+      "size_bytes": 23711244,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:17.122828+00:00",
+      "path": "runs/D3-16M-CURRICULUM/evaluations.jsonl",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/evaluations.jsonl",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "8bd57686df70680cc9e07e46cb6734aed7353122",
+      "sha256": "baf06caf070e1c0532d9a16a53148a1701b4dd8362637823dec2ca1885055e05",
+      "size_bytes": 15748,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:18.205308+00:00",
+      "path": "runs/D3-16M-CURRICULUM/wikitext103.json",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/wikitext103.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "f7a289c18b3d432ef1dde7880c62202ccb2c06e0",
+      "sha256": "837f16dd7a8a168bc7c8775d1475d2d664e443f8c6ba414aaab27935ab1ca548",
+      "size_bytes": 940,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:19.022933+00:00",
+      "path": "runs/D3-16M-CURRICULUM/capability_screen.json",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/capability_screen.json",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "af3081e621477a775019c8f7dbb3c3d355975430",
+      "sha256": "6d329ee6519a7bd79870a919a66ee1005702fd48bff8a69e109a22bb39a84c6e",
+      "size_bytes": 20359,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:21.603239+00:00",
+      "path": "runs/D3-16M-CURRICULUM/capability_samples.json",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/capability_samples.json",
+      "remote_lfs_sha256": "4900c490f344672ea42cc29ae18a673f77b42b0f419c55a00dce512b0fd24846",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "5130240750ba28980f7a34ccac90d498871e72ca",
+      "sha256": "4900c490f344672ea42cc29ae18a673f77b42b0f419c55a00dce512b0fd24846",
+      "size_bytes": 17243094,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:27.443069+00:00",
+      "path": "runs/D3-16M-CURRICULUM/latest.pt",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/latest.pt",
+      "remote_lfs_sha256": "b24abd65d9199c3fe823b6371e87a3738dade0813db42588ec31d3902713ac39",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "4978459c9d48d6654e00ba080ae07cf3bf0098e5",
+      "sha256": "b24abd65d9199c3fe823b6371e87a3738dade0813db42588ec31d3902713ac39",
+      "size_bytes": 138953566,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:28.997206+00:00",
+      "path": "runs/D3-16M-CURRICULUM/best.pt",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/best.pt",
+      "remote_lfs_sha256": "b24abd65d9199c3fe823b6371e87a3738dade0813db42588ec31d3902713ac39",
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "81322f90566be20f40ffdff782ed08d345aa5a0b",
+      "sha256": "b24abd65d9199c3fe823b6371e87a3738dade0813db42588ec31d3902713ac39",
+      "size_bytes": 138953566,
+      "verified": true
+    },
+    {
+      "at": "2026-10-05T20:45:29.934413+00:00",
+      "path": "runs/D3-16M-CURRICULUM/best.sha256",
+      "remote": "post-hackathon/2026-10-01/runs/D3-16M-CURRICULUM/best.sha256",
+      "remote_lfs_sha256": null,
+      "repo": "insightlabs38-pixel/LatticeLM-research",
+      "revision": "5458c12195c234c2f331fc4a4ff5b6e4be7104bc",
+      "sha256": "9a74291d9f6531b9a4e71863181916e64dd6521a1c4f7efae6c231d57ec8522d",
+      "size_bytes": 65,
+      "verified": true
+    }
+  ]
+}

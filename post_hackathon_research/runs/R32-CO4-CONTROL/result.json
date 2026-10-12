@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+  "best_logical_tokens": 300000000,
+  "best_weighted_heldout_loss": 2.9038326755166053,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/R32-CO4-CONTROL/latest.pt",
+  "checkpoint_sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+  "experiment_id": "R32-CO4-CONTROL",
+  "finished_utc": "2026-10-09T07:55:20.080818+00:00",
+  "logical_tokens": 300000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 300007424,
+  "status": "COMPLETED",
+  "steps": 36622,
+  "variant": "baseline",
+  "wall_seconds": 76556.197017701
+}

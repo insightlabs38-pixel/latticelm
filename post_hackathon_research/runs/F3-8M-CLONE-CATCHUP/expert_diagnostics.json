@@ -1,0 +1,346 @@
+{
+  "baseline_loss_by_source": {
+    "finemath": 3.246947765350342,
+    "fineweb": 3.6306583881378174,
+    "fineweb_edu": 3.234828233718872,
+    "wikipedia": 1.8440167903900146
+  },
+  "checkpoint_sha256": "a9f57c12635bba3202e90f3aa64251ab587d201c4d5e599362cfada7a51ebab8",
+  "created_utc": "2026-10-08T09:46:59.663512+00:00",
+  "diagnostic_limit": "small fixed windows and first-router gradient estimate; infer mechanism only alongside held-out and broad capability changes",
+  "expert_ablation_loss_increase_by_source": {
+    "0": {
+      "finemath": 0.05155134201049805,
+      "fineweb": 0.10135793685913086,
+      "fineweb_edu": 0.10079646110534668,
+      "wikipedia": 0.17847180366516113
+    },
+    "1": {
+      "finemath": 0.08391118049621582,
+      "fineweb": 0.07777547836303711,
+      "fineweb_edu": 0.06914234161376953,
+      "wikipedia": 0.0854032039642334
+    },
+    "2": {
+      "finemath": 0.07991147041320801,
+      "fineweb": 0.09613394737243652,
+      "fineweb_edu": 0.10873770713806152,
+      "wikipedia": 0.1327815055847168
+    },
+    "3": {
+      "finemath": 0.05421805381774902,
+      "fineweb": 0.05103588104248047,
+      "fineweb_edu": 0.06934046745300293,
+      "wikipedia": 0.06867146492004395
+    },
+    "4": {
+      "finemath": 0.05568289756774902,
+      "fineweb": 0.06369161605834961,
+      "fineweb_edu": 0.10822534561157227,
+      "wikipedia": 0.1644730567932129
+    },
+    "5": {
+      "finemath": 0.2217550277709961,
+      "fineweb": 0.3030843734741211,
+      "fineweb_edu": 0.2445378303527832,
+      "wikipedia": 0.2638661861419678
+    },
+    "6": {
+      "finemath": 0.18496966361999512,
+      "fineweb": 0.15612101554870605,
+      "fineweb_edu": 0.15690279006958008,
+      "wikipedia": 0.21871161460876465
+    },
+    "7": {
+      "finemath": 0.1049187183380127,
+      "fineweb": 0.07974696159362793,
+      "fineweb_edu": 0.14942622184753418,
+      "wikipedia": 0.11637651920318604
+    }
+  },
+  "fineweb_edu_vs_finemath_first_router_gradient_cosine": 0.07442399114370346,
+  "forced_expert_loss_by_source": {
+    "0": {
+      "finemath": 4.544173240661621,
+      "fineweb": 4.756807327270508,
+      "fineweb_edu": 4.524289608001709,
+      "wikipedia": 3.360079050064087
+    },
+    "1": {
+      "finemath": 4.4158406257629395,
+      "fineweb": 4.840195178985596,
+      "fineweb_edu": 4.515993595123291,
+      "wikipedia": 3.746274471282959
+    },
+    "2": {
+      "finemath": 4.220361709594727,
+      "fineweb": 4.552404880523682,
+      "fineweb_edu": 4.3329877853393555,
+      "wikipedia": 3.1859655380249023
+    },
+    "3": {
+      "finemath": 4.371038913726807,
+      "fineweb": 4.775135040283203,
+      "fineweb_edu": 4.509562015533447,
+      "wikipedia": 3.3982419967651367
+    },
+    "4": {
+      "finemath": 4.568325996398926,
+      "fineweb": 5.0026774406433105,
+      "fineweb_edu": 4.602077007293701,
+      "wikipedia": 3.561206579208374
+    },
+    "5": {
+      "finemath": 4.180335521697998,
+      "fineweb": 4.519338130950928,
+      "fineweb_edu": 4.2655930519104,
+      "wikipedia": 3.3820436000823975
+    },
+    "6": {
+      "finemath": 4.174517631530762,
+      "fineweb": 4.543239116668701,
+      "fineweb_edu": 4.316498279571533,
+      "wikipedia": 3.163207769393921
+    },
+    "7": {
+      "finemath": 4.272818088531494,
+      "fineweb": 4.7052154541015625,
+      "fineweb_edu": 4.4073710441589355,
+      "wikipedia": 3.4253971576690674
+    }
+  },
+  "parent_child_representation_and_parameter_distance": [
+    {
+      "child": 4,
+      "layer": 0,
+      "output_cosine_on_finemath_activation": 0.8359502553939819,
+      "parent": 0,
+      "relative_parameter_distance": 0.8545172214508057
+    },
+    {
+      "child": 5,
+      "layer": 0,
+      "output_cosine_on_finemath_activation": 0.846453845500946,
+      "parent": 1,
+      "relative_parameter_distance": 0.8263455629348755
+    },
+    {
+      "child": 6,
+      "layer": 0,
+      "output_cosine_on_finemath_activation": 0.8836938142776489,
+      "parent": 2,
+      "relative_parameter_distance": 0.6716965436935425
+    },
+    {
+      "child": 7,
+      "layer": 0,
+      "output_cosine_on_finemath_activation": 0.8655960559844971,
+      "parent": 3,
+      "relative_parameter_distance": 0.7421331405639648
+    },
+    {
+      "child": 5,
+      "layer": 1,
+      "output_cosine_on_finemath_activation": 0.39307042956352234,
+      "parent": 0,
+      "relative_parameter_distance": 1.0477325916290283
+    },
+    {
+      "child": 6,
+      "layer": 1,
+      "output_cosine_on_finemath_activation": 0.37017616629600525,
+      "parent": 1,
+      "relative_parameter_distance": 1.036194086074829
+    },
+    {
+      "child": 4,
+      "layer": 1,
+      "output_cosine_on_finemath_activation": 0.3470267653465271,
+      "parent": 2,
+      "relative_parameter_distance": 1.1355572938919067
+    },
+    {
+      "child": 7,
+      "layer": 1,
+      "output_cosine_on_finemath_activation": 0.3751484453678131,
+      "parent": 3,
+      "relative_parameter_distance": 1.0942760705947876
+    },
+    {
+      "child": 5,
+      "layer": 2,
+      "output_cosine_on_finemath_activation": 0.3384466767311096,
+      "parent": 0,
+      "relative_parameter_distance": 1.0223181247711182
+    },
+    {
+      "child": 4,
+      "layer": 2,
+      "output_cosine_on_finemath_activation": 0.3536096513271332,
+      "parent": 1,
+      "relative_parameter_distance": 1.11477530002594
+    },
+    {
+      "child": 6,
+      "layer": 2,
+      "output_cosine_on_finemath_activation": 0.3875840902328491,
+      "parent": 2,
+      "relative_parameter_distance": 0.969132125377655
+    },
+    {
+      "child": 7,
+      "layer": 2,
+      "output_cosine_on_finemath_activation": 0.27347034215927124,
+      "parent": 3,
+      "relative_parameter_distance": 1.1037788391113281
+    },
+    {
+      "child": 5,
+      "layer": 3,
+      "output_cosine_on_finemath_activation": 0.29866278171539307,
+      "parent": 0,
+      "relative_parameter_distance": 1.028997778892517
+    },
+    {
+      "child": 6,
+      "layer": 3,
+      "output_cosine_on_finemath_activation": 0.3320188522338867,
+      "parent": 1,
+      "relative_parameter_distance": 1.0351332426071167
+    },
+    {
+      "child": 7,
+      "layer": 3,
+      "output_cosine_on_finemath_activation": 0.32204747200012207,
+      "parent": 2,
+      "relative_parameter_distance": 1.0566768646240234
+    },
+    {
+      "child": 4,
+      "layer": 3,
+      "output_cosine_on_finemath_activation": 0.29115504026412964,
+      "parent": 3,
+      "relative_parameter_distance": 1.1194140911102295
+    },
+    {
+      "child": 5,
+      "layer": 4,
+      "output_cosine_on_finemath_activation": 0.20387238264083862,
+      "parent": 0,
+      "relative_parameter_distance": 1.1669780015945435
+    },
+    {
+      "child": 4,
+      "layer": 4,
+      "output_cosine_on_finemath_activation": 0.2622564733028412,
+      "parent": 1,
+      "relative_parameter_distance": 1.0880849361419678
+    },
+    {
+      "child": 6,
+      "layer": 4,
+      "output_cosine_on_finemath_activation": 0.32228970527648926,
+      "parent": 2,
+      "relative_parameter_distance": 1.04854416847229
+    },
+    {
+      "child": 7,
+      "layer": 4,
+      "output_cosine_on_finemath_activation": 0.2790777385234833,
+      "parent": 3,
+      "relative_parameter_distance": 1.0565619468688965
+    },
+    {
+      "child": 4,
+      "layer": 5,
+      "output_cosine_on_finemath_activation": 0.3693750500679016,
+      "parent": 0,
+      "relative_parameter_distance": 1.0208004713058472
+    },
+    {
+      "child": 5,
+      "layer": 5,
+      "output_cosine_on_finemath_activation": 0.4408162236213684,
+      "parent": 1,
+      "relative_parameter_distance": 0.9017413854598999
+    },
+    {
+      "child": 6,
+      "layer": 5,
+      "output_cosine_on_finemath_activation": 0.2423841655254364,
+      "parent": 2,
+      "relative_parameter_distance": 1.134813904762268
+    },
+    {
+      "child": 7,
+      "layer": 5,
+      "output_cosine_on_finemath_activation": 0.28023505210876465,
+      "parent": 3,
+      "relative_parameter_distance": 1.1323206424713135
+    },
+    {
+      "child": 5,
+      "layer": 6,
+      "output_cosine_on_finemath_activation": 0.4317989945411682,
+      "parent": 0,
+      "relative_parameter_distance": 0.9565700888633728
+    },
+    {
+      "child": 4,
+      "layer": 6,
+      "output_cosine_on_finemath_activation": 0.3268430829048157,
+      "parent": 1,
+      "relative_parameter_distance": 1.10051429271698
+    },
+    {
+      "child": 6,
+      "layer": 6,
+      "output_cosine_on_finemath_activation": 0.3454113006591797,
+      "parent": 2,
+      "relative_parameter_distance": 0.9595264792442322
+    },
+    {
+      "child": 7,
+      "layer": 6,
+      "output_cosine_on_finemath_activation": 0.4188072681427002,
+      "parent": 3,
+      "relative_parameter_distance": 0.9638256430625916
+    },
+    {
+      "child": 5,
+      "layer": 7,
+      "output_cosine_on_finemath_activation": 0.4694974720478058,
+      "parent": 0,
+      "relative_parameter_distance": 1.0279037952423096
+    },
+    {
+      "child": 6,
+      "layer": 7,
+      "output_cosine_on_finemath_activation": 0.5159246921539307,
+      "parent": 1,
+      "relative_parameter_distance": 0.8739163279533386
+    },
+    {
+      "child": 7,
+      "layer": 7,
+      "output_cosine_on_finemath_activation": 0.5609095096588135,
+      "parent": 2,
+      "relative_parameter_distance": 0.8660706877708435
+    },
+    {
+      "child": 4,
+      "layer": 7,
+      "output_cosine_on_finemath_activation": 0.51142817735672,
+      "parent": 3,
+      "relative_parameter_distance": 0.9435460567474365
+    }
+  ],
+  "parent_child_swap_loss_increase_by_source": {
+    "finemath": 0.21608877182006836,
+    "fineweb": 0.20156383514404297,
+    "fineweb_edu": 0.21425962448120117,
+    "wikipedia": 0.23778676986694336
+  },
+  "schema": "posthack-moe-endpoint-diagnostics-v1",
+  "validation_policy": "first two 256-token windows per certified validation source"
+}

@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-10-09T08:01:08.680245+00:00",
+  "rows": {
+    "R32-CO4-CONTROL": {
+      "four_task_accuracy": 0.43,
+      "heldout_loss": 2.9038326755166053,
+      "wiki_bpb": 1.5277065337265923
+    }
+  },
+  "selection": {
+    "architecture": null,
+    "data": null
+  }
+}

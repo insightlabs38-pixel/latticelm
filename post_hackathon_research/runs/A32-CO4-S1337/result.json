@@ -1,0 +1,16 @@
+{
+  "best_checkpoint_sha256": "a851c2b767e885a174fda8ab5f7fe0bb84cc0d0f8f0a7514a1b5033fba25c2dc",
+  "best_logical_tokens": 100000000,
+  "best_weighted_heldout_loss": 3.067824323475361,
+  "checkpoint": "/home/insightlabs38/latticelm/post_hackathon_research/runs/A32-CO4-S1337/latest.pt",
+  "checkpoint_sha256": "a851c2b767e885a174fda8ab5f7fe0bb84cc0d0f8f0a7514a1b5033fba25c2dc",
+  "experiment_id": "A32-CO4-S1337",
+  "finished_utc": "2026-10-03T03:38:44.485963+00:00",
+  "logical_tokens": 100000000,
+  "moe_birth_tokens": null,
+  "processed_tokens": 100007936,
+  "status": "COMPLETED",
+  "steps": 12208,
+  "variant": "baseline",
+  "wall_seconds": 25048.838716445025
+}

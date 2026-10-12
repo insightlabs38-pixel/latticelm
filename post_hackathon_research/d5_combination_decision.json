@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-10-06T02:50:35.181550+00:00",
+  "criterion": "both provisional LM positives or one >=2% held-out and BPB positive, with <=1 point raw capability and <=5% worst-source regression in both arms",
+  "d3": {
+    "failure_guard": {
+      "four_task_raw_accuracy_change": 0.0020000000000000018,
+      "worst_source_loss_relative_change": 0.009218019427586599
+    },
+    "screen": {
+      "at": "2026-10-05T20:45:29.942173+00:00",
+      "bpb_relative_change": 0.008169688426811206,
+      "classification": "AMBIGUOUS",
+      "experiment_id": "D3-16M-CURRICULUM",
+      "heldout_relative_change": 0.0012867348634202358,
+      "mechanism": "D3 curriculum warmup",
+      "parent": "A16-CO4-S1337",
+      "reason": "screening changes do not clear the quality threshold on both LM measures"
+    }
+  },
+  "d4": {
+    "failure_guard": {
+      "four_task_raw_accuracy_change": 0.0012500000000000289,
+      "worst_source_loss_relative_change": 0.014592921647188506
+    },
+    "screen": {
+      "at": "2026-10-06T02:50:35.176173+00:00",
+      "bpb_relative_change": -0.004740093238908227,
+      "classification": "AMBIGUOUS",
+      "experiment_id": "D4-16M-ANNEAL",
+      "heldout_relative_change": 0.0001804131974028067,
+      "mechanism": "D4 WSD quality anneal",
+      "parent": "A16-CO4-S1337",
+      "reason": "screening changes do not clear the quality threshold on both LM measures"
+    }
+  },
+  "protected_mandatory_seconds": 140450.3030690914,
+  "reason": "D3/D4 evidence or failure guard did not clear",
+  "run": false,
+  "time_gate_passed": true
+}
