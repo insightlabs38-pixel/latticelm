@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "source_checkpoint_sha256": "94b91a2d39c2889209cb47b2e04b2c0d307a25610c40c5a124b595020eb762b0",
+  "safetensors_sha256": "269ddb02951f435639472ca1bf8089bcf1b6c3565f5a799d1454bb13aada7e9e",
+  "tensor_count": 135,
+  "comparison": "all tensor keys, dtypes and values exactly equal; original native checkpoint retained"
+}

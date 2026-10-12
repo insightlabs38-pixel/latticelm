@@ -1,0 +1,19 @@
+{
+  "crontab": "utility not installed; no cron service in running-unit inventory",
+  "system_cron_research_files": [],
+  "triton_source_sha": "9a3dd8096b3c5b89a6dfeba012221f3fed450eb0",
+  "triton_source_clean": true,
+  "home_external_review": {
+    "latticelm-frozen": "approved research tree inventoried",
+    "latticelm-preisolation-git-metadata": "refs and unreachable commit inventoried; unique commit pushed as archival branch; .git excluded",
+    "freebufftest": "empty",
+    "home_instruction_files": "three LatticeLM prompts inventoried",
+    "other_home_dot_directories": "credentials/caches/application state excluded",
+    "mnt_srv_media": "empty; no separate research-data mount",
+    "other_home_user": "shell/auth state only; excluded"
+  },
+  "outside_home_targeted_search": "No LatticeLM paths found under /mnt, /srv, /opt, /var/lib, /var/log or /root (maxdepth 3; metadata-only search)",
+  "frozen_git_head": "43832b4c7bfe8be007ca6b9d1042aa2041c7f280",
+  "triton_source_url": "https://github.com/triton-lang/triton-cpu.git",
+  "excluded_source_archive_c9ed_git_ancestor": true
+}

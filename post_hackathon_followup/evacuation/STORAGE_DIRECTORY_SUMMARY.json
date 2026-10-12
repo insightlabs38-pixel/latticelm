@@ -1,0 +1,102 @@
+{
+  "latticelm/[root]": [
+    4,
+    17051
+  ],
+  "latticelm/hf_model_card": [
+    1,
+    1721
+  ],
+  "latticelm/docs": [
+    8,
+    33019
+  ],
+  "latticelm/artifacts": [
+    5352,
+    152410902188
+  ],
+  "latticelm/video": [
+    2395,
+    240015810
+  ],
+  "latticelm/experiments": [
+    37,
+    327960142
+  ],
+  "latticelm/post_hackathon_research": [
+    841,
+    26232677656
+  ],
+  "latticelm/scripts": [
+    132,
+    1412733
+  ],
+  "latticelm/post_hackathon_followup": [
+    1670,
+    6203729159
+  ],
+  "latticelm/tests": [
+    62,
+    221511
+  ],
+  "latticelm/systemd": [
+    2,
+    1391
+  ],
+  "latticelm/configs": [
+    62,
+    41204
+  ],
+  "latticelm/src": [
+    44,
+    223235
+  ],
+  "latticelm/ops": [
+    11,
+    7702
+  ],
+  "latticelm-frozen/[root]": [
+    4,
+    16615
+  ],
+  "latticelm-frozen/hf_model_card": [
+    1,
+    1721
+  ],
+  "latticelm-frozen/docs": [
+    8,
+    33019
+  ],
+  "latticelm-frozen/artifacts": [
+    380,
+    408415559
+  ],
+  "latticelm-frozen/video": [
+    77,
+    1291264
+  ],
+  "latticelm-frozen/scripts": [
+    81,
+    802642
+  ],
+  "latticelm-frozen/tests": [
+    38,
+    109876
+  ],
+  "latticelm-frozen/systemd": [
+    2,
+    1391
+  ],
+  "latticelm-frozen/configs": [
+    62,
+    41204
+  ],
+  "latticelm-frozen/src": [
+    40,
+    178243
+  ],
+  "latticelm-frozen/ops": [
+    11,
+    7702
+  ]
+}

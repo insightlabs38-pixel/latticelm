@@ -1,0 +1,38 @@
+{
+  "actual_tokens": 4268032,
+  "checkpoint_path": "post_hackathon_followup/runs/F8-CO4-FULLCONTROL-50M-S1337/checkpoint-00000521-b8d1192e.pt",
+  "checkpoint_sha256": "c12254dd4784a42ff8c1bbd391a849b1f913a2956fbc9f2f99a76505bc973f6d",
+  "checkpoint_source_git_sha": "578254776c269e9fd012ad3dd71e085095059714",
+  "checks": [
+    "checkpoint hash",
+    "model strict load",
+    "optimizer state load",
+    "RNG restore",
+    "sampler restore",
+    "next-batch identity",
+    "token accounting",
+    "registered config/source/data/tokenizer identity"
+  ],
+  "config_hash": "92aded187d8c118981d7582c559d6ec23c4a23f8256184870d53f8c7781e9764",
+  "current_lrs": [
+    0.0008,
+    0.0008
+  ],
+  "dataset_manifest_hash": "9d2811cfb2824b0dd541af89ebfb64403b3ec7143db97d52c4046aafb8eeae7f",
+  "dense_300m_run": "already completed on 2026-10-11; not truncated",
+  "experiment_id": "F8-CO4-FULLCONTROL-50M-S1337",
+  "initial_validation_probe": "Python tuple/list equality rejected native-vs-JSON config; canonical JSON equality and all hashes match; comparison corrected to trainer semantics",
+  "measured_tokens_per_second": 11431.869006679644,
+  "original_train_receipt_preserved": true,
+  "reason": "GCP credit exhaustion / emergency VM evacuation",
+  "schedule": "fresh WSD",
+  "schedule_tokens": 50000000,
+  "status": "TRUNCATED_RESOURCE_EXHAUSTION",
+  "step": 521,
+  "strict_load_resume_validation": "PASS",
+  "target_tokens": 50000000,
+  "tokenizer_hash": "294925d61198dfa0863f91193349f6ebead420d06a3fb650a5122d2264a4ebf7",
+  "wall_seconds": 373.34507572700386,
+  "wsd_lr_scale": 1.0,
+  "wsd_region": "stable"
+}

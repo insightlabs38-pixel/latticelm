@@ -1,0 +1,15 @@
+[Unit]
+Description=LatticeLM common D/N milestone preservation
+After=latticelm-posthack-phase1.service
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+
+[Service]
+Type=simple
+WorkingDirectory=/home/insightlabs38/latticelm
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python -u scripts/posthack_milestone_watcher.py
+Restart=on-failure
+RestartSec=60
+
+[Install]
+WantedBy=default.target

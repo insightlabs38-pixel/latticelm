@@ -1,0 +1,17 @@
+[Unit]
+Description=LatticeLM final-week post-submission follow-up controller
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/insightlabs38/latticelm
+ExecStart=/home/insightlabs38/latticelm/.venv/bin/python /home/insightlabs38/latticelm/scripts/posthack_followup_master.py
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+RestartSec=15
+KillMode=process
+TimeoutStopSec=180
+
+[Install]
+WantedBy=default.target

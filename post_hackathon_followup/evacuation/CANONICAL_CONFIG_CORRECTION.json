@@ -1,0 +1,7 @@
+{
+  "reason": "Historical filename refers to 8M configuration",
+  "canonical_config_source": "exact native 48.6M checkpoint config",
+  "canonical_config_sha256": "271ee073eefea0def679e7f1eec6cb5e3ac644729c059dc66aa3342f12387d89",
+  "historical_original_unmodified": true,
+  "required_restored_config_vs_checkpoint_equality": true
+}

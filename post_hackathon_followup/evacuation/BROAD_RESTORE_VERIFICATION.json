@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "restores": [
+    {
+      "path": "research/working-tree/post_hackathon_research/runs/R32-CO4-CONTROL/latest.pt",
+      "sha256": "71f999a0ee3c0f32b8b8eda8e1ecb9a3e404e24499dcebe4908fb10f8f4c7f06",
+      "size": 272270046,
+      "restore": "PASS",
+      "unauthenticated_public_download": true
+    },
+    {
+      "path": "research/working-tree/post_hackathon_research/TRAINING_SUPERVISOR_FINAL_REPORT.md",
+      "sha256": "b9b1b808abd4a415c814e6140c7fc717d9ffdb6c477121b323be2e136b0ef061",
+      "size": 14060,
+      "restore": "PASS",
+      "unauthenticated_public_download": true
+    },
+    {
+      "path": "research/working-tree/post_hackathon_followup/FOLLOWUP_CONTROLLER_STATE.json",
+      "sha256": "431730fd8dc67fe17b60cb0d8b730b3a7bb3176da7453e1c4bd21c588aa37ba0",
+      "size": 5977,
+      "restore": "PASS",
+      "unauthenticated_public_download": true
+    },
+    {
+      "path": "research/working-tree/post_hackathon_followup/configs/F8-CO4-FULLCONTROL-50M-S1337.json",
+      "sha256": "161ac83a45f7570e9e4715b7f3a54621816caa62e1bfe2d22c2358691835030b",
+      "size": 1196,
+      "restore": "PASS",
+      "unauthenticated_public_download": true
+    },
+    {
+      "path": "research/working-tree/post_hackathon_research/research_d/documents.jsonl.gz",
+      "sha256": "84e135249d20fb79a7d510057ffeda0c82d784b172b6a763a373656002bc56cc",
+      "size": 239247128,
+      "restore": "PASS",
+      "unauthenticated_public_download": true
+    },
+    {
+      "path": "research/home-instructions/LatticeLM_Emergency_VM_Evacuation_Prompt.md",
+      "sha256": "8789f71077eda7e0b6dc170d0da628080ed8163d3cb4015e040877b7df6bdf67",
+      "size": 36035,
+      "restore": "PASS",
+      "unauthenticated_public_download": true
+    }
+  ]
+}

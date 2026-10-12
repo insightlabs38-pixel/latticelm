@@ -1,0 +1,54 @@
+[
+  {
+    "unit": "latticelm-final-recipe-research-20260913.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-final-production-20260917.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-wsd-20260912.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-wsd-next-phase-20260913.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-final-capacity-20260909.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-systems-data-20260907.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-production-eval-companion-20260920.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-final-scale-20260909.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticereason-overnight-20260906.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-capacity24-20260908.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-posttraining-master-20260921.service",
+    "state": "ActiveState=failed\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-seed2026-replication.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  },
+  {
+    "unit": "latticelm-post900m-20260912.service",
+    "state": "ActiveState=inactive\nUnitFileState=disabled\n"
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "research/working-tree/pyproject.toml": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/working-tree/.gitignore": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/working-tree/README.md": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/working-tree/EXPERIMENT_LATTICELM.md": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/working-tree/hf_model_card": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/working-tree/docs": {
+    "BUCKET_ARCHIVE": 8
+  },
+  "research/working-tree/artifacts": {
+    "BUCKET_ARCHIVE": 4530,
+    "SKIP_LICENSE": 800,
+    "SKIP_TEMP": 22
+  },
+  "research/working-tree/video": {
+    "BUCKET_ARCHIVE": 2339,
+    "SKIP_CACHE": 55,
+    "SKIP_REDUNDANT_SYSTEM": 1
+  },
+  "research/working-tree/experiments": {
+    "BUCKET_ARCHIVE": 36,
+    "SKIP_LICENSE": 1
+  },
+  "research/working-tree/post_hackathon_research": {
+    "BUCKET_ARCHIVE": 730,
+    "SKIP_TEMP": 1,
+    "SKIP_LICENSE": 110
+  },
+  "research/working-tree/scripts": {
+    "BUCKET_ARCHIVE": 131,
+    "SKIP_TEMP": 1
+  },
+  "research/working-tree/post_hackathon_followup": {
+    "BUCKET_ARCHIVE": 1374,
+    "SKIP_LICENSE": 239,
+    "SKIP_TEMP": 57
+  },
+  "research/working-tree/tests": {
+    "BUCKET_ARCHIVE": 61,
+    "SKIP_TEMP": 1
+  },
+  "research/working-tree/systemd": {
+    "BUCKET_ARCHIVE": 2
+  },
+  "research/working-tree/configs": {
+    "BUCKET_ARCHIVE": 62
+  },
+  "research/working-tree/src": {
+    "BUCKET_ARCHIVE": 44
+  },
+  "research/working-tree/ops": {
+    "BUCKET_ARCHIVE": 11
+  },
+  "research/frozen-tree/pyproject.toml": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/frozen-tree/.gitignore": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/frozen-tree/README.md": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/frozen-tree/EXPERIMENT_LATTICELM.md": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/frozen-tree/hf_model_card": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/frozen-tree/docs": {
+    "BUCKET_ARCHIVE": 8
+  },
+  "research/frozen-tree/artifacts": {
+    "BUCKET_ARCHIVE": 368,
+    "SKIP_LICENSE": 12
+  },
+  "research/frozen-tree/video": {
+    "BUCKET_ARCHIVE": 77
+  },
+  "research/frozen-tree/scripts": {
+    "BUCKET_ARCHIVE": 81
+  },
+  "research/frozen-tree/tests": {
+    "BUCKET_ARCHIVE": 38
+  },
+  "research/frozen-tree/systemd": {
+    "BUCKET_ARCHIVE": 2
+  },
+  "research/frozen-tree/configs": {
+    "BUCKET_ARCHIVE": 62
+  },
+  "research/frozen-tree/src": {
+    "BUCKET_ARCHIVE": 40
+  },
+  "research/frozen-tree/ops": {
+    "BUCKET_ARCHIVE": 11
+  },
+  "research/home-instructions/LatticeLM_Final_Week_Followup_Execution_Prompt.md": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/home-instructions/LatticeLM_PostHackathon_15Day_Research_Execution_Prompt.md": {
+    "BUCKET_ARCHIVE": 1
+  },
+  "research/home-instructions/LatticeLM_Emergency_VM_Evacuation_Prompt.md": {
+    "BUCKET_ARCHIVE": 1
+  }
+}

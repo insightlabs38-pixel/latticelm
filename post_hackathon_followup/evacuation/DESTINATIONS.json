@@ -1,0 +1,8 @@
+{
+  "model_repo": "insightlabs38-pixel/LatticeLM-public-archive",
+  "model_private": false,
+  "bucket": "insightlabs38-pixel/latticelm-vm-archive",
+  "bucket_private": false,
+  "original_private_repo": "insightlabs38-pixel/LatticeLM-research",
+  "original_repo_kept_private": true
+}
